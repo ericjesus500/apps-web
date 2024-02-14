@@ -1,0 +1,453 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Cascada en CSS - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="La cascada CSS, junto a la herencia, son dos de las características más importantes de CSS (y más frustrantes si no se sabe como funcionan).">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Cascada en CSS - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="La cascada CSS, junto a la herencia, son dos de las características más importantes de CSS (y más frustrantes si no se sabe como funcionan).">
+  <meta property="og:url" content="https://lenguajecss.com/css/cascada-css/que-es-cascada/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/cascada-css/que-es-cascada/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Cascada en CSS - CSS en español">
+  <meta property="twitter:description" content="La cascada CSS, junto a la herencia, son dos de las características más importantes de CSS (y más frustrantes si no se sabe como funcionan).">
+  <meta property="twitter:image" content="https://lenguajecss.com/large-summary.jpg">
+
+  </head>
+
+<body class="css" style="--logo-color: #1e7bbf"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/css.jpg')">
+    <h1><a href="index.htm">Cascada en CSS</a></h1><h2 class="typewriter">La cascada de CSS: Importancia, Especificidad y Orden</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../herencia-css/index.htm">Herencia en CSS</a>
+    <a class="current" href="index.htm">Cascada en CSS</a>
+    <a href="../css-custom-properties/index.htm">Variables CSS</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Uno de los conceptos más importantes de <strong>CSS</strong>, y a la vez, uno de los conceptos más desconocidos o malentendidos, es el denominado <strong>Cascada de CSS</strong>. De hecho, la <strong>cascada</strong> es la que le da sentido a la <code>C</code> inicial de las siglas <strong>CSS</strong>, lo que da una idea de la importancia que tiene en este tema.</p>
+<blockquote>
+<p>En algunos casos, el concepto de <strong>cascada</strong> puede resultar demasiado avanzado como para verlo en un tema de introducción, por lo que se debe conocer bien el tema de <strong>selectores CSS</strong> y dominar algo de <strong>propiedades CSS</strong> para comprenderlo totalmente. Si estás comenzando con CSS, se aconseja que se posponga para una lectura posterior.</p>
+</blockquote>
+<h3 id="qué-es-la-cascada-css" tabindex="-1"><a class="header-anchor" href="#qué-es-la-cascada-css">¿Qué es la Cascada CSS?</a></h3>
+<p>Cuando hablamos de la <strong>Cascada CSS</strong> nos referimos al algoritmo o conjunto de reglas y normas que tiene el navegador para aplicar estilos CSS a un elemento HTML. No es tan sencillo como la mayoría cree, ya que hay múltiples casos donde pueden existir ambigüedades o conflictos de valores, y el navegador debe resolverlos para saber cual debe prevalecer.</p>
+<p>Imagina que tenemos enlazados dos archivos <code>.css</code> mediante <code>&lt;link&gt;</code> y en cada uno tenemos un mismo selector <code>.text</code> aplicando colores diferentes. ¿Cuál de los dos se aplicará finalmente? Quizás pienses que el último que haya sido definido. A veces, esto es cierto, pero otras muchas veces no. Expliquemos la razón.</p>
+<p>La <strong>cascada</strong> comprende varios temas importantes a la hora de resolver dichos conflictos:</p>
+<ul>
+<li><code>Importancia</code>: Los estilos pueden tener una importancia concreta, eso le da mayor o menor prioridad.</li>
+<li><code>Origen</code>: Existen varios orígenes de CSS, cada uno con una prioridad específica.</li>
+<li><code>Orden de aparición</code>: El orden en el que se procesa el CSS influye a la hora de resolver conflictos.</li>
+<li><code>Especificidad</code>: Cuanto más específicos sean los estilos CSS, mayor prioridad.</li>
+<li><code>Capas</code>: Los estilos CSS se pueden aislar en capas fusionables. Lo explicamos en <a href="../../reglas-css/la-regla-layer/index.htm">@layers CSS</a>.</li>
+</ul>
+<p>Vamos a repasar cada uno de ellos para comprenderlo lo mejor posible.</p>
+<h3 id="importancia" tabindex="-1"><a class="header-anchor" href="#importancia">Importancia</a></h3>
+<p>Existe la posibilidad de añadir el texto <code>!important</code> al final de una regla, consiguiendo que el navegador le de prioridad a la hora de evaluar dichos estilos sobre otros. Veamos un ejemplo de como funciona:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Texto del elemento<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.text</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token important">!important</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.text</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>Observa que, a pesar de tener definido un color <code>blue</code> posteriormente, el texto <code>!important</code> le dará prioridad al anterior, dibujando el color de texto en rojo, en lugar de azul. En el caso de tener varias reglas con <code>!important</code>, prevalecerá la que además se encuentre en último lugar.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>OJO</strong>: Desgraciadamente, esta es una de las características más conocidas de CSS debido a que es una forma «cómoda» de forzar la importancia de una regla CSS. Su utilización no es una mala práctica, sin embargo, su uso indiscriminado si lo es y debería evitarse salvo causas justificadas.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="origen" tabindex="-1"><a class="header-anchor" href="#origen">Origen</a></h3>
+<p>La <strong>cascada</strong> tiene en cuenta las hojas de estilo donde está colocado nuestro código CSS. Generalmente, no necesitaremos preocuparnos de este factor, ya que nos centraremos casi siempre en el CSS de autor. Sin embargo, es una buena idea conocer en que se basa cada origen.</p>
+<p>Tenemos 3 orígenes, ordenados de <strong>menor a mayor</strong> importancia:</p>
+<ul>
+<li>1️⃣ <strong>Agente de usuario</strong>: Estilos CSS que tiene y aplica el <strong>navegador</strong> por defecto.</li>
+<li>2️⃣ <strong>CSS de usuario</strong>: Estilos CSS que añade el <strong>usuario</strong> para personalizar, por ejemplo, con <a href="https://userstyles.org/">UserStyles</a>.</li>
+<li>3️⃣ <strong>CSS de autor</strong>: Son los estilos CSS que crea el <strong>desarrollador</strong> en la página web.</li>
+</ul>
+<blockquote>
+<blockquote>
+<p><strong>Nota</strong>: En el caso de que una propiedad CSS de cada origen tuviera definido un <code>!important</code>, el orden de importancia anterior se invertiría, resultando que el CSS del <strong>agente de usuario</strong> tendría prioridad sobre el CSS de <strong>usuario</strong> y de <strong>autor</strong>.</p>
+</blockquote>
+</blockquote>
+<h3 id="orden-de-aparición" tabindex="-1"><a class="header-anchor" href="#orden-de-aparición">Orden de aparición</a></h3>
+<p>Esta suele ser una de las partes de la cascada que más clara suele estar, ya que es bastante intuitiva. En el tema introductorio <a href="../../introduccion/como-usar-css/index.htm">Cómo enlazar CSS</a>, vimos que es posible aplicar estilos CSS a un documento de varias formas:</p>
+<ul>
+<li>1️⃣ Atributo <code>style</code> en una etiqueta HTML.</li>
+<li>2️⃣ Bloque de estilos <code>&lt;style&gt;</code> en el documento HTML.</li>
+<li>3️⃣ Archivo <code>.css</code> externo referenciado mediante <code>&lt;link rel=&quot;stylesheet&quot;&gt;</code>.</li>
+</ul>
+<p>Veamos un ejemplo donde se apliquen estas tres formas:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>index.css<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">.text</span> <span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> red <span class="token punctuation">}</span>
+  </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>¡Desde Manz.dev puedes ver mis streams!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<p>Observa que en este ejemplo concreto, la etiqueta <code>&lt;link&gt;</code> está definida antes del bloque <code>&lt;style&gt;</code>. En un principio, <strong>para un mismo selector</strong> que entre en conflicto, prevalecería el que se encuentra definido en el bloque <code>&lt;style&gt;</code>, ya que se define después de la etiqueta <code>&lt;link&gt;</code>. De la misma forma, ocurriría si se tratase de dos etiquetas <code>&lt;link&gt;</code>. La última es la que prevalece porque «sobreescribe» a la anterior.</p>
+<hr>
+<p>Supongamos que nos encontramos ahora en una misma hoja de estilos, donde aplicamos estilos a <strong>exactamente el mismo selector</strong>. Utilizamos la propiedad <code>color</code> pero con diferente valor en cada coincidencia. Algo similar a lo siguiente:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Texto del elemento<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.text</span> <span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 8px
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.text</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> grey
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>La pregunta sería: ¿Cuál de las dos propiedades <code>color</code> prevalece? Se refieren al mismo elemento y están al mismo nivel. La respuesta es muy fácil: <strong>Prevalece siempre la última regla definida</strong>. En el caso anterior, el resultado final interpretado por el navegador (<em>valor computado</em>) sería el siguiente:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.text</span> <span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 8px<span class="token punctuation">;</span>             <span class="token comment">/* No hay conflicto, se añade */</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> grey<span class="token punctuation">;</span>   <span class="token comment">/* No hay conflicto, se añade */</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>              <span class="token comment">/* Hay conflicto: se sobreescribe la última */</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Sin embargo, puede ocurrir que en determinados casos no esté tan claro cuál es el estilo que debería sobreescribir a los anteriores. Ahí es cuando entra en juego el concepto de <strong>especificidad</strong>, que es uno de los que se encarga de eliminar la ambigüedad determinando cuál es más específico. Supongamos el siguiente caso, donde tenemos un mismo elemento <code>&lt;div&gt;</code> con un <code>id</code> y una <code>clase</code>:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>element<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Texto del elemento<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+<span class="token selector">div</span> <span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">#element</span> <span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">.block</span> <span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>Nuestro elemento HTML <code>&lt;div&gt;</code> encaja con los tres bloques del ejemplo anterior. ¿Cómo sabe el navegador CSS que estilo aplicar? ¿Cuál tiene prioridad sobre los demás? En ese caso, el navegador calcula que selector es más específico aplicando las normas de la <strong>especificidad CSS</strong>.</p>
+<h3 id="especificidad-css" tabindex="-1"><a class="header-anchor" href="#especificidad-css">Especificidad CSS</a></h3>
+<p>En el caso de que tengamos un conflicto donde no se haya eliminado la ambigüedad, se pasa a calcular el <strong>selector más específico</strong> siguiendo unas normas que se detallan a continuación:</p>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Componente ID</strong></td>
+<td>Número de veces que aparece un <code>#id</code> en el selector.</td>
+</tr>
+<tr>
+<td><strong>Componente Clase</strong></td>
+<td>Número de veces que aparece una <code>.clase</code>, <code>:pseudoclase</code> o <code>[atributo]</code> en el selector.</td>
+</tr>
+<tr>
+<td><strong>Componente Elemento</strong></td>
+<td>Número de veces que aparece un <code>elemento</code> o un <code>::pseudoelementos</code> en el selector.</td>
+</tr>
+</tbody>
+</table>
+<p>Para saber si un selector de CSS es más específico que otro (<em>y por lo tanto, el navegador le da prioridad</em>) sólo hay que calcular los dígitos de los componentes anteriores, que forman un número que indica la <strong>especificidad</strong>:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">{</span> ... <span class="token punctuation">}</span>                   <span class="token comment">/* 0,0,1 (1 elemento) */</span>
+<span class="token selector">div div</span> <span class="token punctuation">{</span> ... <span class="token punctuation">}</span>               <span class="token comment">/* 0,0,2 (2 elementos) */</span>
+<span class="token selector">#pagina div</span> <span class="token punctuation">{</span> ... <span class="token punctuation">}</span>           <span class="token comment">/* 1,0,1 (1 id y 1 elemento) */</span>
+<span class="token selector">#pagina div:hover</span> <span class="token punctuation">{</span> ... <span class="token punctuation">}</span>     <span class="token comment">/* 1,1,1 (1 id, 1 pseudoclase y 1 elemento) */</span>
+<span class="token selector">#pagina div:hover a</span> <span class="token punctuation">{</span> ... <span class="token punctuation">}</span>   <span class="token comment">/* 1,1,2 (1 id, 1 pseudoclase y 2 elementos) */</span>
+<span class="token selector">#pagina .sel:hover>a</span> <span class="token punctuation">{</span> ... <span class="token punctuation">}</span>  <span class="token comment">/* 1,2,1 (1 id, 1 clase, 1 pseudoclase y 1 elemento) */</span></code></pre>
+<blockquote>
+<p>En <strong>keegan.st</strong> tienes una excelente <a href="https://specificity.keegan.st/">calculadora de especificidad CSS</a> donde podrás calcular la especificidad de un selector CSS rápida y cómodamente.</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>Existe una excepción a todo esto que es el <strong>CSS en línea</strong>. En el caso de que se definan unos estilos CSS a través del atributo <code>style</code> de una etiqueta HTML, siempre tendrá preferencia directa, ya que es la forma más específica.</p>
+</blockquote>
+</blockquote>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../herencia-css/index.htm" title="Herencia en CSS">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Herencia en CSS</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../css-custom-properties/index.htm" title="Variables CSS">
+  <div>
+    <span>Variables CSS</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/8Jh2K3tq5n0" title="Tutorial para aprender Animaciones CSS">
+  <img loading="lazy" src="../../../vi/8Jh2K3tq5n0/mqdefault.jpg" alt="Tutorial para aprender Animaciones CSS">
+</a><a href="https://youtu.be/jdGpehoFoWA" title="¡Aprende a utilizar TRANSICIONES CSS!">
+  <img loading="lazy" src="../../../vi/jdGpehoFoWA/mqdefault.jpg" alt="¡Aprende a utilizar TRANSICIONES CSS!">
+</a><a href="https://youtu.be/Wou2koTiIyU" title="Grid CSS: Centrar, distribuir y alinear elementos">
+  <img loading="lazy" src="../../../vi/Wou2koTiIyU/mqdefault.jpg" alt="Grid CSS: Centrar, distribuir y alinear elementos">
+</a><a href="https://youtu.be/Q1CXWBtxKZU" title="Grid CSS: Introducción y conceptos desde cero">
+  <img loading="lazy" src="../../../vi/Q1CXWBtxKZU/mqdefault.jpg" alt="Grid CSS: Introducción y conceptos desde cero">
+</a><a href="https://youtu.be/L7Hi32qBIxI" title="Cómo crear SOMBRAS EN CAJAS (box-shadow)">
+  <img loading="lazy" src="../../../vi/L7Hi32qBIxI/mqdefault.jpg" alt="Cómo crear SOMBRAS EN CAJAS (box-shadow)">
+</a><a href="https://youtu.be/oou7K8QEMSE" title="¡Zoom en CSS! La propiedad object-view-box">
+  <img loading="lazy" src="../../../vi/oou7K8QEMSE/mqdefault.jpg" alt="¡Zoom en CSS! La propiedad object-view-box">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,760 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ecc022">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>URL en Javascript - Javascript en español - Lenguaje JS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Javascript posee un tipo de dato denominado URL que permite obtener, modificar y trabajar con partes de una dirección web">
+  <meta name="view-transition" content="same-origin">
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="URL en Javascript - Javascript en español">
+  <meta property="og:image" content="https://lenguajejs.com/javascript/peticiones-http/url/url.social.png">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Javascript posee un tipo de dato denominado URL que permite obtener, modificar y trabajar con partes de una dirección web">
+  <meta property="og:url" content="https://lenguajejs.com/javascript/peticiones-http/url/">
+  <meta property="twitter:url" content="https://lenguajejs.com/javascript/peticiones-http/url/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="URL en Javascript - Javascript en español">
+  <meta property="twitter:description" content="Javascript posee un tipo de dato denominado URL que permite obtener, modificar y trabajar con partes de una dirección web">
+  <meta property="twitter:image" content="https://lenguajejs.com/javascript/peticiones-http/url/url.social.png">
+
+  </head>
+
+<body class="js menu-open " style="--logo-color: #f0db4f"><script>
+    matchMedia("(width <= 1180px)").matches && document.body.classList.toggle("menu-open");
+  </script>
+  
+
+
+
+
+
+
+
+
+<section class="menubar">
+  <div class="menubar-content">
+    <h1>Lenguaje JS</h1>
+
+    <a class="cover" title="Lenguaje JS (javascript)" href="../../index.htm" style="--image: url('../../../assets/javascript.jpg')"></a>
+
+    <header>
+      <a href="../../asincronia/que-es/index.htm" title="¿Qué es la asincronía?">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m14 26l1.41-1.41L7.83 17H28v-2H7.83l7.58-7.59L14 6L4 16l10 10z"></path></svg>
+      </a>
+      <a href="../../index.htm" title="Volver al índice">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 256"><path fill="#888888" d="M240 210h-18v-94.45a14.06 14.06 0 0 0-4.53-10.32l-80-75.49l-.09-.08a13.94 13.94 0 0 0-18.83 0l-.09.08l-80 75.5A14 14 0 0 0 34 115.55V210H16a6 6 0 0 0 0 12h224a6 6 0 0 0 0-12ZM46 115.55a2 2 0 0 1 .65-1.48l.09-.08l79.94-75.48a2 2 0 0 1 2.63 0L209.26 114l.08.08a2 2 0 0 1 .66 1.48V210h-52v-50a14 14 0 0 0-14-14h-32a14 14 0 0 0-14 14v50H46ZM146 210h-36v-50a2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"></path></svg>
+      </a>
+      <a href="../../../fundamentos/introduccion/conceptos-previos/index.htm" title="Conceptos previos">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></path></svg>
+      </a>
+    </header>
+
+    <div style="display:none">
+      <svg id="link-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 256 256"><g fill="#888888"><path d="M208 88h-56V32Z" opacity=".2"></path><path d="m213.66 82.34l-56-56A8 8 0 0 0 152 24H56a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V88a8 8 0 0 0-2.34-5.66ZM160 51.31L188.69 80H160ZM200 216H56V40h88v48a8 8 0 0 0 8 8h48v120Z"></path></g></svg>
+      <svg id="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="#888888" d="M2 12.5C2 9.46 4.46 7 7.5 7H18c2.21 0 4 1.79 4 4s-1.79 4-4 4H9.5a2.5 2.5 0 0 1 0-5H17v2H9.41c-.55 0-.55 1 0 1H18c1.1 0 2-.9 2-2s-.9-2-2-2H7.5C5.57 9 4 10.57 4 12.5S5.57 16 7.5 16H17v2H7.5C4.46 18 2 15.54 2 12.5z"></path></svg>
+    </div>
+
+    <div class="links">
+      <span class="folder">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 512 512"><path fill="#888888" d="M41 73v304.563L88.697 151H423v-30H185.514l-16-48H41zm62.303 96L43.092 455h381.605l60.211-286H103.303z"></path></svg>
+        Peticiones HTTP
+      </span>
+            <a class="link" href="../ajax/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              AJAX: Peticiones HTTP
+            </a>
+            <a class="link" href="../xhr/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              XHR: XMLHttpRequest
+            </a>
+            <a class="link" href="../fetch/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Fetch: Peticiones Asíncronas
+            </a>
+            <a class="link active" href="index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              URL en Javascript
+            </a>
+            <a class="link" href="../cors/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Política CORS
+            </a>
+    </div>
+  </div>
+
+  <div class="sidebox">
+    <svg class="close-menu" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19V5m10 1l-6 6l6 6m-6-6h14"></path></svg>
+    <div class="socials">
+      <a class="twitch" href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+      <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+      <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+      <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  const toggleMenu = () => (document.body.classList.toggle("menu-open"));
+  document.querySelector(".close-menu").addEventListener("click", toggleMenu);
+
+  matchMedia("(width <= 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+  matchMedia("(width > 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+
+  const activeLink = document.querySelector(".links .active");
+  const icon = /* svg */`<svg viewBox="0 0 24 24"><use href="#anchor-icon" /></svg>`;
+  const headers = [...document.querySelectorAll(".contents h3")].map(link => ({ text: link.textContent, id: link.id }));
+  const links = [];
+  headers.reverse().forEach(({ text, id }) => {
+    const link = document.createElement("a");
+    link.classList.add("anchor");
+    link.href = "#" + id;
+    link.insertAdjacentHTML("beforeend", icon);
+    link.insertAdjacentText("beforeend", ` ${text}`);
+    activeLink.after(link);
+  });
+</script>
+
+  <div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#js"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeJS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/javascript.jpg')">
+    <h1><a href="index.htm">URL en Javascript</a></h1><h2 class="typewriter">Trabajando con direcciones URL en Javascript</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../fetch/index.htm">Fetch: Peticiones Asíncronas</a>
+    <a class="current" href="index.htm">URL en Javascript</a>
+    <a href="../cors/index.htm">Política CORS</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Normalmente, cuando tenemos que trabajar con una <strong>dirección web</strong> (<em>URL</em>) en Javascript, lo más habitual es utilizar un tipo de dato <badge-type class="string"></badge-type> donde almacenamos dicha <strong>URL</strong>. En la mayoría de los casos, esto suele ser suficiente. Sin embargo, si necesitamos hacer ciertas operaciones con la URL donde tengamos que modificar o acceder a ciertas partes específicas de la URL, se podría complicar un poco.</p>
+<h3 id="el-objeto-url" tabindex="-1"><a class="header-anchor" href="#el-objeto-url">El objeto URL</a></h3>
+<p>Si necesitamos acceder a partes específicas de una URL, o incluso modificarlas, tenemos un <badge-type class="object"></badge-type> de tipo <badge-type class="url"></badge-type> especial para estos casos, que será mucho más cómodo que trabajar con el <badge-type class="string"></badge-type> (<em>y contemplar todos los posibles casos que podrían ocurrir</em>). Su funcionamiento es el siguiente:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">"https://manz.dev/"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+url<span class="token punctuation">.</span>protocol      <span class="token comment">// "https:"</span>
+url<span class="token punctuation">.</span>hostname      <span class="token comment">// "manz.dev"</span>
+url<span class="token punctuation">.</span>pathname      <span class="token comment">// "/"</span></code></pre>
+<p>Como puedes ver, se puede ir accediendo a diferentes propiedades del objeto <code>url</code> que hemos generado a partir del <badge-type class="string"></badge-type> de la URL para obtener partes específicas de la dirección web.</p>
+<h3 id="partes-de-una-url" tabindex="-1"><a class="header-anchor" href="#partes-de-una-url">Partes de una URL</a></h3>
+<p>Para explicar como trabajar con <strong>URL</strong> en Javascript, antes necesitamos analizar bien la estructura de una URL y examinar las diferentes partes que la componen, para tener bien claro antes de trabajar con nuestro código Javascript. Así pues, observa la siguiente imagen donde puedes ver las partes de una URL:</p>
+<p><img src="url-parts.png" alt="Partes de una URL" width="1024" height="256" loading="lazy"></p>
+<p>Vamos a generar dos <strong>objetos</strong>: <code>url</code> y <code>local</code>. Los crearemos a partir de dos <badge-type class="string"></badge-type> con dos URL específicas que pasaremos por parámetro, mediante un <code>new URL()</code>:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">"https://sub.manz.dev/path/page.html#anchor"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> local <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">"http://manz:12345@localhost:8000/path/file.mp3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Un objeto <badge-type class="url"></badge-type> contiene una serie de propiedades para identificar partes concretas de la URL generada:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Descripción</th>
+<th>Ejemplo url</th>
+<th>Ejemplo local</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><badge-type class="string"></badge-type> <code>.protocol</code></td>
+<td>Protocolo de comunicación usado.</td>
+<td><code>https:</code></td>
+<td><code>http:</code></td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>.hostname</code></td>
+<td>Dominio completo (subdominio + dominio).</td>
+<td><code>sub.manz.dev</code></td>
+<td><code>localhost</code></td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>.host</code></td>
+<td>Dominio completo + puerto.</td>
+<td><code>sub.manz.dev</code></td>
+<td><code>localhost:8000</code></td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>.origin</code></td>
+<td>Origen (Protocolo + host)</td>
+<td><code>https://sub.manz.dev</code></td>
+<td><code>http://localhost:8000</code></td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>.username</code></td>
+<td>Nombre de usuario que ha accedido.</td>
+<td>Vacío</td>
+<td><code>manz</code></td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>.password</code></td>
+<td>Contraseña del usuario que ha accedido.</td>
+<td>Vacío</td>
+<td><code>12345</code></td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>.port</code></td>
+<td>Puerto en escucha de la web.</td>
+<td>Vacío</td>
+<td><code>8000</code></td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>.pathname</code></td>
+<td>Ruta completa (ruta + documento)</td>
+<td><code>/path/page.html</code></td>
+<td><code>/path/file.mp3</code></td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>.hash</code></td>
+<td>Ancla (lo explicamos más adelante)</td>
+<td><code>#anchor</code></td>
+<td>Vacío</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>.href</code></td>
+<td colspan="3">Esta propiedad devuelve la URL completa (query strings incluídas, ver más adelante).</td>
+</tr>
+</tbody>
+</table>
+<p>Ten en cuenta los siguientes detalles:</p>
+<ul>
+<li>La diferencia entre <code>.hostname</code> y <code>.host</code> es que el segundo incluye el <strong>puerto</strong> (<em>si está definido explícitamente</em>).</li>
+<li>El <strong>origen</strong> (<code>origin</code>) es la unión del protocolo + dominio completo + puerto (<em>si se indica</em>).</li>
+</ul>
+<p>Teniendo claras las diferentes partes de una <strong>URL</strong>, vamos a ver ahora como podríamos trabajar con ellas y acceder a partes especificas desde nuestro código Javascript.</p>
+<h4 id="protocolo-de-la-url" tabindex="-1"><a class="header-anchor" href="#protocolo-de-la-url">Protocolo de la URL</a></h4>
+<p>Normalmente, a una web se accede mediante el protocolo <code>http://</code>, sin embargo, hoy en día está más extendido el protocolo <code>https://</code>, que es el mismo pero con una capa de seguridad adicional donde los datos van cifrados (<em>al contrario que en HTTP</em>). Existen otros protocolos para otras comunicaciones, como el antiguo <code>ftp://</code> para servidores de archivos, el protocolo <code>whatsapp://</code> para comunicarnos desde una web con una aplicación de WhatsApp, etc...</p>
+<h4 id="usuario-y-contraseña" tabindex="-1"><a class="header-anchor" href="#usuario-y-contraseña">Usuario y Contraseña</a></h4>
+<p>Generalmente, al acceder a una web no se suele proporcionar el usuario y contraseña, pero es posible hacerlo directamente desde la URL. De hacerlo, hay que indicar el usuario después de las <code>//</code> del protocolo. Si queremos añadir también un password, habría que añadirlo inmediatamente después del usuario, separándolo por <code>:</code> y, finalmente, después del password, añadir el símbolo <code>@</code> para separarlo del dominio.</p>
+<pre class="language-js "><code class="language-js"><span class="token string">"https://manz.dev/login/"</span>             <span class="token comment">// Acceso anónimo (sin usuario ni pass)</span>
+<span class="token string">"https://<a href="../../../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="563b37382c163b37382c78323320">[email&#160;protected]</a>/login/"</span>        <span class="token comment">// Acceso como usuario manz (sin pass)</span>
+<span class="token string">"https://manz:<a href="../../../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="29181b1a1d1c6944484753074d4c5f">[email&#160;protected]</a>/login/"</span>  <span class="token comment">// Acceso como usuario manz con pass 12345</span></code></pre>
+<blockquote>
+<p><strong>OJO</strong>: Hoy en día, los nombres de usuario y contraseñas se suelen gestionar más frecuentemente a nivel de aplicación. En este caso hemos explicado como utilizarlos a nivel de servidor.</p>
+</blockquote>
+<h4 id="dominio-subdominio-y-tld" tabindex="-1"><a class="header-anchor" href="#dominio-subdominio-y-tld">Dominio, subdominio y TLD</a></h4>
+<p>Cuando hablamos de nombre de dominio, muchas veces solemos abarcar todo, es decir, en nuestro ejemplo, <code>sub.manz.dev</code>. Sin embargo, hay que tener en cuenta que tenemos tres partes:</p>
+<ul>
+<li><strong>Subdominio</strong>: <code>sub</code>, una división específica del dominio</li>
+<li><strong>Dominio</strong>: <code>manz.dev</code>, el dominio en cuestión</li>
+<li><strong>TLD</strong> (<em>Top Level Domain</em>): <code>.dev</code>, la terminación del dominio</li>
+</ul>
+<h4 id="puerto-de-la-url" tabindex="-1"><a class="header-anchor" href="#puerto-de-la-url">Puerto de la URL</a></h4>
+<p>Cualquier página está alojada en un servidor web y dicho servidor web debe estar continuamente escuchando peticiones para que los usuarios puedan conectarse y acceder a la web. Por norma general, los servidores web escuchan en el puerto <code>80</code> (HTTP) o en el puerto <code>443</code> (HTTPS), aunque se puede configurar un puerto diferente.</p>
+<p>El <strong>puerto</strong> es un número (<em>del 1 al 65535</em>) que se debe indicar precedido del símbolo <code>:</code>, justo al final del dominio. En el caso de que no se indique explícitamente un número de puerto, se utilizará el puerto por defecto y no mostrará en la URL, que es el caso más habitual.</p>
+<pre class="language-js "><code class="language-js"><span class="token string">"https://manz.dev/"</span>       <span class="token comment">// Se accede por puerto 443 (HTTPS por defecto).</span>
+<span class="token string">"https://manz.dev:3000/"</span>  <span class="token comment">// Se accede por puerto 3000 explícitamente.</span>
+<span class="token string">"https://manz.dev:443/"</span>   <span class="token comment">// Se accede por puerto 443 (es el mismo que el caso 1)</span></code></pre>
+<h4 id="ruta-de-la-url" tabindex="-1"><a class="header-anchor" href="#ruta-de-la-url">Ruta de la URL</a></h4>
+<p>La <strong>ruta</strong> de una URL es la estructura de carpetas a la que vamos a acceder para descargar la página. Por defecto, si no se le indica una página o documento explícitamente, se suele buscar la página <code>index.html</code> o <code>index.htm</code>, aunque depende de la configuración.</p>
+<pre class="language-js "><code class="language-js"><span class="token string">"https://manz.dev/streams/"</span>           <span class="token comment">// Carpeta streams</span>
+<span class="token string">"https://manz.dev/software/mkweb/"</span>    <span class="token comment">// Carpeta mkweb, dentro de la carpeta software</span>
+<span class="token string">"https://manz.dev/"</span>                   <span class="token comment">// Carpeta principal (raíz)</span></code></pre>
+<blockquote>
+<p>En frontend, en muchas ocasiones, no tenemos <strong>rutas reales</strong> que equivalen a carpetas, sino que trabajamos con <strong>pseudo-rutas</strong>, una especie de ruta artificial creada para simular las rutas reales.</p>
+</blockquote>
+<h4 id="trailing-slash-barra-final" tabindex="-1"><a class="header-anchor" href="#trailing-slash-barra-final">Trailing slash (barra final)</a></h4>
+<p>Observa que cuando indicamos una URL que termina en una ruta (<em>sin indicar página o documento</em>), muchas veces te encontrarás una <code>/</code> al final y otras veces no. Esta <code>/</code> se denomina <strong>trailing slash</strong>. Puede parecer la misma página, pero mucho cuidado, ya que en algunos casos pueden ser URL diferentes:</p>
+<pre class="language-js "><code class="language-js"><span class="token string">"https://manz.dev/streams/"</span>         <span class="token comment">// Estamos accediendo a una carpeta llamada "streams"</span>
+<span class="token string">"https://manz.dev/streams"</span>          <span class="token comment">// Estamos accediendo a un fichero sin extensión llamado "streams"</span></code></pre>
+<p>En el primer caso no hay duda, se accede a la carpeta <code>streams/</code>. Sin embargo, en el segundo caso, si <code>streams</code> es una carpeta, lo que ocurrirá es que redireccionará a <code>streams/</code>, lo que hará que busque <code>streams/index.html</code>. Pero si en lugar de una carpeta, <code>streams</code> es un archivo (<em>sin extensión</em>), estaríamos accediendo a ese documento.</p>
+<h3 id="partes-opcionales-de-una-url" tabindex="-1"><a class="header-anchor" href="#partes-opcionales-de-una-url">Partes opcionales de una URL</a></h3>
+<p>Ya conocemos algunas de las partes que siempre suelen estar presentes en una URL. Sin embargo, hay otras <strong>partes opcionales</strong> que pueden existir en una URL, o puede que no se encuentren en ellas. Vamos a analizarlas:</p>
+<p><img src="url-parts-optionals.png" alt="Partes opcionales de una URL" width="1024" height="256" loading="lazy"></p>
+<h4 id="fichero-o-documento" tabindex="-1"><a class="header-anchor" href="#fichero-o-documento">Fichero o documento</a></h4>
+<p>En el apartado de <code>rutas</code> anterior, explicamos que las rutas son la estructura de carpetas de la dirección web indicada. Sin embargo, esta estructura de carpetas puede terminar de forma opcional en un fichero o documento:</p>
+<ul>
+<li>
+<p>En el caso de terminar en fichero o documento, indicamos al navegador que muestre el contenido de dicho fichero (<em>html, imágenes, video, texto...</em>) o que lo descargue (<em>aplicaciones ejecutables, ficheros comprimidos, etc...</em>).</p>
+</li>
+<li>
+<p>En el caso de no terminar en fichero o documento, el navegador buscará un archivo <code>index.html</code> o <code>index.htm</code> dentro de las carpetas de la ruta. En caso de no encontrarlo, mostrará un error 404.</p>
+</li>
+</ul>
+<pre class="language-js "><code class="language-js"><span class="token string">"https://manz.dev/"</span>                   <span class="token comment">// Se accede al fichero index.html de la ruta /</span>
+<span class="token string">"https://manz.dev/streams/"</span>           <span class="token comment">// Se accede al fichero index.html de la ruta /streams/</span>
+<span class="token string">"https://manz.dev/42.mp3"</span>             <span class="token comment">// Se accede al fichero 42.mp3 de la ruta /</span>
+<span class="token string">"https://manz.dev/software/vscode/"</span>   <span class="token comment">// Se accede al fichero index.html de la ruta /software/vscode/</span></code></pre>
+<h4 id="ancla-anchor" tabindex="-1"><a class="header-anchor" href="#ancla-anchor">Ancla (anchor)</a></h4>
+<p>Si lo que se ha cargado es un documento HTML, podemos terminar la URL con lo que se denomina un <strong>ancla HTML</strong> (<em>anchor</em>), que es un texto precedido del símbolo <code>#</code>. El navegador buscará en el documento HTML un elemento con el <code>id</code> mencionado, y posicionará el navegador justo en esa parte. Se suele utilizar para crear accesos directos a secciones de la página.</p>
+<pre class="language-js "><code class="language-js"><span class="token string">"https://manz.dev/#horarios"</span>            <span class="token comment">// Accede a la sección "horarios" de la página principal</span>
+<span class="token string">"https://manz.dev/software/#apps"</span>       <span class="token comment">// Accede a la sección "apps" de la página /software/index.html</span></code></pre>
+<h4 id="fragmento-de-texto" tabindex="-1"><a class="header-anchor" href="#fragmento-de-texto">Fragmento de texto</a></h4>
+<p>Aunque es menos conocida, es posible indicar tras el ancla (<em>o el símbolo del ancla si no existe ningún ancla</em>) el fragmento de texto <code>:~:text=</code> seguido de un texto o frase a destacar de la página. El navegador lo que hará es cargar la primera parte de la página, y acto seguido, buscará el texto indicado a continuación del <code>=</code> del fragmento de texto y lo destacará como si estuviera seleccionado.</p>
+<pre class="language-js "><code class="language-js"><span class="token comment">// Accede a la página principal y destaca el texto "streamer de código"</span>
+<span class="token string">"https://manz.dev/#:~:text=streamer de código"</span></code></pre>
+<p>Estas serían todas las partes básicas que podría tener una URL, tanto de forma obligatoria como de forma opcional. Sin embargo, nos quedan los denominados <strong>query strings</strong>, que explicaremos en el siguiente apartado.</p>
+<h3 id="query-strings-de-una-url" tabindex="-1"><a class="header-anchor" href="#query-strings-de-una-url">Query Strings de una URL</a></h3>
+<p>Al margen de todo lo que hemos explicado anteriormente, una URL puede contener <strong>variables</strong>. Son lo que se suele denominar las <strong>Query Strings</strong> (<em>QS</em>) y estas no son más que una lista de variables que se le pasa a una página desde la URL.</p>
+<p><img src="query-strings.png" alt="Query Strings de una URL" width="1024" height="256" loading="lazy"></p>
+<p>Observa que para pasar variables mediante una URL, hay que empezar indicando el símbolo <code>?</code>. Este símbolo representa el inicio de las <strong>Query Strings</strong>. A continuación, escribiremos el nombre de la variable, el símbolo <code>=</code> y el valor de dicha variable. Una vez se ha definido el nombre y el valor, se separa con el símbolo <code>&amp;</code> y podemos volver a indicar una nueva variable (<em>y así sucesivamente</em>).</p>
+<p>Construir a mano estas variables en un <badge-type class="string"></badge-type> puede ser muy tedioso (<em>hay que comprobar si es <code>?</code> o <code>&amp;</code></em>), por lo que podemos hacer uso de <code>URLSearchParams</code> para ello.</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><badge-type class="string"></badge-type> <code>.search</code></td>
+<td>Parte de la URL con las variables (query strings).</td>
+<td><code>?color=red&amp;sound=enabled</code></td>
+</tr>
+<tr>
+<td><badge-type class="object"></badge-type> <code>.searchParams</code></td>
+<td colspan="3">Crea un objeto para gestionar la lista de variables cómodamente.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="el-objeto-urlsearchparams" tabindex="-1"><a class="header-anchor" href="#el-objeto-urlsearchparams">El objeto URLSearchParams</a></h4>
+<p>El objeto <code>URLSearchParams</code> nos permite tener a nuestra disposición una forma cómoda de gestionar las variables de la URL, y no sólo acceder a ellas, sino modificarlas de varias formas. Observa el siguiente ejemplo, donde accedemos a <code>url.searchParams</code> que sería equivalente a  crear un nuevo objeto con <code>new URLSearchParams()</code>:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">"https://sub.manz.dev/path/?color=red&amp;sound=enabled"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+url<span class="token punctuation">.</span>search        <span class="token comment">// "?color=red&amp;sound=enabled"</span>
+
+<span class="token keyword">const</span> params <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URLSearchParams</span><span class="token punctuation">(</span><span class="token string">"?color=red&amp;sound=enabled"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+url<span class="token punctuation">.</span>search <span class="token operator">===</span> url<span class="token punctuation">.</span>searchParams<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// true</span></code></pre>
+<p>El objeto <code>params</code> o la propiedad <code>url.searchParams</code> (<em>el mismo objeto</em>), nos ofrece una serie de métodos para gestionar y manejar las variables de la URL, añadirlas, eliminarlas, etc...</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.append(name, value)</code></td>
+<td>Añade una variable a la URL.</td>
+</tr>
+<tr>
+<td><code>.set(name)</code></td>
+<td>Sobreescribe (o Añade si no existe) una variable en la URL.</td>
+</tr>
+<tr>
+<td><code>.delete(name)</code></td>
+<td>Elimina una variable de la URL.</td>
+</tr>
+<tr>
+<td><code>.sort()</code></td>
+<td>Reordena las variables de la URL (por defecto, orden alfabético).</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Acceso</strong></td>
+</tr>
+<tr>
+<td><badge-type class="boolean"></badge-type> <code>.has(name)</code></td>
+<td>Comprueba si existe la variable en la URL.</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>.get(name)</code></td>
+<td>Obtiene el valor de la variable indicada.</td>
+</tr>
+<tr>
+<td><badge-type class="array"></badge-type> <code>.getAll(name)</code></td>
+<td>Obtiene una lista de valores de la variable indicada.</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Iteradores</strong></td>
+</tr>
+<tr>
+<td><badge-type class="array"></badge-type> <code>.entries()</code></td>
+<td>Devuelve un array de arrays con las variables de la URL. <a href="/javascript/caracteristicas/array-functions/#iteradores">Ver entries()</a></td>
+</tr>
+<tr>
+<td><badge-type class="array"></badge-type> <code>.keys()</code></td>
+<td>Devuelve un array con los nombres de las variables de la URL. <a href="/javascript/caracteristicas/array-functions/#iteradores">Ver keys()</a></td>
+</tr>
+<tr>
+<td><badge-type class="array"></badge-type> <code>.values()</code></td>
+<td>Devuelve un array con los valores de las variables de la URL. <a href="/javascript/caracteristicas/array-functions/#iteradores">Ver values()</a></td>
+</tr>
+<tr>
+<td colspan="2"><strong>Bucles</strong></td>
+</tr>
+<tr>
+<td><code>.forEach()</code></td>
+<td>Recorre la lista de variables mediante un bucle. <a href="../../arrays/array-functions/index.htm#foreach-cada-uno">Ver forEach()</a></td>
+</tr>
+</tbody>
+</table>
+<p>Para entender bien esta serie de métodos, veamos unos ejemplos en los que partimos con dos variables: <code>color</code> y <code>sound</code>:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">"https://sub.manz.dev/path/?color=red&amp;sound=enabled"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Añadimos la variable fullscreen</span>
+url<span class="token punctuation">.</span>searchParams<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"fullscreen"</span><span class="token punctuation">,</span> <span class="token string">"true"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+url<span class="token punctuation">.</span>search  <span class="token comment">// "?color=red&amp;sound=enabled&amp;fullscreen=true"</span>
+
+<span class="token comment">// La eliminamos</span>
+url<span class="token punctuation">.</span>searchParams<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token string">"fullscreen"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+url<span class="token punctuation">.</span>search  <span class="token comment">// "?color=red&amp;sound=enabled"</span>
+
+<span class="token comment">// Comprobamos si existe la variable color</span>
+url<span class="token punctuation">.</span>searchParams<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span><span class="token string">"color"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// true</span>
+
+<span class="token comment">// Añadimos una nueva variable color (ahora tenemos dos)</span>
+url<span class="token punctuation">.</span>searchParams<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"color"</span><span class="token punctuation">,</span> <span class="token string">"blue"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+url<span class="token punctuation">.</span>search  <span class="token comment">// ?color=red&amp;sound=enabled&amp;color=blue</span>
+
+<span class="token comment">// Nos muestra la primera variable color que encuentre (null si no existe)</span>
+url<span class="token punctuation">.</span>searchParams<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"color"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// "red"</span>
+
+<span class="token comment">// Nos muestra un array con todas las variables color que existen</span>
+url<span class="token punctuation">.</span>searchParams<span class="token punctuation">.</span><span class="token function">getAll</span><span class="token punctuation">(</span><span class="token string">"color"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["red, "blue"]</span>
+
+<span class="token comment">// Sobreescribe la primera variable color que encuentre (o añade si no existe)</span>
+url<span class="token punctuation">.</span>searchParams<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"color"</span><span class="token punctuation">,</span> <span class="token string">"pink"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+url<span class="token punctuation">.</span>search  <span class="token comment">// "?color=pink&amp;sound=enabled"</span></code></pre>
+<p>Por último, tenemos los métodos <code>entries()</code>, <code>keys()</code> y <code>values()</code>, que devuelven iteradores que pueden recorrer las variables de la URL, y puedes profundizar en su funcionamiento en este artículo: <a href="../../objetos/iteradores/index.htm">Iteradores keys, values y entries</a>:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">"https://sub.manz.dev/path/?color=red&amp;sound=enabled"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">[</span><span class="token operator">...</span>url<span class="token punctuation">.</span>searchParams<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>     <span class="token comment">// ["color", "sound"]</span>
+<span class="token punctuation">[</span><span class="token operator">...</span>url<span class="token punctuation">.</span>searchParams<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>   <span class="token comment">// ["red", "enabled"]</span>
+<span class="token punctuation">[</span><span class="token operator">...</span>url<span class="token punctuation">.</span>searchParams<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">// [["color", "red"], ["sound", "enabled"]]</span></code></pre>
+<p>Por último, para terminar, un método <code>.forEach()</code> que nos permite recorrer la lista de variables de la URL:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">"https://sub.manz.dev/path/?color=red&amp;sound=enabled"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+url<span class="token punctuation">.</span>searchParams<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> name</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">La variable </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> tiene el valor </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// La variable color tiene el valor red</span>
+<span class="token comment">// La variable sound tiene el valor enabled</span></code></pre>
+
+  </div>
+</div>
+
+<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../fetch/index.htm" title="Fetch: Peticiones Asíncronas">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Fetch: Peticiones Asíncronas</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../cors/index.htm" title="Política CORS">
+  <div>
+    <span>Política CORS</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/S0YA8BadVbM" title="Cambiar clases CSS desde Javascript con classList">
+  <img loading="lazy" src="../../../vi/S0YA8BadVbM/mqdefault.jpg" alt="Cambiar clases CSS desde Javascript con classList">
+</a><a href="https://youtu.be/EiKYr5vjs48" title="Diferencias entre getElementById vs querySelector (y otros métodos del DOM)">
+  <img loading="lazy" src="../../../vi/EiKYr5vjs48/mqdefault.jpg" alt="Diferencias entre getElementById vs querySelector (y otros métodos del DOM)">
+</a><a href="https://youtu.be/UVauEId-jJ0" title="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+  <img loading="lazy" src="../../../vi/UVauEId-jJ0/mqdefault.jpg" alt="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+</a><a href="https://youtu.be/sU4e6_i_ExU" title="Consejos y buenas prácticas (IV): Javascript + Imágenes">
+  <img loading="lazy" src="../../../vi/sU4e6_i_ExU/mqdefault.jpg" alt="Consejos y buenas prácticas (IV): Javascript + Imágenes">
+</a><a href="https://youtu.be/KE2xRDM4Amg" title="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+  <img loading="lazy" src="../../../vi/KE2xRDM4Amg/mqdefault.jpg" alt="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+</a><a href="https://youtu.be/Xi07tHFzqR8" title="Cómo CLONAR objetos en Javascript correctamente (structuredClone)">
+  <img loading="lazy" src="../../../vi/Xi07tHFzqR8/mqdefault.jpg" alt="Cómo CLONAR objetos en Javascript correctamente (structuredClone)">
+</a></div>
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajehtml.com/svg/" title="SVG">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#svg"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/css/" title="CSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/postcss/" title="PostCSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="../../../fundamentos/index.htm" title="Fundamentos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="../../index.htm" title="Javascript">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="../../../npm/index.htm" title="NPM">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="../../../webcomponents/index.htm" title="WebComponents">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="../../../vuejs/index.htm" title="VueJS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="../../../automatizadores/index.htm" title="Automatizadores">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a><a class="topic" href="../../../retos/index.htm" title="Retos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#retos"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+    
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-6', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+
+  </div></body>
+
+</html>

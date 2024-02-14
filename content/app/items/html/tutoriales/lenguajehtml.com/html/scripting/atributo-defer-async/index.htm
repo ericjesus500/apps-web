@@ -1,0 +1,395 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e44f26">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Atributos defer y async - HTML en español - Lenguaje HTML</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Atributos defer y async - HTML en español">
+  <meta property="og:image" content="https://lenguajehtml.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="">
+  <meta property="og:url" content="https://lenguajehtml.com/html/scripting/atributo-defer-async/">
+  <meta property="twitter:url" content="https://lenguajehtml.com/html/scripting/atributo-defer-async/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Atributos defer y async - HTML en español">
+  <meta property="twitter:description" content="">
+  <meta property="twitter:image" content="https://lenguajehtml.com/large-summary.jpg">
+
+  </head>
+
+<body class="html" style="--logo-color: #e44f26"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="/">
+  <svg><use href="../../../assets/logos.svg#html"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeHTML.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/html.jpg')">
+    <h1><a href="index.htm">Atributos defer y async</a></h1><h2 class="typewriter">Modos de carga de las etiquetas &lt;script&gt;</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../etiqueta-html-script/index.htm">Etiqueta HTML &lt;script&gt;</a>
+    <a class="current" href="index.htm">Atributos defer y async</a>
+    <a href="../script-type-module/index.htm">Los módulos Javascript (ESM)</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Al añadir una etiqueta <code>&lt;script&gt;</code> a nuestra página, el navegador va a descargar, procesar y ejecutar el Javascript de una forma muy concreta, que explicamos en el artículo anterior, en la <a href="../etiqueta-html-script/index.htm#modalidad-cl%C3%A1sica">modalidad clásica</a>. Sin embargo, podemos modificar esta forma de comportarse indicando unos atributos en la etiqueta <code>&lt;script&gt;</code>.</p>
+<p>El navegador, al encontrar una etiqueta <code>&lt;script&gt;</code>, <strong>debe interrumpir el renderizado de la página</strong> para descargar, procesar y ejecutar el Javascript, ya que no puede realizar ambas cosas a la vez. Con dichos atributos podemos definir como se va a comportar el navegador y cuando debe procesar el javascript.</p>
+<p>Para ello, hay que entender bien estos tres procesos:</p>
+<ul>
+<li><strong>Descarga</strong>: El navegador pide un recurso (<em>HTML, Javascript, etc...</em>) y lo transfiere a nuestro sistema.</li>
+<li><strong>Parseo HTML</strong>: El navegador lee el código HTML y lo renderiza (<em>dibuja</em>) en la página.</li>
+<li><strong>Ejecución JS</strong>: El navegador ejecuta el código Javascript y lleva a cabo sus tareas.</li>
+</ul>
+<p>Una vez tenemos claro estos tres procesos, ahora veamos cada modalidad. Observa especialmente si se bloquea la renderización del HTML en cada una de ellas:</p>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>¿Bloquea al<br> descargar JS?</th>
+<th>¿Bloquea al<br> ejecutar JS?</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><i>ninguno</i></td>
+<td>❌ Sí</td>
+<td>❌ Sí</td>
+<td>Le da prioridad al Javascript. Bloquea desde que empieza a descargar.</td>
+</tr>
+<tr>
+<td><badge-type class="boolean"></badge-type> <code>defer</code></td>
+<td>✅ No</td>
+<td>✅ No</td>
+<td>Le da prioridad al HTML. Descarga en paralelo y aplaza ejecución JS al final.</td>
+</tr>
+<tr>
+<td><badge-type class="boolean"></badge-type> <code>async</code></td>
+<td>✅ No</td>
+<td>❌ Sí</td>
+<td>Mezcla de anteriores. Descarga en paralelo, ejecuta desde que se descarga.</td>
+</tr>
+</tbody>
+</table>
+<p>Si no se ha entendido bien el comportamiento de las diferentes cargas en las tablas anteriores, aquí tienes una demostración visual interactiva de como funcionan:</p>
+<details>
+  <summary>Ejemplo visual de modos de carga</summary>
+  <div>
+    <iframe loading="lazy" src="https://manzdev.github.io/script-type/" style="border: 0; width: 1024px; min-height: 800px;"></iframe>
+    <img loading="lazy" src="script-async-defer.png" alt="Modo de carga de scripts">
+  </div>
+</details>
+<h3 id="modalidad-diferida-atributo-defer" tabindex="-1"><a class="header-anchor" href="#modalidad-diferida-atributo-defer">Modalidad diferida (atributo <code>defer</code>)</a></h3>
+<p>En la modalidad de <strong>carga diferida</strong>, el navegador le da prioridad a la carga del documento HTML. Este tipo de carga se realiza incluyendo el atributo <code>defer</code> en la etiqueta <code>&lt;script&gt;</code> de la siguiente forma:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>index.js<span class="token punctuation">"</span></span> <span class="token attr-name">defer</span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></code></pre>
+<p>En esta modalidad, lo que ocurre es lo siguiente:</p>
+<ul>
+<li>👁‍🗨 El navegador está renderizando el documento HTML y encuentra una etiqueta <code>&lt;script defer&gt;</code>.</li>
+<li>🔽 Descarga el script de forma paralela sin detener ni bloquear el renderizado del documento HTML.</li>
+<li>👁‍🗨 Continua la renderización del HTML. Si encuentra otro <code>&lt;script defer&gt;</code> repite los pasos.</li>
+<li>🏃‍♀️ Una vez termina de renderizar el documento HTML, ejecuta el script.</li>
+</ul>
+<p>En muchas ocasiones habrás observado que las etiquetas <code>&lt;script&gt;</code> se colocan (<em>o se aconseja hacerlo</em>) justo antes del cierre de la etiqueta <code>&lt;/body&gt;</code>. Esto ocurre así porque históricamente, el atributo <code>defer</code> no existía (<em>o existía pero Internet Explorer no lo soportaba</em>) y se necesitaba procesar el Javascript una vez se hubiese terminado de cargar todo el HTML, para evitar acceder a una parte del documento HTML desde Javascript y que aún no hubiera cargado.</p>
+<p><caniuse-support title="defer attribute for external scripts" feature="script-defer" edge="12/y" firefox="3.5/y" chrome="8/y" safari="5/y" opera="15/y" ios_saf="5.0-5.1/y" and_chr="116/y" and_ff="116/y">
+</caniuse-support></p>
+<p>Hoy en día, incluir una etiqueta <code>&lt;script defer&gt;</code> en el <code>&lt;head&gt;</code>, es equivalente a una etiqueta <code>&lt;script&gt;</code> justo antes del cierre del <code>&lt;/body&gt;</code>.</p>
+<blockquote>
+<p>Ten en cuenta que el atributo <code>defer</code> en una etiqueta <code>&lt;script&gt;</code> que también tiene atributo <code>type=&quot;module&quot;</code> no es necesario, ya que el comportamiento de aplazar la ejecución Javascript al final viene implícita en el comportamiento de los módulos.</p>
+</blockquote>
+<h3 id="modalidad-asíncrona-atributo-async" tabindex="-1"><a class="header-anchor" href="#modalidad-asíncrona-atributo-async">Modalidad asíncrona (atributo <code>async</code>)</a></h3>
+<p>En la modalidad de <strong>carga asíncrona</strong>, el navegador le da prioridad a la ejecución del Javascript. Este tipo de carga se realiza incluyendo el atributo <code>async</code> en la etiqueta <code>&lt;script&gt;</code> de la siguiente forma:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>index.js<span class="token punctuation">"</span></span> <span class="token attr-name">async</span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></code></pre>
+<p>En esta modalidad de <strong>carga asíncrona</strong>, lo que ocurre es lo siguiente:</p>
+<ul>
+<li>👁‍🗨 El navegador está renderizando el documento HTML y encuentra una etiqueta <code>&lt;script async&gt;</code>.</li>
+<li>🔽 El navegador descarga el script sin detener ni bloquear la carga del documento HTML.</li>
+<li>🛑 Una vez descargado, interrumpe el renderizado HTML temporalmente y ejecuta el script.</li>
+<li>👁‍🗨 Una vez terminada la ejecución del código Javascript, continua con el renderizado HTML.</li>
+</ul>
+<p>Este comportamiento puede interesar para cargar ciertas librerías que quieres que estén disponibles lo antes posible, pero que no van acceder directamente al HTML, por lo que no importa que el documento no esté renderizado por completo.</p>
+<p><caniuse-support title="async attribute for external scripts" feature="script-async" edge="12/y" firefox="3.6/y" chrome="8/y" safari="5.1/y" opera="15/y" ios_saf="5.0-5.1/y" and_chr="116/y" and_ff="116/y">
+</caniuse-support></p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../etiqueta-html-script/index.htm" title="Etiqueta HTML &lt;script&gt;">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Etiqueta HTML &lt;script&gt;</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../script-type-module/index.htm" title="Los módulos Javascript (ESM)">
+  <div>
+    <span>Los módulos Javascript (ESM)</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/cQIlwKSAyAc" title="Crear packs de iconos con sprites SVG">
+  <img loading="lazy" src="../../../vi/cQIlwKSAyAc/mqdefault.jpg" alt="Crear packs de iconos con sprites SVG">
+</a><a href="https://youtu.be/RW5erp81FMY" title="Consejos y buenas prácticas (I): HEAD">
+  <img loading="lazy" src="../../../vi/RW5erp81FMY/mqdefault.jpg" alt="Consejos y buenas prácticas (I): HEAD">
+</a><a href="https://youtu.be/lDPJQyXow_g" title="Consejos y buenas prácticas (VII): SEO">
+  <img loading="lazy" src="../../../vi/lDPJQyXow_g/mqdefault.jpg" alt="Consejos y buenas prácticas (VII): SEO">
+</a><a href="https://youtu.be/7oPdEM0VXOs" title="Consejos y buenas prácticas (VI): Performance">
+  <img loading="lazy" src="../../../vi/7oPdEM0VXOs/mqdefault.jpg" alt="Consejos y buenas prácticas (VI): Performance">
+</a><a href="https://youtu.be/LAHR5gl07ks" title="Consejos y buenas prácticas (V): Accesibilidad">
+  <img loading="lazy" src="../../../vi/LAHR5gl07ks/mqdefault.jpg" alt="Consejos y buenas prácticas (V): Accesibilidad">
+</a><a href="https://youtu.be/SVomAFpMw30" title="Consejos y buenas prácticas (II): HTML + WebFonts">
+  <img loading="lazy" src="../../../vi/SVomAFpMw30/mqdefault.jpg" alt="Consejos y buenas prácticas (II): HTML + WebFonts">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-5', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

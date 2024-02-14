@@ -1,0 +1,654 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>CSS Nesting: CSS anidado - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Una característica futura de CSS es la posibilidad de anidar bloques de CSS uno dentro de otro. Con PostCSS podemos utilizarlo hoy mismo.">
+  <meta name="view-transition" content="same-origin">
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="CSS Nesting: CSS anidado - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/postcss/plugins/css-nesting/css-nesting.png">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Una característica futura de CSS es la posibilidad de anidar bloques de CSS uno dentro de otro. Con PostCSS podemos utilizarlo hoy mismo.">
+  <meta property="og:url" content="https://lenguajecss.com/postcss/plugins/css-nesting/">
+  <meta property="twitter:url" content="https://lenguajecss.com/postcss/plugins/css-nesting/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="CSS Nesting: CSS anidado - CSS en español">
+  <meta property="twitter:description" content="Una característica futura de CSS es la posibilidad de anidar bloques de CSS uno dentro de otro. Con PostCSS podemos utilizarlo hoy mismo.">
+  <meta property="twitter:image" content="https://lenguajecss.com/postcss/plugins/css-nesting/css-nesting.png">
+
+  </head>
+
+<body class="css menu-open " style="--logo-color: #972321"><script>
+    matchMedia("(width <= 1180px)").matches && document.body.classList.toggle("menu-open");
+  </script>
+  
+
+
+
+
+
+
+
+
+<section class="menubar">
+  <div class="menubar-content">
+    <h1>Lenguaje CSS</h1>
+
+    <a class="cover" title="Lenguaje CSS (postcss)" href="../../index.htm" style="--image: url('../../../assets/postcss.jpg')"></a>
+
+    <header>
+      <a href="../../introduccion/que-es/index.htm" title="¿Qué es PostCSS?">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m14 26l1.41-1.41L7.83 17H28v-2H7.83l7.58-7.59L14 6L4 16l10 10z"></path></svg>
+      </a>
+      <a href="../../index.htm" title="Volver al índice">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 256"><path fill="#888888" d="M240 210h-18v-94.45a14.06 14.06 0 0 0-4.53-10.32l-80-75.49l-.09-.08a13.94 13.94 0 0 0-18.83 0l-.09.08l-80 75.5A14 14 0 0 0 34 115.55V210H16a6 6 0 0 0 0 12h224a6 6 0 0 0 0-12ZM46 115.55a2 2 0 0 1 .65-1.48l.09-.08l79.94-75.48a2 2 0 0 1 2.63 0L209.26 114l.08.08a2 2 0 0 1 .66 1.48V210h-52v-50a14 14 0 0 0-14-14h-32a14 14 0 0 0-14 14v50H46ZM146 210h-36v-50a2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"></path></svg>
+      </a>
+      <a href="../purgecss/index.htm" title="PurgeCSS: CSS no utilizado">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></path></svg>
+      </a>
+    </header>
+
+    <div style="display:none">
+      <svg id="link-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 256 256"><g fill="#888888"><path d="M208 88h-56V32Z" opacity=".2"></path><path d="m213.66 82.34l-56-56A8 8 0 0 0 152 24H56a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V88a8 8 0 0 0-2.34-5.66ZM160 51.31L188.69 80H160ZM200 216H56V40h88v48a8 8 0 0 0 8 8h48v120Z"></path></g></svg>
+      <svg id="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="#888888" d="M2 12.5C2 9.46 4.46 7 7.5 7H18c2.21 0 4 1.79 4 4s-1.79 4-4 4H9.5a2.5 2.5 0 0 1 0-5H17v2H9.41c-.55 0-.55 1 0 1H18c1.1 0 2-.9 2-2s-.9-2-2-2H7.5C5.57 9 4 10.57 4 12.5S5.57 16 7.5 16H17v2H7.5C4.46 18 2 15.54 2 12.5z"></path></svg>
+    </div>
+
+    <div class="links">
+      <span class="folder">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 512 512"><path fill="#888888" d="M41 73v304.563L88.697 151H423v-30H185.514l-16-48H41zm62.303 96L43.092 455h381.605l60.211-286H103.303z"></path></svg>
+        Plugins de PostCSS
+      </span>
+            <a class="link" href="../autoprefixer/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Autoprefixer: Prefijos CSS
+            </a>
+            <a class="link active" href="index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              CSS Nesting: CSS anidado
+            </a>
+            <a class="link" href="../purgecss/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              PurgeCSS: CSS no utilizado
+            </a>
+    </div>
+  </div>
+
+  <div class="sidebox">
+    <svg class="close-menu" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19V5m10 1l-6 6l6 6m-6-6h14"></path></svg>
+    <div class="socials">
+      <a class="twitch" href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+      <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+      <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+      <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  const toggleMenu = () => (document.body.classList.toggle("menu-open"));
+  document.querySelector(".close-menu").addEventListener("click", toggleMenu);
+
+  matchMedia("(width <= 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+  matchMedia("(width > 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+
+  const activeLink = document.querySelector(".links .active");
+  const icon = /* svg */`<svg viewBox="0 0 24 24"><use href="#anchor-icon" /></svg>`;
+  const headers = [...document.querySelectorAll(".contents h3")].map(link => ({ text: link.textContent, id: link.id }));
+  const links = [];
+  headers.reverse().forEach(({ text, id }) => {
+    const link = document.createElement("a");
+    link.classList.add("anchor");
+    link.href = "#" + id;
+    link.insertAdjacentHTML("beforeend", icon);
+    link.insertAdjacentText("beforeend", ` ${text}`);
+    activeLink.after(link);
+  });
+</script>
+
+  <div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/postcss.jpg')">
+    <h1><a href="index.htm">CSS Nesting: CSS anidado</a></h1></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../autoprefixer/index.htm">Autoprefixer: Prefijos CSS</a>
+    <a class="current" href="index.htm">CSS Nesting: CSS anidado</a>
+    <a href="../purgecss/index.htm">PurgeCSS: CSS no utilizado</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>La idea detrás del concepto <strong>CSS Nesting</strong> es la posibilidad de crear <strong>reglas CSS</strong> (<em>bloques de código CSS</em>) dentro de otras reglas CSS, anidando código y haciéndolo mucho más fácil de entender y mantener.</p>
+<blockquote>
+<blockquote>
+<p><strong>OJO</strong>: Este artículo se centra en el CSS Nesting <strong>no nativo</strong>, es decir, en el uso de CSS Nesting, convirtiéndolo (<em>transpilándolo</em>) a CSS tradicional, para asegurar el mayor soporte en navegadores antiguos. Echa un vistazo al siguiente artículo si quieres más información sobre el <a href="../../../css/calidad-de-codigo/css-nesting/index.htm">CSS Nesting nativo</a>.</p>
+</blockquote>
+</blockquote>
+<p><img src="css-nesting.png" alt="CSS Nesting" width="2424" height="925" loading="lazy"></p>
+<p>Por esta razón, si queremos utilizar actualmente <strong>CSS Nesting</strong>, la mejor opción es utilizar alguna herramienta como <strong>PostCSS</strong> en nuestro proyecto, para traducir el código a CSS nativo, sin tener que esperar a que los navegadores la soporten, con alguno de los siguientes plugins:</p>
+<table>
+<thead>
+<tr>
+<th>Plugin</th>
+<th>Autor</th>
+<th>Tipo de animamiento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/jonathantneal/postcss-nesting">postcss-nesting</a></td>
+<td>jonathanneal</td>
+<td>Anidamiento CSS <a href="https://www.w3.org/TR/2021/WD-css-nesting-1-20210831/">estándar anterior de CSS Nesting</a></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/@csstools/postcss-nesting-experimental">@csstools/postcss-nesting-experimental</a></td>
+<td>csstools</td>
+<td>Anidamiento CSS <a href="https://drafts.csswg.org/css-nesting/">estándar actual de CSS Nesting</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/jonathantneal/postcss-to-nest">postcss-to-nest</a></td>
+<td>jonathanneal</td>
+<td>Transforma CSS sin anidar en CSS anidado.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/postcss/postcss-nested">postcss-nested</a></td>
+<td>postcss</td>
+<td>Anidamiento CSS con sintaxis de <a href="https://sass-lang.com/">Sass</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>Veremos más adelante como instalarlo y utilizarlo, pero vamos a explicar primero en que consiste el <strong>CSS Nesting</strong> (<em>anidamiento CSS</em>).</p>
+<h3 id="anidamiento-css" tabindex="-1"><a class="header-anchor" href="#anidamiento-css">Anidamiento CSS</a></h3>
+<p>Cuando escribimos CSS, tenemos que dominar y utilizar <a href="../../../css/selectores/selectores-basicos/index.htm">selectores CSS básicos</a> y <a href="../../../css/selectores/combinadores/index.htm">selectores CSS avanzados</a> para seleccionar los elementos a los que queremos dar estilo y escribir nuestras reglas específicas. Con el <strong>CSS Nesting</strong> (<em>anidamiento de CSS</em>) no es que evitemos utilizarlos, sino que los utilizaremos menos porque usando el indentado (<em>similar a como ocurre en Python</em>) estaremos creando selectores, sólo que de una forma «más lógica para humanos».</p>
+<p>El <strong>CSS Nesting</strong> se basa en la posibilidad de incluir <strong>bloques de CSS</strong> uno dentro de otro (<em>algo que no es posible actualmente en CSS nativo</em>), de modo que facilita la organización del código a medida que se lee. Se utilizará el carácter <code>&amp;</code> para indicar que se sustituye por todo el selector padre que tengamos (<em>en este ejemplo, <code>.item</code>, pero en casos con mayor anidamiento será más largo</em>):</p>
+<pre class="language-css "><code class="language-css"><span class="token selector">.item</span> <span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+
+  <span class="token selector">&amp; .warning</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p>Desde los cambios del pasado <strong>28 de Octubre de 2022</strong>, el anidado permite omitir el carácter <code>&amp;</code>, algo que antiguamente no era posible. De esta forma, tenemos una sintaxis mucho menos estricta y es posible utilizar combinadores de CSS más avanzados de forma más legible. Lee más en <a href="../../../css/calidad-de-codigo/css-nesting/index.htm">CSS Nesting nativo</a>.</p>
+</blockquote>
+<p>Tenemos la clase <code>.warning</code> en el interior del bloque <code>.item</code>, por lo que eso implica que sólo se le dará estilo CSS a las clases <code>.warning</code> que estén dentro del elemento <code>.item</code>. Esto se traduce a CSS nativo de la siguiente forma:</p>
+<pre class="language-css "><code class="language-css"><span class="token selector">.item</span> <span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.item .warning</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Quizás con este ejemplo aún no se vea claramente la ventaja del <strong>anidamiento CSS</strong>, pero a medida que escribimos más código las ventajas se hacen evidentes. Si has trabajado con CSS durante algún tiempo, habrás comprobado que una de las cosas más complejas de CSS es <strong>mantener el código</strong> a medida que crece. En este apartado es donde brilla el anidamiento.</p>
+<p>Grandes ventajas de utilizar <strong>CSS Nesting</strong>:</p>
+<ul>
+<li>El <strong>primer nivel</strong> de anidamiento se puede usar como un «componente» o entidad.</li>
+<li><strong>Simplifica</strong> mucho los selectores CSS, haciéndolos más intuitivos (<em>sobre todo para novatos</em>).</li>
+<li>Al <strong>indentar</strong>, el código se hace mucho más legible.</li>
+<li>Al <strong>agrupar con comas y anidar</strong> conseguimos mucha más flexibilidad en menos código.</li>
+<li><strong>Buscar</strong> fragmentos de código es mucho más fácil (<em>si somos organizados</em>).</li>
+</ul>
+<p>Compliquemos un poco más un código de ejemplo con <strong>anidamiento CSS</strong>:</p>
+<pre class="language-css "><code class="language-css"><span class="token selector">.menu,
+.sidebar</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+
+  <span class="token selector">&amp; a</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> #333399<span class="token punctuation">;</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 1.25rem<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">&amp; .warning</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.warning</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Observa que en este ejemplo tenemos los elementos <code>a</code> y las clases <code>.warning</code> tanto dentro de clases <code>.menu</code> como de clases <code>.sidebar</code>. Esto nos permitirá sustancialmente evitar repetir código. Este ejemplo se traduciría a CSS nativo como veremos a continuación:</p>
+<pre class="language-css "><code class="language-css"><span class="token selector">.menu,
+.sidebar</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.menu a,
+.sidebar a</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #333399<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 1.25rem<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.menu .warning,
+.sidebar .warning</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.warning</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Como ves, es mucho más fácil de leer el ejemplo superior con anidamiento CSS que este último, donde a medida que crece es mucho menos legible.</p>
+<h3 id="anidamiento-sobre-el-padre" tabindex="-1"><a class="header-anchor" href="#anidamiento-sobre-el-padre">Anidamiento sobre el padre</a></h3>
+<p>Un detalle interesante a tener en cuenta es que podemos anidar selectores sobre el padre, simplemente teniendo en cuenta <strong>si existe o no existe</strong> espacio entre el símbolo <code>&amp;</code> de anidamiento.</p>
+<pre class="language-css "><code class="language-css"><span class="token selector">.item</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> grey<span class="token punctuation">;</span>
+
+  <span class="token selector">&amp;:hover</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>En este fragmento de código, el selector anidado <code>&amp;:hover</code> realmente está haciendo referencia al selector <code>.item:hover</code>, es decir, cuando tenemos el ratón sobre el elemento <code>.item</code>.</p>
+<p>Pero por otro lado, si añadieramos un espacio en el selector anidado <code>&amp; :hover</code> estaríamos haciendo referencia a <code>.item :hover</code>, que tiene un matiz diferente al anterior: seleccionamos cuando tenemos el ratón sobre <strong>un elemento que está dentro</strong> de <code>.item</code>.</p>
+<h3 id="anidamiento-en-ancestros" tabindex="-1"><a class="header-anchor" href="#anidamiento-en-ancestros">Anidamiento en ancestros</a></h3>
+<p>En algunos casos, es posible que se quiera hacer referencia a un elemento dependiendo de los ancestros (<em>padres, abuelos, etc...</em>) que tenga un cierto elemento. Esto permitiría flexibilizar la forma de anidar selectores en nuestro código y hacerlo mucho más potente aún.</p>
+<p>Por ejemplo, podemos utilizar el siguiente código para hacer referencia a cualquier mención del padre de primer nivel:</p>
+<pre class="language-css "><code class="language-css"><span class="token selector">.item</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> grey<span class="token punctuation">;</span>
+
+  <span class="token selector">.container &amp;</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Esto nos permitirá indicar al navegador que queremos dar estilo al elemento <code>.item</code> siempre y cuando tengan un ancestro con clase <code>.container</code>. Así podremos organizar grupos de código CSS donde aparezca cualquier mención a un determinado elemento.</p>
+<p>El código equivalente en CSS nativo sería el siguiente:</p>
+<pre class="language-css "><code class="language-css"><span class="token selector">.item</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> grey<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.container .item</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Como vemos, se ha reemplazado el <code>&amp;</code> por el selector que está anidando. Ten en cuenta que esta sintaxis es uno de los cambios de la última versión de la especificación del <strong>CSS Nesting</strong>.</p>
+<h3 id="instalación-del-plugin-de-postcss" tabindex="-1"><a class="header-anchor" href="#instalación-del-plugin-de-postcss">Instalación del plugin de PostCSS</a></h3>
+<p>En principio, las opciones que recomiendo son las siguientes:</p>
+<ul>
+<li>Usar el plugin <a href="https://github.com/jonathantneal/postcss-nesting">postcss-nesting</a>, que sigue la versión antigua del estándar oficial.</li>
+<li>Usar el plugin <a href="https://www.npmjs.com/package/@csstools/postcss-nesting-experimental">@csstools/postcss-nesting-experimental</a>, que sigue la versión nueva del estándar oficial, aunque está en fase experimental.</li>
+</ul>
+<p>El primer paso sería instalar el paquete como una dependencia de desarrollo. Recuerda instalar el paquete <code>postcss-cli</code> si no tienes PostCSS en tu proyecto, aunque lo más común hoy en día es utilizar un empaquetador como <a href="https://lenguajejs.com/automatizadores/vite/guia-tutorial-inicial-de-vite/">Vite</a>:</p>
+<pre class="language-bash "><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> --save-dev postcss-cli @csstools/postcss-nesting-experimental</code></pre>
+<p>Una vez instalado, abrimos el fichero de configuración <code>postcss.config.js</code> en la carpeta raíz de nuestro proyecto. En él añadiremos <code>@csstools/postcss-nesting-experimental</code> (<em>o el plugin deseado</em>) a la lista de plugins que estemos usando con <code>postcss</code>:</p>
+<pre class="language-js "><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token string-property property">"plugins"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">"@csstools/postcss-nesting-experimental"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"autoprefixer"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>En este caso, observa que tenemos autoprefixer instalado también (<em>aunque no es obligatorio para este ejemplo</em>) y lo hemos colocado después de nuestro plugin de nesting. El <strong>orden importa</strong>, ya que es el orden con el cuál <strong>PostCSS</strong> procesará los plugins y los aplicará.</p>
+<p>Con esto tendríamos el plugin de PostCSS instalado. Ahora vamos a crear un fichero <code>index.css</code> para hacer un ejemplo y observar que funciona correctamente:</p>
+<pre class="language-css "><code class="language-css"><span class="token selector">.item</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> grey<span class="token punctuation">;</span>
+
+  <span class="token selector">&amp; .warning</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token property">animation</span><span class="token punctuation">:</span> jump 10s linear<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.container &amp;</span> <span class="token punctuation">{</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 2px solid black<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Una vez guardado en <code>src/css/index.css</code>, podemos probar a ejecutar <code>postcss</code> y observa si aplica los cambios de los dos plugins instalados:</p>
+<pre class="language-bash "><code class="language-bash">$ npx postcss src/css/index.css --no-map</code></pre>
+<p>Si todo está configurado correctamente, <strong>PostCSS</strong> debería sacar este código CSS, donde han sido aplicados los plugins:</p>
+<pre class="language-css "><code class="language-css"><span class="token selector">.item</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> grey<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.item .warning</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">-webkit-animation</span><span class="token punctuation">:</span> jump 10s linear<span class="token punctuation">;</span>
+          <span class="token property">animation</span><span class="token punctuation">:</span> jump 10s linear<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.container .item</span> <span class="token punctuation">{</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 2px solid black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>El prefijo <code>-webkit-animation</code> es añadido por el plugin <strong>autoprefixer</strong>, que no tiene nada que ver con este capítulo. Si te interesa, puedes aprender sobre él en <a href="../autoprefixer/index.htm">Plugins de PostCSS: Autoprefixer</a>.</p>
+<blockquote>
+<p>Ten en cuenta que el plugin <code>postcss-nesting</code> forma parte de un pack de plugins más grande llamado <a href="https://preset-env.cssdb.org/">postcss-preset-env</a>, que se encarga de transpilar nuestro código CSS a una versión más antigua y con más soporte, de forma similar a como lo hace <a href="https://babeljs.io/">Babel</a> en Javascript, por lo que quizás te interese dicha aproximación.</p>
+</blockquote>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../autoprefixer/index.htm" title="Autoprefixer: Prefijos CSS">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Autoprefixer: Prefijos CSS</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../purgecss/index.htm" title="PurgeCSS: CSS no utilizado">
+  <div>
+    <span>PurgeCSS: CSS no utilizado</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/L7Hi32qBIxI" title="Cómo crear SOMBRAS EN CAJAS (box-shadow)">
+  <img loading="lazy" src="../../../vi/L7Hi32qBIxI/mqdefault.jpg" alt="Cómo crear SOMBRAS EN CAJAS (box-shadow)">
+</a><a href="https://youtu.be/hju7SXmiK7Y" title="Cómo crear SOMBRAS DE TEXTO (text-shadow)">
+  <img loading="lazy" src="../../../vi/hju7SXmiK7Y/mqdefault.jpg" alt="Cómo crear SOMBRAS DE TEXTO (text-shadow)">
+</a><a href="https://youtu.be/pJGEELsEM1w" title="Consejos y buenas prácticas (III): CSS">
+  <img loading="lazy" src="../../../vi/pJGEELsEM1w/mqdefault.jpg" alt="Consejos y buenas prácticas (III): CSS">
+</a><a href="https://youtu.be/OQtAyXHeKnc" title="Grid CSS: Grids por área">
+  <img loading="lazy" src="../../../vi/OQtAyXHeKnc/mqdefault.jpg" alt="Grid CSS: Grids por área">
+</a><a href="https://youtu.be/esjagdcozX0" title="Flex CSS: ¡Aprendiendo las bases!">
+  <img loading="lazy" src="../../../vi/esjagdcozX0/mqdefault.jpg" alt="Flex CSS: ¡Aprendiendo las bases!">
+</a><a href="https://youtu.be/0sFtRnbe0fo" title="Novedades de CSS: Dr. CSStrange y el multiverso">
+  <img loading="lazy" src="../../../vi/0sFtRnbe0fo/mqdefault.jpg" alt="Novedades de CSS: Dr. CSStrange y el multiverso">
+</a></div>
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajehtml.com/svg/" title="SVG">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#svg"></use>
+  </svg>
+</a><a class="topic" href="../../../css/index.htm" title="CSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="../../index.htm" title="PostCSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/fundamentos/" title="Fundamentos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/javascript/" title="Javascript">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/npm/" title="NPM">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/webcomponents/" title="WebComponents">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/vuejs/" title="VueJS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/automatizadores/" title="Automatizadores">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/retos/" title="Retos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#retos"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+    
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+
+  </div></body>
+
+</html>

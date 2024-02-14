@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>inline-flex</title>
+
+	<style>
+
+		*{
+			box-sizing: border-box;			
+		}
+
+		body{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		body div{
+			text-align: center;
+		}
+
+		h1{
+			text-align: center;
+		}
+
+		.content{
+		    width: 60%;
+		    height: 300px;
+		    padding: 20px;
+		    margin: 30px auto;
+		    background-color: #E2E2E0;
+		    display: inline-flex;
+		    flex-wrap: wrap;
+		    border:1px solid #DFDEDB;
+		    border-radius: 5px;
+	  	}
+
+	  	.box{
+		  	width: 150px;
+		  	height: auto;
+		  	display: flex;
+		  	align-items: center;
+		  	justify-content: center;
+		  	font-family: Arial, serif;
+		  	font-size: 20px;
+		  	color: #fff;
+	  	}
+
+	  	.box:nth-child(1){
+			background-color: skyblue;
+		}
+
+		.box:nth-child(2){
+			background-color: orange;
+		}
+
+		.box:nth-child(3){
+			background-color: #b21016;
+		}
+
+		.box:nth-child(4){
+			background-color: #2EEC44;
+		}
+
+		.box:nth-child(5){
+			background-color: #E21DDB;
+		}
+
+		.box:nth-child(6){
+			background-color: #1D3EE3;
+		}
+
+		.pre-content-list{
+			width: 60%;
+		    color: white;
+		    border: 3px solid grey;
+		    padding: 0;
+		    margin: 2em auto;
+		    font-size: 1.1em;
+		    background-color: #29313f;
+		    line-height: 1.5;
+		    white-space: pre-wrap;
+		    border-radius: 5px;
+		}
+
+	</style>	
+</head>
+<body>
+  
+  	<h1>display: inline-flex</h1>
+  	<pre class="pre-content-list">			
+  		.content{
+		    width: 60%;
+		    height: 300px;
+		    padding: 20px;
+		    margin: 30px auto;
+		    background-color: #E2E2E0;
+		    display: inline-flex;
+		    flex-wrap: wrap;
+		    border:1px solid #DFDEDB;
+		    border-radius: 0px;
+	  	}
+
+	  	.box{
+		  	width: 150px;
+		  	height: auto;
+		  	display: flex;
+		  	align-items: center;
+		  	justify-content: center;
+		  	font-family: Arial, serif;
+		  	font-size: 20px;
+		  	color: #fff;
+	  	}
+  	</pre>
+  	<div class="content">
+    	<div class="box">box 1</div>
+        <div class="box">box 2 Lorem, ipsum dolor sit amet Lorem ipsum dolor sit amet. Lorem, ipsum, dolor.</div>
+        <div class="box">box 3</div>
+        <div class="box">box 4</div>
+        <div class="box">box 5</div>
+        <div class="box">box 6</div>
+	</div>
+</body>
+</html>

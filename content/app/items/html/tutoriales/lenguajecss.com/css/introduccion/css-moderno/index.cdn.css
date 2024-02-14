@@ -1,0 +1,39 @@
+h3 {
+  margin: 0;
+  margin-top: 5rem;
+}
+
+.post .contents h3 + h4 > a {
+  color: slateblue;
+}
+
+.post .contents h3 + :is(h4, h4 + p) {
+  margin-bottom: 0.5rem;
+}
+
+pre {
+  padding-bottom: 3rem !important;
+}
+
+pre::before,
+pre::before {
+  --shadow-color: #660b0b;
+
+  content: "Antes";
+  background: #b53535;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 0.25rem 0.7rem;
+  border-right: 3px solid var(--shadow-color);
+  border-bottom: 2px solid var(--shadow-color);
+}
+
+pre + pre::before {
+  --shadow-color: #065806;
+
+  content: "Ahora";
+  background: #36b336;
+}

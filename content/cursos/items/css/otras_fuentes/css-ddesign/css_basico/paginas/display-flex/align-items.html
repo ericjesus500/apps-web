@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>align-items</title>
+	<style>
+		*{
+			box-sizing: border-box;			
+		}
+
+		body{			
+			text-align: center;
+			font-family: Arial, serif;
+		}
+
+		h1, h2, h3, h4{
+			padding: 30px 0;
+		}
+
+		.content{
+			width: 90%;			
+			padding: 20px;
+			margin: 30px auto;
+			background-color: #F8F8F5;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			border:1px solid #DFDEDB;
+			border-radius: 5px;
+		}
+
+		.height-auto{
+			height: auto;
+		}		
+
+		.f-wrap-nowrap{
+			flex-wrap: nowrap;
+		}
+
+		.f-wrap{
+			flex-wrap: wrap;
+		}
+
+		.col-1{
+		    width: 90%;
+		}
+
+		.col-2{
+		    width: 48%;
+		}
+
+		.col-3{
+		    width: 30%;		    
+		}
+
+		.content-box {
+			width: 90%;
+			height: 500px;
+			margin: 10px auto;
+			border: 2px solid #C0C0C0AA;			
+		}
+
+		.box{			
+			width: 100px;
+			height: 100px;
+		}
+
+		.box:nth-child(1){
+			background-color: skyblue;
+		}
+
+		.box:nth-child(2){
+			background-color: orange;
+		}
+
+		.box:nth-child(3){
+			background-color: #b21016;
+		}
+
+		.box:nth-child(4){
+			background-color: #2EEC44;
+		}
+
+		.box:nth-child(5){
+			background-color: #E21DDB;
+		}
+
+		.box:nth-child(6){
+			background-color: #1D3EE3;
+		}		
+
+		.d-flex{
+			display: flex;			
+		}
+
+		.fd-col{
+			flex-direction: column;
+		}
+
+		.fd-row{
+			flex-direction: row;
+		}
+
+		.ai-start{
+			align-items: start;
+		}
+
+		.ai-end{
+			align-items: end;	
+		}
+
+		.ai-center{
+			align-items: center;
+		}
+
+		.ai-flex-start{
+			align-items: flex-start;
+		}
+
+		.ai-flex-end{
+			align-items: flex-end;	
+		}
+
+		.ai-stretch{
+			align-items: stretch;
+		}
+
+		.ai-baseline{
+			flex: 1;
+			align-items: baseline;			
+		}
+
+		.content-box-height{
+			width: 300px;
+			height: 400px;
+			margin: 10px auto;
+			border: 2px solid #C0C0C0AA;			
+		}
+
+		.content-box-width{
+			width: 500px;
+			height: 400px;
+			margin: 10px auto;
+			border: 2px solid #C0C0C0AA;
+		}
+
+		.content-box-width .box{			
+			height: auto;
+			
+		}
+
+		.content-box-height .box{
+			flex: 1;
+		}
+
+		.boxing:nth-child(6){
+			background-color: #1D3EE3;
+		}
+
+		.boxing:nth-child(1){
+			background-color: skyblue;
+			min-height: 30px;
+		}
+
+		.boxing:nth-child(2){
+			min-height: 50px;
+			background-color: orange;
+		}
+
+		.boxing:nth-child(3){
+			min-height: 190px;
+			background-color: #b21016;
+		}
+
+		.boxing:nth-child(4){
+			min-height: 190px;
+			background-color: #2EEC44;
+		}
+
+		.boxing:nth-child(5){
+			min-height: 190px;
+			background-color: #E21DDB;
+		}
+
+		.boxing:nth-child(6){
+			min-height: 190px;
+			background-color: #1D3EE3;
+		}
+
+		.height-def-1{
+			height: 800px;
+		}
+
+		.height-def-2{
+			height: 1300px;
+		}
+
+		.height-def-3{
+			height: 2000px;
+		}
+
+		.flex-1{
+			flex: 1;
+		}
+
+		span{
+			color: blue;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>align-items</h1>
+	<h2><span>flex-direction: column</span></h2>
+	<div class="content height-auto">
+		<div class="col-3 height-auto">
+			<h3>start</h3>
+			<div class="content-box d-flex fd-col ai-start">
+				<div class="box"></div>
+				<div class="box"></div>
+				<div class="box"></div>
+			</div>		
+		</div>
+		<div class="col-3 height-auto">
+			<h3>end</h3>
+			<div class="content-box d-flex fd-col ai-end">
+				<div class="box"></div>
+				<div class="box"></div>
+				<div class="box"></div>
+			</div>		
+		</div>
+		<div class="col-3 height-auto">
+			<h3>center</h3>
+			<div class="content-box d-flex fd-col ai-center">
+				<div class="box"></div>
+				<div class="box"></div>
+				<div class="box"></div>
+			</div>
+		</div>		
+		<div class="col-3 height-auto">
+			<h3>flex-start</h3>
+			<div class="content-box d-flex fd-col ai-flex-start">
+				<div class="box"></div>
+				<div class="box"></div>
+				<div class="box"></div>
+			</div>
+		</div>
+		<div class="col-3 height-auto">
+			<h3>flex-end</h3>
+			<div class="content-box d-flex fd-col ai-flex-end">
+				<div class="box"></div>
+				<div class="box"></div>
+				<div class="box"></div>
+			</div>
+		</div>
+		<div class="col-3 height-auto">
+			<h3>stretch</h3>
+			<div class="content-box d-flex fd-col ai-stretch">
+				<div class="box"></div>
+				<div class="box"></div>
+				<div class="box"></div>
+			</div>
+		</div>
+	</div>
+
+	<h1>Con contenido y desborde</h1>
+	<h2><span>flex-direction: column</span></h2>
+	<div class="content height-def-1">
+		<div class="col-3 height-auto">
+			<h3>start</h3>
+			<div class="content-box-height d-flex fd-col ai-start">
+				<div class="box">Lorem ipsum, dolor sit amet.</div>
+				<div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error excepturi consectetur doloremque dignissimos vel dolor ad quaerat neque tenetur expedita.</div>
+				<div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Quos ipsam in officiis.</div>		
+			</div>		
+		</div>
+		<div class="col-3 height-auto">
+			<h3>end</h3>
+			<div class="content-box-height d-flex fd-col ai-end">
+				<div class="box">Lorem ipsum, dolor sit amet.</div>
+				<div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error excepturi consectetur doloremque dignissimos vel dolor ad quaerat neque tenetur expedita.</div>
+				<div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Quos ipsam in officiis.</div>	
+				<div class="box">Lorem ipsum, dolor sit amet.</div>
+				<div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error excepturi consectetur doloremque dignissimos vel dolor ad quaerat neque tenetur expedita.</div>
+				<div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Quos ipsam in officiis.</div>
+			</div>		
+		</div>
+		<div class="col-3 height-auto">
+			<h3>center</h3>
+			<div class="content-box-height d-flex fd-col ai-center">
+				<div class="box">Lorem ipsum, dolor sit amet.</div>
+				<div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error excepturi consectetur doloremque dignissimos vel dolor ad quaerat neque tenetur expedita.</div>
+				<div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Quos ipsam in officiis.</div>	
+				<div class="box">Lorem ipsum, dolor sit amet.</div>
+				<div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error excepturi consectetur doloremque dignissimos vel dolor ad quaerat neque tenetur expedita.</div>
+				<div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Quos ipsam in officiis.</div>
+			</div>		
+		</div>
+	</div>
+
+	<h1>Solucion <span>flex-wrap: wrap</span></h1>
+	<h2>En el elemento hijo <span>height: auto</span></h2>
+	<div class="content height-def-2">
+		<div class="col-2 height-auto">
+			<h3>start</h3>
+			<div class="content-box-width d-flex fd-col f-wrap ai-start">
+				<div class="box">Lorem ipsum, dolor sit amet.</div>
+				<div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error excepturi consectetur doloremque dignissimos vel dolor ad quaerat neque tenetur expedita.</div>
+				<div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Quos ipsam in officiis.</div>
+				<div class="box">Lorem ipsum, dolor sit amet.</div>
+				<div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error excepturi.</div>
+				<div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Quos ipsam in officiis.</div>
+			</div>		
+		</div>
+		<div class="col-2 height-auto">
+			<h3>end</h3>
+			<div class="content-box-width d-flex fd-col f-wrap ai-end">
+				<div class="box">Lorem ipsum, dolor sit amet.</div>
+				<div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error excepturi consectetur doloremque dignissimos vel dolor ad quaerat neque tenetur expedita.</div>
+				<div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Quos ipsam in officiis.</div>	
+				<div class="box">Lorem ipsum, dolor sit amet.</div>
+				<div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error excepturi.</div>
+				<div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Quos ipsam in officiis.</div>
+			</div>		
+		</div>
+		<div class="col-2 height-auto">
+			<h3>center</h3>
+			<div class="content-box-width d-flex fd-col f-wrap ai-center">
+				<div class="box">Lorem ipsum, dolor sit amet.</div>
+				<div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error excepturi consectetur doloremque dignissimos vel dolor ad quaerat neque tenetur expedita.</div>
+				<div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Quos ipsam in officiis.</div>	
+				<div class="box">Lorem ipsum, dolor sit amet.</div>
+				<div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error excepturi.</div>
+				<div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Quos ipsam in officiis.</div>
+			</div>		
+		</div>
+		<div class="col-2 height-auto">
+			<h3>stretch</h3>
+			<div class="content-box-width d-flex fd-col f-wrap ai-stretch">
+				<div class="box">Lorem ipsum, dolor sit amet.</div>
+				<div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error excepturi consectetur doloremque dignissimos vel dolor ad quaerat neque tenetur expedita.</div>
+				<div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Quos ipsam in officiis.</div>	
+				<div class="box">Lorem ipsum, dolor sit amet.</div>
+				<div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error excepturi.</div>
+				<div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Quos ipsam in officiis.</div>
+			</div>		
+		</div>
+	</div>
+
+	<h2><span>flex-direction: row</span></h2>
+	<div class="content height-auto">
+		<div class="col-3 height-auto">
+			<h3>start</h3>
+			<div class="content-box d-flex fd-row ai-start">
+				<div class="box"></div>
+				<div class="box"></div>
+				<div class="box"></div>
+			</div>		
+		</div>
+		<div class="col-3 height-auto">
+			<h3>end</h3>
+			<div class="content-box d-flex fd-row ai-end">
+				<div class="box"></div>
+				<div class="box"></div>
+				<div class="box"></div>
+			</div>		
+		</div>
+		<div class="col-3 height-auto">
+			<h3>center</h3>
+			<div class="content-box d-flex fd-row ai-center">
+				<div class="box"></div>
+				<div class="box"></div>
+				<div class="box"></div>
+			</div>
+		</div>		
+		<div class="col-3 height-auto">
+			<h3>flex-start</h3>
+			<div class="content-box d-flex fd-row ai-flex-start">
+				<div class="box"></div>
+				<div class="box"></div>
+				<div class="box"></div>
+			</div>
+		</div>
+		<div class="col-3 height-auto">
+			<h3>flex-end</h3>
+			<div class="content-box d-flex fd-row ai-flex-end">
+				<div class="box"></div>
+				<div class="box"></div>
+				<div class="box"></div>
+			</div>
+		</div>
+		<div class="col-3 height-auto">
+			<h3>stretch</h3>
+			<div class="content-box d-flex fd-row ai-stretch">
+				<div class="box"></div>
+				<div class="box"></div>
+				<div class="box"></div>
+			</div>
+		</div>
+	</div>
+
+	<h1>Con contenido y desbordamiento</h1>
+	<h2><span>flex-direction: row</span></h2>
+	<div class="content height-def-3">
+	    <div class="col-2">
+	      <h3>start</h3>
+	      <div class="content-box-height d-flex ai-start">
+	        <div class="box">Lorem ipsum, dolor sit amet.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing, elit consectetur, adipisicing, elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet, consectetur.</div>
+	        <div class="box">box 5</div>
+	        <div class="box">box 6</div>
+	      </div>    
+	    </div>
+	    <div class="col-2">
+	      <h3>end</h3>
+	      <div class="content-box-height d-flex ai-end">
+	        <div class="box">Lorem ipsum, dolor sit amet.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing, elit consectetur, adipisicing, elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet, consectetur.</div>
+	        <div class="box">box 5</div>
+	        <div class="box">box 6</div>
+	      </div>    
+	    </div>
+	    <div class="col-2">
+	      <h3>center</h3>
+	      <div class="content-box-height d-flex ai-center">
+	        <div class="box">Lorem ipsum, dolor sit amet.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing, elit consectetur, adipisicing, elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet, consectetur.</div>
+	        <div class="box">box 5</div>
+	        <div class="box">box 6</div>
+	      </div>      
+	    </div>
+	    <div class="col-2">
+	      <h3>flex-start</h3>
+	      <div class="content-box-height d-flex ai-flex-start">
+	        <div class="box">Lorem ipsum, dolor sit amet.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing, elit consectetur, adipisicing, elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet, consectetur.</div>
+	        <div class="box">box 5</div>
+	        <div class="box">box 6</div>
+	      </div>      
+	    </div>
+	    <div class="col-2">
+	      <h3>flex-end</h3>
+	      <div class="content-box-height d-flex ai-flex-end">
+	        <div class="box">Lorem ipsum, dolor sit amet.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing, elit consectetur, adipisicing, elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet, consectetur.</div>
+	        <div class="box">box 5</div>
+	        <div class="box">box 6</div>
+	      </div>      
+	    </div>
+	    <div class="col-2">
+	      <h3>stretch</h3>
+	      <div class="content-box-height d-flex ai-stretch">
+	        <div class="box">Lorem ipsum, dolor sit amet.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing, elit consectetur, adipisicing, elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet, consectetur.</div>
+	        <div class="box">box 5</div>
+	        <div class="box">box 6</div>
+	      </div>      
+	    </div>
+	</div>
+
+	<h1>Solucion <span>flex-wrap: wrap</span></h1>
+	<h2>En el elemento hijo <span>height: auto</span></h2>
+	<div class="content height-def">
+	    <div class="col-2">
+	      <h3>start</h3>
+	      <div class="content-box-width d-flex f-wrap ai-start">
+	        <div class="box">Lorem ipsum, dolor sit amet.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing, elit consectetur, adipisicing, elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet, consectetur.</div>
+	        <div class="box">box 5</div>
+	        <div class="box">box 6</div>
+	      </div>    
+	    </div>
+	    <div class="col-2">
+	      <h3>end</h3>
+	      <div class="content-box-width d-flex f-wrap ai-end">
+	        <div class="box">Lorem ipsum, dolor sit amet.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing, elit consectetur, adipisicing, elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet, consectetur.</div>
+	        <div class="box">box 5</div>
+	        <div class="box">box 6</div>
+	      </div>    
+	    </div>
+	    <div class="col-2">
+	      <h3>center</h3>
+	      <div class="content-box-width d-flex f-wrap ai-center">
+	        <div class="box">Lorem ipsum, dolor sit amet.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing, elit consectetur, adipisicing, elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet, consectetur.</div>
+	        <div class="box">box 5</div>
+	        <div class="box">box 6</div>
+	      </div>      
+	    </div>
+	    <div class="col-2">
+	      <h3>flex-start</h3>
+	      <div class="content-box-width d-flex f-wrap ai-flex-start">
+	        <div class="box">Lorem ipsum, dolor sit amet.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing, elit consectetur, adipisicing, elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet, consectetur.</div>
+	        <div class="box">box 5</div>
+	        <div class="box">box 6</div>
+	      </div>      
+	    </div>
+	    <div class="col-2">
+	      <h3>flex-end</h3>
+	      <div class="content-box-width d-flex f-wrap ai-flex-end">
+	        <div class="box">Lorem ipsum, dolor sit amet.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing, elit consectetur, adipisicing, elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet, consectetur.</div>
+	        <div class="box">box 5</div>
+	        <div class="box">box 6</div>
+	      </div>      
+	    </div>
+	    <div class="col-2">
+	      <h3>stretch</h3>
+	      <div class="content-box-width d-flex f-wrap ai-stretch">
+	        <div class="box">Lorem ipsum, dolor sit amet.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing, elit consectetur, adipisicing, elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+	        <div class="box">Lorem ipsum dolor sit amet, consectetur.</div>
+	        <div class="box">box 5</div>
+	        <div class="box">box 6</div>
+	      </div>
+	     </div>
+
+	    <div class="col-1">
+	      <h3>baseline</h3>
+	      <h4>En los elementos hijos <span>align-items: baseline</span> y <span>flex: 1</span></h4>
+	      <div class="content-box d-flex f-wrap ai-center">
+	        <div class="boxing d-flex ai-baseline">boxing 1</div>
+	        <div class="boxing d-flex ai-baseline">boxing 2</div>
+	        <div class="boxing d-flex ai-baseline">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+	        <div class="boxing d-flex ai-baseline">Lorem ipsum dolor sit amet, consectetur.</div>
+	        <div class="boxing d-flex ai-baseline">boxing 5</div>
+	        <div class="boxing d-flex ai-baseline">boxing 6</div>
+	      </div>
+		</div>
+	</div>
+
+</body>
+</html>

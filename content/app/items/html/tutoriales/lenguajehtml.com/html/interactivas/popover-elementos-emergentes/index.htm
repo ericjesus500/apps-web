@@ -1,0 +1,431 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e44f26">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Popovers: Elementos emergentes - HTML en español - Lenguaje HTML</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Los popovers son elementos emergentes que aparecen visualmente al realizar una acción y pueden volverse a ocultar con una acción pasiva del usuario.">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Popovers: Elementos emergentes - HTML en español">
+  <meta property="og:image" content="https://lenguajehtml.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Los popovers son elementos emergentes que aparecen visualmente al realizar una acción y pueden volverse a ocultar con una acción pasiva del usuario.">
+  <meta property="og:url" content="https://lenguajehtml.com/html/interactivas/popover-elementos-emergentes/">
+  <meta property="twitter:url" content="https://lenguajehtml.com/html/interactivas/popover-elementos-emergentes/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Popovers: Elementos emergentes - HTML en español">
+  <meta property="twitter:description" content="Los popovers son elementos emergentes que aparecen visualmente al realizar una acción y pueden volverse a ocultar con una acción pasiva del usuario.">
+  <meta property="twitter:image" content="https://lenguajehtml.com/large-summary.jpg">
+
+  </head>
+
+<body class="html" style="--logo-color: #e44f26"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="/">
+  <svg><use href="../../../assets/logos.svg#html"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeHTML.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/html.jpg')">
+    <h1><a href="index.htm">Popovers: Elementos emergentes</a></h1><h2 class="typewriter">Contenido emergente con atributo popover</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../etiqueta-html-details/index.htm">Etiqueta HTML &lt;details&gt;</a>
+    <a class="current" href="index.htm">Popovers: Elementos emergentes</a>
+    <a href="../etiqueta-html-dialog/index.htm">La etiqueta &lt;dialog&gt;</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Los <strong>popover</strong> (<em>pop over, salta por encima</em>) son una nueva forma en HTML5 de crear <strong>elementos emergentes</strong>, es decir, contenido que aparecerá al usuario por encima del contenido que ya estaba visualizando, para así llamar temporalmente su atención.</p>
+<h3 id="creando-un-popover" tabindex="-1"><a class="header-anchor" href="#creando-un-popover">Creando un popover</a></h3>
+<p>La forma de crear este <strong>contenido emergente</strong> es muy sencilla. Se puede aplicar a contenido ya existente, ya que se basa en simplemente añadir un atributo HTML <code>popover</code>, que es el que realizará toda la magia.</p>
+<p>Observa el siguiente fragmento de código:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>message<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>¡Alerta!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span>: Has recibido un correo de <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>Afordin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span>.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Como ves, este fragmento de código no tiene nada en especial. Se trata de un elemento <code>&lt;div&gt;</code> con código HTML mostrando un mensaje. Sin embargo, si le añadimos el atributo <code>popover</code> la cosa cambia.</p>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>popover</code></td>
+<td>Convierte el elemento HTML en un potencial contenido emergente. Por defecto, valor <code>auto</code>.</td>
+</tr>
+<tr>
+<td><code>popovertarget</code></td>
+<td>Indica el <code>id</code> del elemento que queremos manipular.</td>
+</tr>
+<tr>
+<td><code>popovertargetaction</code></td>
+<td>Indica la acción que se realizará sobre el elemento con el <code>id</code> anterior.</td>
+</tr>
+</tbody>
+</table>
+<p>En primer lugar, habrás comprobado que al añadir el atributo <code>popover</code> desaparece el contenido. Esto ocurre porque los navegadores tienen por defecto un estilo CSS para que los elementos con atributos <code>popover</code> se oculten.</p>
+<p>Sin embargo, desde un <code>&lt;button&gt;</code> o <code>&lt;input&gt;</code> podemos controlarlo mediante los atributos siguientes:</p>
+<ul>
+<li><code>popovertarget</code> indica el <code>id</code> del elemento que se va a controlar.</li>
+<li><code>popovertargetaction</code> indica la acción que va a realizar, entre <code>show</code>, <code>hide</code> o <code>toggle</code>.</li>
+</ul>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">popovertarget</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>message<span class="token punctuation">"</span></span> <span class="token attr-name">popovertargetaction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>toggle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Mostrar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>message<span class="token punctuation">"</span></span> <span class="token attr-name">popover</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>¡Alerta!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span>: Has recibido un correo de <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>Afordin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span>.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Cada vez que pulsemos sobre el botón, haremos que el elemento con <code>id=&quot;message&quot;</code>, si es un <strong>popover</strong>, se mostrará cuando esté oculto, y se ocultará cuando se encuentre visible.</p>
+<p><caniuse-support title="Api HTMLElement popover" feature="mdn-api_HTMLElement_popover" edge="114/y" firefox="114/y" chrome="114/y" safari="17/y" opera="✗/n" ios_saf="17/y" and_chr="114/y" and_ff="✗/n">
+</caniuse-support></p>
+<h3 id="estilos-del-popover" tabindex="-1"><a class="header-anchor" href="#estilos-del-popover">Estilos del popover</a></h3>
+<p>Habrás observado que el <strong>popover</strong> se posiciona en el centro de pantalla por defecto. Al ser contenido HTML, podemos cambiar su CSS sin problema mediante algunas lineas de código. Podemos añadirle clases específicas o aprovechar su atributo HTML <code>popover</code>:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">[popover]</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #222<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> Jost<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 1.2rem<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 0.05rem 1.25rem<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Además, también podemos darle estilo al fondo de la página, o al propio elemento cuando se está mostrando el popover:</p>
+<table>
+<thead>
+<tr>
+<th>Selector CSS</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[popover]</code></td>
+<td>Aplica estilos a cualquier elemento con atributo <code>popover</code>.</td>
+</tr>
+<tr>
+<td><code>::backdrop</code></td>
+<td>Aplica estilos al fondo de la página cuando se muestra el <code>popover</code>.</td>
+</tr>
+<tr>
+<td><code>:popover-open</code></td>
+<td>Aplica estilos a un <code>popover</code> que se esté actualmente visible.</td>
+</tr>
+</tbody>
+</table>
+<pre class="language-css"><code class="language-css"><span class="token selector">[popover]::backdrop</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #0048<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">[popover]:popover-open</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> gold<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="descarte-automático" tabindex="-1"><a class="header-anchor" href="#descarte-automático">Descarte automático</a></h3>
+<p>El <strong>descarte automático</strong> (<em>light dismiss</em>) es un modo en el que funcionan los <code>popover</code> por defecto. Si no establecemos ningún valor al atributo <code>popover</code> o le establecemos el valor <code>auto</code>, si pulsamos en cualquier parte de la página (<em>fuera del popover</em>) o presionamos <kbd>ESC</kbd> con el <code>popover</code> abierto, este se descartará y se ocultará.</p>
+<p>Si establecemos el parámetro con el valor <code>manual</code>, no lo hará. Esto interesa si queremos controlarlo sólo con HTML o si por el contrario lo vamos a controlar detalladamente con Javascript.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">popovertarget</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>message<span class="token punctuation">"</span></span> <span class="token attr-name">popovertargetaction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>toggle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Mostrar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>message<span class="token punctuation">"</span></span> <span class="token attr-name">popover</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>manual<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>¡Alerta!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span>: Has recibido un correo de <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>Afordin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span>.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Observa que en este ejemplo, aunque pulsemos fuera del elemento, no se oculta. Tendremos que volver a pulsar en el botón, para llamar a un método Javascript que haga el trabajo o a un atributo HTML que tenga la acción predefinida.</p>
+<h3 id="api-de-popover" tabindex="-1"><a class="header-anchor" href="#api-de-popover">API de Popover</a></h3>
+<p>Si buscamos un comportamiento más potente y flexible, necesitaremos Javascript. Mediante programación podemos llamar a ciertos métodos que realizarán acciones de mostrar, ocultar o alternar entre visible y oculto, simplemente llamando a estas funciones de los elementos <code>popover</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.hidePopover()</code></td>
+<td>Oculta el contenido del elemento que tiene el atributo <code>popover</code>.</td>
+</tr>
+<tr>
+<td><code>.showPopover()</code></td>
+<td>Hace visible el contenido del elemento que tiene el atributo <code>popover</code>.</td>
+</tr>
+<tr>
+<td><code>.togglePopover()</code></td>
+<td>Alterna la visibilidad del popover. Los eventos <code>beforetoggle</code> y <code>toggle</code> son disparados cuando ocurre.</td>
+</tr>
+</tbody>
+</table>
+<p>Esto nos podría permitir hacer contenido más elaborado como múltiples popover anidados, menús con submenús o interfaces de usuario más avanzadas.</p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../etiqueta-html-details/index.htm" title="Etiqueta HTML &lt;details&gt;">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Etiqueta HTML &lt;details&gt;</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../etiqueta-html-dialog/index.htm" title="La etiqueta &lt;dialog&gt;">
+  <div>
+    <span>La etiqueta &lt;dialog&gt;</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/RW5erp81FMY" title="Consejos y buenas prácticas (I): HEAD">
+  <img loading="lazy" src="../../../vi/RW5erp81FMY/mqdefault.jpg" alt="Consejos y buenas prácticas (I): HEAD">
+</a><a href="https://youtu.be/LAHR5gl07ks" title="Consejos y buenas prácticas (V): Accesibilidad">
+  <img loading="lazy" src="../../../vi/LAHR5gl07ks/mqdefault.jpg" alt="Consejos y buenas prácticas (V): Accesibilidad">
+</a><a href="https://youtu.be/cQIlwKSAyAc" title="Crear packs de iconos con sprites SVG">
+  <img loading="lazy" src="../../../vi/cQIlwKSAyAc/mqdefault.jpg" alt="Crear packs de iconos con sprites SVG">
+</a><a href="https://youtu.be/lDPJQyXow_g" title="Consejos y buenas prácticas (VII): SEO">
+  <img loading="lazy" src="../../../vi/lDPJQyXow_g/mqdefault.jpg" alt="Consejos y buenas prácticas (VII): SEO">
+</a><a href="https://youtu.be/SVomAFpMw30" title="Consejos y buenas prácticas (II): HTML + WebFonts">
+  <img loading="lazy" src="../../../vi/SVomAFpMw30/mqdefault.jpg" alt="Consejos y buenas prácticas (II): HTML + WebFonts">
+</a><a href="https://youtu.be/7oPdEM0VXOs" title="Consejos y buenas prácticas (VI): Performance">
+  <img loading="lazy" src="../../../vi/7oPdEM0VXOs/mqdefault.jpg" alt="Consejos y buenas prácticas (VI): Performance">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-5', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

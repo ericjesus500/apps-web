@@ -1,0 +1,589 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Animaciones de scroll - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Las animaciones dirigidas por scroll son ideales para crear experiencias de usuarios fluídas y agradables a la hora de navegar por un sitio web. ¡Te explico como crearlas con sólo CSS!">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Animaciones de scroll - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Las animaciones dirigidas por scroll son ideales para crear experiencias de usuarios fluídas y agradables a la hora de navegar por un sitio web. ¡Te explico como crearlas con sólo CSS!">
+  <meta property="og:url" content="https://lenguajecss.com/css/animaciones/animation-timeline/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/animaciones/animation-timeline/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Animaciones de scroll - CSS en español">
+  <meta property="twitter:description" content="Las animaciones dirigidas por scroll son ideales para crear experiencias de usuarios fluídas y agradables a la hora de navegar por un sitio web. ¡Te explico como crearlas con sólo CSS!">
+  <meta property="twitter:image" content="https://lenguajecss.com/large-summary.jpg">
+
+  </head>
+
+<body class="css" style="--logo-color: #1e7bbf"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/css.jpg')">
+    <h1><a href="index.htm">Animaciones de scroll</a></h1><h2 class="typewriter">Animaciones dirigidas por scroll con líneas de tiempo</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../keyframes/index.htm">La regla @keyframes</a>
+    <a class="current" href="index.htm">Animaciones de scroll</a>
+    <a href="../motion-path/index.htm">CSS Motion Paths</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Cuando profundizamos en el mundo de las animaciones, existen ciertos tipos de animaciones que requieren sincronizarse con el usuario cuando realiza scroll en una página. Este tipo de animaciones, donde se incluyen efectos como <strong>parallax</strong>, <strong>zoom</strong>, <strong>movimientos</strong>, <strong>aparición/desaparición</strong>, o en definitiva, animaciones específicas <strong>dirigidas por scroll</strong>, hasta ahora eran muy complejas de realizar, requerían Javascript y podían ser altamente costosas, dependiendo de como se realizaran.</p>
+<p>CSS ha añadido una serie de propiedades relacionadas con ellas que permiten generar este tipo de animaciones de forma muy sencilla. Para ello, primero tenemos que aprender algunos conceptos clave que utilizaremos en este tema.</p>
+<h3 id="qué-es-un-timeline" tabindex="-1"><a class="header-anchor" href="#qué-es-un-timeline">¿Qué es un Timeline?</a></h3>
+<p>Las líneas de tiempo (<em>timelines</em>) aparecen en CSS mediante las animaciones. Como su propio nombre indica, se trata de un concepto para medir el tiempo, que parte desde un punto inicial (<em>el minuto cero, cuando carga inicialmente la página</em>) hasta el momento final (<em>el instante actual en el que nos encontramos</em>).</p>
+<p>Hasta el momento, esa era la única línea de tiempo que se utilizaba de forma implícita en las animaciones CSS. Sin embargo, con la irrupción de las <strong>animaciones dirigidas por scroll</strong>, se incluyen dos tipos de líneas de tiempo adicionales:</p>
+<ul>
+<li>
+<p>🔁 Las <strong>líneas de tiempo de scroll</strong>: Aquellas que permiten realizar una animación a lo largo de un elemento contenedor, controlando su progreso mediante scroll.</p>
+</li>
+<li>
+<p>💠 Las <strong>líneas de tiempo de vistas</strong>: Aquellas que permiten realizar una animación a lo largo de un elemento contenedor, sólo cuando este está a la vista en la región visible, controlando su progreso mediante scroll.</p>
+</li>
+</ul>
+<p>Para gestionar estas nuevas líneas de tiempo, utilizaremos la nueva propiedad <code>animation-timeline</code>, con la que asociaremos una animación a una línea de tiempo.</p>
+<p>Los valores posibles que puede tomar la propiedad <code>animation-timeline</code> serían los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>animation-timeline</code></td>
+<td><strong>auto</strong></td>
+<td>Usa la línea de tiempo por defecto. Valor por defecto.</td>
+</tr>
+<tr>
+<td><code>animation-timeline</code></td>
+<td><code>none</code></td>
+<td>No utiliza ninguna línea de tiempo.</td>
+</tr>
+<tr>
+<td><code>animation-timeline</code></td>
+<td><code>--nombre</code></td>
+<td>Usa una línea de tiempo con nombre. Lo veremos más adelante.</td>
+</tr>
+<tr>
+<td><code>animation-timeline</code></td>
+<td><code>scroll()</code></td>
+<td>Usa una línea de tiempo de <strong>scroll</strong>.</td>
+</tr>
+<tr>
+<td><code>animation-timeline</code></td>
+<td><code>view()</code></td>
+<td>Usa una línea de tiempo de <strong>vista</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>En principio, vamos a utilizar sobre todo las funciones <code>scroll()</code> y <code>view()</code>, que permiten crear timelines <strong>anónimos</strong>. Como se puede ver en la tercera opción, las líneas de tiempo pueden también tener un <strong>nombre</strong>, como por ejemplo, <code>--my-linetime</code>. Hablaremos de ello más adelante.</p>
+<p>Precaución: El soporte de esta característica aún no es completo:</p>
+<p><caniuse-support title="Css properties animation-timeline" feature="mdn-css_properties_animation-timeline" edge="115/y" firefox="110/y" chrome="115/y" safari="✗/n" opera="71/y" ios_saf="✗/n" and_chr="115/y" and_ff="✗/n">
+</caniuse-support></p>
+<h3 id="animación-de-scroll" tabindex="-1"><a class="header-anchor" href="#animación-de-scroll">Animación de scroll</a></h3>
+<p>Vamos a empezar por crear una animación basada en una línea de tiempo anónima. La forma más sencilla es crear una linea de tiempo anónima mediante la función <code>scroll()</code>, que explicaremos más adelante.</p>
+<p>Observa el siguiente ejemplo, en el que aún no tenemos nada relacionado con <strong>animaciones de scroll</strong>, ya que se lo añadiremos más adelante:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Escribe aquí un texto lo suficientemente largo como para tener scroll vertical.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+<span class="token selector">body</span> <span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 5rem<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #9994<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 6px<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.bar</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> 0 0 5px darkred<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>Simplemente hemos creado un texto lo suficientemente grande como para tener scroll vertical, y hemos definido una barra de progreso con colores y tamaños mediante CSS en la parte superior. El ancho de la barra de progreso está definido por defecto al <code>0%</code>. Con una animación de scroll la aumentaremos, seteando el <code>width</code> desde <code>0</code> a <code>100%</code>.</p>
+<blockquote>
+<blockquote>
+<p>Si tienes dudas sobre animaciones, echa un vistazo a <a href="../animaciones/index.htm">Animaciones CSS</a> y a <a href="../keyframes/index.htm">la regla @keyframes</a>.</p>
+</blockquote>
+</blockquote>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> resize</span> <span class="token punctuation">{</span>
+  <span class="token selector">from</span> <span class="token punctuation">{</span> <span class="token property">width</span><span class="token punctuation">:</span> 0% <span class="token punctuation">}</span> <span class="token comment">/* Se puede omitir */</span>
+  <span class="token selector">to</span> <span class="token punctuation">{</span> <span class="token property">width</span><span class="token punctuation">:</span> 100% <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.bar</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> resize auto linear forwards<span class="token punctuation">;</span>
+  <span class="token property">animation-timeline</span><span class="token punctuation">:</span> <span class="token function">scroll</span><span class="token punctuation">(</span>root block<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Observa que más abajo, asociamos la animación <code>resize</code> a la clase <code>.bar</code> y establecemos la duración de la animación a <code>auto</code>, ya que el tiempo lo determina el scroll realizado por el usuario.</p>
+<p>Más abajo, utilizamos la función <code>scroll(root block)</code> en la propiedad <code>animation-timeline</code>. Esto lo explicaremos a continuación, pero lo que hace es utilizar la página como contenedor y el eje <code>block</code> (<em>eje <code>y</code> en nuestro idioma, es decir, en vertical</em>).</p>
+<blockquote>
+<p>Esto hará que al hacer scroll en nuestro documento, se produzca la animación de la barra de progreso, acorde a la cantidad de scroll realizado.</p>
+</blockquote>
+<h3 id="la-función-scroll" tabindex="-1"><a class="header-anchor" href="#la-función-scroll">La función <code>scroll()</code></a></h3>
+<p>En la propiedad <code>animation-timeline</code> anterior, hemos utilizado la función <code>scroll()</code>, pero aún no la conocemos. En su primer parámetro, se suele indicar el elemento que vamos a usar como contenedor de scroll, y en el segundo parámetro el eje en el que vamos a desplazarnos.</p>
+<p>La sintaxis es la siguiente:</p>
+<table>
+<thead>
+<tr>
+<th>Función scroll()</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scroll()</code></td>
+<td>Valores por defecto. Equivalente a <code>scroll(nearest block)</code>.</td>
+</tr>
+<tr>
+<td><code>scroll(</code><badge-type class="container"></badge-type> <code>contenedor</code> <badge-type class="axis"></badge-type> <code>eje)</code></td>
+<td>Indica el contenedor y la orientación del eje de la línea de tiempo.</td>
+</tr>
+</tbody>
+</table>
+<p>Observa que los parámetros a utilizar son el <code>contenedor</code> y el <code>eje</code> de la orientación en la que se desplaza. Si se omiten los parámetros, se tomarán los valores por defecto, que son <code>nearest block</code>. Sin embargo, puedes personalizarlos.</p>
+<h4 id="opciones-de-scroll" tabindex="-1"><a class="header-anchor" href="#opciones-de-scroll">Opciones de <code>scroll()</code></a></h4>
+<p>Los parámetros disponibles para la función <code>scroll()</code> son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Parámetros</th>
+<th>Valores posibles</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>container</code></td>
+<td><strong>nearest</strong></td>
+<td>Utiliza el elemento contenedor padre más cercano. <strong>Por defecto</strong>.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>root</code></td>
+<td>Utiliza el documento entero como contenedor.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>self</code></td>
+<td>Utiliza el elemento actual como contenedor específico.</td>
+</tr>
+<tr>
+<td><code>axis</code></td>
+<td><strong>block</strong> | <code>x</code></td>
+<td>Indica el eje horizontal como eje de progreso ⚠️</td>
+</tr>
+<tr>
+<td></td>
+<td><code>inline</code>  | <code>y</code></td>
+<td>Indica el eje vertical como eje de progreso ⚠️</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Recuerda que <code>block</code> e <code>inline</code> son las versiones lógicas de <code>x</code> e <code>y</code> respectivamente, y pueden ser diferentes en otros idiomas. Puedes ver más sobre este tema en <a href="../../modelo-de-cajas/propiedades-logicas-css/index.htm">Propiedades Lógicas en CSS</a>.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><caniuse-support title="Css properties animation-timeline scroll" feature="mdn-css_properties_animation-timeline_scroll" edge="115/y" firefox="110/y" chrome="115/y" safari="✗/n" opera="✗/n" ios_saf="✗/n" and_chr="115/y" and_ff="✗/n">
+</caniuse-support></p>
+<h3 id="animación-de-scroll-sólo-visible" tabindex="-1"><a class="header-anchor" href="#animación-de-scroll-sólo-visible">Animación de scroll (sólo visible)</a></h3>
+<p>La función <code>view()</code> es muy similar a la función <code>scroll()</code>, pero se utiliza en situaciones donde quieres que el elemento comience a animarse sólo cuando esté a la vista del usuario. Se denominan <strong>Animaciones de scroll de vista</strong>.</p>
+<p>Para entender bien la diferencia entre <code>scroll()</code> y <code>view()</code>, veamos el siguiente ejemplo:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Escribe aquí mucho texto para hacer scroll.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Escribe aquí mucho texto para hacer scroll.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Escribe aquí mucho texto para hacer scroll.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+<span class="token selector">body</span> <span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 5rem<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.box</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 196px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 196px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> indigo<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>Tenemos dos párrafos extensos de texto y entre ellos, dos cajas de color que tendrán la animación de scroll. Dicha animación, simplemente hace referencia a una animación CSS que desplazará la caja hacia la derecha y la cambiará de color.</p>
+<p>La diferencia radica en utilizar la función <code>scroll()</code> o la función <code>view()</code>, donde ambos utilizan sus valores por defecto:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.box</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> change auto linear forwards<span class="token punctuation">;</span>
+  <span class="token property">animation-timeline</span><span class="token punctuation">:</span> <span class="token function">view</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@keyframes</span> change</span> <span class="token punctuation">{</span>
+  <span class="token selector">0%</span> <span class="token punctuation">{</span> <span class="token property">background</span><span class="token punctuation">:</span> indigo<span class="token punctuation">;</span> <span class="token property">translate</span><span class="token punctuation">:</span> 0px 0<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token selector">50%</span> <span class="token punctuation">{</span> <span class="token property">background</span><span class="token punctuation">:</span> gold<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span> <span class="token property">background</span><span class="token punctuation">:</span> deeppink<span class="token punctuation">;</span> <span class="token property">translate</span><span class="token punctuation">:</span> 400px 0<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Si utilizamos la función <code>scroll()</code>, comprobaremos que al hacer scroll y aparecer la caja, ya ha comenzado la animación, porque la está realizando desde que empezamos a hacer scroll, aunque no estuviera visible. Sin embargo, con la función <code>view()</code> comprobarás que se inicia cuando aparece y es visible en pantalla.</p>
+<h3 id="la-función-view" tabindex="-1"><a class="header-anchor" href="#la-función-view">La función <code>view()</code></a></h3>
+<p>La función <code>view()</code> nos viene muy bien para situaciones en las que necesitamos que las animaciones de scroll se realicen justo cuando aparecen en la región visible del navegador. La sintaxis de la función <code>view()</code> es la siguiente:</p>
+<table>
+<thead>
+<tr>
+<th>Función view()</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>view()</code></td>
+<td>Valores por defecto. Equivalente a <code>view(block auto)</code>.</td>
+</tr>
+<tr>
+<td><code>view(</code><badge-type class="axis"></badge-type> <code>eje</code> <badge-type class="inset"></badge-type> <code>ajuste)</code></td>
+<td>Indica la orientación del eje y un ajuste opcional del rango de visibilidad.</td>
+</tr>
+</tbody>
+</table>
+<p>Observa que los parámetros a utilizar son el <code>eje</code> de la orientación en la que se desplaza y un valor de ajuste. Si se omiten los parámetros, se tomarán los valores por defecto, que son <code>block auto</code>. Sin embargo, también puedes personalizarlos.</p>
+<h4 id="opciones-de-view" tabindex="-1"><a class="header-anchor" href="#opciones-de-view">Opciones de <code>view()</code></a></h4>
+<p>Los parámetros disponibles para la función <code>view()</code> son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Parámetros</th>
+<th>Valores posibles</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>axis</code></td>
+<td><strong>block</strong> | <code>x</code></td>
+<td>Indica el eje horizontal como eje de progreso ⚠️</td>
+</tr>
+<tr>
+<td></td>
+<td><code>inline</code>  | <code>y</code></td>
+<td>Indica el eje vertical como eje de progreso ⚠️</td>
+</tr>
+<tr>
+<td><code>inset</code></td>
+<td><strong>auto</strong></td>
+<td>Utiliza el valor de la propiedad <code>scroll-padding</code>.</td>
+</tr>
+<tr>
+<td></td>
+<td><badge-type class="size"></badge-type> <code>tamaño</code></td>
+<td>Ajusta la posición donde se dispara la animación en ambos ejes.</td>
+</tr>
+<tr>
+<td></td>
+<td><badge-type class="size"></badge-type> <code>x</code> <badge-type class="size"></badge-type> <code>y</code></td>
+<td>Ajusta la posición del eje <code>x</code> y el eje <code>y</code>.</td>
+</tr>
+</tbody>
+</table>
+<p><caniuse-support title="Css properties animation-timeline view" feature="mdn-css_properties_animation-timeline_view" edge="115/y" firefox="114/y" chrome="115/y" safari="✗/n" opera="✗/n" ios_saf="✗/n" and_chr="115/y" and_ff="✗/n">
+</caniuse-support></p>
+<p>Estas son las funcionalidades básicas de las <strong>Animaciones de scroll</strong> con CSS. En el siguiente artículo veremos como crear animaciones de scroll con nombre, más específicas y definidas.</p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../keyframes/index.htm" title="La regla @keyframes">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>La regla @keyframes</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../motion-path/index.htm" title="CSS Motion Paths">
+  <div>
+    <span>CSS Motion Paths</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/K-nE-kZKLRw" title="¡NOVEDADES CSS! ¿Cuánto de este código CSS eres CAPAZ de reconocer?">
+  <img loading="lazy" src="../../../vi/K-nE-kZKLRw/mqdefault.jpg" alt="¡NOVEDADES CSS! ¿Cuánto de este código CSS eres CAPAZ de reconocer?">
+</a><a href="https://youtu.be/8Jh2K3tq5n0" title="Tutorial para aprender Animaciones CSS">
+  <img loading="lazy" src="../../../vi/8Jh2K3tq5n0/mqdefault.jpg" alt="Tutorial para aprender Animaciones CSS">
+</a><a href="https://youtu.be/1TbS60Fu-_M" title="Variables CSS NATIVAS: ¿Qué son y cómo funcionan?">
+  <img loading="lazy" src="../../../vi/1TbS60Fu-_M/mqdefault.jpg" alt="Variables CSS NATIVAS: ¿Qué son y cómo funcionan?">
+</a><a href="https://youtu.be/0sFtRnbe0fo" title="Novedades de CSS: Dr. CSStrange y el multiverso">
+  <img loading="lazy" src="../../../vi/0sFtRnbe0fo/mqdefault.jpg" alt="Novedades de CSS: Dr. CSStrange y el multiverso">
+</a><a href="https://youtu.be/L7Hi32qBIxI" title="Cómo crear SOMBRAS EN CAJAS (box-shadow)">
+  <img loading="lazy" src="../../../vi/L7Hi32qBIxI/mqdefault.jpg" alt="Cómo crear SOMBRAS EN CAJAS (box-shadow)">
+</a><a href="https://youtu.be/toA0uqeuHXQ" title="¿Qué es el CSS NESTING? ¿Cómo funciona?">
+  <img loading="lazy" src="../../../vi/toA0uqeuHXQ/mqdefault.jpg" alt="¿Qué es el CSS NESTING? ¿Cómo funciona?">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

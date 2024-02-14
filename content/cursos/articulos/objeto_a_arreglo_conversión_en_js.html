@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)https://parzibyte.me/blog/2019/08/16/objeto-arreglo-javascript-conversion/ -->
+<html lang="es-MX"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto a arreglo en JavaScript - Conversión - Parzibyte's blog</title>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO plugin v21.5 - https://yoast.com/wordpress/plugins/seo/ -->
+	<link rel="canonical" href="https://parzibyte.me/blog/2019/08/16/objeto-arreglo-javascript-conversion/">
+	<meta property="og:locale" content="es_MX">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Objeto a arreglo en JavaScript - Conversión - Parzibyte&#39;s blog">
+	<meta property="og:description" content="Convertir un objeto a arreglo en JavaScript En este post te voy a mostrar a convertir un objeto o diccionario a un arreglo o array en JavaScript. Vamos a repasar 3 funciones: Object.entries Object.values Object.keys Tema de la captura: SynthWave ’84. Esas funciones nos van a servir para convertir un objeto a arreglo en JavaScript […]">
+	<meta property="og:url" content="https://parzibyte.me/blog/2019/08/16/objeto-arreglo-javascript-conversion/">
+	<meta property="og:site_name" content="Parzibyte&#39;s blog">
+	<meta property="article:publisher" content="https://facebook.com/parzibyte.fanpage">
+	<meta property="article:author" content="https://facebook.com/parzibyte.fanpage">
+	<meta property="article:published_time" content="2019-08-16T23:19:25+00:00">
+	<meta property="og:image" content="https://parzibyte.me/blog/wp-content/uploads/2019/08/Convertir-objeto-a-arreglo-en-JavaScript.png">
+	<meta property="og:image:width" content="508">
+	<meta property="og:image:height" content="398">
+	<meta property="og:image:type" content="image/png">
+	<meta name="author" content="parzibyte">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:creator" content="@parzibyte">
+	<meta name="twitter:site" content="@parzibyte">
+	<meta name="twitter:label1" content="Escrito por">
+	<meta name="twitter:data1" content="parzibyte">
+	<meta name="twitter:label2" content="Tiempo de lectura">
+	<meta name="twitter:data2" content="2 minutos">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://parzibyte.me/blog/2019/08/16/objeto-arreglo-javascript-conversion/#article","isPartOf":{"@id":"https://parzibyte.me/blog/2019/08/16/objeto-arreglo-javascript-conversion/"},"author":{"name":"parzibyte","@id":"https://parzibyte.me/blog/#/schema/person/543968a4d7ec5d02a19f02954dbbb4f2"},"headline":"Objeto a arreglo en JavaScript &#8211; Conversión","datePublished":"2019-08-16T23:19:25+00:00","dateModified":"2019-08-16T23:19:25+00:00","mainEntityOfPage":{"@id":"https://parzibyte.me/blog/2019/08/16/objeto-arreglo-javascript-conversion/"},"wordCount":422,"commentCount":0,"publisher":{"@id":"https://parzibyte.me/blog/#/schema/person/543968a4d7ec5d02a19f02954dbbb4f2"},"image":{"@id":"https://parzibyte.me/blog/2019/08/16/objeto-arreglo-javascript-conversion/#primaryimage"},"thumbnailUrl":"https://parzibyte.me/blog/wp-content/uploads/2019/08/Convertir-objeto-a-arreglo-en-JavaScript.png","keywords":["arreglo","conversión de tipos","diccionario a arreglo","Object","object to array js","Object.entries","Object.keys","objeto","objeto a arreglo","values"],"articleSection":["Algoritmos","javascript","Node.JS"],"inLanguage":"es-MX","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://parzibyte.me/blog/2019/08/16/objeto-arreglo-javascript-conversion/#respond"]}]},{"@type":"WebPage","@id":"https://parzibyte.me/blog/2019/08/16/objeto-arreglo-javascript-conversion/","url":"https://parzibyte.me/blog/2019/08/16/objeto-arreglo-javascript-conversion/","name":"Objeto a arreglo en JavaScript - Conversión - Parzibyte&#039;s blog","isPartOf":{"@id":"https://parzibyte.me/blog/#website"},"primaryImageOfPage":{"@id":"https://parzibyte.me/blog/2019/08/16/objeto-arreglo-javascript-conversion/#primaryimage"},"image":{"@id":"https://parzibyte.me/blog/2019/08/16/objeto-arreglo-javascript-conversion/#primaryimage"},"thumbnailUrl":"https://parzibyte.me/blog/wp-content/uploads/2019/08/Convertir-objeto-a-arreglo-en-JavaScript.png","datePublished":"2019-08-16T23:19:25+00:00","dateModified":"2019-08-16T23:19:25+00:00","breadcrumb":{"@id":"https://parzibyte.me/blog/2019/08/16/objeto-arreglo-javascript-conversion/#breadcrumb"},"inLanguage":"es-MX","potentialAction":[{"@type":"ReadAction","target":["https://parzibyte.me/blog/2019/08/16/objeto-arreglo-javascript-conversion/"]}]},{"@type":"ImageObject","inLanguage":"es-MX","@id":"https://parzibyte.me/blog/2019/08/16/objeto-arreglo-javascript-conversion/#primaryimage","url":"https://parzibyte.me/blog/wp-content/uploads/2019/08/Convertir-objeto-a-arreglo-en-JavaScript.png","contentUrl":"https://parzibyte.me/blog/wp-content/uploads/2019/08/Convertir-objeto-a-arreglo-en-JavaScript.png","width":508,"height":398,"caption":"Objeto a arreglo en JavaScript usando Object.entries, values y keys"},{"@type":"BreadcrumbList","@id":"https://parzibyte.me/blog/2019/08/16/objeto-arreglo-javascript-conversion/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://parzibyte.me/blog/"},{"@type":"ListItem","position":2,"name":"Objeto a arreglo en JavaScript &#8211; Conversión"}]},{"@type":"WebSite","@id":"https://parzibyte.me/blog/#website","url":"https://parzibyte.me/blog/","name":"Parzibyte's blog","description":"Blog de conocimiento gratuito: linux, programación, open source, bases de datos, android, frameworks, web e informática en general.","publisher":{"@id":"https://parzibyte.me/blog/#/schema/person/543968a4d7ec5d02a19f02954dbbb4f2"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://parzibyte.me/blog/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"es-MX"},{"@type":["Person","Organization"],"@id":"https://parzibyte.me/blog/#/schema/person/543968a4d7ec5d02a19f02954dbbb4f2","name":"parzibyte","image":{"@type":"ImageObject","inLanguage":"es-MX","@id":"https://parzibyte.me/blog/#/schema/person/image/","url":"https://secure.gravatar.com/avatar/57de55e711a8fb3c0dfbbf106d206ef6?s=96&d=monsterid&r=g","contentUrl":"https://secure.gravatar.com/avatar/57de55e711a8fb3c0dfbbf106d206ef6?s=96&d=monsterid&r=g","caption":"parzibyte"},"logo":{"@id":"https://parzibyte.me/blog/#/schema/person/image/"},"description":"Programador freelancer listo para trabajar contigo. Aplicaciones web, móviles y de escritorio. PHP, Java, Go, Python, JavaScript, Kotlin y más :) https://parzibyte.me/blog/software-creado-por-parzibyte/","sameAs":["https://parzibyte.me","https://facebook.com/parzibyte.fanpage","https://instagram.com/parzibyte","https://www.linkedin.com/in/parzibyte","https://twitter.com/parzibyte","https://www.youtube.com/channel/UCroP4BTWjfM0CkGB6AFUoBg"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com/">
+<link rel="alternate" type="application/rss+xml" title="Parzibyte&#39;s blog » Objeto a arreglo en JavaScript – Conversión RSS de los comentarios" href="https://parzibyte.me/blog/2019/08/16/objeto-arreglo-javascript-conversion/feed/">
+<link rel="stylesheet" id="prismatic-blocks-css" href="./objeto_a_arreglo_conversión_en_js_files/styles-blocks.css" type="text/css" media="all">
+<link rel="https://api.w.org/" href="https://parzibyte.me/blog/wp-json/"><link rel="alternate" type="application/json" href="https://parzibyte.me/blog/wp-json/wp/v2/posts/8566"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://parzibyte.me/blog/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.4.1">
+<link rel="shortlink" href="https://parzibyte.me/blog/?p=8566">
+<link rel="amphtml" href="https://parzibyte.me/blog/2019/08/16/objeto-arreglo-javascript-conversion/amp/"><link rel="icon" href="https://parzibyte.me/blog/wp-content/uploads/2018/02/cropped-profile-32x32.jpg" sizes="32x32">
+<link rel="icon" href="https://parzibyte.me/blog/wp-content/uploads/2018/02/cropped-profile-192x192.jpg" sizes="192x192">
+<link rel="apple-touch-icon" href="https://parzibyte.me/blog/wp-content/uploads/2018/02/cropped-profile-180x180.jpg">
+<meta name="msapplication-TileImage" content="https://parzibyte.me/blog/wp-content/uploads/2018/02/cropped-profile-270x270.jpg">
+    <link rel="stylesheet" href="./objeto_a_arreglo_conversión_en_js_files/style.css">
+<link rel="stylesheet" type="text/css" media="all" href="./objeto_a_arreglo_conversión_en_js_files/style.min.css"></head>
+
+<body class="post-template-default single single-post postid-8566 single-format-standard">
+    <h1 class="font-bold text-center">
+        <a href="https://parzibyte.me/blog">
+            Parzibyte's blog    </a></h1><a href="https://parzibyte.me/blog">
+    </a>
+    <p class="text-center">Blog de conocimiento gratuito: linux, programación, open source, bases de datos, android, frameworks, web e informática en general.</p>
+    <header class="site-header">
+        <nav class="menu-k-container"><ul id="menu-k" class="justify-end border font-medium flex flex-col p-4  mt-4  md:flex-row md:space-x-8 md:mt-0 bg-white"><li id="menu-item-2991" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-2991"><a href="https://parzibyte.me/blog">Inicio</a></li>
+<li id="menu-item-7033" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7033"><a href="https://parzibyte.me/blog/contrataciones-ayuda/">Tareas y trabajos de programación</a></li>
+<li id="menu-item-7038" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7038"><a href="https://parzibyte.me/blog/software-creado-por-parzibyte/">Software creado por parzibyte (portafolio)</a></li>
+<li id="menu-item-2994" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2994"><a href="https://parzibyte.me/blog/contacto/">Contacto</a></li>
+<li id="menu-item-16399" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16399"><a href="https://parzibyte.me/blog/donaciones/">Donaciones</a></li>
+</ul></nav>    </header><div class="flex flex-col sm:flex-row justify-center sm:flex-wrap md:flex-nowrap bg-white p-2 pb-8">
+        <div id="sidebar-left" class="md:w-1/4 sm:w-full  order-1 sm:order-2 ">
+        <div class="widget_text tarjeta"><h3 class="widget-title">Sistemas gratuitos creados por Parzibyte</h3><div class="textwidget custom-html-widget">Todos los sistemas se deberían poder ejecutar en Linux, MacOS, Windows, Android y Raspberry Pi.
+<a href="https://parzibyte.me/blog/2021/04/13/sistema-ventas-gratuito-windows/">Punto de venta</a>
+<a href="https://parzibyte.me/blog/2021/05/11/sistema-estacionamientos-gratuito-open-source/">Estacionamientos o parqueaderos</a>
+<a href="https://parzibyte.me/blog/2023/04/18/sistema-gratuito-restaurantes/">Restaurante</a>
+<a href="https://parzibyte.me/blog/2021/11/08/sistema-gratuito-renta-consolas-videojuegos/">Renta de consolas</a>
+<a href="https://parzibyte.me/blog/2022/11/28/generador-examenes-calificaciones-automaticas/">Sistema escolar con generador de exámenes</a>
+
+<a href="https://parzibyte.me/blog/2023/08/24/sistema-gratuito-textil-gestion-maquiladora/">Sistema para maquiladoras</a>
+<br>
+No olvides que los sistemas son gratuitos y originales, así que puedes usarlos sin limitaciones</div></div><div class="widget_text tarjeta"><h3 class="widget-title">Apoyo en tareas de programación</h3><div class="textwidget custom-html-widget">Estoy disponible para ayudarte en tus tareas de programación: <a href="https://parzibyte.me/#contacto">Envíame un mensaje</a></div></div><div class="widget_text tarjeta"><h3 class="widget-title">Comunidades</h3><div class="textwidget custom-html-widget"><a href="https://t.me/parzibyte_channel">Telegram</a>
+<a href="https://youtube.com/@parzibyte">YouTube</a>
+<a href="https://github.com/parzibyte">GitHub</a></div></div><div class="widget_text tarjeta"><h3 class="widget-title">Ayúdame a seguir escribiendo contenido</h3><div class="textwidget custom-html-widget"><form action="https://www.paypal.com/donate" method="post" target="_top">
+<input type="hidden" name="hosted_button_id" value="SBAMSGUP5XL5U">
+<input type="image" src="./objeto_a_arreglo_conversión_en_js_files/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donar con el botón PayPal">
+<img alt="" border="0" src="./objeto_a_arreglo_conversión_en_js_files/pixel.gif" width="1" height="1">
+</form>
+</div></div><div class="widget_text tarjeta"><h3 class="widget-title">Comisiones abiertas</h3><div class="textwidget custom-html-widget">Estoy disponible para tareas de programación, desarrollo de sistemas y asesorías: <a href="https://parzibyte.me/#contacto">Envíame un mensaje</a></div></div>    </div>    <div class="flex-grow px-2 md:order-2 sm:order-1 sm:w-1/3">
+        <div class="tarjeta post">
+    <h2>
+        <a href="https://parzibyte.me/blog/2019/08/16/objeto-arreglo-javascript-conversion/">
+            Objeto a arreglo en JavaScript – Conversión        </a>
+    </h2>
+        <ul class="post-categories">
+	<li><a href="https://parzibyte.me/blog/category/algoritmos/" rel="category tag">Algoritmos</a></li>
+	<li><a href="https://parzibyte.me/blog/category/javascript/" rel="category tag">javascript</a></li>
+	<li><a href="https://parzibyte.me/blog/category/node-js/" rel="category tag">Node.JS</a></li></ul>    <div class="post-tags">
+        <a href="https://parzibyte.me/blog/tag/arreglo/" rel="tag">arreglo</a><a href="https://parzibyte.me/blog/tag/conversion-de-tipos/" rel="tag">conversión de tipos</a><a href="https://parzibyte.me/blog/tag/diccionario-a-arreglo/" rel="tag">diccionario a arreglo</a><a href="https://parzibyte.me/blog/tag/object/" rel="tag">Object</a><a href="https://parzibyte.me/blog/tag/object-to-array-js/" rel="tag">object to array js</a><a href="https://parzibyte.me/blog/tag/object-entries/" rel="tag">Object.entries</a><a href="https://parzibyte.me/blog/tag/object-keys/" rel="tag">Object.keys</a><a href="https://parzibyte.me/blog/tag/objeto/" rel="tag">objeto</a><a href="https://parzibyte.me/blog/tag/objeto-a-arreglo/" rel="tag">objeto a arreglo</a><a href="https://parzibyte.me/blog/tag/values/" rel="tag">values</a>    </div>    <div>
+        <h2>Convertir un objeto a arreglo en JavaScript</h2>
+<p>En este post te voy a mostrar a <strong>convertir un objeto</strong> o diccionario <strong>a un arreglo</strong> o array en <a href="https://parzibyte.me/blog/category/javascript">JavaScript</a>.</p>
+<p>Vamos a repasar 3 funciones:</p>
+<ol>
+<li>Object.entries</li>
+<li>Object.values</li>
+<li>Object.keys</li>
+</ol>
+<div id="attachment_8567" style="width: 518px" class="wp-caption aligncenter"><a href="./objeto_a_arreglo_conversión_en_js_files/Convertir-objeto-a-arreglo-en-JavaScript.png"><img fetchpriority="high" decoding="async" aria-describedby="caption-attachment-8567" class="wp-image-8567 size-full" src="./objeto_a_arreglo_conversión_en_js_files/Convertir-objeto-a-arreglo-en-JavaScript.png" alt="Objeto a arreglo en JavaScript usando Object.entries, values y keys" width="508" height="398" srcset="https://parzibyte.me/blog/wp-content/uploads/2019/08/Convertir-objeto-a-arreglo-en-JavaScript.png 508w, https://parzibyte.me/blog/wp-content/uploads/2019/08/Convertir-objeto-a-arreglo-en-JavaScript-300x235.png 300w" sizes="(max-width: 508px) 100vw, 508px"></a><p id="caption-attachment-8567" class="wp-caption-text">Objeto a arreglo en JavaScript usando Object.entries, values y keys</p></div>
+<p>Tema de la captura: <a href="https://parzibyte.me/blog/2019/06/18/instalar-tema-synthwave-84-vscode-colores-neon/">SynthWave ’84</a>.</p>
+<p>Esas funciones nos van a servir para convertir un objeto a arreglo en JavaScript de 3 formas. El primero extrayendo cada <strong>clave y valor</strong> como un nuevo arreglo, el segundo extrayendo <strong>únicamente los valores</strong> y el tercero obteniendo únicamente <strong>las claves</strong>.</p>
+<p><span id="more-8566"></span></p>
+<h2>Object.entries – Pares de arreglos</h2>
+<p>Comencemos viendo el método entries. Este método crea un nuevo arreglo de arreglos, en donde cada valor del arreglo es otro arreglo con dos valores.</p>
+<p>El primer valor es la clave y el segundo el valor (suena confuso pero no lo es). Veamos un ejemplo:</p>
+<div class="oembed-gist"><script src="./objeto_a_arreglo_conversión_en_js_files/4d9e2122108dc6181f1f80c3bfe455ff.js.descarga"></script><link rel="stylesheet" href="./objeto_a_arreglo_conversión_en_js_files/gist-embed-c77408be8058.css"><div id="gist97811059" class="gist">
+    <div class="gist-file" translate="no">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-entries-js" class="file my-2">
+    
+    <div itemprop="text" class="Box-body p-0 blob-wrapper data type-javascript  ">
+
+        
+<div class="js-check-bidi js-blob-code-container blob-code-content">
+
+  <template class="js-file-alert-template"></template>
+<template class="js-line-alert-template"></template>
+
+  <table data-hpc="" class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip="" data-tagsearch-lang="JavaScript" data-tagsearch-path="entries.js">
+        <tbody><tr>
+          <td id="file-entries-js-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
+          <td id="file-entries-js-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c">/**</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L2" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2"></td>
+          <td id="file-entries-js-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-c"> * Convertir un objeto a un arreglo</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L3" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3"></td>
+          <td id="file-entries-js-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-c"> * en JavaScript</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L4" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4"></td>
+          <td id="file-entries-js-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-c"> * </span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L5" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5"></td>
+          <td id="file-entries-js-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-c"> * <span class="pl-k">@author</span> parzibyte</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L6" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6"></td>
+          <td id="file-entries-js-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-c"> * </span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L7" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7"></td>
+          <td id="file-entries-js-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-c"> * https://parzibyte.me/blog</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L8" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8"></td>
+          <td id="file-entries-js-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-c"> */</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L9" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9"></td>
+          <td id="file-entries-js-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-k">let</span> <span class="pl-s1">alumnosConCalificaciones</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L10" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10"></td>
+          <td id="file-entries-js-LC10" class="blob-code blob-code-inner js-file-line">	<span class="pl-s">"Luis"</span>: <span class="pl-c1">100</span><span class="pl-kos">,</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L11" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11"></td>
+          <td id="file-entries-js-LC11" class="blob-code blob-code-inner js-file-line">	<span class="pl-s">"Pedro"</span>: <span class="pl-c1">90</span><span class="pl-kos">,</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L12" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12"></td>
+          <td id="file-entries-js-LC12" class="blob-code blob-code-inner js-file-line">	<span class="pl-s">"María José"</span>: <span class="pl-c1">100</span><span class="pl-kos">,</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L13" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13"></td>
+          <td id="file-entries-js-LC13" class="blob-code blob-code-inner js-file-line">	<span class="pl-s">"John Galt"</span>: <span class="pl-c1">99</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L14" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="14"></td>
+          <td id="file-entries-js-LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-kos">}</span><span class="pl-kos">;</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L15" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="15"></td>
+          <td id="file-entries-js-LC15" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L16" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="16"></td>
+          <td id="file-entries-js-LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-c">// Object.entries convierte tanto clave y valor. Cada</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L17" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="17"></td>
+          <td id="file-entries-js-LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-c">// par es convertido a un arreglo. Al final tenemos un array de arrays</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L18" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="18"></td>
+          <td id="file-entries-js-LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-k">let</span> <span class="pl-s1">arregloDeClavesYValores</span> <span class="pl-c1">=</span> <span class="pl-v">Object</span><span class="pl-kos">.</span><span class="pl-en">entries</span><span class="pl-kos">(</span><span class="pl-s1">alumnosConCalificaciones</span><span class="pl-kos">)</span><span class="pl-kos">;</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L19" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="19"></td>
+          <td id="file-entries-js-LC19" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">"Claves y valores: "</span><span class="pl-kos">,</span> <span class="pl-s1">arregloDeClavesYValores</span><span class="pl-kos">)</span><span class="pl-kos">;</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L20" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="20"></td>
+          <td id="file-entries-js-LC20" class="blob-code blob-code-inner js-file-line"><span class="pl-c">/*</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L21" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="21"></td>
+          <td id="file-entries-js-LC21" class="blob-code blob-code-inner js-file-line"><span class="pl-c">Salida:</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L22" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="22"></td>
+          <td id="file-entries-js-LC22" class="blob-code blob-code-inner js-file-line"><span class="pl-c">Claves y valores:  [ [ 'Luis', 100 ],</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L23" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="23"></td>
+          <td id="file-entries-js-LC23" class="blob-code blob-code-inner js-file-line"><span class="pl-c">  [ 'Pedro', 90 ],</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L24" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="24"></td>
+          <td id="file-entries-js-LC24" class="blob-code blob-code-inner js-file-line"><span class="pl-c">  [ 'María José', 100 ],</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L25" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="25"></td>
+          <td id="file-entries-js-LC25" class="blob-code blob-code-inner js-file-line"><span class="pl-c">  [ 'John Galt', 99 ] ]</span></td>
+        </tr>
+        <tr>
+          <td id="file-entries-js-L26" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="26"></td>
+          <td id="file-entries-js-LC26" class="blob-code blob-code-inner js-file-line"><span class="pl-c">*/</span></td>
+        </tr>
+  </tbody></table>
+</div>
+
+
+    </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/parzibyte/4d9e2122108dc6181f1f80c3bfe455ff/raw/a8f291afa1d519cbce3a5d4180adeed5a9b6e636/entries.js" style="float:right" class="Link--inTextBlock">view raw</a>
+        <a href="https://gist.github.com/parzibyte/4d9e2122108dc6181f1f80c3bfe455ff#file-entries-js" class="Link--inTextBlock">
+          entries.js
+        </a>
+        hosted with ❤ by <a class="Link--inTextBlock" href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<noscript>View the code on <a href="https://gist.github.com/parzibyte/4d9e2122108dc6181f1f80c3bfe455ff">Gist</a>.</noscript></div>
+<p>Como ves, el objeto se ha convertido en un arreglo. Cada entrada del arreglo tiene un nuevo arreglo; en el índice <code>0</code> tiene la clave del objeto (el <strong>nombre</strong> del alumno) y en el índice <code>1</code> la <strong>calificación</strong> del mismo.</p>
+<p>Puedes probar el ejemplo <a href="https://repl.it/@parzibyte/Convertir-objeto-a-arreglo-en-JavaScript">aquí</a>.</p>
+<h2>Object.keys – Solo las claves</h2>
+<p>Para extraer únicamente las claves del objeto podemos usar el método <code>Object.keys</code>. Como su nombre lo dice, pondrá cada clave del objeto dentro de un arreglo.</p>
+<p>Al final tendremos un <strong>arreglo de valores</strong>, valores que eran las claves del objeto anteriormente.</p>
+<p>Veamos el ejemplo:</p>
+<div class="oembed-gist"><script src="./objeto_a_arreglo_conversión_en_js_files/7e4d83560ac3c856b887e562de980c9a.js.descarga"></script><link rel="stylesheet" href="./objeto_a_arreglo_conversión_en_js_files/gist-embed-c77408be8058.css"><div id="gist97811095" class="gist">
+    <div class="gist-file" translate="no">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-keys-js" class="file my-2">
+    
+    <div itemprop="text" class="Box-body p-0 blob-wrapper data type-javascript  ">
+
+        
+<div class="js-check-bidi js-blob-code-container blob-code-content">
+
+  <template class="js-file-alert-template"></template>
+<template class="js-line-alert-template"></template>
+
+  <table data-hpc="" class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip="" data-tagsearch-lang="JavaScript" data-tagsearch-path="keys.js">
+        <tbody><tr>
+          <td id="file-keys-js-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
+          <td id="file-keys-js-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c">/**</span></td>
+        </tr>
+        <tr>
+          <td id="file-keys-js-L2" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2"></td>
+          <td id="file-keys-js-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-c"> * Convertir un objeto a un arreglo</span></td>
+        </tr>
+        <tr>
+          <td id="file-keys-js-L3" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3"></td>
+          <td id="file-keys-js-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-c"> * en JavaScript</span></td>
+        </tr>
+        <tr>
+          <td id="file-keys-js-L4" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4"></td>
+          <td id="file-keys-js-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-c"> * </span></td>
+        </tr>
+        <tr>
+          <td id="file-keys-js-L5" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5"></td>
+          <td id="file-keys-js-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-c"> * <span class="pl-k">@author</span> parzibyte</span></td>
+        </tr>
+        <tr>
+          <td id="file-keys-js-L6" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6"></td>
+          <td id="file-keys-js-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-c"> * </span></td>
+        </tr>
+        <tr>
+          <td id="file-keys-js-L7" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7"></td>
+          <td id="file-keys-js-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-c"> * https://parzibyte.me/blog</span></td>
+        </tr>
+        <tr>
+          <td id="file-keys-js-L8" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8"></td>
+          <td id="file-keys-js-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-c"> */</span></td>
+        </tr>
+        <tr>
+          <td id="file-keys-js-L9" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9"></td>
+          <td id="file-keys-js-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-k">let</span> <span class="pl-s1">alumnosConCalificaciones</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span></td>
+        </tr>
+        <tr>
+          <td id="file-keys-js-L10" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10"></td>
+          <td id="file-keys-js-LC10" class="blob-code blob-code-inner js-file-line">	<span class="pl-s">"Luis"</span>: <span class="pl-c1">100</span><span class="pl-kos">,</span></td>
+        </tr>
+        <tr>
+          <td id="file-keys-js-L11" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11"></td>
+          <td id="file-keys-js-LC11" class="blob-code blob-code-inner js-file-line">	<span class="pl-s">"Pedro"</span>: <span class="pl-c1">90</span><span class="pl-kos">,</span></td>
+        </tr>
+        <tr>
+          <td id="file-keys-js-L12" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12"></td>
+          <td id="file-keys-js-LC12" class="blob-code blob-code-inner js-file-line">	<span class="pl-s">"María José"</span>: <span class="pl-c1">100</span><span class="pl-kos">,</span></td>
+        </tr>
+        <tr>
+          <td id="file-keys-js-L13" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13"></td>
+          <td id="file-keys-js-LC13" class="blob-code blob-code-inner js-file-line">	<span class="pl-s">"John Galt"</span>: <span class="pl-c1">99</span></td>
+        </tr>
+        <tr>
+          <td id="file-keys-js-L14" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="14"></td>
+          <td id="file-keys-js-LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-kos">}</span><span class="pl-kos">;</span></td>
+        </tr>
+        <tr>
+          <td id="file-keys-js-L15" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="15"></td>
+          <td id="file-keys-js-LC15" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-keys-js-L16" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="16"></td>
+          <td id="file-keys-js-LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-c">// Object.keys toma las claves, para este ejemplo serían</span></td>
+        </tr>
+        <tr>
+          <td id="file-keys-js-L17" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="17"></td>
+          <td id="file-keys-js-LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-c">// los nombres de alumnos</span></td>
+        </tr>
+        <tr>
+          <td id="file-keys-js-L18" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="18"></td>
+          <td id="file-keys-js-LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-k">let</span> <span class="pl-s1">alumnos</span> <span class="pl-c1">=</span> <span class="pl-v">Object</span><span class="pl-kos">.</span><span class="pl-en">keys</span><span class="pl-kos">(</span><span class="pl-s1">alumnosConCalificaciones</span><span class="pl-kos">)</span><span class="pl-kos">;</span></td>
+        </tr>
+        <tr>
+          <td id="file-keys-js-L19" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="19"></td>
+          <td id="file-keys-js-LC19" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">"Claves: "</span><span class="pl-kos">,</span> <span class="pl-s1">alumnos</span><span class="pl-kos">)</span><span class="pl-kos">;</span></td>
+        </tr>
+        <tr>
+          <td id="file-keys-js-L20" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="20"></td>
+          <td id="file-keys-js-LC20" class="blob-code blob-code-inner js-file-line"><span class="pl-c">/*Salida:</span></td>
+        </tr>
+        <tr>
+          <td id="file-keys-js-L21" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="21"></td>
+          <td id="file-keys-js-LC21" class="blob-code blob-code-inner js-file-line"><span class="pl-c">Claves:  [ 'Luis', 'Pedro', 'María José', 'John Galt' ]</span></td>
+        </tr>
+        <tr>
+          <td id="file-keys-js-L22" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="22"></td>
+          <td id="file-keys-js-LC22" class="blob-code blob-code-inner js-file-line"><span class="pl-c">*/</span></td>
+        </tr>
+  </tbody></table>
+</div>
+
+
+    </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/parzibyte/7e4d83560ac3c856b887e562de980c9a/raw/279947cfa6d740bada8280146cd28b852d774222/keys.js" style="float:right" class="Link--inTextBlock">view raw</a>
+        <a href="https://gist.github.com/parzibyte/7e4d83560ac3c856b887e562de980c9a#file-keys-js" class="Link--inTextBlock">
+          keys.js
+        </a>
+        hosted with ❤ by <a class="Link--inTextBlock" href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<noscript>View the code on <a href="https://gist.github.com/parzibyte/7e4d83560ac3c856b887e562de980c9a">Gist</a>.</noscript></div>
+<p>En este caso tenemos como resultado un arreglo de cadenas, pues son las claves del objeto o, en otras palabras, los nombres de los alumnos.</p>
+<p>Puedes probar el ejemplo <a href="https://repl.it/@parzibyte/Convertir-objeto-a-arreglo-en-JavaScript">aquí</a>.</p>
+<h2>Objeto a arreglo en JavaScript con Object.values</h2>
+<p>Ahora veamos el tercer ejemplo. El método <code>Object.values</code> toma todos los valores del objeto (no las claves) y los coloca dentro de un arreglo.</p>
+<p>Veamos su uso:</p>
+<div class="oembed-gist"><script src="./objeto_a_arreglo_conversión_en_js_files/5b477077cc5a79bbb998d8a8f288e0e3.js.descarga"></script><link rel="stylesheet" href="./objeto_a_arreglo_conversión_en_js_files/gist-embed-c77408be8058.css"><div id="gist97811111" class="gist">
+    <div class="gist-file" translate="no">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-values-js" class="file my-2">
+    
+    <div itemprop="text" class="Box-body p-0 blob-wrapper data type-javascript  ">
+
+        
+<div class="js-check-bidi js-blob-code-container blob-code-content">
+
+  <template class="js-file-alert-template"></template>
+<template class="js-line-alert-template"></template>
+
+  <table data-hpc="" class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip="" data-tagsearch-lang="JavaScript" data-tagsearch-path="values.js">
+        <tbody><tr>
+          <td id="file-values-js-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
+          <td id="file-values-js-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c">/**</span></td>
+        </tr>
+        <tr>
+          <td id="file-values-js-L2" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2"></td>
+          <td id="file-values-js-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-c"> * Convertir un objeto a un arreglo</span></td>
+        </tr>
+        <tr>
+          <td id="file-values-js-L3" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3"></td>
+          <td id="file-values-js-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-c"> * en JavaScript</span></td>
+        </tr>
+        <tr>
+          <td id="file-values-js-L4" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4"></td>
+          <td id="file-values-js-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-c"> * </span></td>
+        </tr>
+        <tr>
+          <td id="file-values-js-L5" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5"></td>
+          <td id="file-values-js-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-c"> * <span class="pl-k">@author</span> parzibyte</span></td>
+        </tr>
+        <tr>
+          <td id="file-values-js-L6" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6"></td>
+          <td id="file-values-js-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-c"> * </span></td>
+        </tr>
+        <tr>
+          <td id="file-values-js-L7" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7"></td>
+          <td id="file-values-js-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-c"> * https://parzibyte.me/blog</span></td>
+        </tr>
+        <tr>
+          <td id="file-values-js-L8" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8"></td>
+          <td id="file-values-js-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-c"> */</span></td>
+        </tr>
+        <tr>
+          <td id="file-values-js-L9" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9"></td>
+          <td id="file-values-js-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-k">let</span> <span class="pl-s1">alumnosConCalificaciones</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span></td>
+        </tr>
+        <tr>
+          <td id="file-values-js-L10" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10"></td>
+          <td id="file-values-js-LC10" class="blob-code blob-code-inner js-file-line">	<span class="pl-s">"Luis"</span>: <span class="pl-c1">100</span><span class="pl-kos">,</span></td>
+        </tr>
+        <tr>
+          <td id="file-values-js-L11" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11"></td>
+          <td id="file-values-js-LC11" class="blob-code blob-code-inner js-file-line">	<span class="pl-s">"Pedro"</span>: <span class="pl-c1">90</span><span class="pl-kos">,</span></td>
+        </tr>
+        <tr>
+          <td id="file-values-js-L12" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12"></td>
+          <td id="file-values-js-LC12" class="blob-code blob-code-inner js-file-line">	<span class="pl-s">"María José"</span>: <span class="pl-c1">100</span><span class="pl-kos">,</span></td>
+        </tr>
+        <tr>
+          <td id="file-values-js-L13" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13"></td>
+          <td id="file-values-js-LC13" class="blob-code blob-code-inner js-file-line">	<span class="pl-s">"John Galt"</span>: <span class="pl-c1">99</span></td>
+        </tr>
+        <tr>
+          <td id="file-values-js-L14" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="14"></td>
+          <td id="file-values-js-LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-kos">}</span><span class="pl-kos">;</span></td>
+        </tr>
+        <tr>
+          <td id="file-values-js-L15" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="15"></td>
+          <td id="file-values-js-LC15" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-values-js-L16" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="16"></td>
+          <td id="file-values-js-LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-c">// Object.values toma los valores, para este ejemplo serían</span></td>
+        </tr>
+        <tr>
+          <td id="file-values-js-L17" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="17"></td>
+          <td id="file-values-js-LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-c">// las calificaciones</span></td>
+        </tr>
+        <tr>
+          <td id="file-values-js-L18" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="18"></td>
+          <td id="file-values-js-LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-k">let</span> <span class="pl-s1">calificaciones</span> <span class="pl-c1">=</span> <span class="pl-v">Object</span><span class="pl-kos">.</span><span class="pl-en">values</span><span class="pl-kos">(</span><span class="pl-s1">alumnosConCalificaciones</span><span class="pl-kos">)</span><span class="pl-kos">;</span></td>
+        </tr>
+        <tr>
+          <td id="file-values-js-L19" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="19"></td>
+          <td id="file-values-js-LC19" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">"Valores: "</span><span class="pl-kos">,</span> <span class="pl-s1">calificaciones</span><span class="pl-kos">)</span><span class="pl-kos">;</span></td>
+        </tr>
+        <tr>
+          <td id="file-values-js-L20" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="20"></td>
+          <td id="file-values-js-LC20" class="blob-code blob-code-inner js-file-line"><span class="pl-c">/*Salida:</span></td>
+        </tr>
+        <tr>
+          <td id="file-values-js-L21" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="21"></td>
+          <td id="file-values-js-LC21" class="blob-code blob-code-inner js-file-line"><span class="pl-c">Valores:  [ 100, 90, 100, 99 ]</span></td>
+        </tr>
+        <tr>
+          <td id="file-values-js-L22" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="22"></td>
+          <td id="file-values-js-LC22" class="blob-code blob-code-inner js-file-line"><span class="pl-c">*/</span></td>
+        </tr>
+  </tbody></table>
+</div>
+
+
+    </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/parzibyte/5b477077cc5a79bbb998d8a8f288e0e3/raw/f95114dfcbb1ed4ad171fb09a9e1243588df35e7/values.js" style="float:right" class="Link--inTextBlock">view raw</a>
+        <a href="https://gist.github.com/parzibyte/5b477077cc5a79bbb998d8a8f288e0e3#file-values-js" class="Link--inTextBlock">
+          values.js
+        </a>
+        hosted with ❤ by <a class="Link--inTextBlock" href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<noscript>View the code on <a href="https://gist.github.com/parzibyte/5b477077cc5a79bbb998d8a8f288e0e3">Gist</a>.</noscript></div>
+<p>Ahora la salida son los valores, que en este caso son las calificaciones.</p>
+<p>Prueba el ejemplo <a href="https://repl.it/@parzibyte/Convertir-objeto-a-arreglo-en-JavaScript">aquí</a>.</p>
+<h2>Conclusión</h2>
+<p>Cabe mencionar que estos métodos funcionan mejor en navegadores modernos.</p>
+<p>Nota: estos ejemplos corren en el <strong>navegador</strong> y en <strong>Node.JS</strong>. Es decir, del lado del cliente y del servidor.</p>
+<p>En mi blog puedes encontrar más sobre <a href="https://parzibyte.me/blog/category/javascript/">JavaScript moderno</a>.</p>
+<div class="widget_text awac-wrapper"><div class="widget_text awac widget custom_html-37"><div class="textwidget custom-html-widget"><h1>
+	Encantado de ayudarte
+</h1>
+<hr><p>
+	Estoy disponible para trabajar en tu proyecto, modificar el programa del post o realizar tu tarea pendiente, no dudes en <a href="https://parzibyte.me/#contacto">ponerte en contacto</a> conmigo.</p>
+
+<h2>
+	No te pierdas ninguno de mis posts
+</h2>
+Suscríbete a <a href="https://t.me/parzibyte_channel">mi canal de Telegram</a> para recibir una notificación cuando escriba un nuevo tutorial de programación.</div></div></div>    </div>
+</div>        <hr class="border border-gray-950">
+            <ul class="post-categories">
+	<li><a href="https://parzibyte.me/blog/category/algoritmos/" rel="category tag">Algoritmos</a></li>
+	<li><a href="https://parzibyte.me/blog/category/javascript/" rel="category tag">javascript</a></li>
+	<li><a href="https://parzibyte.me/blog/category/node-js/" rel="category tag">Node.JS</a></li></ul>    <div class="post-tags">
+        <a href="https://parzibyte.me/blog/tag/arreglo/" rel="tag">arreglo</a><a href="https://parzibyte.me/blog/tag/conversion-de-tipos/" rel="tag">conversión de tipos</a><a href="https://parzibyte.me/blog/tag/diccionario-a-arreglo/" rel="tag">diccionario a arreglo</a><a href="https://parzibyte.me/blog/tag/object/" rel="tag">Object</a><a href="https://parzibyte.me/blog/tag/object-to-array-js/" rel="tag">object to array js</a><a href="https://parzibyte.me/blog/tag/object-entries/" rel="tag">Object.entries</a><a href="https://parzibyte.me/blog/tag/object-keys/" rel="tag">Object.keys</a><a href="https://parzibyte.me/blog/tag/objeto/" rel="tag">objeto</a><a href="https://parzibyte.me/blog/tag/objeto-a-arreglo/" rel="tag">objeto a arreglo</a><a href="https://parzibyte.me/blog/tag/values/" rel="tag">values</a>    </div>        <div class="flex flex-col md:flex-row my-2">
+            <div class="md:w-1/2">
+                « <a href="https://parzibyte.me/blog/2019/08/16/compilar-go-32-bits-desde-64-bits-cross-compile/" rel="prev">Compilar en Go para 32 bits desde PC de 64 bits (cross compile)</a>            </div>
+            <div class="md:w-1/2 flex justify-end items-center">
+                <a href="https://parzibyte.me/blog/2019/08/18/javascript-mostrar-algunos-elementos-imprimir-web/" rel="next">Javascript – mostrar solo algunos elementos al imprimir página web</a> »            </div>
+        </div>
+        <hr class="border border-gray-950">
+        
+<div id="comments" class="comments-area">
+    
+    	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Deja un comentario <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://parzibyte.me/blog/2019/08/16/objeto-arreglo-javascript-conversion/#respond" style="display:none;">Cancelar respuesta</a></small></h3><form action="https://parzibyte.me/blog/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Tu dirección de correo electrónico no será publicada.</span> <span class="required-field-message">Los campos obligatorios están marcados con <span class="required">*</span></span></p><p class="comment-form-comment"><label for="comment">Comentario <span class="required">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="255" required="required"></textarea></p><p class="comment-form-author"><label for="author">Nombre <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required"></p>
+<p class="comment-form-email"><label for="email">Correo electrónico <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required="required"></p>
+<p class="form-submit"></p><div class="g-recaptcha" data-sitekey="6LcQh0UUAAAAAGxeWVi1VubbM2z1GmEZeWJXH0x0"></div><input name="submit" type="submit" id="submit" class="submit" value="Publicar comentario" disabled=""> <input type="hidden" name="comment_post_ID" value="8566" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+<p></p></form>	</div><!-- #respond -->
+	
+</div><!-- #comments -->
+    </div>
+    <div id="sidebar-right" class="md:w-1/4 sm:w-full order-3">
+	
+		<div class="tarjeta">
+		<h3 class="widget-title">Entradas recientes</h3>
+		<ul>
+											<li>
+					<a href="https://parzibyte.me/blog/2023/12/06/calcular-edad-persona-javascript/">Calcular edad de una persona con JavaScript</a>
+											<span class="post-date">diciembre 6, 2023</span>
+									</li>
+											<li>
+					<a href="https://parzibyte.me/blog/2023/12/04/instalar-windows-11-sin-uefi/">Instalar Windows 11 sin UEFI</a>
+											<span class="post-date">diciembre 4, 2023</span>
+									</li>
+											<li>
+					<a href="https://parzibyte.me/blog/2023/11/30/actualizacion-plugin-impresoras-powershell-ping-version-base-datos/">Actualización plugin impresoras: PowerShell, ping en versión y base de datos</a>
+											<span class="post-date">noviembre 30, 2023</span>
+									</li>
+											<li>
+					<a href="https://parzibyte.me/blog/2023/11/11/impresora-xprinter-no-termina-impresion-se-desconecta/">Impresora Xprinter no termina impresión y se desconecta</a>
+											<span class="post-date">noviembre 11, 2023</span>
+									</li>
+											<li>
+					<a href="https://parzibyte.me/blog/2023/11/10/webpack-convierte-imagen-base64/">Webpack convierte imagen a base64</a>
+											<span class="post-date">noviembre 10, 2023</span>
+									</li>
+					</ul>
+
+		</div><div class="widget_text tarjeta"><h3 class="widget-title">Apoyo en tareas de programación</h3><div class="textwidget custom-html-widget">Estoy disponible para ayudarte en tus tareas de programación: <a href="https://parzibyte.me/#contacto">Envíame un mensaje</a></div></div><div class="tarjeta"><h3 class="widget-title">Páginas</h3>
+			<ul>
+				<li class="page_item page-item-2712"><a href="https://parzibyte.me/blog/conoce-sublime-pos/">Conoce Sublime POS 3</a></li>
+<li class="page_item page-item-2701"><a href="https://parzibyte.me/blog/contacto/">Contacto</a></li>
+<li class="page_item page-item-8490"><a href="https://parzibyte.me/blog/desarrollo-aplicaciones-web/">Desarrollo de aplicaciones web</a></li>
+<li class="page_item page-item-8493"><a href="https://parzibyte.me/blog/desarrollo-apps-moviles/">Desarrollo de apps móviles</a></li>
+<li class="page_item page-item-8482"><a href="https://parzibyte.me/blog/desarrollo-paginas-web/">Desarrollo de páginas web</a></li>
+<li class="page_item page-item-16397"><a href="https://parzibyte.me/blog/donaciones/">Donaciones</a></li>
+<li class="page_item page-item-8485"><a href="https://parzibyte.me/blog/experiencia-testimonios/">Experiencia y testimonios</a></li>
+<li class="page_item page-item-7262"><a href="https://parzibyte.me/blog/pagos-venta-software/">Pagos y venta de software</a></li>
+<li class="page_item page-item-2703"><a href="https://parzibyte.me/blog/portafolio/">Portafolio</a></li>
+<li class="page_item page-item-8854"><a href="https://parzibyte.me/blog/resuelvo-tareas-programacion/">Resuelvo tus tareas de programación</a></li>
+<li class="page_item page-item-9695"><a href="https://parzibyte.me/blog/sigueme/">Sígueme</a></li>
+<li class="page_item page-item-2699"><a href="https://parzibyte.me/blog/sobre-el-autor/">Sobre el autor</a></li>
+<li class="page_item page-item-7034"><a href="https://parzibyte.me/blog/software-creado-por-parzibyte/">Software creado por parzibyte (portafolio)</a></li>
+<li class="page_item page-item-7029"><a href="https://parzibyte.me/blog/contrataciones-ayuda/">Tareas y trabajos de programación</a></li>
+			</ul>
+
+			</div><div class="tarjeta"><h3 class="widget-title">Buscar tutoriales y ejemplos de código</h3><form role="search" method="get" id="searchform" class="searchform" action="https://parzibyte.me/blog/">
+				<div>
+					<label class="screen-reader-text" for="s">Buscar:</label>
+					<input type="text" value="" name="s" id="s">
+					<input type="submit" id="searchsubmit" value="Buscar">
+				</div>
+			</form></div><div class="widget_text tarjeta"><h3 class="widget-title">Comisiones abiertas</h3><div class="textwidget custom-html-widget">Estoy disponible para tareas de programación, desarrollo de sistemas y asesorías: <a href="https://parzibyte.me/#contacto">Envíame un mensaje</a></div></div><div class="tarjeta"><h3 class="widget-title">Etiquetas</h3><div class="tagcloud"><a href="https://parzibyte.me/blog/tag/android/" class="tag-cloud-link tag-link-1148 tag-link-position-1" style="font-size: 8.1206896551724pt;" aria-label="android (41 elementos)">android</a>
+<a href="https://parzibyte.me/blog/tag/ansi-c/" class="tag-cloud-link tag-link-8335 tag-link-position-2" style="font-size: 11.01724137931pt;" aria-label="ANSI C (71 elementos)">ANSI C</a>
+<a href="https://parzibyte.me/blog/tag/archivo/" class="tag-cloud-link tag-link-553 tag-link-position-3" style="font-size: 9.5689655172414pt;" aria-label="archivo (54 elementos)">archivo</a>
+<a href="https://parzibyte.me/blog/tag/array/" class="tag-cloud-link tag-link-135 tag-link-position-4" style="font-size: 11.258620689655pt;" aria-label="array (75 elementos)">array</a>
+<a href="https://parzibyte.me/blog/tag/arreglo/" class="tag-cloud-link tag-link-136 tag-link-position-5" style="font-size: 14.879310344828pt;" aria-label="arreglo (151 elementos)">arreglo</a>
+<a href="https://parzibyte.me/blog/tag/c/" class="tag-cloud-link tag-link-168 tag-link-position-6" style="font-size: 9.3275862068966pt;" aria-label="c# (52 elementos)">c#</a>
+<a href="https://parzibyte.me/blog/tag/cadena/" class="tag-cloud-link tag-link-93 tag-link-position-7" style="font-size: 14.275862068966pt;" aria-label="cadena (134 elementos)">cadena</a>
+<a href="https://parzibyte.me/blog/tag/conversion/" class="tag-cloud-link tag-link-338 tag-link-position-8" style="font-size: 8.4827586206897pt;" aria-label="conversión (44 elementos)">conversión</a>
+<a href="https://parzibyte.me/blog/tag/cpp/" class="tag-cloud-link tag-link-94 tag-link-position-9" style="font-size: 8.1206896551724pt;" aria-label="cpp (41 elementos)">cpp</a>
+<a href="https://parzibyte.me/blog/tag/ejemplo/" class="tag-cloud-link tag-link-340 tag-link-position-10" style="font-size: 8.8448275862069pt;" aria-label="ejemplo (47 elementos)">ejemplo</a>
+<a href="https://parzibyte.me/blog/tag/ejercicio/" class="tag-cloud-link tag-link-304 tag-link-position-11" style="font-size: 11.258620689655pt;" aria-label="ejercicio (74 elementos)">ejercicio</a>
+<a href="https://parzibyte.me/blog/tag/ejercicio-resuelto/" class="tag-cloud-link tag-link-11194 tag-link-position-12" style="font-size: 9.0862068965517pt;" aria-label="ejercicio resuelto (49 elementos)">ejercicio resuelto</a>
+<a href="https://parzibyte.me/blog/tag/fecha/" class="tag-cloud-link tag-link-48 tag-link-position-13" style="font-size: 8.3620689655172pt;" aria-label="fecha (43 elementos)">fecha</a>
+<a href="https://parzibyte.me/blog/tag/funcion/" class="tag-cloud-link tag-link-125 tag-link-position-14" style="font-size: 10.051724137931pt;" aria-label="función (59 elementos)">función</a>
+<a href="https://parzibyte.me/blog/tag/go/" class="tag-cloud-link tag-link-153 tag-link-position-15" style="font-size: 9.5689655172414pt;" aria-label="go (54 elementos)">go</a>
+<a href="https://parzibyte.me/blog/tag/golang/" class="tag-cloud-link tag-link-150 tag-link-position-16" style="font-size: 9.0862068965517pt;" aria-label="golang (49 elementos)">golang</a>
+<a href="https://parzibyte.me/blog/tag/html/" class="tag-cloud-link tag-link-233 tag-link-position-17" style="font-size: 9.448275862069pt;" aria-label="html (53 elementos)">html</a>
+<a href="https://parzibyte.me/blog/tag/http/" class="tag-cloud-link tag-link-90 tag-link-position-18" style="font-size: 8.2413793103448pt;" aria-label="http (42 elementos)">http</a>
+<a href="https://parzibyte.me/blog/tag/imagen/" class="tag-cloud-link tag-link-379 tag-link-position-19" style="font-size: 9.6896551724138pt;" aria-label="imagen (55 elementos)">imagen</a>
+<a href="https://parzibyte.me/blog/tag/impresora/" class="tag-cloud-link tag-link-27 tag-link-position-20" style="font-size: 8pt;" aria-label="impresora (40 elementos)">impresora</a>
+<a href="https://parzibyte.me/blog/tag/impresora-termica/" class="tag-cloud-link tag-link-8539 tag-link-position-21" style="font-size: 9.3275862068966pt;" aria-label="impresora térmica (51 elementos)">impresora térmica</a>
+<a href="https://parzibyte.me/blog/tag/java/" class="tag-cloud-link tag-link-179 tag-link-position-22" style="font-size: 11.741379310345pt;" aria-label="java (82 elementos)">java</a>
+<a href="https://parzibyte.me/blog/tag/javascript/" class="tag-cloud-link tag-link-141 tag-link-position-23" style="font-size: 15.965517241379pt;" aria-label="javascript (187 elementos)">javascript</a>
+<a href="https://parzibyte.me/blog/tag/js/" class="tag-cloud-link tag-link-975 tag-link-position-24" style="font-size: 13.310344827586pt;" aria-label="js (111 elementos)">js</a>
+<a href="https://parzibyte.me/blog/tag/laravel/" class="tag-cloud-link tag-link-28 tag-link-position-25" style="font-size: 9.2068965517241pt;" aria-label="laravel (50 elementos)">laravel</a>
+<a href="https://parzibyte.me/blog/tag/lenguaje-c/" class="tag-cloud-link tag-link-885 tag-link-position-26" style="font-size: 10.655172413793pt;" aria-label="Lenguaje c (66 elementos)">Lenguaje c</a>
+<a href="https://parzibyte.me/blog/tag/linux/" class="tag-cloud-link tag-link-117 tag-link-position-27" style="font-size: 8.2413793103448pt;" aria-label="linux (42 elementos)">linux</a>
+<a href="https://parzibyte.me/blog/tag/lista/" class="tag-cloud-link tag-link-438 tag-link-position-28" style="font-size: 9.8103448275862pt;" aria-label="lista (56 elementos)">lista</a>
+<a href="https://parzibyte.me/blog/tag/mysql/" class="tag-cloud-link tag-link-42 tag-link-position-29" style="font-size: 11.5pt;" aria-label="mysql (79 elementos)">mysql</a>
+<a href="https://parzibyte.me/blog/tag/numero/" class="tag-cloud-link tag-link-447 tag-link-position-30" style="font-size: 9.9310344827586pt;" aria-label="número (58 elementos)">número</a>
+<a href="https://parzibyte.me/blog/tag/php/" class="tag-cloud-link tag-link-10 tag-link-position-31" style="font-size: 15.241379310345pt;" aria-label="php (160 elementos)">php</a>
+<a href="https://parzibyte.me/blog/tag/plugin/" class="tag-cloud-link tag-link-7 tag-link-position-32" style="font-size: 8.2413793103448pt;" aria-label="plugin (42 elementos)">plugin</a>
+<a href="https://parzibyte.me/blog/tag/programacion/" class="tag-cloud-link tag-link-1019 tag-link-position-33" style="font-size: 22pt;" aria-label="programación (589 elementos)">programación</a>
+<a href="https://parzibyte.me/blog/tag/programacion-c/" class="tag-cloud-link tag-link-8333 tag-link-position-34" style="font-size: 8.8448275862069pt;" aria-label="programación c (47 elementos)">programación c</a>
+<a href="https://parzibyte.me/blog/tag/programacion-java/" class="tag-cloud-link tag-link-8395 tag-link-position-35" style="font-size: 9.5689655172414pt;" aria-label="Programación Java (54 elementos)">Programación Java</a>
+<a href="https://parzibyte.me/blog/tag/programacion-javascript/" class="tag-cloud-link tag-link-7935 tag-link-position-36" style="font-size: 8.9655172413793pt;" aria-label="programación javascript (48 elementos)">programación javascript</a>
+<a href="https://parzibyte.me/blog/tag/programacion-php/" class="tag-cloud-link tag-link-8249 tag-link-position-37" style="font-size: 9.3275862068966pt;" aria-label="programación php (51 elementos)">programación php</a>
+<a href="https://parzibyte.me/blog/tag/python/" class="tag-cloud-link tag-link-56 tag-link-position-38" style="font-size: 16.327586206897pt;" aria-label="python (199 elementos)">python</a>
+<a href="https://parzibyte.me/blog/tag/solucion/" class="tag-cloud-link tag-link-89 tag-link-position-39" style="font-size: 8.6034482758621pt;" aria-label="solución (45 elementos)">solución</a>
+<a href="https://parzibyte.me/blog/tag/sql/" class="tag-cloud-link tag-link-41 tag-link-position-40" style="font-size: 8.4827586206897pt;" aria-label="sql (44 elementos)">sql</a>
+<a href="https://parzibyte.me/blog/tag/string/" class="tag-cloud-link tag-link-99 tag-link-position-41" style="font-size: 11.98275862069pt;" aria-label="string (86 elementos)">string</a>
+<a href="https://parzibyte.me/blog/tag/tabla/" class="tag-cloud-link tag-link-503 tag-link-position-42" style="font-size: 8.1206896551724pt;" aria-label="tabla (41 elementos)">tabla</a>
+<a href="https://parzibyte.me/blog/tag/vue/" class="tag-cloud-link tag-link-1650 tag-link-position-43" style="font-size: 8.2413793103448pt;" aria-label="vue (42 elementos)">vue</a>
+<a href="https://parzibyte.me/blog/tag/web/" class="tag-cloud-link tag-link-6801 tag-link-position-44" style="font-size: 9.3275862068966pt;" aria-label="web (52 elementos)">web</a>
+<a href="https://parzibyte.me/blog/tag/windows/" class="tag-cloud-link tag-link-151 tag-link-position-45" style="font-size: 8.6034482758621pt;" aria-label="windows (45 elementos)">windows</a></div>
+</div><div class="tarjeta"><h3 class="widget-title">Archivo del blog</h3>		<label class="screen-reader-text" for="archives-dropdown-2">Archivo del blog</label>
+		<select id="archives-dropdown-2" name="archive-dropdown">
+			
+			<option value="">Elegir mes</option>
+				<option value="https://parzibyte.me/blog/2023/12/"> diciembre 2023 &nbsp;(2)</option>
+	<option value="https://parzibyte.me/blog/2023/11/"> noviembre 2023 &nbsp;(3)</option>
+	<option value="https://parzibyte.me/blog/2023/10/"> octubre 2023 &nbsp;(5)</option>
+	<option value="https://parzibyte.me/blog/2023/09/"> septiembre 2023 &nbsp;(6)</option>
+	<option value="https://parzibyte.me/blog/2023/08/"> agosto 2023 &nbsp;(11)</option>
+	<option value="https://parzibyte.me/blog/2023/07/"> julio 2023 &nbsp;(2)</option>
+	<option value="https://parzibyte.me/blog/2023/06/"> junio 2023 &nbsp;(9)</option>
+	<option value="https://parzibyte.me/blog/2023/05/"> mayo 2023 &nbsp;(2)</option>
+	<option value="https://parzibyte.me/blog/2023/04/"> abril 2023 &nbsp;(7)</option>
+	<option value="https://parzibyte.me/blog/2023/03/"> marzo 2023 &nbsp;(3)</option>
+	<option value="https://parzibyte.me/blog/2023/02/"> febrero 2023 &nbsp;(7)</option>
+	<option value="https://parzibyte.me/blog/2023/01/"> enero 2023 &nbsp;(6)</option>
+	<option value="https://parzibyte.me/blog/2022/12/"> diciembre 2022 &nbsp;(5)</option>
+	<option value="https://parzibyte.me/blog/2022/11/"> noviembre 2022 &nbsp;(23)</option>
+	<option value="https://parzibyte.me/blog/2022/10/"> octubre 2022 &nbsp;(24)</option>
+	<option value="https://parzibyte.me/blog/2022/09/"> septiembre 2022 &nbsp;(25)</option>
+	<option value="https://parzibyte.me/blog/2022/08/"> agosto 2022 &nbsp;(11)</option>
+	<option value="https://parzibyte.me/blog/2022/07/"> julio 2022 &nbsp;(14)</option>
+	<option value="https://parzibyte.me/blog/2022/06/"> junio 2022 &nbsp;(1)</option>
+	<option value="https://parzibyte.me/blog/2022/05/"> mayo 2022 &nbsp;(14)</option>
+	<option value="https://parzibyte.me/blog/2022/04/"> abril 2022 &nbsp;(21)</option>
+	<option value="https://parzibyte.me/blog/2022/03/"> marzo 2022 &nbsp;(16)</option>
+	<option value="https://parzibyte.me/blog/2022/02/"> febrero 2022 &nbsp;(24)</option>
+	<option value="https://parzibyte.me/blog/2022/01/"> enero 2022 &nbsp;(11)</option>
+	<option value="https://parzibyte.me/blog/2021/12/"> diciembre 2021 &nbsp;(27)</option>
+	<option value="https://parzibyte.me/blog/2021/11/"> noviembre 2021 &nbsp;(19)</option>
+	<option value="https://parzibyte.me/blog/2021/10/"> octubre 2021 &nbsp;(15)</option>
+	<option value="https://parzibyte.me/blog/2021/09/"> septiembre 2021 &nbsp;(16)</option>
+	<option value="https://parzibyte.me/blog/2021/08/"> agosto 2021 &nbsp;(36)</option>
+	<option value="https://parzibyte.me/blog/2021/07/"> julio 2021 &nbsp;(35)</option>
+	<option value="https://parzibyte.me/blog/2021/06/"> junio 2021 &nbsp;(36)</option>
+	<option value="https://parzibyte.me/blog/2021/05/"> mayo 2021 &nbsp;(33)</option>
+	<option value="https://parzibyte.me/blog/2021/04/"> abril 2021 &nbsp;(25)</option>
+	<option value="https://parzibyte.me/blog/2021/03/"> marzo 2021 &nbsp;(34)</option>
+	<option value="https://parzibyte.me/blog/2021/02/"> febrero 2021 &nbsp;(41)</option>
+	<option value="https://parzibyte.me/blog/2021/01/"> enero 2021 &nbsp;(50)</option>
+	<option value="https://parzibyte.me/blog/2020/12/"> diciembre 2020 &nbsp;(58)</option>
+	<option value="https://parzibyte.me/blog/2020/11/"> noviembre 2020 &nbsp;(35)</option>
+	<option value="https://parzibyte.me/blog/2020/10/"> octubre 2020 &nbsp;(25)</option>
+	<option value="https://parzibyte.me/blog/2020/09/"> septiembre 2020 &nbsp;(39)</option>
+	<option value="https://parzibyte.me/blog/2020/08/"> agosto 2020 &nbsp;(27)</option>
+	<option value="https://parzibyte.me/blog/2020/07/"> julio 2020 &nbsp;(25)</option>
+	<option value="https://parzibyte.me/blog/2020/06/"> junio 2020 &nbsp;(26)</option>
+	<option value="https://parzibyte.me/blog/2020/05/"> mayo 2020 &nbsp;(22)</option>
+	<option value="https://parzibyte.me/blog/2020/04/"> abril 2020 &nbsp;(35)</option>
+	<option value="https://parzibyte.me/blog/2020/03/"> marzo 2020 &nbsp;(45)</option>
+	<option value="https://parzibyte.me/blog/2020/02/"> febrero 2020 &nbsp;(56)</option>
+	<option value="https://parzibyte.me/blog/2020/01/"> enero 2020 &nbsp;(36)</option>
+	<option value="https://parzibyte.me/blog/2019/12/"> diciembre 2019 &nbsp;(41)</option>
+	<option value="https://parzibyte.me/blog/2019/11/"> noviembre 2019 &nbsp;(32)</option>
+	<option value="https://parzibyte.me/blog/2019/10/"> octubre 2019 &nbsp;(46)</option>
+	<option value="https://parzibyte.me/blog/2019/09/"> septiembre 2019 &nbsp;(54)</option>
+	<option value="https://parzibyte.me/blog/2019/08/"> agosto 2019 &nbsp;(62)</option>
+	<option value="https://parzibyte.me/blog/2019/07/"> julio 2019 &nbsp;(106)</option>
+	<option value="https://parzibyte.me/blog/2019/06/"> junio 2019 &nbsp;(115)</option>
+	<option value="https://parzibyte.me/blog/2019/05/"> mayo 2019 &nbsp;(80)</option>
+	<option value="https://parzibyte.me/blog/2019/04/"> abril 2019 &nbsp;(51)</option>
+	<option value="https://parzibyte.me/blog/2019/03/"> marzo 2019 &nbsp;(45)</option>
+	<option value="https://parzibyte.me/blog/2019/02/"> febrero 2019 &nbsp;(56)</option>
+	<option value="https://parzibyte.me/blog/2019/01/"> enero 2019 &nbsp;(49)</option>
+	<option value="https://parzibyte.me/blog/2018/12/"> diciembre 2018 &nbsp;(60)</option>
+	<option value="https://parzibyte.me/blog/2018/11/"> noviembre 2018 &nbsp;(59)</option>
+	<option value="https://parzibyte.me/blog/2018/10/"> octubre 2018 &nbsp;(68)</option>
+	<option value="https://parzibyte.me/blog/2018/09/"> septiembre 2018 &nbsp;(43)</option>
+	<option value="https://parzibyte.me/blog/2018/08/"> agosto 2018 &nbsp;(38)</option>
+	<option value="https://parzibyte.me/blog/2018/07/"> julio 2018 &nbsp;(11)</option>
+	<option value="https://parzibyte.me/blog/2018/06/"> junio 2018 &nbsp;(18)</option>
+	<option value="https://parzibyte.me/blog/2018/05/"> mayo 2018 &nbsp;(32)</option>
+	<option value="https://parzibyte.me/blog/2018/04/"> abril 2018 &nbsp;(29)</option>
+	<option value="https://parzibyte.me/blog/2018/03/"> marzo 2018 &nbsp;(45)</option>
+	<option value="https://parzibyte.me/blog/2018/02/"> febrero 2018 &nbsp;(21)</option>
+	<option value="https://parzibyte.me/blog/2018/01/"> enero 2018 &nbsp;(9)</option>
+	<option value="https://parzibyte.me/blog/2017/12/"> diciembre 2017 &nbsp;(18)</option>
+	<option value="https://parzibyte.me/blog/2017/11/"> noviembre 2017 &nbsp;(15)</option>
+	<option value="https://parzibyte.me/blog/2017/10/"> octubre 2017 &nbsp;(16)</option>
+	<option value="https://parzibyte.me/blog/2017/09/"> septiembre 2017 &nbsp;(5)</option>
+	<option value="https://parzibyte.me/blog/2017/07/"> julio 2017 &nbsp;(1)</option>
+	<option value="https://parzibyte.me/blog/2017/06/"> junio 2017 &nbsp;(2)</option>
+	<option value="https://parzibyte.me/blog/2017/05/"> mayo 2017 &nbsp;(3)</option>
+	<option value="https://parzibyte.me/blog/2017/04/"> abril 2017 &nbsp;(4)</option>
+
+		</select>
+
+			<script type="text/javascript">
+/* <![CDATA[ */
+
+(function() {
+	var dropdown = document.getElementById( "archives-dropdown-2" );
+	function onSelectChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value !== '' ) {
+			document.location.href = this.options[ this.selectedIndex ].value;
+		}
+	}
+	dropdown.onchange = onSelectChange;
+})();
+
+/* ]]> */
+</script>
+</div></div></div>
+
+<footer class="site-footer">
+    <div class="container">
+        <nav class="footer-navigation">
+            <ul id="menu-k-1" class="justify-end font-medium flex flex-col p-4  mt-4  rounded-lg  md:flex-row md:space-x-8 md:mt-0 bg-white"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-2991"><a href="https://parzibyte.me/blog">Inicio</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7033"><a href="https://parzibyte.me/blog/contrataciones-ayuda/">Tareas y trabajos de programación</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7038"><a href="https://parzibyte.me/blog/software-creado-por-parzibyte/">Software creado por parzibyte (portafolio)</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2994"><a href="https://parzibyte.me/blog/contacto/">Contacto</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16399"><a href="https://parzibyte.me/blog/donaciones/">Donaciones</a></li>
+</ul>        </nav>
+        <p class="text-center">Proudly brought to you by <a href="https://parzibyte.me/blog">Parzibyte</a> © 2023</p>
+    </div>
+</footer>
+<script type="text/javascript" src="./objeto_a_arreglo_conversión_en_js_files/f.txt" id="parzibyte_plugin_ads-js"></script>
+<script type="text/javascript" src="./objeto_a_arreglo_conversión_en_js_files/captcha.js.descarga" id="captcha-js"></script>
+<script type="text/javascript" src="./objeto_a_arreglo_conversión_en_js_files/script.min.js.descarga" id="oembed-gist-js"></script>
+<script type="text/javascript">
+(function() {
+				var expirationDate = new Date();
+				expirationDate.setTime( expirationDate.getTime() + 31536000 * 1000 );
+				document.cookie = "pll_language=es; expires=" + expirationDate.toUTCString() + "; path=/blog/; secure; SameSite=Lax";
+			}());
+
+</script>
+
+
+
+
+
+</body></html>

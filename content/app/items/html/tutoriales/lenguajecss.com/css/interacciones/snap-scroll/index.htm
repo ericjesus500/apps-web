@@ -1,0 +1,591 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>CSS Snap Scroll - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Las propiedades CSS scroll snap permiten crear un desplazamiento suave de ratón, ideal para hacer sliders o efectos de scroll.">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="CSS Snap Scroll - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Las propiedades CSS scroll snap permiten crear un desplazamiento suave de ratón, ideal para hacer sliders o efectos de scroll.">
+  <meta property="og:url" content="https://lenguajecss.com/css/interacciones/snap-scroll/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/interacciones/snap-scroll/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="CSS Snap Scroll - CSS en español">
+  <meta property="twitter:description" content="Las propiedades CSS scroll snap permiten crear un desplazamiento suave de ratón, ideal para hacer sliders o efectos de scroll.">
+  <meta property="twitter:image" content="https://lenguajecss.com/large-summary.jpg">
+
+  </head>
+
+<body class="css" style="--logo-color: #1e7bbf"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/css.jpg')">
+    <h1><a href="index.htm">CSS Snap Scroll</a></h1><h2 class="typewriter">Ajuste de scroll</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../scroll-y-overflow/index.htm">Scroll y Overflow</a>
+    <a class="current" href="index.htm">CSS Snap Scroll</a>
+    <a href="../../sombras/text-shadow/index.htm">Sombras CSS en textos</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>El estándar de CSS nos da la posibilidad de utilizar ciertas propiedades de <strong>ajuste</strong> tras un <strong>desplazamiento suave</strong> de ratón o con el dedo en dispositivos móviles. Con ello, podemos conseguir que un elemento se ajuste exactamente en el lugar correspondiente que nos interesa, justo al acabar el scroll.</p>
+<p>Estas propiedades pertenecen a la familia de propiedades <code>scroll-snap</code>, entre las cuales se encuentran <code>scroll-snap-type</code> o <code>scroll-padding</code>, entre otras, que veremos a continuación. En principio, se dividen entre propiedades que utilizaremos en el contenedor padre, y propiedades que utilizaremos en los elementos hijos.</p>
+<p><caniuse-support title="CSS Scroll Snap" feature="css-snappoints" edge="79/y" firefox="68/y" chrome="69/y" safari="11/y" opera="64/y" ios_saf="11.0-11.2/y" and_chr="116/y" and_ff="116/y">
+</caniuse-support></p>
+<p>Para ello, utilizaremos el esquema del ejemplo base del artículo anterior, donde el elemento con clase <code>.container</code> es el elemento padre contenedor y los elementos con clase <code>.slide</code> son los elementos hijos:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    Elemento hijo
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    Elemento hijo
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    Elemento hijo
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Vamos a explicarlo por partes, donde diferenciaremos las propiedades aplicadas al contenedor padre y las propiedades aplicadas a los elementos hijos.</p>
+<h3 id="propiedades-para-el-contenedor" tabindex="-1"><a class="header-anchor" href="#propiedades-para-el-contenedor">Propiedades para el contenedor</a></h3>
+<p>Así pues, dentro del estándar de <strong>CSS Scroll Snap</strong>, tenemos unas propiedades que afectan a nuestro elemento padre contenedor. Son las siguientes propiedades:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valores</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scroll-snap-type</code></td>
+<td><strong>none</strong> | <badge-type class="snap-direction"></badge-type> <badge-type class="snap-type"></badge-type></td>
+<td>Establece el tipo de desplazamiento de scroll y su dirección.</td>
+</tr>
+<tr>
+<td><code>scroll-padding</code></td>
+<td><strong>auto</strong> | <badge-type class="size"></badge-type></td>
+<td>Establece el relleno que tendrá el scroll.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="la-propiedad-scroll-snap-type" tabindex="-1"><a class="header-anchor" href="#la-propiedad-scroll-snap-type">La propiedad scroll-snap-type</a></h4>
+<p>La propiedad <code>scroll-snap-type</code> es la propiedad de control que establece el mecanismo de ajuste de scroll en el desplazamiento por parte del usuario. Para ello, tenemos que indicar dos valores:</p>
+<table>
+<thead>
+<tr>
+<th>Categoría</th>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><badge-type class="snap-direction"></badge-type></td>
+<td><code>x</code> | <code>y</code> | <code>block</code> | <code>inline</code> | <code>both</code></td>
+<td>Indica en que eje ajustará el desplazamiento del scroll.</td>
+</tr>
+<tr>
+<td><badge-type class="snap-type"></badge-type></td>
+<td><code>mandatory</code> | <code>proximity</code></td>
+<td>Indica el modo en el que se ajustará al finalizar el scroll del usuario.</td>
+</tr>
+</tbody>
+</table>
+<p>En el primer caso, <code>x</code> e <code>y</code> indican si se trata de un desplazamiento en horizontal o vertical. Los valores <code>block</code> e <code>inline</code> son sus equivalentes en <a href="../../modelo-de-cajas/propiedades-logicas-css/index.htm">propiedades lógicas</a>. Por último, <code>both</code> es ideal si se quiere que se apliquen ambas.</p>
+<p>Por último, hay que establecer el tipo de ajuste de desplazamiento. En el caso de <code>mandatory</code>, establecemos que es un ajuste obligatorio y cuando el usuario deje de hacer scroll, el navegador ajustará el scroll para que encaje exactamente con el hijo en esa dirección. En caso de indicar <code>proximity</code>, el navegador ajustará el scroll para que encaje exactamente con el hijo más próximo.</p>
+<blockquote>
+<p>Recuerda que las barras de scroll deben estar visibles para que funcione correctamente. Podrías utilizar <code>overflow-y</code> (<em>por ejemplo</em>) a <code>visible</code> si lo necesitas.</p>
+</blockquote>
+<h4 id="la-propiedad-scroll-padding" tabindex="-1"><a class="header-anchor" href="#la-propiedad-scroll-padding">La propiedad scroll-padding</a></h4>
+<p>También tenemos disponible la propiedad <code>scroll-padding</code>, que permite indicar una separación de relleno entre el ajuste que encaja exactamente al terminar el desplazamiento y el límite de esa zona. Como la propiedad <code>padding</code> de CSS, <code>scroll-padding</code> también tiene sus propiedades individuales:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scroll-padding-top</code></td>
+<td>Indica un <code>padding</code> de separación en la zona superior al detener el scroll.</td>
+</tr>
+<tr>
+<td><code>scroll-padding-right</code></td>
+<td>Idem a la derecha.</td>
+</tr>
+<tr>
+<td><code>scroll-padding-bottom</code></td>
+<td>Idem en la zona inferior.</td>
+</tr>
+<tr>
+<td><code>scroll-padding-left</code></td>
+<td>Idem a la izquierda.</td>
+</tr>
+<tr>
+<td><code>scroll-padding</code></td>
+<td>Propiedad de atajo. 1, 2, 3 ó 4 parámetros (funciona igual que una propiedad padding).</td>
+</tr>
+</tbody>
+</table>
+<p>También tenemos otras propiedades como <code>scroll-padding-block</code> o <code>scroll-padding-inline</code>, y sus derivadas como <code>scroll-padding-*-start</code> o <code>scroll-padding-*-end</code>, que son sus equivalentes en <a href="../../modelo-de-cajas/propiedades-logicas-css/index.htm">propiedades lógicas</a>.</p>
+<h4 id="ejemplo" tabindex="-1"><a class="header-anchor" href="#ejemplo">Ejemplo</a></h4>
+<p>Retomaremos el ejemplo del capítulo anterior. Sin embargo, observa el CSS de la clase <code>.container</code>. Le hemos añadido una pequeña parte donde activamos las propiedades <code>scroll-snap-type</code> y <code>scroll-padding</code>, previamente indicando que necesitamos scroll en el eje vertical con <code>overflow-y</code>:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#slide-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Slide 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span> ·
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#slide-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Slide 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span> ·
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#slide-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Slide 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Slide 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Slide 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Slide 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">body, h1</span> <span class="token punctuation">{</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>    <span class="token comment">/* Reset margins */</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">nav</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 5px 10px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.container</span> <span class="token punctuation">{</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100vh<span class="token punctuation">;</span>
+    <span class="token property">overflow-y</span><span class="token punctuation">:</span> scroll<span class="token punctuation">;</span>
+    <span class="token property">scroll-snap-type</span><span class="token punctuation">:</span> y mandatory<span class="token punctuation">;</span>
+    <span class="token property">scroll-padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.slide</span> <span class="token punctuation">{</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color<span class="token punctuation">,</span> #aaa<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.slide:nth-child(2)</span> <span class="token punctuation">{</span> <span class="token property">--color</span><span class="token punctuation">:</span> steelblue<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token selector">.slide:nth-child(3)</span> <span class="token punctuation">{</span> <span class="token property">--color</span><span class="token punctuation">:</span> tomato<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+  <span class="token comment">/* Propiedades de elementos hijos */</span>
+
+  <span class="token selector">.slide</span> <span class="token punctuation">{</span>
+    <span class="token property">scroll-snap-align</span><span class="token punctuation">:</span> start<span class="token punctuation">;</span>
+    <span class="token property">scroll-margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>Con <code>scroll-snap-type: y mandatory</code> indicamos que el scroll se va a aplicar en vertical y que va a ser obligatorio, además de no dejar ningún <code>padding</code> de scroll. Prueba a cambiar <code>mandatory</code> por <code>proximity</code> y comprueba que el ajuste se realiza por proximidad, en lugar de forma obligatoria (<em>por dirección</em>).</p>
+<p>Sin embargo, todo esto no funcionaría si no establecemos las propiedades de la clase <code>.slide</code>, que afectan a los elementos hijos, y que explicaremos a continuación, en la siguiente parte de este artículo.</p>
+<h3 id="propiedades-para-los-hijos" tabindex="-1"><a class="header-anchor" href="#propiedades-para-los-hijos">Propiedades para los hijos</a></h3>
+<p>En las propiedades hijas de nuestro contenedor con <strong>CSS Scroll Snap</strong> (<em>en nuestro caso <code>.slide</code></em>), tenemos las siguientes propiedades que nos permitirán configurar el ajuste de scroll:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scroll-snap-align</code></td>
+<td><strong>none</strong> | <code>start</code> | <code>end</code> | <code>center</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>scroll-snap-stop</code></td>
+<td><strong>normal</strong> | <code>always</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>scroll-margin</code></td>
+<td><strong>0</strong> | <badge-type class="size"></badge-type></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="propiedad-scroll-snap-align" tabindex="-1"><a class="header-anchor" href="#propiedad-scroll-snap-align">Propiedad scroll-snap-align</a></h4>
+<p>La propiedad <code>scroll-snap-align</code> es una propiedad que permite indicar la posición de ajuste. Puede tomar los valores <code>start</code>, <code>end</code> y <code>center</code> y en el caso de indicarse dos parámetros, se aplica al eje horizontal (<em>inline</em>) y al eje vertical (<em>block</em>). Si sólo se indica un parámetro, se aplica el mismo valor a ambos.</p>
+<p>Para entender esto con nuestro ejemplo, lo mejor es cambiar el <code>height</code> de <code>.slide</code> a un valor como <code>75%</code> (<em>por ejemplo</em>). Ahora cada slide, ocupará el 75% de la pantalla, y por lo tanto si modificamos <code>scroll-snap-align</code> con el valor...</p>
+<ul>
+<li>...<code>start</code>, el <code>.slide</code> ajustará su parte inicial en la parte superior del navegador.</li>
+<li>...<code>end</code>, el <code>.slide</code> ajustará su parte final en la parte inferior del navegador.</li>
+<li>...<code>center</code>, el <code>.slide</code> se ajustará de modo que esté centrado en el navegador.</li>
+</ul>
+<h4 id="propiedad-scroll-snap-stop" tabindex="-1"><a class="header-anchor" href="#propiedad-scroll-snap-stop">Propiedad scroll-snap-stop</a></h4>
+<p>La propiedad <code>scroll-snap-stop</code> permite indicar los valores <code>normal</code> o <code>always</code> para permitir que el navegador «atrape» el desplazamiento y lo detenga si pasa por una zona sensible a ajustarse en ella. La diferencia es que el valor por defecto <code>normal</code> permite pasar por una de estas zonas, mientras que el valor <code>always</code> define que si pasa por una zona, se detenga en ella.</p>
+<p>Esta propiedad no tiene efecto en situaciones en las que solo tenemos una posición de ajuste.</p>
+<h4 id="la-propiedad-scroll-margin" tabindex="-1"><a class="header-anchor" href="#la-propiedad-scroll-margin">La propiedad scroll-margin</a></h4>
+<p>De forma análoga a <code>scroll-padding</code>, también tenemos una propiedad <code>scroll-margin</code> que podemos aplicar en nuestros elementos hijos. Esta propiedad permite indicar un margen externo al hijo, que permitirá que se vea el elemento anterior (<em>o posterior, dependiendo donde ajustemos</em>), ya que aplica un margen al scroll.</p>
+<p>De la misma forma que el anterior, podemos utilizar sus propiedades individuales:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scroll-margin-top</code></td>
+<td>Indica un <code>margin</code> de separación en la zona superior al detener el scroll.</td>
+</tr>
+<tr>
+<td><code>scroll-margin-right</code></td>
+<td>Idem en la zona derecha.</td>
+</tr>
+<tr>
+<td><code>scroll-margin-bottom</code></td>
+<td>Idem en la zona inferior.</td>
+</tr>
+<tr>
+<td><code>scroll-margin-left</code></td>
+<td>Idem en la zona izquierda.</td>
+</tr>
+<tr>
+<td><code>scroll-margin</code></td>
+<td>Propiedad de atajo. 1, 2, 3 ó 4 parámetros (funciona igual que una propiedad margin).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ejemplo-1" tabindex="-1"><a class="header-anchor" href="#ejemplo-1">Ejemplo</a></h4>
+<p>En nuestro ejemplo anterior indicamos este CSS adicional:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.slide</span> <span class="token punctuation">{</span>
+  <span class="token property">scroll-snap-align</span><span class="token punctuation">:</span> start<span class="token punctuation">;</span>
+  <span class="token property">scroll-margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Con la propiedad <code>scroll-snap-align</code> indicamos donde debe detenerse el scroll. Recuerda modificar el tamaño de alto del slide si quieres verlo sobre este ejemplo.</p>
+<p>Aumentando la propiedad <code>scroll-margin</code> comprobarás que se establece un márgen que se aplica al scroll con ajuste que estamos realizando en este artículo. También puedes usar las mencionadas propiedades individuales, o indicar 4 parámetros con diferentes valores a modo de atajo.</p>
+<blockquote>
+<p>Recuerda que aunque este ejemplo se haga sobre toda la pantalla y en vertical, podemos utilizar <strong>CSS Snap Scroll</strong> para crear sliders más pequeños, que no sean a pantalla completa, sliders de imágenes verticales, etc.</p>
+</blockquote>
+<p>El siguiente ejemplo es un pequeño slider horizontal de elementos de texto:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Item 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Item 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Item 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Item 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Item 5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">.container</span> <span class="token punctuation">{</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> lightgrey<span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
+    <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> <span class="token function">repeat</span><span class="token punctuation">(</span>5<span class="token punctuation">,</span> 1fr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+    <span class="token property">gap</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+    <span class="token property">overflow-x</span><span class="token punctuation">:</span> scroll<span class="token punctuation">;</span>
+
+    <span class="token property">scroll-snap-type</span><span class="token punctuation">:</span> x proximity<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.item</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+    <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+
+    <span class="token property">scroll-snap-align</span><span class="token punctuation">:</span> start<span class="token punctuation">;</span>
+    <span class="token property">scroll-margin</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../scroll-y-overflow/index.htm" title="Scroll y Overflow">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Scroll y Overflow</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../../sombras/text-shadow/index.htm" title="Sombras CSS en textos">
+  <div>
+    <span>Sombras CSS en textos</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/FWDBGZQPzXk" title="Cómo crear GRADIENTES REPETIDOS en CSS">
+  <img loading="lazy" src="../../../vi/FWDBGZQPzXk/mqdefault.jpg" alt="Cómo crear GRADIENTES REPETIDOS en CSS">
+</a><a href="https://youtu.be/wIGAyJGx2kc" title="CSS Cards: Baraja de cartas diseñada sólo con HTML y CSS">
+  <img loading="lazy" src="../../../vi/wIGAyJGx2kc/mqdefault.jpg" alt="CSS Cards: Baraja de cartas diseñada sólo con HTML y CSS">
+</a><a href="https://youtu.be/W6fAzw3HoWg" title="Cómo crear GRADIENTES LINEALES en CSS">
+  <img loading="lazy" src="../../../vi/W6fAzw3HoWg/mqdefault.jpg" alt="Cómo crear GRADIENTES LINEALES en CSS">
+</a><a href="https://youtu.be/OQtAyXHeKnc" title="Grid CSS: Grids por área">
+  <img loading="lazy" src="../../../vi/OQtAyXHeKnc/mqdefault.jpg" alt="Grid CSS: Grids por área">
+</a><a href="https://youtu.be/g5QVe65vPd4" title="Grid CSS: Celdas irregulares">
+  <img loading="lazy" src="../../../vi/g5QVe65vPd4/mqdefault.jpg" alt="Grid CSS: Celdas irregulares">
+</a><a href="https://youtu.be/D5fJxaLCjKg" title="Configurar VSCODE para CORREGIR tu CSS AUTOMÁTICAMENTE">
+  <img loading="lazy" src="../../../vi/D5fJxaLCjKg/mqdefault.jpg" alt="Configurar VSCODE para CORREGIR tu CSS AUTOMÁTICAMENTE">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,429 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Modo de carga de tipografías - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Algunas propiedades avanzadas para gestionar el aspecto de una tipografía o el modo de aparición de la misma.">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Modo de carga de tipografías - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Algunas propiedades avanzadas para gestionar el aspecto de una tipografía o el modo de aparición de la misma.">
+  <meta property="og:url" content="https://lenguajecss.com/css/fuentes-y-tipografias/font-display/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/fuentes-y-tipografias/font-display/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Modo de carga de tipografías - CSS en español">
+  <meta property="twitter:description" content="Algunas propiedades avanzadas para gestionar el aspecto de una tipografía o el modo de aparición de la misma.">
+  <meta property="twitter:image" content="https://lenguajecss.com/large-summary.jpg">
+
+  </head>
+
+<body class="css" style="--logo-color: #1e7bbf"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/css.jpg')">
+    <h1><a href="index.htm">Modo de carga de tipografías</a></h1><h2 class="typewriter">Formas de ajustar la carga de tipografías</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../text-decoration/index.htm">Decoraciones de texto</a>
+    <a class="current" href="index.htm">Modo de carga de tipografías</a>
+    <a href="../caracteristicas-personalizadas/index.htm">Características personalizadas</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Las tipografías que veremos en esta sección tratan de formas específicas de controlar la forma en la que se cargan y se ven o aparecen las tipografías en la página. Y para ello, hay que entender una serie de conceptos previos.</p>
+<h3 id="modo-de-aparición" tabindex="-1"><a class="header-anchor" href="#modo-de-aparición">Modo de aparición</a></h3>
+<p>La propiedad <code>font-display</code> nos brinda un mecanismo muy interesante para determinar como queremos que se comporte la tipografía al cargar la página. Cuando cargamos una página con una tipografía que <strong>no se encuentra instalada</strong>, el navegador debe descargar la tipografía y activarla, tarea que no ocurre instantáneamente, ya que depende de nuestra conexión, del tamaño de la fuente y del sistema utilizado.</p>
+<p>En el instante anterior a descargar la tipografía pueden ocurrir varias cosas:</p>
+<ul>
+<li>1️⃣ <strong>FOIT</strong> (<em>Flash of Invisible Text</em>): El texto permanece <strong>oculto</strong> (invisible) al usuario hasta que la tipografía deseada se ha descargado y puede visualizarse.</li>
+<li>2️⃣ <strong>FOUT</strong> (<em>Flash of Unstyled Text</em>): El texto permanece <strong>sin estilo</strong> (con otra tipografía diferente) hasta que la tipografía deseada se ha descargado y puede visualizarse.</li>
+</ul>
+<h4 id="la-propiedad-font-display" tabindex="-1"><a class="header-anchor" href="#la-propiedad-font-display">La propiedad <code>font-display</code></a></h4>
+<p>Dependiendo del valor de la propiedad <code>font-display</code> podemos modificar dicho comportamiento:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>font-display</code></td>
+<td><strong>auto</strong> | <code>block</code> | <code>swap</code> | <code>fallback</code> | <code>optional</code></td>
+<td>Modo en el que se muestra el texto cuando se cargan tipografías.</td>
+</tr>
+</tbody>
+</table>
+<p>Como podemos ver, esta propiedad tienen varios valores que modifican su comportamiento. Cada uno de ellos, va a indicarle al navegador como tiene que comportarse al cargar una tipografía externa, mediante <a href="../regla-font-face/index.htm">la regla <code>@font-face</code></a>, y que tiene que hacer durante el tiempo que la tipografía no está disponible.</p>
+<p>Veamos que ocurre con cada uno de los valores posibles a indicar a la propiedad <code>font-display</code> (<em>en el momento que la tipografía no está descargada</em>):</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>auto</code></td>
+<td>El navegador decide que método usar. Generalmente, usan <code>block</code>.</td>
+</tr>
+<tr>
+<td><code>block</code></td>
+<td>Fuente invisible ► Fuente deseada desde que cargue</td>
+</tr>
+<tr>
+<td><code>swap</code></td>
+<td>Fuente fallback ► Fuente deseada desde que cargue</td>
+</tr>
+<tr>
+<td><code>fallback</code></td>
+<td>Fuente fallback ► Fuente deseada si carga rápido, sino se queda fuente fallback.</td>
+</tr>
+<tr>
+<td><code>optional</code></td>
+<td>Si la fuente deseada carga rápido, usa fuente deseada, sino fuente fallback.</td>
+</tr>
+</tbody>
+</table>
+<p>Estos valores son difíciles de resumir en una tabla, así que vamos a definirlos uno por uno, profundizando en sus características:</p>
+<ul>
+<li>
+<p><code>auto</code>: Es el valor por defecto de la propiedad. El navegador decide que comportamiento aplicar, que suele ser <strong>FOIT</strong> (<em>el texto aparece invisible</em>). En algunos navegadores o situaciones, el tiempo de FOIT puede llegar a ser considerablemente alto, y bastante molesto.</p>
+</li>
+<li>
+<p><code>block</code>: El navegador mantiene el texto invisible (FOIT) durante un corto periodo de tiempo (<em>~3seg</em>), mostrando la tipografía deseada desde que esté cargada. Este valor es ideal para pequeños fragmentos de texto como titulares, que no interesa que se vean con otra tipografía diferente.</p>
+</li>
+<li>
+<p><code>swap</code>: El navegador muestra inmediatamente el texto con la siguiente tipografía de la lista de alternativas durante un cortísimo periodo de tiempo (<em>~100ms</em>), mostrando la tipografía deseada desde que está cargada. Ideal para pequeños fragmentos de texto como titulares.</p>
+</li>
+<li>
+<p><code>fallback</code>: El navegador muestra el texto con la siguiente tipografía de la lista de alternativas de <code>font-family</code> durante un cortísimo periodo de tiempo (<em>~100ms</em>), mostrando la tipografía deseada desde que está cargada. Como se puede ver, es idéntico al valor <code>swap</code>. La diferencia es que si pasa demasiado tiempo sin que la tipografía se cargue, se utiliza de forma definitiva la alternativa que se estaba usando y no se utiliza la tipografía deseada. Puede ser apropiada para usar en fragmentos largos de texto.</p>
+</li>
+<li>
+<p><code>optional</code>: El navegador considera opcional el uso de la tipografía deseada si tarda demasiado o cree que hay algún problema en la descarga, utilizando la siguiente alternativa en la lista de tipografías de <code>font-family</code>. Ideal para textos largos que no produzcan saltos.</p>
+</li>
+</ul>
+<h3 id="la-propiedad-unicode-range" tabindex="-1"><a class="header-anchor" href="#la-propiedad-unicode-range">La propiedad <code>unicode-range</code></a></h3>
+<p>Cuando cargamos tipografías con <a href="../regla-font-face/index.htm">la regla <code>@font-face</code></a>, es una buena práctica utilizar la propiedad <code>unicode-range</code> para indicar cuales son los carácteres que utilizaremos de la tipografía.</p>
+<p>Una tipografía cuenta con multitud de carácteres o glifos: carácteres alfanuméricos, carácteres básicos ASCII, carácteres hebreos, carácteres japoneses, carácteres especiales, etc... Sin embargo, hay ciertos carácteres que al menos en algunas situaciones no vamos a utilizar, por lo que sería un desperdicio descargarse la tipografía para luego no utilizarla.</p>
+<p>La propiedad <code>unicode-range</code> nos permite indicar el rango que vamos a utilizar con una tipografía, y en el caso de que la página o documento no necesite ningún carácter de ese rango, la tipografía no se descargará.</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>unicode-range</code></td>
+<td><strong>U+0-10FFFF</strong> | <badge-type class="range"></badge-type></td>
+<td>Indica el rango unicode a utilizar.</td>
+</tr>
+</tbody>
+</table>
+<p>Los rangos unicode se definen utilizando el prefijo <code>U+</code> o <code>u+</code>, seguido del número del rango en hexadecimal. Los rangos con esta propiedad se pueden indicar de la siguiente forma:</p>
+<ul>
+<li>1️⃣ <strong>Un carácter individual</strong>: Indicamos sólo un carácter concreto. Por ejemplo <code>U+0042</code> o <code>U+01FF</code>.</li>
+<li>2️⃣ <strong>Un rango</strong>: Indicamos un rango de carácteres. Por ejemplo <code>U+0042-U+01FF</code>, que son los carácteres desde <code>42</code> hasta <code>1FF</code>.</li>
+<li>3️⃣ <strong>Un rango con comodines</strong>: Indicamos un rango con comodines. Por ejemplo <code>U+00??</code>, que abarcaría todos los carácteres desde <code>00</code> hasta <code>FF</code>.</li>
+</ul>
+<p>Veamos un fragmento de código donde tenemos un ejemplo de uso de esta propiedad:</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Virgil 3 YOFF"</span><span class="token punctuation">;</span>
+  <span class="token property">src</span><span class="token punctuation">:</span>
+    <span class="token function">local</span><span class="token punctuation">(</span><span class="token string">"Virgil 3 YOFF"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"/fonts/virgil-3.woff2"</span><span class="token punctuation">)</span></span> <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"woff2"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"/fonts/virgil-3.woff"</span><span class="token punctuation">)</span></span> <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"woff"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"/fonts/virgil-3.ttf"</span><span class="token punctuation">)</span></span> <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"truetype"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">unicode-range</span><span class="token punctuation">:</span> U+000-U+0FF<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p>La herramienta <a href="https://fontforge.org/en-US/">FontForge</a> es capaz de cargar tipografías y mostrarnos los diferentes rangos unicode de cada tipografía y que elementos se usan en cada uno de ellos, por si queremos examinar detalladamente. En <a href="https://symbl.cc/en/unicode/blocks/">SYMBL</a> o la aplicación <strong>Mapa de carácteres</strong> de Windows, también tienes los bloques que se suelen utilizar.</p>
+</blockquote>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../text-decoration/index.htm" title="Decoraciones de texto">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Decoraciones de texto</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../caracteristicas-personalizadas/index.htm" title="Características personalizadas">
+  <div>
+    <span>Características personalizadas</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/1TbS60Fu-_M" title="Variables CSS NATIVAS: ¿Qué son y cómo funcionan?">
+  <img loading="lazy" src="../../../vi/1TbS60Fu-_M/mqdefault.jpg" alt="Variables CSS NATIVAS: ¿Qué son y cómo funcionan?">
+</a><a href="https://youtu.be/FWDBGZQPzXk" title="Cómo crear GRADIENTES REPETIDOS en CSS">
+  <img loading="lazy" src="../../../vi/FWDBGZQPzXk/mqdefault.jpg" alt="Cómo crear GRADIENTES REPETIDOS en CSS">
+</a><a href="https://youtu.be/wIGAyJGx2kc" title="CSS Cards: Baraja de cartas diseñada sólo con HTML y CSS">
+  <img loading="lazy" src="../../../vi/wIGAyJGx2kc/mqdefault.jpg" alt="CSS Cards: Baraja de cartas diseñada sólo con HTML y CSS">
+</a><a href="https://youtu.be/hiRIjRf2QD8" title="FUNCIONES de TIEMPO en CSS: ¡Controla el ritmo de tus animaciones!">
+  <img loading="lazy" src="../../../vi/hiRIjRf2QD8/mqdefault.jpg" alt="FUNCIONES de TIEMPO en CSS: ¡Controla el ritmo de tus animaciones!">
+</a><a href="https://youtu.be/8Jh2K3tq5n0" title="Tutorial para aprender Animaciones CSS">
+  <img loading="lazy" src="../../../vi/8Jh2K3tq5n0/mqdefault.jpg" alt="Tutorial para aprender Animaciones CSS">
+</a><a href="https://youtu.be/OQtAyXHeKnc" title="Grid CSS: Grids por área">
+  <img loading="lazy" src="../../../vi/OQtAyXHeKnc/mqdefault.jpg" alt="Grid CSS: Grids por área">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

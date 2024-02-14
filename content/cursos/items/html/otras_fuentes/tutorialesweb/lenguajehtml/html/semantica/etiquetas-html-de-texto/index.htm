@@ -1,0 +1,413 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e44f26">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Etiquetas HTML de texto - HTML en español - Lenguaje HTML</title>
+  <link rel="preload" href="../../../critical.css" as="style">
+  <link rel="preload" href="../../../assets/fonts/blinker-vf.woff2" as="font" crossorigin="">
+  <link rel="preload" href="../../../assets/fonts/scope-one-400.woff2" as="font" crossorigin="">
+  <meta name="description" content="Existen múltiples etiquetas HTML para formatear texto. Con ellas podemos contener información y darle significado semántico.">
+  <link rel="stylesheet" href="../../../critical.css">
+  <link rel="stylesheet" href="../../../theme.css">
+  <script type="module" src="../../../main.js"></script>
+  <link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Etiquetas HTML de texto - HTML en español">
+  <meta property="og:image" content="https://lenguajehtml.com/html/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Existen múltiples etiquetas HTML para formatear texto. Con ellas podemos contener información y darle significado semántico.">
+  <meta property="og:url" content="https://lenguajehtml.com/html/semantica/etiquetas-html-de-texto/">
+  <meta property="twitter:url" content="https://lenguajehtml.com/html/semantica/etiquetas-html-de-texto/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Etiquetas HTML de texto - HTML en español">
+  <meta property="twitter:description" content="Existen múltiples etiquetas HTML para formatear texto. Con ellas podemos contener información y darle significado semántico.">
+  <meta property="twitter:image:src" content="https://lenguajehtml.com/html/large-summary.jpg">
+</head>
+<body class="html post"><div class="page">
+    <div class="sidebar">
+      <div class="logo flex-center">
+  <a href="/">
+    <img width="42" height="42" src="../../../assets/logo.svg" alt="Logo">
+    Lenguaje HTML
+  </a>
+  <div class="icons" style="--icon-size: 32px; --icon-side-padding: 0.15em">
+    <a href="https://twitter.com/Manz" title="Twitter"><svg-icon type="social" name="twitter"></svg-icon></a>
+    <a href="https://twitch.tv/manzdev" title="Twitch"><svg-icon type="social" name="twitch"></svg-icon></a>
+    <a href="https://instagram.com/manz.dev" title="Instagram"><svg-icon type="social" name="instagram"></svg-icon></a>
+    <a href="https://youtube.com/ManzDev?sub_confirmation=1" title="YouTube"><svg-icon type="social" name="youtube"></svg-icon></a>
+    <a href="https://discord.manz.dev/" title="Servidor de Discord"><svg-icon type="social" name="discord"></svg-icon></a>
+  </div>
+  <span>Un sitio web de <a href="https://manz.dev/"><mark>Manz.dev</mark></a></span>
+</div>
+
+      <form class="search flex-center" action="https://www.google.com/search">
+  <label><span>Buscar:</span> <input type="search" name="q" placeholder="Buscar un tema (ej: flex, grid...)" autocomplete="off"></label>
+  <label><span>Sitio:</span> <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev"></label>
+  <div class="search-results"></div>
+</form>
+
+      
+
+<style>
+  sidebar-link {
+    --logo-image: url(../../logo.svg);
+  }
+</style>
+
+<div class="toc"><sidebar-link title="Volver al índice" href="../../index.htm" back="" direct=""></sidebar-link><sidebar-link href="../../cheatsheets/index.htm" title="HTML5 CheatSheet" direct=""></sidebar-link><sidebar-section title="Introducción a HTML5" href="../../introduccion/index.htm"><sidebar-link href="../../introduccion/que-es-html/index.htm" title="¿Qué es HTML?"></sidebar-link><sidebar-link href="../../introduccion/estructura-etiqueta-html/index.htm" title="Estructura de etiqueta HTML"></sidebar-link><sidebar-link href="../../introduccion/atributos-comunes-html/index.htm" title="Atributos comunes en HTML"></sidebar-link><sidebar-link href="../../introduccion/estructura-documento-html/index.htm" title="Estructura del documento HTML"></sidebar-link><sidebar-link href="../../introduccion/validacion-html/index.htm" title="Validación de errores HTML"></sidebar-link><sidebar-link href="../../introduccion/tabla-periodica-html5/index.htm" title="Tabla periódica de HTML5"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas semánticas" href="../index.htm"><sidebar-link href="../etiquetas-html-obsoletas/index.htm" title="Etiquetas HTML obsoletas"></sidebar-link><sidebar-link href="index.htm" title="Etiquetas HTML de texto"></sidebar-link><sidebar-link href="../etiquetas-html-de-agrupacion/index.htm" title="Etiquetas HTML de agrupación"></sidebar-link><sidebar-link href="../enlaces-o-hipervinculos/index.htm" title="Enlaces o hipervínculos"></sidebar-link><sidebar-link href="../etiquetas-html-de-seccion/index.htm" title="Etiquetas HTML de sección"></sidebar-link><sidebar-link href="../etiquetas-html-de-tablas/index.htm" title="Etiquetas HTML de tablas"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas multimedia" href="../../multimedia/index.htm"><sidebar-link href="../../multimedia/etiquetas-html-de-imagenes/index.htm" title="Etiquetas HTML de imágenes"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-contenido-externo/index.htm" title="Etiquetas de contenido externo"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-video/index.htm" title="Etiquetas HTML de video"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-audio/index.htm" title="Etiquetas HTML de audio"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-subtitulos/index.htm" title="Etiquetas HTML de subtitulos"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de cabecera" href="../../cabecera/index.htm"><sidebar-link href="../../cabecera/etiquetas-html-de-relacion/index.htm" title="Etiquetas HTML de relación"></sidebar-link><sidebar-link href="../../cabecera/etiquetas-html-de-metadatos/index.htm" title="Etiquetas HTML de metadatos"></sidebar-link><sidebar-link href="../../cabecera/etiquetas-html-para-redes-sociales/index.htm" title="Etiquetas HTML de redes sociales"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de formularios" href="../../formularios/index.htm"><sidebar-link href="../../formularios/crear-un-formulario/index.htm" title="Creación de un formulario"></sidebar-link><sidebar-link href="../../formularios/controles-campos-de-texto/index.htm" title="Controles: Campos de texto"></sidebar-link><sidebar-link href="../../formularios/controles-campos-numericos/index.htm" title="Controles: Campos numéricos"></sidebar-link><sidebar-link href="../../formularios/controles-campos-fecha-hora/index.htm" title="Controles: Campos de fecha/hora"></sidebar-link><sidebar-link href="../../formularios/controles-casillas-o-botones/index.htm" title="Controles: Casillas o botones"></sidebar-link><sidebar-link href="../../formularios/controles-listas-de-seleccion/index.htm" title="Controles: Listas de selección"></sidebar-link><sidebar-link href="../../formularios/controles-seleccion-color/index.htm" title="Controles: Selección de color"></sidebar-link><sidebar-link href="../../formularios/controles-seleccion-archivos/index.htm" title="Controles: Selección de archivos"></sidebar-link><sidebar-link href="../../formularios/organizacion-de-campos/index.htm" title="Organización de campos"></sidebar-link><sidebar-link href="../../formularios/botones-de-envio-de-formulario/index.htm" title="Botones de envío de formularios"></sidebar-link><sidebar-link href="../../formularios/medidores-y-barras-de-progreso/index.htm" title="Medidores y barras de progreso"></sidebar-link><sidebar-link href="../../formularios/validaciones-html5/index.htm" title="Validaciones HTML5"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de scripting" href="../../scripting/index.htm"><sidebar-link href="../../scripting/etiquetas-html-interactivas/index.htm" title="Etiquetas HTML interactivas"></sidebar-link><sidebar-link href="../../scripting/etiquetas-html-scripts/index.htm" title="Etiquetas HTML de scripts"></sidebar-link><sidebar-link href="../../scripting/eventos-html/index.htm" title="Eventos en HTML"></sidebar-link></sidebar-section></div>
+
+      
+    </div>
+    <div class="contents">
+      <header class="mega">
+  <h1>Etiquetas HTML de texto</h1><h2>Etiquetas con fragmentos de contenido textual</h2></header>
+
+      <div class="content ">
+  <div class="breadcrumbs">
+  <a href="/">ATRÁS</a> <span>ᐳ</span> <a href="../../index.htm">html</a> <span>ᐳ</span> <a href="index.htm">Etiquetas HTML de texto</a>
+</div>
+<p>A grandes rasgos, en un documento HTML existen dos tipos de <strong>etiquetas HTML</strong>: las etiquetas que contienen fragmentos de texto (<em>se utilizan para dar significado a esas palabras o fragmentos</em>) y las etiquetas que agrupan conjunto de información (<em>fragmentos de texto y/u otras etiquetas</em>).</p>
+<p>En el siguiente ejemplo, tenemos la etiqueta <code>&lt;p&gt;</code>, que pertenece al segundo grupo (<em>agrupación</em>), mientras que la etiqueta <code>&lt;strong&gt;</code> forma parte del primer grupo, que es del que vamos a hablar en esta sección:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Hola, esto es un pequeño <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>ejemplo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span>.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="fragmentos-de-texto" tabindex="-1">Fragmentos de texto</h3>
+<p>En primer lugar, existe una serie de etiquetas HTML simples para seleccionar un fragmento de texto y dotarlo de un significado especial. Por ejemplo:</p>
+<table>
+<thead>
+<tr>
+<th>Etiqueta</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;strong&gt;</code></td>
+<td>Fragmento de texto <strong>importante</strong> o <strong>palabras clave</strong>.</td>
+</tr>
+<tr>
+<td><code>&lt;em&gt;</code></td>
+<td>Fragmento de texto <em>enfatizado</em> respecto a la frase que lo contiene.</td>
+</tr>
+<tr>
+<td><code>&lt;mark&gt;</code></td>
+<td>Fragmento de texto resaltado, simulando estar <mark>marcado con rotulador amarillo</mark>.</td>
+</tr>
+<tr>
+<td><code>&lt;i&gt;</code></td>
+<td>Fragmento de texto con voz o tono alternativo al resto.</td>
+</tr>
+<tr>
+<td><code>&lt;b&gt;</code></td>
+<td>Fragmento de texto sin importancia destacable (<em>fines utilitarios</em>).</td>
+</tr>
+<tr>
+<td><code>&lt;u&gt;</code></td>
+<td>Fragmento de texto para nombres propios o escritura incorrecta intencionada (<u>sic</u>).</td>
+</tr>
+<tr>
+<td><code>&lt;s&gt;</code></td>
+<td>Fragmento de texto inexacto o que ya no es relevante. (<s>errores o inexactitudes</s>)</td>
+</tr>
+<tr>
+<td><code>&lt;span&gt;</code></td>
+<td>Fragmento de texto sin significado (útil para seleccionar).</td>
+</tr>
+<tr>
+<td><code>&lt;cite&gt;</code></td>
+<td>Fragmento de texto con el título de un trabajo creativo: obras, libros...</td>
+</tr>
+</tbody>
+</table>
+<p>Ojo, algunas de estas etiquetas, en versiones anteriores de HTML tenían un significado diferente, como por ejemplo la etiqueta <code>&lt;b&gt;</code>, que antiguamente simbolizaba un fragmento de texto en <strong>negrita</strong> o la etiqueta <code>&lt;i&gt;</code>, que representaba un fragmento de texto en <strong>cursiva</strong>.</p>
+<p>Por su parte, la etiqueta <code>&lt;span&gt;</code> es una versión en linea de la etiqueta <code>&lt;div&gt;</code>, ya que su misión es agrupar contenido de texto, mientras que la misión del <code>&lt;div&gt;</code> es agrupar otras etiquetas HTML que a su vez pueden agrupar otras y otras etiquetas HTML.</p>
+<h3 id="modificación-de-significado" tabindex="-1">Modificación de significado</h3>
+<p>Con las siguientes etiquetas HTML también podemos modificar el significado de la información que contienen:</p>
+<table>
+<thead>
+<tr>
+<th>Etiqueta</th>
+<th>Atributos</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;sup&gt;</code></td>
+<td></td>
+<td>Superíndice (24<sup>2</sup>).</td>
+</tr>
+<tr>
+<td><code>&lt;sub&gt;</code></td>
+<td></td>
+<td>Subíndice (24<sub>2</sub>).</td>
+</tr>
+<tr>
+<td><code>&lt;small&gt;</code></td>
+<td></td>
+<td>Anotaciones menores <small>pequeñas puntualizaciones</small>.</td>
+</tr>
+<tr>
+<td><code>&lt;q&gt;</code></td>
+<td><code>cite</code></td>
+<td>Cita o frase extraída de otro contexto.</td>
+</tr>
+<tr>
+<td><code>&lt;dfn&gt;</code></td>
+<td><code>title</code></td>
+<td>Definición (término que posteriormente será definido).</td>
+</tr>
+<tr>
+<td><code>&lt;abbr&gt;</code></td>
+<td><code>title</code></td>
+<td>Abreviatura o acrónimo.</td>
+</tr>
+</tbody>
+</table>
+<p>Las etiquetas HTML <code>&lt;sup&gt;</code> y <code>&lt;sub&gt;</code> se utilizan para indicar superíndices y subíndices. De esta forma tenemos un mecanismo que nos permite diferenciar el número <strong>242</strong> del número <strong>24<sup>2</sup></strong>:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>El resultado de 24<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sup</span><span class="token punctuation">></span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sup</span><span class="token punctuation">></span></span> es el valor de X<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sub</span><span class="token punctuation">></span></span>a<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sub</span><span class="token punctuation">></span></span>.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<p>Por otra parte, la etiqueta HTML <code>&lt;q&gt;</code> nos permite hacer referencia a una cita o frase extraída de otro contexto. Obsérvese que en esta etiqueta disponemos de un atributo opcional <strong>cite</strong>, mediante el cuál podemos hacer referencia a una URL (<em>en este caso a la ficha de la película de Batman</em>) que en este caso es de donde procede la frase:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>q</span> <span class="token attr-name">cite</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.imdb.com/title/tt0468569/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    Hay hombres que solo quieren ver arder el mundo.<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>q</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<p>Es importante tener en cuenta que no se trata de la creación de un enlace para que el usuario haga clic, ya que estos se crean mediante la etiqueta <code>&lt;a&gt;</code> que veremos más adelante.</p>
+<p>También tenemos las etiquetas <code>&lt;dfn&gt;</code> y <code>&lt;abbr&gt;</code> que nos permiten indicar <strong>definiciones</strong> y <strong>abreviaturas</strong>, y que ambas permiten el uso del atributo opcional <strong>title</strong> para indicar el significado de dicho término o abreviatura. Un ejemplo de ambas etiquetas combinadas:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><br>  El término <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dfn</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>abbr</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Kilómetro<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Km<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>abrr</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dfn</span><span class="token punctuation">></span></span> es una unidad de longitud.<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<p>Los <strong>saltos de línea</strong> son etiquetas especiales de HTML para comenzar en una línea nueva (<em>emular el efecto al pulsar ENTER</em>). Al contrario que todas las que hemos visto, las etiquetas <code>&lt;br&gt;</code> son etiquetas que no necesitan etiqueta de cierre, por lo que sólo se escribe la etiqueta de apertura.</p>
+<table>
+<thead>
+<tr>
+<th>Etiqueta</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;br&gt;</code></td>
+<td>Salto de línea (<em>nueva línea</em>).</td>
+</tr>
+<tr>
+<td><code>&lt;wbr&gt;</code></td>
+<td>Oportunidad de salto de línea (<em>división silábica con guión</em>).</td>
+</tr>
+</tbody>
+</table>
+<p>También existe la etiqueta <code>&lt;wbr&gt;</code> que se denomina <strong>oportunidad de salto de línea</strong> y posee el mismo funcionamiento de la división silábica con guión, es decir, indicamos donde es posible hacer un salto de línea si la situación lo requiere, como por ejemplo, si la palabra no cabe dentro de un elemento y se quiere evitar que desborde el contenido.</p>
+<h3 id="aspectos-informáticos" tabindex="-1">Aspectos informáticos</h3>
+<p>Existen una serie de etiquetas HTML ligeramente orientadas a aspectos informáticos como combinaciones de teclado del usuario o para representar variables matemáticas o informáticas:</p>
+<table>
+<thead>
+<tr>
+<th>Etiqueta</th>
+<th>Atributos</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;kbd&gt;</code></td>
+<td></td>
+<td>Entrada de información del usuario (<em>generalmente, combinación de teclado</em>).</td>
+</tr>
+<tr>
+<td><code>&lt;samp&gt;</code></td>
+<td></td>
+<td>Salida de información de un programa informático.</td>
+</tr>
+<tr>
+<td><code>&lt;var&gt;</code></td>
+<td></td>
+<td>Variable (contexto matemático o informático).</td>
+</tr>
+<tr>
+<td><code>&lt;time&gt;</code></td>
+<td><code>datetime</code></td>
+<td>Indica una fecha/hora legible para humanos, con formato para máquinas opcional.</td>
+</tr>
+<tr>
+<td><code>&lt;data&gt;</code></td>
+<td><code>value</code></td>
+<td>Información equivalente orientado a máquinas.</td>
+</tr>
+<tr>
+<td><code>&lt;code&gt;</code></td>
+<td></td>
+<td>Fragmento de código fuente (<em>en línea</em>).</td>
+</tr>
+</tbody>
+</table>
+<p>Un ejemplo práctico de la etiqueta <code>&lt;kbd&gt;</code> sería modificar sus estilos CSS para obtener algo similar a <kbd>CTRL</kbd>+<kbd>T</kbd>, simplemente combinando el siguiente código HTML y CSS:</p>
+<p><code-sandbox></code-sandbox></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Pulsa las teclas <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kbd</span><span class="token punctuation">></span></span>CTRL<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kbd</span><span class="token punctuation">></span></span>+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kbd</span><span class="token punctuation">></span></span>T<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kbd</span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"><br><span class="token selector">kbd</span> <span class="token punctuation">{</span><br>  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Victor Mono"</span><span class="token punctuation">,</span> monospace<span class="token punctuation">;</span><br>  <span class="token property">padding</span><span class="token punctuation">:</span> 2px 6px<span class="token punctuation">;</span><br>  <span class="token property">background</span><span class="token punctuation">:</span> #eee<span class="token punctuation">;</span><br>  <span class="token property">border</span><span class="token punctuation">:</span> 3px solid #bbb<span class="token punctuation">;</span><br>  <span class="token property">border-top-width</span><span class="token punctuation">:</span> 1px<span class="token punctuation">;</span><br>  <span class="token property">border-bottom</span><span class="token punctuation">:</span> 3px solid #777<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>Si <code>&lt;kbd&gt;</code> muestra una entrada, por otro lado tenemos la etiqueta inversa, <code>&lt;samp&gt;</code>, que muestra la salida de un programa (<em>mensaje, error o información</em>) o <code>&lt;var&gt;</code> que nos permite indicar variables utilizadas en ejemplos matemáticos o informáticos.</p>
+<p>Con la etiqueta <code>&lt;time&gt;</code> podemos indicar una fecha y/o hora en formato legible para humanos, indicando de forma opcional el atributo <strong>datetime</strong> con la fecha en un formato orientado a máquinas. De la misma forma se utiliza la etiqueta <code>&lt;data&gt;</code> para información genérica, en la que se puede usar su atributo <strong>value</strong> para indicar el texto equivalente orientado a máquinas:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>time</span> <span class="token attr-name">datetime</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2001-01-04<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>4 de Enero<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>time</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>data</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ESDLA3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>El retorno del Rey<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>data</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<p>Nótese también que la etiqueta <code>&lt;code&gt;</code> se utiliza para fragmentos de código fuente cortos, en línea, o lo que es lo mismo, de una sola línea. Para bloques de código más extensos se usa combinándola con otra etiqueta que veremos más adelante.</p>
+<h3 id="etiquetas-de-edición" tabindex="-1">Etiquetas de edición</h3>
+<p>Por último, tenemos unas etiquetas orientadas a la edición posterior a la publicación de un texto o página web:</p>
+<table>
+<thead>
+<tr>
+<th>Etiqueta</th>
+<th>Atributos</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;ins&gt;</code></td>
+<td><code>cite</code>, <code>datetime</code></td>
+<td>Fragmento de texto o información <strong>añadida</strong> a posteriori de la publicación inicial.</td>
+</tr>
+<tr>
+<td><code>&lt;del&gt;</code></td>
+<td><code>cite</code>, <code>datetime</code></td>
+<td>Fragmento de texto o información <strong>eliminada</strong> a posteriori de la publicación inicial.</td>
+</tr>
+</tbody>
+</table>
+<p>Imaginemos que publicamos una página pero queremos editar la publicación para modificar o añadir información (<em>o simplemente corregir errores</em>), pero queremos reflejar esos cambios para que se vean que han sido insertados a posteriori.</p>
+<p>Para ello podemos utilizar la etiqueta <code>&lt;ins&gt;</code>, pudiendo asociarle unos estilos CSS determinados. De la misma forma, podemos utilizar <code>&lt;del&gt;</code> para la eliminación de información sin eliminarla por completo, sino que aparezca tachada o con algún estilo visual que sugiera que ya no es válida (<em>en gris y tachada, por ejemplo</em>).</p>
+<p>Ambas etiquetas admiten el uso de los atributos opcionales <strong>cite</strong>, que permite incluir una URL con más información sobre la información añadida/eliminada (<em>idéntico al atributo cite de la etiqueta q</em>) y <strong>datetime</strong>, que permite incluir la fecha/hora cuando se añadió/eliminó la información (<em>funcionamiento idéntico al atributo datetime de la etiqueta time</em>).</p>
+
+    <nav class="prev-next"><a class="bt prev" href="../etiquetas-html-obsoletas/index.htm" title="Etiquetas HTML obsoletas">
+    <span class="data">
+      <span>Etiquetas HTML obsoletas</span>
+      <small>Capítulo anterior</small>
+    </span>
+  </a><a class="bt next" href="../etiquetas-html-de-agrupacion/index.htm" title="Etiquetas HTML de agrupación">
+    <span class="icon">
+      <svg-icon name="arrow-right"></svg-icon>
+    </span>
+    <span class="data">
+      <span>Etiquetas HTML de agrupación</span>
+      <small>Capítulo siguiente</small>
+    </span>
+  </a></nav>
+
+    <script async="" src="../../../pagead/js/f.txt"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center; margin:auto; margin-top: 2em" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+      <div class="related">
+
+  <div class="author">
+    <div class="author-wrapper">
+      <img loading="lazy" class="circle" src="../../../assets/manz.webp" alt="Manz">
+      <div>
+        <p>Docente, divulgador informático y <a href="https://manz.dev/">streamer de código</a>. Amante de <strong>CSS</strong>, <strong>Javascript</strong>
+          y de la plataforma web. Ha trabajado como profesor en la Universidad de La Laguna y es director del curso de
+          Programación web FullStack y FrontEnd de EOI desde Tenerife. En sus ratos libres, busca GIF de gatos en Internet.</p>
+        <p class="twitch-badge">
+          <a href="https://twitch.tv/ManzDev">
+            <svg class="twitch" viewbox="0 0 1024 1024">
+              <path style="fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1;" d="m262.451 12.904-178.26 178.26v641.672h213.905v178.26l178.26-178.26h142.576L939.809 512V12.904H262.45zm35.645 71.287h570.383v392.164L725.904 618.932H583.287L458.514 743.705V618.932H298.096V84.192zM494.158 208.51v216.36h71.328V208.51h-71.328zm196 0v216.36h71.328V208.51h-71.328z"></path>
+            </svg>
+            Sígueme en Twitch
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="comentarios">
+    <script async="" src="../../../count.js" id="dsq-count-scr"></script>
+<script>
+var disqus_config = function () {
+  this.page.path = location.pathname.endsWith("/") ? location.pathname.substring(0, location.pathname.length - 1) : location.pathname;
+  this.page.url = 'https://lenguajehtml.com' + this.page.path;
+  this.page.identifier = this.page.url;
+};
+document.addEventListener('DOMContentLoaded', function() {
+  const coms = document.querySelector('#comentarios');
+  a = coms.querySelector('#disqus_button');
+  a.dataset.disqusIdentifier = 'https://lenguajehtml.com' + (location.pathname.endsWith("/") ? location.pathname.substring(0, location.pathname.length - 1) : location.pathname);
+  a.addEventListener('click', function() {
+    const div = document.createElement('div');
+    div.id = 'disqus_thread';
+    coms.appendChild(div);
+    const d = document, s = d.createElement('script');
+    s.src = '//lenguajehtml.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    this.remove();
+  });
+});
+</script>
+
+    <a class="disqus-comment-count" id="disqus_button" href="#disqus_thread" data-disqus-identifier="https://lenguajehtml.com/html/semantica/etiquetas-html-de-texto/">Leer comentarios</a>
+    <a class="discord" href="https://discord.manz.dev/">¡Accede a Discord y cuéntanos!</a>
+  </div>
+
+</div>
+
+    </div>
+    <div class="aside">
+      <div class="aside">
+
+  <div class="aside-top">
+    <a href="https://manz.dev/digitalocean" title="Empieza en DigitalOcean con 100$">
+      <img width="240" height="120" src="../../../assets/digital-ocean.png" alt="DigitalOcean">
+    </a>
+  </div><script type="module">
+  const ANCHOR_ICON = /* svg */`
+    <svg class="anchor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 205 205" width="36" height="36">
+      <path d="m140 129 16 16s-20 30-42 30V71c14-5 25-18 25-34 0-20-17-36-37-36-21 0-38 16-38 36 0 15 11 29 25
+              34v104c-26-2-42-27-42-27l18-18-65-9 10 63 17-17c15 12 32 37 73 37 51-1 63-29 76-40l19 19 10-64-65
+              10zM83 36c0-10 8-18 19-18s19 8 19 18c0 11-9 19-19 19s-19-8-19-19z"/>
+    </svg>`;
+  // Add inner links to sidebar menu
+  export const addInnerLinks = () => {
+    const summary = document.querySelector(".aside .summary .links");
+    const headers = Array.from(document.querySelectorAll(".content h3, .content h4"));
+    const tocLinks = [];
+    headers.forEach((e) => {
+      const link = `${location.origin}${location.pathname}#${e.id}`;
+      e.innerHTML = `<a class="permalink" href="${link}">${e.textContent} ${ANCHOR_ICON}</a>`;
+      const headerType = e.nodeName.toLowerCase();
+      const textContent = headerType === "h4" ? e.textContent.replace("La propiedad ", "").replace("La función ", "") : e.textContent;
+      tocLinks.push(`<a class="${headerType}" href="#${e.id}">${textContent}</a>`);
+    });
+    summary.insertAdjacentHTML("beforeEnd", tocLinks.join("\n"));
+  };
+
+  addInnerLinks();
+</script>
+
+<div class="summary">
+  <div class="table">Tabla de contenidos</div>
+  <div class="links"></div>
+</div>
+</div>
+
+    </div>
+  </div><footer class="main">
+  <div class="square">
+    <a href="/"><h2>Lenguaje HTML</h2></a>
+    <div class="icons">
+      <a href="https://twitter.com/Manz" title="Twitter"><svg-icon type="social" name="twitter"></svg-icon></a>
+      <a href="https://twitch.tv/manzdev" title="Twitch"><svg-icon type="social" name="twitch"></svg-icon></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg-icon type="social" name="instagram"></svg-icon></a>
+      <a href="https://youtube.com/ManzDev?sub_confirmation=1" title="YouTube"><svg-icon type="social" name="youtube"></svg-icon></a>
+      <a href="https://discord.manz.dev/" title="Servidor de Discord"><svg-icon type="social" name="discord"></svg-icon></a>
+      <a href="https://github.com/ManzDev" title="GitHub"><svg-icon type="social" name="github"></svg-icon></a>
+      <a href="https://codepen.io/Manz" title="Codepen"><svg-icon type="social" name="codepen"></svg-icon></a>
+      <a href="https://www.linkedin.com/in/joseromanhdez/" title="Linkedin"><svg-icon type="social" name="linkedin"></svg-icon></a>
+    </div>
+    <p>Documentación sobre HTML5 y las mejores herramientas y recursos para aprender a utilizar el lenguaje de marcado HTML.</p>
+    <p id="footer">Creado y mantenido por <a href="https://twitter.com/Manz">@Manz</a> con <span title="<3">❤</span></p></div>
+</footer>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-5', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+</body>
+</html>

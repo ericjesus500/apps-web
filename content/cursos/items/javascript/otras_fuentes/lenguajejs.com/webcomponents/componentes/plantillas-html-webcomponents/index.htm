@@ -1,0 +1,635 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ecc022">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Plantillas y HTML en componentes - Javascript en español - Lenguaje JS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Aprende a gestionar el marcado de un WebComponent a través de tres formas diferentes: acceso directo, forma dinámica o mediante templates.">
+  <meta name="view-transition" content="same-origin">
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Plantillas y HTML en componentes - Javascript en español">
+  <meta property="og:image" content="https://lenguajejs.com/webcomponents/componentes/plantillas-html-webcomponents/webcomponent-modular.png">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Aprende a gestionar el marcado de un WebComponent a través de tres formas diferentes: acceso directo, forma dinámica o mediante templates.">
+  <meta property="og:url" content="https://lenguajejs.com/webcomponents/componentes/plantillas-html-webcomponents/">
+  <meta property="twitter:url" content="https://lenguajejs.com/webcomponents/componentes/plantillas-html-webcomponents/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Plantillas y HTML en componentes - Javascript en español">
+  <meta property="twitter:description" content="Aprende a gestionar el marcado de un WebComponent a través de tres formas diferentes: acceso directo, forma dinámica o mediante templates.">
+  <meta property="twitter:image" content="https://lenguajejs.com/webcomponents/componentes/plantillas-html-webcomponents/webcomponent-modular.png">
+
+  </head>
+
+<body class="js menu-open " style="--logo-color: #d4ecff"><script>
+    matchMedia("(width <= 1180px)").matches && document.body.classList.toggle("menu-open");
+  </script>
+  
+
+
+
+
+
+
+
+
+<section class="menubar">
+  <div class="menubar-content">
+    <h1>Lenguaje JS</h1>
+
+    <a class="cover" title="Lenguaje JS (webcomponents)" href="../../index.htm" style="--image: url('../../../assets/webcomponents.jpg')"></a>
+
+    <header>
+      <a href="../../../npm/administracion/crear-nuevo-proyecto/index.htm" title="Crear nuevo proyecto con NPM">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m14 26l1.41-1.41L7.83 17H28v-2H7.83l7.58-7.59L14 6L4 16l10 10z"></path></svg>
+      </a>
+      <a href="../../index.htm" title="Volver al índice">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 256"><path fill="#888888" d="M240 210h-18v-94.45a14.06 14.06 0 0 0-4.53-10.32l-80-75.49l-.09-.08a13.94 13.94 0 0 0-18.83 0l-.09.08l-80 75.5A14 14 0 0 0 34 115.55V210H16a6 6 0 0 0 0 12h224a6 6 0 0 0 0-12ZM46 115.55a2 2 0 0 1 .65-1.48l.09-.08l79.94-75.48a2 2 0 0 1 2.63 0L209.26 114l.08.08a2 2 0 0 1 .66 1.48V210h-52v-50a14 14 0 0 0-14-14h-32a14 14 0 0 0-14 14v50H46ZM146 210h-36v-50a2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"></path></svg>
+      </a>
+      <a href="../../funcionalidad/clase-webcomponent/index.htm" title="Clase de un WebComponent">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></path></svg>
+      </a>
+    </header>
+
+    <div style="display:none">
+      <svg id="link-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 256 256"><g fill="#888888"><path d="M208 88h-56V32Z" opacity=".2"></path><path d="m213.66 82.34l-56-56A8 8 0 0 0 152 24H56a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V88a8 8 0 0 0-2.34-5.66ZM160 51.31L188.69 80H160ZM200 216H56V40h88v48a8 8 0 0 0 8 8h48v120Z"></path></g></svg>
+      <svg id="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="#888888" d="M2 12.5C2 9.46 4.46 7 7.5 7H18c2.21 0 4 1.79 4 4s-1.79 4-4 4H9.5a2.5 2.5 0 0 1 0-5H17v2H9.41c-.55 0-.55 1 0 1H18c1.1 0 2-.9 2-2s-.9-2-2-2H7.5C5.57 9 4 10.57 4 12.5S5.57 16 7.5 16H17v2H7.5C4.46 18 2 15.54 2 12.5z"></path></svg>
+    </div>
+
+    <div class="links">
+      <span class="folder">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 512 512"><path fill="#888888" d="M41 73v304.563L88.697 151H423v-30H185.514l-16-48H41zm62.303 96L43.092 455h381.605l60.211-286H103.303z"></path></svg>
+        Bases de los componentes
+      </span>
+            <a class="link" href="../que-son-webcomponents/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              ¿Qué son los WebComponents?
+            </a>
+            <a class="link" href="../custom-elements/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Etiquetas HTML personalizadas
+            </a>
+            <a class="link" href="../estructura-componente/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Estructura de archivos
+            </a>
+            <a class="link" href="../atributos-webcomponent/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Atributos de un WebComponent
+            </a>
+            <a class="link active" href="index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Plantillas y HTML en componentes
+            </a>
+            <a class="link" href="../css-en-custom-elements/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              CSS en Custom Elements
+            </a>
+    </div>
+  </div>
+
+  <div class="sidebox">
+    <svg class="close-menu" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19V5m10 1l-6 6l6 6m-6-6h14"></path></svg>
+    <div class="socials">
+      <a class="twitch" href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+      <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+      <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+      <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  const toggleMenu = () => (document.body.classList.toggle("menu-open"));
+  document.querySelector(".close-menu").addEventListener("click", toggleMenu);
+
+  matchMedia("(width <= 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+  matchMedia("(width > 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+
+  const activeLink = document.querySelector(".links .active");
+  const icon = /* svg */`<svg viewBox="0 0 24 24"><use href="#anchor-icon" /></svg>`;
+  const headers = [...document.querySelectorAll(".contents h3")].map(link => ({ text: link.textContent, id: link.id }));
+  const links = [];
+  headers.reverse().forEach(({ text, id }) => {
+    const link = document.createElement("a");
+    link.classList.add("anchor");
+    link.href = "#" + id;
+    link.insertAdjacentHTML("beforeend", icon);
+    link.insertAdjacentText("beforeend", ` ${text}`);
+    activeLink.after(link);
+  });
+</script>
+
+  <div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#js"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeJS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/webcomponents.jpg')">
+    <h1><a href="index.htm">Plantillas y HTML en componentes</a></h1><h2 class="typewriter">Cómo escribir código HTML en un WebComponent nativo</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../atributos-webcomponent/index.htm">Atributos de un WebComponent</a>
+    <a class="current" href="index.htm">Plantillas y HTML en componentes</a>
+    <a href="../css-en-custom-elements/index.htm">CSS en Custom Elements</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Una de las razones principales por las que nos puede interesar crear un <strong>componente</strong> en nuestra página es para modularizar una característica o funcionalidad que sabemos que se va a repetir. El componente es una estupenda forma de unir <strong>marcado</strong> (<em>HTML</em>), <strong>estilo</strong> (<em>CSS</em>) y <strong>funcionalidad</strong> (<em>JS</em>) en un mismo sitio, de forma que sea mucho más cómodo de mantener para nosotros, los desarrolladores.</p>
+<p><img src="webcomponent-modular.png" alt="WebComponent: Modular" width="1024" height="425" loading="lazy"></p>
+<h3 id="por-qué-plantillas" tabindex="-1"><a class="header-anchor" href="#por-qué-plantillas">¿Por qué plantillas?</a></h3>
+<p>Una de las finalidades de un WebComponent es <strong>encapsular</strong> un marcado HTML más complejo dentro de una etiqueta HTML personalizada más sencilla, simplificando mucho su utilización, reduciendo la cantidad de código que tenemos que escribir y permitiendo reutilizarlo.</p>
+<p>Pero hay que recordar que un WebComponent, al fin y al cabo, es un fichero javascript <code>.js</code>, por lo que no podemos escribir código HTML directamente, sino que tenemos que utilizar alguna de las siguientes estrategias.</p>
+<p>En los siguientes apartados, vamos a ver las diferentes formas que tenemos de <strong>crear marcado</strong> en un componente.</p>
+<h3 id="html-a-través-de-strings" tabindex="-1"><a class="header-anchor" href="#html-a-través-de-strings">HTML a través de strings</a></h3>
+<p>Probablemente, la forma más rápida de crear marcado en nuestro componente es haciendo uso de la API Javascript que permite escribir <strong>etiquetas HTML tradicionales</strong> dentro de un <badge-type class="string"></badge-type>. Tenemos varias <strong>propiedades</strong> que se utilizan para trabajar con el DOM de forma rápida, atómica y bastante cómoda para el desarrollador.</p>
+<p>Dichas propiedades son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.innerHTML</code></td>
+<td>Añade o reemplaza el <strong>marcado HTML</strong> del componente.</td>
+</tr>
+<tr>
+<td><code>.outerHTML</code></td>
+<td>Idem al anterior, pero <strong>también reemplaza el componente</strong>. Poco usado en WebComponents.</td>
+</tr>
+<tr>
+<td><code>.textContent</code></td>
+<td>Reemplaza el <strong>contenido textual</strong> del componente. No permite marcado HTML.</td>
+</tr>
+<tr>
+<td><code>.innerText</code></td>
+<td>Similar al anterior. Utilizar <code>.textContent</code> en su lugar.</td>
+</tr>
+</tbody>
+</table>
+<p>Las dos primeras propiedades, <code>.innerHTML</code> y <code>.outerHTML</code> se utilizan para reemplazar el marcado HTML de un componente, aunque <code>.outerHTML</code> no es demasiado práctico en los componentes, puesto que también sustituye la propia etiqueta del componente.</p>
+<p>Por otro lado, las dos últimas propiedades se utilizan para obtener solo el contenido textual, pero se recomienda usar <code>.textContent</code> ya que <code>.innerText</code> no funciona obteniendo texto de elementos de tipo <badge-type class="node"></badge-type>, por ejemplo.</p>
+<p>► <a href="../../../javascript/dom/insertar-elementos-dom/index.htm#reemplazar-contenido">Más información en Insertar elementos en el DOM</a></p>
+<p>De las anteriores, una de las más utilizadas es <code>.innerHTML</code>. Veamos un ejemplo usándolo en un <strong>componente</strong>:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">AppElement</span> <span class="token keyword">extends</span> <span class="token class-name">HTMLElement</span> <span class="token punctuation">{</span>
+
+  <span class="token function">connectedCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token string">"Desconocido"</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"&lt;div>"</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">"&lt;/div>"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p>El método <code>connectedCallback()</code> es un método especial que se ejecuta cuando el componente se inserta en el documento HTML. Lo explicamos más adelante, en el apartado de <a href="../../funcionalidad/ciclo-vida-webcomponent/index.htm">ciclo de vida de un WebComponent</a>.</p>
+</blockquote>
+<p>Esto se puede refactorizar un poco para mejorar la <strong>calidad de código</strong> y hacerlo más legible. Por ejemplo, podemos sacar el atributo <code>name</code> fuera del método y ponerlo en la parte superior de la clase. También podemos utilizar los backticks para indentar mejor el marcado del <badge-type class="string"></badge-type> y conseguir mayor legibilidad.</p>
+<p>Esto nos permite que si el marcado se vuelve más complejo se lea mucho mejor, pudiendo utilizar <code>${}</code> para agrupar las expresiones o variables JS, evitando también las múltiples concatenaciones:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">AppElement</span> <span class="token keyword">extends</span> <span class="token class-name">HTMLElement</span> <span class="token punctuation">{</span>
+
+  name <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token string">"Desconocido"</span><span class="token punctuation">;</span>
+
+  <span class="token function">connectedCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token comment">/* html */</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+      &lt;div class="container">
+        &lt;div class="name"></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/div>
+      &lt;/div></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<blockquote>
+<p><strong>Consejo</strong>: Observa que justo antes del string template hemos añadido el comentario <code>/* html */</code>. Esto es una práctica muy utilizada en WebComponents. Con extensiones para Visual Studio Code como <a href="https://marketplace.visualstudio.com/items?itemName=Tobermory.es6-string-html">ES6-strings-html</a> podemos indicarle al editor que lo que contiene el <badge-type class="string"></badge-type> que viene a continuación es código HTML, activando el resaltado de sintaxis en color o permitiendo otras características de HTML. También lo podemos hacer con código CSS, SVG, SQL, XML o GLSL (<em>OpenGL Shading</em>).</p>
+</blockquote>
+</blockquote>
+<p>Es importante tener en cuenta que si en el ejemplo anterior utilizaramos <code>.textContent</code> en lugar de <code>.innerHTML</code> no se renderizarían las etiquetas HTML, sino que se mostrarían literalmente, ya que <code>.textContent</code> interpreta <strong>literalmente como texto</strong> el marcado HTML.</p>
+<blockquote>
+<p>Esta forma de incluir marcado HTML dentro de strings está muy sujeta a controversia y no gusta a todos los desarrolladores. En ciertas comunidades como las de <strong>CSS-in-JS</strong> o <strong>React</strong> es muy utilizada (<em>con considerables diferencias</em>), pero en otras suele causar rechazo. Sin embargo, se ha convertido en la forma más extendida. Más adelante veremos otras alternativas.</p>
+</blockquote>
+<h4 id="emmet-en-string-templates" tabindex="-1"><a class="header-anchor" href="#emmet-en-string-templates">EMMET en String templates</a></h4>
+<p>Es muy posible que queramos utilizar la posibilidad de utilizar <a href="https://emmet.io/">EMMET</a> en los strings templates al igual que lo hacemos en un documento HTML, de forma que al escribir <code>p</code> y pulsar <kbd>TAB</kbd>, nos lo reemplace por <code>&lt;p&gt;&lt;/p&gt;</code> y posicione el cursor en su interior.</p>
+<p>En Visual Studio Code es muy sencillo. Basta con pulsar <kbd>F1</kbd> y buscar la opción <code>Open User Settings (JSON)</code>. Nos aparece un fichero <code>.json</code> con la configuración actual del usuario. Buscaremos o añadiremos la siguiente línea:</p>
+<pre class="language-js "><code class="language-js"><span class="token punctuation">{</span>
+  <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"emmet.includeLanguages"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">"javascript"</span><span class="token operator">:</span> <span class="token string">"html"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Esto hará que EMMET pueda ser escrito en ficheros Javascript, algo que junto a la extensión de VSCode mencionada anteriormente, hará que escribir código HTML en WebComponents sea más sencillo y cómodo.</p>
+<h3 id="html-a-través-del-dom" tabindex="-1"><a class="header-anchor" href="#html-a-través-del-dom">HTML a través del DOM</a></h3>
+<p>Otra forma de manejar el marcado HTML del componente es a través de la <a href="../../../javascript/dom/que-es/index.htm">API del DOM de Javascript</a>. En principio es un poco más verboso y puede resultar tedioso, pero ofrece mejor rendimiento y puede ser muy interesante si somos organizados.</p>
+<p>Algunos de los métodos que nos puede interesar usar:</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>document.createElement(</code><badge-type class="string"></badge-type><code>tag)</code></td>
+<td>Crea y devuelve una etiqueta HTML <code>tag</code>.</td>
+</tr>
+<tr>
+<td><code>element.appendChild(</code><badge-type class="node"></badge-type><code>child)</code></td>
+<td>Añade el elemento <code>child</code> dentro de <code>element</code>.</td>
+</tr>
+<tr>
+<td><code>element.insertAdjacentHTML(</code><badge-type class="string"></badge-type><code>pos,</code><badge-type class="string"></badge-type><code>html)</code></td>
+<td>Inserta el código <code>html</code> en <code>element</code>.</td>
+</tr>
+<tr>
+<td><code>element.insertAdjacentElement(</code><badge-type class="string"></badge-type><code>pos,</code><badge-type class="node"></badge-type><code>node)</code></td>
+<td>Inserta el elemento <code>node</code> en <code>element</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>En primer lugar, <code>document.createElement()</code> suele utilizarse conjuntamente con <code>.appendChild()</code>. El primero crea el elemento pasado por parámetro y lo devuelve, generalmente para almacenarlo en una variable. Es importante recalcar que ese elemento <strong>no se guarda en el documento HTML</strong>, aunque se haga sobre <code>document</code>. Para ello, hay que utilizar el segundo de los métodos de la tabla, que lo que hace es añadir el elemento que se le pasa por parámetro en el elemento donde se llama a <code>.appendChild()</code>.</p>
+<p>Veamos un ejemplo para hacer lo mismo que el código del apartado anterior:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">AppElement</span> <span class="token keyword">extends</span> <span class="token class-name">HTMLElement</span> <span class="token punctuation">{</span>
+
+  name <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token string">"Desconocido"</span><span class="token punctuation">;</span>
+
+  <span class="token function">connectedCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> container <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    container<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"container"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>container<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> nameContainer <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    nameContainer<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    nameContainer<span class="token punctuation">.</span>textContent <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+    container<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>nameContainer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Como vemos, el código es algo más «<strong>verboso</strong>», pero puede ser realmente útil cuando queremos realizar bucles o una lógica dinámica que es más compleja de crear al estilo del apartado anterior, mediante cadenas de texto <badge-type class="string"></badge-type>.</p>
+<p>Por otro lado, los métodos <code>.insertAdjacentHTML()</code> o <code>.insertAdjacentElement()</code> son un híbrido entre las formas de manipulación del DOM que hemos visto hasta ahora, donde tenemos más flexibilidad a la hora de insertar, ya que el parámetro <code>pos</code> es un <badge-type class="string"></badge-type> que puede determinar el punto exacto donde se añadirá el elemento.</p>
+<p><img src="appendchild-insertadjacenthtml.png" alt="appendChild() vs insertAdjacentHTML()" width="1024" height="425" loading="lazy"></p>
+<p>Tienes más información de su funcionamiento en <a href="../../../javascript/dom/que-es/index.htm#insertar-elementos">Insertar elementos en el DOM</a>.</p>
+<h3 id="html-mediante-templates" tabindex="-1"><a class="header-anchor" href="#html-mediante-templates">HTML mediante templates</a></h3>
+<p>Otra forma interesante de trabajar con el marcado HTML en un componente es utilizando la etiqueta <code>&lt;template&gt;</code>. Esta etiqueta HTML permite crear un fragmento de código de forma aislada del documento, de modo que todo su contenido está inerte y no es procesado ni renderizado inmediatamente por el navegador, sino que se pospondrá hasta que clonemos su contenido.</p>
+<p><youtube-video v="UVauEId-jJ0"></youtube-video></p>
+<blockquote>
+<p><strong>Nota</strong>: Recalcar que el navegador no procesa el contenido de una etiqueta <code>&lt;template&gt;</code> (<em>ni carga sus recursos, como scripts o imágenes</em>). Además, si se define en el HTML, su rendimiento es mayor que otras alternativas como <code>.innerHTML</code>, ya que se evita todo el proceso dinámico de parseo y análisis de <badge-type class="string"></badge-type> a marcado HTML.</p>
+</blockquote>
+<p>Podemos utilizar esta característica para usar ese marcado como código de base que clonaremos posteriormente y utilizaremos en la creación de instancias del componente.</p>
+<p>Veamos el mismo ejemplo anterior, utilizando esta mecánica (<em>recuerda que la etiqueta <code>&lt;template&gt;</code> puede definirse en el archivo <code>.html</code> si se prefiere y localizar mediante un <code>.querySelector()</code></em>):</p>
+<pre class="language-js "><code class="language-js"><span class="token comment">// Marcado HTML del componente</span>
+<span class="token keyword">const</span> template <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"template"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+template<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token comment">/* html */</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+  &lt;div class="container">
+    &lt;div class="name">&lt;/div>
+  &lt;/div></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+
+<span class="token comment">// Lógica Javascript del componente</span>
+<span class="token keyword">class</span> <span class="token class-name">AppElement</span> <span class="token keyword">extends</span> <span class="token class-name">HTMLElement</span> <span class="token punctuation">{</span>
+
+  name <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token string">"Desconocido"</span><span class="token punctuation">;</span>
+
+  <span class="token function">connectedCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> html <span class="token operator">=</span> template<span class="token punctuation">.</span>content<span class="token punctuation">.</span><span class="token function">cloneNode</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    html<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">".name"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>textContent <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>En este ejemplo hemos colocado el marcado en la <strong>parte superior del componente</strong> (<em>fuera de la clase</em>). De esta forma, se creará una sola vez y se utilizará cuando sea necesario. El contenido de los métodos de clase los limitamos a trabajar con lógica de programación y gestión de datos.</p>
+<p>Remarcar el uso de <code>.content.cloneNode(</code><badge-type class="boolean"></badge-type><code>deep)</code> sobre un template. Con esto, lo que estamos haciendo es clonar el código HTML de un <code>&lt;template&gt;</code>, para posteriormente insertarlo en nuestro componente.</p>
+<blockquote>
+<p>En el caso de establecer <code>deep</code> a <code>true</code>, haremos una <strong>clonación profunda</strong> (<em>deep clone</em>), es decir, se clona el elemento y todos sus elementos hijos. En caso de establecerlo a <code>false</code>, se hará una <strong>clonación superficial</strong> (<em>shallow clone</em>), es decir, clonará sólo el elemento indicado (<em>y no sus hijos, los cuales serán una referencia a los originales</em>).</p>
+</blockquote>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../atributos-webcomponent/index.htm" title="Atributos de un WebComponent">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Atributos de un WebComponent</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../css-en-custom-elements/index.htm" title="CSS en Custom Elements">
+  <div>
+    <span>CSS en Custom Elements</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/S0YA8BadVbM" title="Cambiar clases CSS desde Javascript con classList">
+  <img loading="lazy" src="../../../vi/S0YA8BadVbM/mqdefault.jpg" alt="Cambiar clases CSS desde Javascript con classList">
+</a><a href="https://youtu.be/Xi07tHFzqR8" title="Cómo CLONAR objetos en Javascript correctamente (structuredClone)">
+  <img loading="lazy" src="../../../vi/Xi07tHFzqR8/mqdefault.jpg" alt="Cómo CLONAR objetos en Javascript correctamente (structuredClone)">
+</a><a href="https://youtu.be/A11eG1o611M" title="Creador de historias con Javascript y ChatGPT">
+  <img loading="lazy" src="../../../vi/A11eG1o611M/mqdefault.jpg" alt="Creador de historias con Javascript y ChatGPT">
+</a><a href="https://youtu.be/KE2xRDM4Amg" title="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+  <img loading="lazy" src="../../../vi/KE2xRDM4Amg/mqdefault.jpg" alt="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+</a><a href="https://youtu.be/sU4e6_i_ExU" title="Consejos y buenas prácticas (IV): Javascript + Imágenes">
+  <img loading="lazy" src="../../../vi/sU4e6_i_ExU/mqdefault.jpg" alt="Consejos y buenas prácticas (IV): Javascript + Imágenes">
+</a><a href="https://youtu.be/UVauEId-jJ0" title="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+  <img loading="lazy" src="../../../vi/UVauEId-jJ0/mqdefault.jpg" alt="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+</a></div>
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajehtml.com/svg/" title="SVG">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#svg"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/css/" title="CSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/postcss/" title="PostCSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="../../../fundamentos/index.htm" title="Fundamentos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="../../../javascript/index.htm" title="Javascript">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="../../../npm/index.htm" title="NPM">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="../../index.htm" title="WebComponents">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="../../../vuejs/index.htm" title="VueJS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="../../../automatizadores/index.htm" title="Automatizadores">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a><a class="topic" href="../../../retos/index.htm" title="Retos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#retos"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+    
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-6', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+
+  </div></body>
+
+</html>

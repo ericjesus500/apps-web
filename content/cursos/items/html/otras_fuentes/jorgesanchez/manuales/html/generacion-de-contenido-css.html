@@ -1,0 +1,578 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Jorge Sánchez. Manual de HTML5 y CSS3. Generación de contenido automático</title>
+    <script src="../../cgm1lsq.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link rel="stylesheet" href="../../lib/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="../../css/manual.css?f=20181104">
+</head>
+<body>
+<div id="mail">
+    <div id="formularioMail">
+        <p><a href="#"><img src="../../img/cerrar.png" alt="Cerrar" id="cerrarMail"></a></p>
+        <h1>Enviar mensaje</h1>
+        <form action="#" id="formMail" method="POST">
+            <input type="nombre" name="nombre" id="nombre" placeholder="nombre y apellidos" required="">
+            <input type="email" name="email" id="email" placeholder="tu email" required="">
+            <input type="asunto" placeholder="asunto" name="asunto" id="asunto" required="">
+            <textarea name="contenido" id="contenido" cols="30" rows="5" placeholder="texto del mensaje" required=""></textarea>
+            <button>ENVIAR</button>
+        </form>
+    </div>
+</div>
+<div id="btMenu">
+    <div id="franja1" class="franja"></div>
+    <div id="franja2" class="franja"></div>
+    <div id="franja3" class="franja"></div>
+</div>
+
+<div id="barraSocial">
+    <a href="https://twitter.com/jorgesancheznet">
+        <img src="../../img/twitter.png" alt="twitter" class="btSocial" title="jorgesancheznet en twitter">
+    </a>
+    <a href="https://facebook.com/jorgesancheznet">
+        <img src="../../img/facebook.png" alt="FaceBook" class="btSocial" title="jorgesancheznet en facebook">
+    </a>
+    <a href="https://youtube.com/jorgesancheznet">
+        <img src="../../img/youtube.png" alt="You Tube" class="btSocial" title="jorgesancheznet en YouTube">
+    </a>
+    <a href="https://github.com/jorgesancheznet">
+        <img src="../../img/github.png" alt="Git Hub" class="btSocial" title="jorgesancheznet en GitHub">
+    </a>
+    <a href="#" id="btMail" class="enlaceMail">
+        <img src="../../img/mail.png" alt="Enviar email" class="btSocial" title="Enviar email">
+    </a>
+</div>
+
+
+<header>
+    <div id="logo">
+        <a href="/">
+        <img src="../../img/logo.png" alt="JorgeSanchez.net logo" id="iLogo1">
+        <img src="../../img/logoMini.png" alt="JorgeSanchez.net logo" id="iLogo2">
+        </a>
+    </div>
+</header>
+
+<section id="cuerpo">
+    <h1 class="superPrincipal">Manual de HTML5 y CSS3</h1>
+    <h1 class="titulo1"><span class="numero0">[20] </span><br>Generación de contenido automático</h1>    
+    
+<body id="generacion-de-contenido-css" lang="es-ES">
+		<div id="_idContainer003" class="Marco-de-texto-b-sico">
+			<h2 class="titulo2"><span class="numero2">[20.1] </span><a id="_idTextAnchor000"></a>generación de contenido</h2>
+			<p class="Normal2">Con CSS2 apareció la posibilidad de que el propio CSS estableciera contenido en los elementos HTML. Esto cambia la óptica que se tiene de CSS en cuanto a ser un lenguaje que simplemente da formato o mejor, extiende esta idea.</p>
+			<p class="Normal">Por supuesto estos contenidos son elementos simples en la página, delimitadores, viñetas, números,... pero facilitan el mantenimiento de los contenidos.</p>
+			<h2 class="titulo2"><span class="numero2">[20.2] </span><a id="_idTextAnchor001"></a>propiedad <em class="cursiva">content</em> </h2>
+			<p class="Normal">Es la propiedad relacionada con la generación de contenido. Es muy poderosa ya que permite numerosas opciones.</p>
+			<h3 class="titulo3"><span class="numero3">[20.2.1]</span><a id="_idTextAnchor002"></a>indicar un texto automático en un elemento</h3>
+			<p class="Normal"><span lang="en-US">A la </span>propiedad<span lang="en-US"> </span><strong class="Negritta" lang="en-US">content</strong> se le puede aplicar un texto (delimitado por comillas) que se aplicará al elemento indicado.</p>
+			<p class="Normal">Según el estándar sólo se puede utilizar mediante los selectores <strong class="Negritta" lang="en-US">:before</strong> y <strong class="Negritta" lang="en-US">:after</strong> que permiten establecer contenido que se mostrará antes y/o después del elemento al que se aplica. </p>
+			<p class="normalespacio">Ejemplo:</p>
+			<table id="table001" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;!doctype html&gt;<br>&lt;html</strong> <span class="atributo">lang</span><span class="texto">=”es”</span>&gt;<br><strong class="resaltado">    &lt;head&gt;<br>        &lt;meta</strong> <span class="atributo">charset</span><span class="texto">=”UTF-8”</span>&gt;<br>           <strong class="resaltado"> &lt;title&gt;</strong>Comillas<strong class="resaltado">&lt;/title&gt;<br></strong>           <strong class="resaltado"> &lt;style&gt;</strong></pre>
+							<table id="table002" class="tablaRemarcada">
+								<colgroup>
+									<col>
+								</colgroup>
+								<tbody>
+									<tr class="tablaRemarcada">
+										<td class="tablaRemarcada celda-remarcada">
+											<pre class="remarcado">&#9;&#9;<span class="atributo">.cita</span>:before<strong class="resaltado">{</strong><br>&#9;&#9;&#9;<strong class="resaltado">content</strong>: <span class="texto">‘”’</span>;<br>&#9;&#9;<strong class="resaltado">}</strong><br>&#9;&#9;<span class="atributo">.cita:</span>after<strong class="resaltado">{</strong><br>&#9;&#9;&#9;<strong class="resaltado">content</strong>: <span class="texto">‘”’</span>;<br>&#9;&#9;<strong class="resaltado">}</strong><br>&#9;&#9;<span class="atributo">.cita</span><strong class="resaltado">{</strong><br>&#9;&#9;&#9;<strong class="resaltado">font-style</strong>: <span class="atributo">italic</span>;<br>&#9;&#9;<strong class="resaltado">}</strong></pre>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<pre class="codigo"><strong class="resaltado">&#9;&lt;/style&gt;<br>    &lt;/head&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<pre class="codigo"><strong class="resaltado"><br></strong></pre>
+			<table id="table003" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">    &lt;body&gt;<br>        &lt;p</strong> <span class="atributo">class</span>=<span class="texto">”cita”</span><strong class="resaltado">&gt;</strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur provident eum praesentium placeat aperiam enim non voluptatem ab eaque modi laboriosam error esse dicta in impedit debitis vel veniam optio dolore facilis est dolorem ut officiis excepturi sint quasi fugit fugiat! Assumenda numquam amet porro sint nemo non perspiciatis vero laboriosam voluptate vel nihil deleniti ut consequuntur! In accusamus assumenda harum veniam blanditiis tenetur excepturi debitis sit est minima vel quia nihil? Accusamus beatae quod hic optio nostrum quibusdam adipisci modi aspernatur alias eaque laudantium dignissimos sed pariatur dolore obcaecati explicabo maxime possimus dolores non facilis deleniti placeat laborum recusandae!<strong class="resaltado">&lt;/p&gt;<br>    &lt;/body&gt;<br>&lt;/html&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal2">En el ejemplo se establece que por delante del texto marcado con clase cita se pongan comillas, por detrás se hace lo mismo. Por lo que cualquier texto de clase <em class="cursiva">cita</em> saldrá entrecomillado y en cursiva:</p>
+			<p class="Normal"><span class="resaltadoEpigrafe"><img src="generacion-de-contenido-css-web-resources/image/1.png" alt=""></span></p>
+			<p class="normalespacio">Otro ejemplo (ya que las comillas se pueden generar de otra forma):</p>
+			<table id="table004" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo">.copyright:before<strong class="resaltado">{</strong></pre>
+							<pre class="codigo">&#9;<strong class="resaltado">content:</strong><span class="atributo">”Jorge Sánchez - 2015”;</span></pre>
+							<pre class="codigo"><strong class="resaltado">}</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal">Si un párrafo se marca de esta forma:</p>
+			<table id="table005" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;p </strong><span class="atributo">class=</span><span class="texto">”copyright”</span><strong class="resaltado">&gt;&lt;/p&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal">Aún sin contenido, se mostraría el texto <em class="cursiva">Jorge Sánchez - 2015</em></p>
+			<h2 class="titulo2"><span class="numero2">[20.3] </span><a id="_idTextAnchor003"></a>entrecomillado automático</h2>
+			<h3 class="titulo3"><span class="numero3">[20.3.1]</span><a id="_idTextAnchor004"></a>aplicar comillas automáticas</h3>
+			<p class="Normal2">Para el caso de que queremos engrosar un texto dentro de unas comillas, CSS3 añadió la propiedad <strong class="Negritta" lang="en-US">quotes</strong>. En esta propiedad basta indicar el carácter de apertura y el de cierre.</p>
+			<p class="Normal2">Ejemplos:</p>
+			<table id="table006" class="tabla-manual">
+				<colgroup>
+					<col>
+					<col>
+				</colgroup>
+				<thead>
+					<tr class="tabla-manual">
+						<td class="tabla-manual cabecera-tabla">
+							<p class="cabeceraTabla">uso</p>
+						</td>
+						<td class="tabla-manual cabecera-tabla">
+							<p class="cabeceraTabla">resultado</p>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<pre class="codigo"><span class="atributo" lang="en-US">quotes</span><span class="texto">:</span>”’” “’”</pre>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal">Texto entrecomillado con comilla simple: </p>
+							<p class="Normal"><em class="cursiva">‘Este es el texto’</em></p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<pre class="codigo"><span class="atributo" lang="en-US">quotes</span><span class="atributo">:</span>’”’ ‘”’</pre>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal">Texto entrecomillado con comilla doble: </p>
+							<p class="Normal"><em class="cursiva">“Este es el texto”</em></p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<pre class="codigo"><span class="atributo">quotes: </span>‘&gt;&gt;’ ‘&lt;&lt;’</pre>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal">Texto entrecomillado con menor y mayor: </p>
+							<p class="Normal"><em class="cursiva">&gt;&gt;Este es el texto&lt;&lt;</em></p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<pre class="codigo"><span class="atributo" lang="en-US">quotes:</span><strong class="Negritta" lang="en-US"> </strong><span lang="en-US">‘</span>«<span lang="en-US">‘ ‘</span>»<span lang="en-US">’</span></pre>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal">Texto entrecomillado con comilla literaria:</p>
+							<p class="Normal"><em class="cursiva">«</em><em class="cursiva">Este es el texto</em><em class="cursiva">»</em></p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<pre class="codigo"><span class="atributo" lang="en-US">quotes: </span><span lang="en-US">‘</span>«<span lang="en-US">‘ ‘</span>»<span lang="en-US">’ ‘”’ ‘”’</span></pre>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal">Se indican cuatro comillas para el caso de que dentro del texto entrecomillado haya otro texto entrecomillado:</p>
+							<p class="Normal"><em class="cursiva">«</em><em class="cursiva">Este es el texto con “comillas” interiores</em><em class="cursiva">»</em></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="normalespacio">La propiedad <em class="cursiva" lang="en-US">quotes</em>, realmente sólo indica como serán las comillas. Para entrecomillar se usa la propiedad <strong class="Negritta" lang="en-US">content</strong> comentada en el punto anterior, a la cual se la pasa el valor <strong class="Negritta" lang="en-US">open-quote</strong> y <strong class="Negritta" lang="en-US">close-quote</strong> según queramos abrir o cerrar comillas. </p>
+			<p class="normalespacio">Ejemplo de uso:</p>
+			<table id="table007" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;style&gt;</strong></pre>
+							<table id="table008" class="tablaRemarcada">
+								<colgroup>
+									<col>
+								</colgroup>
+								<tbody>
+									<tr class="tablaRemarcada">
+										<td class="tablaRemarcada celda-remarcada">
+											<pre class="codigo"><strong class="resaltado">&#9;blockquote{</strong></pre>
+											<pre class="codigo">&#9;&#9;<strong class="resaltado">quotes</strong>:<strong class="Negritta" lang="en-US"> </strong><span class="texto" lang="en-US">‘</span><strong class="resaltado" lang="en-US">«</strong><span class="texto" lang="en-US">‘ ‘</span><strong class="resaltado" lang="en-US">»</strong><span class="texto" lang="en-US">’</span><strong class="Negritta" lang="en-US">;</strong></pre>
+											<pre class="codigo"><strong class="resaltado">&#9;}</strong></pre>
+											<pre class="codigo"><strong class="resaltado">&#9;blockquote:before{</strong></pre>
+											<pre class="codigo">&#9;&#9;<strong class="resaltado">content</strong>:<span class="atributo">open-quote</span><strong class="Negritta" lang="en-US">;</strong></pre>
+											<pre class="codigo"><strong class="resaltado">&#9;}</strong></pre>
+											<pre class="codigo"><strong class="resaltado">&#9;blockquote:after{</strong></pre>
+											<pre class="codigo">&#9;&#9;<strong class="resaltado">content</strong>:<span class="atributo">close-quote</span><strong class="Negritta" lang="en-US">;</strong></pre>
+											<pre class="codigo"><strong class="resaltado">&#9;}</strong></pre>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<pre class="codigo"><strong class="resaltado">&lt;/style&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/head&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;body&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&#9;&lt;blockquote&gt;</strong>Alea jacta est<strong class="resaltado">&lt;/blockquote&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/body&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal2">Como hay símbolos de comillas que no están en el teclado, podemos usar su código. Los códigos más habituales para poner comillas son:</p>
+			<table id="table009" class="tabla-manual">
+				<colgroup>
+					<col>
+					<col>
+				</colgroup>
+				<thead>
+					<tr class="tabla-manual">
+						<td class="tabla-manual cabecera-tabla">
+							<p class="cabeceraTabla">Carácter</p>
+						</td>
+						<td class="tabla-manual cabecera-tabla">
+							<p class="cabeceraTabla">Código ISO 10646</p>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal"><strong class="Negritta">“</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal">0022</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal"><strong class="Negritta">‘</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal">0027</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal"><strong class="Negritta">‹</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal">2039</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal"><strong class="Negritta">›</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal">203A</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal"><strong class="Negritta">«</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal">00AB</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal"><strong class="Negritta">»</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal">00BB</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal"><strong class="Negritta">‘</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal">2018</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal"><strong class="Negritta">’</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal">2019</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal"><strong class="Negritta">“</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal">201C</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal"><strong class="Negritta">”</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal">201D</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal"><strong class="Negritta">„</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal">201E</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal">Ejemplo de uso:</p>
+			<table id="table010" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">quotes:</strong><span class="atributo">”\201D” “\201E”;</span></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 class="titulo3"><span class="numero3">[20.3.2]</span><a id="_idTextAnchor005"></a>retirar entrecomillado</h3>
+			<p class="Normal">Podemos indicar en lugar de <strong class="Negritta">open-quote </strong>y <strong class="Negritta">close-quote</strong>, los valores <strong class="Negritta">no-open-quote </strong>y <strong class="Negritta">no-close-quote </strong>a la propiedad <strong class="Negritta">content </strong>precisamente para lo contrario, para no poner comillas.</p>
+			<p class="normalespacio">Por ejemplo, normalmente el elemento <strong class="Negritta">q </strong>aplica entrecomillado automático, si no le deseamos aplicaríamos este código:</p>
+			<table id="table011" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">q:</strong>before<strong class="resaltado">{</strong></pre>
+							<pre class="codigo">&#9;<strong class="resaltado">content:</strong><span class="atributo">no-open-quote</span>;</pre>
+							<pre class="codigo"><strong class="resaltado">}</strong></pre>
+							<pre class="codigo"><strong class="resaltado">q:</strong>after<strong class="resaltado">{</strong></pre>
+							<pre class="codigo">&#9;<strong class="resaltado">content:</strong><span class="atributo">no-close-quote</span>;</pre>
+							<pre class="codigo"><strong class="resaltado">}</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2 class="titulo2"><span class="numero2">[20.4] </span><a id="_idTextAnchor006"></a>numeración automática</h2>
+			<p class="Normal2">CSS2 trajo también la posibilidad de numerar automáticamente elementos gracias al uso de contadores. Para ello podemos usar una función llamada <strong class="Negritta">counter</strong> que nos permite utilizar unan <strong class="Negritta">variable de contador</strong>. La variable contadora se manipula con estas propiedades:</p>
+			<ul>
+				<li class="punto"><strong class="Negritta" lang="en-US">counter-reset</strong>. Permite indicar un valor inicial para una variable contadora. Ejemplo:<table id="table012" class="tabla-codigo _idGenTablePara-1"><colgroup><col></colgroup><tbody><tr class="tabla-codigo"><td class="tabla-codigo celda-codigo"><pre class="codigo"><strong class="resaltado">counter-reset</strong>: <span class="atributo">cont</span> <span class="atributo">5</span>;</pre></td></tr></tbody></table><p class="sinpunto">En este caso la variable contadora <em class="cursiva">cont</em> se coloca inicialmente con el valor <em class="cursiva">5</em>. Si no se usa esta propiedad el contador se inicia a cero.</p></li>
+				<li class="punto"><strong class="Negritta" lang="en-US">counter-increment</strong>. Indica cómo se incremente el contador, el valor por defecto es 1. Pero podemos cambiarlo y darle el valor que deseemos:<table id="table013" class="tabla-codigo _idGenTablePara-1"><colgroup><col></colgroup><tbody><tr class="tabla-codigo"><td class="tabla-codigo celda-codigo"><pre class="codigo"><strong class="resaltado">counter-increment</strong>: <span class="atributo">cont</span> <span class="atributo">10</span>; </pre><pre class="codigo"><span class="comentario">/* El contador irá contando de 10 en 10 */</span></pre></td></tr></tbody></table></li>
+			</ul>
+			<p class="Normal2">Ejemplo de numeración automática:</p>
+			<table id="table014" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;!doctype html&gt;<br>&lt;html</strong> <span class="atributo">lang</span><span class="texto">=”es”</span>&gt;<br><strong class="resaltado">    &lt;head&gt;<br>     &lt;meta</strong> <span class="atributo">charset</span><span class="texto">=”UTF-8”</span>&gt;<br>           <strong class="resaltado"> &lt;title&gt;</strong>Document<strong class="resaltado">&lt;/title&gt;<br></strong>     <strong class="resaltado">&lt;style&gt;</strong></pre>
+							<table id="table015" class="tablaRemarcada">
+								<colgroup>
+									<col>
+								</colgroup>
+								<tbody>
+									<tr class="tablaRemarcada">
+										<td class="tablaRemarcada celda-remarcada">
+											<pre class="remarcado"><strong class="resaltado">&#9;</strong>     &#9;body{<br>&#9;     &#9;&#9;<strong class="resaltado">counter-reset</strong>:<span class="atributo">cont</span>;<br>&#9;     &#9;}<br>&#9;&#9;&#9;&#9;.cita:before<strong class="resaltado">{</strong><br>&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">content</strong>: <span class="texto">“Capítulo “</span> counter(<span class="atributo">cont</span>) <span class="texto">“) “</span>;<br>&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">counter-increment</strong>: <span class="atributo">cont</span> <span class="atributo">2</span>;<br>&#9;&#9;&#9;&#9;<strong class="resaltado">}</strong></pre>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<pre class="codigo"><br><strong class="resaltado">&#9;&lt;/style&gt;<br>    &lt;/head&gt;<br></strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table id="table016" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">    &lt;body&gt;<br>        &lt;p</strong> <span class="atributo">class</span>=<span class="texto">”cita”</span><strong class="resaltado">&gt;</strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit assumenda ratione repellat quaerat voluptate aperiam quis ipsum amet esse quia ullam eos quibusdam non maiores atque. Animi laborum repudiandae modi!maxime possimus dolores non facilis deleniti placeat laborum recusandae!<strong class="resaltado">&lt;/p&gt;</strong><br><strong class="resaltado">        &lt;p</strong> <span class="atributo">class</span>=<span class="texto">”cita”</span><strong class="resaltado">&gt;</strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati quasi delectus quia quo mollitia ex vero veniam nostrum ipsum minima tenetur ad animi non soluta amet rem assumenda? Molestias officia<strong class="resaltado">.&lt;/p&gt;</strong><br><strong class="resaltado">        &lt;p</strong> <span class="atributo">class</span>=<span class="texto">”cita”</span><strong class="resaltado">&gt;</strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi repellat mollitia numquam minima alias id debitis voluptas ut animi dolor! Distinctio laborum quasi quo soluta dignissimos odit nam dolores quibusdam?<strong class="resaltado">&lt;/p&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/body&gt;</strong><br><strong class="resaltado">&lt;/html&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal2">El resultado es:</p>
+			<p class="Normal"><a id="_idTextAnchor007"></a><img src="generacion-de-contenido-css-web-resources/image/2.png" alt=""></p>
+			<h2 class="titulo2"><span class="numero2">[20.5] </span><a id="_idTextAnchor008"></a>generar contenido a partir de atributos</h2>
+			<p class="Normal2">La propiedad <strong class="Negritta">content </strong>tiene la posibilidad de generar contenido utilizando una función llamada <strong class="Negritta">attr </strong>a la que podemos pasar un atributo del elemento. Entonces generaremos automáticamente el contenido del elemento a partir del contenido de dicho elemento.</p>
+			<p class="normalespacio">Un ejemplo típico es este:</p>
+			<table id="table017" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">a:before</strong>{</pre>
+							<pre class="codigo">&#9;<strong class="resaltado">content:</strong><span class="atributo">attr(</span><span class="texto">href);</span></pre>
+							<pre class="codigo"><strong class="resaltado">}</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="normalespacio">En el caso de indicar un enlace de esta forma:</p>
+			<table id="table018" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;a</strong><span class="atributo"> href=</span><span class="texto">”http://www.jorgesanchez.net”</span><strong class="resaltado">&gt;&lt;/a&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="normalespacio">Aparecerá el texto:</p>
+			<pre class="codigo"><a href="http://www.jorgesanchez.net"><span class="hyperlink">http://www.jorgesanchez.net</span></a></pre>
+			<p class="Normal">Que aparezca este texto es porque content genera el contenido para el enlace (ya que realmente en el código de la etiqueta <strong class="Negritta">a </strong>no se ha especificado) a partir del contenido del atributo <strong class="Negritta">href</strong>.</p>
+			<h2 class="titulo2"><span class="numero2">[20.6] </span><a id="_idTextAnchor009"></a>generar contenido a partir de una URL</h2>
+			<p class="normalespacio">La posibilidad más espectacular de la propiedad content es que puede utilizar la función url para incorporar al elemento contenidos procedentes de una URL. Ejemplo:</p>
+			<table id="table019" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;!doctype html&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;html lang=”es”&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;head&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;meta charset=”UTF-8”&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;title&gt;</strong>URL&lt;<strong class="resaltado">/title&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;style&gt;</strong></pre>
+							<table id="table020" class="tablaRemarcada">
+								<colgroup>
+									<col>
+								</colgroup>
+								<tbody>
+									<tr class="tablaRemarcada">
+										<td class="tablaRemarcada celda-remarcada">
+											<pre class="codigo">        <strong class="resaltado">p</strong><span class="atributo">:before</span><strong class="resaltado">{</strong></pre>
+											<pre class="codigo">            <strong class="resaltado">content:</strong><span class="atributo">url(</span><span class="texto">arrow.png</span><span class="atributo">);</span></pre>
+											<pre class="codigo"><strong class="resaltado">        }</strong></pre>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<pre class="codigo"><strong class="resaltado">    &lt;/style&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/head&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;body&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;p&gt;</strong>Lorem ipsum dolor sit amet, consectetur</pre>
+							<pre class="codigo">    adipisicing elit. Incidunt, voluptate!<strong class="resaltado">&lt;/p&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;p&gt;</strong>Adipisci aliquid assumenda cupiditate</pre>
+							<pre class="codigo">    error eveniet explicabo facilis temporibus</pre>
+							<pre class="codigo">    voluptas.<strong class="resaltado">&lt;/p&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;p&gt;</strong>Adipisci at atque qui?</pre>
+							<pre class="codigo">    Cupiditate ducimus libero nesciunt</pre>
+							<pre class="codigo">    suscipit veniam?<strong class="resaltado">&lt;/p&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/body&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/html&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal">Suponiendo que dispongamos de la imagen <em class="cursiva">arrow.png</em> en el mismo directorio en el que se encuentra la página web, el resultado sería:</p>
+			<p class="Normal"><img src="generacion-de-contenido-css-web-resources/image/3.png" alt=""></p>
+		</div>
+        
+</body></section>
+
+<nav>
+    <ul>
+        <li><a href="/">&gt; Volver a JorgeSanchez.net</a></li>
+    </ul>
+    
+        
+<ul>
+    <p>Manual de HTML5 y CSS3:</p>
+    <li><a href="introduccion-lenguajes-de-marcas.html">&gt; Introducción a los lenguajes de marcas</a></li>
+    <li><a href="introduccion-html.html">&gt; Introducción a HTML5</a></li>
+    <li><a href="edicion-basica-html.html">&gt; Edición básica de documentos HTML</a></li>
+    <li><a href="texto-y-parrafo-html.html">&gt; Elementos de texto y párrafo</a></li>
+    <li><a href="elementos-estructurales-html.html">&gt; Elementos estructurales</a></li>
+    <li><a href="enlaces-html.html">&gt; Enlaces</a></li>
+    <li><a href="imagenes-html.html">&gt; Imágenes</a></li>
+    <li><a href="multimedia-html.html">&gt; Elementos multimedia</a></li>
+    <li><a href="introduccion-a-css.html">&gt; Introducción a CSS</a></li>
+    <li><a href="selectores-css.html">&gt; Selectores CSS</a></li>
+    <li><a href="unidades-colores-css.html">&gt; Unidades y Colores en CSS</a></li>
+    <li><a href="formato-fuente-parrafo-css.html">&gt; Formato de fuente y párrafo</a></li>
+    <li><a href="formato-caja-lista-css.html">&gt; Formato de caja y lista</a></li>
+    <li><a href="tablas-html.html">&gt; Tablas</a></li>
+    <li><a href="formularios-html.html">&gt; Formularios</a></li>
+    <li><a href="visualizacion-css.html">&gt; Visualización de elementos</a></li>
+    <li><a href="posicionamiento-css.html">&gt; Posicionamiento mediante CSS</a></li>
+    <li><a href="transformaciones-css.html">&gt; Transformaciones mediante CSS</a></li>
+    <li><a href="animaciones-css.html">&gt; Animaciones mediante CSS</a></li>
+    <li><a href="generacion-de-contenido-css.html">&gt; Generación de contenido automático</a></li>
+    <li><a href="maquetacion-1-css.html">&gt; Maquetación (1). Columnas y Flexbox</a></li>
+</ul>
+
+
+        
+</nav>
+
+<script src="../../lib/jquery.min.js"></script>
+<script src="../../lib/jquery.easing.min.js"></script>
+<script src="../../lib/jquery.scrollTo.min.js"></script>
+<script src="../../lib/perfect-scrollbar.jquery.min.js"></script>
+<script src="../../js/manual.js?f=20170221"></script>
+<!--Analytics-->
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35972106-1']);
+    _gaq.push(['_setLocalRemoteServerMode']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</body>
+</html>
+

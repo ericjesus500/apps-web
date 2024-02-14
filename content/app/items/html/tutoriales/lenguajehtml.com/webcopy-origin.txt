@@ -1,0 +1,520 @@
+Uri: https://i3.ytimg.com/vi/7oPdEM0VXOs/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\vi\7oPdEM0VXOs\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/cQIlwKSAyAc/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\vi\cQIlwKSAyAc\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/hju7SXmiK7Y/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\vi\hju7SXmiK7Y\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/j1-QNzikFCY/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\vi\j1-QNzikFCY\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/LAHR5gl07ks/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\vi\LAHR5gl07ks\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/lDPJQyXow_g/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\vi\lDPJQyXow_g\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/RW5erp81FMY/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\vi\RW5erp81FMY\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/SVomAFpMw30/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\vi\SVomAFpMw30\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/wIGAyJGx2kc/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\vi\wIGAyJGx2kc\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajehtml.com/assets/fonts/jost-vf.woff2
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\assets\fonts\jost-vf.woff2
+Content Type: font/woff2
+
+Uri: https://lenguajehtml.com/assets/html.jpg
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\assets\html.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajehtml.com/assets/icons/logos.svg
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\assets\icons\logos.svg
+Content Type: image/svg+xml
+
+Uri: https://lenguajehtml.com/assets/icons/social.svg
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\assets\icons\social.svg
+Content Type: image/svg+xml
+
+Uri: https://lenguajehtml.com/assets/logos.svg
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\assets\logos.svg
+Content Type: image/svg+xml
+
+Uri: https://lenguajehtml.com/assets/logos/manzdev-logo.webp
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\assets\logos\manzdev-logo.webp
+Content Type: image/webp
+
+Uri: https://lenguajehtml.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\cdn-cgi\scripts\5c5dd728\cloudflare-static\email-decode.min.js
+Content Type: application/javascript
+
+Uri: https://lenguajehtml.com/favicon.ico
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\favicon.ico
+Content Type: image/x-icon
+
+Uri: https://lenguajehtml.com/home.css
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\home.css
+Content Type: text/css
+
+Uri: https://lenguajehtml.com/html/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/agrupacion/etiqueta-html-blockquote/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\agrupacion\etiqueta-html-blockquote\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/agrupacion/etiqueta-html-div/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\agrupacion\etiqueta-html-div\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/agrupacion/etiqueta-html-dl/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\agrupacion\etiqueta-html-dl\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/agrupacion/etiqueta-html-figure/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\agrupacion\etiqueta-html-figure\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/agrupacion/etiqueta-html-pre/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\agrupacion\etiqueta-html-pre\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/agrupacion/etiquetas-html-ul-ol/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\agrupacion\etiquetas-html-ul-ol\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/agrupacion/que-son/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\agrupacion\que-son\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/cabecera/etiqueta-html-link/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\cabecera\etiqueta-html-link\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/cabecera/etiqueta-html-meta/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\cabecera\etiqueta-html-meta\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/cabecera/etiqueta-html-meta/meta-theme.png
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\cabecera\etiqueta-html-meta\meta-theme.png
+Content Type: image/png
+
+Uri: https://lenguajehtml.com/html/cabecera/etiquetas-html-para-redes-sociales/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\cabecera\etiquetas-html-para-redes-sociales\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/cabecera/etiquetas-html-para-redes-sociales/metadatos-sociales-open-graph-facebook.jpg
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\cabecera\etiquetas-html-para-redes-sociales\metadatos-sociales-open-graph-facebook.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajehtml.com/html/cabecera/etiquetas-html-para-redes-sociales/metadatos-sociales-twittercards.jpg
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\cabecera\etiquetas-html-para-redes-sociales\metadatos-sociales-twittercards.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajehtml.com/html/cabecera/etiquetas-precarga-html/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\cabecera\etiquetas-precarga-html\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/cabecera/que-son-etiquetas-cabecera/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\cabecera\que-son-etiquetas-cabecera\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/cheatsheets/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\cheatsheets\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/cheatsheets/cheatsheet.png
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\cheatsheets\cheatsheet.png
+Content Type: image/png
+
+Uri: https://lenguajehtml.com/html/cheatsheets/CheatsheetDonation.cdn.js
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\cheatsheets\CheatsheetDonation.cdn.js
+Content Type: application/javascript
+
+Uri: https://lenguajehtml.com/html/formularios/etiqueta-html-datalist/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\formularios\etiqueta-html-datalist\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/formularios/etiqueta-html-form/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\formularios\etiqueta-html-form\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/formularios/etiqueta-html-input-checkbox-radio/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\formularios\etiqueta-html-input-checkbox-radio\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/formularios/etiqueta-html-input-color/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\formularios\etiqueta-html-input-color\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/formularios/etiqueta-html-input-fechas/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\formularios\etiqueta-html-input-fechas\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/formularios/etiqueta-html-input-file/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\formularios\etiqueta-html-input-file\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/formularios/etiqueta-html-input-numeros/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\formularios\etiqueta-html-input-numeros\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/formularios/etiqueta-html-input-submit/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\formularios\etiqueta-html-input-submit\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/formularios/etiqueta-html-input-submit/input-type-image.png
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\formularios\etiqueta-html-input-submit\input-type-image.png
+Content Type: image/png
+
+Uri: https://lenguajehtml.com/html/formularios/etiqueta-html-input/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\formularios\etiqueta-html-input\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/formularios/etiqueta-html-input/input-url-tel-email.png
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\formularios\etiqueta-html-input\input-url-tel-email.png
+Content Type: image/png
+
+Uri: https://lenguajehtml.com/html/formularios/etiqueta-html-meter/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\formularios\etiqueta-html-meter\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/formularios/etiqueta-html-progress/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\formularios\etiqueta-html-progress\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/formularios/etiqueta-html-select/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\formularios\etiqueta-html-select\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/formularios/etiqueta-html-textarea/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\formularios\etiqueta-html-textarea\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/formularios/organizacion-de-campos/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\formularios\organizacion-de-campos\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/interactivas/atributo-contenteditable/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\interactivas\atributo-contenteditable\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/interactivas/atributo-hidden/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\interactivas\atributo-hidden\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/interactivas/etiqueta-html-details/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\interactivas\etiqueta-html-details\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/interactivas/etiqueta-html-dialog/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\interactivas\etiqueta-html-dialog\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/interactivas/etiqueta-html-dialog/dialog-html5-modal.png
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\interactivas\etiqueta-html-dialog\dialog-html5-modal.png
+Content Type: image/png
+
+Uri: https://lenguajehtml.com/html/interactivas/eventos-html/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\interactivas\eventos-html\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/interactivas/eventos-html/gandalf-onclick.mp4
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\interactivas\eventos-html\gandalf-onclick.mp4
+Content Type: video/mp4
+
+Uri: https://lenguajehtml.com/html/interactivas/popover-elementos-emergentes/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\interactivas\popover-elementos-emergentes\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/introduccion/atributos-comunes-html/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\introduccion\atributos-comunes-html\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/introduccion/estructura-documento-html/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\introduccion\estructura-documento-html\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/introduccion/estructura-documento-html/estructura-documento-html.png
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\introduccion\estructura-documento-html\estructura-documento-html.png
+Content Type: image/png
+
+Uri: https://lenguajehtml.com/html/introduccion/estructura-etiqueta-html/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\introduccion\estructura-etiqueta-html\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/introduccion/estructura-etiqueta-html/estructura-etiqueta-html.png
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\introduccion\estructura-etiqueta-html\estructura-etiqueta-html.png
+Content Type: image/png
+
+Uri: https://lenguajehtml.com/html/introduccion/etiquetas-html-obsoletas/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\introduccion\etiquetas-html-obsoletas\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/introduccion/que-es-html/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\introduccion\que-es-html\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/introduccion/que-es-html/documento-texto-chrome.png
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\introduccion\que-es-html\documento-texto-chrome.png
+Content Type: image/png
+
+Uri: https://lenguajehtml.com/html/introduccion/tabla-periodica-html5/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\introduccion\tabla-periodica-html5\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/introduccion/tabla-periodica-html5/488fd18.jpg
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\introduccion\tabla-periodica-html5\488fd18.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajehtml.com/html/introduccion/tabla-periodica-html5/HeaderList.cdn.js
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\introduccion\tabla-periodica-html5\HeaderList.cdn.js
+Content Type: application/javascript
+
+Uri: https://lenguajehtml.com/html/introduccion/tabla-periodica-html5/index.cdn.css
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\introduccion\tabla-periodica-html5\index.cdn.css
+Content Type: text/css
+
+Uri: https://lenguajehtml.com/html/introduccion/tabla-periodica-html5/PeriodicTable.cdn.js
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\introduccion\tabla-periodica-html5\PeriodicTable.cdn.js
+Content Type: application/javascript
+
+Uri: https://lenguajehtml.com/html/introduccion/validacion-html/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\introduccion\validacion-html\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/introduccion/validacion-html/validador-html.png
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\introduccion\validacion-html\validador-html.png
+Content Type: image/png
+
+Uri: https://lenguajehtml.com/html/logo.svg
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\logo.svg
+Content Type: image/svg+xml
+
+Uri: https://lenguajehtml.com/html/multimedia/etiqueta-html-audio/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\multimedia\etiqueta-html-audio\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/multimedia/etiqueta-html-iframe/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\multimedia\etiqueta-html-iframe\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/multimedia/etiqueta-html-img/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\multimedia\etiqueta-html-img\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/multimedia/etiqueta-html-picture/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\multimedia\etiqueta-html-picture\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/multimedia/etiqueta-html-track/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\multimedia\etiqueta-html-track\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/multimedia/etiqueta-html-video/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\multimedia\etiqueta-html-video\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/multimedia/etiqueta-html-video/formato-contenedor-video.png
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\multimedia\etiqueta-html-video\formato-contenedor-video.png
+Content Type: image/png
+
+Uri: https://lenguajehtml.com/html/scripting/atributo-defer-async/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\scripting\atributo-defer-async\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/scripting/atributo-defer-async/script-async-defer.png
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\scripting\atributo-defer-async\script-async-defer.png
+Content Type: image/png
+
+Uri: https://lenguajehtml.com/html/scripting/bloque-de-datos/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\scripting\bloque-de-datos\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/scripting/etiqueta-html-script/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\scripting\etiqueta-html-script\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/scripting/script-type-module/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\scripting\script-type-module\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/semantica/etiqueta-html-address/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\semantica\etiqueta-html-address\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/semantica/etiqueta-html-article/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\semantica\etiqueta-html-article\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/semantica/etiqueta-html-h1/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\semantica\etiqueta-html-h1\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/semantica/etiqueta-html-header-footer/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\semantica\etiqueta-html-header-footer\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/semantica/etiqueta-html-nav/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\semantica\etiqueta-html-nav\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/semantica/etiqueta-html-search/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\semantica\etiqueta-html-search\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/semantica/etiqueta-html-section-main-aside/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\semantica\etiqueta-html-section-main-aside\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/semantica/que-son/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\semantica\que-son\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/tablas/columnas-en-tablas/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\tablas\columnas-en-tablas\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/tablas/etiqueta-html-table/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\tablas\etiqueta-html-table\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/tablas/organizacion-tablas/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\tablas\organizacion-tablas\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/tablas/tablas-celdas-irregulares/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\tablas\tablas-celdas-irregulares\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/texto/enlaces-o-hipervinculos/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\texto\enlaces-o-hipervinculos\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/texto/enlaces-o-hipervinculos/estructura-url.png
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\texto\enlaces-o-hipervinculos\estructura-url.png
+Content Type: image/png
+
+Uri: https://lenguajehtml.com/html/texto/etiqueta-html-a/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\texto\etiqueta-html-a\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/texto/etiqueta-html-abbr-dfn/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\texto\etiqueta-html-abbr-dfn\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/texto/etiqueta-html-br-wbr/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\texto\etiqueta-html-br-wbr\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/texto/etiqueta-html-cite-q/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\texto\etiqueta-html-cite-q\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/texto/etiqueta-html-code/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\texto\etiqueta-html-code\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/texto/etiqueta-html-em/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\texto\etiqueta-html-em\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/texto/etiqueta-html-ins-del/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\texto\etiqueta-html-ins-del\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/texto/etiqueta-html-kbd-samp/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\texto\etiqueta-html-kbd-samp\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/texto/etiqueta-html-mark/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\texto\etiqueta-html-mark\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/texto/etiqueta-html-q-cite/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\texto\etiqueta-html-q-cite\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/texto/etiqueta-html-s/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\texto\etiqueta-html-s\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/texto/etiqueta-html-small/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\texto\etiqueta-html-small\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/texto/etiqueta-html-span/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\texto\etiqueta-html-span\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/texto/etiqueta-html-strong/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\texto\etiqueta-html-strong\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/texto/etiqueta-html-sup-sub/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\texto\etiqueta-html-sup-sub\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/texto/etiqueta-html-time/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\texto\etiqueta-html-time\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/texto/que-son/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\texto\que-son\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/validaciones/atributo-pattern/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\validaciones\atributo-pattern\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/validaciones/atributo-pattern/validaciones-atributo-pattern-title-html5.png
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\validaciones\atributo-pattern\validaciones-atributo-pattern-title-html5.png
+Content Type: image/png
+
+Uri: https://lenguajehtml.com/html/validaciones/que-son-validaciones/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\validaciones\que-son-validaciones\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/html/validaciones/que-son-validaciones/formulario-frontend-backend-html5.png
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\validaciones\que-son-validaciones\formulario-frontend-backend-html5.png
+Content Type: image/png
+
+Uri: https://lenguajehtml.com/html/validaciones/que-son-validaciones/formulario-frontend-backend-tradicional.png
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\validaciones\que-son-validaciones\formulario-frontend-backend-tradicional.png
+Content Type: image/png
+
+Uri: https://lenguajehtml.com/html/validaciones/validaciones-html5/
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\html\validaciones\validaciones-html5\index.htm
+Content Type: text/html
+
+Uri: https://lenguajehtml.com/index.js
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\index.js
+Content Type: application/javascript
+
+Uri: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0412426997270095
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\pagead\js\f.txt
+Content Type: text/javascript
+
+Uri: https://www.google-analytics.com/analytics.js
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\analytics.js
+Content Type: text/javascript
+
+Uri: https://www.w3.org/Graphics/GIF/spec-gif89a.txt
+File Name: C:\Downloaded Web Sites\lenguajehtml.com\Graphics\GIF\spec-gif89a.txt
+Content Type: text/plain
+

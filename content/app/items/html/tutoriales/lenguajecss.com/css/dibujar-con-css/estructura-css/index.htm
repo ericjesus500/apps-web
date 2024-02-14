@@ -1,0 +1,593 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Primeros pasos: Estructura CSS - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="En este artículo veremos una serie de estrategias a seguir a la hora de dibujar con CSS.">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Primeros pasos: Estructura CSS - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/css/dibujar-con-css/estructura-css/como-dibujar-con-css.png">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="En este artículo veremos una serie de estrategias a seguir a la hora de dibujar con CSS.">
+  <meta property="og:url" content="https://lenguajecss.com/css/dibujar-con-css/estructura-css/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/dibujar-con-css/estructura-css/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Primeros pasos: Estructura CSS - CSS en español">
+  <meta property="twitter:description" content="En este artículo veremos una serie de estrategias a seguir a la hora de dibujar con CSS.">
+  <meta property="twitter:image" content="https://lenguajecss.com/css/dibujar-con-css/estructura-css/como-dibujar-con-css.png">
+
+  </head>
+
+<body class="css" style="--logo-color: #1e7bbf"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/css.jpg')">
+    <h1><a href="index.htm">Primeros pasos: Estructura CSS</a></h1><h2 class="typewriter">Primeros pasos para dibujar con CSS</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../estructura-html/index.htm">Primeros pasos: Estructura HTML</a>
+    <a class="current" href="index.htm">Primeros pasos: Estructura CSS</a>
+    <a href="../../../postcss/introduccion/que-es/index.htm">¿Qué es PostCSS?</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Para crear un dibujo con <strong>código CSS</strong>, es bueno tener en cuenta una buena estrategia a la hora de crear <strong>código HTML</strong>, y también tener en cuenta algunos avisos y advertencias que he escrito en los artículos anteriores. Pero probablemente, la parte más importante es <strong>como escribir el código CSS</strong>, y una serie de consejos y estrategias para dibujar con código que voy a explicar a continuación.</p>
+<p>Para dibujar con CSS la parte de <strong>organizar el código CSS</strong> es clave, por lo que recomiendo hacer especial hincapié en este tema e intentar ser lo más organizado posible.</p>
+<p><img src="como-dibujar-con-css.png" alt="Cómo dibujar con CSS" width="1024" height="600" loading="lazy"></p>
+<p>Entre estas estrategias nos encontraremos las siguientes:</p>
+<h3 id="organización-de-código" tabindex="-1"><a class="header-anchor" href="#organización-de-código">Organización de código</a></h3>
+<h4 id="usar-variables-css" tabindex="-1"><a class="header-anchor" href="#usar-variables-css">Usar variables CSS</a></h4>
+<p>Un buen consejo a la hora de trabajar con dibujos CSS es <strong>parametrizar en variables</strong> todo lo susceptible a reutilizar. <strong>Importante</strong>: No se trata de meter en variables todo lo que vayas a usar. No hay que sobreparametrizar, una buena estrategia sería utilizar variables si vamos a utilizar en más de 2 ó 3 lugares un determinado valor (<em>colores, unidades, etc...</em>).</p>
+<p>Por ejemplo, si estamos haciendo un personaje, es muy posible que el color de la piel lo vayamos a utilizar en la cara, manos, piernas, etc. por lo que quizás podría ser interesante crear una variable <code>--skin-color</code> con el código de color. De este modo, si en el futuro queremos cambiarle el color de la piel, sólo tendremos que hacerlo en esa variable y no en todos los lugares donde se usa.</p>
+<p>Es muy importante también intentar que el ámbito de esa variable sea lo más reducido posible. Por ejemplo, si esa variable se utiliza en todo el documento, la definimos en <code>:root</code> (<em>equivalente a <code>html</code></em>), pero si sólo lo utilizamos dentro de la clase <code>.character-body</code>, entonces la definimos en dicho elemento. Las variables CSS siempre se definen en las primeras líneas de un grupo de estilos y se separa con una línea en blanco.</p>
+<p>► Leer más: <a href="../../cascada-css/css-custom-properties/index.htm">CSS Custom Properties (Variables CSS)</a></p>
+<h4 id="organizar-código-css" tabindex="-1"><a class="header-anchor" href="#organizar-código-css">Organizar código CSS</a></h4>
+<p>Quizás con dibujos muy pequeños no sientas la necesidad de hacerlo, pero si intentas hacer un dibujo medianamente grande, las líneas de código necesarias de CSS pueden ascender muy rápidamente. Por ejemplo, la <a href="https://youtu.be/OjI8jMcKN8s">GameBoy con CSS</a> tiene aproximadamente unas <strong>800 líneas</strong> de código CSS y el <a href="https://youtu.be/Aq_VPZ4oTAs">Funko POP con CSS</a> cerca de <strong>900 líneas</strong> de código. Es muy difícil tener en la cabeza toda esa cantidad de código, cantidad de clases y subclases sin solapamientos ni problemas de especificidad, y mucho menos, que sea fácil de mantener a lo largo del tiempo, por lo que una de las mejores formas de organizar todo esto es organizar (<em>y encapsular</em>) tu contenido.</p>
+<p>Existen múltiples formas de organizar tu código CSS. Una de las más populares (<em>utilizadas en los frameworks Javascript actuales</em>) es usar sistemas como <strong>CSS Modules</strong>, que nos permiten separar en ficheros diferentes. También puedes hacer uso de los módulos de <strong>Sass</strong> con <code>@use</code> para poder importar desde archivos externos. Otras estrategias interesantes pueden ser utilizar metodologías CSS o nomenclaturas como <strong>BEM</strong> (<em>o similares</em>), que ayudan a que el código sea más intuitivo y fácil de gestionar.</p>
+<p>Una de mis estrategias preferidas para organizar código es utilizar <strong>Nesting CSS</strong>. Es una característica que permite anidar clases y código CSS dentro de otras clases, lo que nos aporta una mayor organización del CSS, clasificándolo por la estructura que lo contiene. El <strong>Nesting CSS</strong> se puede hacer tanto con preprocesadores de CSS (<strong>Sass</strong>) como con PostCSS o Parcel CSS (<em>u otras herramientas similares</em>). En el futuro, está planteado que tenga soporte desde CSS vanilla, pero actualmente es necesario utilizar alguna de estas herramientas ya que los navegadores aún no lo soportan.</p>
+<p>► Más: <a href="../../../postcss/plugins/css-nesting/index.htm">Nesting CSS: Código CSS anidado</a></p>
+<h4 id="reutiliza-código-css" tabindex="-1"><a class="header-anchor" href="#reutiliza-código-css">Reutiliza código CSS</a></h4>
+<p>Muy relacionado con el apartado anterior, está el tema de la <strong>encapsulación</strong>. Dibujando (<em>o escribiendo código CSS en general</em>), al igual que en la programación, estamos expuestos a repetir código que se podría reutilizar, ahorrando espacio y facilitando modificaciones futuras. Además, una característica deseable es la <strong>encapsulación</strong>, una forma de dividir pequeñas partes de nuestro diseño, encapsularlas en una más simple y «olvidarnos» de su interior, de forma que sea más fácil gestionarlo desde fuera. Sin embargo, la naturaleza global de CSS hace que este tipo de encapsulación no sea trivial... ¡Pero no es imposible!</p>
+<p>Por ejemplo, en frameworks como <a href="https://lenguajejs.com/vuejs/">Vue</a> utilizan los estilos <strong>scoped</strong>, es decir, cada componente de Vue decide si utilizará estilos globales o que solo afecten al componente. En el caso de React es más complejo, porque hay mucha variedad de formas. Una de mis preferidas es utilizar <strong>WebComponents</strong> con <strong>Shadow DOM</strong>, es decir, create tus propias etiquetas HTML decidiendo si encapsular estilos o no.</p>
+<p>► Más: <a href="https://lenguajejs.com/webcomponents/introduccion/que-son-webcomponents/">¿Qué son los WebComponents?</a></p>
+<p><youtube-video v="Aq_VPZ4oTAs" alt="Funko POP dibujado con CSS"></youtube-video></p>
+<h3 id="colocación-y-ubicación" tabindex="-1"><a class="header-anchor" href="#colocación-y-ubicación">Colocación y ubicación</a></h3>
+<h4 id="posicionar-elementos" tabindex="-1"><a class="header-anchor" href="#posicionar-elementos">Posicionar elementos</a></h4>
+<p>Cuando dibujamos con CSS es muy habitual utilizar la propiedad <code>position</code> para ubicar y colocar elementos en el espacio de la página, algo que no es tan habitual al desarrollar páginas web.</p>
+<p>Una de las prácticas más comunes es colocar un elemento interno con <code>position: absolute</code>, mientras su elemento contenedor (<em>sea padre, abuelo, bisabuelo o un ancestro superior</em>) tiene <code>position: relative</code>. De esta forma, conseguirás posicionar el elemento interno en base al contenedor. Luego, con las propiedades <code>top</code>, <code>bottom</code>, <code>left</code> y <code>right</code>, o su propiedad de atajo <code>inset</code>, se puede colocar y desplazar en el espacio.</p>
+<p>► Más: <a href="../../maquetacion-y-colocacion/posicionamiento-css/index.htm">La propiedad <code>position</code> de CSS</a></p>
+<h4 id="usando-after-y-before" tabindex="-1"><a class="header-anchor" href="#usando-after-y-before">Usando ::after y ::before</a></h4>
+<p>En los <strong>dibujos con CSS</strong> también es muy habitual utilizar los pseudoelementos <code>::after</code> y <code>::before</code>. Básicamente, se trata de unos pseudoelementos que dan la posibilidad de dar estilo al inicio y al final de los elementos y nos ahorran tener que modificar el HTML para añadir elemento sencillos.</p>
+<p>Imaginemos por ejemplo el siguiente código:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>eye<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.eye</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
+  <span class="token property">place-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.eye::before</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 70%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 70%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> steelblue<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.eye::after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>En este caso, creamos un ojo con CSS, con su iris y su pupila. Observa que sólo tenemos un elemento HTML simple, con clase <code>.eye</code>. Como dentro solo vamos a tener dos elementos extra (<em>iris y pupila</em>), se los asignamos a <code>::before</code> y <code>::after</code> respectivamente y esto nos evita tener que estar reestructurando el HTML y todos los cambios que necesitaríamos.</p>
+<p>Sin embargo, este código puede modificarse fácilmente en lo siguiente, sin utilizar <code>::before</code> y <code>::after</code>:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>eye<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>iris<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pupil<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.eye</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
+  <span class="token property">place-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.iris</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 70%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 70%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> steelblue<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.pupil</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>Como puedes ver, en los <strong>dibujos con CSS</strong> es muy habitual utilizar <code>::before</code> y <code>::after</code>, pero no es absolutamente necesario, sólo que muchas veces es muy práctico.</p>
+<p>► Más: <a href="../../selectores/pseudoelementos/index.htm">Los pseudoelementos CSS</a></p>
+<h3 id="creación-de-formas-complejas" tabindex="-1"><a class="header-anchor" href="#creación-de-formas-complejas">Creación de formas complejas</a></h3>
+<p><youtube-video v="TluRUeb4V94" alt="Móvil Alcatel One Touch Easy con CSS"></youtube-video></p>
+<h4 id="gradientes-compuestos" tabindex="-1"><a class="header-anchor" href="#gradientes-compuestos">Gradientes compuestos</a></h4>
+<p>Cuando necesites dibujar elementos complejos, piensa siempre en la posibilidad de usar gradientes. Los gradientes son simples, sí, pero recuerda que tenemos 3 tipos de gradientes en CSS:</p>
+<ul>
+<li><a href="../../gradientes/linear-gradient/index.htm">Gradiente lineal</a>, un gradiente en una dirección definida</li>
+<li><a href="../../gradientes/radial-gradient/index.htm">Gradiente radial</a>, un gradiente con forma circular o elíptica</li>
+<li><a href="../../gradientes/conic-gradient/index.htm">Gradiente cónico</a>, un gradiente cónico (<em>punto de vista de un cono desde arriba</em>)</li>
+</ul>
+<p>Además, podemos superponer varios de ellos, uno encima de otro. Por si fuera poco, los gradientes están formados por 2 o más colores, y uno de ellos, podría ser un color transparente (<em>o semi transparente</em>), de modo que se visualice el gradiente que está por debajo, consiguiendo posibilidades muy interesantes y fabricando mecanismos muy potentes para realizar cosas mucho más complejas.</p>
+<h4 id="recortes-con-clip-path" tabindex="-1"><a class="header-anchor" href="#recortes-con-clip-path">Recortes con clip-path</a></h4>
+<p>Si hay una parte de un elemento que quieres descartar, recuerda que puedes aplicar la propiedad <code>clip-path</code> y recortar un elemento para quedarte sólo con la parte que te interesa. Se pueden realizar recortes de múltiples formas:</p>
+<ul>
+<li>Recortes rectangulares con <code>inset()</code></li>
+<li>Recortes circulares con <code>circle()</code></li>
+<li>Recortes elípticos con <code>ellipse()</code></li>
+<li>Recortes poligonales con <code>polygon()</code></li>
+<li>Recortes de trayectos SVG con <code>path()</code> o <code>url(file.svg)</code></li>
+</ul>
+<p>Los dos últimos puntos, de los más potentes, si queremos formas muy irregulares y específicas.</p>
+<p>► Más: <a href="../../mascaras-y-recortes/clip-path/index.htm">La propiedad <code>clip-path</code> de CSS</a></p>
+<h4 id="bordes-con-drop-shadow" tabindex="-1"><a class="header-anchor" href="#bordes-con-drop-shadow">Bordes con drop-shadow</a></h4>
+<p>En algunos casos nos puede interesar hacer un recorte CSS y quedarnos con una porción de un elemento, por ejemplo, utilizando <code>clip-path</code> y recortando una porción. Por ejemplo, en el siguiente código, vamos a crear un triángulo en el elemento con clase <code>.element</code>:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>element<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">.element</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">polygon</span><span class="token punctuation">(</span>0 0<span class="token punctuation">,</span> 50% 100%<span class="token punctuation">,</span> 100% 0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 3px solid black<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>Comprobarás que si queremos colocar un borde a dicho elemento con <code>border</code>, no funcionará, ya que al estar recortado el elemento, también lo están sus bordes, por lo que sólo se aprecia el borde superior (<em>el único que está fuera de la región recortada</em>). Lo mismo ocurriría si intentamos usar una sombra a modo de borde con <code>box-shadow</code> o con <code>filter: drop-shadow</code>.</p>
+<p>Sin embargo, podemos añadir un contenedor al elemento (<em>o elementos, pueden ser varios</em>) recortado, y aplicarle un <code>filter: drop-shadow</code> al contenedor, lo que hará que cree una sombra respetando los recortes que hicimos en los elementos internos:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>element<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">.container</span> <span class="token punctuation">{</span>
+    <span class="token property">filter</span><span class="token punctuation">:</span>
+      <span class="token function">drop-shadow</span><span class="token punctuation">(</span>0 -3px 0 black<span class="token punctuation">)</span>
+      <span class="token function">drop-shadow</span><span class="token punctuation">(</span>0 3px 0 black<span class="token punctuation">)</span>
+      <span class="token function">drop-shadow</span><span class="token punctuation">(</span>-3px 0 0 black<span class="token punctuation">)</span>
+      <span class="token function">drop-shadow</span><span class="token punctuation">(</span>3px 0 0 black<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.element</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">polygon</span><span class="token punctuation">(</span>0 0<span class="token punctuation">,</span> 50% 100%<span class="token punctuation">,</span> 100% 0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>En este caso, observa que el contenedor tiene un <code>filter</code> múltiple, con 4 funciones <code>drop-shadow()</code>, una para cada borde:</p>
+<ul>
+<li><code>0 -3px 0 black</code> Un borde por la parte superior</li>
+<li><code>0 3px 0 black</code> Un borde por la parte inferior</li>
+<li><code>-3px 0 0 black</code> Un borde por la parte izquierda</li>
+<li><code>3px 0 0 black</code> Un borde por la parte derecha</li>
+</ul>
+<p>Si lo deseas, puedes modificar estas cantidades, añadir más <code>drop-shadow</code> o meter los elementos en variables CSS para que sea más cómodo de modificar.</p>
+<p>► Más: <a href="../../efectos/filtros-css/index.htm">La propiedad <code>filter</code> de CSS</a></p>
+<h4 id="ocultar-desbordamientos" tabindex="-1"><a class="header-anchor" href="#ocultar-desbordamientos">Ocultar desbordamientos</a></h4>
+<p>A efectos de dibujar con CSS, es muy interesante conocer estrategias para ocultar desbordamientos. Por ejemplo, una de las más sencillas es utilizar la propiedad <code>overflow</code> en el elemento contenedor.</p>
+<p>Pero primero, establezcamos un ejemplo básico:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>element<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">.container</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> cyan<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.element</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>Tenemos un circulo rojo en un fondo azul celeste. Mi intención es quedarme con la mitad izquierda del círculo. ¿Cómo podemos conseguir esto? Principalmente, dos variaciones, ambas usando la propiedad <code>overflow</code>. La primera, reducir el tamaño del contenedor:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>element<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> cyan<span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.element</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>Observa que <code>overflow</code> con su valor <code>hidden</code> indica al navegador que todos los hijos que se salgan de la región del contenedor, desaparezcan, y sólo sea visible lo que esté dentro de ese elemento de <code>100x200</code>.</p>
+<p>También tenemos otra opción, que es la de desplazar el elemento interior un <code>50%</code> a la derecha, lo que hará que la mitad del círculo se salga del contenedor y, nuevamente, con <code>overflow</code> desaparezca lo que sobre:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>element<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> cyan<span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.element</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>La única diferencia, que en este caso, el semicírculo está desplazado hacia la derecha.</p>
+<p>► Más: <a href="../../interacciones/scroll-y-overflow/index.htm">La propiedad <code>overflow</code> de CSS</a></p>
+<h4 id="formas-con-border-radius" tabindex="-1"><a class="header-anchor" href="#formas-con-border-radius">Formas con border-radius</a></h4>
+<p>En algunos casos, puede que necesitemos crear una forma particular que se puede crear con la propiedad <code>border-radius</code>.</p>
+<p>Muchos saben y conocen que <code>border-radius</code> se utiliza para redondear esquinas, donde podemos darle un valor con el radio a utilizar. Sin embargo, no es tan conocido que existe una sintaxis con varios parámetros del <code>border-radius</code> que es mucho más potente:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.element</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 25px 25px 75px 75px / 25px 25px 75px 75px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Con este ejemplo, comprobarás que tendremos un cuadrado rojo, donde las esquinas superiores están un poco redondeadas (<code>25px</code>), y las esquinas inferiores están bastante más redondeadas (<code>75px</code>).</p>
+<p>El primer valor antes del <code>/</code> simboliza el radio horizontal de la esquina superior izquierda, mientras que el primer valor después del <code>/</code> es el radio vertical de la esquina superior derecha, y así respectivamente con cada uno. Si los valores antes del <code>/</code> son los mismos que después del <code>/</code> (<em>como en el ejemplo anterior</em>) sería equivalente al siguiente ejemplo:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.element</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 25px 25px 75px 75px<span class="token punctuation">;</span>   <span class="token comment">/* Equivalent to */</span>
+  <span class="token comment">/* border-radius: 25px 25px 75px 75px / 25px 25px 75px 75px; */</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Recuerda que desde que uses un valor de <code>0</code> en uno de los extremos, el opuesto también estará a <code>0</code>. Valores negativos no están permitidos.</p>
+<p>► Más: <a href="../../modelo-de-cajas/border-radius/index.htm">La propiedad <code>border-radius</code> de CSS</a></p>
+<h4 id="sombras-combinadas" tabindex="-1"><a class="header-anchor" href="#sombras-combinadas">Sombras combinadas</a></h4>
+<p>Es importante tener en cuenta que las sombras combinadas son una herramienta muy potente a la hora de trabajar para hacer dibujos con CSS. Aportan textura a los diseños y los hace más vistosos.</p>
+<p>Recuerda que tienes a tu disposición 3 tipos de sombras:</p>
+<ul>
+<li>Sombras de caja, mediante <a href="../../sombras/box-shadow/index.htm">box-shadow</a>, permitiendo <code>blur</code>, <code>spread</code> e <code>inset</code>.</li>
+<li>Sombras de texto, mediante <a href="../../sombras/text-shadow/index.htm">text-shadow</a>, permitiendo <code>blur</code>.</li>
+<li>Sombras idénticas, mediante <a href="../../sombras/drop-shadow/index.htm">filter: drop-shadow()</a>, permitiendo <code>blur</code>.</li>
+</ul>
+<p>Cada una de ellas se pueden combinar y acumular, en los dos primeros casos, separando por comas, y en el último, separando las funciones <code>drop-shadow()</code> con espacios.</p>
+<h4 id="restar-formas-con-máscaras" tabindex="-1"><a class="header-anchor" href="#restar-formas-con-máscaras">Restar formas con máscaras</a></h4>
+<p>Existe una forma interesante de crear formas específicas en un elemento. Se trata de <strong>crear máscaras</strong> con la propiedad <code>mask-image</code>. Para ello, podemos utilizar imágenes mediante la función <code>url()</code>, o gradientes, mediante las funciones <code>linear-gradient()</code>, <code>radial-gradient()</code> o <code>conic-gradient()</code>.</p>
+<p>En el siguiente ejemplo, creamos un <code>.element</code> que tiene un color de fondo gradiente de negro a azul marino. Con la propiedad <code>mask-image</code> establecemos las partes que van a ser visibles con un color, y las partes transparentes utilizando <code>transparent</code> o colores con canales alfa para transparencias parciales.</p>
+<p>Veamos un ejemplo donde combinamos un gradiente radial con uno cónico (<em>ambos con repetición</em>) en una máscara CSS:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>element<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">body</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">repeating-linear-gradient</span><span class="token punctuation">(</span>18deg<span class="token punctuation">,</span> blueviolet 20%<span class="token punctuation">,</span> deeppink 40%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100vh<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.element</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>black<span class="token punctuation">,</span> navy<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token property">-webkit-mask-image</span><span class="token punctuation">:</span>
+    <span class="token function">repeating-radial-gradient</span><span class="token punctuation">(</span>circle<span class="token punctuation">,</span> black 10% 15%<span class="token punctuation">,</span> transparent 15% 25%<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">repeating-conic-gradient</span><span class="token punctuation">(</span>black 10% 15%<span class="token punctuation">,</span> transparent 15% 25%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>Observa que la propiedad CSS <code>mask-image</code> requiere el prefijo <code>-webkit</code> para funcionar en ciertos navegadores. Echa un vistazo a su compatibilidad en <a href="https://caniuse.com/mdn-css_properties_mask-image">mask-image en CanIUse</a>.</p>
+<p>► Más: <a href="../../mascaras-y-recortes/mask-image/index.htm">Máscaras en CSS</a></p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../estructura-html/index.htm" title="Primeros pasos: Estructura HTML">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Primeros pasos: Estructura HTML</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../../../postcss/introduccion/que-es/index.htm" title="¿Qué es PostCSS?">
+  <div>
+    <span>¿Qué es PostCSS?</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/OQtAyXHeKnc" title="Grid CSS: Grids por área">
+  <img loading="lazy" src="../../../vi/OQtAyXHeKnc/mqdefault.jpg" alt="Grid CSS: Grids por área">
+</a><a href="https://youtu.be/L7Hi32qBIxI" title="Cómo crear SOMBRAS EN CAJAS (box-shadow)">
+  <img loading="lazy" src="../../../vi/L7Hi32qBIxI/mqdefault.jpg" alt="Cómo crear SOMBRAS EN CAJAS (box-shadow)">
+</a><a href="https://youtu.be/s_16bzmnGoY" title="Grid CSS: Líneas con nombre">
+  <img loading="lazy" src="../../../vi/s_16bzmnGoY/mqdefault.jpg" alt="Grid CSS: Líneas con nombre">
+</a><a href="https://youtu.be/hiRIjRf2QD8" title="FUNCIONES de TIEMPO en CSS: ¡Controla el ritmo de tus animaciones!">
+  <img loading="lazy" src="../../../vi/hiRIjRf2QD8/mqdefault.jpg" alt="FUNCIONES de TIEMPO en CSS: ¡Controla el ritmo de tus animaciones!">
+</a><a href="https://youtu.be/K-nE-kZKLRw" title="¡NOVEDADES CSS! ¿Cuánto de este código CSS eres CAPAZ de reconocer?">
+  <img loading="lazy" src="../../../vi/K-nE-kZKLRw/mqdefault.jpg" alt="¡NOVEDADES CSS! ¿Cuánto de este código CSS eres CAPAZ de reconocer?">
+</a><a href="https://youtu.be/I-EFAmX-vhE" title="Flex CSS: Alinear, centrar y reordenar elementos">
+  <img loading="lazy" src="../../../vi/I-EFAmX-vhE/mqdefault.jpg" alt="Flex CSS: Alinear, centrar y reordenar elementos">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

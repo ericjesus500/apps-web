@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<!-- saved from url=(0131)https://www.freecodecamp.org/espanol/news/comprueba-si-un-elemento-esta-en-un-arreglo-en-javascript-js-cuenta-con-arreglo-includes/ -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        
+            <title>Comprueba si un elemento está en un arreglo en JavaScript : JS cuenta con arreglo.includes()</title>
+        
+        <meta name="HandheldFriendly" content="True">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+        
+            <link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/css2">
+        
+
+        
+        
+    <link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/prism.min.css">
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://cdn.freecodecamp.org/news-assets/prism/1.29.0/themes/prism.min.css"
+  />
+</noscript>
+<link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/prism-unescaped-markup.min.css">
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://cdn.freecodecamp.org/news-assets/prism/1.29.0/plugins/unescaped-markup/prism-unescaped-markup.min.css"
+  />
+</noscript>
+
+<script type="text/javascript" async="" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/js"></script><script type="text/javascript" async="" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/analytics.js.descarga"></script><script type="text/javascript" async="" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/js(1)"></script><script src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/f(6).txt" id="google_shimpl"></script><script async="" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/gtm.js.descarga"></script><script defer="" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/prism-core.min.js.descarga"></script>
+<script defer="" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/prism-autoloader.min.js.descarga"></script>
+
+
+
+        
+        <link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/global-2c6f2910a9.css">
+        <link rel="stylesheet" type="text/css" href="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/screen-e9fc5800e5.css">
+        <link rel="stylesheet" type="text/css" href="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/search-bar-971612c5db.css">
+
+        
+        <script defer="" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/algoliasearch.min.js.descarga"></script>
+        <script defer="" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/autocomplete.min.js.descarga"></script>
+
+        
+        <script defer="" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/dayjs.min.js.descarga"></script>
+        <script defer="" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/localizedFormat.min.js.descarga"></script>
+        <script defer="" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/relativeTime.min.js.descarga"></script>
+
+        
+        
+            <script defer="" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/es.min.js.descarga"></script>
+        
+
+        
+        <script>let client,index;document.addEventListener("DOMContentLoaded",(()=>{client=algoliasearch("QMJYL5WYTI","89770b24481654192d7a5c402c6ad9a0"),index=client.initIndex("news-es")})),document.addEventListener("DOMContentLoaded",(()=>{const e=window.screen.width,t=window.screen.height,n=e>=767&&t>=768?8:5,o=document.getElementById("search-form"),s=document.getElementById("search-input"),a=document.getElementById("dropdown-container");let i,d,c;s.addEventListener("input",(e=>{i=e.target.value})),o.addEventListener("submit",(e=>{e.preventDefault(),function(){if(d=document.getElementsByClassName("aa-cursor")[0],d&&i){const e=d.querySelector("a").href;window.location.assign(e)}else!d&&i&&c&&window.location.assign(`https://www.freecodecamp.org/espanol/news/search?query=${i}`)}()}));const l=autocomplete("#search-input",{hint:!1,keyboardShortcuts:["s",191],openOnFocus:!0,appendTo:a,debug:!0},[{source:autocomplete.sources.hits(index,{hitsPerPage:n}),debounce:250,templates:{suggestion:e=>(c=!0,`\n            <a href="${e.url}">\n              <div class="algolia-result">\n                <span>${e._highlightResult.title.value}</span>\n              </div>\n            </a>\n          `),empty:()=>(c=!1,'\n            <div class="aa-suggestion footer-suggestion no-hits-footer">\n              <div class="algolia-result">\n                <span>\n                  No se encontraron tutoriales\n                </span>\n              </div>\n            </div>\n          '),footer:e=>{if(!e.isEmpty)return`\n              <div class="aa-suggestion footer-suggestion">\n                <a id="algolia-footer-selector" href="https://www.freecodecamp.org/espanol/news/search?query=${i}">\n                  <div class="algolia-result algolia-footer">\n                    Ver todos los resultados de ${i}\n                  </div>\n                </a>\n              </div>\n            `}}}]).on("autocomplete:selected",((e,t,n,o)=>{d=t?t.url:`https://www.freecodecamp.org/espanol/news/search?query=${i}`,"click"!==o.selectionMethod&&"tabKey"!==o.selectionMethod&&c&&window.location.assign(d)}));document.addEventListener("click",(e=>{e.target!==s&&l.autocomplete.close()}))})),document.addEventListener("DOMContentLoaded",(()=>{dayjs.extend(dayjs_plugin_localizedFormat),dayjs.extend(dayjs_plugin_relativeTime),dayjs.locale("es")}));const isAuthenticated=document.cookie.split(";").some((e=>e.trim().startsWith("jwt_access_token="))),isDonor=document.cookie.split(";").some((e=>e.trim().startsWith("isDonor=true")));</script>
+
+        
+        
+    
+        <script data-ad-client="ca-pub-9482786369113753" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/f(7).txt" crossorigin="anonymous" async="" data-checked-head="true"></script>
+    
+
+
+        
+        
+        
+
+        
+        
+
+        <link rel="icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico" type="image/png">
+        
+        
+            <link rel="canonical" href="https://www.freecodecamp.org/espanol/news/comprueba-si-un-elemento-esta-en-un-arreglo-en-javascript-js-cuenta-con-arreglo-includes/">
+        
+        <meta name="referrer" content="no-referrer-when-downgrade">
+
+        
+
+        
+    <meta name="description" content="Puedes usar el método includes() en JavaScript para verificar si un elemento existe dentro de un arreglo. También puedes usarlo para verificar si un substring existe dentro de una cadena de texto. Devuelve true si el elemento se encuentra en el arreglo/cadena y false si el elemento no existe. En">
+
+    
+    <meta property="og:site_name" content="freeCodeCamp.org">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Comprueba si un elemento está en un arreglo en JavaScript : JS cuenta con arreglo.includes()">
+    
+        <meta property="og:description" content="Puedes usar el método includes() en JavaScript para verificar si un elemento existe dentro de un arreglo. También puedes usarlo para verificar si un substring existe dentro de una cadena de texto. Devuelve true si el elemento se encuentra en el arreglo/cadena y false si el elemento no existe. En">
+    
+    <meta property="og:url" content="https://www.freecodecamp.org/espanol/news/comprueba-si-un-elemento-esta-en-un-arreglo-en-javascript-js-cuenta-con-arreglo-includes/">
+    <meta property="og:image" content="https://www.freecodecamp.org/espanol/news/content/images/2023/06/freecodecamp-post.jpg">
+    <meta property="article:published_time" content="2023-06-26T18:06:00.000Z">
+    <meta property="article:modified_time" content="2023-06-26T18:06:00.000Z">
+    
+        <meta property="article:tag" content="JavaScript">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/freecodecamp">
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Comprueba si un elemento está en un arreglo en JavaScript : JS cuenta con arreglo.includes()">
+    
+        <meta name="twitter:description" content="Puedes usar el método includes() en JavaScript para verificar si un elemento existe dentro de un arreglo. También puedes usarlo para verificar si un substring existe dentro de una cadena de texto. Devuelve true si el elemento se encuentra en el arreglo/cadena y false si el elemento no existe. En">
+    
+    <meta name="twitter:url" content="https://www.freecodecamp.org/espanol/news/comprueba-si-un-elemento-esta-en-un-arreglo-en-javascript-js-cuenta-con-arreglo-includes/">
+    <meta name="twitter:image" content="https://www.freecodecamp.org/espanol/news/content/images/2023/06/freecodecamp-post.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Fernando Campos">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="JavaScript">
+    <meta name="twitter:site" content="@freecodecampes">
+    
+        <meta name="twitter:creator" content="@fercho_dev_">
+    
+
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="1280">
+
+
+        
+    <script type="application/ld+json">{
+	"@context": "https://schema.org",
+	"@type": "Article",
+	"publisher": {
+		"@type": "Organization",
+		"name": "freeCodeCamp.org",
+		"url": "https://www.freecodecamp.org/espanol/news/",
+		"logo": {
+			"@type": "ImageObject",
+			"url": "https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg",
+			"width": 2100,
+			"height": 240
+		}
+	},
+	"image": {
+		"@type": "ImageObject",
+		"url": "https://www.freecodecamp.org/espanol/news/content/images/2023/06/freecodecamp-post.jpg",
+		"width": 1920,
+		"height": 1280
+	},
+	"url": "https://www.freecodecamp.org/espanol/news/comprueba-si-un-elemento-esta-en-un-arreglo-en-javascript-js-cuenta-con-arreglo-includes/",
+	"mainEntityOfPage": {
+		"@type": "WebPage",
+		"@id": "https://www.freecodecamp.org/espanol/news/"
+	},
+	"datePublished": "2023-06-26T18:06:00.000Z",
+	"dateModified": "2023-06-26T18:06:00.000Z",
+	"keywords": "JavaScript",
+	"description": "Puedes usar el método includes() en JavaScript para verificar si un elemento\nexiste dentro de un arreglo. También puedes usarlo para verificar si un\nsubstring existe dentro de una cadena de texto.\n\nDevuelve true si el elemento se encuentra en el arreglo/cadena y false si el\nelemento no existe.\n\nEn este artículo, verás cómo utilizar el método includes() en JavaScript para\ncomprobar si un elemento está en un arreglo, y si un substring existe dentro de\nuna cadena.\n\nCómo verificar si un elemento est",
+	"headline": "Comprueba si un elemento está en un arreglo en JavaScript : JS cuenta con arreglo.includes()",
+	"author": {
+		"@type": "Person",
+		"name": "Fernando Campos",
+		"url": "https://www.freecodecamp.org/espanol/news/author/ferchodev/",
+		"sameAs": [
+			"https://www.ferchodev.com/",
+			"https://twitter.com/fercho_dev_"
+		],
+		"image": {
+			"@type": "ImageObject",
+			"url": "https://www.freecodecamp.org/espanol/news/content/images/2023/06/foto-perfil-nueva--1-.png",
+			"width": 2144,
+			"height": 2858
+		}
+	}
+}</script>
+
+
+        <meta name="generator" content="Eleventy">
+        <link rel="alternate" type="application/rss+xml" title="freeCodeCamp.org" href="https://www.freecodecamp.org/espanol/news/rss/">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+
+<!-- Web Monetization (https://webmonetization.org/) -->
+<meta name="monetization" content="$ilp.uphold.com/LJmbPn7WD4JB">
+<!-- end Web Monetization -->
+
+<!-- dataLayer setup -->
+<script>
+window.dataLayer = window.dataLayer || [];
+</script>
+<!-- End dataLayer setup -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5D6RKKP');</script>
+<!-- End Google Tag Manager -->
+        
+    <meta http-equiv="origin-trial" content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"></head>
+    
+    
+        <body class="home-template">
+    
+        <div class="site-wrapper" style="height: auto !important; min-height: 0px !important;">
+            <nav class="site-nav nav-padding">
+    <div class="site-nav-left">
+        
+<form id="search-form" data-test-label="search-bar">
+    <div role="search" class="searchbox__wrapper">
+        <label class="fcc_sr_only" for="search-input">
+            Buscar
+        </label>
+        <input type="search" placeholder="
+    Search 700+ tutorials
+" id="search-input" class="aa-input" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style=""><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre>
+        <button type="submit" class="ais-SearchBox-submit">
+            <svg class="ais-SearchBox-submitIcon" xmlns="https://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 40 40">
+    <path d="M26.804 29.01c-2.832 2.34-6.465 3.746-10.426 3.746C7.333 32.756 0 25.424 0 16.378 0 7.333 7.333 0 16.378 0c9.046 0 16.378 7.333 16.378 16.378 0 3.96-1.406 7.594-3.746 10.426l10.534 10.534c.607.607.61 1.59-.004 2.202-.61.61-1.597.61-2.202.004L26.804 29.01zm-10.426.627c7.323 0 13.26-5.936 13.26-13.26 0-7.32-5.937-13.257-13.26-13.257C9.056 3.12 3.12 9.056 3.12 16.378c0 7.323 5.936 13.26 13.258 13.26z"></path>
+</svg>
+
+            <span class="fcc_sr_only">Enviar tu consulta de búsqueda</span>
+        </button>
+        <div id="dropdown-container"><span class="algolia-autocomplete" style="position: absolute; z-index: 100; display: none; direction: ltr;"><span class="aa-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0" style="display: block; left: 0px; right: auto;"><div class="aa-dataset-1"></div></span></span></div>
+    </div>
+</form>
+
+    </div>
+    <div class="site-nav-middle">
+        <a class="site-nav-logo" href="https://www.freecodecamp.org/espanol/news" data-test-label="site-nav-logo"><img src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/fcc_primary.svg" alt="freeCodeCamp.org"></a>
+    </div>
+    <div class="site-nav-right">
+        <div class="nav-group">
+            <a class="nav-forum" id="nav-forum" rel="noopener noreferrer" href="https://forum.freecodecamp.org/c/espanol/522" target="_blank" data-test-label="forum-button">Foro</a>
+            <a class="toggle-button-nav" id="nav-donate" rel="noopener noreferrer" href="https://www.freecodecamp.org/espanol/donate/" target="_blank" data-test-label="donate-button">Donar</a>
+        </div>
+    </div>
+</nav>
+
+
+            
+            <a class="banner" id="banner" data-test-label="banner" rel="noopener noreferrer" target="_blank" href="https://www.freecodecamp.org/espanol/donate" text-variation="authenticated">
+    <p id="banner-text">Support our charity and our mission. <span>Donate to freeCodeCamp.org</span>.</p>
+</a>
+
+
+    
+    <script>document.addEventListener("DOMContentLoaded",(()=>{const e=document.getElementById("banner"),t=document.getElementById("banner-text");isAuthenticated?(t.innerHTML="Support our charity and our mission. <span>Donate to freeCodeCamp.org</span>.",e.href="https://www.freecodecamp.org/espanol/donate",e.setAttribute("text-variation","authenticated")):isDonor?(t.innerHTML="Gracias por apoyar a freeCodeCamp a través de <span>tus donaciones</span>.",e.href="https://www.freecodecamp.org/espanol/news/how-to-donate-to-free-code-camp/",e.setAttribute("text-variation","donor")):(t.innerHTML="Aprender a codificar — <span>gratis 3,000-horas currículo</span>",e.href="https://www.freecodecamp.org/espanol",e.setAttribute("text-variation","default"))}));</script>
+
+
+            <div id="error-message"></div>
+
+            
+    <main id="site-main" class="post-template site-main outer" style="height: auto !important;">
+        <div class="inner ad-layout" style="height: auto !important;">
+            <article class="post-full post " style="height: auto !important;">
+                <header class="post-full-header">
+                    <section class="post-full-meta">
+                        <time class="post-full-meta-date" datetime="Mon Jun 26 2023 18:06:00 GMT+0000 (Coordinated Universal Time)">
+                            26 de junio de 2023
+                        </time>
+                        
+                            <span class="date-divider">/</span>
+                            <a dir="ltr" href="https://www.freecodecamp.org/espanol/news/tag/javascript/">
+                                #JavaScript
+                            </a>
+                        
+                    </section>
+                    <h1 class="post-full-title">Comprueba si un elemento está en un arreglo en JavaScript : JS cuenta con arreglo.includes()</h1>
+                </header>
+                <div class="post-full-author-header" data-test-label="author-header-no-bio">
+                    
+                        
+                            
+    
+    
+    
+
+    <section class="author-card" data-test-label="translator-card">
+        
+            
+    <img srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w60/2023/06/foto-perfil-nueva--1-.png 60w" sizes="60px" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/foto-perfil-nueva--1-.png" class="author-profile-image" alt="Fernando Campos" width="2144" height="2858" onerror="this.style.display=&#39;none&#39;" data-test-label="profile-image">
+  
+        
+
+        <section class="author-card-content author-card-content-no-bio">
+            <span class="author-card-name">
+                <a href="https://www.freecodecamp.org/espanol/news/author/ferchodev/" data-test-label="profile-link">
+                    
+                        Traductor: Fernando Campos
+                    
+                </a>
+            </span>
+            
+        </section>
+    </section>
+
+                            
+    
+    
+    
+
+    <section class="author-card" data-test-label="author-card">
+        
+            
+    <img srcset="https://www.freecodecamp.org/news/content/images/size/w60/2023/04/ihechikara-pfp.jpg 60w" sizes="60px" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/ihechikara-pfp.jpg" class="author-profile-image" alt="Ihechikara Vincent Abba" width="1269" height="1082" onerror="this.style.display=&#39;none&#39;" data-test-label="profile-image">
+  
+        
+
+        <section class="author-card-content author-card-content-no-bio">
+            <span class="author-card-name">
+                <a href="https://www.freecodecamp.org/news/author/ihechikara/" data-test-label="profile-link">
+                    
+                        Autor: Ihechikara Vincent Abba (Inglés)
+                    
+                </a>
+            </span>
+            
+        </section>
+    </section>
+
+                        
+                    
+                </div>
+                
+                    <figure class="post-full-image">
+                        
+    <picture>
+      <source media="(max-width: 700px)" sizes="1px" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7 1w">
+      <source media="(min-width: 701px)" sizes="(max-width: 800px) 400px, (max-width: 1170px) 700px, 1400px" srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w300/2023/06/freecodecamp-post.jpg 300w,https://www.freecodecamp.org/espanol/news/content/images/size/w600/2023/06/freecodecamp-post.jpg 600w,https://www.freecodecamp.org/espanol/news/content/images/size/w1000/2023/06/freecodecamp-post.jpg 1000w,https://www.freecodecamp.org/espanol/news/content/images/size/w2000/2023/06/freecodecamp-post.jpg 2000w">
+      <img onerror="this.style.display=&#39;none&#39;" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/freecodecamp-post.jpg" alt="Comprueba si un elemento está en un arreglo en JavaScript : JS cuenta con arreglo.includes()" ,="" width="1920" height="1280">
+    </picture>
+  
+                    </figure>
+                
+                <section class="post-full-content" style="height: auto !important; min-height: 0px !important;">
+                    <div class="post-and-sidebar" style="height: auto !important;">
+                        <section class="post-content " data-test-label="post-content">
+                            
+<p data-test-label="translation-intro">
+        <strong>Original article:</strong> <a href="https://www.freecodecamp.org/news/check-if-an-item-is-in-an-array-in-javascript-js-contains-with-array-includes/" target="_blank" rel="noopener noreferrer" data-test-label="original-article-link">Check if an Item is in an Array in JavaScript – JS Contains with Array.includes()</a>
+      </p><p>Puedes usar el método <code>includes()</code> &nbsp;en JavaScript para verificar si un elemento existe dentro de un arreglo. También puedes usarlo para verificar si un substring existe dentro de una cadena de texto.</p><p>Devuelve <code>true</code> si el elemento se encuentra en el arreglo/cadena y <code>false</code> si el elemento no existe.</p><p>En este artículo, verás cómo utilizar el método <code>includes()</code> en JavaScript para comprobar si un elemento está en un arreglo, y si un substring existe dentro de una cadena.</p><h2 id="c-mo-verificar-si-un-elemento-est-en-un-arreglo-en-javascript-utilizando-arreglo-includes-">Cómo verificar si un elemento está en un arreglo en JavaScript utilizando<strong> <code>arreglo.includes()</code></strong></h2><p>Esta es la sintaxis para utilizar el método <code>includes()</code> y verificar si un elemento está en un arreglo:</p><pre class="language-txt" tabindex="0"><code class="language-txt">arreglo.includes(elemento, indiceInicial)</code></pre><p>Desglosemos la sintaxis anterior:</p><p><code>arreglo</code> representa el nombre del arreglo en el que se buscará para verificar si un elemento existe.</p><p>El método <code>includes()</code> recibe dos parámetros: <code>elemento</code> e <code>indiceInicial</code>.</p><ul><li><code>elemento</code> es el elemento específico que estás buscando.</li><li><code>indiceInicial</code>, que es un parámetro opcional, especifica el índice desde el cual iniciar la búsqueda. Si no incluyes este parámetro, el índice predeterminado será <code>0</code> (el primer índice).</li></ul><p>Aquí hay algunos ejemplos para mostrar cómo usar el método <code>includes()</code> para verificar si un elemento existe en un arreglo:</p><pre class="language-javascript" tabindex="0"><code class="language-javascript"><span class="token keyword">const</span> numeros <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>numeros<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// true</span></code></pre><p>En el ejemplo anterior, creamos un arreglo llamado <code>numeros</code> con cuatro números: 1, 3, 5, 7. </p><p>Usando la notación de punto, adjuntamos el método <code>includes()</code> al arreglo <code>numeros</code>. </p><p>En el parámetro del método <code>includes()</code>, pasamos <code>3</code>. Este es el elemento que queremos buscar.</p><p>Obtuvimos <code>true</code> porque <code>3</code> existe en el arreglo <code>numeros</code>. </p><p>Intentemos buscar un número que no existe en el arreglo.</p><pre class="language-javascript" tabindex="0"><code class="language-javascript"><span class="token keyword">const</span> numeros <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>numeros<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// false</span>
+</code></pre><p>Como se esperaba, obtuvimos <code>false</code> en el ejemplo anterior porque <code>8</code> no es un elemento dentro del arreglo <code>numeros</code>.</p><h2 id="c-mo-verificar-si-un-elemento-est-en-un-arreglo-en-javascript-usando-arreglo-includes-a-partir-de-un-ndice-especificado"><strong>Cómo verificar si un elemento está en un arreglo en JavaScript usando <code>arreglo.includes()</code> a partir de un índice especificado</strong></h2><p>En la última sección, vimos cómo verificar si un elemento existía en un arreglo sin usar el segundo parámetro del método <code>includes()</code>. </p><p>Como recordatorio, el segundo parámetro se utiliza para especificar el índice desde el que se debe comenzar a buscar un elemento en el arreglo. </p><p>En un arreglo los índices comienzan desde <code>0</code>. Entonces, el primer elemento es <code>0</code>, el segundo elemento es <code>1</code>, el tercer elemento es <code>2</code>, y así sucesivamente. </p><p>Aquí hay un ejemplo para mostrar cómo podemos usar el segundo parámetro del método <code>includes()</code>:</p><pre class="language-javascript" tabindex="0"><code class="language-javascript"><span class="token keyword">const</span> numeros <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>numeros<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// false</span></code></pre><p>El ejemplo anterior devolvió <code>false</code>, aunque teníamos <code>3</code> como un elemento en el arreglo.</p><p> Aquí está el porqué: </p><p>Usando el segundo parámetro, le dijimos al método <code>includes()</code> que buscara el número <code>3</code> pero comenzando desde el índice <code>2</code>: <code>numeros.includes(3, 2)</code>. </p><p>Este es el arreglo: <code>[1, 3, 5, 7]</code></p><p>Índice <code>0</code> = <code>1</code>. </p><p>Índice <code>1</code> = <code>3</code>. </p><p>Índice <code>2</code> = <code>5</code>. </p><p>Índice <code>3</code> = <code>7</code>. </p><p>Entonces, comenzando desde el segundo índice que es <code>5</code>, solo tenemos <code>5</code> y <code>7</code> ([5,7]) para buscar. Es por eso que buscar <code>3</code> a partir del índice <code>2</code> devolvió <code>false</code>. </p><p>Si cambias el índice desde el que se debe comenzar la búsqueda a <code>1</code>, entonces obtendrías <code>true</code> porque <code>3</code> se puede encontrar dentro de ese rango. Eso es:</p><pre class="language-javascript" tabindex="0"><code class="language-javascript"><span class="token keyword">const</span> numeros <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>numeros<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// true</span></code></pre><h2 id="c-mo-verificar-si-un-substring-est-dentro-de-otra-cadena-en-javascript-usando-el-m-todo-includes-">Cómo verificar si un substring está dentro de otra cadena en JavaScript usando el método<strong> <code>includes()</code></strong></h2><p>Al igual que en los ejemplos anteriores, debes agregar el método <code>includes()</code> al nombre de la cadena en la que se va a buscar mediante la notación de punto.</p><p>Aquí está como se ve la sintaxis:</p><pre class="language-txt" tabindex="0"><code class="language-txt">cadena.includes(substring, indiceInicial)</code></pre><p>Aquí hay un ejemplo:</p><pre class="language-javascript" tabindex="0"><code class="language-javascript"><span class="token keyword">const</span> bio <span class="token operator">=</span> <span class="token string">"Soy un desarrollador web"</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>bio<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"web"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// true</span></code></pre><p>En el ejemplo anterior, la variable <code>bio</code> tiene un valor de "Soy un desarrollador web".</p><p>Usando el método <code>includes ()</code>, buscamos el substring "web".</p><p>Obtuvimos <code>true</code> porque "web" está en la cadena <code>bio</code>.</p><p>También puedes usar el segundo parámetro para especificar dónde comenzará la búsqueda, pero ten en cuenta que cada carácter de la cadena representa un índice y los espacios entre cada substring también representan un índice.</p><p>Aquí hay un ejemplo para demostrar esto:</p><pre class="language-javascript" tabindex="0"><code class="language-javascript"><span class="token keyword">let</span> bio <span class="token operator">=</span> <span class="token string">"Soy un desarrollador web"</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>bio<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"web"</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// false</span></code></pre><p>Obtenemos <code>false</code> porque el índice <code>22</code> es la "e" en "web".</p><p>Comenzando desde el índice <code>22</code>, la cadena se vería así: "eb". El substring "web" no existe en la cadena, por lo que se devuelve <code>false</code>.</p><h2 id="resumen">Resumen</h2><p>En este artículo, hablamos sobre el método <code>includes()</code> en JavaScript. Lo usas para verificar si un elemento existe dentro de un arreglo. También puedes usarlo para verificar si se puede encontrar un substring dentro de otra cadena.</p><p>Vimos algunos ejemplos que explicaron su uso para buscar un elemento en un arreglo comenzando desde el primer índice, luego otro ejemplo desde un índice especificado.</p><p>Por último, vimos cómo usar el método <code>includes()</code> para verificar si un substring existe dentro de una cadena desde el primer índice y desde un índice especificado.</p><p>¡Feliz codificación!</p>
+
+                        </section>
+                        
+                            <div class="sidebar" style="height: auto !important;">
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper" style="height: auto !important; min-height: 0px !important;">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_1_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 600px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"><iframe id="aswift_1" name="aswift_1" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:300px;height:600px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/ads.html" data-google-container-id="a!2" data-google-query-id="CMXPs7Dzu4MDFeQFuQYdC7QHTg" data-load-complete="true"></iframe></div></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper" style="height: auto !important; min-height: 0px !important;">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_2_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 600px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"><iframe id="aswift_2" name="aswift_2" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:300px;height:600px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/ads(1).html" data-google-container-id="a!3" data-google-query-id="CO_Ws7Dzu4MDFRwDuQYdXoYN1w" data-load-complete="true"></iframe></div></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"><div id="aswift_3_host" style="border: none; height: 600px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                            </div>
+                        
+                    </div>
+                    <hr>
+                    
+                        <div class="post-full-author-header" data-test-label="author-header-with-bio">
+                            
+                                
+    
+    
+    
+
+    <section class="author-card" data-test-label="translator-card">
+        
+            
+    <img srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w60/2023/06/foto-perfil-nueva--1-.png 60w" sizes="60px" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/foto-perfil-nueva--1-.png" class="author-profile-image" alt="Fernando Campos" width="2144" height="2858" onerror="this.style.display=&#39;none&#39;" loading="lazy" data-test-label="profile-image">
+  
+        
+
+        <section class="author-card-content ">
+            <span class="author-card-name">
+                <a href="https://www.freecodecamp.org/espanol/news/author/ferchodev/" data-test-label="profile-link">
+                    
+                        Traductor: Fernando Campos
+                    
+                </a>
+            </span>
+            
+                
+                    <p data-test-label="default-bio">
+                        Leer <a href="https://www.freecodecamp.org/espanol/news/author/ferchodev/">más publicaciones</a>.
+                    </p>
+                
+            
+        </section>
+    </section>
+
+                                
+    
+    
+    
+
+    <section class="author-card" data-test-label="author-card">
+        
+            
+    <img srcset="https://www.freecodecamp.org/news/content/images/size/w60/2023/04/ihechikara-pfp.jpg 60w" sizes="60px" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/ihechikara-pfp.jpg" class="author-profile-image" alt="Ihechikara Vincent Abba" width="1269" height="1082" onerror="this.style.display=&#39;none&#39;" loading="lazy" data-test-label="profile-image">
+  
+        
+
+        <section class="author-card-content ">
+            <span class="author-card-name">
+                <a href="https://www.freecodecamp.org/news/author/ihechikara/" data-test-label="profile-link">
+                    
+                        Autor: Ihechikara Vincent Abba (Inglés)
+                    
+                </a>
+            </span>
+            
+                
+                    <p data-test-label="author-bio">ihechikara.com</p>
+                
+            
+        </section>
+    </section>
+
+                            
+                        </div>
+                        <hr>
+                    
+
+                    
+                    
+                        
+    
+
+
+<p data-test-label="social-row-cta" class="social-row">
+    If you read this far, thank the author to show them you care. <button id="tweet-btn" class="cta-button" data-test-label="tweet-button" onclick="window.open(
+    &#39;https://twitter.com/intent/tweet?text=Gracias%20%40Ihechikara2%20por%20escribir%20este%20%C3%BAtil%20art%C3%ADculo%20y%20%40fercho_dev_%20por%20traducirlo.%0A%0AComprueba%20si%20un%20elemento%20est%C3%A1%20en%20un%20arreglo%20en%20JavaScript%20%3A%20JS%20cuenta%20con%20arreglo.includes()%0A%0Ahttps://www.freecodecamp.org/espanol/news/comprueba-si-un-elemento-esta-en-un-arreglo-en-javascript-js-cuenta-con-arreglo-includes/&#39;,
+    &#39;share-twitter&#39;,
+    &#39;width=550, height=235&#39;
+  ); return false;">Say Thanks</button>
+</p>
+
+
+    
+    <script>document.addEventListener("DOMContentLoaded",(()=>{const t=document.getElementById("tweet-btn"),e=window.location,n="Comprueba%20si%20un%20elemento%20est%C3%A1%20en%20un%20arreglo%20en%20JavaScript%20%3A%20JS%20cuenta%20con%20arreglo.includes()".replace(/&#39;/g,"%27"),o="@Ihechikara2",r="@fercho_dev_",i=Boolean("[object Object]");let c;if(i&&(o||r)){const t={originalPostAuthor:"Ihechikara Vincent Abba",currentPostAuthor:"Fernando Campos"};c=encodeURIComponent(`Gracias ${o||t.originalPostAuthor} por escribir este útil artículo y ${r||t.currentPostAuthor} por traducirlo.`)}else!i&&r&&(c=encodeURIComponent(`Gracias ${r} por escribir este útil artículo.`));const a=`window.open(\n    '${c?`https://twitter.com/intent/tweet?text=${c}%0A%0A${n}%0A%0A${e}`:`https://twitter.com/intent/tweet?text=${n}%0A%0A${e}`}',\n    'share-twitter',\n    'width=550, height=235'\n  ); return false;`;t.setAttribute("onclick",a)}));</script>
+
+
+                        
+
+<div class="learn-cta-row" data-test-label="learn-cta-row">
+    <p>
+        Aprende a codificar de forma gratuita. El plan de estudios de código abierto de freeCodeCamp ha ayudado a más de 40,000 personas a obtener trabajos como desarrolladores. <a href="https://www.freecodecamp.org/espanol/learn/" class="cta-button" id="learn-to-code-cta" rel="noopener noreferrer" target="_blank">Empezar</a>
+    </p>
+</div>
+
+                    
+                </section>
+                
+                    <div class="banner-ad bottom">
+                        <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"><div id="aswift_4_host" style="border: none; height: 280px; width: 1060px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                    </div>
+                
+            </article>
+        </div>
+    </main>
+
+
+            
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-top">
+            <div class="footer-desc-col">
+                <p data-test-label="tax-exempt-status">freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charity organization (United States Federal Tax Identification Number: 82-0779546)</p>
+                <p data-test-label="mission-statement">Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public.</p>
+                <p data-test-label="donation-initiatives">Las donaciones a freeCodeCamp van dirigidas a nuestras iniciativas educativas y ayudan a pagar servidores, servicios y personal.</p>
+                <p class="footer-donation" data-test-label="donate-text">
+                    Puedes hacer <a href="https://www.freecodecamp.org/espanol/donate/" class="inline" rel="noopener noreferrer" target="_blank">una donación deducible de impuestos aquí</a>.
+                </p>
+            </div>
+            <div class="trending-guides" data-test-label="trending-guides">
+                <div class="col-header">Guías de tendencias</div>
+                <div class="trending-guides-row">
+                    <div class="footer-col footer-col-1">
+                        <a href="https://www.freecodecamp.org/espanol/news/como-clonar-una-branch-en-git/" rel="noopener noreferrer" target="_blank">Git Clone
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/metodologia-agile/" rel="noopener noreferrer" target="_blank">Métodos Agile
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/python-if-name-main/" rel="noopener noreferrer" target="_blank">Python Main
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/javascript-callback-functions-what-are-callbacks-in-js-and-how-to-use-them/" rel="noopener noreferrer" target="_blank">Callback
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/curso-debounce-javascript-como-hacer-que-tu-js-espere/" rel="noopener noreferrer" target="_blank">Debounce
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/url-codificacion-como-utilizar-encodeuricomponent-javascript/" rel="noopener noreferrer" target="_blank">URL Encode
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/make-it-blink-html-tutorial-how-to-use-the-blink-tag-with-code-examples/" rel="noopener noreferrer" target="_blank">Blink HTML
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/tuplas-listas-python/" rel="noopener noreferrer" target="_blank">Python Tupla
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/como-agregar-elementos-a-un-arreglo/" rel="noopener noreferrer" target="_blank">JavaScript Push
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/java-list-tutorial-util-list-api-example/" rel="noopener noreferrer" target="_blank">Java List
+                        </a>
+                    </div>
+                    <div class="footer-col footer-col-2">
+                        <a href="https://www.freecodecamp.org/espanol/news/diseno-ux-convertirse-en-un-disenador-de-experiencia-de-usuario/" rel="noopener noreferrer" target="_blank">UX
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/pensamiento-de-diseno-emprendedores-desarrolladores/" rel="noopener noreferrer" target="_blank">Proceso de Diseño
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/lista-de-numeros-primos-una-grafica-con-todos-los/" rel="noopener noreferrer" target="_blank">Números Primos
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/product-design-explicado-en-un-espanol-sencillo/" rel="noopener noreferrer" target="_blank">Diseño de Producto
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/what-is-digital-design-and-why-does-it-matter/" rel="noopener noreferrer" target="_blank">Digital Design
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/los-mejores-juegos-online-para-aprender-programar/" rel="noopener noreferrer" target="_blank">Juegos de Código
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/svm-machine-learning-tutorial-what-is-the-support-vector-machine-algorithm-explained-with-code-examples/" rel="noopener noreferrer" target="_blank">SVM
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/javascript-foreach-how-to-loop-through-an-array-in-js/" rel="noopener noreferrer" target="_blank">JavaScript forEach
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/google-bert-nlp-machine-learning-tutorial/" rel="noopener noreferrer" target="_blank">Google BERT
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/create-table-sql-server-con-ejemplo/" rel="noopener noreferrer" target="_blank">Create Table SQL
+                        </a>
+                    </div>
+                    <div class="footer-col footer-col-3">
+                        <div class="footer-left">
+                            <a href="https://www.freecodecamp.org/espanol/news/diseno-web-responsive-como-hacer-que-un-sitio-web-se-vea-bien-en-telefonos-y-tabletas/" rel="noopener noreferrer" target="_blank">Diseño Web Responsive
+                            </a>
+                            <a href="https://www.freecodecamp.org/espanol/news/que-es-svg-explicacion-de-etiquetas-imagenes/" rel="noopener noreferrer" target="_blank">¿Qué es un archivo SVG?
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/pdf-password-remover-guide-how-to-remove-password-protection-from-a-pdf/" rel="noopener noreferrer" target="_blank">PDF Password Remover
+                            </a>
+                            <a href="https://www.freecodecamp.org/espanol/news/que-es-un-archivo-pdf-como-lo-abres/" rel="noopener noreferrer" target="_blank">¿Qué es un Archivo PDF?
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/what-is-python-used-for-10-coding-uses-for-the-python-programming-language/" rel="noopener noreferrer" target="_blank">What Is Python?
+                            </a>
+                        </div>
+
+                        <div class="footer-right">
+                            <a href="https://www.freecodecamp.org/espanol/news/que-is-tls-explicado-en-espanol-simple/" rel="noopener noreferrer" target="_blank">¿Qué es TLS?
+                            </a>
+                            <a href="https://www.freecodecamp.org/espanol/news/que-es-una-red-lan-explicada-en-espanol/" rel="noopener noreferrer" target="_blank">¿Qué es una red LAN?
+                            </a>
+                            <a href="https://www.freecodecamp.org/espanol/news/node-js-npm-tutorial/" rel="noopener noreferrer" target="_blank">¿Qué es npm?
+                            </a>
+                            <a href="https://www.freecodecamp.org/espanol/news/rsync-ejemplos-opciones-y-copiar-archivos-atraves-ssh/" rel="noopener noreferrer" target="_blank">Ejemplos de RSync
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/how-to-use-the-tree-based-algorithm-for-machine-learning/" rel="noopener noreferrer" target="_blank">Random Forest
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="col-header" data-test-label="our-nonprofit">Our Charity</div>
+            <div class="footer-divider"></div>
+            <div class="our-nonprofit">
+                <a href="https://www.freecodecamp.org/espanol/news/acerca-de-freecodecamp-preguntas-frecuentes/" rel="noopener noreferrer" target="_blank" data-test-label="about">
+                    Acerca de
+                </a>
+                <a href="https://www.linkedin.com/school/free-code-camp/people/" rel="noopener noreferrer" target="_blank" data-test-label="alumni">
+                    Red de ex-Alumnos
+                </a>
+                <a href="https://github.com/freeCodeCamp/" rel="noopener noreferrer" target="_blank" data-test-label="open-source">
+                    Código abierto
+                </a>
+                <a href="https://www.freecodecamp.org/news/shop/" rel="noopener noreferrer" target="_blank" data-test-label="shop">
+                    Tienda
+                </a>
+                <a href="https://www.freecodecamp.org/espanol/news/preguntas-comunes-de-soporte-tecnico/" rel="noopener noreferrer" target="_blank" data-test-label="support">
+                    Soporte
+                </a>
+                <a href="https://www.freecodecamp.org/news/sponsors/" rel="noopener noreferrer" target="_blank" data-test-label="sponsors">
+                    Patrocinadores
+                </a>
+                <a href="https://www.freecodecamp.org/espanol/news/politica-de-honestidad-academica/" rel="noopener noreferrer" target="_blank" data-test-label="honesty">
+                    Honestidad Académica
+                </a>
+                <a href="https://www.freecodecamp.org/espanol/news/codigo-de-conducta/" rel="noopener noreferrer" target="_blank" data-test-label="coc">
+                    Código de Conducta
+                </a>
+                <a href="https://www.freecodecamp.org/news/privacy-policy/" rel="noopener noreferrer" target="_blank" data-test-label="privacy">
+                    Política de privacidad
+                </a>
+                <a href="https://www.freecodecamp.org/news/terms-of-service/" rel="noopener noreferrer" target="_blank" data-test-label="tos">
+                    Términos de servicio
+                </a>
+                <a href="https://www.freecodecamp.org/news/copyright-policy/" rel="noopener noreferrer" target="_blank" data-test-label="copyright">
+                    Política de derechos de autor
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+        </div>
+
+        
+        
+        
+
+        <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5D6RKKP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+        <script>
+const fccOriginalPost = "https://www.freecodecamp.org/news/check-if-an-item-is-in-an-array-in-javascript-js-contains-with-array-includes/";
+</script>
+    <script defer="" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon="{&quot;rayId&quot;:&quot;83e9d113ad79954e&quot;,&quot;version&quot;:&quot;2023.10.0&quot;,&quot;token&quot;:&quot;bdb993c6dde44e178aabd9555e75e4f4&quot;}" crossorigin="anonymous"></script>
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/ads(2).html" data-google-container-id="a!1" data-load-complete="true"></iframe></div></ins><iframe src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/aframe.html" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="./comprueba_si_elemento_esta_en_arreglo_javascript_includes_files/zrt_lookup_fy2021.html" style="display: none;"></iframe></html>

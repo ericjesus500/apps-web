@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e44f26">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Etiquetas HTML interactivas - HTML en español - Lenguaje HTML</title>
+  <link rel="preload" href="../../../critical.css" as="style">
+  <link rel="preload" href="../../../assets/fonts/blinker-vf.woff2" as="font" crossorigin="">
+  <link rel="preload" href="../../../assets/fonts/scope-one-400.woff2" as="font" crossorigin="">
+  <meta name="description" content="A partir de HTML5 existen algunas etiquetas que proporcionan características interactivas a la página.">
+  <link rel="stylesheet" href="../../../critical.css">
+  <link rel="stylesheet" href="../../../theme.css">
+  <script type="module" src="../../../main.js"></script>
+  <link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Etiquetas HTML interactivas - HTML en español">
+  <meta property="og:image" content="https://lenguajehtml.com/html/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="A partir de HTML5 existen algunas etiquetas que proporcionan características interactivas a la página.">
+  <meta property="og:url" content="https://lenguajehtml.com/html/scripting/etiquetas-html-interactivas/">
+  <meta property="twitter:url" content="https://lenguajehtml.com/html/scripting/etiquetas-html-interactivas/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Etiquetas HTML interactivas - HTML en español">
+  <meta property="twitter:description" content="A partir de HTML5 existen algunas etiquetas que proporcionan características interactivas a la página.">
+  <meta property="twitter:image:src" content="https://lenguajehtml.com/html/large-summary.jpg">
+</head>
+<body class="html post"><div class="page">
+    <div class="sidebar">
+      <div class="logo flex-center">
+  <a href="/">
+    <img width="42" height="42" src="../../../assets/logo.svg" alt="Logo">
+    Lenguaje HTML
+  </a>
+  <div class="icons" style="--icon-size: 32px; --icon-side-padding: 0.15em">
+    <a href="https://twitter.com/Manz" title="Twitter"><svg-icon type="social" name="twitter"></svg-icon></a>
+    <a href="https://twitch.tv/manzdev" title="Twitch"><svg-icon type="social" name="twitch"></svg-icon></a>
+    <a href="https://instagram.com/manz.dev" title="Instagram"><svg-icon type="social" name="instagram"></svg-icon></a>
+    <a href="https://youtube.com/ManzDev?sub_confirmation=1" title="YouTube"><svg-icon type="social" name="youtube"></svg-icon></a>
+    <a href="https://discord.manz.dev/" title="Servidor de Discord"><svg-icon type="social" name="discord"></svg-icon></a>
+  </div>
+  <span>Un sitio web de <a href="https://manz.dev/"><mark>Manz.dev</mark></a></span>
+</div>
+
+      <form class="search flex-center" action="https://www.google.com/search">
+  <label><span>Buscar:</span> <input type="search" name="q" placeholder="Buscar un tema (ej: flex, grid...)" autocomplete="off"></label>
+  <label><span>Sitio:</span> <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev"></label>
+  <div class="search-results"></div>
+</form>
+
+      
+
+<style>
+  sidebar-link {
+    --logo-image: url(../../logo.svg);
+  }
+</style>
+
+<div class="toc"><sidebar-link title="Volver al índice" href="../../index.htm" back="" direct=""></sidebar-link><sidebar-link href="../../cheatsheets/index.htm" title="HTML5 CheatSheet" direct=""></sidebar-link><sidebar-section title="Introducción a HTML5" href="../../introduccion/index.htm"><sidebar-link href="../../introduccion/que-es-html/index.htm" title="¿Qué es HTML?"></sidebar-link><sidebar-link href="../../introduccion/estructura-etiqueta-html/index.htm" title="Estructura de etiqueta HTML"></sidebar-link><sidebar-link href="../../introduccion/atributos-comunes-html/index.htm" title="Atributos comunes en HTML"></sidebar-link><sidebar-link href="../../introduccion/estructura-documento-html/index.htm" title="Estructura del documento HTML"></sidebar-link><sidebar-link href="../../introduccion/validacion-html/index.htm" title="Validación de errores HTML"></sidebar-link><sidebar-link href="../../introduccion/tabla-periodica-html5/index.htm" title="Tabla periódica de HTML5"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas semánticas" href="../../semantica/index.htm"><sidebar-link href="../../semantica/etiquetas-html-obsoletas/index.htm" title="Etiquetas HTML obsoletas"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-texto/index.htm" title="Etiquetas HTML de texto"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-agrupacion/index.htm" title="Etiquetas HTML de agrupación"></sidebar-link><sidebar-link href="../../semantica/enlaces-o-hipervinculos/index.htm" title="Enlaces o hipervínculos"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-seccion/index.htm" title="Etiquetas HTML de sección"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-tablas/index.htm" title="Etiquetas HTML de tablas"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas multimedia" href="../../multimedia/index.htm"><sidebar-link href="../../multimedia/etiquetas-html-de-imagenes/index.htm" title="Etiquetas HTML de imágenes"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-contenido-externo/index.htm" title="Etiquetas de contenido externo"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-video/index.htm" title="Etiquetas HTML de video"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-audio/index.htm" title="Etiquetas HTML de audio"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-subtitulos/index.htm" title="Etiquetas HTML de subtitulos"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de cabecera" href="../../cabecera/index.htm"><sidebar-link href="../../cabecera/etiquetas-html-de-relacion/index.htm" title="Etiquetas HTML de relación"></sidebar-link><sidebar-link href="../../cabecera/etiquetas-html-de-metadatos/index.htm" title="Etiquetas HTML de metadatos"></sidebar-link><sidebar-link href="../../cabecera/etiquetas-html-para-redes-sociales/index.htm" title="Etiquetas HTML de redes sociales"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de formularios" href="../../formularios/index.htm"><sidebar-link href="../../formularios/crear-un-formulario/index.htm" title="Creación de un formulario"></sidebar-link><sidebar-link href="../../formularios/controles-campos-de-texto/index.htm" title="Controles: Campos de texto"></sidebar-link><sidebar-link href="../../formularios/controles-campos-numericos/index.htm" title="Controles: Campos numéricos"></sidebar-link><sidebar-link href="../../formularios/controles-campos-fecha-hora/index.htm" title="Controles: Campos de fecha/hora"></sidebar-link><sidebar-link href="../../formularios/controles-casillas-o-botones/index.htm" title="Controles: Casillas o botones"></sidebar-link><sidebar-link href="../../formularios/controles-listas-de-seleccion/index.htm" title="Controles: Listas de selección"></sidebar-link><sidebar-link href="../../formularios/controles-seleccion-color/index.htm" title="Controles: Selección de color"></sidebar-link><sidebar-link href="../../formularios/controles-seleccion-archivos/index.htm" title="Controles: Selección de archivos"></sidebar-link><sidebar-link href="../../formularios/organizacion-de-campos/index.htm" title="Organización de campos"></sidebar-link><sidebar-link href="../../formularios/botones-de-envio-de-formulario/index.htm" title="Botones de envío de formularios"></sidebar-link><sidebar-link href="../../formularios/medidores-y-barras-de-progreso/index.htm" title="Medidores y barras de progreso"></sidebar-link><sidebar-link href="../../formularios/validaciones-html5/index.htm" title="Validaciones HTML5"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de scripting" href="../index.htm"><sidebar-link href="index.htm" title="Etiquetas HTML interactivas"></sidebar-link><sidebar-link href="../etiquetas-html-scripts/index.htm" title="Etiquetas HTML de scripts"></sidebar-link><sidebar-link href="../eventos-html/index.htm" title="Eventos en HTML"></sidebar-link></sidebar-section></div>
+
+      
+    </div>
+    <div class="contents">
+      <header class="mega">
+  <h1>Etiquetas HTML interactivas</h1></header>
+
+      <div class="content ">
+  <div class="breadcrumbs">
+  <a href="/">ATRÁS</a> <span>ᐳ</span> <a href="../../index.htm">html</a> <span>ᐳ</span> <a href="index.htm">Etiquetas HTML interactivas</a>
+</div>
+<p>A partir de HTML5, existen algunas etiquetas que proporcionan <strong>características interactivas</strong> a una página. En dichas etiquetas el usuario debe tomar parte de forma activa para activarlas o utilizarlas. Elementos desplegables, menús contextuales, diálogos emergentes, etc...</p>
+<p>Veamos una lista de dichas etiquetas:</p>
+<table>
+<thead>
+<tr>
+<th>Etiqueta</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;details&gt;</code></td>
+<td>Crea un elemento desplegable. Etiqueta que contiene todo el contenido del elemento.</td>
+</tr>
+<tr>
+<td><code>&lt;summary&gt;</code></td>
+<td>Título del desplegable que aparece siempre, se encuentre desplegado o no.</td>
+</tr>
+<tr>
+<td><code>&lt;dialog&gt;</code></td>
+<td>Ventana de diálogo que puede contener y mostrar cierta información.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="elementos-desplegables" tabindex="-1">Elementos desplegables</h3>
+<p>Con la etiqueta <code>&lt;details&gt;</code> se puede crear un elemento desplegable que el usuario puede expandir o contraer para ver más información. Se trata de una etiqueta contenedora que actúa como un <code>&lt;div&gt;</code>, salvo que todo el contenido de esta etiqueta no se muestra inicialmente. En su lugar, aparece una flecha y el texto proporcionado en la etiqueta <code>&lt;summary&gt;</code> (<em>o el texto «Detalles» si se omite</em>).</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>details</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>summary</span><span class="token punctuation">></span></span>Más información<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>summary</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>Nombre del sujeto<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>foto.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Foto del sujeto<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>details</span><span class="token punctuation">></span></span></code></pre>
+<p>Si pulsamos sobre el texto o la mencionada flecha, el contenido de la etiqueta <code>&lt;details&gt;</code> se muestra o se oculta, dependiendo de si se encontraba oculto o visible respectivamente. La etiqueta <code>&lt;details&gt;</code> tiene un atributo <strong>open</strong>, que si se especifica el contenido es visible por defecto.</p>
+<p>Esta etiqueta pertenece a HTML5.1 y aún no está soportado por la mayoría de navegadores.</p>
+<p class="ciu_embed" data-feature="details" data-periods="future_2,future_1,current,past_1,past_2"></p>
+<h3 id="diálogos-emergentes" tabindex="-1">Diálogos emergentes</h3>
+<p>HTML5.1 incorporará los denominados <strong>diálogos emergentes</strong>, o lo que es lo mismo, ventanas emergentes compatibles con código HTML que podemos utilizar y personalizar para realizar avisos o alertas al usuario. Hasta ahora, la forma más simple de crear avisos o alertas emergentes era recurrir al <code>alert</code> de Javascript o crear ventanas personalizadas desde Javascript. Sin embargo, con HTML5.1 podremos crear desde HTML sencillos o complejos diálogos con texto, botones, imágenes, video o cualquier elemento HTML que se nos ocurra.</p>
+<p>La forma de crear diálogos es muy sencilla. Utilizaremos la etiqueta <code>&lt;dialog&gt;</code> y en su interior colocaremos toda la información que queramos mostrar en la ventana:</p>
+<p><code-sandbox></code-sandbox></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dialog</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ms<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>¡Hola, soy un mensaje!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>close<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript">document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'ms'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>Ok!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dialog</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>show<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript">document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'ms'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>Mostrar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>En este caso, estamos creando una ventana de diálogo con un párrafo de texto y un botón para cerrar la ventana. Fuera de ella, un botón para mostrar el diálogo. La etiqueta <code>&lt;dialog&gt;</code> puede tener el atributo <strong>open</strong> para indicar que la ventana debe estar abierta por defecto. En caso contrario, no se muestra inicialmente.</p>
+<h4 id="diálogos-modales" tabindex="-1">Diálogos modales</h4>
+<p>En programación, una <a href="https://en.wikipedia.org/wiki/Modal_window">ventana modal</a> es un tipo de ventana que se muestra al usuario, generalmente para avisarle de algo o pedirle una información necesaria para continuar. Se caracteriza en que una vez se muestra, no se le permite realizar otra tarea hasta que atienda el mensaje de esa ventana modal (<em>pulsar ok, responder una pregunta, etc...</em>).</p>
+<p>Para crear una ventana modal sólo tendremos que usar la función <code>showModal()</code> desde Javascript, en lugar de utilizar la función <code>show()</code> que utilizamos en el ejemplo anterior:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dialog</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ms<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>¡Vuelve a la sombra!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>gandalf.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Gandalf<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>¡NO.. PUEDES... PASAR!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>close<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript">document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'ms'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>Ok!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dialog</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>show<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript">document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'ms'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">showModal</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>Mostrar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>Esto mostrará la siguiente ventana de diálogo modal:</p>
+<p><img src="dialog-html5-modal.png" alt="Diálogo modal con HTML5" width="1024" height="500" loading="lazy"></p>
+<p>Obsérvese que hemos utilizado la pseudoclase CSS <code>::backdrop</code> sobre la ventana de diálogo para darle estilos a la parte de detrás de la ventana modal, pudiendo, por ejemplo, aplicarle un color de fondo negro con transparencia al 25% con la propiedad <code>background-color:RGBA(0,0,0, .75)</code>:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">#ms::backdrop</span> <span class="token punctuation">{</span><br>  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">RGBA</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0.75<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>Las ventanas de diálogo de HTML5.1 aún son muy recientes y el soporte no está muy extendido entre los diferentes navegadores del panorama web:</p>
+<p class="ciu_embed" data-feature="dialog" data-periods="future_2,future_1,current,past_1,past_2"></p>
+<h3 id="atributo-contenteditable" tabindex="-1">Atributo contentEditable</h3>
+<p>En HTML5 podemos utilizar el atributo <code>contentEditable</code> sobre cualquier elemento para darle al usuario capacidades de edición sobre el mismo. De esta forma, podemos incluir el atributo <code>contentEditable</code> a una etiqueta <code>&lt;p&gt;</code> de párrafo, o a una etiqueta <code>&lt;h3&gt;</code>, por ejemplo, lo que permitirá al usuario que, al pulsar sobre dichos elementos, pueda modificar el texto que aparece:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span> <span class="token attr-name">contenteditable</span><span class="token punctuation">></span></span>Título del artículo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">contenteditable</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Este es un párrafo de ejemplo del ejemplo en cuestión.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Con él se pretende mostrar el funcionamiento del atributo contentEditable.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>De esta forma, podemos dotar de capacidades de edición al usuario. Obsérvese siempre que el HTML, CSS y Javascript son tecnologías que trabajan en el <strong>front-end</strong>, o lo que es lo mismo, son descargadas desde el alojamiento web y transferidas a una carpeta temporal de nuestro sistema. En ella, el navegador la lee y ahí es donde estamos realizando dichas modificaciones.</p>
+<p>Si el usuario volviese a recargar la página tras modificar ciertos elementos, los cambios no se verán reflejados. Para ello, hay que hacer ciertas operaciones (<em>por ejemplo, mediante Javascript o con un botón de Guardar cambios</em>), y realizar una petición al backend del alojamiento web para que guarde los cambios.</p>
+<p class="ciu_embed" data-feature="contenteditable" data-periods="future_2,future_1,current,past_1,past_2"></p>
+<h3 id="atributo-hidden" tabindex="-1">Atributo hidden</h3>
+<p>HTML5 incorpora también un atributo <code>hidden</code> mediante el cuál podemos hacer desaparecer visualmente un elemento HTML (<em>y todo su contenido, si es una etiqueta contenedora</em>). Hasta ahora, para realizar esta tarea teníamos que recurrir a CSS, ya que se trata de una cuestión de presentación visual. Sin embargo, la diferencia entre el atributo <code>hidden</code> o utilizar estilos es que mediante CSS podemos mostrar elementos dependiendo de acciones del usuario o del medio en el que estén (<em>media queries, por ejemplo</em>).</p>
+<p>Por otro lado, el attributo <code>hidden</code> se propone utilizarse cuando el usuario ha realizado una acción y hay una serie de elementos que queremos ocultar porque ya no son relevantes, independientemente de los estilos que se estén aplicando en la página:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>info<span class="token punctuation">"</span></span> <span class="token attr-name">hidden</span><span class="token punctuation">></span></span>Información<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token special-attr"><span class="token attr-name">onClick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token function">toggleHidden</span><span class="token punctuation">(</span><span class="token string">'#info'</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span><br>  Mostrar/ocultar información<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>En el caso anterior, tenemos un <code>&lt;div&gt;</code> con texto que vamos a ocultar cada vez que el usuario pulse el botón. Dicho botón ejecuta la función Javascript <code>toggleHidden()</code> para ocultar o mostrar el elemento, dependiendo si ya estaba visibile o si estaba oculto:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">toggleHidden</span><span class="token punctuation">(</span><span class="token parameter">selector</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  element <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  element<span class="token punctuation">.</span>hidden <span class="token operator">=</span> element<span class="token punctuation">.</span>hidden <span class="token operator">?</span> <span class="token boolean">false</span> <span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>El soporte de este atributo es completo en la mayoría de los navegadores:</p>
+<p class="ciu_embed" data-feature="hidden" data-periods="future_2,future_1,current,past_1,past_2"></p>
+
+    <nav class="prev-next"><a class="bt prev" href="../../formularios/validaciones-html5/index.htm" title="Validaciones HTML5">
+    <span class="data">
+      <span>Validaciones HTML5</span>
+      <small>Capítulo anterior</small>
+    </span>
+  </a><a class="bt next" href="../etiquetas-html-scripts/index.htm" title="Etiquetas HTML de scripts">
+    <span class="icon">
+      <svg-icon name="arrow-right"></svg-icon>
+    </span>
+    <span class="data">
+      <span>Etiquetas HTML de scripts</span>
+      <small>Capítulo siguiente</small>
+    </span>
+  </a></nav>
+
+    <script async="" src="../../../pagead/js/f.txt"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center; margin:auto; margin-top: 2em" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+      <div class="related">
+
+  <div class="author">
+    <div class="author-wrapper">
+      <img loading="lazy" class="circle" src="../../../assets/manz.webp" alt="Manz">
+      <div>
+        <p>Docente, divulgador informático y <a href="https://manz.dev/">streamer de código</a>. Amante de <strong>CSS</strong>, <strong>Javascript</strong>
+          y de la plataforma web. Ha trabajado como profesor en la Universidad de La Laguna y es director del curso de
+          Programación web FullStack y FrontEnd de EOI desde Tenerife. En sus ratos libres, busca GIF de gatos en Internet.</p>
+        <p class="twitch-badge">
+          <a href="https://twitch.tv/ManzDev">
+            <svg class="twitch" viewbox="0 0 1024 1024">
+              <path style="fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1;" d="m262.451 12.904-178.26 178.26v641.672h213.905v178.26l178.26-178.26h142.576L939.809 512V12.904H262.45zm35.645 71.287h570.383v392.164L725.904 618.932H583.287L458.514 743.705V618.932H298.096V84.192zM494.158 208.51v216.36h71.328V208.51h-71.328zm196 0v216.36h71.328V208.51h-71.328z"></path>
+            </svg>
+            Sígueme en Twitch
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="comentarios">
+    <script async="" src="../../../count.js" id="dsq-count-scr"></script>
+<script>
+var disqus_config = function () {
+  this.page.path = location.pathname.endsWith("/") ? location.pathname.substring(0, location.pathname.length - 1) : location.pathname;
+  this.page.url = 'https://lenguajehtml.com' + this.page.path;
+  this.page.identifier = this.page.url;
+};
+document.addEventListener('DOMContentLoaded', function() {
+  const coms = document.querySelector('#comentarios');
+  a = coms.querySelector('#disqus_button');
+  a.dataset.disqusIdentifier = 'https://lenguajehtml.com' + (location.pathname.endsWith("/") ? location.pathname.substring(0, location.pathname.length - 1) : location.pathname);
+  a.addEventListener('click', function() {
+    const div = document.createElement('div');
+    div.id = 'disqus_thread';
+    coms.appendChild(div);
+    const d = document, s = d.createElement('script');
+    s.src = '//lenguajehtml.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    this.remove();
+  });
+});
+</script>
+
+    <a class="disqus-comment-count" id="disqus_button" href="#disqus_thread" data-disqus-identifier="https://lenguajehtml.com/html/scripting/etiquetas-html-interactivas/">Leer comentarios</a>
+    <a class="discord" href="https://discord.manz.dev/">¡Accede a Discord y cuéntanos!</a>
+  </div>
+
+</div>
+
+    </div>
+    <div class="aside">
+      <div class="aside">
+
+  <div class="aside-top">
+    <a href="https://manz.dev/digitalocean" title="Empieza en DigitalOcean con 100$">
+      <img width="240" height="120" src="../../../assets/digital-ocean.png" alt="DigitalOcean">
+    </a>
+  </div><script type="module">
+  const ANCHOR_ICON = /* svg */`
+    <svg class="anchor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 205 205" width="36" height="36">
+      <path d="m140 129 16 16s-20 30-42 30V71c14-5 25-18 25-34 0-20-17-36-37-36-21 0-38 16-38 36 0 15 11 29 25
+              34v104c-26-2-42-27-42-27l18-18-65-9 10 63 17-17c15 12 32 37 73 37 51-1 63-29 76-40l19 19 10-64-65
+              10zM83 36c0-10 8-18 19-18s19 8 19 18c0 11-9 19-19 19s-19-8-19-19z"/>
+    </svg>`;
+  // Add inner links to sidebar menu
+  export const addInnerLinks = () => {
+    const summary = document.querySelector(".aside .summary .links");
+    const headers = Array.from(document.querySelectorAll(".content h3, .content h4"));
+    const tocLinks = [];
+    headers.forEach((e) => {
+      const link = `${location.origin}${location.pathname}#${e.id}`;
+      e.innerHTML = `<a class="permalink" href="${link}">${e.textContent} ${ANCHOR_ICON}</a>`;
+      const headerType = e.nodeName.toLowerCase();
+      const textContent = headerType === "h4" ? e.textContent.replace("La propiedad ", "").replace("La función ", "") : e.textContent;
+      tocLinks.push(`<a class="${headerType}" href="#${e.id}">${textContent}</a>`);
+    });
+    summary.insertAdjacentHTML("beforeEnd", tocLinks.join("\n"));
+  };
+
+  addInnerLinks();
+</script>
+
+<div class="summary">
+  <div class="table">Tabla de contenidos</div>
+  <div class="links"></div>
+</div>
+</div>
+
+    </div>
+  </div><footer class="main">
+  <div class="square">
+    <a href="/"><h2>Lenguaje HTML</h2></a>
+    <div class="icons">
+      <a href="https://twitter.com/Manz" title="Twitter"><svg-icon type="social" name="twitter"></svg-icon></a>
+      <a href="https://twitch.tv/manzdev" title="Twitch"><svg-icon type="social" name="twitch"></svg-icon></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg-icon type="social" name="instagram"></svg-icon></a>
+      <a href="https://youtube.com/ManzDev?sub_confirmation=1" title="YouTube"><svg-icon type="social" name="youtube"></svg-icon></a>
+      <a href="https://discord.manz.dev/" title="Servidor de Discord"><svg-icon type="social" name="discord"></svg-icon></a>
+      <a href="https://github.com/ManzDev" title="GitHub"><svg-icon type="social" name="github"></svg-icon></a>
+      <a href="https://codepen.io/Manz" title="Codepen"><svg-icon type="social" name="codepen"></svg-icon></a>
+      <a href="https://www.linkedin.com/in/joseromanhdez/" title="Linkedin"><svg-icon type="social" name="linkedin"></svg-icon></a>
+    </div>
+    <p>Documentación sobre HTML5 y las mejores herramientas y recursos para aprender a utilizar el lenguaje de marcado HTML.</p>
+    <p id="footer">Creado y mantenido por <a href="https://twitter.com/Manz">@Manz</a> con <span title="<3">❤</span></p></div>
+</footer>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-5', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+</body>
+</html>

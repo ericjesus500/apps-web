@@ -1,0 +1,875 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Características personalizadas - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Es posible activar o desactivar aspectos avanzados relacionados con la tipografía, como ligaduras, variaciones... directamente desde CSS.">
+  <meta name="view-transition" content="same-origin">
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Características personalizadas - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Es posible activar o desactivar aspectos avanzados relacionados con la tipografía, como ligaduras, variaciones... directamente desde CSS.">
+  <meta property="og:url" content="https://lenguajecss.com/css/fuentes-y-tipografias/caracteristicas-personalizadas/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/fuentes-y-tipografias/caracteristicas-personalizadas/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Características personalizadas - CSS en español">
+  <meta property="twitter:description" content="Es posible activar o desactivar aspectos avanzados relacionados con la tipografía, como ligaduras, variaciones... directamente desde CSS.">
+  <meta property="twitter:image" content="https://lenguajecss.com/large-summary.jpg">
+
+  </head>
+
+<body class="css menu-open " style="--logo-color: #1e7bbf"><script>
+    matchMedia("(width <= 1180px)").matches && document.body.classList.toggle("menu-open");
+  </script>
+  
+
+
+
+
+
+
+
+
+<section class="menubar">
+  <div class="menubar-content">
+    <h1>Lenguaje CSS</h1>
+
+    <a class="cover" title="Lenguaje CSS (css)" href="../../index.htm" style="--image: url('../../../assets/css.jpg')"></a>
+
+    <header>
+      <a href="../../calidad-de-codigo/minificar-css/index.htm" title="Minificar CSS">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m14 26l1.41-1.41L7.83 17H28v-2H7.83l7.58-7.59L14 6L4 16l10 10z"></path></svg>
+      </a>
+      <a href="../../index.htm" title="Volver al índice">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 256"><path fill="#888888" d="M240 210h-18v-94.45a14.06 14.06 0 0 0-4.53-10.32l-80-75.49l-.09-.08a13.94 13.94 0 0 0-18.83 0l-.09.08l-80 75.5A14 14 0 0 0 34 115.55V210H16a6 6 0 0 0 0 12h224a6 6 0 0 0 0-12ZM46 115.55a2 2 0 0 1 .65-1.48l.09-.08l79.94-75.48a2 2 0 0 1 2.63 0L209.26 114l.08.08a2 2 0 0 1 .66 1.48V210h-52v-50a14 14 0 0 0-14-14h-32a14 14 0 0 0-14 14v50H46ZM146 210h-36v-50a2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"></path></svg>
+      </a>
+      <a href="../../representacion-datos/tablas-css/index.htm" title="Tablas CSS">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></path></svg>
+      </a>
+    </header>
+
+    <div style="display:none">
+      <svg id="link-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 256 256"><g fill="#888888"><path d="M208 88h-56V32Z" opacity=".2"></path><path d="m213.66 82.34l-56-56A8 8 0 0 0 152 24H56a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V88a8 8 0 0 0-2.34-5.66ZM160 51.31L188.69 80H160ZM200 216H56V40h88v48a8 8 0 0 0 8 8h48v120Z"></path></g></svg>
+      <svg id="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="#888888" d="M2 12.5C2 9.46 4.46 7 7.5 7H18c2.21 0 4 1.79 4 4s-1.79 4-4 4H9.5a2.5 2.5 0 0 1 0-5H17v2H9.41c-.55 0-.55 1 0 1H18c1.1 0 2-.9 2-2s-.9-2-2-2H7.5C5.57 9 4 10.57 4 12.5S5.57 16 7.5 16H17v2H7.5C4.46 18 2 15.54 2 12.5z"></path></svg>
+    </div>
+
+    <div class="links">
+      <span class="folder">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 512 512"><path fill="#888888" d="M41 73v304.563L88.697 151H423v-30H185.514l-16-48H41zm62.303 96L43.092 455h381.605l60.211-286H103.303z"></path></svg>
+        Fuentes y tipografías
+      </span>
+            <a class="link" href="../elegir-tipografia/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              ¿Qué son las tipografías?
+            </a>
+            <a class="link" href="../tipografias/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Tipografías en CSS
+            </a>
+            <a class="link" href="../ajustes-tipografias/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Ajustes en tipografías
+            </a>
+            <a class="link" href="../regla-font-face/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              La regla @font-face
+            </a>
+            <a class="link" href="../tipografias-google-fonts/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Tipografías de Google Fonts
+            </a>
+            <a class="link" href="../fuentes-variables/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Fuentes variables CSS
+            </a>
+            <a class="link" href="../textos-y-alineaciones/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Textos y alineaciones
+            </a>
+            <a class="link" href="../text-decoration/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Decoraciones de texto
+            </a>
+            <a class="link" href="../font-display/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Modo de carga de tipografías
+            </a>
+            <a class="link active" href="index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Características personalizadas
+            </a>
+    </div>
+  </div>
+
+  <div class="sidebox">
+    <svg class="close-menu" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19V5m10 1l-6 6l6 6m-6-6h14"></path></svg>
+    <div class="socials">
+      <a class="twitch" href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+      <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+      <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+      <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  const toggleMenu = () => (document.body.classList.toggle("menu-open"));
+  document.querySelector(".close-menu").addEventListener("click", toggleMenu);
+
+  matchMedia("(width <= 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+  matchMedia("(width > 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+
+  const activeLink = document.querySelector(".links .active");
+  const icon = /* svg */`<svg viewBox="0 0 24 24"><use href="#anchor-icon" /></svg>`;
+  const headers = [...document.querySelectorAll(".contents h3")].map(link => ({ text: link.textContent, id: link.id }));
+  const links = [];
+  headers.reverse().forEach(({ text, id }) => {
+    const link = document.createElement("a");
+    link.classList.add("anchor");
+    link.href = "#" + id;
+    link.insertAdjacentHTML("beforeend", icon);
+    link.insertAdjacentText("beforeend", ` ${text}`);
+    activeLink.after(link);
+  });
+</script>
+
+  <div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/css.jpg')">
+    <h1><a href="index.htm">Características personalizadas</a></h1><h2 class="typewriter">Activar características especiales en tipografías</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../font-display/index.htm">Modo de carga de tipografías</a>
+    <a class="current" href="index.htm">Características personalizadas</a>
+    <a href="../../representacion-datos/tablas-css/index.htm">Tablas CSS</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Ciertas tipografías tienen una serie de <strong>características avanzadas</strong> que pueden existir o no, dependiendo de la tipografía. Dichas características permiten realizar variaciones en las tipografías como las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ligadura</td>
+<td>Unión visual de 2 carácteres. Muy usada en programación, matemáticas e idiomas.</td>
+</tr>
+<tr>
+<td>Posicionamiento</td>
+<td>Colocación de carácteres de forma similar a los subíndices o superíndices.</td>
+</tr>
+<tr>
+<td>Mayúsculas/Minúsculas</td>
+<td>Variaciones relacionadas con las mayúsculas y minúsculas.</td>
+</tr>
+<tr>
+<td>Variaciones</td>
+<td>Se trata de grupos de variaciones visuales con un propósito concreto.</td>
+</tr>
+</tbody>
+</table>
+<p>Veamos detalladamente cada una de estas características:</p>
+<ul>
+<li>
+<p><strong>Ligaduras</strong>: Es posible activar una características llamada <strong>ligadura</strong> que no es más que la unión de ciertos carácteres cambiando su aspecto visual. Esto se puede hacer con la propiedad <code>font-variant-ligatures</code> , y dependiendo del valor específico, activaremos uno u otro tipo de ligadura. Existen las siguientes:</p>
+<ul>
+<li><strong>Ligaduras normales</strong>: Se indica con el valor <code>common-ligatures</code> . Se suele observar en valores como <code>fi</code> , <code>fl</code> , <code>ff</code> ...</li>
+<li><strong>Ligaduras discrecionales</strong>: Se indica con el valor <code>discretionary-ligatures</code> . Se suele observar en valores como <code>ch</code> , <code>sp</code> , <code>st</code> ...</li>
+<li><strong>Ligaduras históricas</strong>: Se indica con el valor <code>historical-ligatures</code> . Se aplican para mostrar ligaduras heredadas de escritura manual.</li>
+</ul>
+</li>
+<li>
+<p><strong>Posicionamiento de carácteres</strong>: Es posible activar una variación para indicar texto como subíndice o superíndice, similar a como se hace con las etiquetas HTML <code>&lt;sub&gt;</code> y <code>&lt;super&gt;</code> .</p>
+</li>
+<li>
+<p><strong>Mayúsculas y minúsculas</strong>: Es posible realizar ciertas variaciones como versalitas o similares, aplicadas sólo a minúsculas, sólo a mayúsculas o a ambas.</p>
+</li>
+<li>
+<p><strong>Variaciones numéricas</strong>: Con la propiedad <code>font-variant-numeric</code> podemos establecer ciertas variaciones como representar números con estilo antiguo, diferentes proporciones, como fracciones &quot;gráficas&quot; o incluso indicar que el cero tenga una raya o no.</p>
+</li>
+<li>
+<p><strong>Variaciones alternativas</strong>: Con la propiedad <code>font-variant-alternates</code> se pueden indicar una o múltiples variaciones visuales, donde se pueden mencionar las siguientes:</p>
+<ul>
+<li><strong>historical-forms</strong>: Muestra glifos históricos (<em>heredados de épocas pasadas</em>)</li>
+<li><strong>stylistic(<em>id</em>)</strong>: Muesta características de estilo alternativas de forma individual.</li>
+<li><strong>styleset(<em>id</em>)</strong>: Muestra un conjunto de características de estilo alternativas (<em>creados para trabajar juntos</em>).</li>
+<li><strong>character-variant(<em>id</em>)</strong>: Muestra ciertas variaciones en carácteres concretos.</li>
+<li><strong>swash(<em>id</em>)</strong>: Muestra decoraciones artísticas en los carácteres como adornos tipográficos.</li>
+<li><strong>ornaments(<em>id</em>)</strong>: Muestra glifos con adornos en lugar del caracter predeterminado.</li>
+<li><strong>anotation(<em>id</em>)</strong>: Muestra formas notacionales de glifos (glifos abiertos, cajas redondeadas, etc...)</li>
+</ul>
+</li>
+</ul>
+<h3 id="variaciones-en-tipografías" tabindex="-1"><a class="header-anchor" href="#variaciones-en-tipografías">Variaciones en tipografías</a></h3>
+<p>Estas características pueden ser activadas o desactivadas desde CSS, por medio de una de las siguientes propiedades (<em>o de forma alternativa, utilizando una propiedad a bajo nivel que veremos más adelante</em>):</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad/Valores</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>font-variant-ligatures</code></td>
+<td>Establece un estilo de ligadura</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>normal</strong> | <code>none</code> | <code>common-ligatures</code> | <code>no-common-ligatures</code> | <code>discretionary-ligatures</code> <br> <code>no-discretionary-ligatures</code> | <code>historical-ligatures</code> | <code>no-historical-ligatures</code> <br> <code>contextual</code> | <code>no-contextual</code></td>
+</tr>
+<tr>
+<td><code>font-variant-position</code></td>
+<td>Establece estilo subscript (<em>subíndice</em>) o superscript (<em>superíndice</em>)</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>normal</strong> | <code>sub</code> | <code>super</code></td>
+</tr>
+<tr>
+<td><code>font-variant-caps</code></td>
+<td>Establece una variación de versalitas</td>
+</tr>
+<tr>
+<td></td>
+<td colspan="2"><strong>normal</strong> | <code>small-caps</code> | <code>all-small-caps</code> | <code>petite-caps</code> <br> <code>all-petite-caps</code> | <code>unicase</code> | <code>titling-caps</code></td>
+</tr>
+<tr>
+<td><code>font-variant-numeric</code></td>
+<td>Establece variaciones numéricas</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>normal</strong> | <code>lining-nums</code> | <code>oldstyle-nums</code> | <code>proportional-nums</code> | <code>tabular-nums</code> <br> <code>diagonal-fractions</code> | <code>stacked-fractions</code> | <code>ordinal</code> | <code>slashed-zero</code></td>
+</tr>
+<tr>
+<td><code>font-variant-alternates</code></td>
+<td>Establece variaciones visuales</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>normal</strong> | <code>historical-forms</code> | <code>stylistic(id)</code> | <code>styleset(id)</code> | <code>character-variant(id)</code> <br> <code>swash(id)</code> | <code>ornaments(id)</code> | <code>annotations(id)</code></td>
+</tr>
+<tr>
+<td><code>font-variant-east-asian</code></td>
+<td>Permite controlar los glifos de textos orientales</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>normal</strong> | <code>jis78</code> | <code>jis83</code> | <code>jis90</code> | <code>jis04</code> <br> <code>simplified</code> | <code>traditional</code> | <code>full-width</code> | <code>proportional-width</code> | <code>ruby</code></td>
+</tr>
+<tr>
+<td><code>font-kerning</code></td>
+<td>Indica quién debe ajustar el kerning</td>
+</tr>
+<tr>
+<td></td>
+<td colspan="2"><strong>auto</strong> | <code>normal</code> | <code>none</code></td>
+</tr>
+</tbody>
+</table>
+<p>Ten en cuenta que en la mayoría de ellas, se puede utilizar la regla <code>@font-feature-values</code> para personalizar como utilizar la característica en cuestión (<em>la cuál debe existir y estar definida en la tipografía</em>). Veamos un ejemplo:</p>
+<pre class="language-css "><code class="language-css"><span class="token atrule"><span class="token rule">@font-feature-values</span> <span class="token string">'bookmania'</span></span> <span class="token punctuation">{</span>
+    <span class="token atrule"><span class="token rule">@swash</span></span> <span class="token punctuation">{</span>
+        <span class="token property">flourish</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.texto-alternativo</span> <span class="token punctuation">{</span>
+    <span class="token property">font-variant-alternates</span><span class="token punctuation">:</span> <span class="token function">swash</span><span class="token punctuation">(</span>flourish<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="características-a-bajo-nivel" tabindex="-1"><a class="header-anchor" href="#características-a-bajo-nivel">Características a bajo nivel</a></h3>
+<p>La propiedad <code>font-feature-settings</code> es una propiedad a bajo nivel para indicar como debe comportarse una tipografía respecto a sus <strong>características especiales</strong>. Sólo debe usarse cuando no nos sirva otra propiedad con la que modificar dicha característica, la cuál normalmente se encuentra en la lista del apartado anterior.</p>
+<p>La sintaxis de esta propiedad es la que podemos ver a continuación (<em>se pueden combinar varias características separando por comas</em>):</p>
+<pre class="language-css "><code class="language-css"><span class="token selector">p</span> <span class="token punctuation">{</span>
+    <span class="token comment">/* La característica "feat" está activada. */</span>
+    <span class="token property">font-feature-settings</span><span class="token punctuation">:</span> <span class="token string">"feat"</span> 1<span class="token punctuation">;</span>
+    <span class="token comment">/* Otra opción equivalente a la anterior. */</span>
+    <span class="token property">font-feature-settings</span><span class="token punctuation">:</span> <span class="token string">"feat"</span> on<span class="token punctuation">;</span>
+    <span class="token comment">/* La característica "feat" está desactivada. */</span>
+    <span class="token property">font-feature-settings</span><span class="token punctuation">:</span> <span class="token string">"feat"</span> 0<span class="token punctuation">;</span>
+    <span class="token comment">/* Otra opción equivalente a la anterior. */</span>
+    <span class="token property">font-feature-settings</span><span class="token punctuation">:</span> <span class="token string">"feat"</span> off<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Sin embargo, la característica «feat» no existe, es sólo un ejemplo teórico. Cada tipografía tiene un cierto número de características especiales (<em>hay tipografías que tienen varias, y tipografías que no tienen ninguna</em>). Veamos una lista de las características que existen:</p>
+<table>
+<thead>
+<tr>
+<th>Valor OTF</th>
+<th>Significado</th>
+<th>Propiedad equivalente</th>
+<th>Valor concreto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="3">Características de ligaduras</td>
+</tr>
+<tr>
+<td><code>&quot;liga&quot; 1</code></td>
+<td>Ligaduras estándar (también <code>clig</code> )</td>
+<td><code>font-variant-ligatures</code></td>
+<td><code>common-ligatures</code></td>
+</tr>
+<tr>
+<td><code>&quot;dlig&quot; 1</code></td>
+<td>Ligaduras discrecionales</td>
+<td><code>font-variant-ligatures</code></td>
+<td><code>discretionary-ligatures</code></td>
+</tr>
+<tr>
+<td><code>&quot;hlig&quot; 1</code></td>
+<td>Ligaduras históricas</td>
+<td><code>font-variant-ligatures</code></td>
+<td><code>historical-ligatures</code></td>
+</tr>
+<tr>
+<td><code>&quot;calt&quot; 1</code></td>
+<td>Ligaduras contextuales alternativas</td>
+<td><code>font-variant-ligatures</code></td>
+<td><code>contextual</code></td>
+</tr>
+<tr>
+<td colspan="3">Características numéricas</td>
+</tr>
+<tr>
+<td><code>&quot;ordn&quot; 1</code></td>
+<td>Marcas ordinales</td>
+<td><code>font-variant-numeric</code></td>
+<td><code>ordinal</code></td>
+</tr>
+<tr>
+<td><code>&quot;zero&quot; 1</code></td>
+<td>Raya del cero</td>
+<td><code>font-variant-numeric</code></td>
+<td><code>slashed-zero</code></td>
+</tr>
+<tr>
+<td><code>&quot;onum&quot; 1</code></td>
+<td>Figuras de estilo antiguo</td>
+<td><code>font-variant-numeric</code></td>
+<td><code>oldstyle-nums</code></td>
+</tr>
+<tr>
+<td><code>&quot;lnum&quot; 1</code></td>
+<td>Números alineados</td>
+<td><code>font-variant-numeric</code></td>
+<td><code>lining-nums</code></td>
+</tr>
+<tr>
+<td><code>&quot;pnum&quot; 1</code></td>
+<td>Números proporcionales</td>
+<td><code>font-variant-numeric</code></td>
+<td><code>proportional-nums</code></td>
+</tr>
+<tr>
+<td><code>&quot;tnum&quot; 1</code></td>
+<td>Figuras tabulares (mismo tamaño)</td>
+<td><code>font-variant-numeric</code></td>
+<td><code>tabular-nums</code></td>
+</tr>
+<tr>
+<td><code>&quot;frac&quot; 1</code></td>
+<td>Fracciones diagonales</td>
+<td><code>font-variant-numeric</code></td>
+<td><code>diagonal-fractions</code></td>
+</tr>
+<tr>
+<td><code>&quot;afrc&quot; 1</code></td>
+<td>Fracciones apiladas</td>
+<td><code>font-variant-numeric</code></td>
+<td><code>stacked-fractions</code></td>
+</tr>
+<tr>
+<td colspan="3">Características de posición</td>
+</tr>
+<tr>
+<td><code>&quot;sups&quot; 1</code></td>
+<td>Superíndices</td>
+<td><code>font-variant-position</code></td>
+<td><code>super</code></td>
+</tr>
+<tr>
+<td><code>&quot;subs&quot; 1</code></td>
+<td>Subíndices</td>
+<td><code>font-variant-position</code></td>
+<td><code>sub</code></td>
+</tr>
+<tr>
+<td colspan="3">Características de mayúsculas/minúsculas</td>
+</tr>
+<tr>
+<td><code>&quot;smcp&quot; 1</code></td>
+<td>Versalitas en minúsculas</td>
+<td><code>font-variant-caps</code></td>
+<td><code>small-caps</code></td>
+</tr>
+<tr>
+<td><code>&quot;c2sc&quot; 1</code></td>
+<td>Versalitas en mayúsculas y minúsculas</td>
+<td><code>font-variant-caps</code></td>
+<td><code>all-small-caps</code></td>
+</tr>
+<tr>
+<td><code>&quot;pcap&quot; 1</code></td>
+<td>Capitaliza minúsculas</td>
+<td><code>font-variant-caps</code></td>
+<td><code>petite-caps</code></td>
+</tr>
+<tr>
+<td><code>&quot;c2pc&quot; 1</code></td>
+<td>Capitaliza mayúsculas y minúsculas</td>
+<td><code>font-variant-caps</code></td>
+<td><code>all-petite-caps</code></td>
+</tr>
+<tr>
+<td><code>&quot;unic&quot; 1</code></td>
+<td>Versalitas en mayúsculas</td>
+<td><code>font-variant-caps</code></td>
+<td><code>unicase</code></td>
+</tr>
+<tr>
+<td><code>&quot;titl&quot; 1</code></td>
+<td>Mayúsculas para <a href="https://en.wikipedia.org/wiki/Titling_capitals">titulares</a></td>
+<td><code>font-variant-caps</code></td>
+<td><code>titling-caps</code></td>
+</tr>
+<tr>
+<td colspan="3">Características alternativas</td>
+</tr>
+<tr>
+<td><code>&quot;swsh&quot; 1</code></td>
+<td>Decoraciones <a href="https://en.wikipedia.org/wiki/Swash_%28typography%29">swash</a></td>
+<td><code>font-variant-alternates</code></td>
+<td><code>swash()</code></td>
+</tr>
+<tr>
+<td><code>&quot;hist&quot; 1</code></td>
+<td>Glifos históricos</td>
+<td><code>font-variant-alternates</code></td>
+<td><code>historical-forms</code></td>
+</tr>
+<tr>
+<td><code>&quot;salt&quot; 1</code></td>
+<td>Carácteres con estilos alternativos</td>
+<td><code>font-variant-alternates</code></td>
+<td><code>stylistic()</code></td>
+</tr>
+<tr>
+<td><code>&quot;ss01&quot; 1</code></td>
+<td>Conjunto de estilos alternativos</td>
+<td><code>font-variant-alternates</code></td>
+<td><code>styleset(01)</code></td>
+</tr>
+<tr>
+<td><code>&quot;ss02&quot; 1</code></td>
+<td>Segundo conjunto de estilos alternativos</td>
+<td><code>font-variant-alternates</code></td>
+<td><code>styleset(02)</code></td>
+</tr>
+<tr>
+<td><code>&quot;ss03&quot; 1</code></td>
+<td>Tercer conjunto de estilos alternativos</td>
+<td><code>font-variant-alternates</code></td>
+<td><code>styleset(03)</code></td>
+</tr>
+<tr>
+<td><code>&quot;cv01&quot; 1</code></td>
+<td>Estilo alternativo para carácteres</td>
+<td><code>font-variant-alternates</code></td>
+<td><code>character-variant(01)</code></td>
+</tr>
+<tr>
+<td><code>&quot;ornm&quot; 1</code></td>
+<td>Adornos como fleurons o dingbats</td>
+<td><code>font-variant-alternates</code></td>
+<td><code>ornaments()</code></td>
+</tr>
+<tr>
+<td><code>&quot;nalt&quot; 1</code></td>
+<td>Dígitos circulares, carácteres invertidos...</td>
+<td><code>font-variant-alternates</code></td>
+<td><code>annotation()</code></td>
+</tr>
+<tr>
+<td><code>&quot;kern&quot; 1</code></td>
+<td>Kerning de tipografías</td>
+<td><code>font-kerning</code></td>
+<td><code>normal</code></td>
+</tr>
+</tbody>
+</table>
+<p>Para saber si la tipografía que estamos utilizando posee alguna de estas <strong>características especiales</strong>, podemos utilizar el comando de terminal <a href="https://github.com/ConradIrwin/font">font</a>, que lee dicha información de formatos WOFF2, WOFF, TTF u OTF. Dicho comando está programado en el lenguaje de programación <strong>Go</strong>, por lo que instalarlo es tan fácil como escribir desde una terminal lo siguiente:</p>
+<pre class="language-bash "><code class="language-bash">go <span class="token function">install</span> github.com/ConradIrwin/font/cmd/font@latest   <span class="token comment"># Instalamos "font" (necesitamos Go)</span>
+font feature fichero.ttf                                 <span class="token comment"># Leemos las características</span></code></pre>
+<p>Este comando nos mostrará los metadatos de la tipografía, incluyendo los flags de las features (<em>liga, tnum, frac, etc...</em>) que existen y están definidas en la tipografía en cuestión. El soporte actual de dicha propiedad es el siguiente:</p>
+<p><caniuse-support title="CSS font-feature-settings" feature="font-feature" edge="12/y" firefox="15/y" chrome="21/y" safari="9.1/y" opera="15/y" ios_saf="9.3/y" and_chr="118/y" and_ff="118/y">
+</caniuse-support></p>
+<h3 id="atajo-de-características" tabindex="-1"><a class="header-anchor" href="#atajo-de-características">Atajo de características</a></h3>
+<p>Tradicionalmente, la propiedad <code>font-variant</code> sólo permitía los valores <code>normal</code> o <code>small-caps</code> . Sin embargo, las nuevas propuestas de CSS permiten utilizar esta propiedad como propiedad de atajo para todas las características que hemos visto en el apartado anterior. Por lo tanto, pasamos de este esquema antiguo (<em>soportado en la mayoría de los navegadores</em>):</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>font-variant</code></td>
+<td><strong>normal</strong> | <code>small-caps</code></td>
+<td>Indica si utilizar versalitas o no</td>
+</tr>
+</tbody>
+</table>
+<p>Al esquema moderno, que es el siguiente:</p>
+<pre class="language-css "><code class="language-css"><span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* font-variant: &lt;ligatures> &lt;caps> &lt;numeric> &lt;east-asian> &lt;position> */</span>
+<span class="token punctuation">}</span></code></pre>
+<p>En él podemos utilizar los valores de cada propiedad individual: <code>font-variant-ligatures</code> , <code>font-variant-caps</code> , etc... en forma de atajo.</p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../font-display/index.htm" title="Modo de carga de tipografías">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Modo de carga de tipografías</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../../representacion-datos/tablas-css/index.htm" title="Tablas CSS">
+  <div>
+    <span>Tablas CSS</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/I-EFAmX-vhE" title="Flex CSS: Alinear, centrar y reordenar elementos">
+  <img loading="lazy" src="../../../vi/I-EFAmX-vhE/mqdefault.jpg" alt="Flex CSS: Alinear, centrar y reordenar elementos">
+</a><a href="https://youtu.be/mNTj6KfYeXc" title="Cómo crear GRADIENTES CÓNICOS en CSS">
+  <img loading="lazy" src="../../../vi/mNTj6KfYeXc/mqdefault.jpg" alt="Cómo crear GRADIENTES CÓNICOS en CSS">
+</a><a href="https://youtu.be/hiRIjRf2QD8" title="FUNCIONES de TIEMPO en CSS: ¡Controla el ritmo de tus animaciones!">
+  <img loading="lazy" src="../../../vi/hiRIjRf2QD8/mqdefault.jpg" alt="FUNCIONES de TIEMPO en CSS: ¡Controla el ritmo de tus animaciones!">
+</a><a href="https://youtu.be/D5fJxaLCjKg" title="Configurar VSCODE para CORREGIR tu CSS AUTOMÁTICAMENTE">
+  <img loading="lazy" src="../../../vi/D5fJxaLCjKg/mqdefault.jpg" alt="Configurar VSCODE para CORREGIR tu CSS AUTOMÁTICAMENTE">
+</a><a href="https://youtu.be/9jea2qDdw7Y" title="Cómo crear SOMBRAS IDÉNTICAS (drop-shadow)">
+  <img loading="lazy" src="../../../vi/9jea2qDdw7Y/mqdefault.jpg" alt="Cómo crear SOMBRAS IDÉNTICAS (drop-shadow)">
+</a><a href="https://youtu.be/hju7SXmiK7Y" title="Cómo crear SOMBRAS DE TEXTO (text-shadow)">
+  <img loading="lazy" src="../../../vi/hju7SXmiK7Y/mqdefault.jpg" alt="Cómo crear SOMBRAS DE TEXTO (text-shadow)">
+</a></div>
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajehtml.com/svg/" title="SVG">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#svg"></use>
+  </svg>
+</a><a class="topic" href="../../index.htm" title="CSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="../../../postcss/index.htm" title="PostCSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/fundamentos/" title="Fundamentos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/javascript/" title="Javascript">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/npm/" title="NPM">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/webcomponents/" title="WebComponents">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/vuejs/" title="VueJS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/automatizadores/" title="Automatizadores">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/retos/" title="Retos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#retos"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+    
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+
+  </div></body>
+
+</html>

@@ -1,0 +1,814 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Textos y alineaciones - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="CSS incorpora gran cantidad de propiedades para modificar el comportamiento de los textos de una página web.">
+  <meta name="view-transition" content="same-origin">
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Textos y alineaciones - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="CSS incorpora gran cantidad de propiedades para modificar el comportamiento de los textos de una página web.">
+  <meta property="og:url" content="https://lenguajecss.com/css/fuentes-y-tipografias/textos-y-alineaciones/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/fuentes-y-tipografias/textos-y-alineaciones/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Textos y alineaciones - CSS en español">
+  <meta property="twitter:description" content="CSS incorpora gran cantidad de propiedades para modificar el comportamiento de los textos de una página web.">
+  <meta property="twitter:image" content="https://lenguajecss.com/large-summary.jpg">
+
+  </head>
+
+<body class="css menu-open " style="--logo-color: #1e7bbf"><script>
+    matchMedia("(width <= 1180px)").matches && document.body.classList.toggle("menu-open");
+  </script>
+  
+
+
+
+
+
+
+
+
+<section class="menubar">
+  <div class="menubar-content">
+    <h1>Lenguaje CSS</h1>
+
+    <a class="cover" title="Lenguaje CSS (css)" href="../../index.htm" style="--image: url('../../../assets/css.jpg')"></a>
+
+    <header>
+      <a href="../../calidad-de-codigo/minificar-css/index.htm" title="Minificar CSS">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m14 26l1.41-1.41L7.83 17H28v-2H7.83l7.58-7.59L14 6L4 16l10 10z"></path></svg>
+      </a>
+      <a href="../../index.htm" title="Volver al índice">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 256"><path fill="#888888" d="M240 210h-18v-94.45a14.06 14.06 0 0 0-4.53-10.32l-80-75.49l-.09-.08a13.94 13.94 0 0 0-18.83 0l-.09.08l-80 75.5A14 14 0 0 0 34 115.55V210H16a6 6 0 0 0 0 12h224a6 6 0 0 0 0-12ZM46 115.55a2 2 0 0 1 .65-1.48l.09-.08l79.94-75.48a2 2 0 0 1 2.63 0L209.26 114l.08.08a2 2 0 0 1 .66 1.48V210h-52v-50a14 14 0 0 0-14-14h-32a14 14 0 0 0-14 14v50H46ZM146 210h-36v-50a2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"></path></svg>
+      </a>
+      <a href="../../representacion-datos/tablas-css/index.htm" title="Tablas CSS">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></path></svg>
+      </a>
+    </header>
+
+    <div style="display:none">
+      <svg id="link-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 256 256"><g fill="#888888"><path d="M208 88h-56V32Z" opacity=".2"></path><path d="m213.66 82.34l-56-56A8 8 0 0 0 152 24H56a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V88a8 8 0 0 0-2.34-5.66ZM160 51.31L188.69 80H160ZM200 216H56V40h88v48a8 8 0 0 0 8 8h48v120Z"></path></g></svg>
+      <svg id="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="#888888" d="M2 12.5C2 9.46 4.46 7 7.5 7H18c2.21 0 4 1.79 4 4s-1.79 4-4 4H9.5a2.5 2.5 0 0 1 0-5H17v2H9.41c-.55 0-.55 1 0 1H18c1.1 0 2-.9 2-2s-.9-2-2-2H7.5C5.57 9 4 10.57 4 12.5S5.57 16 7.5 16H17v2H7.5C4.46 18 2 15.54 2 12.5z"></path></svg>
+    </div>
+
+    <div class="links">
+      <span class="folder">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 512 512"><path fill="#888888" d="M41 73v304.563L88.697 151H423v-30H185.514l-16-48H41zm62.303 96L43.092 455h381.605l60.211-286H103.303z"></path></svg>
+        Fuentes y tipografías
+      </span>
+            <a class="link" href="../elegir-tipografia/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              ¿Qué son las tipografías?
+            </a>
+            <a class="link" href="../tipografias/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Tipografías en CSS
+            </a>
+            <a class="link" href="../ajustes-tipografias/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Ajustes en tipografías
+            </a>
+            <a class="link" href="../regla-font-face/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              La regla @font-face
+            </a>
+            <a class="link" href="../tipografias-google-fonts/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Tipografías de Google Fonts
+            </a>
+            <a class="link" href="../fuentes-variables/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Fuentes variables CSS
+            </a>
+            <a class="link active" href="index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Textos y alineaciones
+            </a>
+            <a class="link" href="../text-decoration/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Decoraciones de texto
+            </a>
+            <a class="link" href="../font-display/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Modo de carga de tipografías
+            </a>
+            <a class="link" href="../caracteristicas-personalizadas/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Características personalizadas
+            </a>
+    </div>
+  </div>
+
+  <div class="sidebox">
+    <svg class="close-menu" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19V5m10 1l-6 6l6 6m-6-6h14"></path></svg>
+    <div class="socials">
+      <a class="twitch" href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+      <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+      <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+      <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  const toggleMenu = () => (document.body.classList.toggle("menu-open"));
+  document.querySelector(".close-menu").addEventListener("click", toggleMenu);
+
+  matchMedia("(width <= 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+  matchMedia("(width > 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+
+  const activeLink = document.querySelector(".links .active");
+  const icon = /* svg */`<svg viewBox="0 0 24 24"><use href="#anchor-icon" /></svg>`;
+  const headers = [...document.querySelectorAll(".contents h3")].map(link => ({ text: link.textContent, id: link.id }));
+  const links = [];
+  headers.reverse().forEach(({ text, id }) => {
+    const link = document.createElement("a");
+    link.classList.add("anchor");
+    link.href = "#" + id;
+    link.insertAdjacentHTML("beforeend", icon);
+    link.insertAdjacentText("beforeend", ` ${text}`);
+    activeLink.after(link);
+  });
+</script>
+
+  <div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/css.jpg')">
+    <h1><a href="index.htm">Textos y alineaciones</a></h1><h2 class="typewriter">Propiedades CSS para alinear o aplicar a textos</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../fuentes-variables/index.htm">Fuentes variables CSS</a>
+    <a class="current" href="index.htm">Textos y alineaciones</a>
+    <a href="../text-decoration/index.htm">Decoraciones de texto</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Hasta ahora hemos visto propiedades que se centran en modificar aspectos relacionados con las tipografías, pero CSS dispone de propiedades para modificar aspectos de textos, alejándose de criterios de tipografías, y centrándose más en objetivos de alineación, tratamiento de espaciados o detalles similares.</p>
+<p>Dichas propiedades se centran en varios apartados:</p>
+<ul>
+<li>1️⃣ <strong>Espacios en blanco</strong></li>
+<li>2️⃣ <strong>Límites de líneas y palabras</strong></li>
+<li>3️⃣ <strong>Alineaciones de texto</strong></li>
+<li>4️⃣ <strong>Espaciados de texto</strong></li>
+</ul>
+<h3 id="espacios-en-blanco" tabindex="-1"><a class="header-anchor" href="#espacios-en-blanco">Espacios en blanco</a></h3>
+<p>Habrás observado que si en tu código HTML escribes 5 espacios en blanco seguidos, el navegador a la hora de renderizarlo los unifica en un sólo espacio en blanco, por lo que no importa cuando espacios en blanco escribas, a la hora de renderizarlos sólo tendrá en cuenta uno:</p>
+<pre class="language-html "><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Hola amigos     ¿Qué tal?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<p>Esto se puede modificar de varias formas. La primera y quizás la más antigua y poco adecuada, sería reemplazar cada espacio que se quiere visualizar en el navegador por la entidad HTML de <strong>no break space</strong>, es decir el código <code>&amp;nbsp;</code>. Esto representa literalmente un espacio en blanco.</p>
+<h4 id="la-propiedad-white-space" tabindex="-1"><a class="header-anchor" href="#la-propiedad-white-space">La propiedad <code>white-space</code></a></h4>
+<p>Sin embargo, no es la mejor solución, ya que puede ensuciar bastante el código HTML y no es demasiado semántico. Existe una propiedad CSS denominada <code>white-space</code>, que permite modificar el comportamiento de los espacios en blanco en el HTML a la hora de renderizarlos.</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>white-space</code></td>
+<td><strong>normal</strong> | <code>nowrap</code> | <code>pre</code> | <code>pre-line</code> | <code>pre-wrap</code></td>
+<td>Comportamiento de los espacios</td>
+</tr>
+<tr>
+<td><code>tab-size</code></td>
+<td><badge-type class="number"></badge-type> | <badge-type class="size"></badge-type></td>
+<td>Ancho de las tabulaciones (espacio o tamaño)</td>
+</tr>
+</tbody>
+</table>
+<p>Utilizando la propiedad <code>white-space</code>, podemos indicar el comportamiento que tendrán los espacios en blanco, que por defecto, como hemos visto, tienen el valor <code>normal</code> y no se muestra sino uno solo. Sin embargo, tiene otros valores disponibles:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Espacios en blanco consecutivos</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>normal</strong></td>
+<td>Los espacios consecutivos se transforman en uno solo.</td>
+<td>Se ajusta al contenedor.</td>
+</tr>
+<tr>
+<td><code>nowrap</code></td>
+<td>Los espacios consecutivos se transforman en uno solo.</td>
+<td>Ignora saltos de línea.</td>
+</tr>
+<tr>
+<td><code>pre</code></td>
+<td>Respeta y muestra literalmente los espacios.</td>
+<td>Ignora saltos de línea.</td>
+</tr>
+<tr>
+<td><code>pre-wrap</code></td>
+<td>Respeta y muestra literalmente los espacios.</td>
+<td>Se ajusta al contenedor.</td>
+</tr>
+<tr>
+<td><code>pre-line</code></td>
+<td>Respeta literalmente los espacios y suprime los espacios del final.</td>
+<td>Se ajusta al contenedor.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>Nota</strong>: La diferencia entre <code>pre-wrap</code> y <code>pre-line</code> es que este último respeta literalmente los espacios que están antes del texto, mientras que si sobran después del texto, los suprime.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="la-propiedad-tab-size" tabindex="-1"><a class="header-anchor" href="#la-propiedad-tab-size">La propiedad <code>tab-size</code></a></h3>
+<p>Por otro lado, tenemos la propiedad <code>tab-size</code> que permite establecer el número de espacios que se mostrarán en el cliente o navegador al representar el carácter de un <kbd>TAB</kbd> (<em>tabulador</em>), que generalmente se convierten a espacios en blanco, sin embargo son visibles en elementos HTML como <code>&lt;textarea&gt;</code> o <code>&lt;pre&gt;</code>.</p>
+<p>Por defecto, el número de espacios que representa el navegador es de <strong>8</strong>, sin embargo se puede cambiar por otro número de espacios o por una medida específica.</p>
+<h3 id="límites-de-línea-y-palabras" tabindex="-1"><a class="header-anchor" href="#límites-de-línea-y-palabras">Límites de línea y palabras</a></h3>
+<p>Existen ciertas situaciones donde palabras o lineas de texto demasiado largas no caben en su contenedor, y se debe tomar una decisión de como se comportará el navegador al renderizar ese contenido: desbordar el contenedor, desplazar a un lugar donde haya más espacio o partir/dividir el contenido.</p>
+<p>Estos cambios (<em>y relacionados</em>) se hacen a través de las siguientes propiedades CSS:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>word-break</code></td>
+<td><strong>normal</strong> | <code>keep-all</code> | <code>break-all</code> | <code>break-word</code></td>
+<td>Indica si se pueden partir palabras de forma natural.</td>
+</tr>
+<tr>
+<td><code>line-break</code></td>
+<td><strong>auto</strong> | <code>loose</code> | <code>normal</code> | <code>strict</code> | <code>anywhere</code></td>
+<td>Determina como dividir líneas.</td>
+</tr>
+<tr>
+<td><code>hyphens</code></td>
+<td><strong>manual</strong> | <code>none</code> | <code>auto</code></td>
+<td>Indica si se debe dividir las palabras por guiones.</td>
+</tr>
+<tr>
+<td><code>overflow-wrap</code></td>
+<td><strong>normal</strong> | <code>break-word</code> | <code>anywhere</code></td>
+<td>Indica si puede forzar partir palabras y evitar desbordamiento.</td>
+</tr>
+</tbody>
+</table>
+<p>Si te encuentras con la desagradable situación en la que un texto concreto (<em>por ejemplo, un enlace demasiado largo</em>) no cabe dentro de un contenedor, verás que el texto puede desbordarse y provocar efectos no deseados como salirse de su lugar. Para mitigar este problema, combinaciones de las propiedades <code>word-break</code>, <code>line-break</code>, <code>hyphens</code> y <code>overflow-wrap</code>, podrían ayudarnos a modificar estos comportamientos:</p>
+<pre class="language-css "><code class="language-css"><span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token property">word-break</span><span class="token punctuation">:</span> break-word<span class="token punctuation">;</span>
+  <span class="token property">line-break</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+  <span class="token property">hyphens</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">overflow-wrap</span><span class="token punctuation">:</span> break-word<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<blockquote>
+<p>La propiedad <code>overflow-wrap</code> sólo funciona cuando <code>white-space</code> está establecida a valores que respeten los espacios. La propiedad <code>word-wrap</code> es la antigua forma de referirse a <code>overflow-wrap</code>.</p>
+</blockquote>
+</blockquote>
+<h3 id="alineaciones-de-texto" tabindex="-1"><a class="header-anchor" href="#alineaciones-de-texto">Alineaciones de texto</a></h3>
+<p>Cuando estamos escribiendo mucho texto en nuestros elementos, es posible que necesitemos alinear los textos, para colocarlos de una forma específica: texto a la izquierda, texto a la derecha, texto centrado, etc... Para ello, utilizaremos las siguientes propiedades CSS:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text-align</code></td>
+<td><strong>start</strong> | <code>end</code> | <code>justify</code> | <code>center</code> | <code>match-parent</code> | <code>justify-all</code></td>
+<td>Alineación del texto.</td>
+</tr>
+<tr>
+<td><code>text-align-last</code></td>
+<td><strong>auto</strong> | <code>start</code> | <code>end</code> | <code>justify</code> | <code>center</code> | <code>match-parent</code></td>
+<td>Alineación de última línea del texto.</td>
+</tr>
+<tr>
+<td><code>text-justify</code></td>
+<td><strong>auto</strong> | <code>inter-word</code> | <code>inter-character</code> | <code>none</code></td>
+<td>Método de justificación de textos en <code>justify</code>.</td>
+</tr>
+<tr>
+<td><code>vertical-align</code></td>
+<td><strong>baseline</strong> | <code>sub</code> | <code>super</code> | <code>top</code> | <code>middle</code> | <code>bottom</code> <br> <code>text-top</code> | <code>text-bottom</code></td>
+<td>Alineado de textos respecto a elementos.</td>
+</tr>
+</tbody>
+</table>
+<p>La primera propiedad CSS <code>text-align</code> sirve para alinear textos, mientras que <code>text-align-last</code> sirve para alinear la última línea del texto. En ambos casos, se pueden utilizar los siguientes valores:</p>
+<table>
+<thead>
+<tr>
+<th>Valores</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>start</code></td>
+<td>Alinea el texto al principio. También se puede usar <code>left</code>.</td>
+</tr>
+<tr>
+<td><code>end</code></td>
+<td>Alinea el texto al final. También se puede usar <code>right</code>.</td>
+</tr>
+<tr>
+<td><code>center</code></td>
+<td>Alinea el texto en el centro.</td>
+</tr>
+<tr>
+<td><code>justify</code></td>
+<td>Justifica el texto, es decir, procura que ocupe toda la línea.</td>
+</tr>
+<tr>
+<td><code>match-parent</code></td>
+<td>Utiliza la alineación establecida en el elemento padre.</td>
+</tr>
+<tr>
+<td><code>justify-all</code></td>
+<td>Usa <code>justify</code> en las propiedades <code>text-align</code> y en <code>text-align-last</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>En la última propiedad, <code>text-justify</code>, podemos indicar el tipo de justificación de texto que el navegador realizará: automática (<em>el navegador elige</em>), ajustar el espacio entre palabras (<em>el resultado de ajustar con la propiedad word-spacing</em>), ajustar el espacio entre par de carácteres (<em>el resultado de ajustar con la propiedad letter-spacing</em>) y justificación desactivada.</p>
+<p>Sin embargo, ten en cuenta que el soporte de esta propiedad no está muy extendido:</p>
+<p><caniuse-support title="CSS text-justify" feature="css-text-justify" edge="12/a" firefox="55/y" chrome="✗/n" safari="✗/n" opera="✗/n" ios_saf="✗/n" and_chr="✗/n" and_ff="118/y">
+</caniuse-support></p>
+<h4 id="la-propiedad-vertical-align" tabindex="-1"><a class="header-anchor" href="#la-propiedad-vertical-align">La propiedad <code>vertical-align</code></a></h4>
+<p>Al igual que existe <code>text-align</code> para alinear horizontalmente, también existe la propiedad <code>vertical-align</code> , que se encarga de la alineación vertical de un elemento. Puede ser muy interesante, por ejemplo, para alinear textos al lado de las imágenes.</p>
+<p>Se pueden establecer las siguientes opciones para <code>vertical-align</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>¿Cómo hace la alineación?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>baseline</strong></td>
+<td>La base del elemento con la base del elemento padre.</td>
+</tr>
+<tr>
+<td><code>sub</code></td>
+<td>El elemento como un subíndice.</td>
+</tr>
+<tr>
+<td><code>super</code></td>
+<td>El elemento como un superíndice.</td>
+</tr>
+<tr>
+<td><code>top</code></td>
+<td>La parte superior del elemento con la parte superior del elemento más alto de la línea.</td>
+</tr>
+<tr>
+<td><code>middle</code></td>
+<td>El elemento en la mitad del elemento padre.</td>
+</tr>
+<tr>
+<td><code>bottom</code></td>
+<td>La parte inferior del elemento con la parte inferior del elemento más bajo de esa línea.</td>
+</tr>
+<tr>
+<td><code>text-top</code></td>
+<td>La parte superior del elemento con la parte superior del texto padre.</td>
+</tr>
+<tr>
+<td><code>text-bottom</code></td>
+<td>La parte inferior del elemento con la parte inferior del texto padre.</td>
+</tr>
+<tr>
+<td><badge-type class="size"></badge-type></td>
+<td>Sube o baja un elemento el tamaño o porcentaje  especificado.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<blockquote>
+<p>Cuidado al utilizar <code>vertical-align</code>. Esta propiedad puede querer utilizarse para centrar verticalmente un elemento, sin embargo, su utilización es un poco menos intuitiva de lo que en un principio se cree, ya que se debe utilizar para alinear textos respecto a elementos. Para alinear bloques de contenido o crear estructuras de diseño, véase <a href="../../maquetacion-y-colocacion/flex/index.htm">Flexbox</a> o <a href="../../maquetacion-y-colocacion/grid-css/index.htm">Grid</a>.</p>
+</blockquote>
+</blockquote>
+<h3 id="espaciado-de-texto" tabindex="-1"><a class="header-anchor" href="#espaciado-de-texto">Espaciado de texto</a></h3>
+<p>Existen varias propiedades mediante las cuales podemos crear <strong>espacios</strong> en diferentes zonas, por ejemplo, entre líneas, letras o palabras. Estos espacios sirven para ajustar visualmente las tipografías y que se puedan leer de una forma mucho más agradable, no canse tanto la vista, y simplemente mejorar la experiencia del lector.</p>
+<p><img src="text-indent-letter-spacing-line-height.png" alt="Alineaciones de texto" width="787" height="284" loading="lazy"></p>
+<p>Las propiedades que tenemos para modificar estos detalles son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>letter-spacing</code></td>
+<td><strong>normal</strong> | <badge-type class="size"></badge-type></td>
+<td>Espacio entre letras (interletraje o tracking).</td>
+</tr>
+<tr>
+<td><code>word-spacing</code></td>
+<td><strong>normal</strong> | <badge-type class="size"></badge-type></td>
+<td>Espacio entre palabras.</td>
+</tr>
+<tr>
+<td><code>line-height</code></td>
+<td><strong>normal</strong> | <badge-type class="number"></badge-type> | <badge-type class="size"></badge-type></td>
+<td>Establece una altura de línea (interlineado).</td>
+</tr>
+<tr>
+<td><code>text-indent</code></td>
+<td><strong>0</strong> | <badge-type class="size"></badge-type></td>
+<td>Indentación de texto (sangría).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="la-propiedad-letter-spacing" tabindex="-1"><a class="header-anchor" href="#la-propiedad-letter-spacing">La propiedad <code>letter-spacing</code></a></h4>
+<p>La propiedad <code>letter-spacing</code> , permite indicar el espacio de separación que hay entre cada letra de un texto, denominado comúnmente <strong>interletraje</strong> o <strong>tracking</strong>.</p>
+<p>Si utilizamos valores negativos tendremos las letras más unidas, mientras que con valores positivos, las letras se encontrarán más separadas unas de otras.</p>
+<h4 id="la-propiedad-line-height" tabindex="-1"><a class="header-anchor" href="#la-propiedad-line-height">La propiedad <code>line-height</code></a></h4>
+<p>Por su parte, la propiedad <code>line-height</code> permite especificar la <strong>altura</strong> que tendrá cada línea de texto de un párrafo. Esto es una característica que puede facilitar muchísimo la lectura, puesto que un interlineado excesivo puede desorientar al lector, mientras que uno insuficiente puede hacer perder al visitante el foco en el texto.</p>
+<h4 id="la-propiedad-word-spacing" tabindex="-1"><a class="header-anchor" href="#la-propiedad-word-spacing">La propiedad <code>word-spacing</code></a></h4>
+<p>La propiedad <code>word-spacing</code> permite establecer el espacio que hay entre palabras en un texto determinado. Esto puede facilitar la legibilidad de los textos de una página web y da flexibilidad y control sobre ciertas tipografías que puede que no tengan suficiente espacio entre las palabras escribas, ya que sus espacios tienen un tamaño insuficiente.</p>
+<h4 id="la-propiedad-text-indent" tabindex="-1"><a class="header-anchor" href="#la-propiedad-text-indent">La propiedad <code>text-indent</code></a></h4>
+<p>Por último, la propiedad <code>text-indent</code> establece un tamaño de <strong>indentación</strong>, o lo que es lo mismo, hace un sangrado, en la primera línea del texto, desplazándolo la longitud especificada hacia la derecha (<em>o izquierda en cantidades negativas</em>).</p>
+<p>La propiedad <code>text-indent</code> tiene una sintaxis avanzada, aún sin demasiado soporte, que permite aplicar algunos extras:</p>
+<pre class="language-css "><code class="language-css"><span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token property">text-indent</span><span class="token punctuation">:</span> 2em hanging<span class="token punctuation">;</span>
+  <span class="token property">text-indent</span><span class="token punctuation">:</span> 2em each-line<span class="token punctuation">;</span>
+  <span class="token property">text-indent</span><span class="token punctuation">:</span> 2em hanging each-line<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Los valores significan lo siguiente:</p>
+<table>
+<thead>
+<tr>
+<th>Valores</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hanging</code></td>
+<td>Invierte las lineas afectadas por la indentación.</td>
+</tr>
+<tr>
+<td><code>each-line</code></td>
+<td>La indentación a las primeras líneas después de un salto de línea <strong>forzado</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>Sin embargo, aunque el soporte básico de <code>text-indent</code> se soporta correctamente, el soporte de estas últimas características no está demasiado extendido:</p>
+<p><caniuse-support title="CSS text-indent" feature="css-text-indent" edge="12/a" firefox="121/y" chrome="4/a" safari="16.0/y" opera="9/a" ios_saf="16.0/y" and_chr="118/a" and_ff="118/a">
+</caniuse-support></p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../fuentes-variables/index.htm" title="Fuentes variables CSS">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Fuentes variables CSS</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../text-decoration/index.htm" title="Decoraciones de texto">
+  <div>
+    <span>Decoraciones de texto</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/9jea2qDdw7Y" title="Cómo crear SOMBRAS IDÉNTICAS (drop-shadow)">
+  <img loading="lazy" src="../../../vi/9jea2qDdw7Y/mqdefault.jpg" alt="Cómo crear SOMBRAS IDÉNTICAS (drop-shadow)">
+</a><a href="https://youtu.be/W6fAzw3HoWg" title="Cómo crear GRADIENTES LINEALES en CSS">
+  <img loading="lazy" src="../../../vi/W6fAzw3HoWg/mqdefault.jpg" alt="Cómo crear GRADIENTES LINEALES en CSS">
+</a><a href="https://youtu.be/g5QVe65vPd4" title="Grid CSS: Celdas irregulares">
+  <img loading="lazy" src="../../../vi/g5QVe65vPd4/mqdefault.jpg" alt="Grid CSS: Celdas irregulares">
+</a><a href="https://youtu.be/jdGpehoFoWA" title="¡Aprende a utilizar TRANSICIONES CSS!">
+  <img loading="lazy" src="../../../vi/jdGpehoFoWA/mqdefault.jpg" alt="¡Aprende a utilizar TRANSICIONES CSS!">
+</a><a href="https://youtu.be/Wou2koTiIyU" title="Grid CSS: Centrar, distribuir y alinear elementos">
+  <img loading="lazy" src="../../../vi/Wou2koTiIyU/mqdefault.jpg" alt="Grid CSS: Centrar, distribuir y alinear elementos">
+</a><a href="https://youtu.be/I-EFAmX-vhE" title="Flex CSS: Alinear, centrar y reordenar elementos">
+  <img loading="lazy" src="../../../vi/I-EFAmX-vhE/mqdefault.jpg" alt="Flex CSS: Alinear, centrar y reordenar elementos">
+</a></div>
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajehtml.com/svg/" title="SVG">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#svg"></use>
+  </svg>
+</a><a class="topic" href="../../index.htm" title="CSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="../../../postcss/index.htm" title="PostCSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/fundamentos/" title="Fundamentos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/javascript/" title="Javascript">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/npm/" title="NPM">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/webcomponents/" title="WebComponents">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/vuejs/" title="VueJS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/automatizadores/" title="Automatizadores">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/retos/" title="Retos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#retos"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+    
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+
+  </div></body>
+
+</html>

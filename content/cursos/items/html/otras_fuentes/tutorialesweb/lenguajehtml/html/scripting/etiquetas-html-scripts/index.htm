@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e44f26">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Etiquetas HTML de scripts - HTML en español - Lenguaje HTML</title>
+  <link rel="preload" href="../../../critical.css" as="style">
+  <link rel="preload" href="../../../assets/fonts/blinker-vf.woff2" as="font" crossorigin="">
+  <link rel="preload" href="../../../assets/fonts/scope-one-400.woff2" as="font" crossorigin="">
+  <meta name="description" content="El lenguaje HTML tiene ciertos límites, ya que ciertas cosas no se pueden realizar sin Javascript. Para ello podemos utilizar las etiquetas para scripts.">
+  <link rel="stylesheet" href="../../../critical.css">
+  <link rel="stylesheet" href="../../../theme.css">
+  <script type="module" src="../../../main.js"></script>
+  <link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Etiquetas HTML de scripts - HTML en español">
+  <meta property="og:image" content="https://lenguajehtml.com/html/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="El lenguaje HTML tiene ciertos límites, ya que ciertas cosas no se pueden realizar sin Javascript. Para ello podemos utilizar las etiquetas para scripts.">
+  <meta property="og:url" content="https://lenguajehtml.com/html/scripting/etiquetas-html-scripts/">
+  <meta property="twitter:url" content="https://lenguajehtml.com/html/scripting/etiquetas-html-scripts/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Etiquetas HTML de scripts - HTML en español">
+  <meta property="twitter:description" content="El lenguaje HTML tiene ciertos límites, ya que ciertas cosas no se pueden realizar sin Javascript. Para ello podemos utilizar las etiquetas para scripts.">
+  <meta property="twitter:image:src" content="https://lenguajehtml.com/html/large-summary.jpg">
+</head>
+<body class="html post"><div class="page">
+    <div class="sidebar">
+      <div class="logo flex-center">
+  <a href="/">
+    <img width="42" height="42" src="../../../assets/logo.svg" alt="Logo">
+    Lenguaje HTML
+  </a>
+  <div class="icons" style="--icon-size: 32px; --icon-side-padding: 0.15em">
+    <a href="https://twitter.com/Manz" title="Twitter"><svg-icon type="social" name="twitter"></svg-icon></a>
+    <a href="https://twitch.tv/manzdev" title="Twitch"><svg-icon type="social" name="twitch"></svg-icon></a>
+    <a href="https://instagram.com/manz.dev" title="Instagram"><svg-icon type="social" name="instagram"></svg-icon></a>
+    <a href="https://youtube.com/ManzDev?sub_confirmation=1" title="YouTube"><svg-icon type="social" name="youtube"></svg-icon></a>
+    <a href="https://discord.manz.dev/" title="Servidor de Discord"><svg-icon type="social" name="discord"></svg-icon></a>
+  </div>
+  <span>Un sitio web de <a href="https://manz.dev/"><mark>Manz.dev</mark></a></span>
+</div>
+
+      <form class="search flex-center" action="https://www.google.com/search">
+  <label><span>Buscar:</span> <input type="search" name="q" placeholder="Buscar un tema (ej: flex, grid...)" autocomplete="off"></label>
+  <label><span>Sitio:</span> <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev"></label>
+  <div class="search-results"></div>
+</form>
+
+      
+
+<style>
+  sidebar-link {
+    --logo-image: url(../../logo.svg);
+  }
+</style>
+
+<div class="toc"><sidebar-link title="Volver al índice" href="../../index.htm" back="" direct=""></sidebar-link><sidebar-link href="../../cheatsheets/index.htm" title="HTML5 CheatSheet" direct=""></sidebar-link><sidebar-section title="Introducción a HTML5" href="../../introduccion/index.htm"><sidebar-link href="../../introduccion/que-es-html/index.htm" title="¿Qué es HTML?"></sidebar-link><sidebar-link href="../../introduccion/estructura-etiqueta-html/index.htm" title="Estructura de etiqueta HTML"></sidebar-link><sidebar-link href="../../introduccion/atributos-comunes-html/index.htm" title="Atributos comunes en HTML"></sidebar-link><sidebar-link href="../../introduccion/estructura-documento-html/index.htm" title="Estructura del documento HTML"></sidebar-link><sidebar-link href="../../introduccion/validacion-html/index.htm" title="Validación de errores HTML"></sidebar-link><sidebar-link href="../../introduccion/tabla-periodica-html5/index.htm" title="Tabla periódica de HTML5"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas semánticas" href="../../semantica/index.htm"><sidebar-link href="../../semantica/etiquetas-html-obsoletas/index.htm" title="Etiquetas HTML obsoletas"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-texto/index.htm" title="Etiquetas HTML de texto"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-agrupacion/index.htm" title="Etiquetas HTML de agrupación"></sidebar-link><sidebar-link href="../../semantica/enlaces-o-hipervinculos/index.htm" title="Enlaces o hipervínculos"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-seccion/index.htm" title="Etiquetas HTML de sección"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-tablas/index.htm" title="Etiquetas HTML de tablas"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas multimedia" href="../../multimedia/index.htm"><sidebar-link href="../../multimedia/etiquetas-html-de-imagenes/index.htm" title="Etiquetas HTML de imágenes"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-contenido-externo/index.htm" title="Etiquetas de contenido externo"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-video/index.htm" title="Etiquetas HTML de video"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-audio/index.htm" title="Etiquetas HTML de audio"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-subtitulos/index.htm" title="Etiquetas HTML de subtitulos"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de cabecera" href="../../cabecera/index.htm"><sidebar-link href="../../cabecera/etiquetas-html-de-relacion/index.htm" title="Etiquetas HTML de relación"></sidebar-link><sidebar-link href="../../cabecera/etiquetas-html-de-metadatos/index.htm" title="Etiquetas HTML de metadatos"></sidebar-link><sidebar-link href="../../cabecera/etiquetas-html-para-redes-sociales/index.htm" title="Etiquetas HTML de redes sociales"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de formularios" href="../../formularios/index.htm"><sidebar-link href="../../formularios/crear-un-formulario/index.htm" title="Creación de un formulario"></sidebar-link><sidebar-link href="../../formularios/controles-campos-de-texto/index.htm" title="Controles: Campos de texto"></sidebar-link><sidebar-link href="../../formularios/controles-campos-numericos/index.htm" title="Controles: Campos numéricos"></sidebar-link><sidebar-link href="../../formularios/controles-campos-fecha-hora/index.htm" title="Controles: Campos de fecha/hora"></sidebar-link><sidebar-link href="../../formularios/controles-casillas-o-botones/index.htm" title="Controles: Casillas o botones"></sidebar-link><sidebar-link href="../../formularios/controles-listas-de-seleccion/index.htm" title="Controles: Listas de selección"></sidebar-link><sidebar-link href="../../formularios/controles-seleccion-color/index.htm" title="Controles: Selección de color"></sidebar-link><sidebar-link href="../../formularios/controles-seleccion-archivos/index.htm" title="Controles: Selección de archivos"></sidebar-link><sidebar-link href="../../formularios/organizacion-de-campos/index.htm" title="Organización de campos"></sidebar-link><sidebar-link href="../../formularios/botones-de-envio-de-formulario/index.htm" title="Botones de envío de formularios"></sidebar-link><sidebar-link href="../../formularios/medidores-y-barras-de-progreso/index.htm" title="Medidores y barras de progreso"></sidebar-link><sidebar-link href="../../formularios/validaciones-html5/index.htm" title="Validaciones HTML5"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de scripting" href="../index.htm"><sidebar-link href="../etiquetas-html-interactivas/index.htm" title="Etiquetas HTML interactivas"></sidebar-link><sidebar-link href="index.htm" title="Etiquetas HTML de scripts"></sidebar-link><sidebar-link href="../eventos-html/index.htm" title="Eventos en HTML"></sidebar-link></sidebar-section></div>
+
+      
+    </div>
+    <div class="contents">
+      <header class="mega">
+  <h1>Etiquetas HTML de scripts</h1></header>
+
+      <div class="content ">
+  <div class="breadcrumbs">
+  <a href="/">ATRÁS</a> <span>ᐳ</span> <a href="../../index.htm">html</a> <span>ᐳ</span> <a href="index.htm">Etiquetas HTML de scripts</a>
+</div>
+<p>A medida que aprendemos HTML vemos que se trata de un lenguaje de marcas estupendo y muy potente, pero también nos vamos dando cuenta que ciertos detalles no se pueden cubrir sólo con HTML y CSS. Para ello tenemos que hacer uso de un lenguaje de programación llamado <strong>Javascript</strong>.</p>
+<p>Este lenguaje es muy potente y flexible, pero también requiere mayor dominio del código que con HTML y CSS, puesto que estos últimos sólo son lenguajes de marcas y estilos respectivamente, mientras que Javascript es un lenguaje de programación que requiere ciertos conocimientos y metodología de desarrollo.</p>
+<blockquote>
+<blockquote>
+<p>En este artículo cubriremos una parte básica de Javascript muy relacionada con HTML. Si quieres aprender Javascript en profundidad, echa un ojo a <a href="https://lenguajejs.com/javascript/"><strong>LenguajeJS.com</strong></a>.</p>
+</blockquote>
+</blockquote>
+<h3 id="la-etiqueta-script" tabindex="-1">La etiqueta script</h3>
+<p>Para utilizar Javascript, lo que hacemos normalmente es indicar al HTML que queremos cargar un <strong>script</strong> (<em>generalmente, un archivo de texto con código Javascript</em>) y hacerlo funcionar sobre la página actual. Para hacer esto, utilizaremos la etiqueta <code>&lt;script&gt;</code>, que permite indicar una serie de atributos:</p>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src</code></td>
+<td><em>URL</em></td>
+<td>Dirección URL del script externo a cargar.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><em>tipo</em></td>
+<td>Tipo de script a cargar. Si se omite, se asume <code>text/javascript</code> como valor.</td>
+</tr>
+<tr>
+<td><code>nomodule</code></td>
+<td><badge-type class="boolean"></badge-type></td>
+<td>Si se define este atributo, el script no se carga en navegadores modernos.</td>
+</tr>
+<tr>
+<td><code>async</code></td>
+<td><badge-type class="boolean"></badge-type></td>
+<td>Ejecuta el script cuando se haya descargado, sin bloquear el navegador.</td>
+</tr>
+<tr>
+<td><code>defer</code></td>
+<td><badge-type class="boolean"></badge-type></td>
+<td>Aplaza la ejecución del script, lo ejecuta al final, cuando haya descargado todo.</td>
+</tr>
+</tbody>
+</table>
+<p>Para empezar, ten en cuenta que la etiqueta <code>&lt;script&gt;</code> tiene fundamentalmente dos modos de funcionar, que se basan en como definas la etiqueta <code>&lt;script&gt;</code>:</p>
+<ul>
+<li>Como <strong>script en línea</strong>: El código JS se incluye en el HTML, dentro de la etiqueta.</li>
+<li>Como <strong>script externo</strong>: El código JS se incluye en el fichero Javascript enlazado en <code>src</code>.</li>
+</ul>
+<p>Un ejemplo de <strong>script en línea</strong> sería el siguiente. Observa que el código se incluye en el interior de la etiqueta, por lo que permanece en el documento HTML:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><br>  <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'¡Hola!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<p>El siguiente código, por otro lado, es un <strong>script externo</strong>, donde el código Javascript se encuentra en un archivo separado del HTML, concretamente en la ruta <code>/js/script.js</code>:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/js/script.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<p>En ambos casos, el navegador interrumpirá la carga de la página para procesar y ejecutar el Javascript, detalle que quizás no sea el más adecuado para nuestro desarrollo. Veremos como se puede modificar en el siguiente apartado.</p>
+<h3 id="modo-de-carga-del-script" tabindex="-1">Modo de carga del script</h3>
+<iframe src="https://manzdev.github.io/script-type/" style="border: 0; width: 100%; min-height: 800px;"></iframe>
+<p>Cuando indicamos un <strong>script externo</strong> mediante el atributo <code>src</code>, por defecto <strong>el proceso de carga del script</strong> por parte del navegador es el siguiente:</p>
+<ul>
+<li><strong>Detiene</strong> temporalmente la carga del HTML en el lugar donde se encontró el <code>&lt;script&gt;</code>.</li>
+<li><strong>Descarga</strong> el script <code>.js</code> al caché de ficheros temporales del navegador.</li>
+<li><strong>Ejecuta</strong> el script una vez descargado.</li>
+<li><strong>Reanuda</strong> la carga del documento HTML por donde lo dejó, en cuanto termina la ejecución del script.</li>
+</ul>
+<p>Este es el modo de carga por defecto de los scripts por parte del navegador. Sin embargo, existen dos métodos de carga diferentes: la carga <strong>asíncrona</strong> y la carga <strong>diferida</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Modo de carga</th>
+<th>Atributo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Carga normal</strong></td>
+<td>(ninguno)</td>
+<td>Bloquea la carga de la página y se ejecuta inmediatamente.</td>
+</tr>
+<tr>
+<td>Carga asíncrona</td>
+<td><code>async</code></td>
+<td>Ejecuta el script tan pronto como esté disponible.</td>
+</tr>
+<tr>
+<td>Carga diferida</td>
+<td><code>defer</code></td>
+<td>Aplaza la ejecución del script al final de la carga de la página.</td>
+</tr>
+</tbody>
+</table>
+<p>Estos dos métodos tienen ligeras diferencias respecto al modo de carga básico que vimos anteriormente, y que aparece el primero en la siguiente ilustración:</p>
+<p><img src="script-async-defer.png" alt="Modo de carga de scripts" width="1024" height="586" loading="lazy"></p>
+<ul>
+<li>
+<p><a href="https://caniuse.com/#feat=script-async"><strong>Carga asíncrona</strong></a>: El navegador descarga el script sin detener la carga del documento HTML. Una vez descargado, detiene la carga del documento HTML temporalmente, ejecuta el script, y una vez terminada la ejecución, continua con la carga del documento HTML. Este tipo de carga se realiza incluyendo el atributo <code>async</code> en la etiqueta <code>&lt;script&gt;</code>.</p>
+</li>
+<li>
+<p><a href="https://caniuse.com/#feat=script-defer"><strong>Carga diferida</strong></a>: El navegador le da prioridad a la carga del documento HTML. Descarga el script de forma paralela sin detener la carga del documento HTML. Una vez ha terminado de cargar el documento HTML, ejecuta el script. Este tipo de carga se realiza incluyendo el atributo <code>defer</code> en la etiqueta <code>&lt;script&gt;</code>.</p>
+</li>
+</ul>
+<h3 id="carga-de-módulos-javascript" tabindex="-1">Carga de módulos Javascript</h3>
+<p>En los últimos años, Javascript ha incluido una funcionalidad llamada <a href="https://lenguajejs.com/javascript/caracteristicas/modulos-es6/">módulos de Javascript</a>. Dichos módulos son una modalidad específica de archivos Javascript, los cuales pueden compartir funcionalidades a través de las palabras clave <code>import</code> y <code>export</code>.</p>
+<p>Estas funcionalidades están prohibidas por defecto, y sólo se podrán realizar si a la hora de cargar el script con la etiqueta <code>&lt;script&gt;</code> definimos el atributo <code>type</code> a <code>module</code>. Esto nos permitirá cargar el archivo Javascript como módulo y utilizarlo:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><br>  <span class="token keyword">import</span> <span class="token punctuation">{</span> Howler<span class="token punctuation">,</span> Howl <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"https://unpkg.com/howler"</span><span class="token punctuation">;</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<blockquote>
+<p>Es posible usar el atributo <code>type=&quot;module&quot;</code> tanto en etiquetas <code>&lt;script&gt;</code> en línea (<em>ejemplo anterior</em>) como con etiquetas <code>&lt;script&gt;</code> que utilicen el atributo <code>src</code>. Además, todos los scripts cargados como módulos, se ejecutarán en <strong>modo diferido</strong>.</p>
+</blockquote>
+<p>En algunos casos, podemos crear etiquetas <code>&lt;script&gt;</code> que utilicen un atributo <code>nomodule</code>. Dicho atributo indicará a navegadores modernos que soportan el atributo <code>type=module</code>, que no deben descargar ni ejecutar ese script. Sin embargo, navegadores antiguos que no lo soportan cargarán el script como un fichero Javascript normal y corriente:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><br>  <span class="token comment">/* Código para navegadores modernos */</span><br>  <span class="token keyword">import</span> <span class="token punctuation">{</span> Howler<span class="token punctuation">,</span> Howl <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"https://unpkg.com/howler"</span><span class="token punctuation">;</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">nomodule</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><br>  <span class="token comment">/* Código para navegadores antiguos */</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<p>La finalidad de este atributo es poder crear <strong>scripts</strong> a modo de <strong>fallback</strong> para realizar tareas equivalentes en navegadores antiguos y dar soporte a otros sistemas menos modernos. Es lo que se conoce como el <strong>patrón module/nomodule</strong>.</p>
+<h3 id="lenguajes-de-scripting" tabindex="-1">Lenguajes de scripting</h3>
+<p>Por defecto, el lenguaje de scripting soportado por los navegadores es <strong>Javascript</strong>, por lo que cuando hablamos de scripting en el navegador (<em>front-end, o en el lado del cliente</em>) hablamos de este lenguaje. <strong>Javascript</strong> está basado en <a href="https://lenguajejs.com/javascript/introduccion/ecmascript/"><strong>ECMAScript</strong></a>, el estándar que indica como debe actuar el lenguaje. Luego, es misión de cada navegador implementarlo de acuerdo a esas normas, aunque siempre hay algunas diferencias entre navegadores.</p>
+<p>Existen alternativas para no utilizar Javascript directamente, sino algún lenguaje similar que traduce (<em>o mejor dicho, transpila</em>) a Javascript. Directamente, los navegadores solo soportan Javascript. Quizás, los transpiladores más populares a Javascript sean <a href="https://www.typescriptlang.org/">TypeScript</a> y <a href="https://babeljs.io/">Babel</a>.</p>
+<h3 id="la-etiqueta-noscript" tabindex="-1">La etiqueta noscript</h3>
+<p>Debemos ser conscientes de que, aunque actualmente la mayoría de los navegadores poseen Javascript, un usuario puede acceder desde un dispositivo que no tenga Javascript (<em>muy poco habitual</em>) o que tenga Javascript deshabilitado (<em>poco habitual</em>). Una buena costumbre, es proporcionar una alternativa (<em>aunque sea mínima</em>) para aquellos usuarios que no tengan Javascript habilitado.</p>
+<p>Para ello, utilizaremos la etiqueta <code>&lt;noscript&gt;</code>:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><br>  <span class="token keyword">var</span> usuario <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">"¿Cuál es tu nombre?"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"¡Hola, "</span> <span class="token operator">+</span> usuario <span class="token operator">+</span> <span class="token string">"!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>noscript</span><span class="token punctuation">></span></span><br>  ¡Hola, usuario!<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>noscript</span><span class="token punctuation">></span></span></code></pre>
+<p>En caso de que el usuario tenga capacidades de Javascript en su navegador, se ejecutará el código de la etiqueta <code>&lt;script&gt;</code>, sin embargo, si el navegador no tiene Javascript, se mostrará el texto proporcionado en la etiqueta <code>&lt;noscript&gt;</code>, que aunque no puede recoger el nombre de usuario, mostrará una alternativa.</p>
+<p>De esta forma evitamos que si el usuario no tiene Javascript, vea una página en blanco.</p>
+<h3 id="la-etiqueta-template" tabindex="-1">La etiqueta template</h3>
+<p>La etiqueta <code>&lt;template&gt;</code> es un método ideal para reutilizar información HTML y tratarla mediante Javascript. En el siguiente ejemplo tenemos una tabla HTML que sólo tiene definida la cabecera de la misma. Sin embargo, un poco más abajo hay una etiqueta <code>&lt;template&gt;</code> que contiene una fila con 3 celdas:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tabla<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>Nombre<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>Apellidos<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>Calificación<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>usuario<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span></code></pre>
+<p>El contenido de una etiqueta <code>&lt;template&gt;</code> es inerte, de modo que el navegador no interpreta su interior (<em>no descarga imágenes, no ejecuta scripts, etc...</em>) hasta que el usuario clona su contenido para insertarlo en el HTML.</p>
+<p>En este ejemplo anterior, nosotros podríamos desde Javascript obtener el contenido de la plantilla <code>&lt;template&gt;</code>, clonarlo y añadirlo al final de la tabla de forma dinámica, para posteriormente modificar los datos de cada fila:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> template <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"usuario"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> tabla <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"tabla"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>tabla<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>template<span class="token punctuation">.</span>content<span class="token punctuation">.</span><span class="token function">cloneNode</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<blockquote>
+<p>Si te interesa este tema, tienes más información sobre la etiqueta <code>&lt;template&gt;</code> (<em>y plantillas en general</em>) en este artículo sobre <a href="https://lenguajejs.com/webcomponents/nativos/plantillas-dom-componente/">Plantillas, DOM y WebComponents</a>.</p>
+</blockquote>
+<p>Las plantillas HTML tienen relativamente buen soporte, aunque en el caso de querer dar soporte a Internet Explorer habría que utilizar algún polyfill como <a href="https://github.com/webcomponents/polyfills/tree/master/packages/template">Minimal Polyfill for Template</a>:</p>
+<p class="ciu_embed" data-feature="template" data-periods="future_2,future_1,current,past_1,past_2"></p>
+
+    <nav class="prev-next"><a class="bt prev" href="../etiquetas-html-interactivas/index.htm" title="Etiquetas HTML interactivas">
+    <span class="data">
+      <span>Etiquetas HTML interactivas</span>
+      <small>Capítulo anterior</small>
+    </span>
+  </a><a class="bt next" href="../eventos-html/index.htm" title="Eventos en HTML">
+    <span class="icon">
+      <svg-icon name="arrow-right"></svg-icon>
+    </span>
+    <span class="data">
+      <span>Eventos en HTML</span>
+      <small>Capítulo siguiente</small>
+    </span>
+  </a></nav>
+
+    <script async="" src="../../../pagead/js/f.txt"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center; margin:auto; margin-top: 2em" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+      <div class="related">
+
+  <div class="author">
+    <div class="author-wrapper">
+      <img loading="lazy" class="circle" src="../../../assets/manz.webp" alt="Manz">
+      <div>
+        <p>Docente, divulgador informático y <a href="https://manz.dev/">streamer de código</a>. Amante de <strong>CSS</strong>, <strong>Javascript</strong>
+          y de la plataforma web. Ha trabajado como profesor en la Universidad de La Laguna y es director del curso de
+          Programación web FullStack y FrontEnd de EOI desde Tenerife. En sus ratos libres, busca GIF de gatos en Internet.</p>
+        <p class="twitch-badge">
+          <a href="https://twitch.tv/ManzDev">
+            <svg class="twitch" viewbox="0 0 1024 1024">
+              <path style="fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1;" d="m262.451 12.904-178.26 178.26v641.672h213.905v178.26l178.26-178.26h142.576L939.809 512V12.904H262.45zm35.645 71.287h570.383v392.164L725.904 618.932H583.287L458.514 743.705V618.932H298.096V84.192zM494.158 208.51v216.36h71.328V208.51h-71.328zm196 0v216.36h71.328V208.51h-71.328z"></path>
+            </svg>
+            Sígueme en Twitch
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="comentarios">
+    <script async="" src="../../../count.js" id="dsq-count-scr"></script>
+<script>
+var disqus_config = function () {
+  this.page.path = location.pathname.endsWith("/") ? location.pathname.substring(0, location.pathname.length - 1) : location.pathname;
+  this.page.url = 'https://lenguajehtml.com' + this.page.path;
+  this.page.identifier = this.page.url;
+};
+document.addEventListener('DOMContentLoaded', function() {
+  const coms = document.querySelector('#comentarios');
+  a = coms.querySelector('#disqus_button');
+  a.dataset.disqusIdentifier = 'https://lenguajehtml.com' + (location.pathname.endsWith("/") ? location.pathname.substring(0, location.pathname.length - 1) : location.pathname);
+  a.addEventListener('click', function() {
+    const div = document.createElement('div');
+    div.id = 'disqus_thread';
+    coms.appendChild(div);
+    const d = document, s = d.createElement('script');
+    s.src = '//lenguajehtml.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    this.remove();
+  });
+});
+</script>
+
+    <a class="disqus-comment-count" id="disqus_button" href="#disqus_thread" data-disqus-identifier="https://lenguajehtml.com/html/scripting/etiquetas-html-scripts/">Leer comentarios</a>
+    <a class="discord" href="https://discord.manz.dev/">¡Accede a Discord y cuéntanos!</a>
+  </div>
+
+</div>
+
+    </div>
+    <div class="aside">
+      <div class="aside">
+
+  <div class="aside-top">
+    <a href="https://manz.dev/digitalocean" title="Empieza en DigitalOcean con 100$">
+      <img width="240" height="120" src="../../../assets/digital-ocean.png" alt="DigitalOcean">
+    </a>
+  </div><script type="module">
+  const ANCHOR_ICON = /* svg */`
+    <svg class="anchor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 205 205" width="36" height="36">
+      <path d="m140 129 16 16s-20 30-42 30V71c14-5 25-18 25-34 0-20-17-36-37-36-21 0-38 16-38 36 0 15 11 29 25
+              34v104c-26-2-42-27-42-27l18-18-65-9 10 63 17-17c15 12 32 37 73 37 51-1 63-29 76-40l19 19 10-64-65
+              10zM83 36c0-10 8-18 19-18s19 8 19 18c0 11-9 19-19 19s-19-8-19-19z"/>
+    </svg>`;
+  // Add inner links to sidebar menu
+  export const addInnerLinks = () => {
+    const summary = document.querySelector(".aside .summary .links");
+    const headers = Array.from(document.querySelectorAll(".content h3, .content h4"));
+    const tocLinks = [];
+    headers.forEach((e) => {
+      const link = `${location.origin}${location.pathname}#${e.id}`;
+      e.innerHTML = `<a class="permalink" href="${link}">${e.textContent} ${ANCHOR_ICON}</a>`;
+      const headerType = e.nodeName.toLowerCase();
+      const textContent = headerType === "h4" ? e.textContent.replace("La propiedad ", "").replace("La función ", "") : e.textContent;
+      tocLinks.push(`<a class="${headerType}" href="#${e.id}">${textContent}</a>`);
+    });
+    summary.insertAdjacentHTML("beforeEnd", tocLinks.join("\n"));
+  };
+
+  addInnerLinks();
+</script>
+
+<div class="summary">
+  <div class="table">Tabla de contenidos</div>
+  <div class="links"></div>
+</div>
+</div>
+
+    </div>
+  </div><footer class="main">
+  <div class="square">
+    <a href="/"><h2>Lenguaje HTML</h2></a>
+    <div class="icons">
+      <a href="https://twitter.com/Manz" title="Twitter"><svg-icon type="social" name="twitter"></svg-icon></a>
+      <a href="https://twitch.tv/manzdev" title="Twitch"><svg-icon type="social" name="twitch"></svg-icon></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg-icon type="social" name="instagram"></svg-icon></a>
+      <a href="https://youtube.com/ManzDev?sub_confirmation=1" title="YouTube"><svg-icon type="social" name="youtube"></svg-icon></a>
+      <a href="https://discord.manz.dev/" title="Servidor de Discord"><svg-icon type="social" name="discord"></svg-icon></a>
+      <a href="https://github.com/ManzDev" title="GitHub"><svg-icon type="social" name="github"></svg-icon></a>
+      <a href="https://codepen.io/Manz" title="Codepen"><svg-icon type="social" name="codepen"></svg-icon></a>
+      <a href="https://www.linkedin.com/in/joseromanhdez/" title="Linkedin"><svg-icon type="social" name="linkedin"></svg-icon></a>
+    </div>
+    <p>Documentación sobre HTML5 y las mejores herramientas y recursos para aprender a utilizar el lenguaje de marcado HTML.</p>
+    <p id="footer">Creado y mantenido por <a href="https://twitter.com/Manz">@Manz</a> con <span title="<3">❤</span></p></div>
+</footer>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-5', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+</body>
+</html>

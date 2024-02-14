@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://diego.com.es/modificadores-y-herencia-de-clases-en-php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        
+                        <link rel="stylesheet" type="text/css" href="./modificadores_herencia_clases_files/semantic.css">
+            <link rel="stylesheet" type="text/css" href="./modificadores_herencia_clases_files/sem2.css">
+        
+    <script type="text/javascript" async="" src="./modificadores_herencia_clases_files/js"></script><script async="" src="./modificadores_herencia_clases_files/analytics.js.descarga"></script><script src="./modificadores_herencia_clases_files/highlight.js.descarga"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="./modificadores_herencia_clases_files/agate.css">
+
+        <link rel="icon" type="image/x-icon" href="https://diego.com.es/favicon.ico">
+
+        <title>
+        Modificadores y herencia de clases en PHP        </title>
+
+        <meta name="description" content="
+        Los modificadores definen las restricciones de acceso a propiedades y métodos, y la herencia de éstos es posible dependiendo del moficador">
+                    <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-62157855-1', 'auto');
+                ga('send', 'pageview');
+            </script>
+            </head>
+
+    <body class="pushable">
+
+        <div class="ui large top fixed hidden menu">
+    <div class="ui container">
+
+        <a class="active item" href="https://diego.com.es/">Diego Lázaro</a>
+        <a class="active red item" href="https://angular.diego.com.es/">Angular</a>
+        <a class="item" href="https://leanpub.com/guiadephp">Libro de PHP</a>
+
+        <div class="right item">
+            <a href="https://diego.com.es/modificadores-y-herencia-de-clases-en-php#"><i class="arrow up icon"></i></a>
+        </div>
+    </div>
+</div>
+
+<div class="ui left vertical inverted sidebar labeled icon menu">
+    <a class="item" href="https://diego.com.es/">
+        <i class="home icon"></i>
+        Inicio
+    </a>
+    <a class="active red item" href="https://angular.diego.com.es/">
+        <i class="circle icon"></i>
+        Angular
+    </a>
+</div>
+        <div class="pusher">
+                <div class="ui inverted vertical masthead center aligned segment">
+        <div class="ui container">
+    <div class="ui large secondary inverted pointing menu">
+
+        <a class="toc item">
+            <i class="sidebar icon"></i>
+        </a>
+
+        <a class="active item" href="https://diego.com.es/">Diego Lázaro</a>
+        <a class="item" href="https://diego.com.es/contacto">Contacto</a>
+        <a class="active red item" href="https://angular.diego.com.es/">Angular</a>
+
+        <div class="right item">
+            <a class="ui inverted button" href="https://leanpub.com/guiadephp">Libro de PHP</a>
+        </div>
+
+    </div>
+</div>
+
+            
+                 <div class="ui text container">
+
+                        <div class="ui inverted segment">
+                                                    </div>
+
+                        <h1 class="ui inverted header">
+                            Modificadores y herencia de clases en PHP                        </h1>
+
+                        <div class="ui text container diego-subheader">
+                            <h2>Los modificadores definen las restricciones de acceso a propiedades y métodos, y la herencia de éstos es posible dependiendo del moficador</h2>
+                        </div>
+
+                 </div>
+
+                </div>
+
+        <div class="main ui container">
+        <div class="ui basic segment">
+
+            
+            
+    
+    <div class="ui yellow message">
+        <i class="close icon"></i>
+        <div class="header">
+            Contenido modificable
+        </div>
+
+        <p>Si ves errores o quieres modificar/añadir contenidos, puedes
+                    <a href="https://github.com/diegotham/certificacion-php/blob/master/8-Object-Oriented-Programming/2-modificadores-y-herencia-de-clases-en-php.md"><i class="github icon"></i>crear un pull request</a>. Gracias</p>
+            </div>
+
+    
+    <div class="ui basic segment">
+        <p>Las <strong>clases</strong>, <strong>propiedades</strong> y <strong>métodos</strong> se definen mediante los <strong>modificadores</strong> <em>public</em>, <em>protected,</em> <em>private</em>, <em>final</em> o <em>abstract</em> seguido de una declaración de variable normal:</p>
+<ol>
+<li>Public: la <strong>propiedad o método</strong> podrá usarse en cualquier parte del script</li>
+<li>Private: la <strong>propiedad o método</strong> sólo podrá usarse en la clase a la que pertenece</li>
+<li>Protected: la <strong>propiedad o método</strong> se podrá usar por la clase a la que pertenece y por sus descendientes.</li>
+<li>Final: la <strong>clase o método</strong> no puede ser sobreescrito en clases descendientes.</li>
+<li>Abstract: la <strong>clase o método</strong> no puede ser usado directamente, ha de ser heredado primero para usarse.</li>
+</ol>
+<p>Primero es necesario saber qué es la <strong>herencia de clases</strong>. Una clase puede heredar los métodos y propiedades de otra clase usando la palabra <em><strong>extends</strong></em>. No es posible extender a múltiples clases, sólo se puede heredar de una clase. Los métodos y propiedades heredados pueden ser sobreescritos declarándolos de nuevo con el mismo nombre que tienen en la clase padre:</p>
+<pre><code class="hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Perro</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$nombre</span> = <span class="hljs-string">"Rudolf"</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ladrar</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"Guau!"</span>;
+    }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bulldog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Perro</span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ladrar</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"Woof!"</span>;
+    }
+}
+<span class="hljs-variable">$cachorro</span> = <span class="hljs-keyword">new</span> Bulldog(); <span class="hljs-comment">// Instancia de la clase hija</span>
+<span class="hljs-variable">$cachorro</span>-&gt;nombre = <span class="hljs-string">"Jeffrey"</span>; <span class="hljs-comment">// Heredamos la propiedad padre $nombre y le asignamos Jeffrey</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$cachorro</span>-&gt;nombre; <span class="hljs-comment">// Devuelve Jeffrey</span>
+<span class="hljs-variable">$cachorro</span>-&gt;ladrar(); <span class="hljs-comment">// Devuelve Woof! ya que ha sobreescrito la función padre ladrar().</span></code></pre>
+<p>Si una clase extiende a otra, la clase padre debe declararse antes de hacerlo la clase hija (no da error, pero es una regla general).</p>
+<p>Ahora que ya tenemos una idea de cómo funciona la herencia de clases, vamos a ver cada uno de los <strong>modificadores</strong>.</p>
+<h3>1. Public</h3>
+<p>Las <strong>propiedades y métodos public</strong> son accesibles desde cualquier parte del script, siendo este modificador el más fácil de usar. En PHP 4 las variables se declaraban con "<em>var</em>" y eran public, pero esa forma de denominarlas está obsoleta y puede generar algunos warnings.</p>
+<pre><code class="hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Perro</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$nombre</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ladrar</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"Guau!"</span>;
+    }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bulldog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Perro</span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ladrar</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"Woof!"</span>;
+    }
+}
+<span class="hljs-variable">$cachorro</span> = <span class="hljs-keyword">new</span> Bulldog();
+<span class="hljs-variable">$cachorro</span>-&gt;nombre = <span class="hljs-string">"BunBuns"</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-variable">$cachorro</span>-&gt;nombre; <span class="hljs-comment">// Devuelve: BunBuns</span></code></pre>
+<p><strong>Por defecto todas las propiedades y funciones son public</strong>. No es necesario especificar <em><strong>public</strong></em>, pero es mejor hacerlo para que sea más legible. Con los métodos puedes no utilizar ninguna palabra y escribir directamente function. Con las propiedades en cambio necesitas una palabra por lo menos, sino da un <strong>error de sintaxis, </strong>ya que sino no hay manera de saber qué propiedades tiene una clase. Nunca hay que usar <em>var</em>, siempre un modificador.</p>
+<h3>2. Private</h3>
+<p>El problema de las <strong>propiedades y métodos public</strong> es que se permite llamar a los métodos y establecer las propiedades desde cualquier lado del script. En el ejemplo anterior, si en lugar de crear un objeto <strong>Bulldog</strong>, creamos un objeto <strong>Perro</strong> e intentamos establecer nombre, nos dará un fatal error: <strong>Cannot access private property</strong>.</p>
+<pre><code class="hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Perro</span>
+</span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-variable">$nombre</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ladrar</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"Guau!"</span>;
+    }
+}
+<span class="hljs-variable">$cachorro</span> = <span class="hljs-keyword">new</span> Perro();
+<span class="hljs-variable">$cachorro</span>-&gt;nombre = <span class="hljs-string">"BunBuns"</span>; <span class="hljs-comment">// Fatal error</span></code></pre>
+<p>No se podrá ni mostrar ni modificar el nombre. Para hacerlo se utilizan <em><strong>getters</strong></em> y <em><strong>setters</strong></em>, <strong>métodos <em>public</em></strong> para poder acceder a estas propiedades y métodos <em><strong>private</strong></em> desde otras partes del script:</p>
+<pre><code class="hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Perro</span>
+</span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-variable">$nombre</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ladrar</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"Guau!"</span>;
+    }
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setNombre</span><span class="hljs-params">(<span class="hljs-variable">$nombre</span>)</span></span>{
+        <span class="hljs-variable">$this</span>-&gt;nombre = <span class="hljs-variable">$nombre</span>;
+    }
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getNombre</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;nombre;
+    }
+}
+<span class="hljs-variable">$cachorro</span> = <span class="hljs-keyword">new</span> Perro();
+<span class="hljs-variable">$cachorro</span>-&gt;setNombre(<span class="hljs-string">"Chicken"</span>);
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$cachorro</span>-&gt;getNombre(); <span class="hljs-comment">// Devuelve: Chicken</span></code></pre>
+<p>Sin embargo, <strong>si desde un objeto que es instancia de una clase heredada se intenta modificar el valor private</strong>, PHP lo que hace es <strong>crear una varable pública y una privada</strong>. Vamos a partir del ejemplo que hemos puesto en <em>public</em>, y cambiar la propiedad a <em>private</em>:</p>
+<pre><code class="hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Perro</span>
+</span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-variable">$nombre</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ladrar</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"Guau!"</span>;
+    }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bulldog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Perro</span> </span>{}
+<span class="hljs-variable">$cachorro</span> = <span class="hljs-keyword">new</span> Bulldog();
+<span class="hljs-variable">$cachorro</span>-&gt;nombre = <span class="hljs-string">"BunBuns"</span>;
+var_dump(<span class="hljs-variable">$cachorro</span>);
+<span class="hljs-comment">/*
+Devuelve:
+object(Bulldog)[1]
+  private 'nombre' (Perro) =&gt; null
+  public 'nombre' =&gt; string 'BunBuns' (length=7)
+*/</span>
+<span class="hljs-comment">// Los métodos en cambio no se pueden usar:</span>
+<span class="hljs-variable">$cachorro</span>-&gt;ladrar(); <span class="hljs-comment">// Fatal error: Call to private method</span></code></pre>
+<p>Ahora hay dos variables, una privada que no se puede modificar y es null porque no se le ha asignado ningún valor, y otra public que crea PHP. Esto es algo confuso, por lo que lo mejor es <strong>evitar esta situación</strong>. Los métodos y propiedades privados sólo deben ser accedidos por la clase en la que se encuentran, las clases hijas no pueden acceder a ellos. Para ello se utiliza el <strong>modificador protected</strong>.</p>
+<h3>3. Protected</h3>
+<p>Las propiedades y métodos marcados como <strong>protected</strong> son accesibles a través de la clase donde se crean y sus descendientes:</p>
+<pre><code class="hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Perro</span>
+</span>{
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$nombre</span>;
+    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ladrar</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"Guau!"</span>;
+    }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bulldog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Perro</span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ladrarBulldog</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-comment">// Podemos acceder a ladrar() de la clase Perro</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;ladrar();
+    }
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setNombre</span><span class="hljs-params">(<span class="hljs-variable">$nombre</span>)</span></span>{
+        <span class="hljs-variable">$this</span>-&gt;nombre = <span class="hljs-variable">$nombre</span>;
+    }
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getNombre</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">print</span> <span class="hljs-variable">$this</span>-&gt;nombre;
+    }
+}</code></pre>
+<p>Diferentes ejemplos de acceso a propiedades <em>protected</em>:</p>
+<pre><code class="hljs php"><span class="hljs-variable">$cachorro</span> = <span class="hljs-keyword">new</span> Bulldog();
+<span class="hljs-comment">// Podemos acceder a la función ladrar() desde ladrarBulldog():</span>
+<span class="hljs-variable">$cachorro</span>-&gt;ladrarBulldog(); <span class="hljs-comment">// Devuelve Guau!</span>
+<span class="hljs-comment">// No podemos acceder a ladrar() desde el objeto cachorro:</span>
+<span class="hljs-variable">$cachorro</span>-&gt;ladrar(); <span class="hljs-comment">// Fatal error: Call to protected method Perro::ladrar()</span>
+<span class="hljs-comment">// Tampoco podemos asignarle un nombre, pues $nombre también es protected</span>
+<span class="hljs-variable">$cachorro</span>-&gt;nombre = <span class="hljs-string">"Hunky"</span>; <span class="hljs-comment">// Fatal Error: Cannot access protected property</span>
+<span class="hljs-comment">// Si podemos asignarle un valor con el método setNombre():</span>
+<span class="hljs-variable">$cachorro</span>-&gt;setNombre(<span class="hljs-string">"Hunky"</span>);
+<span class="hljs-comment">// Y mostrarlo con getNombre():</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$cachorro</span>-&gt;getNombre(); <span class="hljs-comment">// Devuelve: Hunky</span></code></pre>
+<h3>4. Final</h3>
+<p>La palabra <em><strong>final</strong></em> se utiliza para declarar que <strong>un método o clase no puede ser sobreescrito por una clase hija</strong>:</p>
+<pre><code class="hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Perro</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$nombre</span>;
+    <span class="hljs-keyword">final</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ladrar</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"Guau!"</span>;
+    }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bulldog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Perro</span> </span>{
+    <span class="hljs-comment">// Dará error:</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ladrar</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"Woof!"</span>;
+    }
+}
+<span class="hljs-variable">$cachorro</span> = <span class="hljs-keyword">new</span> Bulldog();
+<span class="hljs-variable">$cachorro</span>-&gt;ladrar(); <span class="hljs-comment">// Cannot override final method</span></code></pre>
+<p>Lo mismo ocurre si se intenta <strong>heredar una clase final</strong>:</p>
+<pre><code class="hljs php"><span class="hljs-keyword">final</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Perro</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$nombre</span>;
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bulldog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Perro</span> </span>{
+}
+<span class="hljs-comment">// Fatal error. Class Bulldog may not inherit from final class</span></code></pre>
+<h3>5. Abstract</h3>
+<p>El <strong>modificador <em>abstract</em></strong> indica que una clase o método no puede instanciarse y <strong>sólo puede heredarse</strong>, transladando su funcionamiento <strong>obligatorio</strong> a las clases hijas. Una explicación más concreta puede encontrarse en este artículo sobre las <a href="http://diego.com.es/clases-abstractas-en-php">clases abstractas en PHP</a>.</p>
+    </div>
+
+        </div>
+    </div>
+
+            <div class="ui vertical footer segment">
+    <div class="ui grid container">
+        <div class="row">
+            <div class="ui one column centered grid">
+                <div class="ui secondary segment">
+                    <div class="ui mini images">
+                        <a href="http://twitter.com/diegotham" target="_blank"><img class="ui image" alt="Twitter Diego Lázaro" src="./modificadores_herencia_clases_files/twitter.jpg"></a>
+                        <a href="http://github.com/diegotham" target="_blank"><img class="ui image" alt="Github Diego Lázaro" src="./modificadores_herencia_clases_files/github.jpg"></a>
+                    </div>
+                <p>Copyright © Diego Lázaro 2018</p>
+                    <p>Sitio construido con
+                        <a href="http://symfony.com/" rel="nofollow" target="_blank">Symfony</a> &amp;
+                        <a href="http://semantic-ui.com/" rel="nofollow" target="_blank">Semantic-UI</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
+        </div>
+
+                    <script src="./modificadores_herencia_clases_files/jquery.min.js.descarga"></script>
+            <script src="./modificadores_herencia_clases_files/semantic.min.js.descarga"></script>
+            <script src="./modificadores_herencia_clases_files/sem.js.descarga"></script>
+        
+    
+
+
+</body></html>

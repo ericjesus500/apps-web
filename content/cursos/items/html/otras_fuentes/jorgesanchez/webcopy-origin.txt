@@ -1,0 +1,767 @@
+Uri: http://jorgesanchez.net/ermaker/humans.txt
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\humans.txt
+Content Type: text/plain
+
+Uri: https://jorgesanchez.net/
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\index.htm
+Content Type: text/html
+
+Uri: https://jorgesanchez.net/css/estilos.css?f=20170221
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\css\estilos.css
+Content Type: text/css
+
+Uri: https://jorgesanchez.net/ermaker/
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\index.htm
+Content Type: text/html
+
+Uri: https://jorgesanchez.net/ermaker/css/ermaker.css
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\css\ermaker.css
+Content Type: text/css
+
+Uri: https://jorgesanchez.net/ermaker/img/btAtributo.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\img\btAtributo.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/ermaker/img/btBorrar.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\img\btBorrar.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/ermaker/img/btCargar.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\img\btCargar.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/ermaker/img/btCerrar.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\img\btCerrar.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/ermaker/img/btDebil.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\img\btDebil.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/ermaker/img/btEditar.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\img\btEditar.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/ermaker/img/btEntidad.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\img\btEntidad.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/ermaker/img/btGuardar.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\img\btGuardar.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/ermaker/img/btISA.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\img\btISA.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/ermaker/img/btRelacion.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\img\btRelacion.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/ermaker/img/loading.gif
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\img\loading.gif
+Content Type: image/gif
+
+Uri: https://jorgesanchez.net/ermaker/img/logo.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\img\logo.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/ermaker/js/ajustes-er.js
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\js\ajustes-er.js
+Content Type: application/javascript
+
+Uri: https://jorgesanchez.net/ermaker/js/ermaker.js
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\js\ermaker.js
+Content Type: application/javascript
+
+Uri: https://jorgesanchez.net/ermaker/js/inicio.js
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\js\inicio.js
+Content Type: application/javascript
+
+Uri: https://jorgesanchez.net/ermaker/js/objetos-er.js
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\js\objetos-er.js
+Content Type: application/javascript
+
+Uri: https://jorgesanchez.net/ermaker/lib/canvg.js
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\lib\canvg.js
+Content Type: application/javascript
+
+Uri: https://jorgesanchez.net/ermaker/lib/jquery.min.js
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\lib\jquery.min.js
+Content Type: application/javascript
+
+Uri: https://jorgesanchez.net/ermaker/lib/polyfill.js
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\lib\polyfill.js
+Content Type: application/javascript
+
+Uri: https://jorgesanchez.net/ermaker/lib/raphael-min.js
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\lib\raphael-min.js
+Content Type: application/javascript
+
+Uri: https://jorgesanchez.net/ermaker/lib/rgbcolor.js
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\lib\rgbcolor.js
+Content Type: application/javascript
+
+Uri: https://jorgesanchez.net/ermaker/lib/StackBlur.js
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ermaker\lib\StackBlur.js
+Content Type: application/javascript
+
+Uri: https://jorgesanchez.net/img/avatar2016.jpg
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\img\avatar2016.jpg
+Content Type: image/jpeg
+
+Uri: https://jorgesanchez.net/img/cerrar.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\img\cerrar-1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/img/facebook.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\img\facebook-1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/img/github.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\img\github-1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/img/ibm360.jpg
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\img\ibm360.jpg
+Content Type: image/jpeg
+
+Uri: https://jorgesanchez.net/img/icons/apple-touch-icon.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\img\icons\apple-touch-icon.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/img/icons/favicon-16x16.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\img\icons\favicon-16x16.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/img/icons/favicon-32x32.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\img\icons\favicon-32x32.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/img/icons/favicon.ico
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\img\icons\favicon.ico
+Content Type: image/x-icon
+
+Uri: https://jorgesanchez.net/img/icons/manifest.json
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\img\icons\manifest.json
+Content Type: application/json
+
+Uri: https://jorgesanchez.net/img/icons/safari-pinned-tab.svg
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\img\icons\safari-pinned-tab.svg
+Content Type: image/svg+xml
+
+Uri: https://jorgesanchez.net/img/logo.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\img\logo-1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/img/logoMini.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\img\logoMini-1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/img/mail.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\img\mail-1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/img/twitter.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\img\twitter-1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/img/youtube.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\img\youtube-1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/js/interface.js?v=20191121
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\js\interface.js
+Content Type: application/javascript
+
+Uri: https://jorgesanchez.net/lib/jquery.easing.min.js
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\lib\jquery.easing.min-1.js
+Content Type: application/javascript
+
+Uri: https://jorgesanchez.net/lib/jquery.min.js
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\lib\jquery.min-1.js
+Content Type: application/javascript
+
+Uri: https://jorgesanchez.net/lib/jquery.mobile-events.min.js
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\lib\jquery.mobile-events.min.js
+Content Type: application/javascript
+
+Uri: https://jorgesanchez.net/lib/jquery.scrollTo.min.js
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\lib\jquery.scrollTo.min-1.js
+Content Type: application/javascript
+
+Uri: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\pagead\js\f-1.txt
+Content Type: text/javascript
+
+Uri: https://use.typekit.net/dgo5pda.js
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\dgo5pda.js
+Content Type: text/javascript
+
+Uri: https://use.typekit.net/ftc3uhk.js
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\ftc3uhk.js
+Content Type: text/javascript
+
+to-fuente-html-2016-web-resources\image\9.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-formato-fuente-html-2016-web-resources/image/tipografia.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-formato-fuente-html-2016-web-resources\image\tipografia.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-posicionamiento-web-resources/image/1.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-posicionamiento-web-resources\image\1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-posicionamiento-web-resources/image/10.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-posicionamiento-web-resources\image\10.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-posicionamiento-web-resources/image/11.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-posicionamiento-web-resources\image\11.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-posicionamiento-web-resources/image/12.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-posicionamiento-web-resources\image\12.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-posicionamiento-web-resources/image/13.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-posicionamiento-web-resources\image\13.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-posicionamiento-web-resources/image/14.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-posicionamiento-web-resources\image\14.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-posicionamiento-web-resources/image/15.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-posicionamiento-web-resources\image\15.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-posicionamiento-web-resources/image/16.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-posicionamiento-web-resources\image\16.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-posicionamiento-web-resources/image/2.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-posicionamiento-web-resources\image\2.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-posicionamiento-web-resources/image/3.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-posicionamiento-web-resources\image\3.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-posicionamiento-web-resources/image/4.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-posicionamiento-web-resources\image\4.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-posicionamiento-web-resources/image/5.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-posicionamiento-web-resources\image\5.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-posicionamiento-web-resources/image/6.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-posicionamiento-web-resources\image\6.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-posicionamiento-web-resources/image/7.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-posicionamiento-web-resources\image\7.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-posicionamiento-web-resources/image/8.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-posicionamiento-web-resources\image\8.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-posicionamiento-web-resources/image/9.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-posicionamiento-web-resources\image\9.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-selectores-html-2016-web-resources/image/1.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-selectores-html-2016-web-resources\image\1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-unidades-colores-html-2016-web-resources/image/1.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-unidades-colores-html-2016-web-resources\image\1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-unidades-colores-html-2016-web-resources/image/2.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-unidades-colores-html-2016-web-resources\image\2.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-unidades-colores-html-2016-web-resources/image/3.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-unidades-colores-html-2016-web-resources\image\3.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-unidades-colores-html-2016-web-resources/image/4.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-unidades-colores-html-2016-web-resources\image\4.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-visualizacion-web-resources/image/1.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-visualizacion-web-resources\image\1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-visualizacion-web-resources/image/2.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-visualizacion-web-resources\image\2.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/css-visualizacion-web-resources/image/3.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\css-visualizacion-web-resources\image\3.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/edicion-basica-html-web-resources/image/1.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\edicion-basica-html-web-resources\image\1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/edicion-basica-html-web-resources/image/2.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\edicion-basica-html-web-resources\image\2.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/edicion-basica-html-web-resources/image/3.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\edicion-basica-html-web-resources\image\3.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/edicion-basica-html-web-resources/image/4.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\edicion-basica-html-web-resources\image\4.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/edicion-basica-html-web-resources/image/5.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\edicion-basica-html-web-resources\image\5.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/edicion-basica-html.html
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\edicion-basica-html.html
+Content Type: text/html
+
+Uri: https://jorgesanchez.net/manuales/html/elementos-estructurales-html-web-resources/image/1.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\elementos-estructurales-html-web-resources\image\1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/elementos-estructurales-html-web-resources/image/2.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\elementos-estructurales-html-web-resources\image\2.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/elementos-estructurales-html-web-resources/image/3.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\elementos-estructurales-html-web-resources\image\3.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/elementos-estructurales-html-web-resources/image/4.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\elementos-estructurales-html-web-resources\image\4.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/elementos-estructurales-html-web-resources/image/5.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\elementos-estructurales-html-web-resources\image\5.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/elementos-estructurales-html-web-resources/image/6.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\elementos-estructurales-html-web-resources\image\6.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/elementos-estructurales-html.html
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\elementos-estructurales-html.html
+Content Type: text/html
+
+Uri: https://jorgesanchez.net/manuales/html/enlaces-html-web-resources/image/1.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\enlaces-html-web-resources\image\1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/enlaces-html.html
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\enlaces-html.html
+Content Type: text/html
+
+Uri: https://jorgesanchez.net/manuales/html/formato-caja-lista-css.html
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formato-caja-lista-css.html
+Content Type: text/html
+
+Uri: https://jorgesanchez.net/manuales/html/formato-fuente-parrafo-css.html
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formato-fuente-parrafo-css.html
+Content Type: text/html
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html.html
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html.html
+Content Type: text/html
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/1.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/10.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\10.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/11.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\11.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/12.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\12.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/13.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\13.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/14.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\14.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/15.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\15.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/16.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\16.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/17.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\17.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/18.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\18.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/19.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\19.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/2.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\2.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/20.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\20.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/21.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\21.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/22.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\22.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/3.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\3.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/4.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\4.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/5.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\5.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/6.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\6.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/7.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\7.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/8.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\8.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/formularios-html5-web-resources/image/9.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\formularios-html5-web-resources\image\9.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/generacion-de-contenido-css-web-resources/image/1.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\generacion-de-contenido-css-web-resources\image\1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/generacion-de-contenido-css-web-resources/image/2.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\generacion-de-contenido-css-web-resources\image\2.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/generacion-de-contenido-css-web-resources/image/3.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\generacion-de-contenido-css-web-resources\image\3.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/generacion-de-contenido-css.html
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\generacion-de-contenido-css.html
+Content Type: text/html
+
+Uri: https://jorgesanchez.net/manuales/html/imagenes-html-web-resources/image/1.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\imagenes-html-web-resources\image\1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/imagenes-html-web-resources/image/2.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\imagenes-html-web-resources\image\2.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/imagenes-html.html
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\imagenes-html.html
+Content Type: text/html
+
+Uri: https://jorgesanchez.net/manuales/html/introduccion-a-css.html
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\introduccion-a-css.html
+Content Type: text/html
+
+Uri: https://jorgesanchez.net/manuales/html/introduccion-html-web-resources/image/1.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\introduccion-html-web-resources\image\1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/introduccion-html-web-resources/image/2.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\introduccion-html-web-resources\image\2.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/introduccion-html-web-resources/image/3.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\introduccion-html-web-resources\image\3.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/introduccion-html-web-resources/image/4.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\introduccion-html-web-resources\image\4.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/introduccion-html-web-resources/image/5.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\introduccion-html-web-resources\image\5.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/introduccion-html-web-resources/image/6.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\introduccion-html-web-resources\image\6.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/introduccion-html-web-resources/image/7.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\introduccion-html-web-resources\image\7.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/introduccion-html.html
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\introduccion-html.html
+Content Type: text/html
+
+Uri: https://jorgesanchez.net/manuales/html/introduccion-lenguajes-de-marcas-web-resources/image/1.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\introduccion-lenguajes-de-marcas-web-resources\image\1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/introduccion-lenguajes-de-marcas-web-resources/image/2.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\introduccion-lenguajes-de-marcas-web-resources\image\2.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/introduccion-lenguajes-de-marcas-web-resources/image/3.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\introduccion-lenguajes-de-marcas-web-resources\image\3.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/introduccion-lenguajes-de-marcas.html
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\introduccion-lenguajes-de-marcas.html
+Content Type: text/html
+
+Uri: https://jorgesanchez.net/manuales/html/maquetacion-1-css.html
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\maquetacion-1-css.html
+Content Type: text/html
+
+Uri: https://jorgesanchez.net/manuales/html/mquetacion-1-css-web-resources/image/1.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\mquetacion-1-css-web-resources\image\1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/mquetacion-1-css-web-resources/image/10.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\mquetacion-1-css-web-resources\image\10.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/mquetacion-1-css-web-resources/image/2.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\mquetacion-1-css-web-resources\image\2.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/mquetacion-1-css-web-resources/image/3.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\mquetacion-1-css-web-resources\image\3.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/mquetacion-1-css-web-resources/image/4.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\mquetacion-1-css-web-resources\image\4.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/mquetacion-1-css-web-resources/image/5.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\mquetacion-1-css-web-resources\image\5.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/mquetacion-1-css-web-resources/image/6.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\mquetacion-1-css-web-resources\image\6.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/mquetacion-1-css-web-resources/image/7.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\mquetacion-1-css-web-resources\image\7.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/mquetacion-1-css-web-resources/image/8.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\mquetacion-1-css-web-resources\image\8.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/mquetacion-1-css-web-resources/image/9.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\mquetacion-1-css-web-resources\image\9.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/mquetacion-1-css-web-resources/image/flex-grow-2.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\mquetacion-1-css-web-resources\image\flex-grow-2.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/multimedia-html-web-resources/image/1.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\multimedia-html-web-resources\image\1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/multimedia-html-web-resources/image/2.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\multimedia-html-web-resources\image\2.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/multimedia-html-web-resources/image/ecuacion.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\multimedia-html-web-resources\image\ecuacion.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/multimedia-html.html
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\multimedia-html.html
+Content Type: text/html
+
+Uri: https://jorgesanchez.net/manuales/html/posicionamiento-css.html
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\posicionamiento-css.html
+Content Type: text/html
+
+Uri: https://jorgesanchez.net/manuales/html/selectores-css.html
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\selectores-css.html
+Content Type: text/html
+
+Uri: https://jorgesanchez.net/manuales/html/tablas-html.html
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\tablas-html.html
+Content Type: text/html
+
+Uri: https://jorgesanchez.net/manuales/html/tablas-html5-web-resources/image/1.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\tablas-html5-web-resources\image\1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/tablas-html5-web-resources/image/2.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\tablas-html5-web-resources\image\2.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/tablas-html5-web-resources/image/3.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\tablas-html5-web-resources\image\3.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/tablas-html5-web-resources/image/4.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\tablas-html5-web-resources\image\4.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/tablas-html5-web-resources/image/5.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\tablas-html5-web-resources\image\5.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/tablas-html5-web-resources/image/6.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\tablas-html5-web-resources\image\6.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/tablas-html5-web-resources/image/7.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\tablas-html5-web-resources\image\7.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/tablas-html5-web-resources/image/8.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\tablas-html5-web-resources\image\8.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/tablas-html5-web-resources/image/9.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\tablas-html5-web-resources\image\9.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/texto-y-parrafo-html-web-resources/image/1.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\texto-y-parrafo-html-web-resources\image\1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/texto-y-parrafo-html-web-resources/image/10.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\texto-y-parrafo-html-web-resources\image\10.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/texto-y-parrafo-html-web-resources/image/11.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\texto-y-parrafo-html-web-resources\image\11.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/texto-y-parrafo-html-web-resources/image/12.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\texto-y-parrafo-html-web-resources\image\12.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/texto-y-parrafo-html-web-resources/image/13.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\texto-y-parrafo-html-web-resources\image\13.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/texto-y-parrafo-html-web-resources/image/14.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\texto-y-parrafo-html-web-resources\image\14.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/texto-y-parrafo-html-web-resources/image/15.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\texto-y-parrafo-html-web-resources\image\15.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/texto-y-parrafo-html-web-resources/image/16.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\texto-y-parrafo-html-web-resources\image\16.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/texto-y-parrafo-html-web-resources/image/17.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\texto-y-parrafo-html-web-resources\image\17.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/texto-y-parrafo-html-web-resources/image/2.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\texto-y-parrafo-html-web-resources\image\2.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/texto-y-parrafo-html-web-resources/image/3.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\texto-y-parrafo-html-web-resources\image\3.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/texto-y-parrafo-html-web-resources/image/4.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\texto-y-parrafo-html-web-resources\image\4.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/texto-y-parrafo-html-web-resources/image/5.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\texto-y-parrafo-html-web-resources\image\5.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/texto-y-parrafo-html-web-resources/image/6.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\texto-y-parrafo-html-web-resources\image\6.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/texto-y-parrafo-html-web-resources/image/7.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\texto-y-parrafo-html-web-resources\image\7.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/texto-y-parrafo-html-web-resources/image/8.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\texto-y-parrafo-html-web-resources\image\8.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/texto-y-parrafo-html-web-resources/image/9.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\texto-y-parrafo-html-web-resources\image\9.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/texto-y-parrafo-html.html
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\texto-y-parrafo-html.html
+Content Type: text/html
+
+Uri: https://jorgesanchez.net/manuales/html/transformaciones-css-web-resources/image/1.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\transformaciones-css-web-resources\image\1.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/transformaciones-css-web-resources/image/2.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\transformaciones-css-web-resources\image\2.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/transformaciones-css-web-resources/image/3.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\transformaciones-css-web-resources\image\3.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/transformaciones-css-web-resources/image/4.png
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\transformaciones-css-web-resources\image\4.png
+Content Type: image/png
+
+Uri: https://jorgesanchez.net/manuales/html/transformaciones-css.html
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\transformaciones-css.html
+Content Type: text/html
+
+Uri: https://jorgesanchez.net/manuales/html/unidades-colores-css.html
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\unidades-colores-css.html
+Content Type: text/html
+
+Uri: https://jorgesanchez.net/manuales/html/visualizacion-css.html
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\manuales\html\visualizacion-css.html
+Content Type: text/html
+
+Uri: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\pagead\js\f.txt
+Content Type: text/javascript
+
+Uri: https://use.typekit.net/cgm1lsq.js
+File Name: C:\Downloaded Web Sites\jorgesanchez.net\cgm1lsq.js
+Content Type: text/javascript
+

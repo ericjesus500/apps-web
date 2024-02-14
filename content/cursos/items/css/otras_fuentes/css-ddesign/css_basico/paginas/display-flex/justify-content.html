@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Justify-content</title>
+	<style>
+		*{
+			box-sizing: border-box;			
+		}
+
+		body{			
+			text-align: center;
+			font-family: Arial, serif;
+		}
+
+		h1{
+			padding: 30px 0;
+		}
+
+		.content{
+			width: 90%;
+			height: auto;
+			margin: 10px auto;
+			border: 2px solid #C0C0C0AA;
+			padding: 10px 0px;			
+			background-position: center;
+			background-size: cover;			
+		}
+
+		.content-1{
+			background-image: url("img/jc-start.png");
+		}
+
+		.content-2{
+			background-image: url("img/jc-end.png");
+		}
+
+		.content-3{
+			background-image: url("img/jc-center.png");
+		}
+
+		.content-4{
+			background-image: url("img/jc-between.png");
+		}
+
+		.content-5{
+			background-image: url("img/jc-around.png");
+		}
+
+		.content-6{
+			background-image: url("img/jc-evenly.png");
+		}
+
+		.box{
+			width: 70px;
+			height: 70px;			
+			color: #fff;			
+			margin: 5px 0px;
+			opacity: 0.5;			
+		}		
+
+		.box:nth-child(1) {
+			background-color: skyblue;			
+		}
+
+		.box:nth-child(2){
+			background-color: violet;
+		}
+
+		.box:nth-child(3){
+			background-color: orange;
+		}
+
+		.box:nth-child(4){
+			background-color: #D4E01EFF;
+		}
+
+		.box:nth-child(5){
+			background-color: #3EDE20FF;
+		}
+
+		.box:nth-child(6){
+			background-color: #2684D8FF;
+		}
+
+		.box-col{			
+			margin: 0px 0px;			
+		}
+
+		.d-flex{
+			display: flex;
+		}
+
+		.jc-start{
+			justify-content: start;
+		}
+
+		.jc-end{
+			justify-content: end;
+		}
+
+		.jc-center{
+			justify-content: center;
+		}
+
+		.jc-between{
+			justify-content: space-between;
+		}
+
+		.jc-around{
+			justify-content: space-around;
+		}
+
+		.jc-evenly{
+			justify-content: space-evenly;
+		}
+
+		.fd-row{
+			flex-direction: row;
+		}
+
+		.content-column{
+			width: 30%;
+			height: 600px;
+			margin: 20px 20px;
+			border: 2px solid #C0C0C0AA;
+			padding: 0px 0px;			
+			background-position: left;
+			background-size: contain;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.content-col-start{
+			background-image: url("img/jc-col-start.png");
+		}
+
+		.content-col-end{
+			background-image: url("img/jc-col-end.png");
+		}
+
+		.content-col-center{
+			background-image: url("img/jc-col-center.png");
+		}
+
+		.content-col-between{
+			background-image: url("img/jc-col-between.png");
+		}
+
+		.content-col-around{
+			background-image: url("img/jc-col-around.png");
+		}
+
+		.content-col-evenly{
+			background-image: url("img/jc-col-evenly.png");
+		}
+
+	</style>
+</head>
+<body>
+
+	<h1>Justify-content (aplica a row y row-reverse)</h1>
+	<div class="content content-1 d-flex jc-start">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+	<div class="content content-2 d-flex jc-end">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+	<div class="content content-3 d-flex jc-center">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+	<div class="content content-4 d-flex jc-between">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+	<div class="content content-5 d-flex jc-around">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+	<div class="content content-6 d-flex jc-evenly">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+
+	<h1>Justify-content (aplica a column y column-reverse)</h1>
+	<div class="d-flex fd-row">
+		<div class="content-column content-col-start jc-start">
+			<div class="box box-col"></div>
+			<div class="box box-col"></div>
+			<div class="box box-col"></div>
+			<div class="box box-col"></div>		
+		</div>			
+		<div class="content-column content-col-end jc-end">
+			<div class="box box-col"></div>
+			<div class="box box-col"></div>
+			<div class="box box-col"></div>
+			<div class="box box-col"></div>		
+		</div>
+		<div class="content-column content-col-center jc-center">
+			<div class="box box-col"></div>
+			<div class="box box-col"></div>
+			<div class="box box-col"></div>
+			<div class="box box-col"></div>		
+		</div>		
+	</div>
+
+	<div class="d-flex fd-row">
+		<div class="content-column content-col-between jc-between">
+			<div class="box box-col"></div>
+			<div class="box box-col"></div>
+			<div class="box box-col"></div>
+			<div class="box box-col"></div>		
+		</div>			
+		<div class="content-column content-col-around jc-around">
+			<div class="box box-col"></div>
+			<div class="box box-col"></div>
+			<div class="box box-col"></div>
+			<div class="box box-col"></div>		
+		</div>
+		<div class="content-column content-col-evenly jc-evenly">
+			<div class="box box-col"></div>
+			<div class="box box-col"></div>
+			<div class="box box-col"></div>
+			<div class="box box-col"></div>		
+		</div>		
+	</div>
+
+	
+</body>
+</html>

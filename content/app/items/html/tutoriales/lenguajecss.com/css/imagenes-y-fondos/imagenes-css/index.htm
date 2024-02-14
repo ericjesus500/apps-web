@@ -1,0 +1,540 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Imágenes y objetos - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="En CSS es posible aplicar ciertas modificaciones sobre imágenes u objetos concretos, como modo de relleno, renderización o proporción de aspecto.">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Imágenes y objetos - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="En CSS es posible aplicar ciertas modificaciones sobre imágenes u objetos concretos, como modo de relleno, renderización o proporción de aspecto.">
+  <meta property="og:url" content="https://lenguajecss.com/css/imagenes-y-fondos/imagenes-css/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/imagenes-y-fondos/imagenes-css/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Imágenes y objetos - CSS en español">
+  <meta property="twitter:description" content="En CSS es posible aplicar ciertas modificaciones sobre imágenes u objetos concretos, como modo de relleno, renderización o proporción de aspecto.">
+  <meta property="twitter:image" content="https://lenguajecss.com/large-summary.jpg">
+
+  </head>
+
+<body class="css" style="--logo-color: #1e7bbf"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/css.jpg')">
+    <h1><a href="index.htm">Imágenes y objetos</a></h1><h2 class="typewriter">Propiedades para modificar objetos e imágenes</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../propiedad-opacity/index.htm">La propiedad opacity</a>
+    <a class="current" href="index.htm">Imágenes y objetos</a>
+    <a href="../../gradientes/linear-gradient/index.htm">Gradientes lineales</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Al insertar en un documento HTML algunos <strong>objetos</strong> como imágenes a través de la etiqueta <code>&lt;img&gt;</code>, elementos multimedia a través de <code>&lt;video&gt;</code> u otros como <code>&lt;textarea&gt;</code> o <code>&lt;input&gt;</code>, dichos elementos tienen su propia forma de mostrarse en pantalla ya que tienen características ajenas a CSS. Por dicha razón, muchas veces tienen un tamaño inicial que no encaja con el uso que queremos darle, no se adapta a las cajas o contenedores que usamos o no funciona como tenemos previsto que lo haga.</p>
+<p>Sin embargo, existen algunas propiedades en CSS que nos permiten modificar ciertos aspectos de estos elementos, pudiendo darle estilo y adaptarlos. Aquí puedes ver una tabla resumen de las propiedades que vamos a analizar:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valores</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>object-fit</code></td>
+<td><strong>fill</strong> | <code>contain</code> | <code>cover</code> | <code>none</code> | <code>scale-down</code></td>
+<td>Modo de relleno del elemento.</td>
+</tr>
+<tr>
+<td><code>object-position</code></td>
+<td><badge-type class="percent"></badge-type> <badge-type class="percent"></badge-type></td>
+<td>Posición (x,y) del elemento.</td>
+</tr>
+<tr>
+<td><code>object-view-box</code></td>
+<td><badge-type class="shape"></badge-type></td>
+<td>Región del elemento se visualizará.</td>
+</tr>
+<tr>
+<td><code>image-rendering</code></td>
+<td><strong>auto</strong> | <code>smooth</code> | <code>high-quality</code> | <code>crisp-edges</code> | <code>pixelated</code></td>
+<td>Algoritmo de escalado a utilizar.</td>
+</tr>
+<tr>
+<td><code>image-orientation</code></td>
+<td><strong>from-image</strong> | <code>none</code> | <badge-type class="angle"></badge-type> [flip]</td>
+<td>Orientación de la imagen.</td>
+</tr>
+<tr>
+<td><code>aspect-ratio</code></td>
+<td><strong>auto</strong> | <badge-type class="number"></badge-type> / <badge-type class="number"></badge-type> | <badge-type class="number"></badge-type></td>
+<td>Define la proporción de aspecto.</td>
+</tr>
+</tbody>
+</table>
+<p>Veamos detalladamente, una por una.</p>
+<h3 id="la-propiedad-object-fit" tabindex="-1"><a class="header-anchor" href="#la-propiedad-object-fit">La propiedad <code>object-fit</code></a></h3>
+<p>La propiedad <code>object-fit</code> nos va a permitir cambiar el modo en el que se rellena una imagen <code>&lt;img&gt;</code> (<em>o cualquier otro objeto de representación externa a CSS</em>) en su contenedor padre. Los valores que puede tomar dicha propiedad son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>fill</strong></td>
+<td>Rellena la imagen en el espacio del contenedor padre. Habitualmente, estirando la imagen.</td>
+</tr>
+<tr>
+<td><code>contain</code></td>
+<td>Mantiene el aspecto natural <strong>conteniendo</strong> el máximo posible de la imagen.</td>
+</tr>
+<tr>
+<td><code>cover</code></td>
+<td>Mantiene el aspecto natural <strong>cubriendo</strong> el contenedor padre, de modo que no hayan huecos sin cubrir.</td>
+</tr>
+<tr>
+<td><code>none</code></td>
+<td>Mantiene el aspecto natural.</td>
+</tr>
+<tr>
+<td><code>scale-down</code></td>
+<td>Similar a <code>none</code> o <code>contain</code>, escalando hacia abajo.</td>
+</tr>
+</tbody>
+</table>
+<p>Imaginemos que una imagen, que tiene su propio tamaño, es notablemente superior a los elementos contenedores que la van a contener. Por defecto, la imagen tiene su propio tamaño y se desbordará, pero nos podría interesar cambiar el tamaño para que se adapte al contenedor padre. Para ello, utilizaremos los diferentes valores de la propiedad <code>object-fit</code>:</p>
+<p><img src="object-fit.png" alt="La propiedad Object-fit CSS" width="1279" height="707" loading="lazy"></p>
+<p>Así pues, podemos plantear el siguiente código de ejemplo, donde se puede utilizar la propiedad <code>object-fit</code> con sus diferentes valores y comprobar como se comporta:</p>
+<p><code-sandbox></code-sandbox></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>parent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://placekitten.com/500/300<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://placekitten.com/100/400<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://placekitten.com/300/200<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://placekitten.com/300/300<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.parent</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.item</span> <span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> lightgrey<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">img</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">object-fit</span><span class="token punctuation">:</span> fill<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="la-propiedad-object-position" tabindex="-1"><a class="header-anchor" href="#la-propiedad-object-position">La propiedad <code>object-position</code></a></h3>
+<p>Además, tenemos la propiedad <code>object-position</code> que nos sirve para utilizar junto a la propiedad <code>object-fit</code> y cambiar la posición donde aparece la imagen, especialmente cuando está recortada y sólo aparece un fragmento o parte de la imagen. La propiedad funciona de forma muy parecida a como lo hace la propiedad <code>background-position</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>50% 50%</strong></td>
+<td>Por defecto, la imagen está centrada tanto en <code>X</code> como en <code>Y</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="percent"></badge-type> <badge-type class="percent"></badge-type></td>
+<td>Se puede indicar un porcentaje para colocarlo en el eje correspondiente.</td>
+</tr>
+</tbody>
+</table>
+<p>También se pueden indicar palabras clave como <code>top</code>, <code>left</code>, <code>right</code>, <code>bottom</code> o <code>center</code> para indicar en que zona quieres centrar la imagen, incluso, añadiendo un porcentaje tras ellos para ajustar más concretamente:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.element img</span> <span class="token punctuation">{</span>
+  <span class="token property">object-fit</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
+  <span class="token property">object-position</span><span class="token punctuation">:</span> left 20% top 25%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="la-propiedad-object-view-box" tabindex="-1"><a class="header-anchor" href="#la-propiedad-object-view-box">La propiedad <code>object-view-box</code></a></h3>
+<p>La propiedad <code>object-view-box</code> nos permite indicar al navegador la región visible de un elemento a visualizar, es decir, su <code>viewbox</code> (<em>caja de visualización</em>). Con esta herramienta a nuestra disposición, podremos mostrar sólo una parte de una imagen o video, o incluso hacer zoom con animaciones si activamos las transiciones.</p>
+<p>Para ello, utilizaremos por ejemplo, la función <code>inset()</code> para determinar la región que recortaremos. Esta función trabaja exactamente de la misma forma que explicamos en el apartado <a href="../../mascaras-y-recortes/clip-path/index.htm">recortes con clip-path</a>.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.element img</span> <span class="token punctuation">{</span>
+  <span class="token property">object-view-box</span><span class="token punctuation">:</span> <span class="token function">inset</span><span class="token punctuation">(</span>25% 25% 25% 25%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>En el ejemplo superior, recortamos la imagen un <code>25%</code> por cada lado, es decir, <code>top right bottom left</code>, en el sentido de las agujas del reloj. Si quieres aprender a utilizarla, incluso con animaciones, echa un vistazo al siguiente video:</p>
+<p><youtube-video v="oou7K8QEMSE" alt="¡Haz zoom con la propiedad CSS object-view-box!"></youtube-video></p>
+<h3 id="la-propiedad-image-rendering" tabindex="-1"><a class="header-anchor" href="#la-propiedad-image-rendering">La propiedad <code>image-rendering</code></a></h3>
+<p>La propiedad <code>image-rendering</code> permite indicar al navegador como se debería renderizar una imagen, y más concretamente, que algoritmo de reescalado se debería aplicar. Por lo general, este valor lo utilizará correctamente el navegador, pero en algunas situaciones, al cambiar de tamaño a ciertas imágenes, es posible que se vean con una menor calidad o con defectos como bordes borrosos o ciertas imperfecciones.</p>
+<p>Con la propiedad <code>image-rendering</code> indicamos al navegador que sistema de reescalado debe utilizar, algo muy interesante cuando utilizamos por ejemplo, imágenes <strong>pixel art</strong>, donde nos interesa que se utilicen algoritmos como <strong>nearest neighbour</strong> (<em>vecinos más próximos</em>) que respeta y preserva la definición del pixel art.</p>
+<p>Los valores que puede tomar la propiedad son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>auto</strong></td>
+<td>Por defecto, el navegador decide que algoritmo de escalado utilizar.</td>
+</tr>
+<tr>
+<td><code>smooth</code></td>
+<td>La imagen es escalada con algoritmos que priorizan la apariencia, ideal para fotos.</td>
+</tr>
+<tr>
+<td><code>high-quality</code></td>
+<td>Idéntico a <code>smooth</code>, pero con mejor calidad. Utilizar cuando la calidad se degrada.</td>
+</tr>
+<tr>
+<td><code>crisp-edges</code></td>
+<td>Enfocado en preservar contrastes y bordes de imagen. Ideal para lineas definidas y bocetos.</td>
+</tr>
+<tr>
+<td><code>pixelated</code></td>
+<td>Usa algoritmo de &quot;vecinos más próximos&quot;, orientado a preservar pixel art bien definido.</td>
+</tr>
+</tbody>
+</table>
+<p>Aquí puedes ver, por ejemplo, la diferencia de aplicar <code>image-rendering</code> con los valores <code>crisp-edges</code> y <code>pixelated</code> respectivamente a una imagen orientada para representar un dibujo pixel art. Como se observa, el Manz pirata de la derecha tiene los bordes mucho más definidos que el Manz pirata de la izquierda, el cuál se ve más borroso:</p>
+<p><img src="image-rendering.png" alt="La propiedad image-rendering en CSS" width="1279" height="606" loading="lazy"></p>
+<p>No obstante, ten en cuenta que es una particularidad de pixel art. Con otras imágenes, normalmente el valor predeterminado es más que suficiente.</p>
+<h3 id="la-propiedad-image-orientation" tabindex="-1"><a class="header-anchor" href="#la-propiedad-image-orientation">La propiedad <code>image-orientation</code></a></h3>
+<p>La propiedad <code>image-orientation</code> permite rotar una imagen respecto a la información que se encuentra en sus metadatos, o por el contrario, desactivarla y mostrarla tal cuál aparece en la propia imagen. Los valores que se pueden indicar son los siguientes, donde <strong>from-image</strong> es el valor por defecto:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>from-image</strong></td>
+<td>Usa la orientación de la imagen indicada en sus metadatos EXIF.</td>
+</tr>
+<tr>
+<td><code>none</code></td>
+<td>No se usa ninguna rotación adicional. Se muestra tal cual.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="la-propiedad-aspect-ratio" tabindex="-1"><a class="header-anchor" href="#la-propiedad-aspect-ratio">La propiedad <code>aspect-ratio</code></a></h3>
+<p>La propiedad <code>aspect-ratio</code> permite cambiar la <strong>proporción de aspecto</strong> entre los valores <code>width</code> y <code>height</code> de una imagen u objeto desde CSS. De esta forma, podemos asegurarnos de que las imágenes no se deformarán o tendrán una relación de aspecto no adecuada en nuestras páginas, sin necesidad de darle un tamaño concreto de ancho y alto al elemento.</p>
+<p>Los valores de la propiedad <code>aspect-ratio</code> son:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>auto</strong></td>
+<td>El navegador calcula automáticamente la proporción adecuada.</td>
+</tr>
+<tr>
+<td><badge-type class="number"></badge-type> / <badge-type class="number"></badge-type></td>
+<td>Se utilizará la proporción <code>width</code> / <code>height</code> indicada.</td>
+</tr>
+<tr>
+<td><code>auto</code> <badge-type class="number"></badge-type> / <badge-type class="number"></badge-type></td>
+<td>Utiliza la proporción indicada, salvo que tenga un tamaño definido.</td>
+</tr>
+<tr>
+<td><badge-type class="number"></badge-type></td>
+<td>El valor de <code>aspect-ratio</code> también puede darse como un número decimal en lugar de <code>a / b</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Si no tienes claro como cambian los valores de un elemento, puedes usar esta calculadora:</p>
+<script type="module" src="aspect-ratio-calc.cdn.js"></script>
+<div class="aspect-ratio-calc"></div>
+<p>Con esta propiedad, podemos mantener la relación de aspecto de un elemento de forma más cómoda.</p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../propiedad-opacity/index.htm" title="La propiedad opacity">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>La propiedad opacity</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../../gradientes/linear-gradient/index.htm" title="Gradientes lineales">
+  <div>
+    <span>Gradientes lineales</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/W6fAzw3HoWg" title="Cómo crear GRADIENTES LINEALES en CSS">
+  <img loading="lazy" src="../../../vi/W6fAzw3HoWg/mqdefault.jpg" alt="Cómo crear GRADIENTES LINEALES en CSS">
+</a><a href="https://youtu.be/984ry_jsExA" title="CÓMO hacer la ANIMACIÓN del header de Manz.dev">
+  <img loading="lazy" src="../../../vi/984ry_jsExA/mqdefault.jpg" alt="CÓMO hacer la ANIMACIÓN del header de Manz.dev">
+</a><a href="https://youtu.be/FWDBGZQPzXk" title="Cómo crear GRADIENTES REPETIDOS en CSS">
+  <img loading="lazy" src="../../../vi/FWDBGZQPzXk/mqdefault.jpg" alt="Cómo crear GRADIENTES REPETIDOS en CSS">
+</a><a href="https://youtu.be/Q1CXWBtxKZU" title="Grid CSS: Introducción y conceptos desde cero">
+  <img loading="lazy" src="../../../vi/Q1CXWBtxKZU/mqdefault.jpg" alt="Grid CSS: Introducción y conceptos desde cero">
+</a><a href="https://youtu.be/jdGpehoFoWA" title="¡Aprende a utilizar TRANSICIONES CSS!">
+  <img loading="lazy" src="../../../vi/jdGpehoFoWA/mqdefault.jpg" alt="¡Aprende a utilizar TRANSICIONES CSS!">
+</a><a href="https://youtu.be/mNTj6KfYeXc" title="Cómo crear GRADIENTES CÓNICOS en CSS">
+  <img loading="lazy" src="../../../vi/mNTj6KfYeXc/mqdefault.jpg" alt="Cómo crear GRADIENTES CÓNICOS en CSS">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

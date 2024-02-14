@@ -1,0 +1,576 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Niveles de CSS y prefijos - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Los prefijos CSS indican a los navegadores que realicen acciones que aún no están implementadas por completo. Se recomienda usar Autoprefixer.">
+  <meta name="view-transition" content="same-origin">
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Niveles de CSS y prefijos - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Los prefijos CSS indican a los navegadores que realicen acciones que aún no están implementadas por completo. Se recomienda usar Autoprefixer.">
+  <meta property="og:url" content="https://lenguajecss.com/css/introduccion/niveles-y-prefijos-css/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/introduccion/niveles-y-prefijos-css/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Niveles de CSS y prefijos - CSS en español">
+  <meta property="twitter:description" content="Los prefijos CSS indican a los navegadores que realicen acciones que aún no están implementadas por completo. Se recomienda usar Autoprefixer.">
+  <meta property="twitter:image" content="https://lenguajecss.com/large-summary.jpg">
+
+  </head>
+
+<body class="css menu-open " style="--logo-color: #1e7bbf"><script>
+    matchMedia("(width <= 1180px)").matches && document.body.classList.toggle("menu-open");
+  </script>
+  
+
+
+
+
+
+
+
+
+<section class="menubar">
+  <div class="menubar-content">
+    <h1>Lenguaje CSS</h1>
+
+    <a class="cover" title="Lenguaje CSS (css)" href="../../index.htm" style="--image: url('../../../assets/css.jpg')"></a>
+
+    <header>
+      <a href="../../../postcss/plugins/autoprefixer/index.htm" title="Autoprefixer: Prefijos CSS">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m14 26l1.41-1.41L7.83 17H28v-2H7.83l7.58-7.59L14 6L4 16l10 10z"></path></svg>
+      </a>
+      <a href="../../index.htm" title="Volver al índice">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 256"><path fill="#888888" d="M240 210h-18v-94.45a14.06 14.06 0 0 0-4.53-10.32l-80-75.49l-.09-.08a13.94 13.94 0 0 0-18.83 0l-.09.08l-80 75.5A14 14 0 0 0 34 115.55V210H16a6 6 0 0 0 0 12h224a6 6 0 0 0 0-12ZM46 115.55a2 2 0 0 1 .65-1.48l.09-.08l79.94-75.48a2 2 0 0 1 2.63 0L209.26 114l.08.08a2 2 0 0 1 .66 1.48V210h-52v-50a14 14 0 0 0-14-14h-32a14 14 0 0 0-14 14v50H46ZM146 210h-36v-50a2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"></path></svg>
+      </a>
+      <a href="../../cascada-css/herencia-css/index.htm" title="Herencia en CSS">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></path></svg>
+      </a>
+    </header>
+
+    <div style="display:none">
+      <svg id="link-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 256 256"><g fill="#888888"><path d="M208 88h-56V32Z" opacity=".2"></path><path d="m213.66 82.34l-56-56A8 8 0 0 0 152 24H56a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V88a8 8 0 0 0-2.34-5.66ZM160 51.31L188.69 80H160ZM200 216H56V40h88v48a8 8 0 0 0 8 8h48v120Z"></path></g></svg>
+      <svg id="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="#888888" d="M2 12.5C2 9.46 4.46 7 7.5 7H18c2.21 0 4 1.79 4 4s-1.79 4-4 4H9.5a2.5 2.5 0 0 1 0-5H17v2H9.41c-.55 0-.55 1 0 1H18c1.1 0 2-.9 2-2s-.9-2-2-2H7.5C5.57 9 4 10.57 4 12.5S5.57 16 7.5 16H17v2H7.5C4.46 18 2 15.54 2 12.5z"></path></svg>
+    </div>
+
+    <div class="links">
+      <span class="folder">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 512 512"><path fill="#888888" d="M41 73v304.563L88.697 151H423v-30H185.514l-16-48H41zm62.303 96L43.092 455h381.605l60.211-286H103.303z"></path></svg>
+        Introducción a CSS
+      </span>
+            <a class="link" href="../que-es-css/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              ¿Qué es CSS?
+            </a>
+            <a class="link" href="../como-usar-css/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              ¿Cómo usar CSS?
+            </a>
+            <a class="link" href="../estructura-de-css/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Estructura de CSS
+            </a>
+            <a class="link" href="../navegadores-web/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Navegadores web
+            </a>
+            <a class="link active" href="index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Niveles de CSS y prefijos
+            </a>
+            <a class="link" href="../css-moderno/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              CSS Moderno: antes vs ahora
+            </a>
+            <a class="link" href="../guia-css/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              La guía de propiedades CSS
+            </a>
+            <a class="link" href="../referencia/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Referencia CSS
+            </a>
+    </div>
+  </div>
+
+  <div class="sidebox">
+    <svg class="close-menu" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19V5m10 1l-6 6l6 6m-6-6h14"></path></svg>
+    <div class="socials">
+      <a class="twitch" href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+      <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+      <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+      <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  const toggleMenu = () => (document.body.classList.toggle("menu-open"));
+  document.querySelector(".close-menu").addEventListener("click", toggleMenu);
+
+  matchMedia("(width <= 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+  matchMedia("(width > 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+
+  const activeLink = document.querySelector(".links .active");
+  const icon = /* svg */`<svg viewBox="0 0 24 24"><use href="#anchor-icon" /></svg>`;
+  const headers = [...document.querySelectorAll(".contents h3")].map(link => ({ text: link.textContent, id: link.id }));
+  const links = [];
+  headers.reverse().forEach(({ text, id }) => {
+    const link = document.createElement("a");
+    link.classList.add("anchor");
+    link.href = "#" + id;
+    link.insertAdjacentHTML("beforeend", icon);
+    link.insertAdjacentText("beforeend", ` ${text}`);
+    activeLink.after(link);
+  });
+</script>
+
+  <div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/css.jpg')">
+    <h1><a href="index.htm">Niveles de CSS y prefijos</a></h1><h2 class="typewriter">Cómo se estructuran las versiones (niveles) de CSS</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../navegadores-web/index.htm">Navegadores web</a>
+    <a class="current" href="index.htm">Niveles de CSS y prefijos</a>
+    <a href="../css-moderno/index.htm">CSS Moderno: antes vs ahora</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p><strong>CSS</strong> es una especificación desarrollada y mantenida por el <a href="https://w3.org/">World Wide Web Consortium</a> (<em>W3C</em>), una comunidad internacional que se encarga de desarrollar estándares para asegurar el crecimiento y la neutralidad de la web, independizándolo de intereses de empresas particulares, alejando la promoción de tecnologías propietarias e intentando aunar esfuerzos para satisfacer la demanda de características útiles e interesantes para el público.</p>
+<p>En el consorcio participan y colaboran prácticamente casi todas las empresas relacionadas con Internet, como por ejemplo Apple, Adobe, Akamai, Cisco, Google, Facebook, HP, Intel, LG, Microsoft, Nokia, Twitter, Yahoo, entre <a href="http://www.w3.org/Consortium/Member/List">muchos otros</a>.</p>
+<p>Existen múltiples <strong>grupos de trabajo</strong> que se enfocan en temáticas particulares, por ejemplo:</p>
+<ul>
+<li><a href="https://whatwg.org/">WHATWG</a>: Web Hypertext Application Technology Working Group</li>
+<li><a href="https://www.w3.org/Style/CSS/">CSSWG</a>: CSS Working Group</li>
+<li><a href="https://www.w3.org/WAI/GL/">AGWG</a>: Accesibility Guidelines Working Group</li>
+<li><a href="https://www.w3.org/WoT/wg/">WOTWG</a>: Web of Things Working Group</li>
+</ul>
+<blockquote>
+<p>Por ejemplo, desde hace algunos años, la comunidad <a href="https://whatwg.org/">WHATWG</a> participa en el desarrollo y evolución de especificaciones como las de <a href="https://lenguajehtml.com/">HTML</a>, <a href="https://lenguajejs.com/javascript/dom/que-es/">DOM</a> u otras tecnologías relacionadas.</p>
+</blockquote>
+<h3 id="niveles-de-css" tabindex="-1"><a class="header-anchor" href="#niveles-de-css">Niveles de CSS</a></h3>
+<p>Aunque muchas veces se habla de <strong>CSS3</strong> casi como análogo de <strong>CSS</strong>, <strong>CSS</strong> no tiene una versión como tal, sino que hablamos de <strong>niveles</strong>. A lo largo de su historia, <strong>CSS</strong> ha ido evolucionado por diferentes <strong>niveles</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Año</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CSS1</strong></td>
+<td><code>1996</code></td>
+<td>Se crean propiedades para tipografías, colores, alineación, etc...</td>
+</tr>
+<tr>
+<td><strong>CSS2</strong></td>
+<td><code>1998</code></td>
+<td>Propiedades de posicionamiento, tipos de medios, etc...</td>
+</tr>
+<tr>
+<td><strong>CSS2.1</strong></td>
+<td><code>2005</code></td>
+<td>Corrige errores de CSS2 y modifica ciertas propiedades</td>
+</tr>
+<tr>
+<td><strong>CSS3</strong></td>
+<td><code>2011</code></td>
+<td>Se comienzan a crear características de CSS como módulos independientes</td>
+</tr>
+</tbody>
+</table>
+<p>Desde 2011, la <strong>especificación CSS</strong> comienza a evolucionar separando sus nuevas funcionalidades en pequeños <strong>módulos</strong>, favoreciendo su implementación en navegadores. Si se desea información más técnica, se puede consultar la evolución de los diferentes <a href="http://www.w3.org/standards/techs/css">módulos relacionados con CSS</a> en la página web del consorcio W3C.</p>
+<blockquote>
+<p>Por ejemplo, actualmente podemos decir que el módulo de <strong>Flexbox</strong> de CSS se encuentra en nivel 1, mientras que otros módulos como <strong>Grid</strong> se encuentran en nivel 2, o el módulo de características de <strong>Texto</strong> se encuentra en nivel 3.</p>
+</blockquote>
+<h3 id="compatibilidad-en-navegadores" tabindex="-1"><a class="header-anchor" href="#compatibilidad-en-navegadores">Compatibilidad en navegadores</a></h3>
+<p>Debido al ritmo y la rápida velocidad de Internet en estas cuestiones, es muy complicado obtener una lista de funcionalidades de cada módulo CSS que se encuentren implementadas en cada navegador web, algo que además puede variar incluso en cuestión de semanas. Los desarrolladores necesitan tener información actualizada sobre las características disponibles en cada navegador, de modo que puedan aprovechar con exactitud esas novedades en su trabajo diario.</p>
+<h4 id="herramienta-caniuse" tabindex="-1"><a class="header-anchor" href="#herramienta-caniuse">Herramienta CanIUse</a></h4>
+<p>Existe una herramienta estupenda para este cometido. La página <a href="http://www.caniuse.com/">Can I Use</a>, es una web colaborativa mediante la cuál se puede saber el estado actual, previo e incluso futuro de las propiedades CSS, elementos HTML, o características Javascript disponibles en cada navegador.</p>
+<p><img src="caniuse.png" alt="Can I Use: Soporte de la propiedad CSS filter" width="1422" height="788" loading="lazy"></p>
+<p>En esta página se puede buscar, a través de un buscador y de forma rápida y cómoda, el estado de ciertas características por parte de las diferentes versiones de los navegadores:</p>
+<ul>
+<li><strong>Rojo</strong>: La característica no está soportada en dicha versión.</li>
+<li><strong>Dorado</strong>: La característica no está soportada por completo en dicha versión.</li>
+<li><strong>Verde</strong>: La característica está soportada en dicha versión.</li>
+<li><strong>Guión en cuadrito amarillo</strong>: La característica se puede usar con prefijos.</li>
+<li><strong>Bandera</strong>: La característica se puede activar mediante flags (<em>ver más adelante</em>).</li>
+</ul>
+<p>Esta herramienta es una excelente forma de comprobar rápidamente el estado de ciertas características en determinados navegadores.</p>
+<h4 id="prefijos-css-de-navegador" tabindex="-1"><a class="header-anchor" href="#prefijos-css-de-navegador">Prefijos CSS de navegador</a></h4>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>Nota</strong>: El sistema de añadir prefijos en las propiedades está actualmente marcado como obsoleto, a favor de la configuración de flags en el navegador (<em>ver más adelante</em>).</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Algunas de las propiedades que veremos no están definidas por completo, sólo son borradores o pueden variar en la especificación definitiva, por lo que los navegadores las implementan utilizando una serie de <strong>vendor prefixes</strong> (<em>prefijos por navegador</em>), que facilitan la segmentación de funcionalidades.</p>
+<p>De esta forma, podemos utilizar varios prefijos para asegurarnos que aunque dichas funcionalidades tengan un comportamiento o sintaxis diferente en cada navegador, podemos hacer referencia a cada una de ellas por separado:</p>
+<pre class="language-css "><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">{</span>
+          <span class="token property">transform</span><span class="token punctuation">:</span> ... <span class="token comment">/* El navegador implementa la especificación oficial */</span>
+  <span class="token property">-webkit-transform</span><span class="token punctuation">:</span> ... <span class="token comment">/* Chrome antiguo / Safari (Motor Webkit) */</span>
+     <span class="token property">-moz-transform</span><span class="token punctuation">:</span> ... <span class="token comment">/* Firefox antiguo (Motor Gecko) */</span>
+      <span class="token property">-ms-transform</span><span class="token punctuation">:</span> ... <span class="token comment">/* Internet Explorer (Motor Trident) */</span>
+       <span class="token property">-o-transform</span><span class="token punctuation">:</span> ... <span class="token comment">/* Opera antiguo (Motor Presto) */</span>
+<span class="token punctuation">}</span></code></pre>
+<p>En el ejemplo anterior, la propiedad <code>transform</code> se refiere a los navegadores que tengan implementada la especificación definitiva por completo e ignorará el resto de propiedades. Por otro lado, otro navegador (<em>o el mismo en una versión más antigua</em>) puede tener implementada una versión anterior a la definitiva, por lo que hará caso a las propiedades con un prefijo concreto.</p>
+<blockquote>
+<blockquote>
+<p>En el caso de querer utilizar <strong>vendor prefixes</strong>, recomiendo encarecidamente utilizar sistemas como <a href="../../../postcss/plugins/autoprefixer/index.htm">Autoprefixer</a> (<em>plugin de PostCSS</em>), una herramienta que añade de forma automática y transparente los prefijos, basándose en información de herramientas como <a href="http://caniuse.com/">Can I Use</a>. Te ahorrará mucho tiempo y te permitirá tener un código más legible y modular al no tener que repetir y mantener ese código prefijado.</p>
+</blockquote>
+</blockquote>
+<h4 id="flags-de-navegador" tabindex="-1"><a class="header-anchor" href="#flags-de-navegador">Flags de navegador</a></h4>
+<blockquote>
+<blockquote>
+<p>Actualmente, los <strong>vendor prefixes</strong> están en proceso de desaparecer. Las principales compañías de navegadores han optado por favorecer el uso de flags en el navegador del usuario para activar o desactivar opciones experimentales o crear especificaciones más pequeñas y breves que puedan ser estables mucho más rápido. Por esta razón, se aconseja utilizar vendor prefixes solo cuando necesitas soporte específico en navegadores muy antiguos.</p>
+</blockquote>
+</blockquote>
+<p>En lugar de utilizar los prefijos a la hora de desarrollar, existe una forma denominada <strong>flags de navegador</strong>, donde en el caso de cada navegador puedes habilitar o deshabilitar opciones experimentales para probar ciertas características que aún no están terminadas, de modo que es el usuario del navegador el que decide si funcionarán o no.</p>
+<p>Para ello, debes acceder a la dirección <code>about:config</code> en el caso de <strong>Firefox</strong>, o <code>about:flags</code> en el caso de <strong>Chrome</strong>. Activarás una sección experimental en el navegador donde puedes habilitar o deshabilitar características especiales (<em>y generalmente inestables</em>) para comprobar su funcionamiento.</p>
+<p><img src="about-flags-chrome.png" alt="About flags en Chrome" width="826" height="767" loading="lazy"></p>
+<p>En este ejemplo, puedes ver como las opciones experimentales <code>CSS Container Queries</code> y <code>Experimental Web Platform features</code> están activadas en <strong>Google Chrome</strong>.</p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../navegadores-web/index.htm" title="Navegadores web">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Navegadores web</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../css-moderno/index.htm" title="CSS Moderno: antes vs ahora">
+  <div>
+    <span>CSS Moderno: antes vs ahora</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/jhg2xas3av0" title="¡Carga MÁS RÁPIDO tu sitio web OPTIMIZANDO TIPOGRAFÍAS!">
+  <img loading="lazy" src="../../../vi/jhg2xas3av0/mqdefault.jpg" alt="¡Carga MÁS RÁPIDO tu sitio web OPTIMIZANDO TIPOGRAFÍAS!">
+</a><a href="https://youtu.be/g5QVe65vPd4" title="Grid CSS: Celdas irregulares">
+  <img loading="lazy" src="../../../vi/g5QVe65vPd4/mqdefault.jpg" alt="Grid CSS: Celdas irregulares">
+</a><a href="https://youtu.be/L7Hi32qBIxI" title="Cómo crear SOMBRAS EN CAJAS (box-shadow)">
+  <img loading="lazy" src="../../../vi/L7Hi32qBIxI/mqdefault.jpg" alt="Cómo crear SOMBRAS EN CAJAS (box-shadow)">
+</a><a href="https://youtu.be/jdGpehoFoWA" title="¡Aprende a utilizar TRANSICIONES CSS!">
+  <img loading="lazy" src="../../../vi/jdGpehoFoWA/mqdefault.jpg" alt="¡Aprende a utilizar TRANSICIONES CSS!">
+</a><a href="https://youtu.be/8Jh2K3tq5n0" title="Tutorial para aprender Animaciones CSS">
+  <img loading="lazy" src="../../../vi/8Jh2K3tq5n0/mqdefault.jpg" alt="Tutorial para aprender Animaciones CSS">
+</a><a href="https://youtu.be/OQtAyXHeKnc" title="Grid CSS: Grids por área">
+  <img loading="lazy" src="../../../vi/OQtAyXHeKnc/mqdefault.jpg" alt="Grid CSS: Grids por área">
+</a></div>
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajehtml.com/svg/" title="SVG">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#svg"></use>
+  </svg>
+</a><a class="topic" href="../../index.htm" title="CSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="../../../postcss/index.htm" title="PostCSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/fundamentos/" title="Fundamentos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/javascript/" title="Javascript">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/npm/" title="NPM">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/webcomponents/" title="WebComponents">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/vuejs/" title="VueJS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/automatizadores/" title="Automatizadores">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/retos/" title="Retos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#retos"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+    
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+
+  </div></body>
+
+</html>

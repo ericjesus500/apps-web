@@ -1,0 +1,544 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>CSS Media Queries - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="CSS dispone de un sistema de media queries para aplicar estilos dependiendo de si estamos en móvil, tablet o en un dispositivo de escritorio. Aprende como funciona.">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="CSS Media Queries - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="CSS dispone de un sistema de media queries para aplicar estilos dependiendo de si estamos en móvil, tablet o en un dispositivo de escritorio. Aprende como funciona.">
+  <meta property="og:url" content="https://lenguajecss.com/css/responsive-web-design/media-queries/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/responsive-web-design/media-queries/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="CSS Media Queries - CSS en español">
+  <meta property="twitter:description" content="CSS dispone de un sistema de media queries para aplicar estilos dependiendo de si estamos en móvil, tablet o en un dispositivo de escritorio. Aprende como funciona.">
+  <meta property="twitter:image" content="https://lenguajecss.com/large-summary.jpg">
+
+  </head>
+
+<body class="css" style="--logo-color: #1e7bbf"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/css.jpg')">
+    <h1><a href="index.htm">CSS Media Queries</a></h1><h2 class="typewriter">Reglas especiales para establecer excepciones en CSS</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../bases-responsive/index.htm">Bases del Responsive Design</a>
+    <a class="current" href="index.htm">CSS Media Queries</a>
+    <a href="../medios-impresos/index.htm">Medios impresos</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Una vez nos adentramos en el mundo del <strong>Responsive Design</strong>, nos damos cuenta en que hay situaciones en las que determinados aspectos o componentes visuales deben aparecer con ciertas diferencias dependiendo del dispositivo donde se están visualizando, ya que no todos los dispositivos tienen los mismos tamaños o características.</p>
+<blockquote>
+<p>Por ejemplo, una zona donde se encuentra el <strong>buscador de la página</strong> puede estar colocada en un sitio concreto en la versión de escritorio, pero en móvil quizás nos interese que ocupe otra zona (<em>o que tenga otro tamaño o forma</em>) para aprovechar mejor el espacio de la versión del dispositivo móvil.</p>
+</blockquote>
+<h3 id="qué-son-las-media-queries" tabindex="-1"><a class="header-anchor" href="#qué-son-las-media-queries">¿Qué son las Media Queries?</a></h3>
+<p>Existe un concepto denominado <strong>media queries</strong>, mediante el cuál podemos hacer excepciones para que unos determinados estilos de diseño sólo se apliquen si se cumplen una serie de condiciones, generalmente relacionadas con el dispositivo mediante el cuál se está viendo la página.</p>
+<h4 id="la-regla-media" tabindex="-1"><a class="header-anchor" href="#la-regla-media">La regla <code>@media</code></a></h4>
+<p>Las reglas <strong>media queries</strong> (<em>también denominadas <strong>MQ</strong> a veces</em>) son un tipo de reglas de CSS que permiten crear un bloque de código que sólo se procesará en los dispositivos que cumplan los criterios especificados como condición.</p>
+<p>La sintaxis de la regla <code>@media</code> es la siguiente:</p>
+<table>
+<thead>
+<tr>
+<th>Regla</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@media</code> (&lt;<em>condición</em>&gt;)</td>
+<td>Si se cumple la condición, se aplican los estilos de su interior.</td>
+</tr>
+<tr>
+<td><code>@media</code> <code>not</code> (&lt;<em>condición</em>&gt;)</td>
+<td>Si no se cumple la condición, se aplican los estilos de su interior.</td>
+</tr>
+</tbody>
+</table>
+<p>Básicamente, se trata de establecer una condición que se aplicará a la página actual, y en el caso de cumplirse, se aplicarán los estilos indicados en su interior. De no cumplirse, no se aplicarán. Si utilizamos la keyword <code>not</code> antes de la condición, se invierte la condición:</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span>*condición*<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">.container</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@media</span> <span class="token keyword">not</span> <span class="token punctuation">(</span>*condición*<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">.container</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>En el ejemplo anterior, si se cumple la condición establecida, se aplicará un color verde. Sin embargo, si no se cumple, se aplicará un color rojo. Observa que es similar al funcionamiento de un <code>if</code> / <code>else</code> en programación.</p>
+<blockquote>
+<p>No olvides que si tenemos estilos de <code>.container</code> fuera de las reglas <code>@media</code> podrían sobreeescribir los estilos dependiendo de si están antes o después de las reglas y de la especificidad de sus selectores.</p>
+</blockquote>
+<h4 id="condiciones-múltiples-con-media" tabindex="-1"><a class="header-anchor" href="#condiciones-múltiples-con-media">Condiciones múltiples con <code>@media</code></a></h4>
+<p>Si lo deseas, es posible establecer múltiples condiciones en las reglas <code>@media</code>. De esta forma, se pueden conseguir situaciones mucho más específicas y flexibles. Ten mucho cuidado si aplicas el <code>not</code> en las condiciones, no sea que niegues de forma incorrecta los casos deseados:</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span>*condición*<span class="token punctuation">)</span> <span class="token keyword">and</span> <span class="token punctuation">(</span>*condición<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">.container</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> orangered<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<blockquote>
+<p>Al igual que <code>not</code>, también existe una palabra clave <code>only</code> que, suele usarse a modo de <strong>hack</strong>. El comportamiento por defecto ya incluye los dispositivos que encajan con la condición, pero con la palabra clave <code>only</code> conseguimos que navegadores antiguos que no la entienden, no procesen la información, dejándola sólo para navegadores modernos.</p>
+</blockquote>
+</blockquote>
+<h3 id="tipos-de-medios" tabindex="-1"><a class="header-anchor" href="#tipos-de-medios">Tipos de medios</a></h3>
+<p>En algunas ocasiones, queremos indicar que las reglas <code>@media</code> sólo se pongan en funcionamiento en determinados tipos de dispositivos. Son los llamados <strong>tipos de medios</strong>. Existen los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de medio</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>all</strong></td>
+<td>Todos los dispositivos o medios. El que se utiliza <strong>por defecto</strong>.</td>
+</tr>
+<tr>
+<td><code>screen</code></td>
+<td>Monitores o pantallas de ordenador. Es el más común.</td>
+</tr>
+<tr>
+<td><code>print</code></td>
+<td>Documentos de <a href="../medios-impresos/index.htm">medios impresos</a> o pantallas de previsualización de impresión.</td>
+</tr>
+<tr>
+<td><code>speech</code></td>
+<td>Lectores de texto para invidentes (Antes <code>aural</code>, el cuál ya está obsoleto).</td>
+</tr>
+</tbody>
+</table>
+<p>Estos tipos de medios se pueden indicar como una condición más, de modo que podría quedar de la siguiente forma:</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span>*condición*<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token comment">/* ... */</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@media</span> print</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* ... */</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Quizás encuentres referencias a tipos de medios como <code>braille</code>, <code>embossed</code>, <code>handheld</code>, <code>projection</code>, <code>tty</code> o <code>tv</code>. Aunque aún sirven, están marcados como obsoletos a favor de usar los de la lista anterior.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="condiciones-de-media-queries" tabindex="-1"><a class="header-anchor" href="#condiciones-de-media-queries">Condiciones de Media Queries</a></h3>
+<p>En los ejemplos anteriores hemos indicado <code>*condiciones*</code> en el interior de los paréntesis, pero no hemos visto como definir ninguna. Vamos a echar un vistazo a que tipo de características podemos definir en las condiciones de los media queries.</p>
+<p>Podemos utilizar las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de característica</th>
+<th>Valores</th>
+<th>¿Cuándo se aplica?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>width</code></td>
+<td><badge-type class="size"></badge-type></td>
+<td>Si el dispositivo tiene el <strong>tamaño de ancho exactamente</strong>.</td>
+</tr>
+<tr>
+<td><code>min-width</code></td>
+<td><badge-type class="size"></badge-type></td>
+<td>Si el dispositivo tiene un <strong>tamaño de ancho mayor</strong> al indicado.</td>
+</tr>
+<tr>
+<td><code>max-width</code></td>
+<td><badge-type class="size"></badge-type></td>
+<td>Si el dispositivo tiene un <strong>tamaño de ancho menor</strong> al indicado.</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td><badge-type class="size"></badge-type></td>
+<td>Si el dispositivo tiene el <strong>tamaño de alto exactamente</strong>.</td>
+</tr>
+<tr>
+<td><code>min-height</code></td>
+<td><badge-type class="size"></badge-type></td>
+<td>Si el dispositivo tiene un <strong>tamaño de alto mayor</strong> al indicado.</td>
+</tr>
+<tr>
+<td><code>max-height</code></td>
+<td><badge-type class="size"></badge-type></td>
+<td>Si el dispositivo tiene un <strong>tamaño de alto menor</strong> al indicado.</td>
+</tr>
+<tr>
+<td><code>aspect-ratio</code></td>
+<td><i>aspect-ratio</i></td>
+<td>Si el dispositivo encaja con la <strong>proporción de aspecto</strong> indicada.</td>
+</tr>
+<tr>
+<td><code>orientation</code></td>
+<td><code>landscape</code> | <code>portrait</code></td>
+<td>Si el dispositivo está en colocado en <strong>modo vertical o apaisado</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>Existen otras características que en algunos casos pueden ser interesantes, como por ejemplo <code>scan</code>, <code>update</code>, <code>resolution</code>, <code>monochrome</code>, <code>grid</code>, <code>color-index</code>, <code>color</code>, <code>color-gamut</code>, <code>dynamic-range</code>, etc...</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 800px<span class="token punctuation">)</span> <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">orientation</span><span class="token punctuation">:</span> landscape<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">.container</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>El ejemplo anterior, establecerá el elemento <code>.container</code> con fondo rojo cuando se cumpla la condición de que la página esté siendo visualizada desde un dispositivo con una pantalla de <code>800px</code> de ancho como máximo y tenga un sensor que indique está en modo apaisado.</p>
+<h4 id="ejemplos-básicos" tabindex="-1"><a class="header-anchor" href="#ejemplos-básicos">Ejemplos básicos</a></h4>
+<p>Veamos un ejemplo clásico de <strong>media queries</strong> en el que definimos diferentes estilos dependiendo del dispositivo que estamos utilizando. Observese que en el código existen 3 bloques <code>@media</code> donde se definen estilos CSS para cada uno de esos tipos de dispositivos.</p>
+<p>El código sería el siguiente:</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 800px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">.menu</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 800px<span class="token punctuation">)</span> <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 1280px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">.menu</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 1280px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">.menu</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>El ejemplo anterior muestra un elemento (<em>con clase <code>menu</code></em>) con un color de fondo concreto, dependiendo del tipo de medio con el que se visualice la página:</p>
+<ul>
+<li><strong>Azul</strong> para resoluciones menores a <strong>800 píxeles</strong> de ancho (<em>móviles</em>).</li>
+<li><strong>Rojo</strong> para resoluciones entre <strong>800 píxeles</strong> y <strong>1280 píxeles</strong> de ancho (<em>tablets</em>).</li>
+<li><strong>Verde</strong> para resoluciones mayores a <strong>1280 píxeles</strong> (<em>desktop</em>).</li>
+</ul>
+<blockquote>
+<p>El número de bloques de reglas <code>@media</code> a utilizar depende del desarrollador web, ya que no hay una obligación o norma de utilizar un número concreto. Se pueden utilizar desde un sólo media query, hasta múltiples de ellos a lo largo de todo el documento CSS.</p>
+</blockquote>
+<h3 id="media-query-range-syntax" tabindex="-1"><a class="header-anchor" href="#media-query-range-syntax">Media Query Range Syntax</a></h3>
+<p>Aunque la forma de definir condiciones anterior es útil, a menudo resulta confusa y difícil de escribir. Es posible utilizar una modalidad denominada <strong>rangos de condiciones</strong>, que son algo más versátiles que las anteriores y mucho menos tediosas.</p>
+<p>La diferencia radica en que se puede utilizar operadores matemáticos que harán que las condiciones sean mucho más legibles y fáciles de interpretar. Veamos el mismo ejemplo anterior con sintaxis de rangos:</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span>width &lt;= 800px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">.menu</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span>800px &lt;= width &lt;= 1280px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">.menu</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span>width >= 1280px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">.menu</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Como puedes ver, al poder utilizar los operadores <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code> en las condiciones, se hace mucho más intuitivo el determinar las condiciones de los media queries. Sin embargo, ten en cuenta que si necesitas compatibilidad con navegadores muy antiguos, podrían no tener soporte.</p>
+<p><caniuse-support title="Media Queries: Range Syntax" feature="css-media-range-syntax" edge="104/y" firefox="63/y" chrome="104/y" safari="16.4/y" opera="91/y" ios_saf="16.4/y" and_chr="116/y" and_ff="116/y">
+</caniuse-support></p>
+<h3 id="viewport-región-visible" tabindex="-1"><a class="header-anchor" href="#viewport-región-visible">Viewport (Región visible)</a></h3>
+<p>Cuando hablamos de <strong>Responsive Design</strong> muchas veces haremos referencia al <strong>viewport</strong> (<em>región visible del navegador</em>). Recordemos que con el siguiente fragmento de código HTML estamos indicando que hay que preparar el navegador para el <strong>Responsive</strong> y que el nuevo ancho de la pantalla será <strong>el ancho del dispositivo</strong>, por lo que el aspecto del viewport se va a adaptar consecuentemente:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>initial-scale=1, width=device-width<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<p><img src="device-width.png" alt="Responsive Web Design: La variable device-width" width="799" height="444" loading="lazy"></p>
+<p>Con esto conseguiremos preparar nuestra web para dispositivos móviles y prepararnos para la introducción de reglas <strong>media query</strong> en el documento CSS. Es importante no olvidar este paso.</p>
+<h3 id="media-queries-desde-html" tabindex="-1"><a class="header-anchor" href="#media-queries-desde-html">Media Queries desde HTML</a></h3>
+<p>Por último, hay que tener en cuenta que los <strong>media queries</strong> también es posible indicarlos desde HTML, utilizando la etiqueta <code>&lt;link&gt;</code> y el atributo <code>media</code> para establecer la condición:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span>
+      <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mobile.css<span class="token punctuation">"</span></span>
+      <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(max-width: 640px)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span>
+      <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tablet.css<span class="token punctuation">"</span></span>
+      <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(min-width: 640px) and (max-width: 1280px)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span>
+      <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>desktop.css<span class="token punctuation">"</span></span>
+      <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(min-width: 1280px)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<p>Observa, sin embargo, que en este caso, el código CSS de las diferentes condiciones queda en un archivo <code>.css</code> diferente, sin embargo, el navegador al cargar la página los descargará todos y los aplicará cuando sea necesario, al igual que lo hace en los ficheros <code>.css</code>.</p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../bases-responsive/index.htm" title="Bases del Responsive Design">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Bases del Responsive Design</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../medios-impresos/index.htm" title="Medios impresos">
+  <div>
+    <span>Medios impresos</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/I-EFAmX-vhE" title="Flex CSS: Alinear, centrar y reordenar elementos">
+  <img loading="lazy" src="../../../vi/I-EFAmX-vhE/mqdefault.jpg" alt="Flex CSS: Alinear, centrar y reordenar elementos">
+</a><a href="https://youtu.be/9jea2qDdw7Y" title="Cómo crear SOMBRAS IDÉNTICAS (drop-shadow)">
+  <img loading="lazy" src="../../../vi/9jea2qDdw7Y/mqdefault.jpg" alt="Cómo crear SOMBRAS IDÉNTICAS (drop-shadow)">
+</a><a href="https://youtu.be/OQtAyXHeKnc" title="Grid CSS: Grids por área">
+  <img loading="lazy" src="../../../vi/OQtAyXHeKnc/mqdefault.jpg" alt="Grid CSS: Grids por área">
+</a><a href="https://youtu.be/toA0uqeuHXQ" title="¿Qué es el CSS NESTING? ¿Cómo funciona?">
+  <img loading="lazy" src="../../../vi/toA0uqeuHXQ/mqdefault.jpg" alt="¿Qué es el CSS NESTING? ¿Cómo funciona?">
+</a><a href="https://youtu.be/uMMLQNgsivg" title="Parcel CSS: ¿Una ALTERNATIVA RÁPIDA a PostCSS?">
+  <img loading="lazy" src="../../../vi/uMMLQNgsivg/mqdefault.jpg" alt="Parcel CSS: ¿Una ALTERNATIVA RÁPIDA a PostCSS?">
+</a><a href="https://youtu.be/pJGEELsEM1w" title="Consejos y buenas prácticas (III): CSS">
+  <img loading="lazy" src="../../../vi/pJGEELsEM1w/mqdefault.jpg" alt="Consejos y buenas prácticas (III): CSS">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,547 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Códigos de colores - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Propiedades relacionadas con los colores y los fondos que se pueden aplicar en una página web.">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Códigos de colores - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Propiedades relacionadas con los colores y los fondos que se pueden aplicar en una página web.">
+  <meta property="og:url" content="https://lenguajecss.com/css/colores/codigos-color/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/colores/codigos-color/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Códigos de colores - CSS en español">
+  <meta property="twitter:description" content="Propiedades relacionadas con los colores y los fondos que se pueden aplicar en una página web.">
+  <meta property="twitter:image" content="https://lenguajecss.com/large-summary.jpg">
+
+  </head>
+
+<body class="css" style="--logo-color: #1e7bbf"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/css.jpg')">
+    <h1><a href="index.htm">Códigos de colores</a></h1><h2 class="typewriter">Establecer colores de texto y de fondo</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../../modelo-de-cajas/bordes-imagenes/index.htm">Bordes con imágenes</a>
+    <a class="current" href="index.htm">Códigos de colores</a>
+    <a href="../funcion-rgb/index.htm">La función RGB()</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Uno de los primeros cambios de estilo que hacemos cuando aprendemos CSS es hacer variaciones en los colores de <strong>primer plano</strong> y de <strong>fondo</strong> de un documento HTML o de cualquiera de sus elementos o partes. Sin embargo, indicar el color específico no es una tarea fácil. Hay múltiples formas de definir un color en CSS, algunas más sencillas, otras más complejas.</p>
+<h3 id="propiedades-de-color" tabindex="-1"><a class="header-anchor" href="#propiedades-de-color">Propiedades de color</a></h3>
+<p>Primero vamos a ver las propiedades CSS que podemos utilizar para cambiar el color de texto y el color de fondo de un elemento HTML:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>color</code></td>
+<td><badge-type class="color"></badge-type></td>
+<td>Cambia el <strong>color del texto</strong> que está en el interior de un elemento.</td>
+</tr>
+<tr>
+<td><code>background-color</code></td>
+<td><badge-type class="color"></badge-type></td>
+<td>Cambia el <strong>color de fondo</strong> de un elemento.</td>
+</tr>
+</tbody>
+</table>
+<p>Como podemos ver en la tabla anterior, la propiedad <code>color</code> establece el color del texto, mientras que la propiedad <code>background-color</code> establece el color de fondo del elemento. De esta forma, podemos hacer cosas como estas:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.element</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>   <span class="token comment">/* Color de fondo */</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>              <span class="token comment">/* Color de texto */</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Sin embargo, aunque se suele hacer mucho en fases de aprendizaje, lo normal no suele ser indicar colores con palabras clave, ya que es una forma poco precisa de hacerlo, sino utilizar alguna función CSS de colores que veremos a continuación.</p>
+<blockquote>
+<p>Las propiedades <code>color</code> y <code>background-color</code> no son las únicas en las que podemos establecer colores. A medida que avancemos, encontraremos más propiedades donde usarlos.</p>
+</blockquote>
+<h3 id="formas-de-usar-colores-en-css" tabindex="-1"><a class="header-anchor" href="#formas-de-usar-colores-en-css">Formas de usar colores en CSS</a></h3>
+<p>Todas las propiedades CSS donde existen valores <badge-type class="color"></badge-type>, establecen la posibilidad de indicar varias <strong>formas alternativas</strong> (<em>con algunos derivados</em>) para especificar el color deseado:</p>
+<table>
+<thead>
+<tr>
+<th>Esquema</th>
+<th>Descripción</th>
+<th>Más info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="3">Espacio de color RGB</td>
+</tr>
+<tr>
+<td><code>red</code></td>
+<td>Establece un color mediante palabras clave.</td>
+<td><a href="../colores-css/index.htm#palabras-clave-de-color">Ver palabras clave predefinidas</a></td>
+</tr>
+<tr>
+<td><code>rgb()</code></td>
+<td>Usa una función <code>rgb()</code> (rojo, verde y azul).</td>
+<td><a href="../funcion-rgb/index.htm">Ver función RGB</a></td>
+</tr>
+<tr>
+<td><code>#rrggbb</code></td>
+<td>Notación RGB abreviada en <code>hexadecimal</code>. <strong>Notación recomendada</strong></td>
+<td><a href="../formato-hexadecimal/index.htm">Ver formato Hexadecimal</a></td>
+</tr>
+<tr>
+<td><code>hsl()</code></td>
+<td>Usa una función <code>hsl()</code> (color, saturación y brillo).</td>
+<td><a href="../funcion-hsl/index.htm">Ver función HSL</a></td>
+</tr>
+<tr>
+<td><code>hwb()</code></td>
+<td>Usa una función <code>hwb()</code> (color, claridad y oscuridad).</td>
+<td><a href="../funcion-hwb/index.htm">Ver función HWB</a></td>
+</tr>
+<tr>
+<td colspan="3">Espacio de color independiente del dispositivo</td>
+</tr>
+<tr>
+<td><code>lab()</code></td>
+<td>Usa una función <code>lab()</code> y <code>oklab()</code> (luminosidad CIE, eje A y eje B).</td>
+<td><a href="../funcion-lab/index.htm">Ver función LAB y OKLAB</a></td>
+</tr>
+<tr>
+<td><code>lch()</code></td>
+<td>Usa una función <code>lch()</code> y <code>oklch()</code> (luminosidad CIE, saturación, color).</td>
+<td><a href="../funcion-lch/index.htm">Ver función LCH y OKLCH</a></td>
+</tr>
+</tbody>
+</table>
+<p>A continuación iremos explicando cada uno de estos formatos para entender como se especifican los colores en CSS y utilizar el método que más se adapte a nuestras necesidades.</p>
+<p>La mayoría de los editores tienen los denominados <strong>ColorPicker</strong>, que no son más que un sistema cómodo y rápido para elegir un color a base de clics por una paleta o circulo visual. También podemos hacerlo directamente en buscadores como <a href="https://duckduckgo.com/?q=colorpicker">Duck Duck Go</a> o <a href="https://google.com/search?q=colorpicker">Google</a>.</p>
+<blockquote>
+<blockquote>
+<p><strong>Consejo</strong>: Si lo que buscamos es un sistema para extraer colores (<em>color dropper</em>) de una página web, imagen u otra aplicación de nuestro escritorio, podemos usar tanto el <strong>Developer Tools</strong> del navegador (<em>incorpora uno integrado en el selector de colores</em>), como la aplicación <a href="https://github.com/microsoft/PowerToys/releases">Power Toys</a> (<em>Windows</em>).</p>
+</blockquote>
+</blockquote>
+<h3 id="palabras-clave-de-color" tabindex="-1"><a class="header-anchor" href="#palabras-clave-de-color">Palabras clave de color</a></h3>
+<p>El primer caso (<em>el más sencillo pero también el más limitado</em>) permite establecer el color utilizando palabras reservadas de colores, como <code>red</code>, <code>blue</code>, <code>orange</code>, <code>white</code>, <code>navy</code>, <code>yellow</code> u otras. Existen más de 140 palabras clave para indicar colores:</p>
+<script type="module" src="ListColors.cdn.js"></script>
+<p><list-colors></list-colors></p>
+<p>Además, existen algunos valores especiales que puedes utilizar cuando quieras especificar un color, como colores <strong>transparentes</strong> o el <strong>color actual del texto</strong>, muy útil para SVG, por ejemplo:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>transparent</code></td>
+<td>Establece un color completamente transparente (valor por defecto de <code>background-color</code>)</td>
+</tr>
+<tr>
+<td><code>currentColor</code></td>
+<td>Establece el mismo color que se está utilizando para el texto (tanto en CSS, como en SVG)</td>
+</tr>
+</tbody>
+</table>
+<p>Veamos algunos ejemplos de palabras clave de color:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.element</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> indigo<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> rebeccapurple<span class="token punctuation">;</span>  <span class="token comment">/* En honor a Rebeca, la hija de Eric Meyer */</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Como hemos dicho, estas palabras clave son limitadas, por lo que si necesitamos una tonalidad muy específica puede ser insuficiente, y sería mejor utilizar uno de los <strong>códigos</strong> o <strong>funciones de color</strong> que veremos en los próximos apartados.</p>
+<h4 id="colores-del-sistema" tabindex="-1"><a class="header-anchor" href="#colores-del-sistema">Colores del sistema</a></h4>
+<p>Además de las palabras clave predefinidas anteriores, también tenemos algunas otras palabras clave para hacer referencia a ciertos colores establecidos por el sistema operativo. Estas palabras clave son las siguientes:</p>
+<style>
+  .little-box {
+    width: 45px;
+    height: 25px;
+    border: 1px solid #555;
+    background: repeating-linear-gradient(-45deg, #f559 0% 10%, white 10% 18%);
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .little-box::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--color);
+  }
+</style>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class="little-box" style="--color: canvas"></div> <code>canvas</code></td>
+<td>Color de fondo del contenido de una aplicación o documento.</td>
+</tr>
+<tr>
+<td><div class="little-box" style="--color: canvastext"></div> <code>canvastext</code></td>
+<td>Color de texto de una aplicación o documento. <strong>Color de texto por defecto</strong>.</td>
+</tr>
+<tr>
+<td><div class="little-box" style="--color: linktext"></div> <code>linktext</code></td>
+<td>Enlace no visitado y no activo.</td>
+</tr>
+<tr>
+<td><div class="little-box" style="--color: visitedtext"></div> <code>visitedtext</code></td>
+<td>Enlace ya visitado.</td>
+</tr>
+<tr>
+<td><div class="little-box" style="--color: activetext"></div> <code>activetext</code></td>
+<td>Enlace activo.</td>
+</tr>
+<tr>
+<td><div class="little-box" style="--color: buttonface"></div> <code>buttonface</code></td>
+<td>Color de fondo de un botón pulsable.</td>
+</tr>
+<tr>
+<td><div class="little-box" style="--color: buttontext"></div> <code>buttontext</code></td>
+<td>Color de texto de un botón pulsable.</td>
+</tr>
+<tr>
+<td><div class="little-box" style="--color: buttonborder"></div> <code>buttonborder</code></td>
+<td>El color del borde un botón pulsable.</td>
+</tr>
+<tr>
+<td><div class="little-box" style="--color: field"></div> <code>field</code></td>
+<td>Color de fondo de campos de texto <code>&lt;input&gt;</code>.</td>
+</tr>
+<tr>
+<td><div class="little-box" style="--color: fieldtext"></div> <code>fieldtext</code></td>
+<td>Color de texto de campos de texto <code>&lt;input&gt;</code>.</td>
+</tr>
+<tr>
+<td><div class="little-box" style="--color: highlight"></div> <code>highlight</code></td>
+<td>Color de fondo de textos seleccionados.</td>
+</tr>
+<tr>
+<td><div class="little-box" style="--color: highlighttext"></div> <code>highlighttext</code></td>
+<td>Color de texto de textos seleccionados.</td>
+</tr>
+<tr>
+<td><div class="little-box" style="--color: selecteditem"></div> <code>selecteditem</code></td>
+<td>Color de fondo de ítems seleccionados.</td>
+</tr>
+<tr>
+<td><div class="little-box" style="--color: selecteditemtext"></div> <code>selecteditemtext</code></td>
+<td>Color de texto de ítems seleccionados.</td>
+</tr>
+<tr>
+<td><div class="little-box" style="--color: mark"></div> <code>mark</code></td>
+<td>Color de fondo de un texto especialmente marcado <code>&lt;mark&gt;</code>.</td>
+</tr>
+<tr>
+<td><div class="little-box" style="--color: marktext"></div> <code>marktext</code></td>
+<td>Color de texto especialmente marcado <code>&lt;mark&gt;</code>.</td>
+</tr>
+<tr>
+<td><div class="little-box" style="--color: graytext"></div> <code>graytext</code></td>
+<td>Color de texto desactivado.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<blockquote>
+<p>Los cuadritos anteriores se calculan a partir del sistema operativo en tu navegador. Si tienes un sistema operativo que no soporta alguna de estas palabras clave, te aparecerá con fondo rojo rayado.</p>
+</blockquote>
+</blockquote>
+<h3 id="canales-alfa-o-transparencia" tabindex="-1"><a class="header-anchor" href="#canales-alfa-o-transparencia">Canales alfa o transparencia</a></h3>
+<p>En algunos casos, es muy posible que necesitemos indicar un color con cierto grado de transparencia, ya que hasta ahora solo podemos utilizar la palabra clave <code>transparent</code> que es una transparencia completa, del <code>100%</code>. Con transparencias parciales podríamos conseguir que se aprecie el contenido que está detrás un elemento.</p>
+<p>Sin embargo, existe la posibilidad de utilizar los denominados <strong>canales alfa</strong>, que permiten establecer un porcentaje de <strong>transparencia parcial</strong> sobre un color. Estos se pueden establecer en los diferentes formatos y funciones de la tabla anterior (<em>salvo en los colores con palabras clave</em>).</p>
+<blockquote>
+<p>Además, también existe <a href="../../imagenes-y-fondos/propiedad-opacity/index.htm">la propiedad opacity</a>, mediante la cuál podemos hacer que un elemento y su contenido o elementos hijos tengan una <strong>transparencia parcial o completa</strong>. La veremos más adelante.</p>
+</blockquote>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../../modelo-de-cajas/bordes-imagenes/index.htm" title="Bordes con imágenes">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Bordes con imágenes</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../funcion-rgb/index.htm" title="La función RGB()">
+  <div>
+    <span>La función RGB()</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/wIGAyJGx2kc" title="CSS Cards: Baraja de cartas diseñada sólo con HTML y CSS">
+  <img loading="lazy" src="../../../vi/wIGAyJGx2kc/mqdefault.jpg" alt="CSS Cards: Baraja de cartas diseñada sólo con HTML y CSS">
+</a><a href="https://youtu.be/D5fJxaLCjKg" title="Configurar VSCODE para CORREGIR tu CSS AUTOMÁTICAMENTE">
+  <img loading="lazy" src="../../../vi/D5fJxaLCjKg/mqdefault.jpg" alt="Configurar VSCODE para CORREGIR tu CSS AUTOMÁTICAMENTE">
+</a><a href="https://youtu.be/esjagdcozX0" title="Flex CSS: ¡Aprendiendo las bases!">
+  <img loading="lazy" src="../../../vi/esjagdcozX0/mqdefault.jpg" alt="Flex CSS: ¡Aprendiendo las bases!">
+</a><a href="https://youtu.be/9jea2qDdw7Y" title="Cómo crear SOMBRAS IDÉNTICAS (drop-shadow)">
+  <img loading="lazy" src="../../../vi/9jea2qDdw7Y/mqdefault.jpg" alt="Cómo crear SOMBRAS IDÉNTICAS (drop-shadow)">
+</a><a href="https://youtu.be/hju7SXmiK7Y" title="Cómo crear SOMBRAS DE TEXTO (text-shadow)">
+  <img loading="lazy" src="../../../vi/hju7SXmiK7Y/mqdefault.jpg" alt="Cómo crear SOMBRAS DE TEXTO (text-shadow)">
+</a><a href="https://youtu.be/mNTj6KfYeXc" title="Cómo crear GRADIENTES CÓNICOS en CSS">
+  <img loading="lazy" src="../../../vi/mNTj6KfYeXc/mqdefault.jpg" alt="Cómo crear GRADIENTES CÓNICOS en CSS">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

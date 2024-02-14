@@ -1,0 +1,600 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ecc022">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Herencia de Clases - Javascript en español - Lenguaje JS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="En Javascript, la herencia permite organizar clases utilizando una jerarquía con la que escribes menos código y reutilizas características.">
+  <meta name="view-transition" content="same-origin">
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Herencia de Clases - Javascript en español">
+  <meta property="og:image" content="https://lenguajejs.com/javascript/oop/herencia-clases/herencia.png">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="En Javascript, la herencia permite organizar clases utilizando una jerarquía con la que escribes menos código y reutilizas características.">
+  <meta property="og:url" content="https://lenguajejs.com/javascript/oop/herencia-clases/">
+  <meta property="twitter:url" content="https://lenguajejs.com/javascript/oop/herencia-clases/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Herencia de Clases - Javascript en español">
+  <meta property="twitter:description" content="En Javascript, la herencia permite organizar clases utilizando una jerarquía con la que escribes menos código y reutilizas características.">
+  <meta property="twitter:image" content="https://lenguajejs.com/javascript/oop/herencia-clases/herencia.png">
+
+  </head>
+
+<body class="js menu-open " style="--logo-color: #f0db4f"><script>
+    matchMedia("(width <= 1180px)").matches && document.body.classList.toggle("menu-open");
+  </script>
+  
+
+
+
+
+
+
+
+
+<section class="menubar">
+  <div class="menubar-content">
+    <h1>Lenguaje JS</h1>
+
+    <a class="cover" title="Lenguaje JS (javascript)" href="../../index.htm" style="--image: url('../../../assets/javascript.jpg')"></a>
+
+    <header>
+      <a href="../../modulos/que-es-esm/index.htm" title="¿Qué son los módulos (ESM)?">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m14 26l1.41-1.41L7.83 17H28v-2H7.83l7.58-7.59L14 6L4 16l10 10z"></path></svg>
+      </a>
+      <a href="../../index.htm" title="Volver al índice">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 256"><path fill="#888888" d="M240 210h-18v-94.45a14.06 14.06 0 0 0-4.53-10.32l-80-75.49l-.09-.08a13.94 13.94 0 0 0-18.83 0l-.09.08l-80 75.5A14 14 0 0 0 34 115.55V210H16a6 6 0 0 0 0 12h224a6 6 0 0 0 0-12ZM46 115.55a2 2 0 0 1 .65-1.48l.09-.08l79.94-75.48a2 2 0 0 1 2.63 0L209.26 114l.08.08a2 2 0 0 1 .66 1.48V210h-52v-50a14 14 0 0 0-14-14h-32a14 14 0 0 0-14 14v50H46ZM146 210h-36v-50a2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"></path></svg>
+      </a>
+      <a href="../../dom/que-es/index.htm" title="¿Qué es el DOM?">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></path></svg>
+      </a>
+    </header>
+
+    <div style="display:none">
+      <svg id="link-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 256 256"><g fill="#888888"><path d="M208 88h-56V32Z" opacity=".2"></path><path d="m213.66 82.34l-56-56A8 8 0 0 0 152 24H56a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V88a8 8 0 0 0-2.34-5.66ZM160 51.31L188.69 80H160ZM200 216H56V40h88v48a8 8 0 0 0 8 8h48v120Z"></path></g></svg>
+      <svg id="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="#888888" d="M2 12.5C2 9.46 4.46 7 7.5 7H18c2.21 0 4 1.79 4 4s-1.79 4-4 4H9.5a2.5 2.5 0 0 1 0-5H17v2H9.41c-.55 0-.55 1 0 1H18c1.1 0 2-.9 2-2s-.9-2-2-2H7.5C5.57 9 4 10.57 4 12.5S5.57 16 7.5 16H17v2H7.5C4.46 18 2 15.54 2 12.5z"></path></svg>
+    </div>
+
+    <div class="links">
+      <span class="folder">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 512 512"><path fill="#888888" d="M41 73v304.563L88.697 151H423v-30H185.514l-16-48H41zm62.303 96L43.092 455h381.605l60.211-286H103.303z"></path></svg>
+        Orientación a objetos (OOP)
+      </span>
+            <a class="link" href="../que-es/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Orientación a objetos
+            </a>
+            <a class="link" href="../clases/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Clases en Javascript
+            </a>
+            <a class="link" href="../propiedades-clase/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Propiedades de clase
+            </a>
+            <a class="link" href="../metodos-clase/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Métodos de clase
+            </a>
+            <a class="link active" href="index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Herencia de Clases
+            </a>
+    </div>
+  </div>
+
+  <div class="sidebox">
+    <svg class="close-menu" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19V5m10 1l-6 6l6 6m-6-6h14"></path></svg>
+    <div class="socials">
+      <a class="twitch" href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+      <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+      <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+      <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  const toggleMenu = () => (document.body.classList.toggle("menu-open"));
+  document.querySelector(".close-menu").addEventListener("click", toggleMenu);
+
+  matchMedia("(width <= 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+  matchMedia("(width > 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+
+  const activeLink = document.querySelector(".links .active");
+  const icon = /* svg */`<svg viewBox="0 0 24 24"><use href="#anchor-icon" /></svg>`;
+  const headers = [...document.querySelectorAll(".contents h3")].map(link => ({ text: link.textContent, id: link.id }));
+  const links = [];
+  headers.reverse().forEach(({ text, id }) => {
+    const link = document.createElement("a");
+    link.classList.add("anchor");
+    link.href = "#" + id;
+    link.insertAdjacentHTML("beforeend", icon);
+    link.insertAdjacentText("beforeend", ` ${text}`);
+    activeLink.after(link);
+  });
+</script>
+
+  <div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#js"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeJS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/javascript.jpg')">
+    <h1><a href="index.htm">Herencia de Clases</a></h1><h2 class="typewriter">Extender y reutilizar la funcionalidad de otra clase</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../metodos-clase/index.htm">Métodos de clase</a>
+    <a class="current" href="index.htm">Herencia de Clases</a>
+    <a href="../../dom/que-es/index.htm">¿Qué es el DOM?</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>A medida que trabajamos con <a href="../clases/index.htm">Clases y objetos</a> en nuestro código, una de las características fundamentales que nos ayudan a reutilizar y simplificar código es la <strong>herencia de Clases</strong>. Con esta característica podemos establecer una jerarquía de elementos y reutilizar código según en que nivel se encuentre cada elemento.</p>
+<h3 id="qué-es-la-herencia-de-clases" tabindex="-1"><a class="header-anchor" href="#qué-es-la-herencia-de-clases">¿Qué es la herencia de clases?</a></h3>
+<p>A grandes rasgos, se puede denominar <strong>herencia de clases</strong> a la característica donde una <strong>clase hija</strong> obtiene las propiedades y métodos de una <strong>clase padre</strong> porque se ha establecido una relación entre ambas. Esa relación se establece a través de la palabra clave <code>extends</code>, como veremos más adelante.</p>
+<p>Por ejemplo, tomemos el caso del capítulo anterior donde teníamos <strong>formas geométricas</strong> para trabajar con él. Observa que en primer lugar tenemos una <strong>clase padre</strong> llamada <code>Forma</code> que representa una forma geométrica abstracta. Dicha forma geométrica tendrá las características comunes a todos los elementos inferiores (<em>el color, grosor del borde, etc...</em>):</p>
+<p><img src="herencia.png" alt="Herencia" width="1289" height="547" loading="lazy"></p>
+<p>Luego, tenemos varias clases más concretas denominadas <strong>clases hijas</strong>: <code>Cuadrado</code>, <code>Circulo</code> y <code>Triangulo</code>. Dichas clases tendrán las características propias que necesitará cada una de ellas:</p>
+<ul>
+<li>El <strong>Cuadrado</strong> tendrá una propiedad que será <code>lado</code>.</li>
+<li>El <strong>Círculo</strong> tendrá una propiedad <code>radio</code> y otra <code>diametro</code>.</li>
+<li>El <strong>Triángulo</strong> tendrá una propiedad <code>base</code> y otra <code>altura</code>.</li>
+</ul>
+<p>Además, estas clases <strong>heredan</strong> las características <strong>comunes</strong> de su padre, en este caso de la clase <code>Forma</code>. Así, finalmente tendremos una jerarquía de clases que se basa en clases anteriores heredadas.</p>
+<p>Por ejemplo, en el primer caso, los elementos <code>c1</code> y <code>c2</code> son <strong>cuadrados</strong>, objetos generados (<em>instanciados</em>) a partir de la clase <code>Cuadrado</code>, que tienen cada uno una propiedad <code>lado</code>, definida en <code>Cuadrado</code>, y además heredan propiedades comunes de la clase <code>Forma</code>, como <code>color</code>. De la misma forma, ocurrirá con el resto de elementos.</p>
+<h3 id="extender-una-clase" tabindex="-1"><a class="header-anchor" href="#extender-una-clase">Extender una clase</a></h3>
+<p>En Javascript, a partir de <strong>ECMAScript</strong> <badge-es class="es2015"></badge-es>, podemos «<strong>extender clases</strong>» de forma muy similar a como se hace en otros lenguajes de programación. Vamos a pasar a código el ejemplo anterior, utilizando herencia. Observa que en la clase hija se utiliza la palabra clave <code>extends</code> seguida de la clase padre que va a heredar:</p>
+<pre class="language-js "><code class="language-js"><span class="token comment">// Clase padre</span>
+<span class="token keyword">class</span> <span class="token class-name">Forma</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Soy una forma geométrica."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Clase hija</span>
+<span class="token keyword">class</span> <span class="token class-name">Cuadrado</span> <span class="token keyword">extends</span> <span class="token class-name">Forma</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Soy un cuadrado."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Fíjate que la clase padre <code>Forma</code> muestra un mensaje en su constructor. Cada clase hija <strong>extiende</strong> de su clase padre, por lo que la clase <code>Cuadrado</code> será una mezcla de lo que tiene la clase <code>Forma</code> más lo que tiene la clase <code>Cuadrado</code>. Vamos a instanciar los objetos del ejemplo y a comprobarlo:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> c1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cuadrado</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Soy una forma geométrica.</span>
+<span class="token comment">// Soy un cuadrado.</span></code></pre>
+<p>Observa que al crear la instancia <code>c1</code> a partir de la clase <code>Cuadrado</code>, se ha ejecutado el <code>constructor</code> de <code>Cuadrado</code>, el cuál tiene una llamada a <code>super()</code>. Esta es una función especial que llama al constructor de la clase padre, por lo que antes de continuar, pasa a ejecutarse el <code>constructor</code> de <code>Forma</code>, donde se muestra el mensaje <code>Soy una forma geométrica</code>. Al terminar, se vuelve al <code>constructor</code> de la clase <code>Cuadrado</code>, y se muestra el texto <code>Soy un cuadrado</code>.</p>
+<h4 id="el-método-super" tabindex="-1"><a class="header-anchor" href="#el-método-super">El método super</a></h4>
+<p>Como hemos visto, el método especial <code>super()</code> se encarga de llamar al <code>constructor</code> de la clase padre (<em>también denominada superclase, de ahí su nombre</em>), por lo que funcionará en cascada e irá ejecutando primero el constructor del padre, y luego el texto del constructor del hijo. Hagamos algunos cambios interesantes en el ejemplo anterior, para reutilizar algunos elementos heredados.</p>
+<p>Observa el siguiente ejemplo. La clase padre tiene una propiedad <code>type</code> y otra <code>color</code>. Además, tiene un método <code>show()</code> y otro método <code>setColor()</code>. Estos cuatro elementos son elementos que pertenecen a la clase padre, pero que cualquier clase hija que extienda de ella, heredará esos elementos. Por otro lado, fíjate que la clase hijo sobreescribe la propiedad <code>type</code>:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Forma</span> <span class="token punctuation">{</span>
+  type <span class="token operator">=</span> <span class="token string">"geométrica"</span><span class="token punctuation">;</span>
+  color <span class="token operator">=</span> <span class="token string">"naranja"</span><span class="token punctuation">;</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Constructor padre finalizado."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Soy una forma </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>type<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> de color </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>color<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">setColor</span><span class="token punctuation">(</span><span class="token parameter">color</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>color <span class="token operator">=</span> color<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Cuadrado</span> <span class="token keyword">extends</span> <span class="token class-name">Forma</span> <span class="token punctuation">{</span>
+  type <span class="token operator">=</span> <span class="token string">"cuadrada"</span><span class="token punctuation">;</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Constructor hijo finalizado."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> c1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cuadrado</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+c1<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// Soy una forma cuadrada de color naranja</span>
+
+<span class="token keyword">const</span> c2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cuadrado</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+c2<span class="token punctuation">.</span><span class="token function">setColor</span><span class="token punctuation">(</span><span class="token string">"amarillo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+c2<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// Soy una forma cuadrada de color amarillo</span></code></pre>
+<p>Vamos a crear los dos objetos del gráfico anterior. Al crear la instancia del objeto <code>c1</code> a partir de <code>Cuadrado</code> y luego ejecutar el método <code>.show()</code> heredado del padre, veremos que se está ejecutando el código del método del padre, pero obtiene la información de <code>type</code> sobreescrita por el hijo.</p>
+<p>Si miramos el segundo ejemplo, del objeto <code>c2</code>, veremos que en él ejecutamos el método <code>.setColor()</code> del padre, que modifica la propiedad <code>color</code> del hijo, cambiándola por el color <code>&quot;amarillo&quot;</code>. Al ejecutar el método <code>.show()</code> comprobaremos que nos muestra la información sobreescrita por la clase hijo.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Recuerda que es <strong>obligatorio</strong> llamar a <code>super()</code> en el constructor de la clase hija antes de acceder a una propiedad mediante <code>this</code>. De lo contrario, te aparecerá el siguiente mensaje: <strong>Uncaught ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor</strong>.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h4 id="acceder-a-métodos-del-padre" tabindex="-1"><a class="header-anchor" href="#acceder-a-métodos-del-padre">Acceder a métodos del padre</a></h4>
+<p>Como hemos visto, la palabra clave <code>super()</code> hace referencia a la superclase, es decir, a la clase padre. No obstante, también podemos utilizarlas en <strong>métodos</strong> para llamar a métodos del padre según nos interese heredar o no:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Padre</span> <span class="token punctuation">{</span>
+  <span class="token function">soloPadre</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Tarea en el padre..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token function">padreHijo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Tarea en el padre..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token function">sobreHijo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Tarea en el padre..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Hijo</span> <span class="token keyword">extends</span> <span class="token class-name">Padre</span> <span class="token punctuation">{</span>
+  <span class="token function">padreHijo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">padreHijo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Tarea en el hijo..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">soloHijo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Tarea en el hijo..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token function">sobreHijo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Tarea en el hijo..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Observa que la clase <code>Padre</code> implementa los métodos <code>soloPadre()</code>, <code>padreHijo()</code> y <code>sobreHijo()</code>. Por otro lado, la clase <code>Hijo</code> implementa los métodos <code>padreHijo()</code>, <code>soloHijo()</code> y <code>sobreHijo()</code>. Veamos como se comportan si creamos una instancia de la clase hija por medio de un <code>new Hijo()</code> y ejecutamos cada uno de ellos:</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th style="text-align:center">Clase Padre</th>
+<th style="text-align:center">Clase Hija</th>
+<th>¿Se ejecuta el método en una instancia de la clase hija?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>soloPadre()</code></td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">❌</td>
+<td>Se ejecuta porque <strong>se hereda</strong> el método del padre hacia el hijo.</td>
+</tr>
+<tr>
+<td><code>soloHijo()</code></td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">✅</td>
+<td>Se ejecuta porque simplemente existe en el hijo.</td>
+</tr>
+<tr>
+<td><code>padreHijo()</code></td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td>Se ejecutan ambos porque <code>super</code> llama al padre primero.</td>
+</tr>
+<tr>
+<td><code>sobreHijo()</code></td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td>Se ejecuta sólo el hijo, porque sobreescribe el heredado del padre.</td>
+</tr>
+</tbody>
+</table>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../metodos-clase/index.htm" title="Métodos de clase">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Métodos de clase</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../../dom/que-es/index.htm" title="¿Qué es el DOM?">
+  <div>
+    <span>¿Qué es el DOM?</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/A11eG1o611M" title="Creador de historias con Javascript y ChatGPT">
+  <img loading="lazy" src="../../../vi/A11eG1o611M/mqdefault.jpg" alt="Creador de historias con Javascript y ChatGPT">
+</a><a href="https://youtu.be/S0YA8BadVbM" title="Cambiar clases CSS desde Javascript con classList">
+  <img loading="lazy" src="../../../vi/S0YA8BadVbM/mqdefault.jpg" alt="Cambiar clases CSS desde Javascript con classList">
+</a><a href="https://youtu.be/Xi07tHFzqR8" title="Cómo CLONAR objetos en Javascript correctamente (structuredClone)">
+  <img loading="lazy" src="../../../vi/Xi07tHFzqR8/mqdefault.jpg" alt="Cómo CLONAR objetos en Javascript correctamente (structuredClone)">
+</a><a href="https://youtu.be/KE2xRDM4Amg" title="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+  <img loading="lazy" src="../../../vi/KE2xRDM4Amg/mqdefault.jpg" alt="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+</a><a href="https://youtu.be/UVauEId-jJ0" title="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+  <img loading="lazy" src="../../../vi/UVauEId-jJ0/mqdefault.jpg" alt="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+</a><a href="https://youtu.be/EiKYr5vjs48" title="Diferencias entre getElementById vs querySelector (y otros métodos del DOM)">
+  <img loading="lazy" src="../../../vi/EiKYr5vjs48/mqdefault.jpg" alt="Diferencias entre getElementById vs querySelector (y otros métodos del DOM)">
+</a></div>
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajehtml.com/svg/" title="SVG">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#svg"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/css/" title="CSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/postcss/" title="PostCSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="../../../fundamentos/index.htm" title="Fundamentos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="../../index.htm" title="Javascript">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="../../../npm/index.htm" title="NPM">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="../../../webcomponents/index.htm" title="WebComponents">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="../../../vuejs/index.htm" title="VueJS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="../../../automatizadores/index.htm" title="Automatizadores">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a><a class="topic" href="../../../retos/index.htm" title="Retos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#retos"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+    
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-6', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+
+  </div></body>
+
+</html>

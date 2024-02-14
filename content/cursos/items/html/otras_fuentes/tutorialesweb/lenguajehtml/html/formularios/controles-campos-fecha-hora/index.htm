@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e44f26">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Controles: Campos de fecha/hora - HTML en español - Lenguaje HTML</title>
+  <link rel="preload" href="../../../critical.css" as="style">
+  <link rel="preload" href="../../../assets/fonts/blinker-vf.woff2" as="font" crossorigin="">
+  <link rel="preload" href="../../../assets/fonts/scope-one-400.woff2" as="font" crossorigin="">
+  <meta name="description" content="Si el usuario debe introducir una fecha o una hora, existen campos de entrada de datos que facilitan la tarea a los usuarios.">
+  <link rel="stylesheet" href="../../../critical.css">
+  <link rel="stylesheet" href="../../../theme.css">
+  <script type="module" src="../../../main.js"></script>
+  <link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Controles: Campos de fecha/hora - HTML en español">
+  <meta property="og:image" content="https://lenguajehtml.com/html/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Si el usuario debe introducir una fecha o una hora, existen campos de entrada de datos que facilitan la tarea a los usuarios.">
+  <meta property="og:url" content="https://lenguajehtml.com/html/formularios/controles-campos-fecha-hora/">
+  <meta property="twitter:url" content="https://lenguajehtml.com/html/formularios/controles-campos-fecha-hora/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Controles: Campos de fecha/hora - HTML en español">
+  <meta property="twitter:description" content="Si el usuario debe introducir una fecha o una hora, existen campos de entrada de datos que facilitan la tarea a los usuarios.">
+  <meta property="twitter:image:src" content="https://lenguajehtml.com/html/large-summary.jpg">
+</head>
+<body class="html post"><div class="page">
+    <div class="sidebar">
+      <div class="logo flex-center">
+  <a href="/">
+    <img width="42" height="42" src="../../../assets/logo.svg" alt="Logo">
+    Lenguaje HTML
+  </a>
+  <div class="icons" style="--icon-size: 32px; --icon-side-padding: 0.15em">
+    <a href="https://twitter.com/Manz" title="Twitter"><svg-icon type="social" name="twitter"></svg-icon></a>
+    <a href="https://twitch.tv/manzdev" title="Twitch"><svg-icon type="social" name="twitch"></svg-icon></a>
+    <a href="https://instagram.com/manz.dev" title="Instagram"><svg-icon type="social" name="instagram"></svg-icon></a>
+    <a href="https://youtube.com/ManzDev?sub_confirmation=1" title="YouTube"><svg-icon type="social" name="youtube"></svg-icon></a>
+    <a href="https://discord.manz.dev/" title="Servidor de Discord"><svg-icon type="social" name="discord"></svg-icon></a>
+  </div>
+  <span>Un sitio web de <a href="https://manz.dev/"><mark>Manz.dev</mark></a></span>
+</div>
+
+      <form class="search flex-center" action="https://www.google.com/search">
+  <label><span>Buscar:</span> <input type="search" name="q" placeholder="Buscar un tema (ej: flex, grid...)" autocomplete="off"></label>
+  <label><span>Sitio:</span> <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev"></label>
+  <div class="search-results"></div>
+</form>
+
+      
+
+<style>
+  sidebar-link {
+    --logo-image: url(../../logo.svg);
+  }
+</style>
+
+<div class="toc"><sidebar-link title="Volver al índice" href="../../index.htm" back="" direct=""></sidebar-link><sidebar-link href="../../cheatsheets/index.htm" title="HTML5 CheatSheet" direct=""></sidebar-link><sidebar-section title="Introducción a HTML5" href="../../introduccion/index.htm"><sidebar-link href="../../introduccion/que-es-html/index.htm" title="¿Qué es HTML?"></sidebar-link><sidebar-link href="../../introduccion/estructura-etiqueta-html/index.htm" title="Estructura de etiqueta HTML"></sidebar-link><sidebar-link href="../../introduccion/atributos-comunes-html/index.htm" title="Atributos comunes en HTML"></sidebar-link><sidebar-link href="../../introduccion/estructura-documento-html/index.htm" title="Estructura del documento HTML"></sidebar-link><sidebar-link href="../../introduccion/validacion-html/index.htm" title="Validación de errores HTML"></sidebar-link><sidebar-link href="../../introduccion/tabla-periodica-html5/index.htm" title="Tabla periódica de HTML5"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas semánticas" href="../../semantica/index.htm"><sidebar-link href="../../semantica/etiquetas-html-obsoletas/index.htm" title="Etiquetas HTML obsoletas"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-texto/index.htm" title="Etiquetas HTML de texto"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-agrupacion/index.htm" title="Etiquetas HTML de agrupación"></sidebar-link><sidebar-link href="../../semantica/enlaces-o-hipervinculos/index.htm" title="Enlaces o hipervínculos"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-seccion/index.htm" title="Etiquetas HTML de sección"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-tablas/index.htm" title="Etiquetas HTML de tablas"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas multimedia" href="../../multimedia/index.htm"><sidebar-link href="../../multimedia/etiquetas-html-de-imagenes/index.htm" title="Etiquetas HTML de imágenes"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-contenido-externo/index.htm" title="Etiquetas de contenido externo"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-video/index.htm" title="Etiquetas HTML de video"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-audio/index.htm" title="Etiquetas HTML de audio"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-subtitulos/index.htm" title="Etiquetas HTML de subtitulos"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de cabecera" href="../../cabecera/index.htm"><sidebar-link href="../../cabecera/etiquetas-html-de-relacion/index.htm" title="Etiquetas HTML de relación"></sidebar-link><sidebar-link href="../../cabecera/etiquetas-html-de-metadatos/index.htm" title="Etiquetas HTML de metadatos"></sidebar-link><sidebar-link href="../../cabecera/etiquetas-html-para-redes-sociales/index.htm" title="Etiquetas HTML de redes sociales"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de formularios" href="../index.htm"><sidebar-link href="../crear-un-formulario/index.htm" title="Creación de un formulario"></sidebar-link><sidebar-link href="../controles-campos-de-texto/index.htm" title="Controles: Campos de texto"></sidebar-link><sidebar-link href="../controles-campos-numericos/index.htm" title="Controles: Campos numéricos"></sidebar-link><sidebar-link href="index.htm" title="Controles: Campos de fecha/hora"></sidebar-link><sidebar-link href="../controles-casillas-o-botones/index.htm" title="Controles: Casillas o botones"></sidebar-link><sidebar-link href="../controles-listas-de-seleccion/index.htm" title="Controles: Listas de selección"></sidebar-link><sidebar-link href="../controles-seleccion-color/index.htm" title="Controles: Selección de color"></sidebar-link><sidebar-link href="../controles-seleccion-archivos/index.htm" title="Controles: Selección de archivos"></sidebar-link><sidebar-link href="../organizacion-de-campos/index.htm" title="Organización de campos"></sidebar-link><sidebar-link href="../botones-de-envio-de-formulario/index.htm" title="Botones de envío de formularios"></sidebar-link><sidebar-link href="../medidores-y-barras-de-progreso/index.htm" title="Medidores y barras de progreso"></sidebar-link><sidebar-link href="../validaciones-html5/index.htm" title="Validaciones HTML5"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de scripting" href="../../scripting/index.htm"><sidebar-link href="../../scripting/etiquetas-html-interactivas/index.htm" title="Etiquetas HTML interactivas"></sidebar-link><sidebar-link href="../../scripting/etiquetas-html-scripts/index.htm" title="Etiquetas HTML de scripts"></sidebar-link><sidebar-link href="../../scripting/eventos-html/index.htm" title="Eventos en HTML"></sidebar-link></sidebar-section></div>
+
+      
+    </div>
+    <div class="contents">
+      <header class="mega">
+  <h1>Controles: Campos de fecha/hora</h1></header>
+
+      <div class="content ">
+  <div class="breadcrumbs">
+  <a href="/">ATRÁS</a> <span>ᐳ</span> <a href="../../index.htm">html</a> <span>ᐳ</span> <a href="index.htm">Controles: Campos de fecha/hora</a>
+</div>
+<p>Si nuestra intención es que el usuario introduzca una fecha concreta, en lugar de utilizar un campo de texto, lo ideal sería utilizar un control llamado <strong>datepicker</strong>. Básicamente, se trata de un calendario donde el usuario puede seleccionar el día, mes y año que desee, simplemente a golpe de clic, ahorrándose el escribirlo y simplificando el formato a utilizar, ya que puede ser muy complicado guardar siempre la fecha en un mismo formato.</p>
+<p>Además, también existe otro control llamado <strong>timepicker</strong>, que en lugar de solicitar al usuario una fecha, solicita una hora. Ambos campos están a nuestra disposición de forma nativa en HTML5, aunque su interfaz depende del navegador y algunos no tienen soporte para todas sus características.</p>
+<p>En HTML5.1, además, se incluyen nuevos campos que también permiten obtener <strong>fecha y hora</strong> (<em>en un mismo campo</em>), un <strong>mes</strong> específico o el número de <strong>semana</strong> del año, este último algo que se utiliza bastante en EEUU, aunque no demasiado en España.</p>
+<h3 id="fecha-y-hora" tabindex="-1">Fecha y hora</h3>
+<p>Los atributos <strong>type</strong> de fecha/hora existentes en los campos <code>&lt;input&gt;</code> serían los dos primeros, mientras que los tres últimos se añadirán en HTML5.1:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de información a obtener</th>
+<th>Etiqueta a utilizar</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fecha</td>
+<td><code>&lt;input type=&quot;date&quot;&gt;</code></td>
+<td><input type="date"></td>
+</tr>
+<tr>
+<td>Hora</td>
+<td><code>&lt;input type=&quot;time&quot;&gt;</code></td>
+<td><input type="time"></td>
+</tr>
+<tr>
+<td>Fecha y hora local</td>
+<td><code>&lt;input type=&quot;datetime-local&quot;&gt;</code></td>
+<td><input type="datetime-local"></td>
+</tr>
+<tr>
+<td>Mes</td>
+<td><code>&lt;input type=&quot;month&quot;&gt;</code></td>
+<td><input type="month"></td>
+</tr>
+<tr>
+<td>Semana</td>
+<td><code>&lt;input type=&quot;week&quot;&gt;</code></td>
+<td><input type="week"></td>
+</tr>
+</tbody>
+</table>
+<p>Veamos algún ejemplo básico con las dos primeras, <code>&lt;input type=&quot;date&quot;&gt;</code> e <code>&lt;input type=&quot;time&quot;&gt;</code>:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>formulario<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send.php<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token comment">&lt;!-- Campo de entrada de fecha --></span><br>  Selecciona la fecha deseada:<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>date<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fecha<span class="token punctuation">"</span></span> <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2018-03-25<span class="token punctuation">"</span></span> <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2018-05-25<span class="token punctuation">"</span></span> <span class="token attr-name">step</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>  <span class="token comment">&lt;!-- Campo de entrada de hora --></span><br>  Selecciona la hora deseada:<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>time<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hora<span class="token punctuation">"</span></span> <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>18:00<span class="token punctuation">"</span></span> <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>21:00<span class="token punctuation">"</span></span> <span class="token attr-name">step</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>3600<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>Como se puede ver, se pueden indicar los atributos <strong>min</strong> y <strong>max</strong> en campos <code>&lt;input&gt;</code> de fecha, donde actuarán estableciendo un límite de fecha mínima o máxima permitida, así como el campo <strong>step</strong> se podrá utilizar para restricciones al variar unidades.</p>
+<blockquote>
+<blockquote>
+<p>Mención especial al apartado <strong>step</strong> donde hemos indicado el número de días (<em>en el caso de la fecha</em>), por lo que sólo aceptará días de dos en dos desde el 25 de marzo de 2018 hasta el 25 de mayo de 2018. Por su parte, el campo de la hora sólo permitirá variar las horas, ya que se ha indicado <strong>3600 segundos</strong> (<em>salto cada 60x60seg, o sea cada hora</em>) en el atributo <strong>step</strong>.</p>
+</blockquote>
+</blockquote>
+<h3 id="fecha-y-hora-local" tabindex="-1">Fecha y hora local</h3>
+<p>Como comentabamos, los tres últimos campos pertenecen a la especificación de HTML 5.1, aunque en algunos navegadores ya están implementados. Con ellos podremos seleccionar fecha y hora local, así como meses especificos o semanas concretas del año:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>formulario<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send.php<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token comment">&lt;!-- Campo de entrada de mes --></span><br>  Selecciona el mes deseado:<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>month<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mes<span class="token punctuation">"</span></span><br>         <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2018-05<span class="token punctuation">"</span></span> <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2018-02<span class="token punctuation">"</span></span> <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2018-06<span class="token punctuation">"</span></span> <span class="token attr-name">step</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>  <span class="token comment">&lt;!-- Campo de entrada de semana --></span><br>  Selecciona la semana deseada:<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>week<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>semana<span class="token punctuation">"</span></span><br>         <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2018-W18<span class="token punctuation">"</span></span> <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2018-W10<span class="token punctuation">"</span></span> <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2018-W20<span class="token punctuation">"</span></span> <span class="token attr-name">step</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>En el primer campo <code>&lt;input&gt;</code> seleccionamos el mes con el formato <code>yyyy-mm</code>, donde <code>yyyy</code> es la cifra de 4 dígitos del año y <code>mm</code> el mes con 2 dígitos. En el segundo campo <code>&lt;input&gt;</code> seleccionamos la semana con el formato <code>yyyy-Wss</code>, donde nuevamente <code>yyyy</code> es el año en formato de 4 dígitos, <code>W</code> es siempre esa letra y <code>ss</code> es el número de la semana en formato de 2 dígitos.</p>
+<p>Obsérvese que también se aplica el atributo <code>step=&quot;2&quot;</code> lo que hace que sólo se puedan seleccionar <strong>semanas o meses impares</strong>. Vigilar bien la compatibilidad con navegadores de estos campos.</p>
+<p class="ciu_embed" data-feature="input-datetime" data-periods="future_2,future_1,current,past_1,past_2"></p>
+
+    <nav class="prev-next"><a class="bt prev" href="../controles-campos-numericos/index.htm" title="Controles: Campos numéricos">
+    <span class="data">
+      <span>Controles: Campos numéricos</span>
+      <small>Capítulo anterior</small>
+    </span>
+  </a><a class="bt next" href="../controles-casillas-o-botones/index.htm" title="Controles: Casillas o botones">
+    <span class="icon">
+      <svg-icon name="arrow-right"></svg-icon>
+    </span>
+    <span class="data">
+      <span>Controles: Casillas o botones</span>
+      <small>Capítulo siguiente</small>
+    </span>
+  </a></nav>
+
+    <script async="" src="../../../pagead/js/f.txt"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center; margin:auto; margin-top: 2em" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+      <div class="related">
+
+  <div class="author">
+    <div class="author-wrapper">
+      <img loading="lazy" class="circle" src="../../../assets/manz.webp" alt="Manz">
+      <div>
+        <p>Docente, divulgador informático y <a href="https://manz.dev/">streamer de código</a>. Amante de <strong>CSS</strong>, <strong>Javascript</strong>
+          y de la plataforma web. Ha trabajado como profesor en la Universidad de La Laguna y es director del curso de
+          Programación web FullStack y FrontEnd de EOI desde Tenerife. En sus ratos libres, busca GIF de gatos en Internet.</p>
+        <p class="twitch-badge">
+          <a href="https://twitch.tv/ManzDev">
+            <svg class="twitch" viewbox="0 0 1024 1024">
+              <path style="fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1;" d="m262.451 12.904-178.26 178.26v641.672h213.905v178.26l178.26-178.26h142.576L939.809 512V12.904H262.45zm35.645 71.287h570.383v392.164L725.904 618.932H583.287L458.514 743.705V618.932H298.096V84.192zM494.158 208.51v216.36h71.328V208.51h-71.328zm196 0v216.36h71.328V208.51h-71.328z"></path>
+            </svg>
+            Sígueme en Twitch
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="comentarios">
+    <script async="" src="../../../count.js" id="dsq-count-scr"></script>
+<script>
+var disqus_config = function () {
+  this.page.path = location.pathname.endsWith("/") ? location.pathname.substring(0, location.pathname.length - 1) : location.pathname;
+  this.page.url = 'https://lenguajehtml.com' + this.page.path;
+  this.page.identifier = this.page.url;
+};
+document.addEventListener('DOMContentLoaded', function() {
+  const coms = document.querySelector('#comentarios');
+  a = coms.querySelector('#disqus_button');
+  a.dataset.disqusIdentifier = 'https://lenguajehtml.com' + (location.pathname.endsWith("/") ? location.pathname.substring(0, location.pathname.length - 1) : location.pathname);
+  a.addEventListener('click', function() {
+    const div = document.createElement('div');
+    div.id = 'disqus_thread';
+    coms.appendChild(div);
+    const d = document, s = d.createElement('script');
+    s.src = '//lenguajehtml.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    this.remove();
+  });
+});
+</script>
+
+    <a class="disqus-comment-count" id="disqus_button" href="#disqus_thread" data-disqus-identifier="https://lenguajehtml.com/html/formularios/controles-campos-fecha-hora/">Leer comentarios</a>
+    <a class="discord" href="https://discord.manz.dev/">¡Accede a Discord y cuéntanos!</a>
+  </div>
+
+</div>
+
+    </div>
+    <div class="aside">
+      <div class="aside">
+
+  <div class="aside-top">
+    <a href="https://manz.dev/digitalocean" title="Empieza en DigitalOcean con 100$">
+      <img width="240" height="120" src="../../../assets/digital-ocean.png" alt="DigitalOcean">
+    </a>
+  </div><script type="module">
+  const ANCHOR_ICON = /* svg */`
+    <svg class="anchor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 205 205" width="36" height="36">
+      <path d="m140 129 16 16s-20 30-42 30V71c14-5 25-18 25-34 0-20-17-36-37-36-21 0-38 16-38 36 0 15 11 29 25
+              34v104c-26-2-42-27-42-27l18-18-65-9 10 63 17-17c15 12 32 37 73 37 51-1 63-29 76-40l19 19 10-64-65
+              10zM83 36c0-10 8-18 19-18s19 8 19 18c0 11-9 19-19 19s-19-8-19-19z"/>
+    </svg>`;
+  // Add inner links to sidebar menu
+  export const addInnerLinks = () => {
+    const summary = document.querySelector(".aside .summary .links");
+    const headers = Array.from(document.querySelectorAll(".content h3, .content h4"));
+    const tocLinks = [];
+    headers.forEach((e) => {
+      const link = `${location.origin}${location.pathname}#${e.id}`;
+      e.innerHTML = `<a class="permalink" href="${link}">${e.textContent} ${ANCHOR_ICON}</a>`;
+      const headerType = e.nodeName.toLowerCase();
+      const textContent = headerType === "h4" ? e.textContent.replace("La propiedad ", "").replace("La función ", "") : e.textContent;
+      tocLinks.push(`<a class="${headerType}" href="#${e.id}">${textContent}</a>`);
+    });
+    summary.insertAdjacentHTML("beforeEnd", tocLinks.join("\n"));
+  };
+
+  addInnerLinks();
+</script>
+
+<div class="summary">
+  <div class="table">Tabla de contenidos</div>
+  <div class="links"></div>
+</div>
+</div>
+
+    </div>
+  </div><footer class="main">
+  <div class="square">
+    <a href="/"><h2>Lenguaje HTML</h2></a>
+    <div class="icons">
+      <a href="https://twitter.com/Manz" title="Twitter"><svg-icon type="social" name="twitter"></svg-icon></a>
+      <a href="https://twitch.tv/manzdev" title="Twitch"><svg-icon type="social" name="twitch"></svg-icon></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg-icon type="social" name="instagram"></svg-icon></a>
+      <a href="https://youtube.com/ManzDev?sub_confirmation=1" title="YouTube"><svg-icon type="social" name="youtube"></svg-icon></a>
+      <a href="https://discord.manz.dev/" title="Servidor de Discord"><svg-icon type="social" name="discord"></svg-icon></a>
+      <a href="https://github.com/ManzDev" title="GitHub"><svg-icon type="social" name="github"></svg-icon></a>
+      <a href="https://codepen.io/Manz" title="Codepen"><svg-icon type="social" name="codepen"></svg-icon></a>
+      <a href="https://www.linkedin.com/in/joseromanhdez/" title="Linkedin"><svg-icon type="social" name="linkedin"></svg-icon></a>
+    </div>
+    <p>Documentación sobre HTML5 y las mejores herramientas y recursos para aprender a utilizar el lenguaje de marcado HTML.</p>
+    <p id="footer">Creado y mantenido por <a href="https://twitter.com/Manz">@Manz</a> con <span title="<3">❤</span></p></div>
+</footer>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-5', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+</body>
+</html>

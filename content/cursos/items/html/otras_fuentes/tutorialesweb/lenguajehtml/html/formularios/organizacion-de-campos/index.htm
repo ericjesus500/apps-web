@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e44f26">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Organización de campos - HTML en español - Lenguaje HTML</title>
+  <link rel="preload" href="../../../critical.css" as="style">
+  <link rel="preload" href="../../../assets/fonts/blinker-vf.woff2" as="font" crossorigin="">
+  <link rel="preload" href="../../../assets/fonts/scope-one-400.woff2" as="font" crossorigin="">
+  <meta name="description" content="Existen una serie de etiquetas para organizar y relacionar textos y campos de un formulario, tanto semánticamente como visualmente.">
+  <link rel="stylesheet" href="../../../critical.css">
+  <link rel="stylesheet" href="../../../theme.css">
+  <script type="module" src="../../../main.js"></script>
+  <link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Organización de campos - HTML en español">
+  <meta property="og:image" content="https://lenguajehtml.com/html/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Existen una serie de etiquetas para organizar y relacionar textos y campos de un formulario, tanto semánticamente como visualmente.">
+  <meta property="og:url" content="https://lenguajehtml.com/html/formularios/organizacion-de-campos/">
+  <meta property="twitter:url" content="https://lenguajehtml.com/html/formularios/organizacion-de-campos/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Organización de campos - HTML en español">
+  <meta property="twitter:description" content="Existen una serie de etiquetas para organizar y relacionar textos y campos de un formulario, tanto semánticamente como visualmente.">
+  <meta property="twitter:image:src" content="https://lenguajehtml.com/html/large-summary.jpg">
+</head>
+<body class="html post"><div class="page">
+    <div class="sidebar">
+      <div class="logo flex-center">
+  <a href="/">
+    <img width="42" height="42" src="../../../assets/logo.svg" alt="Logo">
+    Lenguaje HTML
+  </a>
+  <div class="icons" style="--icon-size: 32px; --icon-side-padding: 0.15em">
+    <a href="https://twitter.com/Manz" title="Twitter"><svg-icon type="social" name="twitter"></svg-icon></a>
+    <a href="https://twitch.tv/manzdev" title="Twitch"><svg-icon type="social" name="twitch"></svg-icon></a>
+    <a href="https://instagram.com/manz.dev" title="Instagram"><svg-icon type="social" name="instagram"></svg-icon></a>
+    <a href="https://youtube.com/ManzDev?sub_confirmation=1" title="YouTube"><svg-icon type="social" name="youtube"></svg-icon></a>
+    <a href="https://discord.manz.dev/" title="Servidor de Discord"><svg-icon type="social" name="discord"></svg-icon></a>
+  </div>
+  <span>Un sitio web de <a href="https://manz.dev/"><mark>Manz.dev</mark></a></span>
+</div>
+
+      <form class="search flex-center" action="https://www.google.com/search">
+  <label><span>Buscar:</span> <input type="search" name="q" placeholder="Buscar un tema (ej: flex, grid...)" autocomplete="off"></label>
+  <label><span>Sitio:</span> <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev"></label>
+  <div class="search-results"></div>
+</form>
+
+      
+
+<style>
+  sidebar-link {
+    --logo-image: url(../../logo.svg);
+  }
+</style>
+
+<div class="toc"><sidebar-link title="Volver al índice" href="../../index.htm" back="" direct=""></sidebar-link><sidebar-link href="../../cheatsheets/index.htm" title="HTML5 CheatSheet" direct=""></sidebar-link><sidebar-section title="Introducción a HTML5" href="../../introduccion/index.htm"><sidebar-link href="../../introduccion/que-es-html/index.htm" title="¿Qué es HTML?"></sidebar-link><sidebar-link href="../../introduccion/estructura-etiqueta-html/index.htm" title="Estructura de etiqueta HTML"></sidebar-link><sidebar-link href="../../introduccion/atributos-comunes-html/index.htm" title="Atributos comunes en HTML"></sidebar-link><sidebar-link href="../../introduccion/estructura-documento-html/index.htm" title="Estructura del documento HTML"></sidebar-link><sidebar-link href="../../introduccion/validacion-html/index.htm" title="Validación de errores HTML"></sidebar-link><sidebar-link href="../../introduccion/tabla-periodica-html5/index.htm" title="Tabla periódica de HTML5"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas semánticas" href="../../semantica/index.htm"><sidebar-link href="../../semantica/etiquetas-html-obsoletas/index.htm" title="Etiquetas HTML obsoletas"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-texto/index.htm" title="Etiquetas HTML de texto"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-agrupacion/index.htm" title="Etiquetas HTML de agrupación"></sidebar-link><sidebar-link href="../../semantica/enlaces-o-hipervinculos/index.htm" title="Enlaces o hipervínculos"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-seccion/index.htm" title="Etiquetas HTML de sección"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-tablas/index.htm" title="Etiquetas HTML de tablas"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas multimedia" href="../../multimedia/index.htm"><sidebar-link href="../../multimedia/etiquetas-html-de-imagenes/index.htm" title="Etiquetas HTML de imágenes"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-contenido-externo/index.htm" title="Etiquetas de contenido externo"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-video/index.htm" title="Etiquetas HTML de video"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-audio/index.htm" title="Etiquetas HTML de audio"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-subtitulos/index.htm" title="Etiquetas HTML de subtitulos"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de cabecera" href="../../cabecera/index.htm"><sidebar-link href="../../cabecera/etiquetas-html-de-relacion/index.htm" title="Etiquetas HTML de relación"></sidebar-link><sidebar-link href="../../cabecera/etiquetas-html-de-metadatos/index.htm" title="Etiquetas HTML de metadatos"></sidebar-link><sidebar-link href="../../cabecera/etiquetas-html-para-redes-sociales/index.htm" title="Etiquetas HTML de redes sociales"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de formularios" href="../index.htm"><sidebar-link href="../crear-un-formulario/index.htm" title="Creación de un formulario"></sidebar-link><sidebar-link href="../controles-campos-de-texto/index.htm" title="Controles: Campos de texto"></sidebar-link><sidebar-link href="../controles-campos-numericos/index.htm" title="Controles: Campos numéricos"></sidebar-link><sidebar-link href="../controles-campos-fecha-hora/index.htm" title="Controles: Campos de fecha/hora"></sidebar-link><sidebar-link href="../controles-casillas-o-botones/index.htm" title="Controles: Casillas o botones"></sidebar-link><sidebar-link href="../controles-listas-de-seleccion/index.htm" title="Controles: Listas de selección"></sidebar-link><sidebar-link href="../controles-seleccion-color/index.htm" title="Controles: Selección de color"></sidebar-link><sidebar-link href="../controles-seleccion-archivos/index.htm" title="Controles: Selección de archivos"></sidebar-link><sidebar-link href="index.htm" title="Organización de campos"></sidebar-link><sidebar-link href="../botones-de-envio-de-formulario/index.htm" title="Botones de envío de formularios"></sidebar-link><sidebar-link href="../medidores-y-barras-de-progreso/index.htm" title="Medidores y barras de progreso"></sidebar-link><sidebar-link href="../validaciones-html5/index.htm" title="Validaciones HTML5"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de scripting" href="../../scripting/index.htm"><sidebar-link href="../../scripting/etiquetas-html-interactivas/index.htm" title="Etiquetas HTML interactivas"></sidebar-link><sidebar-link href="../../scripting/etiquetas-html-scripts/index.htm" title="Etiquetas HTML de scripts"></sidebar-link><sidebar-link href="../../scripting/eventos-html/index.htm" title="Eventos en HTML"></sidebar-link></sidebar-section></div>
+
+      
+    </div>
+    <div class="contents">
+      <header class="mega">
+  <h1>Organización de campos</h1></header>
+
+      <div class="content ">
+  <div class="breadcrumbs">
+  <a href="/">ATRÁS</a> <span>ᐳ</span> <a href="../../index.htm">html</a> <span>ᐳ</span> <a href="index.htm">Organización de campos</a>
+</div>
+<p>En este apartado, vamos a comentar las siguientes etiquetas, que sirven para organizar mejor los elementos de un formulario, reagrupándolos por categorías o temáticas, mostrándolos de forma más ordenada o incluso para que visualmente sea más sencillo encontrar la información del formulario.</p>
+<p>Las etiquetas que veremos son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de información a obtener</th>
+<th>Etiqueta a utilizar</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agrupación visual o temática de campos de entrada</td>
+<td><code>&lt;fieldset&gt;</code></td>
+<td><fieldset></fieldset></td>
+</tr>
+<tr>
+<td>Leyenda para la etiqueta <code>&lt;fieldset&gt;</code></td>
+<td><code>&lt;legend&gt;</code></td>
+<td><fieldset><legend>Leyenda</legend></fieldset></td>
+</tr>
+<tr>
+<td>Relación de campo y texto</td>
+<td><code>&lt;label&gt;</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="agrupación-visual" tabindex="-1">Agrupación visual</h3>
+<p>La primera etiqueta es <code>&lt;fieldset&gt;</code>, un elemento utilizado como etiqueta contenedora para agrupar visualmente, mediante un trazo simple, todos los campos de un formulario que estén relacionados (<em>misma temática o apartado, por ejemplo</em>). La etiqueta <code>&lt;legend&gt;</code>, suele incluirse en el interior de <code>&lt;fieldset&gt;</code> para mostrar un título en el trazo de esa agrupación.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>formulario<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send.php<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token comment">&lt;!-- Agrupación de campos --></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>fieldset</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>legend</span><span class="token punctuation">></span></span>Datos personales<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>legend</span><span class="token punctuation">></span></span><br><br>    <span class="token comment">&lt;!-- Campo de texto --></span><br>    Nombre de usuario:<br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nombre<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Por ej: John Smith<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br><br>    <span class="token comment">&lt;!-- Campo numérico --></span><br>    Edad:<br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>number<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>edad<span class="token punctuation">"</span></span> <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>18<span class="token punctuation">"</span></span> <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>18<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br><br>    <span class="token comment">&lt;!-- Botón radio de opción --></span><br>    Sexo:<br>    <span class="token comment">&lt;!-- Primera opción --></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sexo<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>H<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span> Hombre<br>    <span class="token comment">&lt;!-- Segunda opción --></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sexo<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>M<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span> Mujer<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fieldset</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="orden-de-campos" tabindex="-1">Orden de campos</h3>
+<p>Cuando nos encontramos en un campo de un formulario, al pulsar la tecla <kbd>TAB</kbd> podemos avanzar al siguiente campo sin necesidad de recurrir al ratón. También podemos conseguir la operación inversa pulsando <kbd>SHIFT</kbd>+<kbd>TAB</kbd>, es decir, retroceder al campo anterior del formulario.</p>
+<p>Por defecto, el navegador sigue el orden de los campos según el HTML. Sin embargo, si queremos personalizar dicho orden, podemos utilizar el atributo <strong>tabindex</strong>, indicando un número con el orden en cuestión:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>formulario<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send.php<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  Nombre de usuario:<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nombre<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Por ej: John Smith<span class="token punctuation">"</span></span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>  Edad:<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>number<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>edad<span class="token punctuation">"</span></span> <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>18<span class="token punctuation">"</span></span> <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>18<span class="token punctuation">"</span></span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>3<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>  Apellidos:<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>apellidos<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Apellidos<span class="token punctuation">"</span></span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>En este caso, si nos colocamos en el primer campo del formulario y pulsamos <kbd>TAB</kbd>, saltaremos directamente al tercer campo, ya que tiene indicado <strong>tabindex</strong> a <strong>2</strong>, y con un nuevo <kbd>TAB</kbd> saltaremos al segundo campo, ya que es el que tiene <strong>tabindex</strong> a <strong>3</strong>.</p>
+<p>Se recomienda utilizar este atributo sólo cuando esté justificado y las circunstancias lo requieran, ya que cambiar el orden de los campos puede confundir al usuario o facilitar equivocaciones al rellenar el formulario.</p>
+<h3 id="relación-texto-campo" tabindex="-1">Relación texto-campo</h3>
+<p>Sin embargo, el ejemplo superior podría modificar un aspecto minúsculo que podría mejorar su usabilidad. Por ejemplo, si un usuario quiere pulsar sobre uno de los botones de radio para elegir el sexo y pulsa sobre el texto (<em>Hombre o Mujer</em>), no ocurrirá nada. El usuario debe pulsar exactamente sobre el botón de radio a elegir.</p>
+<p>Sin embargo, si utilizamos la etiqueta contenedora <code>&lt;label&gt;</code>, podemos establecer una relación semántica de un texto con un campo de entrada de datos. Al incluir texto y campo de texto dentro de la etiqueta <code>&lt;label&gt;</code>, tiene el mismo efecto pulsar en el campo de texto que en el propio texto (<em>muy útil también en casillas de verificación</em>).</p>
+<p>Veamos el ejemplo anterior, mejorado con las etiquetas <code>&lt;label&gt;</code>:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>formulario<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send.php<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>fieldset</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>legend</span><span class="token punctuation">></span></span>Datos personales<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>legend</span><span class="token punctuation">></span></span><br>    <span class="token comment">&lt;!-- Relación del texto con el campo --></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">></span></span><br>      Nombre de usuario:<br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nombre<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Por ej: John Smith<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><br>    <span class="token comment">&lt;!-- Relación del texto con el campo --></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">></span></span><br>      Edad:<br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>number<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>edad<span class="token punctuation">"</span></span> <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>18<span class="token punctuation">"</span></span> <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>18<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><br>    Sexo:<br>    <span class="token comment">&lt;!-- Relación del texto con el primer botón --></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sexo<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>H<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span> Hombre <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><br>    <span class="token comment">&lt;!-- Relación del texto con el segundo botón --></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sexo<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>M<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span> Mujer <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fieldset</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<blockquote>
+<blockquote>
+<p>A las etiquetas <code>&lt;label&gt;</code> se le puede indicar opcionalmente un atributo <strong>for</strong> con un nombre específico, y así poder establecer la relación con una etiqueta HTML con <strong>id</strong> con el mismo nombre, sin necesidad de que estén contiguos o adyacentes.</p>
+</blockquote>
+</blockquote>
+
+    <nav class="prev-next"><a class="bt prev" href="../controles-seleccion-archivos/index.htm" title="Controles: Selección de archivos">
+    <span class="data">
+      <span>Controles: Selección de archivos</span>
+      <small>Capítulo anterior</small>
+    </span>
+  </a><a class="bt next" href="../botones-de-envio-de-formulario/index.htm" title="Botones de envío de formularios">
+    <span class="icon">
+      <svg-icon name="arrow-right"></svg-icon>
+    </span>
+    <span class="data">
+      <span>Botones de envío de formularios</span>
+      <small>Capítulo siguiente</small>
+    </span>
+  </a></nav>
+
+    <script async="" src="../../../pagead/js/f.txt"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center; margin:auto; margin-top: 2em" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+      <div class="related">
+
+  <div class="author">
+    <div class="author-wrapper">
+      <img loading="lazy" class="circle" src="../../../assets/manz.webp" alt="Manz">
+      <div>
+        <p>Docente, divulgador informático y <a href="https://manz.dev/">streamer de código</a>. Amante de <strong>CSS</strong>, <strong>Javascript</strong>
+          y de la plataforma web. Ha trabajado como profesor en la Universidad de La Laguna y es director del curso de
+          Programación web FullStack y FrontEnd de EOI desde Tenerife. En sus ratos libres, busca GIF de gatos en Internet.</p>
+        <p class="twitch-badge">
+          <a href="https://twitch.tv/ManzDev">
+            <svg class="twitch" viewbox="0 0 1024 1024">
+              <path style="fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1;" d="m262.451 12.904-178.26 178.26v641.672h213.905v178.26l178.26-178.26h142.576L939.809 512V12.904H262.45zm35.645 71.287h570.383v392.164L725.904 618.932H583.287L458.514 743.705V618.932H298.096V84.192zM494.158 208.51v216.36h71.328V208.51h-71.328zm196 0v216.36h71.328V208.51h-71.328z"></path>
+            </svg>
+            Sígueme en Twitch
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="comentarios">
+    <script async="" src="../../../count.js" id="dsq-count-scr"></script>
+<script>
+var disqus_config = function () {
+  this.page.path = location.pathname.endsWith("/") ? location.pathname.substring(0, location.pathname.length - 1) : location.pathname;
+  this.page.url = 'https://lenguajehtml.com' + this.page.path;
+  this.page.identifier = this.page.url;
+};
+document.addEventListener('DOMContentLoaded', function() {
+  const coms = document.querySelector('#comentarios');
+  a = coms.querySelector('#disqus_button');
+  a.dataset.disqusIdentifier = 'https://lenguajehtml.com' + (location.pathname.endsWith("/") ? location.pathname.substring(0, location.pathname.length - 1) : location.pathname);
+  a.addEventListener('click', function() {
+    const div = document.createElement('div');
+    div.id = 'disqus_thread';
+    coms.appendChild(div);
+    const d = document, s = d.createElement('script');
+    s.src = '//lenguajehtml.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    this.remove();
+  });
+});
+</script>
+
+    <a class="disqus-comment-count" id="disqus_button" href="#disqus_thread" data-disqus-identifier="https://lenguajehtml.com/html/formularios/organizacion-de-campos/">Leer comentarios</a>
+    <a class="discord" href="https://discord.manz.dev/">¡Accede a Discord y cuéntanos!</a>
+  </div>
+
+</div>
+
+    </div>
+    <div class="aside">
+      <div class="aside">
+
+  <div class="aside-top">
+    <a href="https://manz.dev/digitalocean" title="Empieza en DigitalOcean con 100$">
+      <img width="240" height="120" src="../../../assets/digital-ocean.png" alt="DigitalOcean">
+    </a>
+  </div><script type="module">
+  const ANCHOR_ICON = /* svg */`
+    <svg class="anchor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 205 205" width="36" height="36">
+      <path d="m140 129 16 16s-20 30-42 30V71c14-5 25-18 25-34 0-20-17-36-37-36-21 0-38 16-38 36 0 15 11 29 25
+              34v104c-26-2-42-27-42-27l18-18-65-9 10 63 17-17c15 12 32 37 73 37 51-1 63-29 76-40l19 19 10-64-65
+              10zM83 36c0-10 8-18 19-18s19 8 19 18c0 11-9 19-19 19s-19-8-19-19z"/>
+    </svg>`;
+  // Add inner links to sidebar menu
+  export const addInnerLinks = () => {
+    const summary = document.querySelector(".aside .summary .links");
+    const headers = Array.from(document.querySelectorAll(".content h3, .content h4"));
+    const tocLinks = [];
+    headers.forEach((e) => {
+      const link = `${location.origin}${location.pathname}#${e.id}`;
+      e.innerHTML = `<a class="permalink" href="${link}">${e.textContent} ${ANCHOR_ICON}</a>`;
+      const headerType = e.nodeName.toLowerCase();
+      const textContent = headerType === "h4" ? e.textContent.replace("La propiedad ", "").replace("La función ", "") : e.textContent;
+      tocLinks.push(`<a class="${headerType}" href="#${e.id}">${textContent}</a>`);
+    });
+    summary.insertAdjacentHTML("beforeEnd", tocLinks.join("\n"));
+  };
+
+  addInnerLinks();
+</script>
+
+<div class="summary">
+  <div class="table">Tabla de contenidos</div>
+  <div class="links"></div>
+</div>
+</div>
+
+    </div>
+  </div><footer class="main">
+  <div class="square">
+    <a href="/"><h2>Lenguaje HTML</h2></a>
+    <div class="icons">
+      <a href="https://twitter.com/Manz" title="Twitter"><svg-icon type="social" name="twitter"></svg-icon></a>
+      <a href="https://twitch.tv/manzdev" title="Twitch"><svg-icon type="social" name="twitch"></svg-icon></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg-icon type="social" name="instagram"></svg-icon></a>
+      <a href="https://youtube.com/ManzDev?sub_confirmation=1" title="YouTube"><svg-icon type="social" name="youtube"></svg-icon></a>
+      <a href="https://discord.manz.dev/" title="Servidor de Discord"><svg-icon type="social" name="discord"></svg-icon></a>
+      <a href="https://github.com/ManzDev" title="GitHub"><svg-icon type="social" name="github"></svg-icon></a>
+      <a href="https://codepen.io/Manz" title="Codepen"><svg-icon type="social" name="codepen"></svg-icon></a>
+      <a href="https://www.linkedin.com/in/joseromanhdez/" title="Linkedin"><svg-icon type="social" name="linkedin"></svg-icon></a>
+    </div>
+    <p>Documentación sobre HTML5 y las mejores herramientas y recursos para aprender a utilizar el lenguaje de marcado HTML.</p>
+    <p id="footer">Creado y mantenido por <a href="https://twitter.com/Manz">@Manz</a> con <span title="<3">❤</span></p></div>
+</footer>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-5', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+</body>
+</html>

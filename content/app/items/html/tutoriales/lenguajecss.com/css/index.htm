@@ -1,0 +1,1924 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <title>Lenguaje CSS - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="CSS es un lenguaje de estilos utilizado en el ámbito del diseño web para dotar un sitio web de detalles estéticos, interacción y aspecto visual.">
+  
+  <link rel="stylesheet" href="../home.css">
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Lenguaje CSS - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/css/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="CSS es un lenguaje de estilos utilizado en el ámbito del diseño web para dotar un sitio web de detalles estéticos, interacción y aspecto visual.">
+  <meta property="og:url" content="https://lenguajecss.com/css/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Lenguaje CSS - CSS en español">
+  <meta property="twitter:description" content="CSS es un lenguaje de estilos utilizado en el ámbito del diseño web para dotar un sitio web de detalles estéticos, interacción y aspecto visual.">
+  <meta property="twitter:image" content="https://lenguajecss.com/css/large-summary.jpg">
+
+  </head>
+
+<body class="css" style="--logo-color: #1e7bbf"><div class="book page">
+    <header class="book hero">
+
+  <a class="sitelogo" href="../index.htm">
+  <svg><use href="../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+  <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  <div class="logo" style="--label-image: url(logo.svg)">
+  <div class="disc"><div class="label"></div></div>
+  <img class="cover" width="400" height="400" src="../assets/css.jpg" alt="Lenguaje CSS">
+</div>
+<div class="text">
+  <h1>Lenguaje CSS</h1>
+  <div class="subtitle">Apariencia visual</div>
+  <p class="description">CSS es un lenguaje de estilos utilizado en el ámbito del diseño web para dotar un sitio web de detalles estéticos, interacción y aspecto visual.</p>
+</div>
+
+<script>
+  const logo = document.querySelector(".logo");
+  logo.addEventListener("click", () => logo.classList.toggle("closed"));
+</script>
+
+  <div class="buttons">
+  <a class="btn" href="../index.htm">← Volver</a><a class="btn" href="cheatsheets/index.htm">Guía rápida</a><a class="btn" href="https://manz.dev/">Más sobre ManzDev</a>
+</div>
+
+
+</header>
+
+    <section class="bg dark contents">
+  <div class="contents-container"><header class="category-header">
+          <h2>Introducción a CSS</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="introduccion/que-es-css/index.htm">
+    <span>¿Qué es CSS?</span>
+    <span class="text">Lenguaje de estilos para dotar de aspecto visual</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~2min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="introduccion/como-usar-css/index.htm">
+    <span>¿Cómo usar CSS?</span>
+    <span class="text">Formas de aplicar CSS a una página web</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="introduccion/estructura-de-css/index.htm">
+    <span>Estructura de CSS</span>
+    <span class="text">Sintaxis inicial para escribir código CSS</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="introduccion/navegadores-web/index.htm">
+    <span>Navegadores web</span>
+    <span class="text">Navegadores web, motores y sus diferencias</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="introduccion/niveles-y-prefijos-css/index.htm">
+    <span>Niveles de CSS y prefijos</span>
+    <span class="text">Cómo se estructuran las versiones (niveles) de CSS</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="introduccion/css-moderno/index.htm">
+    <span>CSS Moderno: antes vs ahora</span>
+    <span class="text">CSS tradicional vs CSS moderno</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock short" title="~5min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="introduccion/guia-css/index.htm">
+    <span>La guía de propiedades CSS</span>
+    <span class="text">Guía «telefónica» de propiedades CSS</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level "></span>
+      <span class="size"></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="introduccion/referencia/index.htm">
+    <span>Referencia CSS</span>
+    <span class="text">Lista alfabética de propiedades CSS</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level "></span>
+      <span class="size"></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Cascada CSS</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="cascada-css/herencia-css/index.htm">
+    <span>Herencia en CSS</span>
+    <span class="text">La herencia o sobreescritura de propiedades en CSS</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="cascada-css/que-es-cascada/index.htm">
+    <span>Cascada en CSS</span>
+    <span class="text">La cascada de CSS: Importancia, Especificidad y Orden</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock half" title="~9min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="cascada-css/css-custom-properties/index.htm">
+    <span>Variables CSS</span>
+    <span class="text">CSS Custom Properties: Variables nativas de CSS</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year">2014</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~8min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Unidades CSS</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="unidades-css/que-son/index.htm">
+    <span>¿Qué son y para que sirven?</span>
+    <span class="text">Tipos de unidades CSS</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~7min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="unidades-css/absolutas/index.htm">
+    <span>Unidades absolutas</span>
+    <span class="text">Unidades fijas o estáticas</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~2min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="unidades-css/relativas/index.htm">
+    <span>Unidades relativas</span>
+    <span class="text">Porcentaje y unidades relativas</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~8min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="unidades-css/relativas-viewport/index.htm">
+    <span>Unidades del viewport</span>
+    <span class="text">Unidades flexibles</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2022</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="unidades-css/funciones-css/index.htm">
+    <span>Funciones matemáticas CSS</span>
+    <span class="text">Funciones CSS para calcular cantidades específicas</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2022</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semifull" title="~17min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Modelo de cajas</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="modelo-de-cajas/que-es/index.htm">
+    <span>Modelo de cajas</span>
+    <span class="text">Modelo de cajas: Márgen, borde, relleno y contenido</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="modelo-de-cajas/box-sizing/index.htm">
+    <span>La propiedad box-sizing</span>
+    <span class="text">Y otras particularidades del modelo de cajas</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="modelo-de-cajas/margenes-y-rellenos/index.htm">
+    <span>Márgenes y rellenos</span>
+    <span class="text">Las propiedades margin, padding y relacionadas</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="modelo-de-cajas/bordes/index.htm">
+    <span>Bordes CSS</span>
+    <span class="text">Características de los bordes de los elementos</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~7min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="modelo-de-cajas/border-radius/index.htm">
+    <span>Esquinas redondeadas</span>
+    <span class="text">La propiedad border-radius para redondear esquinas</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2010</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="modelo-de-cajas/propiedades-logicas-css/index.htm">
+    <span>Propiedades lógicas CSS</span>
+    <span class="text">Propiedades lógicas para reemplazar el modelo de cajas</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2017</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semilong" title="~11min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="modelo-de-cajas/bordes-imagenes/index.htm">
+    <span>Bordes con imágenes</span>
+    <span class="text">La técnica 9-slice para crear bordes con imágenes</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2009</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Colores CSS</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="colores/codigos-color/index.htm">
+    <span>Códigos de colores</span>
+    <span class="text">Establecer colores de texto y de fondo</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="colores/funcion-rgb/index.htm">
+    <span>La función RGB()</span>
+    <span class="text">Esquema de colores: rojo, verde, azul</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="colores/formato-hexadecimal/index.htm">
+    <span>El formato hexadecimal</span>
+    <span class="text">Esquema de colores Hex (RGB Abreviado)</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="colores/funcion-hsl/index.htm">
+    <span>La función HSL()</span>
+    <span class="text">Esquema de colores: hue, saturación, luminosidad</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="colores/funcion-hwb/index.htm">
+    <span>La función HWB()</span>
+    <span class="text">Esquema de colores: hue, claridad, oscuridad</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2022</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semishort" title="~2min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="colores/funcion-lab/index.htm">
+    <span>La función LAB() y OKLAB()</span>
+    <span class="text">Esquema de colores CIE LAB</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2023</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="colores/funcion-lch/index.htm">
+    <span>La función LCH() y OKLCH()</span>
+    <span class="text">Esquema de colores CIE LCH</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2023</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="colores/relative-color/index.htm">
+    <span>Colores relativos</span>
+    <span class="text">Crear variaciones de colores a partir de otros</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2023</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="colores/espacios-color/index.htm">
+    <span>Espacios de color</span>
+    <span class="text">Trabajando en diferentes espacios de color</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2023</span>
+      <span class="level advanced">difícil</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Imágenes y fondos</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="imagenes-y-fondos/propiedad-background-image/index.htm">
+    <span>La propiedad background-image</span>
+    <span class="text">Establecer imágenes de fondo en CSS</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semilong" title="~11min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="imagenes-y-fondos/propiedad-opacity/index.htm">
+    <span>La propiedad opacity</span>
+    <span class="text">Establecer transparencia en un elemento</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~2min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="imagenes-y-fondos/imagenes-css/index.htm">
+    <span>Imágenes y objetos</span>
+    <span class="text">Propiedades para modificar objetos e imágenes</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2022</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~8min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Gradientes o degradados</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="gradientes/linear-gradient/index.htm">
+    <span>Gradientes lineales</span>
+    <span class="text">La función linear-gradient() de CSS</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year">2011</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~7min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="gradientes/radial-gradient/index.htm">
+    <span>Gradientes radiales</span>
+    <span class="text">La función radial-gradient() de CSS</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2012</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="gradientes/conic-gradient/index.htm">
+    <span>Gradientes cónicos</span>
+    <span class="text">La función conic-gradient() de CSS</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2020</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Selectores CSS</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="selectores/selectores-basicos/index.htm">
+    <span>Selectores básicos</span>
+    <span class="text">Formas básicas de seleccionar elementos (clases, ids, etc...)</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock half" title="~9min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="selectores/atributos/index.htm">
+    <span>Selectores de atributos</span>
+    <span class="text">Formas de seleccionar elementos según sus atributos</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock half" title="~10min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="selectores/combinadores/index.htm">
+    <span>Combinadores</span>
+    <span class="text">Formas de seleccionar elementos por sus relaciones</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~7min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="selectores/combinadores-logicos/index.htm">
+    <span>Combinadores lógicos</span>
+    <span class="text">Formas de agrupar selectores CSS complejos</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year">2022</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="selectores/pseudoclases/index.htm">
+    <span>Pseudoclases</span>
+    <span class="text">Formas de seleccionar elementos por comportamiento</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock long" title="~13min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="selectores/pseudoclases-estructura/index.htm">
+    <span>Pseudoclases de estructura</span>
+    <span class="text">Formas de seleccionar elementos por su estructura</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semifull" title="~19min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="selectores/pseudoclases-formularios/index.htm">
+    <span>Pseudoclases de formularios</span>
+    <span class="text">Formas de seleccionar elementos de un formulario</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock long" title="~14min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="selectores/pseudoelementos/index.htm">
+    <span>Pseudoelementos CSS</span>
+    <span class="text">Formas de seleccionar aspectos inexistentes en el HTML</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semilong" title="~11min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Reglas CSS</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="reglas-css/que-son-reglas-css/index.htm">
+    <span>¿Qué son las reglas CSS?</span>
+    <span class="text">Reglas CSS, precedidas por el carácter @</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="reglas-css/la-regla-import/index.htm">
+    <span>La regla @import</span>
+    <span class="text">Regla para incluir CSS externo de otros archivos</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="reglas-css/la-regla-layer/index.htm">
+    <span>La regla @layer</span>
+    <span class="text">Crear capas CSS con código independiente</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2022</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semilong" title="~11min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="reglas-css/la-regla-supports/index.htm">
+    <span>La regla @supports</span>
+    <span class="text">Crear reglas condicionales y fallbacks en CSS</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2014</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="reglas-css/la-regla-scope/index.htm">
+    <span>La regla @scope</span>
+    <span class="text">Estilos CSS con ambito del DOM limitado</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">202x</span>
+      <span class="level advanced">difícil</span>
+      <span class="size"><div class="clock full" title="~21min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="reglas-css/la-regla-property/index.htm">
+    <span>La regla @property</span>
+    <span class="text">Tipos de datos en CSS</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2020</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock short" title="~5min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Calidad de código</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="calidad-de-codigo/minificar-css/index.htm">
+    <span>Minificar CSS</span>
+    <span class="text">Compactar archivos CSS y borrar carácteres prescindibles</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="calidad-de-codigo/stylelint/index.htm">
+    <span>StyleLint: Linter CSS</span>
+    <span class="text">Revisión de errores o problemas</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year">2015</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~8min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="calidad-de-codigo/css-nesting/index.htm">
+    <span>CSS Nesting nativo</span>
+    <span class="text">Anidamiento CSS nativo</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2023</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~7min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="calidad-de-codigo/metodologias-css/index.htm">
+    <span>Metodologías CSS</span>
+    <span class="text">Metodologías y nomenclaturas CSS</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level advanced">difícil</span>
+      <span class="size"><div class="clock full" title="~27min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Fuentes y tipografías</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="fuentes-y-tipografias/elegir-tipografia/index.htm">
+    <span>¿Qué son las tipografías?</span>
+    <span class="text">Conceptos básicos sobre tipografías</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="fuentes-y-tipografias/tipografias/index.htm">
+    <span>Tipografías en CSS</span>
+    <span class="text">Propiedades principales para tipografías</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~7min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="fuentes-y-tipografias/ajustes-tipografias/index.htm">
+    <span>Ajustes en tipografías</span>
+    <span class="text">Otras propiedades CSS de fuentes</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2022</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="fuentes-y-tipografias/regla-font-face/index.htm">
+    <span>La regla @font-face</span>
+    <span class="text">Utilizar tipografías específicas (no instaladas)</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year">2009</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="fuentes-y-tipografias/tipografias-google-fonts/index.htm">
+    <span>Tipografías de Google Fonts</span>
+    <span class="text">Utilizar tipografías externas con Google Fonts</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year">2010</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock short" title="~5min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="fuentes-y-tipografias/fuentes-variables/index.htm">
+    <span>Fuentes variables CSS</span>
+    <span class="text">Tipografías con pesos variables en un solo archivo</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2018</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semilong" title="~11min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="fuentes-y-tipografias/textos-y-alineaciones/index.htm">
+    <span>Textos y alineaciones</span>
+    <span class="text">Propiedades CSS para alinear o aplicar a textos</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~8min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="fuentes-y-tipografias/text-decoration/index.htm">
+    <span>Decoraciones de texto</span>
+    <span class="text">Decorar, transformar o enfatizar textos</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2017</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="fuentes-y-tipografias/font-display/index.htm">
+    <span>Modo de carga de tipografías</span>
+    <span class="text">Formas de ajustar la carga de tipografías</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2018</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="fuentes-y-tipografias/caracteristicas-personalizadas/index.htm">
+    <span>Características personalizadas</span>
+    <span class="text">Activar características especiales en tipografías</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2016</span>
+      <span class="level advanced">difícil</span>
+      <span class="size"><div class="clock semihalf" title="~8min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Representación de datos</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="representacion-datos/tablas-css/index.htm">
+    <span>Tablas CSS</span>
+    <span class="text">Dar estilos a tablas HTML</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="representacion-datos/listas-css/index.htm">
+    <span>Listas CSS</span>
+    <span class="text">Dar estilo a listas HTML</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~5min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="representacion-datos/contadores-css/index.htm">
+    <span>Contadores CSS</span>
+    <span class="text">CSS Counters: Contando con CSS</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock half" title="~10min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Maquetación y colocación</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="maquetacion-y-colocacion/propiedad-display/index.htm">
+    <span>La propiedad display</span>
+    <span class="text">Conceptos fundamentales de maquetación</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock half" title="~10min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="maquetacion-y-colocacion/posicionamiento-css/index.htm">
+    <span>La propiedad position</span>
+    <span class="text">Formas especiales de colocar o posicionar elementos</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="maquetacion-y-colocacion/desplazamientos/index.htm">
+    <span>La propiedad float</span>
+    <span class="text">Elementos flotantes (Desplazamientos)</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~2min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="maquetacion-y-colocacion/flex/index.htm">
+    <span>Flex CSS: Introducción</span>
+    <span class="text">Modelo de cajas flexibles</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year">2014</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock half" title="~10min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="maquetacion-y-colocacion/flex-alinear/index.htm">
+    <span>Flex CSS: Alinear elementos</span>
+    <span class="text">O «cómo centrar un div con Flex»</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year">2014</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semilong" title="~11min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="maquetacion-y-colocacion/flex-organizar/index.htm">
+    <span>Flex CSS: Flexibilidad</span>
+    <span class="text">Adaptar o incluso animar elementos flex</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2014</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock half" title="~9min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="maquetacion-y-colocacion/grid-css/index.htm">
+    <span>Grid CSS: Introducción</span>
+    <span class="text">Cuadrículas, grillas o rejillas</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year">2017</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock long" title="~15min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="maquetacion-y-colocacion/grid-css-alinear/index.htm">
+    <span>Grid CSS: Alinear elementos</span>
+    <span class="text">O «cómo centrar un div con CSS Grid»</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year">2017</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semilong" title="~11min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="maquetacion-y-colocacion/grid-css-areas/index.htm">
+    <span>Grid CSS: Grid por áreas</span>
+    <span class="text">Forma sencilla y gráfica de crear un grid</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2017</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~5min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="maquetacion-y-colocacion/grid-css-celdas-irregulares/index.htm">
+    <span>Grid CSS: Celdas irregulares</span>
+    <span class="text">Cómo crear cuadrículas o grids irregulares</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2017</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~8min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="maquetacion-y-colocacion/grid-css-lineas-nombradas/index.htm">
+    <span>Grid CSS: Líneas con nombre</span>
+    <span class="text">Dar nombre a las separaciones de grid</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2017</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semilong" title="~11min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="maquetacion-y-colocacion/multi-column/index.htm">
+    <span>Multi-columnas CSS</span>
+    <span class="text">Esquema de varias columnas en CSS</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2017</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Interacciones</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="interacciones/contornos/index.htm">
+    <span>Contornos</span>
+    <span class="text">Resaltado de contorno para propósitos de accesibilidad</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~1min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="interacciones/cursor-del-raton/index.htm">
+    <span>Cursor del ratón</span>
+    <span class="text">Formas de personalizar el cursor del ratón del usuario</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="interacciones/scroll-y-overflow/index.htm">
+    <span>Scroll y Overflow</span>
+    <span class="text">Suavizar efecto de scroll</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="interacciones/snap-scroll/index.htm">
+    <span>CSS Snap Scroll</span>
+    <span class="text">Ajuste de scroll</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2014</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock long" title="~14min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Sombras</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="sombras/text-shadow/index.htm">
+    <span>Sombras CSS en textos</span>
+    <span class="text">La propiedad text-shadow</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="sombras/box-shadow/index.htm">
+    <span>Sombras CSS en cajas</span>
+    <span class="text">La propiedad box-shadow</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~8min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="sombras/drop-shadow/index.htm">
+    <span>Sombras idénticas CSS</span>
+    <span class="text">La función drop-shadow() de la propiedad filter</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2016</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~2min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Efectos</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="efectos/filtros-css/index.htm">
+    <span>Filtros CSS</span>
+    <span class="text">Aplicación de filtros para modificaciones visuales</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2016</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="efectos/modos-de-fusion/index.htm">
+    <span>Modos de fusión CSS</span>
+    <span class="text">Mecanismos para fusionar y mezclar elementos</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2019</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~2min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Máscaras y recortes</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="mascaras-y-recortes/formas-basicas/index.htm">
+    <span>Formas básicas</span>
+    <span class="text">Maneras de definir formas geométricas básicas</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2019</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock half" title="~9min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="mascaras-y-recortes/shape-outside/index.htm">
+    <span>La propiedad shape-outside</span>
+    <span class="text">Declarando formas flotantes</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2019</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="mascaras-y-recortes/clip-path/index.htm">
+    <span>La propiedad clip-path</span>
+    <span class="text">Diferentes formas de realizar recortes mediante CSS</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2019</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock short" title="~5min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="mascaras-y-recortes/mask-image/index.htm">
+    <span>La propiedad mask-image</span>
+    <span class="text">Máscaras en elementos</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2018</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock half" title="~10min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Responsive Web Design</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="responsive-web-design/que-es/index.htm">
+    <span>¿Qué es Responsive Design?</span>
+    <span class="text">Crear diseños adaptables a dispositivos móviles</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~5min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="responsive-web-design/bases-responsive/index.htm">
+    <span>Bases del Responsive Design</span>
+    <span class="text">Conceptos y características a conocer del RWD</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="responsive-web-design/media-queries/index.htm">
+    <span>CSS Media Queries</span>
+    <span class="text">Reglas especiales para establecer excepciones en CSS</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year">2023</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock half" title="~10min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="responsive-web-design/medios-impresos/index.htm">
+    <span>Medios impresos</span>
+    <span class="text">Media queries para adaptar contenido a impresiones</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="responsive-web-design/medios-paginados/index.htm">
+    <span>Medios paginados</span>
+    <span class="text">Media queries para adaptar contenido a páginas</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="responsive-web-design/css-container-queries/index.htm">
+    <span>CSS Container Queries</span>
+    <span class="text">Media queries para elementos contenedores</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2023</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~5min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="responsive-web-design/preferencias-usuario/index.htm">
+    <span>Preferencias de usuario</span>
+    <span class="text">Detectar preferencias del usuario en su sistema operativo</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2019</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Animaciones CSS</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="animaciones/transiciones/index.htm">
+    <span>Transiciones CSS</span>
+    <span class="text">Suavizar cambios de estilo en interacciones del usuario</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="animaciones/timing-function/index.htm">
+    <span>Funciones de tiempo</span>
+    <span class="text">Cambiando el ritmo con propiedades *-timing-function</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="animaciones/animaciones/index.htm">
+    <span>Animaciones CSS</span>
+    <span class="text">Propiedades para crear animaciones en CSS</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~5min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="animaciones/keyframes/index.htm">
+    <span>La regla @keyframes</span>
+    <span class="text">Crear fotogramas clave de una animación</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="animaciones/animation-timeline/index.htm">
+    <span>Animaciones de scroll</span>
+    <span class="text">Animaciones dirigidas por scroll con líneas de tiempo</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2023</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock half" title="~10min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="animaciones/motion-path/index.htm">
+    <span>CSS Motion Paths</span>
+    <span class="text">Animación de trayectos o rutas con CSS</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2022</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semilong" title="~11min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="animaciones/view-transition-api/index.htm">
+    <span>View Transition API</span>
+    <span class="text">Animaciones de transición entre páginas</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2023</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock short" title="~5min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Transformaciones 2D/3D</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="transformaciones/transform/index.htm">
+    <span>Transformaciones CSS</span>
+    <span class="text">La propiedad transform de CSS</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="transformaciones/transform-translate/index.htm">
+    <span>Translaciones 2D</span>
+    <span class="text">Trasladar: La función CSS translate()</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="transformaciones/transform-rotate/index.htm">
+    <span>Rotaciones 2D</span>
+    <span class="text">Rotaciones: La función CSS rotate()</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semishort" title="~2min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="transformaciones/transform-scale/index.htm">
+    <span>Escalado 2D</span>
+    <span class="text">Reescalar: La función CSS scale()</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semishort" title="~2min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="transformaciones/transform-skew/index.htm">
+    <span>Deformaciones 2D</span>
+    <span class="text">Las funciones CSS skewX() y skewY()</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semishort" title="~1min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="transformaciones/transform-3d/index.htm">
+    <span>Transformaciones 3D</span>
+    <span class="text">Funciones de transformación en 3D</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock half" title="~10min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="transformaciones/perspective/index.htm">
+    <span>Perspectivas CSS</span>
+    <span class="text">Establecer punto de fuga para perspectivas en CSS</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Dibujar con CSS</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="dibujar-con-css/como-empezar/index.htm">
+    <span>¿Cómo dibujar con CSS?</span>
+    <span class="text">Algunos consejos y advertencias antes de empezar</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="dibujar-con-css/estructura-html/index.htm">
+    <span>Primeros pasos: Estructura HTML</span>
+    <span class="text">Primeros pasos para dibujar con CSS</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="dibujar-con-css/estructura-css/index.htm">
+    <span>Primeros pasos: Estructura CSS</span>
+    <span class="text">Primeros pasos para dibujar con CSS</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock full" title="~21min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="index.htm" title="CSS">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="../postcss/index.htm" title="PostCSS">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/fundamentos/" title="Fundamentos">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/javascript/" title="Javascript">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/npm/" title="NPM">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/webcomponents/" title="WebComponents">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/vuejs/" title="VueJS">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/automatizadores/" title="Automatizadores">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  </div>
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

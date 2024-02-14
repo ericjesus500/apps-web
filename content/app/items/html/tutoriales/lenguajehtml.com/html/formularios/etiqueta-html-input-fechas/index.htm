@@ -1,0 +1,430 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e44f26">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>La etiqueta &lt;input&gt; con fechas - HTML en español - Lenguaje HTML</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Si el usuario debe introducir una fecha o una hora, existen campos de entrada de datos que facilitan la tarea a los usuarios.">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="La etiqueta &lt;input&gt; con fechas - HTML en español">
+  <meta property="og:image" content="https://lenguajehtml.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Si el usuario debe introducir una fecha o una hora, existen campos de entrada de datos que facilitan la tarea a los usuarios.">
+  <meta property="og:url" content="https://lenguajehtml.com/html/formularios/etiqueta-html-input-fechas/">
+  <meta property="twitter:url" content="https://lenguajehtml.com/html/formularios/etiqueta-html-input-fechas/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="La etiqueta &lt;input&gt; con fechas - HTML en español">
+  <meta property="twitter:description" content="Si el usuario debe introducir una fecha o una hora, existen campos de entrada de datos que facilitan la tarea a los usuarios.">
+  <meta property="twitter:image" content="https://lenguajehtml.com/large-summary.jpg">
+
+  </head>
+
+<body class="html" style="--logo-color: #e44f26"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="/">
+  <svg><use href="../../../assets/logos.svg#html"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeHTML.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/html.jpg')">
+    <h1><a href="index.htm">La etiqueta &lt;input&gt; con fechas</a></h1><h2 class="typewriter">Controles: Campos de entrada con fechas</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../etiqueta-html-input-numeros/index.htm">La etiqueta &lt;input&gt; con números</a>
+    <a class="current" href="index.htm">La etiqueta &lt;input&gt; con fechas</a>
+    <a href="../etiqueta-html-input-checkbox-radio/index.htm">La etiqueta &lt;input&gt; con casillas</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Si nuestra intención es que el usuario introduzca una fecha concreta, en lugar de utilizar un campo de texto genérico <code>&lt;input&gt;</code>, lo ideal sería utilizar uno relacionado con las fechas, que desplegará un control denominado frecuentemente <strong>date picker</strong>. Básicamente, se trata de un campo especial donde el usuario puede seleccionar el día, mes y año que desee, simplemente a golpe de clic, mostrando un calendario adaptado y ahorrándose el escribir la fecha, además de simplificar el formato a utilizar, ya que puede ser muy complicado guardar siempre la fecha en un mismo formato.</p>
+<p>Existen ciertos atributos <code>type</code> del campo de la etiqueta <code>&lt;input&gt;</code> que nos permitirán obtener fechas/horas por parte del usuario. Son los que encontraremos a continuación:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de información a obtener</th>
+<th>Etiqueta a utilizar</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fecha</td>
+<td><code>&lt;input type=&quot;date&quot;&gt;</code></td>
+<td><input type="date"></td>
+</tr>
+<tr>
+<td>Mes</td>
+<td><code>&lt;input type=&quot;month&quot;&gt;</code></td>
+<td><input type="month"></td>
+</tr>
+<tr>
+<td>Semana</td>
+<td><code>&lt;input type=&quot;week&quot;&gt;</code></td>
+<td><input type="week"></td>
+</tr>
+<tr>
+<td>Hora</td>
+<td><code>&lt;input type=&quot;time&quot;&gt;</code></td>
+<td><input type="time"></td>
+</tr>
+<tr>
+<td>Fecha y hora local</td>
+<td><code>&lt;input type=&quot;datetime-local&quot;&gt;</code></td>
+<td><input type="datetime-local"></td>
+</tr>
+</tbody>
+</table>
+<p>Recuerda que estos controles variarán visualmente dependiendo del sistema operativo utilizado. Veamos varios ejemplos para determinar como funcionan.</p>
+<h3 id="el-atributo-typedate" tabindex="-1"><a class="header-anchor" href="#el-atributo-typedate">El atributo <code>type=&quot;date&quot;</code></a></h3>
+<p>Mediante la etiqueta <code>&lt;input type=&quot;date&quot;&gt;</code> podemos obtener fechas e incluso indicar una fecha por defecto en el campo <code>value</code>. Las fechas las indicaremos de mayor a menor magnitud, de modo que primero indicaremos el año, luego el mes y luego el día. El navegador se encargará de darle el formato adecuado visualmente según el país, pero en código lo indicaremos siempre de esta forma:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  Selecciona la fecha deseada:
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>date<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2024-02-25<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>Por otro lado, los atributos <code>min</code> y <code>max</code> en este tipo de campos <code>&lt;input&gt;</code> se encargarán de limitar la fecha mínima y la fecha máxima que el usuario puede seleccionar en el <strong>date picker</strong>. Las fechas que estén en el exterior de este rango, aparecerán grises o desactivadas, de modo que el usuario no podrá seleccionarlas:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  Selecciona la fecha deseada:
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>date<span class="token punctuation">"</span></span> <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2024-02-25<span class="token punctuation">"</span></span> <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2024-12-25<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>De la misma forma, el atributo <code>step</code> se utiliza para delimitar el incremento entre fecha y fecha. Por ejemplo, en el siguiente ejemplo hemos indicado un <code>2</code>, por lo que teniendo en cuenta el atributo <code>min</code>, el usuario solo podrá seleccionar las fechas de dos en dos: <code>2024-02-25</code>, <code>2024-02-27</code>, <code>2024-02-29</code>, etc...</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  Selecciona la fecha deseada:
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>date<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2024-09-22<span class="token punctuation">"</span></span>
+         <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2024-02-25<span class="token punctuation">"</span></span> <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2024-12-25<span class="token punctuation">"</span></span> <span class="token attr-name">step</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p><caniuse-support title="Type_date" feature="mdn-html_elements_input_type_date" edge="12/y" firefox="57/y" chrome="20/y" safari="14.1/y" opera="11/y" ios_saf="5/y" and_chr="25/y" and_ff="57/y">
+</caniuse-support></p>
+<h3 id="el-atributo-typemonth" tabindex="-1"><a class="header-anchor" href="#el-atributo-typemonth">El atributo <code>type=&quot;month&quot;</code></a></h3>
+<p>Aunque puede que no tan frecuentemente, es posible que necesitemos que el usuario seleccione un mes en lugar de una fecha específica porque, por ejemplo, el día no es relevante. Para ello, tenemos a nuestra disposición el campo <code>&lt;input type=&quot;month&quot;&gt;</code>:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  Selecciona la fecha deseada:
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>month<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2024-11<span class="token punctuation">"</span></span>
+         <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2024-02<span class="token punctuation">"</span></span> <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2024-12<span class="token punctuation">"</span></span> <span class="token attr-name">step</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>De la misma forma que hemos visto antes, podemos establecer una fecha mínima, una fecha máxima, e incluso un atributo <code>step</code> para permitir un número de meses determinado entre opción y opción. Observa que no es necesario indicar los días en los atributos <code>min</code> y <code>max</code>, pero si lo necesitamos podemos incluirlos.</p>
+<p>En el caso de establecer un valor <code>value</code>, aquí si que no se necesita indicar el número de día, ya que lo que seleccionamos es un mes. En este ejemplo, seleccionaría <strong>Noviembre de 2024</strong>.</p>
+<p><caniuse-support title="Type_month" feature="mdn-html_elements_input_type_month" edge="12/y" firefox="✗/n" chrome="20/y" safari="✗/n" opera="11/y" ios_saf="✔/y" and_chr="25/y" and_ff="18/y">
+</caniuse-support></p>
+<h3 id="el-atributo-typeweek" tabindex="-1"><a class="header-anchor" href="#el-atributo-typeweek">El atributo <code>type=&quot;week&quot;</code></a></h3>
+<p>Aunque no es muy frecuente en países de habla hispana, el atributo <code>type=&quot;week&quot;</code> en el campo <code>&lt;input&gt;</code> nos permite crear campos de entrada de datos que se enfocan en las semanas del año. De esta forma, un usuario podría elegir una semana concreta y proporcionarlo al formulario:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  Selecciona la fecha deseada:
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>week<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2024-W19<span class="token punctuation">"</span></span>
+         <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2024-W13<span class="token punctuation">"</span></span> <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2024-W36<span class="token punctuation">"</span></span> <span class="token attr-name">step</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>El formato para indicar las semanas se basa en indicar el año, seguido de un guión y la letra <code>W</code> seguida del número de la semana del año. Así pues, <code>2024-W15</code> o <code>2025-W02</code> serían fechas de semanas válidas. Nuevamente, se puede seleccionar mínimos, máximos y mediante el atributo <code>step</code> se puede indicar el número de semanas que se saltará de opción a opción.</p>
+<p><caniuse-support title="Type_week" feature="mdn-html_elements_input_type_week" edge="12/y" firefox="✗/n" chrome="20/y" safari="✗/n" opera="11/y" ios_saf="✗/n" and_chr="25/y" and_ff="18/y">
+</caniuse-support></p>
+<h3 id="el-atributo-typetime" tabindex="-1"><a class="header-anchor" href="#el-atributo-typetime">El atributo <code>type=&quot;time&quot;</code></a></h3>
+<p>Por otro lado, los campos <code>&lt;input&gt;</code> permiten también añadir el tipo <code>type=&quot;time&quot;</code>, mediante el cuál podemos pedir al usuario la entrada de una hora específica, algo muy frecuente en algunos casos. Observa que al añadir este control a un formulario, nos aparecerá el formato con horas y segundos:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  Selecciona la fecha deseada:
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>time<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>11:00<span class="token punctuation">"</span></span>
+         <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>09:00<span class="token punctuation">"</span></span> <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>22:00<span class="token punctuation">"</span></span> <span class="token attr-name">step</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>30<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>Como puedes ver, podemos utilizar atributos <code>min</code> y <code>max</code> para restringir horas, establecer un valor por defecto con <code>value</code>, pero sobre todo la utilización del atributo <code>step</code> para incrementar o decrementar valores en <code>segundos</code>.</p>
+<p>Por defecto, <code>step</code> tiene un valor de <code>60</code>, que indicaría que la hora salta de <code>60</code> en <code>60</code> segundos, por lo que los segundos de la hora no nos interesan. Pero pongamos como ejemplo que establecemos <code>30</code>: estaríamos indicando que sólo serían válidas horas con los segundos en <code>00</code> o en <code>30</code>, empezando a contar desde el valor <code>min</code>.</p>
+<p>Valores válidos de <code>step</code> podrían ser:</p>
+<ul>
+<li><code>30</code>: Cada 30 segundos.</li>
+<li><code>60</code>: Cada 60 segundos. Los segundos son irrelevantes (por defecto).</li>
+<li><code>3600</code> (60s x 60m): Cada hora. Los minutos y segundos son irrelevantes.</li>
+<li><code>7200</code> (60s x 60m x 2h): Cada 2 horas.</li>
+<li><code>43200</code> (60s x 60m x 12h): Cada 12 horas.</li>
+</ul>
+<p><caniuse-support title="Type_time" feature="mdn-html_elements_input_type_time" edge="12/y" firefox="57/y" chrome="20/y" safari="14.1/y" opera="10/y" ios_saf="5/y" and_chr="25/y" and_ff="57/y">
+</caniuse-support></p>
+<h3 id="el-atributo-typedatetime-local" tabindex="-1"><a class="header-anchor" href="#el-atributo-typedatetime-local">El atributo <code>type=&quot;datetime-local&quot;</code></a></h3>
+<p>Por último, pero no por ello menos importante, tenemos el <code>&lt;input&gt;</code> con <code>type=&quot;datetime-local&quot;</code>, el cuál nos permite obtener la fecha y hora local del sistema del usuario y proporcionarla en el formulario.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  Selecciona la fecha deseada:
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>datetime-local<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2024-07-23T11:00<span class="token punctuation">"</span></span>
+         <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2024-03-23T11:00<span class="token punctuation">"</span></span> <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2024-11-23T11:00<span class="token punctuation">"</span></span> <span class="token attr-name">step</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>3600<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>Ejemplos de formatos de hora válidos podrían ser <code>2024-06-30T21:40</code> o <code>2025-08-16T02:39</code>. El formato de la hora será el mismo del <code>type=&quot;date&quot;</code> y el mismo del <code>type=&quot;time&quot;</code>, separándolos por una <code>T</code>, es decir:</p>
+<ul>
+<li>Año en 4 cifras + guión <code>-</code></li>
+<li>Mes en 2 cifras + guión <code>-</code></li>
+<li>Día en 2 cifras + separador de tiempo <code>T</code></li>
+<li>Horas en 2 cifras + dos puntos <code>:</code></li>
+<li>Minutos en 2 cifras + dos puntos <code>:</code></li>
+<li>Segundos en 2 cifras</li>
+</ul>
+<p><caniuse-support title="Type_datetime-local" feature="mdn-html_elements_input_type_datetime-local" edge="12/y" firefox="93/y" chrome="20/y" safari="14.1/y" opera="11/y" ios_saf="5/y" and_chr="25/y" and_ff="93/y">
+</caniuse-support></p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../etiqueta-html-input-numeros/index.htm" title="La etiqueta &lt;input&gt; con números">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>La etiqueta &lt;input&gt; con números</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../etiqueta-html-input-checkbox-radio/index.htm" title="La etiqueta &lt;input&gt; con casillas">
+  <div>
+    <span>La etiqueta &lt;input&gt; con casillas</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/lDPJQyXow_g" title="Consejos y buenas prácticas (VII): SEO">
+  <img loading="lazy" src="../../../vi/lDPJQyXow_g/mqdefault.jpg" alt="Consejos y buenas prácticas (VII): SEO">
+</a><a href="https://youtu.be/LAHR5gl07ks" title="Consejos y buenas prácticas (V): Accesibilidad">
+  <img loading="lazy" src="../../../vi/LAHR5gl07ks/mqdefault.jpg" alt="Consejos y buenas prácticas (V): Accesibilidad">
+</a><a href="https://youtu.be/SVomAFpMw30" title="Consejos y buenas prácticas (II): HTML + WebFonts">
+  <img loading="lazy" src="../../../vi/SVomAFpMw30/mqdefault.jpg" alt="Consejos y buenas prácticas (II): HTML + WebFonts">
+</a><a href="https://youtu.be/RW5erp81FMY" title="Consejos y buenas prácticas (I): HEAD">
+  <img loading="lazy" src="../../../vi/RW5erp81FMY/mqdefault.jpg" alt="Consejos y buenas prácticas (I): HEAD">
+</a><a href="https://youtu.be/cQIlwKSAyAc" title="Crear packs de iconos con sprites SVG">
+  <img loading="lazy" src="../../../vi/cQIlwKSAyAc/mqdefault.jpg" alt="Crear packs de iconos con sprites SVG">
+</a><a href="https://youtu.be/7oPdEM0VXOs" title="Consejos y buenas prácticas (VI): Performance">
+  <img loading="lazy" src="../../../vi/7oPdEM0VXOs/mqdefault.jpg" alt="Consejos y buenas prácticas (VI): Performance">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-5', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

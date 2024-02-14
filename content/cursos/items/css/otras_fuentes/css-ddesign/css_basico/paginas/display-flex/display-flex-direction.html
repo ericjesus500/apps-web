@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>display flex</title>
+	<style>
+
+		*{
+			box-sizing: border-box;			
+		}
+
+		body{
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			font-family: Arial, serif;
+		}
+
+		.content{
+			width: 90%;
+			height: auto;
+			border: 1px solid black;
+			padding: 30px 30px;		
+		}	
+
+		.box{
+			width: 100px;
+			height: 100px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #fff;			
+			border-width: 1px;
+			border-style: solid;			
+			font-size: 20px;
+			font-family: Arial;
+			margin: 20px 10px;			
+		}
+
+		.box:nth-child(1) {
+			background: skyblue;
+		}
+
+		.box:nth-child(2){
+			background: violet;
+		}
+
+		.box:nth-child(3){
+			background: orange;
+		}
+
+		.box:nth-child(4){
+			background: #D4E01EFF;
+		}
+
+		.box:nth-child(5){
+			background: #3EDE20FF;
+		}
+
+		.box:nth-child(6){
+			background: #2684D8FF;
+		}
+
+		.control-desborde-row{
+			width: 100%;
+			height: auto;
+			border: 1px solid orange;
+			text-align: center;
+		}
+
+		.content-row{
+			width: 60%;			
+			height: auto;
+			margin: 10px auto;
+			border: 1px solid black;			
+			padding: 30px 30px;
+		}
+
+		.content-column-desborde{
+			width: 100%;
+			height: 300px;
+			border: 1px solid black;
+			padding: 30px 30px;		
+		}
+
+		.content-column{
+			width: 100%;
+			height: auto;
+			border: 1px solid black;
+			padding: 30px 30px;		
+		}
+
+		.cont{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+		}
+
+		.cont-box{
+			width: 33%;
+			height: auto;
+			margin: 10px 10px;
+		}
+
+		.control-desborde-column{
+			width: 100%;
+			height: 500px;
+		}
+
+		.box-desborde{
+			height: 200px;			
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #FFF;			
+			border-width: 1px;
+			border-style: solid;			
+			font-size: 20px;
+			font-family: Arial;
+			margin: 20px 10px;		
+			background-color: #28D;
+			padding: 20px
+		}
+
+		.d-flex{
+			background-color: red;			
+			display: flex;
+			color:white;			
+			margin: 20px auto;
+		}
+
+		.flex-direction-row{
+			flex-direction: row;
+		}
+
+		.flex-direction-row-reverse{
+			flex-direction: row-reverse;
+		}
+
+		.flex-direction-column{
+			flex-direction: column;
+		}
+
+		.flex-direction-column-reverse{
+			flex-direction: column-reverse;
+		}
+
+		.div-lista{			
+			margin: 40px auto;
+			padding: 0 0px;			
+		}
+
+		.list{
+			line-height: 2;
+			font-size: 16px;
+			text-align: left;
+			width: 100%;			
+			margin: 10px auto;
+		}
+
+		.content-inherit{
+			width: 90%;
+			height: auto;			
+			padding: 30px 30px;
+			background-color: #C836B96D;
+			margin: 20px auto;
+			display: flex;
+			flex-direction: column-reverse;
+		}
+
+		.box-inherit{
+			width: 90%;
+			height: auto;
+			border: 1px solid blue;
+			margin: 20px auto;
+			display: inherit;
+		}
+
+		.box-inherit:nth-child(1){
+			background-color: skyblue;
+		}
+
+		.box-inherit:nth-child(2){
+			background-color: violet;
+		}
+
+		.box-inherit:nth-child(3){
+			background-color: orange;
+		}
+
+		.display-inherit{
+			flex-direction: inherit;	
+		}
+		
+	</style>
+</head>
+<body>
+
+<h1>flex-direction se aplica de Elementos Padre a Elementos Hijo</h1>
+	<div>
+		<h2>flex-direction: row</h2>
+		<div class="content d-flex flex-direction-row">
+			<div class="box">box 1</div>		
+			<div class="box">box 2</div>
+			<div class="box">box 3</div>
+			<div class="box">box 4</div>		
+			<div class="box">box 5</div>
+			<div class="box">box 6</div>		
+		</div>
+
+		<div class="div-lista">
+			<ul class="list">
+				<li>Es el valor por defecto.</li>
+				<li>La dirección de los hijos es de izquierda a derecha.</li>
+			  	<li>Cada box respeta sus dimensiones.</li>
+			  	<li>Cada box se puede desbordar y afectar al contenedor padre.</li>		  	
+			  	<li>Cada box acepta márgenes y padding.</li>
+			</ul>
+		</div>		
+
+		<h2>flex-direction: row-reverse</h2>
+		<div class="content d-flex flex-direction-row-reverse">
+			<div class="box">box 1</div>		
+			<div class="box">box 2</div>
+			<div class="box">box 3</div>
+			<div class="box">box 4</div>		
+			<div class="box">box 5</div>
+			<div class="box">box 6</div>		
+		</div>
+
+		<div class="div-lista">
+			<ul class="list">
+				<li>Los elementos hijos cambian de posición.</li>
+				<li>La dirección de los hijos es de derecha a izquierda.</li>
+			  	<li>Cada box respeta sus dimensiones.</li>
+			  	<li>Cada box se puede desbordar y afectar al contenedor padre.</li>		  	
+			  	<li>Cada box acepta márgenes y padding.</li>
+			</ul>
+		</div>	
+
+		<h2>Desbordamiento</h2>
+		<div class="control-desborde-row">
+			<div class="content-row d-flex flex-direction-row">
+				<div class="box-desborde">box 1</div>		
+				<div class="box-desborde">box 2</div>
+				<div class="box-desborde">box 3</div>
+				<div class="box-desborde">box 4</div>		
+				<div class="box-desborde">box 5</div>
+				<div class="box-desborde">box 6</div>
+				<div class="box-desborde">box 7</div>
+				<div class="box-desborde">box 8</div>
+				<div class="box-desborde">box 9</div>
+				<div class="box-desborde">box 10</div>				
+			</div>			
+		</div>
+
+		<div class="div-lista">
+			<ul class="list">
+			  	<li>Si el elemento padre tiene la propiedad <b>width</b> definida expresamente puede sufrir desbordamiento por los elementos hijos.</li>
+			  	<li>La solucion es definir <b>width: auto</b>.</li>
+				<li>Los elementos hijos ajustan su contenido para evitar su desbordamiento interno.</li>
+				<li>Los elementos hijos <b>NO</b> aceptan la propiedad <b>width</b>.</li>
+			  	<li>Los elementos hijos <b>SI</b> aceptan la propiedad <b>height</b>.</li>
+			  	<li>Cada box acepta márgenes y padding.</li>
+			</ul>
+		</div>	
+	</div>	
+
+	<div class="cont">
+		<div class="cont-box">
+			<h2>flex-direction: column</h2>
+			<div class="content-column d-flex flex-direction-column">
+				<div class="box">box 1</div>		
+				<div class="box">box 2</div>
+				<div class="box">box 3</div>
+				<div class="box">box 4</div>		
+				<div class="box">box 5</div>
+				<div class="box">box 6</div>		
+			</div>
+
+			<div class="div-lista">
+				<ul class="list">
+					<li>Los elementos hijos se disponen en forma de columna.</li>
+					<li>La dirección de los hijos es de arriba a abajo.</li>
+				  	<li>Si el contenedor padre es <b>height: auto</b>, entonces cada box respetará sus dimensiones.</li>				  	
+				  	<li>Cada box se puede desbordar y afectar al contenedor padre.</li>
+				  	<li>Cada box acepta márgenes y padding.</li>
+				</ul>
+			</div>				
+		</div>
+
+		<div class="cont-box">
+			<h2>flex-direction: column-reverse</h2>
+			<div class="content-column d-flex flex-direction-column-reverse">
+				<div class="box">box 1</div>		
+				<div class="box">box 2</div>
+				<div class="box">box 3</div>
+				<div class="box">box 4</div>		
+				<div class="box">box 5</div>
+				<div class="box">box 6</div>		
+			</div>
+
+			<div class="div-lista">
+				<ul class="list">
+					<li>Los elementos hijos se disponen en forma de columna.</li>
+					<li>La dirección de los hijos es de abajo a arriba.</li>				  	
+				</ul>
+			</div>				
+		</div>
+
+		<div class="cont-box">
+			<div>
+				<h2>Desbordamiento</h2>
+			</div>
+			<div class="control-desborde-column">
+				<div class="content-column-desborde d-flex flex-direction-column">
+					<div class="box">box 1</div>		
+					<div class="box">box 2</div>
+					<div class="box">box 3</div>
+					<div class="box">box 4</div>		
+					<div class="box">box 5</div>
+					<div class="box">box 6</div>		
+				</div>				
+			</div>
+
+			<div class="div-lista">
+				<ul class="list">					
+				  	<li>Si el contenedor padre tiene <b>width definido</b> habrá desbordamiento.</li>
+				</ul>
+			</div>				
+		</div>
+	</div>
+
+<h1>flex-direction se puede aplicar al Elemento hijo para establecer Herencia</h1>
+
+<h2>flex-direction: inherit</h2>
+	<div class="content-inherit">
+		
+			<div class="box-inherit display-inherit">
+				<div class="box display-inherit"></div>
+				<div class="box display-inherit"></div>
+				<div class="box display-inherit"></div>
+			</div>
+		
+
+		
+			<div class="box-inherit display-inherit">
+				<div class="box display-inherit"></div>
+				<div class="box display-inherit"></div>
+				<div class="box display-inherit"></div>
+			</div>
+		
+
+		
+			<div class="box-inherit display-inherit">
+				<div class="box display-inherit"></div>
+				<div class="box display-inherit"></div>
+				<div class="box display-inherit"></div>
+			</div>
+		
+	</div>
+	
+</body>
+</html>

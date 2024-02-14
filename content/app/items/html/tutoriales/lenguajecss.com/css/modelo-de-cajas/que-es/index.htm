@@ -1,0 +1,496 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Modelo de cajas - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Para dominar CSS primero hay que comprender a la perfección el modelo de cajas de CSS. Bordes (border), relleno (padding) y márgenes (margin).">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Modelo de cajas - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Para dominar CSS primero hay que comprender a la perfección el modelo de cajas de CSS. Bordes (border), relleno (padding) y márgenes (margin).">
+  <meta property="og:url" content="https://lenguajecss.com/css/modelo-de-cajas/que-es/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/modelo-de-cajas/que-es/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Modelo de cajas - CSS en español">
+  <meta property="twitter:description" content="Para dominar CSS primero hay que comprender a la perfección el modelo de cajas de CSS. Bordes (border), relleno (padding) y márgenes (margin).">
+  <meta property="twitter:image" content="https://lenguajecss.com/large-summary.jpg">
+
+  </head>
+
+<body class="css" style="--logo-color: #1e7bbf"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/css.jpg')">
+    <h1><a href="index.htm">Modelo de cajas</a></h1><h2 class="typewriter">Modelo de cajas: Márgen, borde, relleno y contenido</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../../unidades-css/funciones-css/index.htm">Funciones matemáticas CSS</a>
+    <a class="current" href="index.htm">Modelo de cajas</a>
+    <a href="../box-sizing/index.htm">La propiedad box-sizing</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Cuando hablamos del <strong>modelo de cajas</strong> en CSS, estamos haciendo referencia a un sistema que tiene el navegador de interpretar las diferentes partes de lo que solemos denominar «caja»: un elemento HTML con unas ciertas dimensiones.</p>
+<h3 id="qué-es-el-modelo-de-cajas" tabindex="-1"><a class="header-anchor" href="#qué-es-el-modelo-de-cajas">¿Qué es el modelo de cajas?</a></h3>
+<p>La representación básica del <strong>modelo de cajas</strong> se basa en varios conceptos importantes, como veremos a continuación:</p>
+<ul>
+<li>El <strong>borde</strong> (<em>border</em>), en negro, es el límite que separa el interior del exterior del elemento.</li>
+<li>El <strong>márgen</strong> (<em>margin</em>), en naranja, es la parte exterior del elemento, por fuera del borde.</li>
+<li>El <strong>relleno</strong> (<em>padding</em>), en verde, es la parte interior del elemento, entre el contenido y el borde.</li>
+<li>El <strong>contenido</strong>, en azul, es la parte interior del elemento, excluyendo el relleno.</li>
+</ul>
+<p><img src="modelo-de-cajas.png" alt="Márgenes y espaciados" width="800" height="500" loading="lazy"></p>
+<p>Como veremos, cada una de estas partes del <strong>modelo de cajas</strong> de CSS se puede alterar, cambiando sus dimensiones, colores, etc. Así pues, cada elemento HTML tendrá su propio borde, margen, relleno y contenido.</p>
+<h4 id="dimensiones-ancho-y-alto" tabindex="-1"><a class="header-anchor" href="#dimensiones-ancho-y-alto">Dimensiones (ancho y alto)</a></h4>
+<p>Para dar tamaños específicos a los diferentes elementos de un documento HTML, necesitaremos asignarles valores a las propiedades <code>width</code> (ancho) y <code>height</code> (alto):</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>width</code></td>
+<td><strong>auto</strong> | <badge-type class="size"></badge-type></td>
+<td>Tamaño de ancho de un elemento.</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td><strong>auto</strong> | <badge-type class="size"></badge-type></td>
+<td>Tamaño de alto de un elemento.</td>
+</tr>
+</tbody>
+</table>
+<p>En el caso de indicar el valor <code>auto</code> a dichas propiedades, el navegador se encargará de darle el tamaño apropiado, dependiendo de su contenido. Ten en cuenta que este valor es el que tienen <strong>por defecto</strong> estas propiedades. De no indicar un valor concreto, <code>width</code> y <code>height</code> tienen establecido el valor <code>auto</code>.</p>
+<blockquote>
+<p>Es importante recalcar que el tamaño automático dado a un elemento depende del <strong>tipo de elemento</strong> (<em>bloque, en línea...</em>). Este tema lo veremos en un capítulo posterior.</p>
+</blockquote>
+<p>Hay que ser muy conscientes de que, sin indicar valores de ancho y alto para una caja, el elemento generalmente toma el tamaño que debe respecto a su contenido, mientras que si indicamos un ancho y alto concretos, <strong>estamos obligando mediante CSS a tener un aspecto concreto</strong> y podemos obtener resultados similares al siguiente (<em>conocida broma de CSS</em>) si su contenido es más grande que el tamaño que hemos obligado a tener:</p>
+<p><img src="css-is-awesome.png" alt="CSS is awesome" width="500" height="350" loading="lazy"></p>
+<h4 id="rango-de-dimensiones" tabindex="-1"><a class="header-anchor" href="#rango-de-dimensiones">Rango de dimensiones</a></h4>
+<p>Otra forma de lidiar con esto, es utilizar las propiedades hermanas de <strong>width</strong>: por un lado, <code>min-width</code> y <code>max-width</code> y por otro, sus equivalentes de <strong>height</strong>: <code>min-height</code> y <code>max-height</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>max-width</code></td>
+<td><strong>none</strong> | <badge-type class="size"></badge-type></td>
+<td>Ancho máximo que puede ocupar un elemento.</td>
+</tr>
+<tr>
+<td><code>min-width</code></td>
+<td><strong>0</strong> | <badge-type class="size"></badge-type></td>
+<td>Ancho mínimo que puede ocupar un elemento.</td>
+</tr>
+<tr>
+<td><code>max-height</code></td>
+<td><strong>none</strong> | <badge-type class="size"></badge-type></td>
+<td>Alto máximo que puede ocupar un elemento.</td>
+</tr>
+<tr>
+<td><code>min-height</code></td>
+<td><strong>0</strong> | <badge-type class="size"></badge-type></td>
+<td>Alto mínimo que puede ocupar un elemento.</td>
+</tr>
+</tbody>
+</table>
+<p>Con estas propiedades, en lugar de establecer un <strong>tamaño fijo</strong>, establecemos unos <strong>rangos máximos y mínimos</strong>, donde el ancho o alto podría variar entre esos valores:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 800px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 400px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">max-width</span><span class="token punctuation">:</span> 500px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>En este caso, por ejemplo, a pesar de estar indicando un tamaño de <code>800px</code>, le aplicamos un <code>max-width</code> de <code>500px</code>, por lo que estamos limitando el elemento a un tamaño de ancho de <strong>500 píxeles como máximo</strong> y nunca superará ese tamaño.</p>
+<blockquote>
+<p><strong>Ojo</strong>: Las propiedades de mínimos <code>min-width</code> y <code>min-height</code> por defecto tienen valor <strong>0</strong>, mientras que las propiedades de máximos <code>max-width</code> y <code>max-height</code>, tienen por defecto valor <strong>none</strong>.</p>
+</blockquote>
+<h4 id="zonas-de-un-elemento" tabindex="-1"><a class="header-anchor" href="#zonas-de-un-elemento">Zonas de un elemento</a></h4>
+<p>Antes de continuar, es importante saber que en CSS existen ciertas palabras clave para hacer referencia a una zona u orientación concreta sobre un elemento. Son conceptos muy sencillos y prácticamente lógicos, por lo que no tendrás ningún problema en comprenderlos. Son los siguientes:</p>
+<p><img src="positions.png" alt="Zonas del modelo de cajas: left, right, top, bottom y center" width="800" height="450" loading="lazy"></p>
+<table>
+<thead>
+<tr>
+<th>Palabra clave</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Top</strong></td>
+<td>Se refiere a la parte superior del elemento.</td>
+</tr>
+<tr>
+<td><strong>Left</strong></td>
+<td>Se refiere a la parte izquierda del elemento.</td>
+</tr>
+<tr>
+<td><strong>Right</strong></td>
+<td>Se refiere a la parte derecha del elemento.</td>
+</tr>
+<tr>
+<td><strong>Bottom</strong></td>
+<td>Se refiere a la parte inferior del elemento.</td>
+</tr>
+<tr>
+<td><strong>Center</strong></td>
+<td>En algunos casos, se refiere a la posición <strong>central</strong> entre los extremos horizontales o verticales.</td>
+</tr>
+</tbody>
+</table>
+<p>Estas palabras clave las utilizaremos muy a menudo en diferentes propiedades CSS para hacer referencia a una zona particular del elemento.</p>
+<h3 id="la-propiedad-overflow" tabindex="-1"><a class="header-anchor" href="#la-propiedad-overflow">La propiedad overflow</a></h3>
+<p>Volvamos a pensar en la situación de la imagen anterior: Damos un tamaño de ancho y alto a un elemento HTML, pero su contenido de texto es tan grande que no cabe dentro de ese elemento. ¿Qué ocurriría? Probablemente lo que vimos en la imagen: el contenido se desbordaría.</p>
+<p>Podemos modificar ese comportamiento con la propiedad de CSS <code>overflow</code>, o con alguna de sus propiedades específicas <code>overflow-x</code> o <code>overflow-y</code>:</p>
+<table class="last-shorthand">
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>overflow-x</code></td>
+<td><strong>visible</strong> | hidden | scroll | auto</td>
+<td>Establece el desbordamiento del eje X (<em>horizontal</em>).</td>
+</tr>
+<tr>
+<td><code>overflow-y</code></td>
+<td><strong>visible</strong> | hidden | scroll | auto</td>
+<td>Establece el desbordamiento del eje Y (<em>vertical</em>).</td>
+</tr>
+<tr>
+<td><code>overflow</code></td>
+<td><em>overflow-x</em> <em>overflow-y</em></td>
+<td>Propiedad de atajo que establece desbordamiento de ambos ejes.</td>
+</tr>
+</tbody>
+</table>
+<p>Dichas propiedades pueden tomar varios valores, donde <strong>visible</strong> es el valor que tiene por defecto, que permite que haya desbordamiento. Otras opciones son las siguientes, donde <strong>no se permite desbordamiento</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>¿Qué ocurre si se desborda el contenedor?</th>
+<th>¿Desbordamiento?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>visible</strong></td>
+<td>Se muestra el contenido que sobresale (<em>comportamiento por defecto</em>)</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>Se oculta el contenido que sobresale.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>scroll</td>
+<td>Se colocan barras de desplazamiento (horizontales y verticales).</td>
+<td>No</td>
+</tr>
+<tr>
+<td>auto</td>
+<td>Se colocan barras de desplazamiento (sólo las necesarias).</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>CSS3 añade las propiedades <code>overflow-x</code> y <code>overflow-y</code> para cada eje individual, que antiguamente solo era posible hacerlo con <code>overflow</code> para ambos ejes. Estas propiedades son útiles cuando no quieres mostrar alguna barra de desplazamiento, habitualmente, la barra de desplazamiento horizontal.</p>
+<p><caniuse-support title="CSS overflow property" feature="css-overflow" edge="90/y" firefox="81/y" chrome="90/y" safari="16.0/y" opera="76/y" ios_saf="16.0/y" and_chr="116/y" and_ff="116/y">
+</caniuse-support></p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../../unidades-css/funciones-css/index.htm" title="Funciones matemáticas CSS">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Funciones matemáticas CSS</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../box-sizing/index.htm" title="La propiedad box-sizing">
+  <div>
+    <span>La propiedad box-sizing</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/toA0uqeuHXQ" title="¿Qué es el CSS NESTING? ¿Cómo funciona?">
+  <img loading="lazy" src="../../../vi/toA0uqeuHXQ/mqdefault.jpg" alt="¿Qué es el CSS NESTING? ¿Cómo funciona?">
+</a><a href="https://youtu.be/oou7K8QEMSE" title="¡Zoom en CSS! La propiedad object-view-box">
+  <img loading="lazy" src="../../../vi/oou7K8QEMSE/mqdefault.jpg" alt="¡Zoom en CSS! La propiedad object-view-box">
+</a><a href="https://youtu.be/K-nE-kZKLRw" title="¡NOVEDADES CSS! ¿Cuánto de este código CSS eres CAPAZ de reconocer?">
+  <img loading="lazy" src="../../../vi/K-nE-kZKLRw/mqdefault.jpg" alt="¡NOVEDADES CSS! ¿Cuánto de este código CSS eres CAPAZ de reconocer?">
+</a><a href="https://youtu.be/9jea2qDdw7Y" title="Cómo crear SOMBRAS IDÉNTICAS (drop-shadow)">
+  <img loading="lazy" src="../../../vi/9jea2qDdw7Y/mqdefault.jpg" alt="Cómo crear SOMBRAS IDÉNTICAS (drop-shadow)">
+</a><a href="https://youtu.be/8Jh2K3tq5n0" title="Tutorial para aprender Animaciones CSS">
+  <img loading="lazy" src="../../../vi/8Jh2K3tq5n0/mqdefault.jpg" alt="Tutorial para aprender Animaciones CSS">
+</a><a href="https://youtu.be/wIGAyJGx2kc" title="CSS Cards: Baraja de cartas diseñada sólo con HTML y CSS">
+  <img loading="lazy" src="../../../vi/wIGAyJGx2kc/mqdefault.jpg" alt="CSS Cards: Baraja de cartas diseñada sólo con HTML y CSS">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

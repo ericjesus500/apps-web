@@ -1,0 +1,593 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ecc022">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <title>WebComponents - Javascript en español - Lenguaje JS</title>
+  <link rel="preload" href="../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Estándar que une las tecnologías HTML, CSS y Javascript con la finalidad de crear componentes atómicos, abiertos y fáciles de reutilizar en diferentes proyectos.">
+  <meta name="view-transition" content="same-origin">
+  <link rel="stylesheet" href="../home.css">
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="WebComponents - Javascript en español">
+  <meta property="og:image" content="https://lenguajejs.com/webcomponents/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Estándar que une las tecnologías HTML, CSS y Javascript con la finalidad de crear componentes atómicos, abiertos y fáciles de reutilizar en diferentes proyectos.">
+  <meta property="og:url" content="https://lenguajejs.com/webcomponents/">
+  <meta property="twitter:url" content="https://lenguajejs.com/webcomponents/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="WebComponents - Javascript en español">
+  <meta property="twitter:description" content="Estándar que une las tecnologías HTML, CSS y Javascript con la finalidad de crear componentes atómicos, abiertos y fáciles de reutilizar en diferentes proyectos.">
+  <meta property="twitter:image" content="https://lenguajejs.com/webcomponents/large-summary.jpg">
+
+  </head>
+
+<body class="js " style="--logo-color: #d4ecff"><div class="book page">
+    <header class="book hero">
+
+  <a class="sitelogo" href="../index.htm">
+  <svg><use href="../assets/logos.svg#js"></use></svg>
+  <img class="manzdev" src="../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeJS.com</div>
+  </div>
+</a>
+
+  <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  <div class="logo" style="--label-image: url(logo.svg); ">
+  <div class="disc"><div class="label"></div></div>
+  <img class="cover" width="400" height="400" src="../assets/webcomponents.jpg" alt="WebComponents">
+</div>
+<div class="text">
+  <h1>WebComponents</h1>
+  <div class="subtitle"></div>
+  <p class="description">Estándar que une las tecnologías HTML, CSS y Javascript con la finalidad de crear componentes atómicos, abiertos y fáciles de reutilizar en diferentes proyectos.</p>
+</div>
+
+<script>
+  const logo = document.querySelector(".logo");
+  logo.addEventListener("click", () => logo.classList.toggle("closed"));
+</script>
+
+  <div class="buttons">
+  <a class="btn" href="../index.htm">← Volver</a><a class="btn" href="cheatsheets/index.htm">Guía rápida</a><a class="btn" href="https://manz.dev/">Más sobre ManzDev</a>
+</div>
+
+
+</header>
+
+    <section class="bg dark contents">
+  <div class="contents-container"><header class="category-header">
+          <h2>Bases de los componentes</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="componentes/que-son-webcomponents/index.htm">
+    <span>¿Qué son los WebComponents?</span>
+    <span class="text">Características principales de un WebComponent</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg viewbox="0 0 24 24"><use href="../assets/icons/book.svg#important"></use></svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock half" title="~10min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="componentes/custom-elements/index.htm">
+    <span>Etiquetas HTML personalizadas</span>
+    <span class="text">Crear Custom Elements: Etiquetas HTML personalizadas</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg viewbox="0 0 24 24"><use href="../assets/icons/book.svg#important"></use></svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~7min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="componentes/estructura-componente/index.htm">
+    <span>Estructura de archivos</span>
+    <span class="text">Estructura de carpetas y archivos de un proyecto</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg viewbox="0 0 24 24"><use href="../assets/icons/book.svg#important"></use></svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~7min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="componentes/atributos-webcomponent/index.htm">
+    <span>Atributos de un WebComponent</span>
+    <span class="text">Uso de atributos en un WebComponent</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="componentes/plantillas-html-webcomponents/index.htm">
+    <span>Plantillas y HTML en componentes</span>
+    <span class="text">Cómo escribir código HTML en un WebComponent nativo</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock half" title="~10min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="componentes/css-en-custom-elements/index.htm">
+    <span>CSS en Custom Elements</span>
+    <span class="text">Estilos en un WebComponent sin Shadow DOM</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~8min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Funcionalidad de un componente</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="funcionalidad/clase-webcomponent/index.htm">
+    <span>Clase de un WebComponent</span>
+    <span class="text">Apartados de una clase de un WebComponent</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg viewbox="0 0 24 24"><use href="../assets/icons/book.svg#important"></use></svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="funcionalidad/ciclo-vida-webcomponent/index.htm">
+    <span>Ciclo de vida de un WebComponent</span>
+    <span class="text">Fases por las que pasa un WebComponent</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="funcionalidad/eventos-en-webcomponents/index.htm">
+    <span>Eventos en WebComponents</span>
+    <span class="text">Como manejar eventos en WebComponents</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semilong" title="~12min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="funcionalidad/registro-de-custom-elements/index.htm">
+    <span>Registro de Custom Elements</span>
+    <span class="text">El almacén global de Custom Elements del navegador</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock short" title="~5min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Shadow DOM (Encapsulación)</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="shadow-dom/que-es-shadow-dom/index.htm">
+    <span>¿Qué es el Shadow DOM?</span>
+    <span class="text">Encapsulación nativa de CSS y Javascript</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg viewbox="0 0 24 24"><use href="../assets/icons/book.svg#important"></use></svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock half" title="~10min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="shadow-dom/light-dom-shadow-dom/index.htm">
+    <span>¿Qué es el Light DOM?</span>
+    <span class="text">La zona oculta por el Shadow DOM</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="shadow-dom/slots/index.htm">
+    <span>Slots en WebComponents</span>
+    <span class="text">Contenido HTML desde el Light DOM al Shadow DOM</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semilong" title="~11min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="shadow-dom/shadow-dom-declarativo/index.htm">
+    <span>Shadow DOM declarativo</span>
+    <span class="text">Encapsulación creada desde el código HTML</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">202x</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="shadow-dom/css-webcomponents/index.htm">
+    <span>CSS en WebComponents</span>
+    <span class="text">Estilos en un WebComponent con Shadow DOM</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock half" title="~10min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="shadow-dom/css-scoping/index.htm">
+    <span>CSS Scoping en Shadow DOM</span>
+    <span class="text">Dar estilo al componente desde fuera del mismo</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2019</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock half" title="~10min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="shadow-dom/css-parts/index.htm">
+    <span>Variables CSS y CSS Parts</span>
+    <span class="text">Formas no intrusivas de cambiar estilos</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2020</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~7min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Comunicación entre componentes</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="comunicacion/custom-events-webcomponents/index.htm">
+    <span>Custom Events en componentes</span>
+    <span class="text">Comunicar componentes con eventos personalizados</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock half" title="~10min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Lit &amp; LitElement</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="lit/lit-html/index.htm">
+    <span>Plantillas lit-html</span>
+    <span class="text"></span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semifull" title="~17min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="lit/componentes/index.htm">
+    <span>Componentes con LitElement</span>
+    <span class="text"></span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock half" title="~9min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="lit/propiedades-y-atributos/index.htm">
+    <span>Propiedades y atributos</span>
+    <span class="text"></span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semifull" title="~18min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="lit/css-en-litelement/index.htm">
+    <span>CSS en LitElement</span>
+    <span class="text"></span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock full" title="~21min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Atomico</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="atomico/introduccion-a-atomico/index.htm">
+    <span>Introducción: ¿Qué es Atomico?</span>
+    <span class="text"></span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock half" title="~9min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="atomico/props-y-hooks-en-atomico/index.htm">
+    <span>Props y hooks en Atomico</span>
+    <span class="text"></span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock long" title="~15min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajehtml.com/svg/" title="SVG">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#svg"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/css/" title="CSS">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/postcss/" title="PostCSS">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="../fundamentos/index.htm" title="Fundamentos">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="../javascript/index.htm" title="Javascript">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="../npm/index.htm" title="NPM">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="index.htm" title="WebComponents">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="../vuejs/index.htm" title="VueJS">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="../automatizadores/index.htm" title="Automatizadores">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a><a class="topic" href="../retos/index.htm" title="Retos">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#retos"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  </div>
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-6', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,376 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Jorge Sánchez. Manual de HTML5 y CSS3. Transformaciones mediante CSS</title>
+    <script src="../../cgm1lsq.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link rel="stylesheet" href="../../lib/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="../../css/manual.css?f=20181104">
+</head>
+<body>
+<div id="mail">
+    <div id="formularioMail">
+        <p><a href="#"><img src="../../img/cerrar.png" alt="Cerrar" id="cerrarMail"></a></p>
+        <h1>Enviar mensaje</h1>
+        <form action="#" id="formMail" method="POST">
+            <input type="nombre" name="nombre" id="nombre" placeholder="nombre y apellidos" required="">
+            <input type="email" name="email" id="email" placeholder="tu email" required="">
+            <input type="asunto" placeholder="asunto" name="asunto" id="asunto" required="">
+            <textarea name="contenido" id="contenido" cols="30" rows="5" placeholder="texto del mensaje" required=""></textarea>
+            <button>ENVIAR</button>
+        </form>
+    </div>
+</div>
+<div id="btMenu">
+    <div id="franja1" class="franja"></div>
+    <div id="franja2" class="franja"></div>
+    <div id="franja3" class="franja"></div>
+</div>
+
+<div id="barraSocial">
+    <a href="https://twitter.com/jorgesancheznet">
+        <img src="../../img/twitter.png" alt="twitter" class="btSocial" title="jorgesancheznet en twitter">
+    </a>
+    <a href="https://facebook.com/jorgesancheznet">
+        <img src="../../img/facebook.png" alt="FaceBook" class="btSocial" title="jorgesancheznet en facebook">
+    </a>
+    <a href="https://youtube.com/jorgesancheznet">
+        <img src="../../img/youtube.png" alt="You Tube" class="btSocial" title="jorgesancheznet en YouTube">
+    </a>
+    <a href="https://github.com/jorgesancheznet">
+        <img src="../../img/github.png" alt="Git Hub" class="btSocial" title="jorgesancheznet en GitHub">
+    </a>
+    <a href="#" id="btMail" class="enlaceMail">
+        <img src="../../img/mail.png" alt="Enviar email" class="btSocial" title="Enviar email">
+    </a>
+</div>
+
+
+<header>
+    <div id="logo">
+        <a href="/">
+        <img src="../../img/logo.png" alt="JorgeSanchez.net logo" id="iLogo1">
+        <img src="../../img/logoMini.png" alt="JorgeSanchez.net logo" id="iLogo2">
+        </a>
+    </div>
+</header>
+
+<section id="cuerpo">
+    <h1 class="superPrincipal">Manual de HTML5 y CSS3</h1>
+    <h1 class="titulo1"><span class="numero0">[18] </span><br>Transformaciones mediante CSS</h1>
+        
+<div id="_idContainer004" class="Marco-de-texto-b-sico">
+			<h2 class="titulo2"><span class="numero2">[18.1] </span><a id="_idTextAnchor000"></a>transformaciones</h2>
+			<p class="Normal2">Por transformaciones en CSS se entiende las operaciones realizadas mediante la propiedad <strong class="Negritta">transform</strong>, la cual permite las operaciones típicas vectoriales sobre un elemento HTML. En realidad hay dos tipos de transformaciones, las transformaciones 2D, que sólo utilizan los ejes horizontal y vertical para transformar, lo que implica que sólo realiza transformaciones en el plano; y las transformaciones 3D en las que interviene el eje Z causando la ilusión de que el elemento tenga profundidad.</p>
+			<p class="Normal">Las transformaciones 2D son:</p>
+			<p class="Normal"><img src="transformaciones-css-web-resources/image/1.png" alt=""></p>
+			<p class="Normal">Las transformaciones 3D nos permiten simular profundidad en los elementos:</p>
+			<p class="Normal"><img src="transformaciones-css-web-resources/image/2.png" alt="" class="pequena"></p>
+			<h2 class="titulo2"><span class="numero2">[18.2] </span><a id="_idTextAnchor001"></a>transformaciones 2D</h2>
+			<p class="Normal2">A la propiedad <strong class="Negritta">transform </strong>se la acompaña de una función que es la responsable de realmente el elemento. Esa función puede ser:</p>
+			<ul>
+				<li class="punto"><strong class="Negritta">scale(</strong><em class="cursiva">x</em>,<em class="cursiva">y</em>). Realiza un escalado sobre el elemento. El primer valor indica el factor de escalado horizontal (1 es el 100% y .5 escala al 50%) y el segundo el escalado vertical.</li>
+				<li class="punto"><strong class="Negritta">scaleX</strong>(<em class="cursiva">x</em>). Escala el elemento sólo en horizontal.</li>
+				<li class="punto"><strong class="Negritta">scaleY</strong>(<em class="cursiva">y</em>). Escala el elemento sólo en vertical.</li>
+				<li class="punto"><strong class="Negritta">rotate</strong>(ángulo). Rota el elemento el ángulo indicado (por ejemplo <strong class="Negritta">45deg</strong>)</li>
+				<li class="punto"><strong class="Negritta">rotate(</strong><em class="cursiva">ángulo</em><strong class="Negritta">)</strong>. Rota el elemento el número de grados indicados</li>
+				<li class="punto"><strong class="Negritta">skewX(</strong><em class="cursiva">angle</em><strong class="Negritta">)</strong>. Estira el elemento en el eje horizontal</li>
+				<li class="punto"><strong class="Negritta">skewY(</strong><em class="cursiva">angle</em><strong class="Negritta">)</strong>. Estira el elemento en el eje vertical</li>
+				<li class="punto"><strong class="Negritta">skew(</strong><em class="cursiva">ánguloX, ánguloY</em><strong class="Negritta">)</strong>. Estira el elemento usando un ángulo en horizontal y otro en vertical.</li>
+			</ul>
+			<p class="Normal2">Los navegadores actuales soportan la propiedad <em class="cursiva">transform</em>, pero los de tipo <em class="cursiva">webkit</em> (Chrome y Safari) imponen su versión llamada <strong class="Negritta">–webkit-transform</strong>. También Internet Explorer usa su propia versión (aunque ahora ya usa la estándar) y hasta hace poco hacía lo mismo Firefox.</p>
+			<table id="table001" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;!doctype </strong><span class="atributo">html</span><strong class="resaltado">&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;html</strong> <span class="atributo">lang</span>=<span class="texto">”es”</span>&gt;</pre>
+							<pre class="codigo"><strong class="resaltado">&lt;head&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&#9;&lt;meta</strong> <span class="atributo">charset</span>=<span class="texto">”UTF-8”</span><strong class="resaltado">&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&#9;&lt;title&gt;</strong>Document<strong class="resaltado">&lt;/title&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&#9;&lt;style&gt;</strong></pre>
+							<pre class="codigo">&#9;&#9;div{</pre>
+							<pre class="codigo">&#9;&#9;&#9;<strong class="resaltado">width</strong>:<span class="atributo">100px</span>;</pre>
+							<pre class="codigo">&#9;&#9;&#9;<strong class="resaltado">height</strong>:<span class="atributo">100px</span>;</pre>
+							<pre class="codigo">&#9;&#9;&#9;<strong class="resaltado">float</strong>:left;</pre>
+							<pre class="codigo">&#9;&#9;&#9;<strong class="resaltado">margin</strong>:<span class="atributo">5px</span>;</pre>
+							<pre class="codigo">&#9;&#9;&#9;<strong class="resaltado">background-color</strong>: <span class="atributo">yellow</span>;</pre>
+							<pre class="codigo">&#9;&#9;&#9;<strong class="resaltado">border</strong>:<span class="atributo">1px solid black</span>;</pre>
+							<pre class="codigo">&#9;&#9;}</pre>
+							<pre class="codigo">&#9;&#9;#d2{</pre>
+							<pre class="codigo">&#9;&#9;&#9;<strong class="resaltado">transform</strong>: scale(<span class="atributo">1,.5</span>);</pre>
+							<pre class="codigo">&#9;&#9;}</pre>
+							<pre class="codigo">&#9;&#9;#d3{</pre>
+							<pre class="codigo">&#9;&#9;&#9;<strong class="resaltado">transform</strong>:rotate(<span class="atributo">45deg</span>);</pre>
+							<pre class="codigo">&#9;&#9;}</pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table id="table002" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo">&#9;&#9;#d4{</pre>
+							<pre class="codigo">&#9;&#9;&#9;<strong class="resaltado">transform</strong>:skewX(<span class="atributo">-45deg</span>);</pre>
+							<pre class="codigo">&#9;&#9;}</pre>
+							<pre class="codigo">&#9;&#9;#d5{</pre>
+							<pre class="codigo">&#9;&#9;&#9;<strong class="resaltado">transform</strong>:skewY(<span class="atributo">-45deg</span>);</pre>
+							<pre class="codigo">&#9;&#9;}</pre>
+							<pre class="codigo"><strong class="resaltado">&#9;&lt;/style&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/head&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;body&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&#9;&lt;div</strong> <span class="atributo">id</span>=<span class="texto">”d1”</span><strong class="resaltado">&gt;</strong>Texto1<strong class="resaltado">&lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&#9;&lt;div </strong><span class="atributo">id</span>=<span class="texto">”d2”</span><strong class="resaltado">&gt;</strong>Texto2<strong class="resaltado">&lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&#9;&lt;div </strong><span class="atributo">id</span>=<span class="texto">”d3”</span><strong class="resaltado">&gt;</strong>Texto3<strong class="resaltado">&lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&#9;&lt;div </strong><span class="atributo">id</span>=<span class="texto">”d4”</span><strong class="resaltado">&gt;</strong>Texto4<strong class="resaltado">&lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&#9;&lt;div </strong><span class="atributo">id</span>=<span class="texto">”d5”</span><strong class="resaltado">&gt;</strong>Texto5<strong class="resaltado">&lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/body&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/html&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal">Resultado:</p>
+			<p class="Normal"><img src="transformaciones-css-web-resources/image/3.png" alt=""></p>
+			<h2 class="titulo2"><span class="numero2">[18.3] </span><a id="_idTextAnchor002"></a>transformaciones 3D</h2>
+			<p class="Normal2">En este caso hay que tener en cuenta que permiten distinguir el eje sobre el que se aplican. Las posibles funciones que podemos utilizar en la propiedad <strong class="Negritta">transform</strong> para conseguir transformaciones 3D son:</p>
+			<ul>
+				<li class="punto"><strong class="Negritta">translate3D(</strong><em class="cursiva">x</em><strong class="Negritta">,</strong><em class="cursiva">y</em><strong class="Negritta">,</strong><em class="cursiva">x</em><strong class="Negritta">)</strong>. Traslada el elemento pudiendo indicar desplazamientos en los 3 ejes a la vez.</li>
+				<li class="punto"><strong class="Negritta">translateX(</strong><em class="cursiva">x</em><strong class="Negritta">)</strong> Traslada el elemento en el eje X.</li>
+				<li class="punto"><strong class="Negritta">translateY(</strong><em class="cursiva">y</em><strong class="Negritta">)</strong> Traslada el elemento en el eje Y.</li>
+				<li class="punto"><strong class="Negritta">translateZ(</strong><em class="cursiva">y</em><strong class="Negritta">)</strong> Traslada el elemento en el eje Z.</li>
+				<li class="punto"><strong class="Negritta">scale3D(</strong><em class="cursiva">x</em><strong class="Negritta">,</strong><em class="cursiva">y</em><strong class="Negritta">,</strong><em class="cursiva">x</em><strong class="Negritta">)</strong>. Escala el elemento pudiendo diferenciar escalas en las tres dimensiones del elemento</li>
+				<li class="punto"><strong class="Negritta">escaleX(</strong><em class="cursiva">X</em><strong class="Negritta">)</strong> Escala el elemento en horizontal</li>
+				<li class="punto"><strong class="Negritta">escaleY(</strong><em class="cursiva">Y</em><strong class="Negritta">)</strong> Escala el elemento en vertical</li>
+				<li class="punto"><strong class="Negritta">escaleZ(</strong><em class="cursiva">Z</em><strong class="Negritta">)</strong> Escala el elemento en el eje Z</li>
+				<li class="punto"><strong class="Negritta">rotate3D(</strong><em class="cursiva">x</em><strong class="Negritta">,</strong><em class="cursiva">y</em><strong class="Negritta">,</strong><em class="cursiva">x</em><strong class="Negritta">)</strong>. Rota el elemento pudiendo indicar una rotación distinta en cada eje</li>
+				<li class="punto"><strong class="Negritta">rotateX(</strong><em class="cursiva">X</em><strong class="Negritta">)</strong> Rota el elemento usando el eje X de coordenadas. Un elemento normal rotado más de 90 grados, hará un efecto espejo. Rotando 90 grados exactos, el elemento queda invisible al quedar absolutamente horizontal a nuestra vista.</li>
+				<li class="punto"><strong class="Negritta">rotateY(</strong><em class="cursiva">Y</em><strong class="Negritta">)</strong> Rota el elemento usando el eje Y de coordenadas. Como en la rotación anterior, un elemento normal rotado más de 90 grados, hará un efecto espejo. También justo con 90 grados el elemento queda invisible al ser absolutamente vertical a nuestra vista.</li>
+				<li class="punto"><strong class="Negritta">escaleZ(</strong><em class="cursiva">Z</em><strong class="Negritta">)</strong> Escala el elemento en el eje Z, es la rotación 2D normal por lo tanto.</li>
+				<li class="punto"><strong class="Negritta">perspective(n)</strong>. Define un punto de perspectiva para las transformaciones 3D. Es equivalente a utilizar la propiedad <strong class="Negritta">perspective: </strong><em class="cursiva">n</em>.</li>
+			</ul>
+			<p class="Normal">Hay otras propiedades relacionadas con las transformaciones 3D:</p>
+			<ul>
+				<li class="punto"><strong class="Negritta">transform-style</strong>. Si indicamos a esta propiedad el valor <strong class="Negritta">preserve-3d</strong>, si este objeto contiene a su vez objetos transformados en 3D, estas transformaciones se mantendrán. La otra opción es indicar el valor <strong class="Negritta">flat</strong>.</li>
+				<li class="punto"><strong class="Negritta">transform-origin</strong>. Permite trasladar el objeto transformado a otra posición, de la cual se indica valores de eje X e Y. <p class="sinpunto">Ejemplo <strong class="Negritta">transform-origin:</strong><em class="cursiva">200px 100px;</em></p></li>
+				<li class="punto"><strong class="Negritta">perspective. </strong>Posición de la perspectiva de la persona que observa la escena.</li>
+				<li class="punto"><strong class="Negritta">perspective-origin</strong>. Permite indicar donde está el eje de coordenadas X,Y. Por defecto vale <em class="cursiva">50% 50% (</em>justo en el centro). Admite indicar las palabras <strong class="Negritta">left</strong>, <strong class="Negritta">center </strong>o <strong class="Negritta">right </strong>para el eje horizontal y <strong class="Negritta">top</strong>, <strong class="Negritta">center </strong>o <strong class="Negritta">bottom  </strong>para el vertical</li>
+			</ul>
+			<p class="Normal">A continuación se muestra un ejemplo con transformaciones 3D. Se trata de cuatro capas interiores a un contenedor. Las cuatro capas se colocan llenando dicho contenedor (usando posicionamiento absoluto), después se rotan en perspectiva formando las tapas de un cubo tridimensional visto en perspectiva.</p>
+			<table id="table003" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;!doctype </strong><span class="atributo">html</span><strong class="resaltado">&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;html lang=</strong><span class="texto">”es”</span><strong class="resaltado">&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;head&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;meta </strong><span class="atributo">charset=</span><span class="texto">”UTF-8”</span><strong class="resaltado">&gt; &lt;title&gt;</strong>Ejemplos 3D<strong class="resaltado">&lt;/title&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;style&gt;</strong></pre>
+							<pre class="codigo">        #contenedor{</pre>
+							<pre class="codigo">            <strong class="resaltado">position:</strong><span class="atributo">fixed</span>;</pre>
+							<pre class="codigo">            <strong class="resaltado">left:</strong><span class="atributo">400px</span>;</pre>
+							<pre class="codigo">            <strong class="resaltado">top:</strong><span class="atributo">400px</span>;</pre>
+							<pre class="codigo">            <strong class="resaltado">width:</strong><span class="atributo">400px</span>;</pre>
+							<pre class="codigo">            <strong class="resaltado">height</strong><strong class="resaltado">:</strong><span class="atributo">400px</span>;</pre>
+							<pre class="codigo">            <strong class="resaltado">border:</strong><span class="atributo">4px solid yellow</span>;</pre>
+							<table id="table004" class="tablaRemarcada">
+								<colgroup>
+									<col>
+								</colgroup>
+								<tbody>
+									<tr class="tablaRemarcada">
+										<td class="tablaRemarcada celda-remarcada">
+											<pre class="codigo">            <strong class="resaltado">transform-style: </strong><span class="atributo">preserve-3d</span>;</pre>
+											<pre class="codigo">            <strong class="resaltado">perspective-origin:</strong> <span class="atributo">center center</span>;</pre>
+											<pre class="codigo">            <strong class="resaltado">perspective:</strong><span class="atributo">500px</span>;</pre>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<pre class="codigo">        }</pre>
+							<pre class="codigo">        #contenedor <strong class="resaltado">div</strong>{</pre>
+							<pre class="codigo">            <strong class="resaltado">position:</strong><span class="atributo">absolute</span>;</pre>
+							<pre class="codigo">            <strong class="resaltado">width:</strong><span class="atributo">100%</span>;</pre>
+							<pre class="codigo">            <strong class="resaltado">height:</strong><span class="atributo">100%</span>;</pre>
+							<pre class="codigo">            <strong class="resaltado">left:</strong><span class="atributo">0</span>;</pre>
+							<pre class="codigo">            <strong class="resaltado">top:</strong><span class="atributo">0</span>;</pre>
+							<pre class="codigo">            <strong class="resaltado">font-size:</strong><span class="atributo">350px</span>;</pre>
+							<pre class="codigo">            <strong class="resaltado">text-align: </strong><span class="atributo">center</span>;</pre>
+							<pre class="codigo">            <strong class="resaltado">color:</strong><span class="atributo">white</span>;</pre>
+							<pre class="codigo">        }</pre>
+							<pre class="codigo">        #capa1{</pre>
+							<pre class="codigo">            <strong class="resaltado">background:</strong><span class="atributo">linear-gradient(</span><span class="texto">black</span>, <span class="texto">red</span><span class="atributo">)</span>;</pre>
+							<table id="table005" class="tablaRemarcada">
+								<colgroup>
+									<col>
+								</colgroup>
+								<tbody>
+									<tr class="tablaRemarcada">
+										<td class="tablaRemarcada celda-remarcada">
+											<pre class="codigo">            <strong class="resaltado">transform:</strong><span class="atributo">rotateX(</span><span class="texto">90deg</span><span class="atributo">) translateZ(</span><span class="texto">200px</span><span class="atributo">)</span>;</pre>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<pre class="codigo">        }</pre>
+							<pre class="codigo">        #capa2{</pre>
+							<pre class="codigo">            <strong class="resaltado">background:</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&#9;&#9;&#9;&#9;&#9;</strong><span class="atributo">linear-gradient(</span><span class="texto">-90deg,black, blue</span><span class="atributo">)</span>;</pre>
+							<table id="table006" class="tablaRemarcada">
+								<colgroup>
+									<col>
+								</colgroup>
+								<tbody>
+									<tr class="tablaRemarcada">
+										<td class="tablaRemarcada celda-remarcada">
+											<pre class="codigo">&#9;&#9;&#9;&#9;<strong class="resaltado">transform:</strong><span class="atributo">rotateY(</span><span class="texto">90deg</span><span class="atributo">) translateZ(</span><span class="texto">200px</span><span class="atributo">)</span>;</pre>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<pre class="codigo">        }</pre>
+							<pre class="codigo">        #capa3{</pre>
+							<pre class="codigo">            <strong class="resaltado">background:</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&#9;&#9;&#9;&#9;&#9;</strong><span class="atributo">linear-gradient(</span><span class="texto">0deg,black, orange</span><span class="atributo">)</span>;</pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table id="table007" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<table id="table008" class="tablaRemarcada">
+								<colgroup>
+									<col>
+								</colgroup>
+								<tbody>
+									<tr class="tablaRemarcada">
+										<td class="tablaRemarcada celda-remarcada">
+											<pre class="codigo">           <strong class="resaltado">transform:</strong><span class="atributo">rotateX(</span><span class="texto">-90deg</span><span class="atributo">) translateZ(</span><span class="texto">200px</span><span class="atributo">)</span>;</pre>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<pre class="codigo">        }        </pre>
+							<pre class="codigo">#capa4{</pre>
+							<pre class="codigo">            <strong class="resaltado">background:</strong></pre>
+							<pre class="codigo">&#9;&#9;&#9;&#9;&#9;<span class="atributo">linear-gradient(</span><span class="texto">90deg,black, green</span><span class="atributo">)</span>;</pre>
+							<table id="table009" class="tablaRemarcada">
+								<colgroup>
+									<col>
+								</colgroup>
+								<tbody>
+									<tr class="tablaRemarcada">
+										<td class="tablaRemarcada celda-remarcada">
+											<pre class="codigo">           <strong class="resaltado">transform:</strong><span class="atributo">rotateY(</span><span class="texto">-90deg</span><span class="atributo">) translateZ(</span><span class="texto">200px</span><span class="atributo">)</span>;</pre>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<pre class="codigo">        }</pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;/style&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/head&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table id="table010" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;body&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;div </strong><span class="atributo">id=</span><span class="texto">”contenedor”</span><strong class="resaltado">&gt;</strong></pre>
+							<pre class="codigo">   <strong class="resaltado">&lt;div id=</strong><span class="texto">”capa1”</span>&gt;1<strong class="resaltado">&lt;/div&gt;</strong></pre>
+							<pre class="codigo">   <strong class="resaltado">&lt;div id=</strong><span class="texto">”capa2”</span>&gt;2<strong class="resaltado">&lt;/div&gt;</strong></pre>
+							<pre class="codigo">   <strong class="resaltado">&lt;div id=</strong><span class="texto">”capa3”</span>&gt;3<strong class="resaltado">&lt;/div&gt;</strong></pre>
+							<pre class="codigo">   <strong class="resaltado">&lt;div id=</strong><span class="texto">”capa4”</span>&gt;4<strong class="resaltado">&lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/body&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/html&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal">El resultado de este código es el siguiente:</p>
+			<p class="Normal"><img src="transformaciones-css-web-resources/image/4.png" alt=""></p>
+			<p class="Normal">En la imagen queda pintado con un borde amarillo la posición original de las capas interiores (en definitiva la forma de su contenedor), antes de la transformación.</p>
+		</div>
+
+</section>
+
+<nav>
+    <ul>
+        <li><a href="/">&gt; Volver a JorgeSanchez.net</a></li>
+    </ul>
+    
+
+<ul>
+    <p>Manual de HTML5 y CSS3:</p>
+    <li><a href="introduccion-lenguajes-de-marcas.html">&gt; Introducción a los lenguajes de marcas</a></li>
+    <li><a href="introduccion-html.html">&gt; Introducción a HTML5</a></li>
+    <li><a href="edicion-basica-html.html">&gt; Edición básica de documentos HTML</a></li>
+    <li><a href="texto-y-parrafo-html.html">&gt; Elementos de texto y párrafo</a></li>
+    <li><a href="elementos-estructurales-html.html">&gt; Elementos estructurales</a></li>
+    <li><a href="enlaces-html.html">&gt; Enlaces</a></li>
+    <li><a href="imagenes-html.html">&gt; Imágenes</a></li>
+    <li><a href="multimedia-html.html">&gt; Elementos multimedia</a></li>
+    <li><a href="introduccion-a-css.html">&gt; Introducción a CSS</a></li>
+    <li><a href="selectores-css.html">&gt; Selectores CSS</a></li>
+    <li><a href="unidades-colores-css.html">&gt; Unidades y Colores en CSS</a></li>
+    <li><a href="formato-fuente-parrafo-css.html">&gt; Formato de fuente y párrafo</a></li>
+    <li><a href="formato-caja-lista-css.html">&gt; Formato de caja y lista</a></li>
+    <li><a href="tablas-html.html">&gt; Tablas</a></li>
+    <li><a href="formularios-html.html">&gt; Formularios</a></li>
+    <li><a href="visualizacion-css.html">&gt; Visualización de elementos</a></li>
+    <li><a href="posicionamiento-css.html">&gt; Posicionamiento mediante CSS</a></li>
+    <li><a href="transformaciones-css.html">&gt; Transformaciones mediante CSS</a></li>
+    <li><a href="animaciones-css.html">&gt; Animaciones mediante CSS</a></li>
+    <li><a href="generacion-de-contenido-css.html">&gt; Generación de contenido automático</a></li>
+    <li><a href="maquetacion-1-css.html">&gt; Maquetación (1). Columnas y Flexbox</a></li>
+</ul>
+
+
+
+</nav>
+
+<script src="../../lib/jquery.min.js"></script>
+<script src="../../lib/jquery.easing.min.js"></script>
+<script src="../../lib/jquery.scrollTo.min.js"></script>
+<script src="../../lib/perfect-scrollbar.jquery.min.js"></script>
+<script src="../../js/manual.js?f=20170221"></script>
+<!--Analytics-->
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35972106-1']);
+    _gaq.push(['_setLocalRemoteServerMode']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</body>
+</html>
+

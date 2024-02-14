@@ -1,0 +1,669 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Transformaciones 3D - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Con CSS se pueden utilizar ciertas funciones para realizar operaciones y emular un 3D en un entorno web.">
+  <meta name="view-transition" content="same-origin">
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Transformaciones 3D - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Con CSS se pueden utilizar ciertas funciones para realizar operaciones y emular un 3D en un entorno web.">
+  <meta property="og:url" content="https://lenguajecss.com/css/transformaciones/transform-3d/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/transformaciones/transform-3d/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Transformaciones 3D - CSS en español">
+  <meta property="twitter:description" content="Con CSS se pueden utilizar ciertas funciones para realizar operaciones y emular un 3D en un entorno web.">
+  <meta property="twitter:image" content="https://lenguajecss.com/large-summary.jpg">
+
+  </head>
+
+<body class="css menu-open " style="--logo-color: #1e7bbf"><script>
+    matchMedia("(width <= 1180px)").matches && document.body.classList.toggle("menu-open");
+  </script>
+  
+
+
+
+
+
+
+
+
+<section class="menubar">
+  <div class="menubar-content">
+    <h1>Lenguaje CSS</h1>
+
+    <a class="cover" title="Lenguaje CSS (css)" href="../../index.htm" style="--image: url('../../../assets/css.jpg')"></a>
+
+    <header>
+      <a href="../../animaciones/transiciones/index.htm" title="Transiciones CSS">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m14 26l1.41-1.41L7.83 17H28v-2H7.83l7.58-7.59L14 6L4 16l10 10z"></path></svg>
+      </a>
+      <a href="../../index.htm" title="Volver al índice">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 256"><path fill="#888888" d="M240 210h-18v-94.45a14.06 14.06 0 0 0-4.53-10.32l-80-75.49l-.09-.08a13.94 13.94 0 0 0-18.83 0l-.09.08l-80 75.5A14 14 0 0 0 34 115.55V210H16a6 6 0 0 0 0 12h224a6 6 0 0 0 0-12ZM46 115.55a2 2 0 0 1 .65-1.48l.09-.08l79.94-75.48a2 2 0 0 1 2.63 0L209.26 114l.08.08a2 2 0 0 1 .66 1.48V210h-52v-50a14 14 0 0 0-14-14h-32a14 14 0 0 0-14 14v50H46ZM146 210h-36v-50a2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"></path></svg>
+      </a>
+      <a href="../../dibujar-con-css/como-empezar/index.htm" title="¿Cómo dibujar con CSS?">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></path></svg>
+      </a>
+    </header>
+
+    <div style="display:none">
+      <svg id="link-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 256 256"><g fill="#888888"><path d="M208 88h-56V32Z" opacity=".2"></path><path d="m213.66 82.34l-56-56A8 8 0 0 0 152 24H56a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V88a8 8 0 0 0-2.34-5.66ZM160 51.31L188.69 80H160ZM200 216H56V40h88v48a8 8 0 0 0 8 8h48v120Z"></path></g></svg>
+      <svg id="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="#888888" d="M2 12.5C2 9.46 4.46 7 7.5 7H18c2.21 0 4 1.79 4 4s-1.79 4-4 4H9.5a2.5 2.5 0 0 1 0-5H17v2H9.41c-.55 0-.55 1 0 1H18c1.1 0 2-.9 2-2s-.9-2-2-2H7.5C5.57 9 4 10.57 4 12.5S5.57 16 7.5 16H17v2H7.5C4.46 18 2 15.54 2 12.5z"></path></svg>
+    </div>
+
+    <div class="links">
+      <span class="folder">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 512 512"><path fill="#888888" d="M41 73v304.563L88.697 151H423v-30H185.514l-16-48H41zm62.303 96L43.092 455h381.605l60.211-286H103.303z"></path></svg>
+        Transformaciones 2D/3D
+      </span>
+            <a class="link" href="../transform/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Transformaciones CSS
+            </a>
+            <a class="link" href="../transform-translate/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Translaciones 2D
+            </a>
+            <a class="link" href="../transform-rotate/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Rotaciones 2D
+            </a>
+            <a class="link" href="../transform-scale/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Escalado 2D
+            </a>
+            <a class="link" href="../transform-skew/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Deformaciones 2D
+            </a>
+            <a class="link active" href="index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Transformaciones 3D
+            </a>
+            <a class="link" href="../perspective/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Perspectivas CSS
+            </a>
+    </div>
+  </div>
+
+  <div class="sidebox">
+    <svg class="close-menu" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19V5m10 1l-6 6l6 6m-6-6h14"></path></svg>
+    <div class="socials">
+      <a class="twitch" href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+      <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+      <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+      <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  const toggleMenu = () => (document.body.classList.toggle("menu-open"));
+  document.querySelector(".close-menu").addEventListener("click", toggleMenu);
+
+  matchMedia("(width <= 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+  matchMedia("(width > 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+
+  const activeLink = document.querySelector(".links .active");
+  const icon = /* svg */`<svg viewBox="0 0 24 24"><use href="#anchor-icon" /></svg>`;
+  const headers = [...document.querySelectorAll(".contents h3")].map(link => ({ text: link.textContent, id: link.id }));
+  const links = [];
+  headers.reverse().forEach(({ text, id }) => {
+    const link = document.createElement("a");
+    link.classList.add("anchor");
+    link.href = "#" + id;
+    link.insertAdjacentHTML("beforeend", icon);
+    link.insertAdjacentText("beforeend", ` ${text}`);
+    activeLink.after(link);
+  });
+</script>
+
+  <div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/css.jpg')">
+    <h1><a href="index.htm">Transformaciones 3D</a></h1><h2 class="typewriter">Funciones de transformación en 3D</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../transform-skew/index.htm">Deformaciones 2D</a>
+    <a class="current" href="index.htm">Transformaciones 3D</a>
+    <a href="../perspective/index.htm">Perspectivas CSS</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Durante los temas anteriores hemos visto diferentes <strong>funciones de transformación en el ámbito del 2D</strong>. Sin embargo, CSS también incorpora varias <strong>funciones de transformación 3D</strong>, que de la misma forma se pueden utilizar con la propiedad <code>transform</code>.</p>
+<h3 id="transformaciones-3d" tabindex="-1"><a class="header-anchor" href="#transformaciones-3d">Transformaciones 3D</a></h3>
+<p>Estas funciones, en la mayoría de los casos, no son más que la incorporación del <strong>eje Z</strong> a las anteriores que ya habíamos visto, además de la adición de una función de atajo 3D para poder utilizarlas todas de una sola vez.</p>
+<p>Antes de comenzar a verlas, recordar siempre que el <strong>eje X</strong> es el eje horizontal, el <strong>eje Y</strong> es el eje vertical y el <strong>eje Z</strong> es el eje de profundidad. Varios conceptos que se deben tener claros antes de comenzar con el 3D en CSS:</p>
+<p><img src="transform-axis-x-y-z.png" alt="Ejes X, Y, Z" width="665" height="516" loading="lazy"></p>
+<p>Para utilizar <strong>transformaciones 3D</strong> es necesario conocer algunas propiedades derivadas de transformaciones, como por ejemplo, las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedades</th>
+<th>Formato</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>transform-style</code></td>
+<td><strong>flat</strong> | <code>preserve-3d</code></td>
+<td>Modifica el tratamiento 3D de los elementos hijos.</td>
+</tr>
+<tr>
+<td><code>transform-origin</code></td>
+<td><badge-type class="posx"></badge-type> <badge-type class="posy"></badge-type> <badge-type class="posz"></badge-type></td>
+<td>Cambia el punto de origen del elemento en una transformación.</td>
+</tr>
+</tbody>
+</table>
+<p>Por defecto, la propiedad <code>transform-style</code> está establecida a <code>flat</code>, o lo que es lo mismo, trata los elementos como elementos <strong>2D</strong>, por lo que no podemos usar 3D, salvo que lo indiquemos expresamente con el valor <code>preserve-3d</code>. De esta forma, todos los elementos hijos del elemento que tenga esa propiedad, se tratarán como elementos 3D:</p>
+<pre class="language-css "><code class="language-css"><span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token property">transform-style</span><span class="token punctuation">:</span> preserve-3d<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateX</span><span class="token punctuation">(</span>2deg<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>2deg<span class="token punctuation">)</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>2deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">perspective</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-html "><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>element<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>element<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Observa que en este ejemplo, estamos aplicando al padre <code>.container</code> una propiedad <code>transform-style: preserve-3d</code> para dotar de <strong>3D</strong> a los elementos hijos <code>.element</code>. Además, también le aplicamos una rotación en todos los ejes (<em>para que se aprecie mejor el 3D</em>) y una perspective (<em>lo veremos y explicaremos en el próximo tema</em>).</p>
+<p>En el caso de la propiedad <code>transform-origin</code>, que ya explicamos en el primer tema de transformaciones, observa que simplemente hemos añadido un tercer parámetro para aplicar un punto de origen también en el <strong>eje Z</strong>. Recuerda que en el caso del <strong>eje Z</strong>, no se pueden utilizar porcentajes, sino sólo cantidades, como tamaños en píxels.</p>
+<h3 id="funciones-de-translación-3d" tabindex="-1"><a class="header-anchor" href="#funciones-de-translación-3d">Funciones de translación 3D</a></h3>
+<p>Las <strong>funciones de transformación</strong> que completarían la colección de transformaciones 2D que vimos anteriormente son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Funciones</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>translateZ(z)</code></td>
+<td>Traslada el elemento una distancia de <badge-type class="size"></badge-type> <em>z</em> en el eje de profundidad.</td>
+</tr>
+<tr>
+<td><code>translate3d(x, y, z)</code></td>
+<td>Función de atajo 3D, donde podemos aplicar un <badge-type class="size"></badge-type> a <em>x</em>, <em>y</em> y <em>z</em>.</td>
+</tr>
+</tbody>
+</table>
+<p>Con la propiedad <code>translateZ()</code> podemos hacer translaciones de profundidad y con la propiedad <code>translate3D()</code> podemos utilizar un atajo con el que aplicar translaciones en los 3 ejes: <code>x</code>, <code>y</code> y <code>z</code>:</p>
+<pre class="language-css "><code class="language-css"><span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">transform-style</span><span class="token punctuation">:</span> preserve-3d<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateX</span><span class="token punctuation">(</span>2deg<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>2deg<span class="token punctuation">)</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>2deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">perspective</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.element</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>40px<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">/* Sólo eje X */</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>25px<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">/* Solo eje Y */</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>55px<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">/* Solo eje Z */</span>
+
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3d</span><span class="token punctuation">(</span>40px<span class="token punctuation">,</span> 25px<span class="token punctuation">,</span> 55px<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">/* Equivale a los tres anteriores */</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-html "><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>element<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Tanto en <code>translateX()</code> como en <code>translateY()</code> se pueden utilizar valores de <badge-type class="percent"></badge-type> porcentajes, en cuyo caso, se desplazará teniendo en cuenta que <code>100%</code> es el tamaño exacto correspondiente al eje del elemento.</p>
+<p>Por ejemplo: <code>translateX(100%)</code> desplazaría el elemento en horizontal exactamente <strong>su tamaño de ancho</strong>, mientras que <code>translateY(200%)</code> desplazaría el elemento <strong>el doble de su tamaño de alto</strong> en vertical.</p>
+<blockquote>
+<blockquote>
+<p><strong>Ojo</strong>: Ten en cuenta que, al contrario que en <code>x</code> e <code>y</code>, el valor <code>z</code> de <code>translate3d()</code> y <code>translateZ()</code> no puede ser un valor de porcentaje <badge-type class="percent"></badge-type>, sino que debe ser una cantidad específica.</p>
+</blockquote>
+</blockquote>
+<h3 id="funciones-de-rotación-3d" tabindex="-1"><a class="header-anchor" href="#funciones-de-rotación-3d">Funciones de rotación 3D</a></h3>
+<p>De la misma forma que hemos visto las funciones de translación 3D, tenemos las <strong>funciones de rotación 3D</strong>. Observa que en este caso, <code>rotateZ()</code> es una función que permite indicar la rotación sobre su propio eje, algo que podíamos hacer ya en el ámbito 2D.</p>
+<p>Sin embargo, se añade la propiedad <code>rotate3d()</code>, que nos permite indicar la cantidad de grados que queremos realizar en cada eje, de una forma muy flexible:</p>
+<table>
+<thead>
+<tr>
+<th>Funciones</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rotateZ(zdeg)</code></td>
+<td>Aplica rotación 2D en <badge-type class="angle"></badge-type> <em>zdeg</em> grados sólo para el eje Z (profundidad).</td>
+</tr>
+<tr>
+<td><code>rotate3d(x, y, z, deg)</code></td>
+<td>Función de atajo, que permite aplicar una rotación a uno o varios ejes.</td>
+</tr>
+</tbody>
+</table>
+<p>La función <code>rotate3D()</code> permite indicar un valor <code>0</code> o <code>1</code> para activar el eje correspondiente, seguido de un número de grados <badge-type class="angle"></badge-type>. Funciona de la siguiente forma:</p>
+<pre class="language-css "><code class="language-css"><span class="token selector">.element</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotate3d</span><span class="token punctuation">(</span>1<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 50deg<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">/* Equivale a rotateX(50deg) */</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotate3d</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 1<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 25deg<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">/* Equivale a rotateY(25deg) */</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotate3d</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 1<span class="token punctuation">,</span> 5deg<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">/* Equivale a rotateZ(5deg) */</span>
+
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotate3d</span><span class="token punctuation">(</span>1<span class="token punctuation">,</span> 1<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 100deg<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* Equivale a rotateX(100deg) rotateY(100deg) */</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="funciones-de-escalado-3d" tabindex="-1"><a class="header-anchor" href="#funciones-de-escalado-3d">Funciones de escalado 3D</a></h3>
+<p>De la misma forma que las anteriores que hemos visto, las funciones de escalado también tienen su versión <strong>3D</strong>. Las funciones que añadimos a la lista son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Funciones</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scaleZ(fz)</code></td>
+<td>Reescala el elemento a un nuevo tamaño con factor <badge-type class="number"></badge-type> <em>fz</em> de profundidad.</td>
+</tr>
+<tr>
+<td><code>scale3d(fx, fy, fz)</code></td>
+<td>Establece un escalado 3D, donde aplica los factores a cada eje.</td>
+</tr>
+</tbody>
+</table>
+<p>Al igual que en funciones anteriores, las equivalencias son las siguientes:</p>
+<pre class="language-css "><code class="language-css"><span class="token selector">.element</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">scaleZ</span><span class="token punctuation">(</span>2<span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">/* Reescala al doble de su tamaño el eje Z */</span>
+
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">scale3d</span><span class="token punctuation">(</span>1<span class="token punctuation">,</span> 0.5<span class="token punctuation">,</span> 2<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">/* Equivale a scaleX(1) scaleY(0.5) scaleZ(2) */</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Para que el <strong>escalado de Z</strong> sea evidente, quizás sería conveniente mirar primero el tema de perspectivas.</p>
+<h3 id="otras-funciones" tabindex="-1"><a class="header-anchor" href="#otras-funciones">Otras funciones</a></h3>
+<p>Existen algunas otras funciones de transformación menos utilizadas, como puede ser la creación de <strong>perspectivas</strong> o el uso de matrices de tranformación, mucho más potentes, pero también mucho más complejas:</p>
+<table>
+<thead>
+<tr>
+<th>Funciones</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>perspective(n)</code></td>
+<td><a href="../perspective/index.htm">Ver tema de perspectivas</a></td>
+</tr>
+<tr>
+<td><code>matrix(n, n, ...)</code></td>
+<td>Establece una matriz de transformación 2D (<em>6 valores</em>)</td>
+</tr>
+<tr>
+<td><code>matrix3d(n, n, ...)</code></td>
+<td>Establece una matriz de transformación 3D (<em>16 valores</em>)</td>
+</tr>
+</tbody>
+</table>
+<p>Veamos un ejemplo con <code>matrix()</code> y otro con <code>matrix3d()</code>:</p>
+<pre class="language-css "><code class="language-css"><span class="token selector">.element</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">matrix</span><span class="token punctuation">(</span>1<span class="token punctuation">,</span> 1<span class="token punctuation">,</span> -1<span class="token punctuation">,</span> 1<span class="token punctuation">,</span> 75<span class="token punctuation">,</span> 75<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>En este caso, la función <code>matrix(a, b, c, d, tx, ty)</code> (<em>6 parámetros</em>) actua de la siguiente forma:</p>
+<ul>
+<li><code>a</code> equivale a <code>scaleX()</code></li>
+<li><code>b</code> equivale a <code>skewY()</code></li>
+<li><code>c</code> equivale a <code>skewX()</code></li>
+<li><code>d</code> equivale a <code>scaleY()</code></li>
+<li><code>tx</code> equivale a <code>translateX()</code></li>
+<li><code>ty</code> equivale a <code>translateY()</code></li>
+</ul>
+<p>Por otro lado, si utilizamos <code>matrix3d()</code> (<em>16 parámetros</em>), tenemos una función de transformación mucho más compleja. Veamos un ejemplo de aplicación:</p>
+<pre class="language-css "><code class="language-css"><span class="token selector">.element</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">matrix3d</span><span class="token punctuation">(</span>1<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 1<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 1<span class="token punctuation">,</span> 0.5<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 1<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 50<span class="token punctuation">,</span> 50<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Tienes más información sobre estas funciones de matrices en el artículo <a href="http://dev.opera.com/articles/understanding-the-css-transforms-matrix/">Understanding the CSS Transforms Matrix</a> de los desarrolladores del navegador <strong>Opera</strong>.</p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../transform-skew/index.htm" title="Deformaciones 2D">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Deformaciones 2D</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../perspective/index.htm" title="Perspectivas CSS">
+  <div>
+    <span>Perspectivas CSS</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/wIGAyJGx2kc" title="CSS Cards: Baraja de cartas diseñada sólo con HTML y CSS">
+  <img loading="lazy" src="../../../vi/wIGAyJGx2kc/mqdefault.jpg" alt="CSS Cards: Baraja de cartas diseñada sólo con HTML y CSS">
+</a><a href="https://youtu.be/1TbS60Fu-_M" title="Variables CSS NATIVAS: ¿Qué son y cómo funcionan?">
+  <img loading="lazy" src="../../../vi/1TbS60Fu-_M/mqdefault.jpg" alt="Variables CSS NATIVAS: ¿Qué son y cómo funcionan?">
+</a><a href="https://youtu.be/Wou2koTiIyU" title="Grid CSS: Centrar, distribuir y alinear elementos">
+  <img loading="lazy" src="../../../vi/Wou2koTiIyU/mqdefault.jpg" alt="Grid CSS: Centrar, distribuir y alinear elementos">
+</a><a href="https://youtu.be/FWDBGZQPzXk" title="Cómo crear GRADIENTES REPETIDOS en CSS">
+  <img loading="lazy" src="../../../vi/FWDBGZQPzXk/mqdefault.jpg" alt="Cómo crear GRADIENTES REPETIDOS en CSS">
+</a><a href="https://youtu.be/Q1CXWBtxKZU" title="Grid CSS: Introducción y conceptos desde cero">
+  <img loading="lazy" src="../../../vi/Q1CXWBtxKZU/mqdefault.jpg" alt="Grid CSS: Introducción y conceptos desde cero">
+</a><a href="https://youtu.be/8Jh2K3tq5n0" title="Tutorial para aprender Animaciones CSS">
+  <img loading="lazy" src="../../../vi/8Jh2K3tq5n0/mqdefault.jpg" alt="Tutorial para aprender Animaciones CSS">
+</a></div>
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajehtml.com/svg/" title="SVG">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#svg"></use>
+  </svg>
+</a><a class="topic" href="../../index.htm" title="CSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="../../../postcss/index.htm" title="PostCSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/fundamentos/" title="Fundamentos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/javascript/" title="Javascript">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/npm/" title="NPM">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/webcomponents/" title="WebComponents">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/vuejs/" title="VueJS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/automatizadores/" title="Automatizadores">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/retos/" title="Retos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#retos"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+    
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+
+  </div></body>
+
+</html>

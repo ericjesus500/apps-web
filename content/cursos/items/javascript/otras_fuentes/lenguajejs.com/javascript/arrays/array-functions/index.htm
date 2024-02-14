@@ -1,0 +1,707 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ecc022">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Array functions - Javascript en español - Lenguaje JS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Las array functions son métodos especiales que se pueden realizar sobre arrays y que permiten realizar operaciones complejas en poco código y de forma muy directa.">
+  <meta name="view-transition" content="same-origin">
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Array functions - Javascript en español">
+  <meta property="og:image" content="https://lenguajejs.com/javascript/arrays/array-functions/array-functions.png">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Las array functions son métodos especiales que se pueden realizar sobre arrays y que permiten realizar operaciones complejas en poco código y de forma muy directa.">
+  <meta property="og:url" content="https://lenguajejs.com/javascript/arrays/array-functions/">
+  <meta property="twitter:url" content="https://lenguajejs.com/javascript/arrays/array-functions/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Array functions - Javascript en español">
+  <meta property="twitter:description" content="Las array functions son métodos especiales que se pueden realizar sobre arrays y que permiten realizar operaciones complejas en poco código y de forma muy directa.">
+  <meta property="twitter:image" content="https://lenguajejs.com/javascript/arrays/array-functions/array-functions.png">
+
+  </head>
+
+<body class="js menu-open " style="--logo-color: #f0db4f"><script>
+    matchMedia("(width <= 1180px)").matches && document.body.classList.toggle("menu-open");
+  </script>
+  
+
+
+
+
+
+
+
+
+<section class="menubar">
+  <div class="menubar-content">
+    <h1>Lenguaje JS</h1>
+
+    <a class="cover" title="Lenguaje JS (javascript)" href="../../index.htm" style="--image: url('../../../assets/javascript.jpg')"></a>
+
+    <header>
+      <a href="../../objetos/que-son/index.htm" title="¿Qué son los objetos?">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m14 26l1.41-1.41L7.83 17H28v-2H7.83l7.58-7.59L14 6L4 16l10 10z"></path></svg>
+      </a>
+      <a href="../../index.htm" title="Volver al índice">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 256"><path fill="#888888" d="M240 210h-18v-94.45a14.06 14.06 0 0 0-4.53-10.32l-80-75.49l-.09-.08a13.94 13.94 0 0 0-18.83 0l-.09.08l-80 75.5A14 14 0 0 0 34 115.55V210H16a6 6 0 0 0 0 12h224a6 6 0 0 0 0-12ZM46 115.55a2 2 0 0 1 .65-1.48l.09-.08l79.94-75.48a2 2 0 0 1 2.63 0L209.26 114l.08.08a2 2 0 0 1 .66 1.48V210h-52v-50a14 14 0 0 0-14-14h-32a14 14 0 0 0-14 14v50H46ZM146 210h-36v-50a2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"></path></svg>
+      </a>
+      <a href="../../set-map/que-es-set-weakset/index.htm" title="¿Qué es un Set?">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></path></svg>
+      </a>
+    </header>
+
+    <div style="display:none">
+      <svg id="link-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 256 256"><g fill="#888888"><path d="M208 88h-56V32Z" opacity=".2"></path><path d="m213.66 82.34l-56-56A8 8 0 0 0 152 24H56a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V88a8 8 0 0 0-2.34-5.66ZM160 51.31L188.69 80H160ZM200 216H56V40h88v48a8 8 0 0 0 8 8h48v120Z"></path></g></svg>
+      <svg id="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="#888888" d="M2 12.5C2 9.46 4.46 7 7.5 7H18c2.21 0 4 1.79 4 4s-1.79 4-4 4H9.5a2.5 2.5 0 0 1 0-5H17v2H9.41c-.55 0-.55 1 0 1H18c1.1 0 2-.9 2-2s-.9-2-2-2H7.5C5.57 9 4 10.57 4 12.5S5.57 16 7.5 16H17v2H7.5C4.46 18 2 15.54 2 12.5z"></path></svg>
+    </div>
+
+    <div class="links">
+      <span class="folder">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 512 512"><path fill="#888888" d="M41 73v304.563L88.697 151H423v-30H185.514l-16-48H41zm62.303 96L43.092 455h381.605l60.211-286H103.303z"></path></svg>
+        Arrays
+      </span>
+            <a class="link" href="../que-es/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              ¿Qué es un Array en Javascript?
+            </a>
+            <a class="link" href="../buscar-y-comprobar/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Buscar elementos en un array
+            </a>
+            <a class="link" href="../modificar-subarrays/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Modificar o crear subarrays
+            </a>
+            <a class="link" href="../ordenacion/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Ordenación de un array
+            </a>
+            <a class="link active" href="index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Array functions
+            </a>
+            <a class="link" href="../desestructuracion-arrays/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Desestructuración de arrays
+            </a>
+    </div>
+  </div>
+
+  <div class="sidebox">
+    <svg class="close-menu" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19V5m10 1l-6 6l6 6m-6-6h14"></path></svg>
+    <div class="socials">
+      <a class="twitch" href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+      <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+      <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+      <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  const toggleMenu = () => (document.body.classList.toggle("menu-open"));
+  document.querySelector(".close-menu").addEventListener("click", toggleMenu);
+
+  matchMedia("(width <= 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+  matchMedia("(width > 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+
+  const activeLink = document.querySelector(".links .active");
+  const icon = /* svg */`<svg viewBox="0 0 24 24"><use href="#anchor-icon" /></svg>`;
+  const headers = [...document.querySelectorAll(".contents h3")].map(link => ({ text: link.textContent, id: link.id }));
+  const links = [];
+  headers.reverse().forEach(({ text, id }) => {
+    const link = document.createElement("a");
+    link.classList.add("anchor");
+    link.href = "#" + id;
+    link.insertAdjacentHTML("beforeend", icon);
+    link.insertAdjacentText("beforeend", ` ${text}`);
+    activeLink.after(link);
+  });
+</script>
+
+  <div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#js"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeJS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/javascript.jpg')">
+    <h1><a href="index.htm">Array functions</a></h1><h2 class="typewriter">Funciones sobre objetos basados en Array</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../ordenacion/index.htm">Ordenación de un array</a>
+    <a class="current" href="index.htm">Array functions</a>
+    <a href="../desestructuracion-arrays/index.htm">Desestructuración de arrays</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Así como tenemos un conjunto de métodos para realizar sobre variables que sean <badge-type class="string"></badge-type> u otro conjunto de métodos para variables que sean <badge-type class="number"></badge-type>, existe una serie de métodos que podemos utilizar sobre variables que sean de tipo <badge-type class="array"></badge-type>. Son las llamadas <strong>array functions</strong> que veremos a continuación.</p>
+<h3 id="qué-son-las-array-functions" tabindex="-1"><a class="header-anchor" href="#qué-son-las-array-functions">¿Qué son las Array functions?</a></h3>
+<p>Básicamente, son métodos que tiene cualquier variable que sea de tipo <badge-type class="array"></badge-type>, y que permite realizar una operación con todos los elementos de dicho array (<em>o parte de ellos</em>) para conseguir un objetivo concreto, dependiendo del método. En general, a dichos métodos se les pasa por parámetro una <strong>función callback</strong> y unos parámetros opcionales.</p>
+<p>Estas son las <strong>Array functions</strong> que podemos encontrarnos en Javascript:</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><badge-type class="undefined"></badge-type> <code>.forEach(ƒ)</code></td>
+<td>Ejecuta la función definida en <code>ƒ</code> por cada uno de los elementos del array.</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Comprobaciones</strong></td>
+</tr>
+<tr>
+<td><badge-type class="boolean"></badge-type> <code>.every(ƒ)</code></td>
+<td>Comprueba si <strong>todos</strong> los elementos del array cumplen la condición de <code>ƒ</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="boolean"></badge-type> <code>.some(ƒ)</code></td>
+<td>Comprueba si <strong>al menos</strong> un elemento del array cumple la condición de <code>ƒ</code>.</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Transformadores y filtros</strong></td>
+</tr>
+<tr>
+<td><badge-type class="array"></badge-type> <code>.map(ƒ)</code></td>
+<td>Construye un array con lo que devuelve <code>ƒ</code> por cada elemento del array.</td>
+</tr>
+<tr>
+<td><badge-type class="array"></badge-type> <code>.filter(ƒ)</code></td>
+<td>Filtra un array y se queda sólo con los elementos que cumplen la condición de <code>ƒ</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="object"></badge-type> <code>.flat(level)</code></td>
+<td>Aplana el array al nivel <code>level</code> indicado.</td>
+</tr>
+<tr>
+<td><badge-type class="object"></badge-type> <code>.flatMap(ƒ)</code></td>
+<td>Aplana cada elemento del array, transformándolo según <code>ƒ</code>. Equivale a <code>.map().flat(1)</code>.</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Búsquedas</strong></td>
+</tr>
+<tr>
+<td><badge-type class="number"></badge-type> <code>.findIndex(ƒ)</code> <badge-es class="es2015"></badge-es></td>
+<td>Devuelve la posición del elemento que cumple la condición de <code>ƒ</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="object"></badge-type> <code>.find(ƒ)</code> <badge-es class="es2015"></badge-es></td>
+<td>Devuelve el elemento que cumple la condición de <code>ƒ</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="object"></badge-type> <code>.findLastIndex(ƒ)</code></td>
+<td>Idem a <code>findIndex()</code>, pero empezando a buscar desde el último elemento al primero.</td>
+</tr>
+<tr>
+<td><badge-type class="object"></badge-type> <code>.findLast(ƒ)</code></td>
+<td>Idem a <code>find()</code>, pero empezando a buscar desde el último elemento al primero.</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Acumuladores</strong></td>
+</tr>
+<tr>
+<td><badge-type class="object"></badge-type> <code>.reduce(ƒ, initial)</code></td>
+<td>Ejecuta <code>ƒ</code> con cada elemento (de izq a der), acumulando el resultado.</td>
+</tr>
+<tr>
+<td><badge-type class="object"></badge-type> <code>.reduceRight(ƒ, initial)</code></td>
+<td>Idem al anterior, pero en orden de derecha a izquierda.</td>
+</tr>
+</tbody>
+</table>
+<p>A grandes rasgos, a cada uno de estos métodos se les pasa una función <strong>callback</strong> que se ejecutará por cada uno de los elementos que contiene el array. Empecemos por <code>forEach()</code>, que es quizás el más sencillo de todos.</p>
+<h3 id="bucles-foreach-por-cada-uno" tabindex="-1"><a class="header-anchor" href="#bucles-foreach-por-cada-uno">Bucles <code>.forEach()</code> (Por cada uno)</a></h3>
+<p>Como se puede ver, el método <code>forEach()</code> no devuelve nada y espera que se le pase por parámetro una <badge-type class="function"></badge-type> que se ejecutará por cada elemento del array. Esa función, puede ser pasada en cualquiera de los formatos que hemos visto: como función tradicional o como función flecha:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> letters <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"c"</span><span class="token punctuation">,</span> <span class="token string">"d"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Con funciones por expresión</span>
+<span class="token keyword">const</span> <span class="token function-variable function">f</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Un elemento."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+letters<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Con funciones anónimas</span>
+letters<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Un elemento."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Con funciones flecha</span>
+letters<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Un elemento."</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Sin embargo, este ejemplo no tiene demasiada utilidad. A la <badge-type class="function"></badge-type> <strong>callback</strong> se le pueden pasar varios parámetros opcionales:</p>
+<ul>
+<li>Si se le pasa un <strong>primer parámetro</strong>, este será el elemento del array.</li>
+<li>Si se le pasa un <strong>segundo parámetro</strong>, este será la posición en el array.</li>
+<li>Si se le pasa un <strong>tercer parámetro</strong>, este será el array en cuestión.</li>
+</ul>
+<p>Veamos un ejemplo:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> letters <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"c"</span><span class="token punctuation">,</span> <span class="token string">"d"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+letters<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Devuelve 'a' / 'b' / 'c' / 'd'</span>
+
+letters<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Devuelve 'a' 0 / 'b' 1 / 'c' 2 / 'd' 3</span>
+
+letters<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>array<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Devuelve 'a' / 'a' / 'a' / 'a'</span></code></pre>
+<p>En este ejemplo, he nombrado <code>element</code> al parámetro que hará referencia al <strong>elemento</strong>, <code>index</code> al parámetro que hará referencia al índice (<em>posición del array</em>) y <code>array</code> al parámetro que hará referencia al propio <strong>array</strong> en cuestión. En algunos ejemplos los abreviaré como <code>(e, i, a)</code>, por su inicial. Aún así, el usuario puede ponerle a estos parámetros el nombre que prefiera.</p>
+<p>Por ejemplo, una buena estrategia sería utilizar <code>letters</code> (<em>plural</em>) para el array y <code>letter</code> (<em>singular</em>) en lugar de <code>element</code> para el elemento que se va recorriendo. Como se puede ver, realmente <code>forEach()</code> es otra forma de hacer un bucle (<em>sobre un array</em>), sin tener que recurrir a bucles tradicionales como <code>for</code> o <code>while</code>.</p>
+<blockquote>
+<p>Aunque no aparece en la tabla anterior, al método <code>forEach()</code> se le puede pasar un segundo parámetro <code>arg</code>, que representa el valor que sobreescribiría a la palabra clave <code>this</code> en el código dentro de la función <strong>callback</strong>. De necesitar esta funcionalidad, no podrías utilizar las funciones flecha, ya que el <code>this</code> no tiene efecto en ellas.</p>
+</blockquote>
+<h3 id="método-every-todos" tabindex="-1"><a class="header-anchor" href="#método-every-todos">Método <code>.every()</code> (Todos)</a></h3>
+<p>El método <code>every()</code> permite comprobar si <strong>todos y cada uno</strong> de los elementos de un array cumplen la condición que se especifique en la <badge-type class="function"></badge-type> <strong>callback</strong>:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> letters <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"c"</span><span class="token punctuation">,</span> <span class="token string">"d"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+letters<span class="token punctuation">.</span><span class="token function">every</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">letter</span><span class="token punctuation">)</span> <span class="token operator">=></span> letter<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span></code></pre>
+<p>En este caso, la magia está en el <strong>callback</strong>. La condición es que la longitud de cada elemento <badge-type class="string"></badge-type> del array sea <code>1</code>. Si dicha función devuelve <code>true</code>, significa que cumple la condición, si devuelve <code>false</code>, no la cumple. Por lo tanto, si todos los elementos del array devuelven <code>true</code>, entonces <code>every()</code> devolverá <code>true</code>.</p>
+<p>Si expandimos el ejemplo anterior a un código más detallado, tendríamos el siguiente ejemplo equivalente, que quizás sea más comprensible para entenderlo:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> letters <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"c"</span><span class="token punctuation">,</span> <span class="token string">"d"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Esta función se ejecuta por cada elemento del array</span>
+<span class="token keyword">const</span> <span class="token function-variable function">condition</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">letter</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Si el tamaño del elemento (string) es igual a 1</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>letter<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Si todos los elementos devuelven true, devuelve true</span>
+letters<span class="token punctuation">.</span><span class="token function">every</span><span class="token punctuation">(</span>condition<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// true</span></code></pre>
+<h3 id="método-some-al-menos-uno" tabindex="-1"><a class="header-anchor" href="#método-some-al-menos-uno">Método <code>.some()</code> (Al menos uno)</a></h3>
+<p>De la misma forma que el método anterior sirve para comprobar si todos los elementos del array cumplen una determinada condición, con <code>some()</code> podemos comprobar si <strong>al menos uno</strong> de los elementos del array, cumplen dicha condición definida por el <strong>callback</strong>.</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> letters <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"bb"</span><span class="token punctuation">,</span> <span class="token string">"c"</span><span class="token punctuation">,</span> <span class="token string">"d"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+letters<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span> <span class="token operator">=></span> element<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// true</span></code></pre>
+<p>Observa que en este ejemplo, el método <code>some()</code> devuelve <code>true</code> porque existe al menos un elemento del array con una longitud de <code>2</code> caracteres.</p>
+<h3 id="método-map-transformador" tabindex="-1"><a class="header-anchor" href="#método-map-transformador">Método <code>.map()</code> (Transformador)</a></h3>
+<p>El método <code>map()</code> es un método muy potente y útil para trabajar con arrays, puesto que su objetivo es devolver un nuevo array donde cada uno de sus elementos será lo que devuelva la función <strong>callback</strong> por cada uno de los elementos del array original:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Ana"</span><span class="token punctuation">,</span> <span class="token string">"Pablo"</span><span class="token punctuation">,</span> <span class="token string">"Pedro"</span><span class="token punctuation">,</span> <span class="token string">"Pancracio"</span><span class="token punctuation">,</span> <span class="token string">"Heriberto"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> nameSizes <span class="token operator">=</span> names<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token operator">=></span> name<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+nameSizes<span class="token punctuation">;</span> <span class="token comment">// Devuelve [3, 5, 5, 9, 9]</span></code></pre>
+<p>Observa que el array devuelto por <code>map()</code> es <code>nameSizes</code>, y cada uno de los elementos que lo componen, es el número devuelto por el <strong>callback</strong> (name.length), que no es otra cosa sino el tamaño de cada <badge-type class="string"></badge-type>.</p>
+<p>Este método nos permite hacer multitud de operaciones, ya que donde devolvemos <code>name.length</code> podriamos devolver el propio <badge-type class="string"></badge-type> modificado o cualquier otra cosa.</p>
+<h3 id="método-filter-filtro" tabindex="-1"><a class="header-anchor" href="#método-filter-filtro">Método <code>.filter()</code> (Filtro)</a></h3>
+<p>El método <code>filter()</code> nos permite filtrar los elementos de un array y devolver un nuevo array con sólo los elementos que queramos. Para ello, utilizaremos la función <strong>callback</strong> para establecer una condición que devuelve <code>true</code> sólo en los elementos que nos interesen:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Ana"</span><span class="token punctuation">,</span> <span class="token string">"Pablo"</span><span class="token punctuation">,</span> <span class="token string">"Pedro"</span><span class="token punctuation">,</span> <span class="token string">"Pancracio"</span><span class="token punctuation">,</span> <span class="token string">"Heriberto"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> filteredNames <span class="token operator">=</span> names<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token operator">=></span> name<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">"P"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+filteredNames<span class="token punctuation">;</span> <span class="token comment">// Devuelve ['Pablo', 'Pedro', 'Pancracio']</span></code></pre>
+<p>En este ejemplo, filtramos sólo los elementos en los que su primera letra sea <code>P</code>. Por lo tanto, la variable <code>filteredNames</code> será un array con sólo esos elementos.</p>
+<p>Ten en cuenta que si ningún elemento cumple la condición, <code>filter()</code> devuelve un <badge-type class="array"></badge-type> vacío.</p>
+<h3 id="método-flatmap-aplanar" tabindex="-1"><a class="header-anchor" href="#método-flatmap-aplanar">Método <code>.flatMap()</code> (Aplanar)</a></h3>
+<p>Un método que puede resultar interesante es <code>.flat(level)</code> <badge-es class="es2019"></badge-es>. Se trata de un método que revisa todos los elementos del array en busca de arrays anidados, y los <strong>aplana</strong> hasta el nivel <code>level</code> indicado por parámetro.</p>
+<p>Por ejemplo, considera el siguiente array:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> values <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">45</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">55</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+values<span class="token punctuation">.</span><span class="token function">flat</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">// [10, 15, 20, [25, 30], 35, [40, 45, [50, 55], 60]];</span>
+values<span class="token punctuation">.</span><span class="token function">flat</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">// [10, 15, 20, 25, 30, 35, 40, 45, [50, 55], 60];</span>
+values<span class="token punctuation">.</span><span class="token function">flat</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">// [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60];</span>
+
+<span class="token comment">// Idem al anterior, pero si hubieran más niveles los aplanaría todos</span>
+values<span class="token punctuation">.</span><span class="token function">flat</span><span class="token punctuation">(</span><span class="token number">Infinity</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Observa que el array <code>values</code> tiene 6 elementos, donde el cuarto elemento y el sexto elemento son arrays anidados. En el array del cuarto elemento hay dos números, pero en el array del sexto elemento hay a su vez un array con cuatro elementos donde su tercer elemento es nuevamente otro array. Estaríamos hablando de que el array <code>values</code> tiene arrays hasta un <strong>nivel 3</strong>.</p>
+<p>Con <code>.flat()</code> podemos indicar hasta que nivel queremos «aplanarlo».</p>
+<p>Sin embargo, este método <code>.flat()</code> no pertenece a los métodos que estamos repasando. Sin embargo, es la base del método <code>.flatMap(ƒ)</code>, que si tiene la misma filosofía que el resto de métodos. Funciona de forma muy parecida al método <code>.map(ƒ)</code>, aplanando un nivel y transformando cada elemento del array, según la función pasada por parámetro. Es decir, el método <code>.flatMap(ƒ)</code> es el equivalente a realizar la operación <code>.map(ƒ).flat(1)</code>:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> values <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">45</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">55</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+values<span class="token punctuation">.</span><span class="token function">flatMap</span><span class="token punctuation">(</span><span class="token parameter">element</span> <span class="token operator">=></span> Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span> <span class="token operator">?</span> element<span class="token punctuation">.</span>length <span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// [1, 1, 1, 2, 1, 4]</span></code></pre>
+<p>El ejemplo anterior, realiza una <code>.flatMap()</code> por la estructura <code>values</code>. En primer lugar, recorre cada uno de los elementos mediante un <code>map()</code> para transformarlos: si son un array, devuelve su cantidad de elementos, si no es un array, devuelve <code>1</code>. Finalmente, si el array resultante tuviera algún array entre sus elementos (<em>que en este caso es imposible</em>), le aplicaría un <code>flat(1)</code>.</p>
+<h3 id="búsquedas-find-y-findindex" tabindex="-1"><a class="header-anchor" href="#búsquedas-find-y-findindex">Búsquedas <code>.find()</code> y <code>.findIndex()</code></a></h3>
+<p>Dentro de las <strong>Array functions</strong>, existen dos métodos interesantes: <code>find()</code> <badge-es class="es2015"></badge-es> y <code>findIndex()</code> <badge-es class="es2015"></badge-es>. Ambos se utilizan para buscar elementos de un array mediante una condición, la diferencia es que el primero devuelve el elemento mientras que el segundo devuelve su posición en el array original. Veamos como funcionan:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Ana"</span><span class="token punctuation">,</span> <span class="token string">"Pablo"</span><span class="token punctuation">,</span> <span class="token string">"Pedro"</span><span class="token punctuation">,</span> <span class="token string">"Pancracio"</span><span class="token punctuation">,</span> <span class="token string">"Heriberto"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+names<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token operator">=></span> name<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// 'Pablo'</span>
+names<span class="token punctuation">.</span><span class="token function">findIndex</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token operator">=></span> name<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 1</span></code></pre>
+<p>La condición que hemos utilizado en este ejemplo es buscar el elemento que tiene <code>5</code> carácteres de longitud. Al buscarlo en el array original, el primero que encontramos es <code>Pablo</code>, puesto que <code>find()</code> devolverá 'Pablo' y <code>findIndex()</code> devolverá <code>1</code>, que es la segunda posición del array donde se encuentra.</p>
+<p>En el caso de no encontrar ningún elemento que cumpla la condición, <code>find()</code> devolverá <badge-type class="undefined"></badge-type>, mientras que <code>findIndex()</code>, que debe devolver un <badge-type class="number"></badge-type>, devolverá <code>-1</code>.</p>
+<h4 id="búsquedas-findlast-y-findlastindex" tabindex="-1"><a class="header-anchor" href="#búsquedas-findlast-y-findlastindex">Búsquedas <code>.findLast()</code> y <code>.findLastIndex()</code></a></h4>
+<p>De la misma forma, tenemos <code>findLastIndex()</code> y <code>findLast()</code>, que son las funciones equivalentes a <code>findIndex()</code> y <code>find()</code>, pero buscando elementos desde derecha a izquierda, en lugar de izquierda a derecha:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Ana"</span><span class="token punctuation">,</span> <span class="token string">"Pablo"</span><span class="token punctuation">,</span> <span class="token string">"Pedro"</span><span class="token punctuation">,</span> <span class="token string">"Pancracio"</span><span class="token punctuation">,</span> <span class="token string">"Heriberto"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+names<span class="token punctuation">.</span><span class="token function">findLast</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token operator">=></span> name<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// 'Pedro'</span>
+names<span class="token punctuation">.</span><span class="token function">findLastIndex</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token operator">=></span> name<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 2</span></code></pre>
+<p>En este caso, en lugar de encontrarnos a <code>Pablo</code> (<em>posición 1</em>), el primer elemento que tiene 5 carácteres, como va buscando de derecha a izquierda, el primero que encuentra es <code>Pedro</code> (<em>posición 2</em>).</p>
+<h3 id="método-reduce-acumuladores" tabindex="-1"><a class="header-anchor" href="#método-reduce-acumuladores">Método <code>.reduce()</code> (Acumuladores)</a></h3>
+<p>Por último, nos encontramos con una pareja de métodos denominados <code>reduce()</code> y <code>reduceRight()</code>. Ambos métodos se encargan de recorrer todos los elementos del array, e ir acumulando sus valores (<em>o alguna operación diferente</em>) y sumarlo todo, para devolver su resultado final.</p>
+<p>En este par de métodos, encontraremos una primera diferencia en su función <strong>callback</strong>, puesto que en lugar de tener los clásicos parámetros opcionales <code>(element, index, array)</code> que hemos utilizado hasta ahora, tiene <code>(first, second, iteration, array)</code>, que funciona de forma muy similar, pero adaptado a este tipo de acumuladores.</p>
+<p>En la primera iteración, <code>first</code> contiene el valor del primer elemento del array y <code>second</code> del segundo. En siguientes iteraciones, <code>first</code> es el acumulador que contiene lo que devolvió el <strong>callback</strong> en la iteración anterior, mientras que <code>second</code> es el siguiente elemento del array, y así sucesivamente. Veamos un ejemplo para entenderlo:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">95</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+numbers<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">first<span class="token punctuation">,</span> second</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">F=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>first<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> S=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>second<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> first <span class="token operator">+</span> second<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// F=95  S=5    (1ª iteración: elemento 1: 95 + elemento 2: 5) = 100</span>
+<span class="token comment">// F=100 S=25   (2ª iteración: 100 + elemento 3: 25) = 125</span>
+<span class="token comment">// F=125 S=10   (3ª iteración: 125 + elemento 4: 10) = 135</span>
+<span class="token comment">// F=135 S=25   (4ª iteración: 135 + elemento 5: 25) = 160</span>
+
+<span class="token comment">// Finalmente, devuelve 160</span></code></pre>
+<h4 id="método-reduceright-hacia-izquierda" tabindex="-1"><a class="header-anchor" href="#método-reduceright-hacia-izquierda">Método <code>.reduceRight()</code> (Hacia izquierda)</a></h4>
+<p>Gracias a esto, podemos utilizar el método <code>reduce()</code> como acumulador de elementos de izquierda a derecha y <code>reduceRight()</code> como acumulador de elementos de derecha a izquierda. Veamos un ejemplo de cada uno, realizando una resta en lugar de una suma:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">95</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+numbers<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">first<span class="token punctuation">,</span> second</span><span class="token punctuation">)</span> <span class="token operator">=></span> first <span class="token operator">-</span> second<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 95 - 5 - 25 - 10 - 25. Devuelve 30</span>
+
+numbers<span class="token punctuation">.</span><span class="token function">reduceRight</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">first<span class="token punctuation">,</span> second</span><span class="token punctuation">)</span> <span class="token operator">=></span> first <span class="token operator">-</span> second<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 25 - 10 - 25 - 5 - 95. Devuelve -110</span></code></pre>
+<h4 id="parámetro-inicial" tabindex="-1"><a class="header-anchor" href="#parámetro-inicial">Parámetro inicial</a></h4>
+<p>Es posible indicar un segundo parámetro opcional en el <code>.reduce()</code>. Este parámetro es el valor inicial que quieres tomar en el <strong>reduce</strong>, lo que puede facilitar bastante la implementación. Observa que en el primer ejemplo anterior, se realizan 4 iteraciones. Sin embargo, al indicar este valor inicial de <strong>cero</strong> se realizan 5 iteraciones:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">95</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+numbers<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">accumulator<span class="token punctuation">,</span> nextElement</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">F=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>accumulator<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> S=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>nextElement<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> accumulator <span class="token operator">+</span> nextElement<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// F=0   S=95   (iteración inicial): 0 + elemento 1: 95) = 95</span>
+<span class="token comment">// F=95  S=5    (1ª iteración: elemento 1: 95 + elemento 2: 5) = 100</span>
+<span class="token comment">// F=100 S=25   (2ª iteración: 100 + elemento 3: 25) = 125</span>
+<span class="token comment">// F=125 S=10   (3ª iteración: 125 + elemento 4: 10) = 135</span>
+<span class="token comment">// F=135 S=25   (4ª iteración: 135 + elemento 5: 25) = 160</span>
+
+<span class="token comment">// Finalmente, devuelve 160</span></code></pre>
+<p>Como se puede ver, hay una iteración 0 extra que es la que toma el valor inicial indicado, junto al primer elemento del array. Luego, sigue iterando con el resto de elementos.</p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../ordenacion/index.htm" title="Ordenación de un array">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Ordenación de un array</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../desestructuracion-arrays/index.htm" title="Desestructuración de arrays">
+  <div>
+    <span>Desestructuración de arrays</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/Xi07tHFzqR8" title="Cómo CLONAR objetos en Javascript correctamente (structuredClone)">
+  <img loading="lazy" src="../../../vi/Xi07tHFzqR8/mqdefault.jpg" alt="Cómo CLONAR objetos en Javascript correctamente (structuredClone)">
+</a><a href="https://youtu.be/A11eG1o611M" title="Creador de historias con Javascript y ChatGPT">
+  <img loading="lazy" src="../../../vi/A11eG1o611M/mqdefault.jpg" alt="Creador de historias con Javascript y ChatGPT">
+</a><a href="https://youtu.be/UVauEId-jJ0" title="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+  <img loading="lazy" src="../../../vi/UVauEId-jJ0/mqdefault.jpg" alt="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+</a><a href="https://youtu.be/KE2xRDM4Amg" title="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+  <img loading="lazy" src="../../../vi/KE2xRDM4Amg/mqdefault.jpg" alt="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+</a><a href="https://youtu.be/S0YA8BadVbM" title="Cambiar clases CSS desde Javascript con classList">
+  <img loading="lazy" src="../../../vi/S0YA8BadVbM/mqdefault.jpg" alt="Cambiar clases CSS desde Javascript con classList">
+</a><a href="https://youtu.be/sU4e6_i_ExU" title="Consejos y buenas prácticas (IV): Javascript + Imágenes">
+  <img loading="lazy" src="../../../vi/sU4e6_i_ExU/mqdefault.jpg" alt="Consejos y buenas prácticas (IV): Javascript + Imágenes">
+</a></div>
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajehtml.com/svg/" title="SVG">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#svg"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/css/" title="CSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/postcss/" title="PostCSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="../../../fundamentos/index.htm" title="Fundamentos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="../../index.htm" title="Javascript">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="../../../npm/index.htm" title="NPM">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="../../../webcomponents/index.htm" title="WebComponents">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="../../../vuejs/index.htm" title="VueJS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="../../../automatizadores/index.htm" title="Automatizadores">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a><a class="topic" href="../../../retos/index.htm" title="Retos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#retos"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+    
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-6', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+
+  </div></body>
+
+</html>

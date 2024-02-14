@@ -1,0 +1,687 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ecc022">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Propiedades y flags - Javascript en español - Lenguaje JS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Las expresiones regulares creadas en Javascript tienen ciertas propiedades y flags que cambian su comportamiento. Veámoslas.">
+  <meta name="view-transition" content="same-origin">
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Propiedades y flags - Javascript en español">
+  <meta property="og:image" content="https://lenguajejs.com/javascript/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Las expresiones regulares creadas en Javascript tienen ciertas propiedades y flags que cambian su comportamiento. Veámoslas.">
+  <meta property="og:url" content="https://lenguajejs.com/javascript/regexp/flags/">
+  <meta property="twitter:url" content="https://lenguajejs.com/javascript/regexp/flags/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Propiedades y flags - Javascript en español">
+  <meta property="twitter:description" content="Las expresiones regulares creadas en Javascript tienen ciertas propiedades y flags que cambian su comportamiento. Veámoslas.">
+  <meta property="twitter:image" content="https://lenguajejs.com/javascript/large-summary.jpg">
+
+  </head>
+
+<body class="js menu-open " style="--logo-color: #f0db4f"><script>
+    matchMedia("(width <= 1180px)").matches && document.body.classList.toggle("menu-open");
+  </script>
+  
+
+
+
+
+
+
+
+
+<section class="menubar">
+  <div class="menubar-content">
+    <h1>Lenguaje JS</h1>
+
+    <a class="cover" title="Lenguaje JS (javascript)" href="../../index.htm" style="--image: url('../../../assets/javascript.jpg')"></a>
+
+    <header>
+      <a href="../../fechas/date-fechas-nativas/index.htm" title="El tipo Date">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m14 26l1.41-1.41L7.83 17H28v-2H7.83l7.58-7.59L14 6L4 16l10 10z"></path></svg>
+      </a>
+      <a href="../../index.htm" title="Volver al índice">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 256"><path fill="#888888" d="M240 210h-18v-94.45a14.06 14.06 0 0 0-4.53-10.32l-80-75.49l-.09-.08a13.94 13.94 0 0 0-18.83 0l-.09.08l-80 75.5A14 14 0 0 0 34 115.55V210H16a6 6 0 0 0 0 12h224a6 6 0 0 0 0-12ZM46 115.55a2 2 0 0 1 .65-1.48l.09-.08l79.94-75.48a2 2 0 0 1 2.63 0L209.26 114l.08.08a2 2 0 0 1 .66 1.48V210h-52v-50a14 14 0 0 0-14-14h-32a14 14 0 0 0-14 14v50H46ZM146 210h-36v-50a2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"></path></svg>
+      </a>
+      <a href="../../multimedia/api-multimedia-nativa/index.htm" title="API de Audio Javascript">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></path></svg>
+      </a>
+    </header>
+
+    <div style="display:none">
+      <svg id="link-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 256 256"><g fill="#888888"><path d="M208 88h-56V32Z" opacity=".2"></path><path d="m213.66 82.34l-56-56A8 8 0 0 0 152 24H56a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V88a8 8 0 0 0-2.34-5.66ZM160 51.31L188.69 80H160ZM200 216H56V40h88v48a8 8 0 0 0 8 8h48v120Z"></path></g></svg>
+      <svg id="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="#888888" d="M2 12.5C2 9.46 4.46 7 7.5 7H18c2.21 0 4 1.79 4 4s-1.79 4-4 4H9.5a2.5 2.5 0 0 1 0-5H17v2H9.41c-.55 0-.55 1 0 1H18c1.1 0 2-.9 2-2s-.9-2-2-2H7.5C5.57 9 4 10.57 4 12.5S5.57 16 7.5 16H17v2H7.5C4.46 18 2 15.54 2 12.5z"></path></svg>
+    </div>
+
+    <div class="links">
+      <span class="folder">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 512 512"><path fill="#888888" d="M41 73v304.563L88.697 151H423v-30H185.514l-16-48H41zm62.303 96L43.092 455h381.605l60.211-286H103.303z"></path></svg>
+        Expresiones regulares
+      </span>
+            <a class="link" href="../expresiones-regulares/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              ¿Qué es una expresión regular?
+            </a>
+            <a class="link active" href="index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Propiedades y flags
+            </a>
+            <a class="link" href="../buscar-capturar/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Buscar y capturar textos
+            </a>
+            <a class="link" href="../crear-expresiones-regulares/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Crear expresiones regulares
+            </a>
+    </div>
+  </div>
+
+  <div class="sidebox">
+    <svg class="close-menu" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19V5m10 1l-6 6l6 6m-6-6h14"></path></svg>
+    <div class="socials">
+      <a class="twitch" href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+      <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+      <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+      <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  const toggleMenu = () => (document.body.classList.toggle("menu-open"));
+  document.querySelector(".close-menu").addEventListener("click", toggleMenu);
+
+  matchMedia("(width <= 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+  matchMedia("(width > 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+
+  const activeLink = document.querySelector(".links .active");
+  const icon = /* svg */`<svg viewBox="0 0 24 24"><use href="#anchor-icon" /></svg>`;
+  const headers = [...document.querySelectorAll(".contents h3")].map(link => ({ text: link.textContent, id: link.id }));
+  const links = [];
+  headers.reverse().forEach(({ text, id }) => {
+    const link = document.createElement("a");
+    link.classList.add("anchor");
+    link.href = "#" + id;
+    link.insertAdjacentHTML("beforeend", icon);
+    link.insertAdjacentText("beforeend", ` ${text}`);
+    activeLink.after(link);
+  });
+</script>
+
+  <div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#js"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeJS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/javascript.jpg')">
+    <h1><a href="index.htm">Propiedades y flags</a></h1><h2 class="typewriter">Información sobre una expresión regular</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../expresiones-regulares/index.htm">¿Qué es una expresión regular?</a>
+    <a class="current" href="index.htm">Propiedades y flags</a>
+    <a href="../buscar-capturar/index.htm">Buscar y capturar textos</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Ahora que sabemos lo que son las <strong>expresiones regulares</strong>, vamos a profundizar en las <strong>propiedades</strong> o <strong>flags</strong> que puede tener un objeto <badge-type class="regexp"></badge-type> de Javascript y que significa cada una. Recordemos primero como se define una <strong>expresión regular</strong>:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">M..z</span><span class="token regex-delimiter">/</span><span class="token regex-flags">ig</span></span><span class="token punctuation">;</span></code></pre>
+<p>Esta es una <strong>expresión regular</strong> que busca cualquier texto que contenga una <code>&quot;M&quot;</code> seguida de dos carácteres cualquiera, seguida de una <code>&quot;z&quot;</code>. Ahora que tenemos una expresión regular en la constante <code>regexp</code>, un buen punto de partida sería analizar las diferentes propiedades.</p>
+<h3 id="propiedades-de-una-regexp" tabindex="-1"><a class="header-anchor" href="#propiedades-de-una-regexp">Propiedades de una RegExp</a></h3>
+<p>Cada <strong>expresión regular</strong> creada, tiene unas propiedades definidas, donde podemos consultar ciertas características de la expresión regular en cuestión. Además, también tiene unas propiedades de comprobación para saber si un flag determinado está activo o no (<em>que veremos más adelante</em>):</p>
+<table>
+<thead>
+<tr>
+<th>Propiedades</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><badge-type class="string"></badge-type> <code>.source</code></td>
+<td>Devuelve la <strong>expresión regular</strong> original definida (<em>sin los flags</em>).</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>.flags</code></td>
+<td>Devuelve los <strong>flags</strong> activados en la expresión regular.</td>
+</tr>
+<tr>
+<td><badge-type class="number"></badge-type> <code>.lastIndex</code></td>
+<td>Devuelve la posición donde detectó una ocurrencia en la última búsqueda. (Ver más adelante)</td>
+</tr>
+</tbody>
+</table>
+<p>Las dos primeras propiedades nos dan toda la información sobre la <strong>expresión regular</strong> definida:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">M..z</span><span class="token regex-delimiter">/</span><span class="token regex-flags">ig</span></span><span class="token punctuation">;</span>
+
+regexp<span class="token punctuation">.</span>source<span class="token punctuation">;</span>     <span class="token comment">// "M..z"</span>
+regexp<span class="token punctuation">.</span>flags<span class="token punctuation">;</span>      <span class="token comment">// "ig"</span></code></pre>
+<p>Observa que también tenemos una propiedad denominada <code>.lastIndex</code>. Esta propiedad se utiliza para lanzar búsquedas sucesivas y comprobar coincidencias (<em>necesita tener el flag g activado</em>). Lo explicaremos un poco más adelante.</p>
+<h3 id="flags-de-una-expresión-regular" tabindex="-1"><a class="header-anchor" href="#flags-de-una-expresión-regular">Flags de una expresión regular</a></h3>
+<p>Los <strong>flags</strong> son uno o varios carácteres especiales que se escriben en un <badge-type class="string"></badge-type> tras la segunda barra <code>/</code> delimitadora de una expresión regular, o en el segundo parámetro del <code>new RegExp()</code>:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">reg</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>                     <span class="token comment">// No tiene ningún flag activado</span>
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">reg</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">;</span>                    <span class="token comment">// Tiene el flag "i" activado</span>
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">reg</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span> <span class="token string">"gi"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// Tiene el flag "g" activado</span></code></pre>
+<p>Se trata de una serie de carácteres que indican <strong>ciertos comportamientos</strong> especiales que se encuentran activos en la expresión regular definida:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedades</th>
+<th>Flag</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><badge-type class="boolean"></badge-type> <code>.global</code></td>
+<td><code>g</code></td>
+<td>Búsqueda global. Permite seguir buscando coincidencias en lugar de pararse al encontrar una.</td>
+</tr>
+<tr>
+<td><badge-type class="boolean"></badge-type> <code>.ignoreCase</code></td>
+<td><code>i</code></td>
+<td>Le da igual mayúsculas y minúsculas. Se suele denominar <strong>insensible a mayús/minús</strong>.</td>
+</tr>
+<tr>
+<td><badge-type class="boolean"></badge-type> <code>.multiline</code></td>
+<td><code>m</code></td>
+<td>Multilínea. Permite a <code>^</code> y <code>$</code> tratar los finales de línea <code>\r</code> o <code>\n</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="boolean"></badge-type> <code>.unicode</code></td>
+<td><code>u</code></td>
+<td>Unicode. Interpreta el patrón como un código de una secuencia Unicode.</td>
+</tr>
+<tr>
+<td><badge-type class="boolean"></badge-type> <code>.sticky</code></td>
+<td><code>y</code></td>
+<td>Sticky. Busca sólo desde la posición indicada por <code>lastIndex</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="boolean"></badge-type> <code>.dotAll</code></td>
+<td><code>s</code></td>
+<td>Establece si <code>\n</code>, <code>\r</code>, separación de párrafo o separación de línea deberían considerarse en los <code>.</code></td>
+</tr>
+<tr>
+<td><badge-type class="boolean"></badge-type> <code>.hasIndices</code></td>
+<td><code>d</code></td>
+<td>Establece si al ejecutar un <code>.exec()</code> el resultado deberá tener propiedad <code>.indices</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Cada uno de estos flags se pueden comprobar si se encuentran activos desde Javascript con su booleano asociado, una propiedad de la expresión regular:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">manz</span><span class="token regex-delimiter">/</span><span class="token regex-flags">gi</span></span><span class="token punctuation">;</span>
+
+regexp<span class="token punctuation">.</span>global<span class="token punctuation">;</span>                <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span>flags<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"g"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// equivalente al anterior</span>
+regexp<span class="token punctuation">.</span>ignoreCase<span class="token punctuation">;</span>            <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span>flags<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"i"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// equivalente al anterior</span>
+regexp<span class="token punctuation">.</span>multiline<span class="token punctuation">;</span>             <span class="token comment">// false</span>
+regexp<span class="token punctuation">.</span>flags<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"m"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// equivalente al anterior</span>
+regexp<span class="token punctuation">.</span>sticky<span class="token punctuation">;</span>                <span class="token comment">// false</span>
+regexp<span class="token punctuation">.</span>flags<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"y"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// equivalente al anterior</span>
+regexp<span class="token punctuation">.</span>unicode<span class="token punctuation">;</span>               <span class="token comment">// false</span>
+regexp<span class="token punctuation">.</span>flags<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"u"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// equivalente al anterior</span>
+regexp<span class="token punctuation">.</span>dotAll<span class="token punctuation">;</span>                <span class="token comment">// false</span>
+regexp<span class="token punctuation">.</span>flags<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"s"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// equivalente al anterior</span>
+regexp<span class="token punctuation">.</span>hasIndices<span class="token punctuation">;</span>            <span class="token comment">// false</span>
+regexp<span class="token punctuation">.</span>flags<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"d"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// equivalente al anterior</span></code></pre>
+<p>Vamos ahora a analizar cada uno de estos flags y a poner un ejemplo para comprenderlo mejor.</p>
+<h4 id="búsqueda-global-flag-g" tabindex="-1"><a class="header-anchor" href="#búsqueda-global-flag-g">Búsqueda global (flag g)</a></h4>
+<p>Empecemos por la propiedad <code>.global</code> (<em>flag g</em>). Partamos del siguiente ejemplo, donde definimos una expresión regular <strong>sin el flag global</strong>. Observa que al ejecutar el método <code>.test()</code> para buscar coincidencias, encuentra la primera y no continua buscando. La propiedad <code>.lastIndex</code> siempre devuelve <code>0</code>:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> text <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hola Manz,
+
+Te escribo para contarte que Manz no me parece
+un nombre apropiado para una persona.
+
+Deberías ser un gato.
+
+Atentamente,
+Manz (el gato)</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">M..z</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+
+regexp<span class="token punctuation">.</span>lastIndex      <span class="token comment">// 0</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span>lastIndex      <span class="token comment">// 0</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span>lastIndex      <span class="token comment">// 0</span></code></pre>
+<p>Sin embargo, vamos a hacer lo mismo con el flag de la <strong>búsqueda global</strong> activado. Comprobarás que en este caso, el método <code>.test()</code> va buscando las coincidencias sucesivas y va devolviendo en <code>.lastIndex</code> la posición donde las ha encontrado:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">M..z</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">;</span>
+
+regexp<span class="token punctuation">.</span>lastIndex      <span class="token comment">// 0</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span>lastIndex      <span class="token comment">// 9 (primera línea)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span>lastIndex      <span class="token comment">// 45 (tercera línea)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span>lastIndex      <span class="token comment">// 138 (última línea)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// false (no encuentra más, reinicia búsqueda)</span>
+regexp<span class="token punctuation">.</span>lastIndex      <span class="token comment">// 0</span></code></pre>
+<p>Ten en cuenta que una vez <code>.test()</code> devuelve <code>false</code>, la búsqueda se reinicia y comenzarías a buscar desde el principio nuevamente.</p>
+<h4 id="case-sensitive-flag-i" tabindex="-1"><a class="header-anchor" href="#case-sensitive-flag-i">Case sensitive (flag i)</a></h4>
+<p>La propiedad <code>.ignoreCase</code> (<em>flag i</em>) establece un flag que indica que no debe fijarse en la diferencia de mayúsculas y minúsculas, sino considerarlas lo mismo. Como siempre, veámoslo con un ejemplo:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">M..z</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">;</span>
+
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"Manz"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"manz"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"MANZ"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// true</span>
+
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">M..z</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"Manz"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"manz"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// false</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"MANZ"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// false</span></code></pre>
+<p>Como se puede ver en el segundo caso, no tenemos flag <code>i</code>, y por lo tanto, si tiene en cuenta la diferencia de mayúsculas y minúsculas.</p>
+<h4 id="soporte-multilínea-flag-m" tabindex="-1"><a class="header-anchor" href="#soporte-multilínea-flag-m">Soporte multilínea (flag m)</a></h4>
+<p>La propiedad <code>.multiline</code> (<em>flag m</em>), permite considerar el texto como un <strong>texto multilinea</strong>, es decir, si en la <strong>expresión regular</strong> se utilizan anclas de inicio <code>^</code> o final <code>$</code> de línea (<em>las veremos más adelante</em>), la expresión regular tendrá en cuenta esos inicios para evaluarlos. Veamos el ejemplo, donde se comprenderá a la perfección:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> text <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Esto es una primera línea
+Esto es una segunda línea
+
+Manz (esta línea empieza por Manz)</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+
+text<span class="token punctuation">;</span>     <span class="token comment">// 'Esto es una primera línea\nEsto es una segunda línea\n\nManz (esta línea empieza por Manz)'</span></code></pre>
+<p>Si observamos esta constante de texto <badge-type class="string"></badge-type> y escribimos <code>text</code> en la consola, veremos que nos sale algo similar a lo anterior. El carácter <code>\n</code> simboliza que hay una nueva línea. Bien, si intentamos detectar con una expresión regular sin <strong>flag m</strong> la palabra <code>&quot;Manz&quot;</code> utilizando el ancla <code>^</code> para indicar que <code>Manz</code> está al comienzo, comprobaremos que no funciona:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^M..z</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// false</span></code></pre>
+<p>Esto ocurre porque la <strong>expresión regular</strong> considera que la aparición <code>Manz</code> no está al principio del <badge-type class="string"></badge-type>, sino que está tras un carácter <code>\n</code>. Sin embargo, al utilizar el <strong>flag m</strong>, considerará los <code>\n</code> como si fuera empezar una nueva línea:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^M..z</span><span class="token regex-delimiter">/</span><span class="token regex-flags">m</span></span><span class="token punctuation">;</span>
+
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// true</span></code></pre>
+<h4 id="soporte-unicode-flag-u" tabindex="-1"><a class="header-anchor" href="#soporte-unicode-flag-u">Soporte unicode (flag u)</a></h4>
+<p>La propiedad <code>.unicode</code> (<em>flag u</em>) nos permite activar características relacionadas con <strong>Unicode</strong>, es decir, con una codificación extendida de carácteres específicos. Puede ser útil en algunos casos. Por ejemplo, el emoji 🤡 es un carácter unicode representado por <code>U+1F921</code>, por lo que podríamos querer buscarlo indicando su código:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> text <span class="token operator">=</span> <span class="token string">"Hola amigos, soy un 🤡 que enseña a programar"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\u{1F921}</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment">// false, características unicode no están activas</span>
+
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\u{1F921}</span><span class="token regex-delimiter">/</span><span class="token regex-flags">u</span></span><span class="token punctuation">;</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment">// true, características unicode están activas</span></code></pre>
+<p>Observa que podemos escribir el emoji en HTML utilizando su código 🤡, simplemente escribiendo <code>&amp;#x1F921;</code>.</p>
+<h4 id="regexp-pegajosa-flag-y" tabindex="-1"><a class="header-anchor" href="#regexp-pegajosa-flag-y">RegExp «pegajosa» (flag y)</a></h4>
+<p>La propiedad <code>.sticky</code> (<em>flag y</em>), cuando está activada, nos permite realizar una búsqueda con la expresión regular, pero sólo lo hace en la posición que marca la propiedad <code>.lastIndex</code>. No intentará buscar en posiciones posteriores o anteriores, sólo aplica a la posición actual de <code>.lastIndex</code>, por lo que también podría ser útil modificarla:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> text <span class="token operator">=</span> <span class="token string">"Hola Manz, soy el Manz el gato."</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">M..z</span><span class="token regex-delimiter">/</span><span class="token regex-flags">y</span></span><span class="token punctuation">;</span>
+
+regexp<span class="token punctuation">.</span>lastIndex      <span class="token comment">// 0</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// false (en la posición 0 no se encuentra nada que coincida)</span>
+regexp<span class="token punctuation">.</span>lastIndex <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// true (en la posición 5 justo está el texto Manz, que coincide)</span>
+regexp<span class="token punctuation">.</span>lastIndex      <span class="token comment">// 9 (donde termina la ocurrencia encontrada)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// false (en la posición 9 no se encuentra nada que coincida)</span>
+regexp<span class="token punctuation">.</span>lastIndex      <span class="token comment">// 0 (se ha reseteado)</span></code></pre>
+<p>Así pues, el nombre <code>sticky</code> (<em>pegajoso</em>) hace referencia a que la búsqueda mediante la expresión regular se queda «pegada» o atascada y no continúa buscando.</p>
+<h4 id="soporte-separadores-flag-s" tabindex="-1"><a class="header-anchor" href="#soporte-separadores-flag-s">Soporte separadores (flag s)</a></h4>
+<p>La propiedad <code>.dotAll</code> (<em>flag s</em>) activa la posibilidad de que carácteres como <code>\n</code> (<em>nueva línea</em>), <code>\r</code> (<em>retorno de carro</em>), <code>\u{2028}</code> (<em>separador de línea</em>) o <code>\u{2029}</code> (<em>separador de párrafo</em>) se consideren dentro de los carácteres comodín con el <code>.</code>, algo que no sucede por defecto. Veamos un ejemplo:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> text <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hola
+Manz</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>                            <span class="token comment">// "Hola\nManz"</span>
+
+<span class="token comment">// Soporte de separadores</span>
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">Hola.M..z</span><span class="token regex-delimiter">/</span><span class="token regex-flags">s</span></span><span class="token punctuation">;</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment">// true, el flag s considera que separador \n es un carácter</span>
+
+<span class="token comment">// Soporte multilinea</span>
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">Hola.M..z</span><span class="token regex-delimiter">/</span><span class="token regex-flags">m</span></span><span class="token punctuation">;</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment">// false, sin flag s no se considera que \n sea un carácter</span></code></pre>
+<p>Recuerda que si vas a usar el formato <code>\u{número}</code> necesitas tener también el flag <code>u</code> activado.</p>
+<h4 id="activa-indices-flag-d" tabindex="-1"><a class="header-anchor" href="#activa-indices-flag-d">Activa indices (flag d)</a></h4>
+<p>La propiedad <code>.hasIndices</code> (<em>flag d</em>) activa la característica especial que hace que cuando utilicemos el método <code>.exec()</code>, el resultado incorpore una propiedad especial llamada <code>.indices</code>, que explicaremos más adelante:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> text <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hola Manz,
+
+¿Podrías traerme una cajita de Whiskas?
+
+Atentamente,
+Manz el gato.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+
+<span class="token comment">// Con flag d activado</span>
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">M..z</span><span class="token regex-delimiter">/</span><span class="token regex-flags">d</span></span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> result <span class="token operator">=</span> regexp<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"indices"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// true</span>
+
+<span class="token comment">// Sin flag d activado</span>
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">M..z</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> result <span class="token operator">=</span> regexp<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"indices"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// false</span></code></pre>
+<p>Más adelante veremos para que sirve esta propiedad <code>.indices</code> y el método <code>.exec()</code>, ya que lo explicaremos en uno de los temas posteriores.</p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../expresiones-regulares/index.htm" title="¿Qué es una expresión regular?">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>¿Qué es una expresión regular?</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../buscar-capturar/index.htm" title="Buscar y capturar textos">
+  <div>
+    <span>Buscar y capturar textos</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/EiKYr5vjs48" title="Diferencias entre getElementById vs querySelector (y otros métodos del DOM)">
+  <img loading="lazy" src="../../../vi/EiKYr5vjs48/mqdefault.jpg" alt="Diferencias entre getElementById vs querySelector (y otros métodos del DOM)">
+</a><a href="https://youtu.be/A11eG1o611M" title="Creador de historias con Javascript y ChatGPT">
+  <img loading="lazy" src="../../../vi/A11eG1o611M/mqdefault.jpg" alt="Creador de historias con Javascript y ChatGPT">
+</a><a href="https://youtu.be/UVauEId-jJ0" title="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+  <img loading="lazy" src="../../../vi/UVauEId-jJ0/mqdefault.jpg" alt="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+</a><a href="https://youtu.be/S0YA8BadVbM" title="Cambiar clases CSS desde Javascript con classList">
+  <img loading="lazy" src="../../../vi/S0YA8BadVbM/mqdefault.jpg" alt="Cambiar clases CSS desde Javascript con classList">
+</a><a href="https://youtu.be/sU4e6_i_ExU" title="Consejos y buenas prácticas (IV): Javascript + Imágenes">
+  <img loading="lazy" src="../../../vi/sU4e6_i_ExU/mqdefault.jpg" alt="Consejos y buenas prácticas (IV): Javascript + Imágenes">
+</a><a href="https://youtu.be/KE2xRDM4Amg" title="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+  <img loading="lazy" src="../../../vi/KE2xRDM4Amg/mqdefault.jpg" alt="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+</a></div>
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajehtml.com/svg/" title="SVG">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#svg"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/css/" title="CSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/postcss/" title="PostCSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="../../../fundamentos/index.htm" title="Fundamentos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="../../index.htm" title="Javascript">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="../../../npm/index.htm" title="NPM">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="../../../webcomponents/index.htm" title="WebComponents">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="../../../vuejs/index.htm" title="VueJS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="../../../automatizadores/index.htm" title="Automatizadores">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a><a class="topic" href="../../../retos/index.htm" title="Retos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#retos"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+    
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-6', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+
+  </div></body>
+
+</html>

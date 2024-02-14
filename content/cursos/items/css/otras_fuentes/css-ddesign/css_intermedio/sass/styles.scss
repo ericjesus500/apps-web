@@ -1,0 +1,271 @@
+@import '_containers', 'medidas', '_colors', 'layout-grid';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: $fs-1-em;
+}
+
+body{
+    background: rgb(241, 243, 243);
+}
+
+header{
+    width: 90%;
+    height: 200px;
+    background: rgb(240, 243, 245);
+    background-image: url(../img/background_intermedio.png);
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;    
+    margin: 0 auto;
+}
+
+.color{
+    color: white;
+}
+
+.sub-item__title{
+    margin-left: 70%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.sub-item__title-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    li{
+        padding: $p-1;
+    }
+    
+    li a, li a:visited{
+        color: rgb(110, 13, 110);
+        font-size: 1.2em;
+    }
+
+}
+
+h1{
+    font-family: 'Open Sans', sans-serif, Arial;
+    font-size: $fs-2;
+}
+
+h2{
+    color: $orange;
+    font-size: $fs-1-5;
+    font-family: 'Lato', Cambria, sans-serif;    
+    border: 1px solid $blue-2;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    -ms-border-radius: 0.5em;
+    -o-border-radius: 0.5em;
+}
+
+h3{
+    color: $blue-2;
+    font-size: $fs-1-25;
+}
+
+h4{
+    color: rgb(216, 143, 8);
+    font-size: $fs-1-25;
+}
+
+h1, h2, h3, h4, img{
+    margin: $m-1;
+    padding: $p-1 $m-1;
+}
+
+p{
+    margin: $m-1 0;
+}
+
+a{
+    text-decoration: none;
+    color:$white;
+}
+
+.btn-demo{
+    color:$gray-2;
+    background: $gray;
+    padding: $p-0-5;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    -ms-border-radius: 0.5em;
+    -o-border-radius: 0.5em;
+    float: right;
+}
+
+.btn-link{
+    color:$white;
+    font-family: 'Source Sans Pro', sans-serif, Cambria;
+    font-weight: 300;
+    background:$blue-2;
+    padding: $p-0-5;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    -ms-border-radius: 0.5em;
+    -o-border-radius: 0.5em;
+    clear: both;
+}
+
+section{
+    margin: $w-0 auto;
+    padding: $p-1;
+    width: $w-100;
+    /* border: 2px dashed $red; */
+}
+
+article{
+    margin: $m-1 auto;
+    padding: $p-3;
+    width: $w-100;
+    /* border: 2px solid $skyblue; */
+    background: $background;
+}
+
+span{
+    font-weight: bold;
+}
+
+iframe{
+    width: $w-100;
+    height: 100%;
+}
+
+.img-center{
+    max-width: 100%;
+    margin: $m-1 auto;
+    display: block;
+}
+
+.resaltar{
+    color: $blue;
+}
+
+.pre-list{
+    width:90%;
+    white-space: pre-line;
+    margin: $m-0 auto;
+    padding: $p-1;
+    border:1px solid $skyblue;
+    background: $gray-2;
+    font-family:'Source Code Pro', monospace;
+}
+
+.pre-fondo{
+    width:auto;
+    height: auto;
+    white-space: pre-line;
+    margin: $m-1 0;
+    padding: $p-1;
+    background-color: transparent;
+}
+
+.pre-view{
+    width:100%;
+    height: 100%;
+    white-space: pre-line;
+    margin: $m-1 0;
+    padding: 2em;
+    background-color: transparent;
+}
+
+p.destacado{
+    padding: $p-1;
+    margin: $m-1;
+    background: $yellow-2;
+    color: $gray;
+    font-family: 'Poppins', sans-serif, Cambria;
+    font-size: $fs-1;
+}
+
+ul{
+    margin:$m-1 $m-3;
+    /* border: 1px solid palevioletred; */
+}
+
+.list{
+    list-style: none;    
+}
+
+ul.dl-list > .pre-list{
+    font-size: $fs-1-em;
+    color: $black;
+}
+
+dt{
+    padding: $p-1 0;
+    /* border: 1px solid red; */
+}
+
+.dl-list {
+    margin:$m-1 $m-1;
+    /* padding: $p-1; */
+    font-size: $fs-1;
+    color: $blue;
+    /* border: 1px solid black; */
+}
+
+.dd-list-item{
+    margin:$m-1 $m-1;
+    padding: $p-0;
+    font-size: $fs-1;
+    color: $blue-2;
+    /* border: 1px solid orangered; */
+
+    a{
+        color: $blue-2;
+        text-decoration: underline solid $blue-2;
+    }
+}
+
+figure{
+    border: 1px solid violet;
+    margin: $m-1 auto;
+    max-width: 100%;
+    padding: $p-1;
+}
+.bg-primary{
+    background: blue;
+}
+
+.bg-primary-2{
+    background: skyblue;
+}
+
+.bg-danger{
+    background: orange;
+}
+
+.bg-danger-2{
+    background: orangered;
+}
+
+.bg-info{
+    background: rgb(9, 114, 9);
+}
+
+.c-primary{
+    color: $blue;
+}
+
+.c-primary-2{
+    color: $skyblue;
+}
+
+.c-danger{
+    color: $orange;
+}
+
+.c-info{
+    color: rgb(9, 114, 9);
+}

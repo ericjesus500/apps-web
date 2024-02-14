@@ -1,0 +1,240 @@
+h1{
+    color: orangered;
+}
+
+h2{
+    color: rgb(108, 138, 196);
+}
+
+h3{
+    color: rgb(42, 93, 194);
+}
+
+.img-1{
+    display: block;
+    margin: 0 auto;
+}
+
+.container{
+    width: 90%;
+    height: auto;
+    padding: 0;
+    margin:20px auto;
+    border: 1px solid aqua;
+}
+
+.content{
+    margin: 20px auto;
+    width: 80%;
+    height: auto;
+    border: 1px solid blue;
+}
+
+.content-1{
+    background: rgb(197, 110, 110);    
+}
+
+.object-fill, .object-contain, .object-cover, .object-none, .object-scale_down{
+    /*medidas de la imagen*/
+    width: 250px;
+    height: 450px;
+}
+
+.object-fill{
+    object-fit: fill;/*Valor por defecto => no pasa nada*/
+}
+
+.object-contain{
+    object-fit: contain;
+}
+
+.object-cover{
+    object-fit:cover;
+    /*object-position: left;*/
+}
+
+.object-none{
+    object-fit:none;
+}
+
+.object-scale_down{
+    object-fit:scale-down;
+}
+
+.object-2-left:hover{
+    object-position: left;
+} 
+
+.object-2-right:hover{
+    object-position: right;
+} 
+
+.object-2-top:hover{
+    object-position: top;
+} 
+
+.object-2-bottom:hover{
+    object-position: bottom;
+}
+
+.special{
+    margin:10px auto;
+    border: 1px solid orange;
+    width: 300px;
+    height: 250px;
+}
+
+.object{
+    border: 1px dashed red;
+    object-fit: scale-down;
+    width: 250px;
+    height: 170px;
+}
+
+.object-2-left-top:hover{
+    object-position: left top;
+}
+
+.object-2-right-bottom:hover{
+    object-position: right bottom;
+}
+
+.object-2-right-center:hover{
+    object-position: right center;
+}
+
+.object-3-efecto_transition{
+    width: 250px;
+    height: 450px;
+    object-fit: cover;
+    object-position: left;
+    transition: object-position 5s;
+    -webkit-transition: object-position 5s;
+    -moz-transition: object-position 5s;
+    -ms-transition: object-position 5s;
+    -o-transition: object-position 5s;
+}
+
+.object-3-efecto_transition:hover{
+    object-position: right;
+}
+
+.img-2{
+    display: block;
+    margin: 10px auto;
+}
+.blur{
+    max-width: 100%;
+    filter:blur(15px);
+    -webkit-filter:blur(15px);
+}
+
+.blur:hover{
+    filter: none;
+    -webkit-filter: none;
+}
+
+.brightness{
+    filter:brightness(.5);
+    -webkit-filter:brightness(0.5);
+}
+
+.brightness:hover{
+    filter: none;
+    -webkit-filter: none;
+}
+
+.contrast{
+    filter: contrast(0.5);
+    -webkit-filter: contrast(0.5);
+}
+
+.contrast:hover{
+    filter: none;
+    -webkit-filter: none;
+}
+
+.drop-shadow{
+    filter: none;
+    -webkit-filter: none;
+}
+
+.drop-shadow:hover{
+    /*No se establece el valor de spread por no ser totalmente compatible con los navegadores*/
+    filter:drop-shadow(10px 10px 5px black); 
+    -webkit-filter:drop-shadow(10px 10px 5px black);
+}
+
+.grayscale{
+    filter: none;
+    -webkit-filter: none;
+}
+
+.grayscale:hover{
+    filter: grayscale(50%);
+    -webkit-filter: grayscale(50%);
+}
+
+.hue-rotate{
+    filter: none;
+    -webkit-filter: none;
+}
+
+.hue-rotate:hover{
+    filter:hue-rotate(45deg);
+    -webkit-filter:hue-rotate(45deg);
+}
+
+.invert{
+    filter: none;
+    -webkit-filter: none;
+}
+
+.invert:hover{
+    filter: invert(1);
+    -webkit-filter: invert(1);
+}
+
+.opacity{
+    filter: none;
+    -webkit-filter: none;
+}
+
+.opacity:hover{
+    filter: opacity(0.5);
+    -webkit-filter: opacity(0.5);
+}
+
+.saturate{
+    filter: none;
+    -webkit-filter: none;
+}
+
+.saturate:hover{
+    filter: saturate(0.5);
+    -webkit-filter: saturate(0.5);
+}
+
+.sepia{
+    filter: none;
+    -webkit-filter: none;
+}
+
+.sepia:hover{
+    filter:sepia(0.5);
+    -webkit-filter:sepia(0.5);
+}
+    
+    /*filter:;
+    hue-rotate(45deg)*//*filter:;
+    invert(.7)*//*filter:;
+    opacity(.2)*//*filter:;
+    saturate(2)*//*filter: sepia(.7) */;
+    
+
+
+/*
+.img-2:hover{
+    filter: none;
+}
+*/

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>display flex</title>
+	<style>
+
+		body{
+			text-align: center;
+		}
+
+		h1{
+			margin: 50px 0;
+		}
+
+		.content{
+			width: 900px;
+			height: 400px;
+			border: 1px solid black;
+			padding: 30px 30px;
+			margin: 30px auto;
+		}
+
+		.box{
+			width: 100px;
+			height: 100px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #fff;			
+			border-width: 1px;
+			border-style: solid;			
+			font-size: 20px;
+			font-family: Arial;
+			margin: 20px 20px;			
+		}
+
+		.box:nth-child(1){
+			background: skyblue;
+		}
+
+		.box:nth-child(2){
+			background: violet;
+		}
+
+		.box:nth-child(3){
+			background: orange;
+		}
+
+		.box:nth-child(4){
+			background: skyblue;
+		}
+
+		.box:nth-child(5){
+			background: violet;
+		}
+
+		.box:nth-child(6){
+			background: orange;
+		}
+
+		.d-flex{
+			background-color: red;
+			margin: 0 10px;
+			display: flex;			
+		}
+
+		.auto{
+			width: auto;
+			height: auto;			
+		}
+
+		.color{
+			color: black;
+		}
+
+		.div-lista{			
+			margin: 40px auto;
+			padding: 0px 0 30px;
+		}
+
+		.list{
+			line-height: 2;
+			font-size: 20px;
+			text-align-last: left;
+			width: 900px;
+			margin: 10px auto;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	<h1>Original</h1>
+	<div class="content">
+		<div class="box">box 1</div>
+		<div class="box">box 2</div>
+		<div class="box">box 3</div>		
+	</div>
+	<h1>display: flex</h1>
+	<div class="content d-flex">
+
+		<div class="box color">box 1: Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, labore.</div>
+		
+		<div class="box color">box 2: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores consectetur libero tempora deserunt illo?</div>
+
+		<div class="box color">box 3: Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur consequuntur.</div>
+
+		<div class="box color auto">box 1: Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, labore.</div>
+		
+		<div class="box color auto">box 2: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores consectetur libero tempora deserunt illo? Eius id ducimus dolores explicabo alias.</div>
+
+		<div class="box color auto">box 3: Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur consequuntur itaque numquam temporibus quis corporis.</div>
+		
+	</div>
+
+	<div class="div-lista">
+		<ul class="list">
+			<li>El contenedor padre pierde su posicion para acomodarse a su contenido.</li>
+		  	<li>Cada box respeta sus dimensiones.</li>
+		  	<li>Cada box se puede desbordar y afectar al contenedor padre.</li>
+		  	<li>En este ejemplo específico se agregó la propiedad <b>width=auto;</b> y <b>height=auto;</b> a los 3 últimos box.</li>
+		  	<li>Cada box acepta márgenes y padding.</li>
+		</ul>
+	</div>	
+	
+</body>
+</html>

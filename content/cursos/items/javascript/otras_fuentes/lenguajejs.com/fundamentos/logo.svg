@@ -1,0 +1,20 @@
+<svg id="blueprint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <path class="blue-paper" d="M3.5 5.3H125v118.4H3.5Z" fill="#2a7fbe" />
+  <g class="lines" stroke="#47a8f4" stroke-width="0.3">
+    <path class="v-lines"
+      d="M12 9.7v109.1M16.5 9.7v109.1M20.8 9.7v109.1M25.2 9.7v109.1M29.4 9.7v109.1M33.8 9.7v109.1M38.2 9.7v109.1M42.5 9.7v109.1M47 9.7v109.1M51.2 9.7v109.1M55.6 9.7v109.1M59.9 9.7v109.1M64.3 9.7v109.1M68.6 9.7v109.1M72.9 9.7v109.1M77.3 9.7v109.1M81.6 9.7v109.1M86 9.7v109.1M90.3 9.7v109.1M94.7 9.7v109.1M99 9.7v109.1m4.4-109.1v109.1m4.3-109.1v109.1M112 9.7v109.1m4.4-109.1v109.1" />
+    <path class="h-lines"
+      d="M120.5 14.3H8m112.4 4.3H8m112.4 4.3H8m112.4 4.4H8m112.4 4.3H8M120.5 36H8m112.4 4.4H8m112.4 4.3H8m112.4 4.4H8m112.4 4.3H8m112.4 4.4H8M120.5 62H8m112.4 4.3H8m112.4 4.4H8M120.5 75H8m112.4 4.4H8m112.4 4.3H8m112.4 4.4H8m112.4 4.3H8M120.5 97H8m112.4 4.3H8m112.4 4.4H8m112.4 4.4H8m112.4 4.3H8" />
+  </g>
+  <g class="cube" fill="#fff" stroke="#fff" fill-opacity="0.3">
+    <path d="M68.6 48.8h34.9v35h-35Z" />
+    <path d="m68.6 48.8-8.7-8.5 34.8-.2 8.5 8.7zm0 35-8.7-8.6v-35l8.8 8.8z" stroke-linejoin="round" />
+  </g>
+  <path class="meters"
+    d="M21.5 91.3V38m47.7 5.5H16.8m62.9 10.3H32M69.2 86H16m21.4 16V48.5M79.8 54V27.2m42.5 26.5V27.4M74.2 33h53.3M69.2 43.4V16.8m42.5 26.4V16.8m-48.1 5.6H117M79.7 96.1H32"
+    stroke="#fff" stroke-width="0.5" transform="matrix(.82174 0 0 .82174 3 4.6)" />
+  <path d="M68.6 92.5h47.6v21.8H68.6Zm0 8.8h47.6" fill="none" stroke="#daefff" />
+  <path class="shine" d="M3.5 5.3h114.4L3.5 83.7Z" fill="#fff" fill-opacity="0.2" />
+  <path class="inner-box" d="M8 9.9h112.5v108.8H8Z" fill="none" stroke="#daefff" />
+  <path d="M25.1 92.4V110M51.3 105.5H20.5" stroke="#fefefe" stroke-width="0.5" />
+</svg>

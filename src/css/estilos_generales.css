@@ -1,0 +1,111 @@
+{
+  list-style: none;
+}
+
+.comentario {
+  opacity: 0.5;
+}
+
+.text-lila {
+  color: rgb(238, 109, 238);
+}
+
+.text-yellow {
+  color: yellow;
+}
+
+.text-green {
+  color: #9ed72f;
+}
+
+.text-skyblue_1 {
+  color: #c2ffff;
+}
+
+.text-skyblue_2 {
+  color: #00fff5;
+}
+
+.text-orange {
+  color: orange;
+}
+
+.text-blue {
+  color: #121f3d;
+}
+
+.bg-yellow {
+  background-color: yellow;
+}
+
+.bg-lila {
+  background-color: #ee6dee;
+}
+
+.bg-skyblue_2 {
+  background-color: #00fff5;
+}
+
+.bg-green {
+  background-color: #9ed72f;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.bg-blue {
+  background-color: #121f3d;
+}
+
+.bg-black {
+  background-color: #1f1f1f;
+}
+
+.btn-blue {
+  background-color: #121f3d;
+}
+
+.btn-yellow {
+  background-color: yellow;
+}
+
+.btn-lila {
+  background-color: #ee6dee;
+}
+
+.btn-skyblue_2 {
+  background-color: #00fff5;
+}
+
+.btn-black {
+  background-color: #1f1f1f;
+}
+
+.btn-green {
+  background-color: #9ed72f;
+}
+
+.btn-red {
+  background-color: red;
+}
+
+.nota {
+  border-radius: 5px;
+  background-color: #192732;
+  border-style: solid;
+  border-top-width: 1px;
+  border-top-color: #696969;
+  border-right-width: 1px;
+  border-right-color: #696969;
+  border-bottom-width: 1px;
+  border-bottom-color: #696969;
+  border-left-width: 4px;
+  border-left-color: #5e9eff;
+  font-style: italic;
+  font-size: 1.2em;
+  padding: 20px;
+  /*color: #b8bcb9;*/
+  /*color: #337eec;*/
+  color: #5e9eff;
+}

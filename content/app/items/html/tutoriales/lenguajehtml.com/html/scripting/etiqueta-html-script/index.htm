@@ -1,0 +1,484 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e44f26">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Etiqueta HTML &lt;script&gt; - HTML en español - Lenguaje HTML</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="El lenguaje HTML tiene ciertos límites, ya que ciertas cosas no se pueden realizar sin Javascript. Para ello podemos utilizar la etiqueta &lt;script&gt;">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Etiqueta HTML &lt;script&gt; - HTML en español">
+  <meta property="og:image" content="https://lenguajehtml.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="El lenguaje HTML tiene ciertos límites, ya que ciertas cosas no se pueden realizar sin Javascript. Para ello podemos utilizar la etiqueta &lt;script&gt;">
+  <meta property="og:url" content="https://lenguajehtml.com/html/scripting/etiqueta-html-script/">
+  <meta property="twitter:url" content="https://lenguajehtml.com/html/scripting/etiqueta-html-script/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Etiqueta HTML &lt;script&gt; - HTML en español">
+  <meta property="twitter:description" content="El lenguaje HTML tiene ciertos límites, ya que ciertas cosas no se pueden realizar sin Javascript. Para ello podemos utilizar la etiqueta &lt;script&gt;">
+  <meta property="twitter:image" content="https://lenguajehtml.com/large-summary.jpg">
+
+  </head>
+
+<body class="html" style="--logo-color: #e44f26"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="/">
+  <svg><use href="../../../assets/logos.svg#html"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeHTML.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/html.jpg')">
+    <h1><a href="index.htm">Etiqueta HTML &lt;script&gt;</a></h1><h2 class="typewriter">Etiqueta para ejecutar código Javascript en una página</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../../validaciones/atributo-pattern/index.htm">El artibuto pattern (RegExp)</a>
+    <a class="current" href="index.htm">Etiqueta HTML &lt;script&gt;</a>
+    <a href="../atributo-defer-async/index.htm">Atributos defer y async</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>A medida que aprendemos HTML vemos que se trata de un lenguaje de marcas estupendo y muy potente, pero también nos vamos dando cuenta que ciertos detalles no se pueden cubrir sólo con HTML y CSS, y se requiere la potencia y flexibilidad de un lenguaje de programación. Para ello, usaremos <strong>Javascript</strong>.</p>
+<p><strong>Javascript</strong> es muy potente y flexible, pero también requiere unas capacidades de desarrollo diferentes que no suelen existir en HTML y CSS. En el caso de <strong>Javascript</strong> requeriremos ciertos conocimientos que es recomendable dominar de programación.</p>
+<blockquote>
+<blockquote>
+<p>En este artículo cubriremos una parte básica de Javascript muy relacionada con HTML. Si estás empezando en programación y vas a aprender Javascript en profundidad, echa un ojo a los <a href="https://lenguajejs.com/fundamentos/">fundamentos de programación</a>.</p>
+</blockquote>
+</blockquote>
+<h3 id="lenguajes-de-scripting" tabindex="-1"><a class="header-anchor" href="#lenguajes-de-scripting">Lenguajes de scripting</a></h3>
+<p>Por defecto, el lenguaje de scripting soportado por los navegadores es <strong>Javascript</strong>, por lo que cuando hablamos de scripting en el navegador (<em>front-end, o en el lado del cliente</em>) hablamos de este lenguaje de programación. <strong>Javascript</strong> está basado en <a href="https://lenguajejs.com/javascript/introduccion/ecmascript/"><strong>ECMAScript</strong></a>, la especificación estándar que indica como debe actuar el lenguaje. Luego, es misión de cada navegador implementarlo de acuerdo a esas normas, aunque siempre hay algunas diferencias entre navegadores (<em>habitualmente, porque no han implementado ciertas características</em>).</p>
+<p>Más adelante, hablaremos de algunas alternativas y como utilizarlas.</p>
+<h3 id="la-etiqueta-script" tabindex="-1"><a class="header-anchor" href="#la-etiqueta-script">La etiqueta <code>&lt;script&gt;</code></a></h3>
+<p>Para utilizar Javascript en una página, debemos indicar en nuestro HTML que vamos a cargar un <strong>script</strong> (<em>un archivo de texto con código Javascript</em>) y hacerlo funcionar sobre el documento web actual. Para hacer esto, utilizaremos la etiqueta <code>&lt;script&gt;</code>.</p>
+<p>Dicha etiqueta cuenta con los siguientes atributos básicos, que comentaremos más adelante:</p>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src</code></td>
+<td>Dirección URL relativa o absoluta del script externo a cargar.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>Modalidad en la que se va a cargar el script.</td>
+</tr>
+</tbody>
+</table>
+<p>Para empezar, ten en cuenta que la etiqueta <code>&lt;script&gt;</code> se puede escribir de dos formas en nuestro <strong>HTML</strong>:</p>
+<ul>
+<li>Como <strong>script en línea</strong>: El código JS se incluye en el HTML, dentro de la propia etiqueta.</li>
+<li>Como <strong>script externo</strong>: El código JS se incluye en el fichero Javascript enlazado en el atributo <code>src</code>.</li>
+</ul>
+<h4 id="scripts-en-línea" tabindex="-1"><a class="header-anchor" href="#scripts-en-línea">Scripts en línea</a></h4>
+<p>Un ejemplo de <strong>script en línea</strong> sería el siguiente. Observa que el código se incluye en el interior de la etiqueta, por lo que permanece en el documento HTML:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+  <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'¡Hola!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<p>Esta modalidad es útil en algunos casos donde queremos que un cierto código solo afecte a ese documento, o porque simplemente queremos una forma simple y rápida de escribir un código Javascript en un cierto documento.</p>
+<blockquote>
+<blockquote>
+<p>Sin embargo, por norma general, es más conveniente crear un <strong>script externo</strong>, ya que tendríamos nuestro código Javascript en un fichero independiente y será mucho más fácil de reutilizar y organizar.</p>
+</blockquote>
+</blockquote>
+<h4 id="scripts-externos" tabindex="-1"><a class="header-anchor" href="#scripts-externos">Scripts externos</a></h4>
+<p>El siguiente caso, por otro lado, es un <strong>script externo</strong>. En dicha etiqueta <code>&lt;script&gt;</code>, el código Javascript se encuentra en un archivo separado del HTML. Por ejemplo, aquí se indica mediante el atributo <code>src</code>, que se encuentra en la ruta <code>/js/script.js</code>:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/js/script.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<p>En ese otro archivo <code>/js/script.js</code> se encontraría el código Javascript en cuestión:</p>
+<pre class="language-js"><code class="language-js"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'¡Hola!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Esta modalidad suele ser la más conveniente, ya que separamos bien los archivos, de modo que es más fácil de reutilizarlos y tener todo nuestro código mejor organizado.</p>
+<h3 id="tipos-de-scripts-atributo-type" tabindex="-1"><a class="header-anchor" href="#tipos-de-scripts-atributo-type">Tipos de scripts (atributo <code>type</code>)</a></h3>
+<p>A parte del atributo <code>src</code>, que nos permite enlazar scripts externos con código Javascript, tenemos el atributo <code>type</code>. Históricamente, este atributo se utilizaba en el pasado para indicar el tipo de script que ibamos a utilizar, escribiendo generalmente el valor <code>text/javascript</code> (<em>algo que aún podemos encontrar en páginas antiguas</em>).</p>
+<p>Hoy en día, el atributo <code>type</code> cumple otras funciones, dependiendo del valor que se establezca. Los valores válidos que se pueden indicar en el atributo <code>type</code> de la etiqueta <code>&lt;script&gt;</code> son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Modalidad</th>
+<th>En línea</th>
+<th>Externo</th>
+<th>Descripción</th>
+<th>Más info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><i>(se omite)</i></td>
+<td>Script clásico</td>
+<td>✅</td>
+<td>✅</td>
+<td>Carga Javascript en modo tradicional.</td>
+<td><i>(Ver más abajo)</i></td>
+</tr>
+<tr>
+<td><code>module</code></td>
+<td>Módulo</td>
+<td>✅</td>
+<td>✅</td>
+<td>Carga Javascript como módulo (permite <code>import</code> y <code>export</code>).</td>
+<td><a href="../script-type-module/index.htm">Módulos JS</a></td>
+</tr>
+<tr>
+<td><code>importmap</code></td>
+<td>Mapa de módulos</td>
+<td>✅</td>
+<td>❌</td>
+<td>Carga un JSON como mapa de módulos para <strong>bare imports</strong>.</td>
+<td><a href="../script-type-module/index.htm">Import Maps</a></td>
+</tr>
+<tr>
+<td><i>(otro valor)</i></td>
+<td>Bloque de datos</td>
+<td>✅</td>
+<td>❌</td>
+<td>Establece un bloque de datos. El navegador lo ignora.</td>
+<td><a href="../bloque-de-datos/index.htm">Bloque de datos</a></td>
+</tr>
+</tbody>
+</table>
+<p>Explicaremos más adelante cada una de estas modalidades. De momento, vamos a centrarnos en el modo de script clásico, cuando no indicamos ningún valor en el atributo <code>type</code>.</p>
+<h4 id="modalidad-clásica" tabindex="-1"><a class="header-anchor" href="#modalidad-clásica">Modalidad clásica</a></h4>
+<p>Cuando indicamos un <strong>script externo</strong> mediante el atributo <code>src</code>, <strong>el proceso de carga del script</strong> por parte del navegador es el siguiente:</p>
+<ul>
+<li>👁‍🗨 El navegador se encuentra parseando (<em>leyendo</em>) y renderizando (<em>dibujando</em>) el <code>.html</code> en la página.</li>
+<li>🛑 <strong>Detiene</strong> temporalmente el dibujado en el HTML, cuando encuentra un <code>&lt;script src&gt;</code>.</li>
+<li>🔽 <strong>Descarga</strong> el script <code>.js</code> referenciado en el atributo <code>src</code> en el caché del navegador.</li>
+<li>🏃‍♀️ <strong>Ejecuta</strong> el código javascript una vez descargado.</li>
+<li>👁‍🗨 <strong>Reanuda</strong> el proceso de parseo y renderizado del documento HTML por donde lo dejó.</li>
+</ul>
+<p>Este es el modo de carga por defecto de los scripts por parte del navegador (<em>modo clásico</em>). Sin embargo, existen dos métodos de carga diferentes: la carga <strong>diferida</strong> y la carga <strong>asíncrona</strong>. Las veremos más adelante en el artículo <a href="../atributo-defer-async/index.htm">el atributo <code>defer</code> y <code>async</code></a>.</p>
+<blockquote>
+<p>Si quieres aprender más sobre Javascript, te aconsejo echar un vistazo a <a href="https://lenguajejs.com/javascript/">Javascript</a>. Si eres nuevo en el mundo de la programación y no has programado nunca, o sólo has tocado código HTML y/o CSS, te recomiendo aprender antes los <a href="https://lenguajejs.com/fundamentos/">Fundamentos de programación</a>.</p>
+</blockquote>
+<h3 id="la-etiqueta-noscript" tabindex="-1"><a class="header-anchor" href="#la-etiqueta-noscript">La etiqueta <code>&lt;noscript&gt;</code></a></h3>
+<p>Debemos ser conscientes de que, aunque actualmente la mayoría de los navegadores poseen Javascript y es un lenguaje de programación muy común en la web, hay que intentar no abusar y utilizarlo para todo. Siempre que puedas hacer algo (<em>equivalente</em>) con HTML y/o CSS antes que con Javascript, será una mejor opción, ya que suelen ser soluciones más accesible, eficiente, fáciles de posicionar en buscadores y en general, más apropiadas.</p>
+<p>Un usuario podría acceder desde un dispositivo que no tenga Javascript habilitado (<em>aunque es algo muy poco frecuente hoy en día, es posible</em>), y si tu página sólo funciona con Javascript, no podrá utilizarla. Una buena costumbre, es proporcionar una alternativa (<em>aunque sea mínima o para avisar al usuario</em>) para aquellos usuarios que no tengan Javascript habilitado.</p>
+<p>Para ello, se suele utilizar la etiqueta <code>&lt;noscript&gt;</code>:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">const</span> usuario <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">"¿Cuál es tu nombre?"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"¡Hola, "</span> <span class="token operator">+</span> usuario <span class="token operator">+</span> <span class="token string">"!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>noscript</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>¡Hola, usuario!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>noscript</span><span class="token punctuation">></span></span></code></pre>
+<p>En el caso de que el usuario tenga capacidades de Javascript en su navegador, se ejecutará el código de la etiqueta <code>&lt;script&gt;</code> y se ignorará la etiqueta <code>&lt;noscript&gt;</code>. Sin embargo, si el navegador no posee Javascript o no lo tiene habilitado, se mostrará el contenido HTML proporcionado en la etiqueta <code>&lt;noscript&gt;</code>, que aunque no puede obtener el nombre de usuario, mostrará una alternativa.</p>
+<p>Si no es posible realizar una alternativa al código Javascript, lo ideal sería mostrar al usuario un mensaje donde se le avisa que la página actual sólo es capaz de funcionar con Javascript, y que parece que el navegador que está utilizando no es capaz de procesarlo.</p>
+<p>De esta forma conseguimos que el usuario tenga siempre feedback de lo que está ocurriendo.</p>
+<h3 id="alternativas-a-javascript" tabindex="-1"><a class="header-anchor" href="#alternativas-a-javascript">Alternativas a Javascript</a></h3>
+<p>Existen alternativas para no utilizar Javascript directamente, sino utilizar algún lenguaje similar que traduce (<em>o mejor dicho, transpila</em>) a Javascript. De esta forma, puedes utilizar otros lenguajes que tienen características que Javascript no posee.</p>
+<p>Sin embargo, hay que tener claro que los navegadores sólo soportan Javascript de forma nativa, de forma que si quieres utilizar alguno de estos lenguajes, tienes que integrarlo en tu workflow de trabajo y acostumbrarte a que el código debe ser transpilado (<em>convertido a Javascript</em>) y entonces esa versión es la que debes utilizar en tu web final, ya que es la que entienden los navegadores.</p>
+<p>Los transpiladores o lenguajes más populares a Javascript que existen actualmente son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.typescriptlang.org/">TypeScript</a></td>
+<td>Meta-lenguaje que amplia Javascript con más características, pareciendose más a lenguajes como Java o C#.</td>
+</tr>
+<tr>
+<td><a href="https://babeljs.io/">Babel</a></td>
+<td>Transpilador de Javascript moderno a versiones más antiguas, dando así soporte a navegadores más antiguos.</td>
+</tr>
+<tr>
+<td><a href="https://coffeescript.org/">CoffeeScript</a></td>
+<td>Transpilador a Javascript, enfocado en hacer el código más legible.</td>
+</tr>
+<tr>
+<td><a href="https://dart.dev/">Dart</a></td>
+<td>Un lenguaje creado para ser una versión moderna de Javascript.</td>
+</tr>
+<tr>
+<td><a href="https://buble.surge.sh/">Bublé</a></td>
+<td>Compilador de Javascript moderno a Javascript más antiguo. Similar a Babel.</td>
+</tr>
+<tr>
+<td><a href="https://sucrase.io/">Sucrase</a></td>
+<td>Alternativa rápida a Babel.</td>
+</tr>
+</tbody>
+</table>
+<p>Probablemente, los más populares y utilizados hoy en día, son <strong>Typescript</strong> y <strong>Babel</strong>.</p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../../validaciones/atributo-pattern/index.htm" title="El artibuto pattern (RegExp)">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>El artibuto pattern (RegExp)</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../atributo-defer-async/index.htm" title="Atributos defer y async">
+  <div>
+    <span>Atributos defer y async</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/7oPdEM0VXOs" title="Consejos y buenas prácticas (VI): Performance">
+  <img loading="lazy" src="../../../vi/7oPdEM0VXOs/mqdefault.jpg" alt="Consejos y buenas prácticas (VI): Performance">
+</a><a href="https://youtu.be/SVomAFpMw30" title="Consejos y buenas prácticas (II): HTML + WebFonts">
+  <img loading="lazy" src="../../../vi/SVomAFpMw30/mqdefault.jpg" alt="Consejos y buenas prácticas (II): HTML + WebFonts">
+</a><a href="https://youtu.be/LAHR5gl07ks" title="Consejos y buenas prácticas (V): Accesibilidad">
+  <img loading="lazy" src="../../../vi/LAHR5gl07ks/mqdefault.jpg" alt="Consejos y buenas prácticas (V): Accesibilidad">
+</a><a href="https://youtu.be/RW5erp81FMY" title="Consejos y buenas prácticas (I): HEAD">
+  <img loading="lazy" src="../../../vi/RW5erp81FMY/mqdefault.jpg" alt="Consejos y buenas prácticas (I): HEAD">
+</a><a href="https://youtu.be/lDPJQyXow_g" title="Consejos y buenas prácticas (VII): SEO">
+  <img loading="lazy" src="../../../vi/lDPJQyXow_g/mqdefault.jpg" alt="Consejos y buenas prácticas (VII): SEO">
+</a><a href="https://youtu.be/cQIlwKSAyAc" title="Crear packs de iconos con sprites SVG">
+  <img loading="lazy" src="../../../vi/cQIlwKSAyAc/mqdefault.jpg" alt="Crear packs de iconos con sprites SVG">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-5', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

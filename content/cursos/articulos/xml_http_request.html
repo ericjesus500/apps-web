@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://es.javascript.info/xmlhttprequest -->
+<html lang="es" data-theme-enabled="1" data-theme="light" class="working-hover"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script data-cfasync="false">var ezTcfConsent=window.ezTcfConsent?window.ezTcfConsent:{loaded:false,store_info:false,develop_and_improve_services:false,measure_ad_performance:false,measure_content_performance:false,select_basic_ads:false,create_ad_profile:false,select_personalized_ads:false,create_content_profile:false,select_personalized_content:false,understand_audiences:false,use_limited_data_to_select_content:false,};function getEzConsentData(){return new Promise(function(resolve){document.addEventListener("ezConsentEvent",function(event){var ezTcfConsent=event.detail.ezTcfConsent;resolve(ezTcfConsent);});});}
+function _emitEzConsentEvent(){var customEvent=new CustomEvent("ezConsentEvent",{detail:{ezTcfConsent:window.ezTcfConsent},bubbles:true,cancelable:true,});document.dispatchEvent(customEvent);}
+(function(window,document){function _setAllEzConsentTrue(){window.ezTcfConsent.loaded=true;window.ezTcfConsent.store_info=true;window.ezTcfConsent.develop_and_improve_services=true;window.ezTcfConsent.measure_ad_performance=true;window.ezTcfConsent.measure_content_performance=true;window.ezTcfConsent.select_basic_ads=true;window.ezTcfConsent.create_ad_profile=true;window.ezTcfConsent.select_personalized_ads=true;window.ezTcfConsent.create_content_profile=true;window.ezTcfConsent.select_personalized_content=true;window.ezTcfConsent.understand_audiences=true;window.ezTcfConsent.use_limited_data_to_select_content=true;window.ezTcfConsent.select_personalized_content=true;}
+if(typeof window.__tcfapi!=="undefined"){window.ezgconsent=false;var amazonHasRun=false;function _ezAllowed(tcdata,purpose){return(tcdata.purpose.consents[purpose]||tcdata.purpose.legitimateInterests[purpose]);}
+function _reloadAds(){if(typeof window.ezorefgsl==="function"&&typeof window.ezslots==="object"){if(typeof __ezapsFetchBids=="function"&&amazonHasRun===false){ezapsFetchBids(__ezaps);if(typeof __ezapsVideo!="undefined"){ezapsFetchBids(__ezapsVideo,"video");}
+amazonHasRun=true;}
+var slots=[];for(var i=0;i<window.ezslots.length;i++){if(window[window.ezslots[i]]&&typeof window[window.ezslots[i]]==="object"){slots.push(window[window.ezslots[i]]);}else{setTimeout(_reloadAds,100);return false;}}
+for(var i=0;i<slots.length;i++){window.ezorefgsl(slots[i]);}}else if(!window.ezadtimeoutset){window.ezadtimeoutset=true;setTimeout(_reloadAds,100);}}
+function _handleConsentDecision(tcdata){window.ezTcfConsent.loaded=true;if(!tcdata.vendor.consents["347"]&&!tcdata.vendor.legitimateInterests["347"]){window._emitEzConsentEvent();return;}
+window.ezTcfConsent.store_info=_ezAllowed(tcdata,"1");window.ezTcfConsent.develop_and_improve_services=_ezAllowed(tcdata,"10");window.ezTcfConsent.measure_content_performance=_ezAllowed(tcdata,"8");window.ezTcfConsent.select_basic_ads=_ezAllowed(tcdata,"2");window.ezTcfConsent.create_ad_profile=_ezAllowed(tcdata,"3");window.ezTcfConsent.select_personalized_ads=_ezAllowed(tcdata,"4");window.ezTcfConsent.create_content_profile=_ezAllowed(tcdata,"5");window.ezTcfConsent.measure_ad_performance=_ezAllowed(tcdata,"7");window.ezTcfConsent.use_limited_data_to_select_content=_ezAllowed(tcdata,"11");window.ezTcfConsent.select_personalized_content=_ezAllowed(tcdata,"6");window.ezTcfConsent.understand_audiences=_ezAllowed(tcdata,"9");window._emitEzConsentEvent();}
+function _handleConsentDecisionOld(tcdata){var ezConsentCategories=window.ezConsentCategories?window.ezConsentCategories:{};ezConsentCategories.preferences=false;ezConsentCategories.statistics=false;ezConsentCategories.marketing=false;if(tcdata.vendor.consents["347"]!==false||tcdata.vendor.legitimateInterests["347"]!==false){if(tcdata.purpose.consents["1"]===true){ezConsentCategories.preferences=true;}
+if(tcdata.purpose.consents["1"]===true&&_ezAllowed(tcdata,"10")&&_ezAllowed(tcdata,"7")&&_ezAllowed(tcdata,"8")){ezConsentCategories.statistics=true;}
+if(tcdata.purpose.consents["1"]===true&&_ezAllowed(tcdata,"2")&&_ezAllowed(tcdata,"3")&&_ezAllowed(tcdata,"4")){ezConsentCategories.marketing=true;}}}
+function _clearEzConsentCookie(){document.cookie="ezCMPCookieConsent=tcf2;Domain=.javascript.info;Path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT";}
+__tcfapi("addEventListener",2,function(tcdata,success){if(success){if(tcdata.eventStatus==="useractioncomplete"||tcdata.eventStatus==="tcloaded"){_handleConsentDecision(tcdata);_handleConsentDecisionOld(tcdata);if(tcdata.purpose.consents["1"]===true&&tcdata.vendor.consents["755"]!==false){window.ezgconsent=true;(adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=0;_reloadAds();}else{_reloadAds();}
+if(window.__ezconsent){__ezconsent.setEzoicConsentSettings(ezConsentCategories);}
+window.addEventListener("beforeunload",_clearEzConsentCookie);__tcfapi("removeEventListener",2,function(success){return null;},tcdata.listenerId);if(!(tcdata.purpose.consents["1"]===true&&_ezAllowed(tcdata,"2")&&_ezAllowed(tcdata,"3")&&_ezAllowed(tcdata,"4"))){if(typeof __ez=="object"&&typeof __ez.bit=="object"&&typeof window["_ezaq"]=="object"&&typeof window["_ezaq"]["page_view_id"]=="string"){__ez.bit.AddAndFire(window["_ezaq"]["page_view_id"],[new __ezDotData("non_personalized_ads",true)]);}}}}});}else{_setAllEzConsentTrue();window._emitEzConsentEvent();}})(window,document);</script><script>function _setEzCookies(ezConsentData){var cookies=[];for(var i=0;i<cookies.length;i++){var cookie=cookies[i];if(ezConsentData&&ezConsentData.loaded&&ezConsentData[cookie.tcfCategory]){document.cookie=cookie.name+"="+cookie.value;}}}
+if(window.ezTcfConsent&&window.ezTcfConsent.loaded){_setEzCookies(window.ezTcfConsent);}else if(typeof getEzConsentData==="function"){getEzConsentData().then(function(ezTcfConsent){if(ezTcfConsent&&ezTcfConsent.loaded){_setEzCookies(window.ezTcfConsent);}else{console.error("cannot get ez consent data");_setEzCookies(window.ezTcfConsent);}});}else{console.error("getEzConsentData is not a function");_setEzCookies(window.ezTcfConsent);}</script><script data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer="">var __ez=__ez||{};__ez.stms=Date.now();__ez.evt={};__ez.script={};__ez.ck=__ez.ck||{};__ez.template={};__ez.template.isOrig=false;__ez.queue=function(){var e=0,i=0,t=[],n=!1,o=[],r=[],s=!0,a=function(e,i,n,o,r,s,a){var l=arguments.length>7&&void 0!==arguments[7]?arguments[7]:window,d=this;this.name=e,this.funcName=i,this.parameters=null===n?null:p(n)?n:[n],this.isBlock=o,this.blockedBy=r,this.deleteWhenComplete=s,this.isError=!1,this.isComplete=!1,this.isInitialized=!1,this.proceedIfError=a,this.fWindow=l,this.isTimeDelay=!1,this.process=function(){f("... func = "+e),d.isInitialized=!0,d.isComplete=!0,f("... func.apply: "+e);var i=d.funcName.split("."),n=null,o=this.fWindow||window;i.length>3||(n=3===i.length?o[i[0]][i[1]][i[2]]:2===i.length?o[i[0]][i[1]]:o[d.funcName]),null!=n&&n.apply(null,this.parameters),!0===d.deleteWhenComplete&&delete t[e],!0===d.isBlock&&(f("----- F'D: "+d.name),u())}},l=function(e,i,t,n,o,r,s){var a=arguments.length>7&&void 0!==arguments[7]?arguments[7]:window,l=this;this.name=e,this.path=i,this.async=o,this.defer=r,this.isBlock=t,this.blockedBy=n,this.isInitialized=!1,this.isError=!1,this.isComplete=!1,this.proceedIfError=s,this.fWindow=a,this.isTimeDelay=!1,this.isPath=function(e){return"/"===e[0]&&"/"!==e[1]},this.getSrc=function(e){return void 0!==window.__ezScriptHost&&this.isPath(e)&&"banger.js"!==this.name?window.__ezScriptHost+e:e},this.process=function(){l.isInitialized=!0,f("... file = "+e);var i=this.fWindow?this.fWindow.document:document,t=i.createElement("script");t.src=this.getSrc(this.path),!0===o?t.async=!0:!0===r&&(t.defer=!0),t.onerror=function(){var e={url:window.location.href,name:l.name,path:l.path,user_agent:window.navigator.userAgent};"undefined"!=typeof _ezaq&&(e.pageview_id=_ezaq.page_view_id);var i=encodeURIComponent(JSON.stringify(e)),t=new XMLHttpRequest;t.open("GET","//g.ezoic.net/ezqlog?d="+i,!0),t.send(),f("----- ERR'D: "+l.name),l.isError=!0,!0===l.isBlock&&u()},t.onreadystatechange=t.onload=function(){var e=t.readyState;f("----- F'D: "+l.name),e&&!/loaded|complete/.test(e)||(l.isComplete=!0,!0===l.isBlock&&u())},i.getElementsByTagName("head")[0].appendChild(t)}},d=function(e,i){this.name=e,this.path="",this.async=!1,this.defer=!1,this.isBlock=!1,this.blockedBy=[],this.isInitialized=!0,this.isError=!1,this.isComplete=i,this.proceedIfError=!1,this.isTimeDelay=!1,this.process=function(){}};function c(e){!0!==h(e)&&0!=s&&e.process()}function h(e){if(!0===e.isTimeDelay&&!1===n)return f(e.name+" blocked = TIME DELAY!"),!0;if(p(e.blockedBy))for(var i=0;i<e.blockedBy.length;i++){var o=e.blockedBy[i];if(!1===t.hasOwnProperty(o))return f(e.name+" blocked = "+o),!0;if(!0===e.proceedIfError&&!0===t[o].isError)return!1;if(!1===t[o].isComplete)return f(e.name+" blocked = "+o),!0}return!1}function f(e){var i=window.location.href,t=new RegExp("[?&]ezq=([^&#]*)","i").exec(i);"1"===(t?t[1]:null)&&console.debug(e)}function u(){++e>200||(f("let's go"),m(o),m(r))}function m(e){for(var i in e)if(!1!==e.hasOwnProperty(i)){var t=e[i];!0===t.isComplete||h(t)||!0===t.isInitialized||!0===t.isError?!0===t.isError?f(t.name+": error"):!0===t.isComplete?f(t.name+": complete already"):!0===t.isInitialized&&f(t.name+": initialized already"):t.process()}}function p(e){return"[object Array]"==Object.prototype.toString.call(e)}return window.addEventListener("load",(function(){setTimeout((function(){n=!0,f("TDELAY -----"),u()}),5e3)}),!1),{addFile:function(e,i,n,s,a,d,h,f,u){var m=new l(e,i,n,s,a,d,h,u);!0===f?o[e]=m:r[e]=m,t[e]=m,c(m)},addDelayFile:function(e,i){var n=new l(e,i,!1,[],!1,!1,!0);n.isTimeDelay=!0,f(e+" ...  FILE! TDELAY"),r[e]=n,t[e]=n,c(n)},addFunc:function(e,n,s,l,d,h,f,u,m,p){!0===h&&(e=e+"_"+i++);var w=new a(e,n,s,l,d,f,u,p);!0===m?o[e]=w:r[e]=w,t[e]=w,c(w)},addDelayFunc:function(e,i,n){var o=new a(e,i,n,!1,[],!0,!0);o.isTimeDelay=!0,f(e+" ...  FUNCTION! TDELAY"),r[e]=o,t[e]=o,c(o)},items:t,processAll:u,setallowLoad:function(e){s=e},markLoaded:function(e){if(e&&0!==e.length){if(e in t){var i=t[e];!0===i.isComplete?f(i.name+" "+e+": error loaded duplicate"):(i.isComplete=!0,i.isInitialized=!0)}else t[e]=new d(e,!0);f("markLoaded dummyfile: "+t[e].name)}},logWhatsBlocked:function(){for(var e in t)!1!==t.hasOwnProperty(e)&&h(t[e])}}}();__ez.evt.add=function(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n()},__ez.evt.remove=function(e,t,n){e.removeEventListener?e.removeEventListener(t,n,!1):e.detachEvent?e.detachEvent("on"+t,n):delete e["on"+t]};__ez.script.add=function(e){var t=document.createElement("script");t.src=e,t.async=!0,t.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(t)};__ez.dot={};__ez.queue.addFile('/detroitchicago/boise.js', '/detroitchicago/boise.js?gcb=195-1&cb=2', true, [], true, false, true, false);__ez.queue.addFile('/parsonsmaize/abilene.js', '/parsonsmaize/abilene.js?gcb=195-1&cb=31', true, [], true, false, true, false);</script><script src="./xml_http_request_files/boise.js.descarga" async=""></script><script src="./xml_http_request_files/abilene.js.descarga" async=""></script>
+<script data-ezscrex="false" type="text/javascript" data-cfasync="false">window._ezaq = Object.assign({}, typeof window._ezaq !== "undefined" ? window._ezaq : {}, {"ad_cache_level":1,"domain_id":538639,"ezcache_level":0,"ezcache_skip_code":0,"has_bad_image":0,"has_bad_words":0,"is_sitespeed":0,"lt_cache_level":0,"page_view_id":"8f811ecf-05a6-4b8a-40dc-3a1d0f4d354a","response_size_orig":54807,"response_time_orig":970,"template_id":147,"url":"https://es.javascript.info/xmlhttprequest","word_count":2680,"worst_bad_word_level":0});__ez.queue.markLoaded('ezaqBaseReady');</script>
+<script data-ezscrex="false" data-pagespeed-no-defer="" data-cfasync="false" type="text/javascript">__ez.queue.addFile('banger.js', '/porpoiseant/banger.js?cb=195-1&bv=286&PageSpeed=off', true, ['ezaqReady'], true, false, false, true);</script>
+<script data-ezscrex="false" type="text/javascript" data-cfasync="false">var _ezim_d = {};</script>
+<script type="text/javascript">(function(){function storageAvailable(type){var storage;try{storage=window[type];var x='__storage_test__';storage.setItem(x,x);storage.removeItem(x);return true;}
+catch(e){return e instanceof DOMException&&(e.code===22||e.code===1014||e.name==='QuotaExceededError'||e.name==='NS_ERROR_DOM_QUOTA_REACHED')&&(storage&&storage.length!==0);}}
+function remove_ama_config(){if(storageAvailable('localStorage')){localStorage.removeItem("google_ama_config");}}
+remove_ama_config()})()</script>
+<script type="text/javascript">var ezoicTestActive = true</script>
+<script data-ezscrex="false" type="text/javascript" data-cfasync="false">window._ezaq = Object.assign({}, typeof window._ezaq !== "undefined" ? window._ezaq : {}, {"ab_test_id":"mod244","ad_cache_level":1,"ad_count_adjustment":3,"ad_lazyload_version":0,"ad_load_version":1,"ad_location_ids":"","adx_ad_count":0,"ai_placeholder_cache_level":1,"ai_placeholder_placement_cnt":-1,"bidder_method":1,"bidder_version":3,"city":"Piura","country":"PE","days_since_last_visit":2,"display_ad_count":0,"domain_id":538639,"ds_adsize_opt_id":-1,"engaged_time_visit":0,"ezcache_level":0,"ezcache_skip_code":0,"form_factor_id":1,"framework_id":1,"has_bad_image":0,"has_bad_words":0,"iab_category":"","is_embed":false,"is_from_recommended_pages":false,"is_return_visitor":true,"is_sitespeed":0,"last_page_load":"1701901521280","last_pageview_id":"1b8c9758-8813-4131-4ebb-a8e09f244d7e","lt_cache_level":0,"max_ads":19,"metro_code":0,"optimization_version":1,"page_ad_positions":"","page_view_count":0,"page_view_id":"8f811ecf-05a6-4b8a-40dc-3a1d0f4d354a","position_selection_id":58,"postal_code":"","pv_event_count":0,"response_size_orig":54807,"response_time_orig":970,"serverid":"i-012a073bcb36335f3","state":"PIU","sub_page_ad_positions":"","t_epoch":1702093143,"template_id":147,"time_on_site_visit":2319,"url":"https://es.javascript.info/xmlhttprequest","weather_precipitation":0,"weather_summary":"","weather_temperature":0,"word_count":2680,"worst_bad_word_level":0});__ez.queue.markLoaded('ezaqReady');</script>
+<script data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer="">__ez.queue.addFile('/parsonsmaize/mulvane.js', '/parsonsmaize/mulvane.js?gcb=195-1&cb=6', true, ['/parsonsmaize/abilene.js'], true, false, true, false);__ez.queue.addFile('/parsonsmaize/olathe.js', '/parsonsmaize/olathe.js?gcb=195-1&cb=23', false, ['/parsonsmaize/abilene.js','/parsonsmaize/mulvane.js'], true, false, true, false);__ez.queue.addFile('/porpoiseant/et.js', '/porpoiseant/et.js?gcb=195-1&cb=2', false, [], true, false, true, false);!function(){var e;__ez.vep=(e=[],{Add:function(i,t){__ez.dot.isDefined(i)&&__ez.dot.isValid(t)&&e.push({type:"video",video_impression_id:i,domain_id:__ez.dot.getDID(),t_epoch:__ez.dot.getEpoch(0),data:__ez.dot.dataToStr(t)})},Fire:function(){if(void 0===document.visibilityState||"prerender"!==document.visibilityState){if(__ez.dot.isDefined(e)&&e.length>0)for(;e.length>0;){var i=5;i>e.length&&(i=e.length);var t=e.splice(0,i),o=__ez.dot.getURL("/detroitchicago/grapefruit.gif")+"?orig="+(!0===__ez.template.isOrig?1:0)+"&v="+btoa(JSON.stringify(t));__ez.dot.Fire(o)}e=[]}}})}();</script><script src="./xml_http_request_files/et.js.descarga" async=""></script><script data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer="">__ez.queue.addFile('/detroitchicago/wichita.js', '/detroitchicago/wichita.js?gcb=195-1&cb=11', false, ['/parsonsmaize/abilene.js'], true, false, true, false);__ez.queue.addFile('/detroitchicago/raleigh.js', '/detroitchicago/raleigh.js?gcb=195-1&cb=6', false, ['/parsonsmaize/abilene.js'], true, false, true, false);__ez.queue.addFile('/detroitchicago/vista.js', '/detroitchicago/vista.js?gcb=195-1&cb=5', false, ['/parsonsmaize/abilene.js'], true, false, true, false);__ez.queue.addFile('/detroitchicago/tampa.js', '/detroitchicago/tampa.js?gcb=195-1&cb=5', false, ['/parsonsmaize/abilene.js'], true, false, true, false);</script><!--<base href="https://es.javascript.info/xmlhttprequest">--><base href="."><script>window.currentUser = null;</script><script>window.shopCurrency = "EUR";</script><script>window.localCurrency = "EUR";</script><script>window.countryCode = "co";</script><script>window.rateShopTo = {"EUR":1,"USD":1.0771242505908027,"AMD":433.5065316814556};</script><title itemprop="name">XMLHttpRequest</title><link href="./xml_http_request_files/styles.6990c2fa3cb35c7cf3ad.css" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><!-- chrome autotranslate is enabled only for "en" main version--><meta name="google" content="notranslate"><script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script><link href="./xml_http_request_files/css" rel="stylesheet"><link rel="apple-touch-icon-precomposed" href="https://es.javascript.info/img/favicon/apple-touch-icon-precomposed.png"><link rel="canonical" href="https://es.javascript.info/xmlhttprequest"><meta name="msapplication-TileColor" content="#222A2C"><meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"><link rel="icon" href="https://es.javascript.info/img/favicon/favicon.png"><meta itemprop="image" content="https://es.javascript.info/img/site_preview_en_512x512.png"><meta property="og:title" content="XMLHttpRequest"><meta property="og:image" content="https://es.javascript.info/img/site_preview_en_1200x630.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="fb:admins" content="100001562528165"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="XMLHttpRequest"><meta name="twitter:site" content="@iliakan"><meta name="twitter:creator" content="@iliakan"><meta name="twitter:image" content="https://es.javascript.info/img/site_preview_en_512x512.png"><meta name="google-adsense-account" content="ca-pub-6204518652652613"><link rel="prev" href="https://es.javascript.info/url"><link rel="next" href="https://es.javascript.info/resume-upload"><script>window.GA_ID = "UA-2056213-15";</script><script>window.YANDEX_METRIKA_ID = 32184394;</script><script>{function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-2LWB61WGYJ")}</script>
+<script async="" src="./xml_http_request_files/js"></script><script>window.metrika={reachGoal:function(){}},window.yandex_metrika_callbacks=[function(){try{window.metrika=new Ya.Metrika({id:YANDEX_METRIKA_ID,webvisor:!0,clickmap:!0,params:{user:window.currentUser&&window.currentUser.id}}),metrika.trackLinks({delay:150}),window.addEventListener("error",function(r){window.metrika.reachGoal("JSERROR",{src:(r.filename||r.errorUrl)+": "+(r.lineno||r.errorLine),stack:r.stack||r.error&&r.error.stack,message:r.message})})}catch(r){}}];</script><script src="./xml_http_request_files/watch.js.descarga" async=""></script><script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script><script src="./xml_http_request_files/init.a8c72b9b0dc7c47fc09e.js.descarga"></script><script src="./xml_http_request_files/head.5461079082f4ae31a359.js.descarga" defer=""></script><meta property="og:title" content="XMLHttpRequest"><meta property="og:type" content="article"><script src="./xml_http_request_files/tutorial.0bed84ffbbe6c980a731.js.descarga" defer="" data-manual="1"></script><script src="./xml_http_request_files/footer.f6e718420f120bcff70c.js.descarga" defer=""></script><style id="ezoicCSS">.ezoic-ad{display:inline-block;border:0px;}.ezoic-ad>div>iframe{margin:0px!important;padding:0px!important;}.ezoic-ad .ezoic-ad>div{text-align:center}
+.ad-reporter-menu-backdrop{display:none;position:absolute;bottom:20px;right:15px;width:120px;height:100px;flex-direction:row;justify-content:center;align-items:center;background:transparent;box-shadow:#000 0 2px 10px;border-radius:10px;z-index:1002}.ad-reporter-menu{position:absolute;z-index:1003;display:flex;flex-direction:column;width:100%;height:100%;background:#fff;border-radius:5px;align-items:center;justify-content:space-around;font-weight:200;font-size:14px;font-family:sans-serif}.ad-reporter-menu .ad-reporter-menu-item{width:100%;height:100%;cursor:pointer;display:flex;justify-content:center;align-items:center}.ad-reporter-menu .ad-reporter-menu-item:not(:last-child){border-bottom:solid #d3d3d3 1px}
+@keyframes ezIn { 
+			from { opacity: 0; } 
+		  }
+		  .ezoic-ad .ezoic-adl:before {content: "\00B7\00B7\00B7";position: absolute;display: flex!important;align-items: center;justify-content: center;text-align: center;color: #C4C4C4;font-size: 62px;letter-spacing: 2px;z-index: 0;animation: ezIn 1s infinite alternate;left: 50%;top: 50%;transform: translate(-50%, -50%);} .ezoic-ad .ezfound,.ezmob-footer .ezoic-ad .ezoic-ad,.ezoic-ad-adaptive > .ezoic-ad, .ezoic-ad-rl {background:0 0;border-radius:0;border:none}
+.ezoic-floating-bottom { display: none!important; }</style><script type="text/javascript">
+var ezoTemplate = 'pub_site_noads';
+var ezouid = '1';
+var ezoFormfactor = '1';
+</script><script data-ezscrex="false" type="text/javascript">
+var soc_app_id = '0';
+var did = 538639;
+var ezdomain = 'javascript.info';
+var ezoicSearchable = 1;
+</script>
+<script src="./xml_http_request_files/reportads.js.descarga" defer=""></script>
+<script data-ezscrex="false" data-pagespeed-no-defer="" data-cfasync="false">
+function create_ezolpl() {
+	var d = new Date();
+	d.setTime(d.getTime() + (365*24*60*60*1000));
+	var expires = "expires="+d.toUTCString();
+	__ez.ck.setByCat("ezux_lpl_538639=" + new Date().getTime() + "|" + _ezaq.page_view_id + "|" + _ezaq.is_return_visitor + "; " + expires, 3);
+}
+function attach_ezolpl() {
+	if (document.readyState === "complete") {
+		create_ezolpl();
+		return;
+	}
+	window.addEventListener("load", create_ezolpl);
+}
+
+__ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", null, false, ['/detroitchicago/boise.js'], true, false, false, false);
+</script><script src="./xml_http_request_files/stickyfix.js.descarga" async=""></script><script src="./xml_http_request_files/drake.js.descarga" async=""></script><script src="./xml_http_request_files/jellyfish.js.descarga" async=""></script><script src="./xml_http_request_files/banger.js.descarga" async=""></script><script src="./xml_http_request_files/mulvane.js.descarga" async=""></script><script src="./xml_http_request_files/olathe.js.descarga" async=""></script><script src="./xml_http_request_files/wichita.js.descarga" async=""></script><script src="./xml_http_request_files/raleigh.js.descarga" async=""></script><script src="./xml_http_request_files/vista.js.descarga" async=""></script><script src="./xml_http_request_files/tampa.js.descarga" async=""></script><script src="./xml_http_request_files/vitals.js.descarga" async=""></script><script src="./xml_http_request_files/audins.js.descarga" async="" type="text/javascript"></script></head><body class=""><script>window.fontTest();</script><span class="font-test" style=""></span><div class="page-wrapper page-wrapper_sidebar_on"><!--[if IE]><div style="color:red;text-align:center">Lo sentimos, Internet Explorer no es compatible. Utilice un navegador más nuevo.</div><![endif]--><div class="sitetoolbar sitetoolbar_tutorial"><script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"ug","name":"Uyghur"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script><script>window.lang = "es";</script><script>{let t=navigator.languages||[];t=t.map(t=>t.toLowerCase());let o,i,n=[];for(let o of window.langs)for(let i of t)if(i===o.code||i.startsWith(o.code+"-")){n.push(o);break}if(!o&&"ru"!=lang&&"en"!=lang){n.find(t=>"en"==t.code)&&(o=`\n            According to your browser headers, you know English. Please help to <a href="https://github.com/javascript-tutorial/${lang}.javascript.info#readme">translate the tutorial</a>.\n            Thank you!\n          `,i="notify-translate-tutorial-local")}if(o){let t=`<div class="notification notification_top notification_info sitetoolbar__notification" style="display:none" id="${i}">\n          <div class="notification__content">${o}</div>\n          <button class="notification__close" title="Close"></button>\n        </div>`;document.write(t),showTopNotification()}}</script><div class="notification notification_top notification_info sitetoolbar__notification" style="" id="notify-translate-tutorial-local">
+          <div class="notification__content">
+            According to your browser headers, you know English. Please help to <a href="https://github.com/javascript-tutorial/es.javascript.info#readme">translate the tutorial</a>.
+            Thank you!
+          </div>
+          <button class="notification__close" title="Close"></button>
+        </div><div class="sitetoolbar__content"><div class="sitetoolbar__lang-switcher"><button class="sitetoolbar__dropdown-button" data-dropdown-toggler="">ES</button><div class="sitetoolbar__dropdown-wrap"><div class="sitetoolbar__dropdown-body"><div class="sitetoolbar__lang-switcher-body"><div class="supported-langs supported-langs_toolbar"><div class="supported-langs__container"><ul class="supported-langs__list" style="height:200px"><li class="supported-langs__item"><a class="supported-langs__link" href="https://ar.javascript.info/"><span class="supported-langs__brief">AR</span><span class="supported-langs__title">عربي</span></a></li><li class="supported-langs__item"><a class="supported-langs__link" href="https://javascript.info/xmlhttprequest"><span class="supported-langs__brief">EN</span><span class="supported-langs__title">English</span></a></li><li class="supported-langs__item supported-langs__item_current"><a class="supported-langs__link" href="https://es.javascript.info/xmlhttprequest"><span class="supported-langs__brief">ES</span><span class="supported-langs__title">Español</span></a></li><li class="supported-langs__item"><a class="supported-langs__link" href="https://fa.javascript.info/"><span class="supported-langs__brief">FA</span><span class="supported-langs__title">فارسی</span></a></li><li class="supported-langs__item"><a class="supported-langs__link" href="https://fr.javascript.info/xmlhttprequest"><span class="supported-langs__brief">FR</span><span class="supported-langs__title">Français</span></a></li><li class="supported-langs__item"><a class="supported-langs__link" href="https://id.javascript.info/"><span class="supported-langs__brief">ID</span><span class="supported-langs__title">Indonesia</span></a></li></ul><ul class="supported-langs__list" style="height:200px"><li class="supported-langs__item"><a class="supported-langs__link" href="https://it.javascript.info/xmlhttprequest"><span class="supported-langs__brief">IT</span><span class="supported-langs__title">Italiano</span></a></li><li class="supported-langs__item"><a class="supported-langs__link" href="https://ja.javascript.info/xmlhttprequest"><span class="supported-langs__brief">JA</span><span class="supported-langs__title">日本語</span></a></li><li class="supported-langs__item"><a class="supported-langs__link" href="https://ko.javascript.info/"><span class="supported-langs__brief">KO</span><span class="supported-langs__title">한국어</span></a></li><li class="supported-langs__item"><a class="supported-langs__link" href="https://learn.javascript.ru/xmlhttprequest"><span class="supported-langs__brief">RU</span><span class="supported-langs__title">Русский</span></a></li><li class="supported-langs__item"><a class="supported-langs__link" href="https://tr.javascript.info/xmlhttprequest"><span class="supported-langs__brief">TR</span><span class="supported-langs__title">Türkçe</span></a></li><li class="supported-langs__item"><a class="supported-langs__link" href="https://uk.javascript.info/xmlhttprequest"><span class="supported-langs__brief">UK</span><span class="supported-langs__title">Українська</span></a></li></ul><ul class="supported-langs__list" style="height:20px"><li class="supported-langs__item"><a class="supported-langs__link" href="https://zh.javascript.info/xmlhttprequest"><span class="supported-langs__brief">ZH</span><span class="supported-langs__title">简体中文</span></a></li></ul></div><div class="supported-langs__text"><p>Queremos que este proyecto de código abierto esté disponible para personas de todo el mundo.</p> <p><a href="https://javascript.info/translate">Ayuda a traducir</a> el contenido de este tutorial a tu idioma!</p>
+</div></div></div></div></div></div><div class="sitetoolbar__logo-wrap"><a class="sitetoolbar__link sitetoolbar__link_logo" href="https://es.javascript.info/"><object type="image/svg+xml" class="sitetoolbar__logo sitetoolbar__logo_normal" data="./xml_http_request_files/sitetoolbar__logo_en.svg" style="left: 0px; top: 0px; position: absolute;"></object><img class="sitetoolbar__logo sitetoolbar__logo_normal" src="./xml_http_request_files/sitetoolbar__logo_en.svg" width="200" alt="" role="presentation" style="visibility: hidden;"><object type="image/svg+xml" class="sitetoolbar__logo sitetoolbar__logo_normal sitetoolbar__logo_dark" data="./xml_http_request_files/sitetoolbar__logo_en-white.svg" style="left: 0px; top: 0px; position: absolute;"></object><img class="sitetoolbar__logo sitetoolbar__logo_normal sitetoolbar__logo_dark" src="./xml_http_request_files/sitetoolbar__logo_en-white.svg" width="200" alt="" role="presentation"><object type="image/svg+xml" class="sitetoolbar__logo sitetoolbar__logo_small" data="./xml_http_request_files/sitetoolbar__logo_small_en.svg" style="left: 0px; top: 0px; position: absolute;"></object><img class="sitetoolbar__logo sitetoolbar__logo_small" src="./xml_http_request_files/sitetoolbar__logo_small_en.svg" width="70" alt="" role="presentation"><object type="image/svg+xml" class="sitetoolbar__logo sitetoolbar__logo_small sitetoolbar__logo_dark" data="./xml_http_request_files/sitetoolbar__logo_small_en-white.svg" style="left: 0px; top: 0px; position: absolute;"></object><img class="sitetoolbar__logo sitetoolbar__logo_small sitetoolbar__logo_dark" src="./xml_http_request_files/sitetoolbar__logo_small_en-white.svg" width="70" alt="" role="presentation"><script>Array.prototype.forEach.call(document.querySelectorAll("img.sitetoolbar__logo"),function(e){let t=document.createElement("object");t.type="image/svg+xml",t.className=e.className,t.style.cssText="left:0;top:0;position:absolute",t.onload=function(){t.onload=null,e.style.visibility="hidden"},t.data=e.src,e.parentNode.insertBefore(t,e)});</script></a></div><div class="sitetoolbar__nav-toggle-wrap"><button class="sitetoolbar__nav-toggle" type="button"></button></div><nav class="sitetoolbar__sections"><ul class="sitetoolbar__sections-list"></ul></nav><div class="sitetoolbar__right-button-wrap"><a class="sitetoolbar-right-button sitetoolbar-right-button_courses" href="https://es.javascript.info/ebook"><span class="sitetoolbar-right-button__extra-text">Comprar</span>EPUB/PDF</a></div><div class="sitetoolbar__theme-switcher"><div class="theme-changer"><label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label></div></div><div class="sitetoolbar__search-wrap"><div class="sitetoolbar__search-content"><button class="sitetoolbar__search-toggle" type="button"></button><form class="sitetoolbar__search" method="GET" action="https://es.javascript.info/search"><div class="sitetoolbar__search-input"><div class="text-input"><input class="text-input__control" name="query" placeholder="Buscar en Javascript.info" required="required" type="text"></div><button class="sitetoolbar__find" type="submit">Buscar</button></div></form></div></div></div><div class="tablet-menu"><div class="tablet-menu__line"><div class="tablet-menu__content"><form class="tablet-menu-search" action="https://es.javascript.info/search/"><input class="tablet-menu-search__input" type="search" name="query" placeholder="Buscar en el tutorial" required="required"><button class="tablet-menu-search__button" type="submit" name="type" value="articles">Buscar</button></form></div></div><div class="tablet-menu__line"><div class="tablet-menu__content"><a class="map" href="https://es.javascript.info/tutorial/map" data-action="tutorial-map"><span class="map__text">Mapa del Tutorial</span></a></div></div><div class="tablet-menu__line"><div class="tablet-menu__content"><div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"><label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label></div></div></div><div class="tablet-menu__line"><div class="tablet-menu__content"><div class="share-icons"><span class="share-icons__title">Compartir</span><a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fes.javascript.info%2Fxmlhttprequest" rel="nofollow"></a><a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fes.javascript.info%2Fxmlhttprequest" rel="nofollow"></a></div></div></div><div class="tablet-menu__line"><div class="tablet-menu__content"><select class="tablet-menu__nav input-select input-select input-select_small" onchange="if(this.value) window.location.href=this.value"><option value="https://ar.javascript.info/">عربي</option><option value="https://javascript.info/xmlhttprequest">English</option><option value="https://es.javascript.info/xmlhttprequest" selected="">Español</option><option value="https://fa.javascript.info/">فارسی</option><option value="https://fr.javascript.info/xmlhttprequest">Français</option><option value="https://id.javascript.info/">Indonesia</option><option value="https://it.javascript.info/xmlhttprequest">Italiano</option><option value="https://ja.javascript.info/xmlhttprequest">日本語</option><option value="https://ko.javascript.info/">한국어</option><option value="https://learn.javascript.ru/xmlhttprequest">Русский</option><option value="https://tr.javascript.info/xmlhttprequest">Türkçe</option><option value="https://uk.javascript.info/xmlhttprequest">Українська</option><option value="https://zh.javascript.info/xmlhttprequest">简体中文</option></select></div></div></div><progress class="tutorial-progress" data-sticky="" value="8" max="12" data-tooltip="Lección 8 de 12" style=""></progress></div><div class="page page_sidebar_on page_inner_padding page_sidebar-animation-on"><script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script><div class="page__inner"><main class="main main_width-limit"><header class="main__header"><div class="main__header-inner"><div class="main__header-group"><ol class="breadcrumbs"><li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="https://es.javascript.info/"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li><li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="https://es.javascript.info/network"><span>Solicitudes de red</span></a></li><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://es.javascript.info/"},{"@type":"ListItem","position":2,"name":"Solicitudes de red","item":"https://es.javascript.info/network"}]}</script></ol><div class="updated-at" data-tooltip="Última actualización el 24 de octubre de 2022"><div class="updated-at__content">24 de octubre de 2022</div></div></div><h1 class="main__header-title">XMLHttpRequest</h1></div></header><div class="content"><article class="formatted" itemscope="" itemtype="http://schema.org/TechArticle"><meta itemprop="name" content="XMLHttpRequest"><div itemprop="author" itemscope="" itemtype="http://schema.org/Person"><meta itemprop="email" content="iliakan@gmail.com"><meta itemprop="name" content="Ilya Kantor"></div><div itemprop="articleBody"><p><code>XMLHttpRequest</code> es un objeto nativo del navegador que permite hacer solicitudes HTTP desde JavaScript.</p>
+<p>A pesar de tener la palabra “XML” en su nombre, se puede operar sobre cualquier dato, no solo en formato XML. Podemos cargar y descargar archivos, dar seguimiento y mucho más.</p>
+<p>Ahora hay un método más moderno <code>fetch</code> que en algún sentido hace obsoleto a <code>XMLHttpRequest</code>.</p>
+<p>En el desarrollo web moderno <code>XMLHttpRequest</code> se usa por tres razones:</p>
+<ol>
+<li>Razones históricas: necesitamos soportar scripts existentes con <code>XMLHttpRequest</code>.</li>
+<li>Necesitamos soportar navegadores viejos, y no queremos <code>polyfills</code> (p.ej. para mantener los scripts pequeños).</li>
+<li>Necesitamos hacer algo que <code>fetch</code> no puede todavía, ej. rastrear el progreso de subida.</li>
+</ol>
+<p>¿Te suena familiar? Si es así, está bien, adelante con <code>XMLHttpRequest</code>. De otra forma, por favor, dirígete a <a href="https://es.javascript.info/fetch">Fetch</a>.</p>
+<h2><a class="main__anchor" name="lo-basico" href="https://es.javascript.info/xmlhttprequest#lo-basico">Lo básico</a></h2><p>XMLHttpRequest tiene dos modos de operación: sincrónica y asíncrona.</p>
+<p>Veamos primero la asíncrona, ya que es utilizada en la mayoría de los casos.</p>
+<p>Para hacer la petición, necesitamos seguir 3 pasos:</p>
+<ol>
+<li>
+<p>Crear el objeto <code>XMLHttpRequest</code>:</p>
+<div id="qlkssy2fxg" data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> xhr <code class="token operator">=</code> <code class="token keyword">new</code> <code class="token class-name">XMLHttpRequest</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code></code></pre>
+        </div>
+      </div>
+      
+      </div><p>El constructor no tiene argumentos.</p>
+</li>
+<li>
+<p>Inicializarlo, usualmente justo después de <code>new XMLHttpRequest</code>:</p>
+<div id="q6l8g3wy9" data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript">xhr<code class="token punctuation">.</code><code class="token function">open</code><code class="token punctuation">(</code>method<code class="token punctuation">,</code> <code class="token constant">URL</code><code class="token punctuation">,</code> <code class="token punctuation">[</code>async<code class="token punctuation">,</code> user<code class="token punctuation">,</code> password<code class="token punctuation">]</code><code class="token punctuation">)</code></code></pre>
+        </div>
+      </div>
+      
+      </div><p>Este método especifica los parámetros principales para la petición:</p>
+<ul>
+<li><code>method</code> – método HTTP. Usualmente <code>"GET"</code> o <code>"POST"</code>.</li>
+<li><code>URL</code> – la URL a solicitar, una cadena, puede ser un objeto <a href="https://es.javascript.info/url">URL</a>.</li>
+<li><code>async</code> – si se asigna explícitamente a <code>false</code>, entonces la petición será asincrónica. Cubriremos esto un poco más adelante.</li>
+<li><code>user</code>, <code>password</code> – usuario y contraseña para autenticación HTTP básica (si se requiere).</li>
+</ul>
+<p>Por favor, toma en cuenta que la llamada a <code>open</code>, contrario a su nombre, no abre la conexión. Solo configura la solicitud, pero la actividad de red solo empieza con la llamada del método <code>send</code>.</p>
+</li>
+<li>
+<p>Enviar.</p>
+<div id="3axpv65ji7" data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript">xhr<code class="token punctuation">.</code><code class="token function">send</code><code class="token punctuation">(</code><code class="token punctuation">[</code>body<code class="token punctuation">]</code><code class="token punctuation">)</code></code></pre>
+        </div>
+      </div>
+      
+      </div><p>Este método abre la conexión y envía ka solicitud al servidor. El parámetro adicional <code>body</code> contiene el cuerpo de la solicitud.</p>
+<p>Algunos métodos como <code>GET</code> no tienen un cuerpo. Y otros como <code>POST</code> usan el parámetro <code>body</code> para enviar datos al servidor. Vamos a ver unos ejemplos de eso más tarde.</p>
+</li>
+<li>
+<p>Escuchar los eventos de respuesta <code>xhr</code>.</p>
+<p>Estos son los tres eventos más comúnmente utilizados:</p>
+<ul>
+<li><code>load</code> – cuando la solicitud está; completa (incluso si el estado HTTP es 400 o 500), y la respuesta se descargó por completo.</li>
+<li><code>error</code> – cuando la solicitud no pudo ser realizada satisfactoriamente, ej. red caída o una URL inválida.</li>
+<li><code>progress</code> – se dispara periódicamente mientras la respuesta está siendo descargada, reporta cuánto se ha descargado.</li>
+</ul>
+<div id="eeqtmfn4gw" data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript">xhr<code class="token punctuation">.</code><code class="token function-variable function">onload</code> <code class="token operator">=</code> <code class="token keyword">function</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token function">alert</code><code class="token punctuation">(</code><code class="token template-string"><code class="token template-punctuation string">`</code><code class="token string">Cargado: </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>xhr<code class="token punctuation">.</code>status<code class="token interpolation-punctuation punctuation">}</code></code><code class="token string"> </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>xhr<code class="token punctuation">.</code>response<code class="token interpolation-punctuation punctuation">}</code></code><code class="token template-punctuation string">`</code></code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+xhr<code class="token punctuation">.</code><code class="token function-variable function">onerror</code> <code class="token operator">=</code> <code class="token keyword">function</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token punctuation">{</code> <code class="token comment">// solo se activa si la solicitud no se puede realizar</code>
+  <code class="token function">alert</code><code class="token punctuation">(</code><code class="token template-string"><code class="token template-punctuation string">`</code><code class="token string">Error de red</code><code class="token template-punctuation string">`</code></code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+xhr<code class="token punctuation">.</code><code class="token function-variable function">onprogress</code> <code class="token operator">=</code> <code class="token keyword">function</code><code class="token punctuation">(</code><code class="token parameter">event</code><code class="token punctuation">)</code> <code class="token punctuation">{</code> <code class="token comment">// se dispara periódicamente</code>
+  <code class="token comment">// event.loaded - cuántos bytes se han descargado</code>
+  <code class="token comment">// event.lengthComputable = devuelve true si el servidor envía la cabecera Content-Length (longitud del contenido)</code>
+  <code class="token comment">// event.total - número total de bytes (si `lengthComputable` es `true`)</code>
+  <code class="token function">alert</code><code class="token punctuation">(</code><code class="token template-string"><code class="token template-punctuation string">`</code><code class="token string">Recibido </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>event<code class="token punctuation">.</code>loaded<code class="token interpolation-punctuation punctuation">}</code></code><code class="token string"> of </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>event<code class="token punctuation">.</code>total<code class="token interpolation-punctuation punctuation">}</code></code><code class="token template-punctuation string">`</code></code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code></code></pre>
+        </div>
+      </div>
+      
+      </div></li>
+</ol>
+<p>Aquí un ejemplo completo. El siguiente código carga la URL en <code>/article/xmlhttprequest/example/load</code> desde el servidor e imprime el progreso:</p>
+<div id="5kh2i8aaxn" data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://es.javascript.info/xmlhttprequest#" title="ejecutar" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://es.javascript.info/xmlhttprequest#" title="abrir en entorno controlado" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token comment">// 1. Crea un nuevo objeto XMLHttpRequest</code>
+<code class="token keyword">let</code> xhr <code class="token operator">=</code> <code class="token keyword">new</code> <code class="token class-name">XMLHttpRequest</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+<code class="token comment">// 2. Configuración: solicitud GET para la URL /article/.../load</code>
+xhr<code class="token punctuation">.</code><code class="token function">open</code><code class="token punctuation">(</code><code class="token string">'GET'</code><code class="token punctuation">,</code> <code class="token string">'/article/xmlhttprequest/example/load'</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+<code class="token comment">// 3. Envía la solicitud a la red</code>
+xhr<code class="token punctuation">.</code><code class="token function">send</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+<code class="token comment">// 4. Esto se llamará después de que la respuesta se reciba</code>
+xhr<code class="token punctuation">.</code><code class="token function-variable function">onload</code> <code class="token operator">=</code> <code class="token keyword">function</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token keyword">if</code> <code class="token punctuation">(</code>xhr<code class="token punctuation">.</code>status <code class="token operator">!=</code> <code class="token number">200</code><code class="token punctuation">)</code> <code class="token punctuation">{</code> <code class="token comment">// analiza el estado HTTP de la respuesta</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code><code class="token template-string"><code class="token template-punctuation string">`</code><code class="token string">Error </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>xhr<code class="token punctuation">.</code>status<code class="token interpolation-punctuation punctuation">}</code></code><code class="token string">: </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>xhr<code class="token punctuation">.</code>statusText<code class="token interpolation-punctuation punctuation">}</code></code><code class="token template-punctuation string">`</code></code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// ej. 404: No encontrado</code>
+  <code class="token punctuation">}</code> <code class="token keyword">else</code> <code class="token punctuation">{</code> <code class="token comment">// muestra el resultado</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code><code class="token template-string"><code class="token template-punctuation string">`</code><code class="token string">Hecho, obtenidos </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>xhr<code class="token punctuation">.</code>response<code class="token punctuation">.</code>length<code class="token interpolation-punctuation punctuation">}</code></code><code class="token string"> bytes</code><code class="token template-punctuation string">`</code></code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Respuesta del servidor</code>
+  <code class="token punctuation">}</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+xhr<code class="token punctuation">.</code><code class="token function-variable function">onprogress</code> <code class="token operator">=</code> <code class="token keyword">function</code><code class="token punctuation">(</code><code class="token parameter">event</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token keyword">if</code> <code class="token punctuation">(</code>event<code class="token punctuation">.</code>lengthComputable<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code><code class="token template-string"><code class="token template-punctuation string">`</code><code class="token string">Recibidos </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>event<code class="token punctuation">.</code>loaded<code class="token interpolation-punctuation punctuation">}</code></code><code class="token string"> de </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>event<code class="token punctuation">.</code>total<code class="token interpolation-punctuation punctuation">}</code></code><code class="token string"> bytes</code><code class="token template-punctuation string">`</code></code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+  <code class="token punctuation">}</code> <code class="token keyword">else</code> <code class="token punctuation">{</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code><code class="token template-string"><code class="token template-punctuation string">`</code><code class="token string">Recibidos </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>event<code class="token punctuation">.</code>loaded<code class="token interpolation-punctuation punctuation">}</code></code><code class="token string"> bytes</code><code class="token template-punctuation string">`</code></code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// sin Content-Length</code>
+  <code class="token punctuation">}</code>
+
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+xhr<code class="token punctuation">.</code><code class="token function-variable function">onerror</code> <code class="token operator">=</code> <code class="token keyword">function</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token function">alert</code><code class="token punctuation">(</code><code class="token string">"Solicitud fallida"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code></code></pre>
+        </div>
+      </div>
+      
+      </div><p>Una vez el servidor haya respondido, podemos recibir el resultado en las siguientes propiedades de <code>xhr</code>:</p>
+<dl>
+<dt><code>status</code></dt>
+<dd>Código del estado HTTP (un número): <code>200</code>, <code>404</code>, <code>403</code> y así por el estilo, puede ser <code>0</code> en caso de una falla no HTTP.</dd>
+<dt><code>statusText</code></dt>
+<dd>Mensaje del estado HTTP (una cadena): usualmente <code>OK</code> para <code>200</code>, <code>Not Found</code> para <code>404</code>, <code>Forbidden</code> para <code>403</code> y así por el estilo.</dd>
+<dt><code>response</code> (scripts antiguos deben usar <code>responseText</code>)</dt>
+<dd>El cuerpo de la respuesta del servidor.</dd>
+</dl>
+<p>También podemos especificar un tiempo límite usando la propiedad correspondiente:</p>
+<div id="mcldgzclbl" data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript">xhr<code class="token punctuation">.</code>timeout <code class="token operator">=</code> <code class="token number">10000</code><code class="token punctuation">;</code> <code class="token comment">// límite de tiempo en milisegundos, 10 segundos</code></code></pre>
+        </div>
+      </div>
+      
+      </div><p>Si la solicitud no es realizada con éxito dentro del tiempo dado, se cancela y el evento <code>timeout</code> se activa.</p>
+<div class="important important_smart">
+            <div class="important__header"><span class="important__type">Parámetros de búsqueda URL</span></div>
+            <div class="important__content"><p>Para agregar los parámetros a la URL, como <code>?nombre=valor</code>, y asegurar la codificación adecuada, podemos utilizar un objeto <a href="https://es.javascript.info/url">URL</a>:</p>
+<div id="qg5hlbvpps" data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> url <code class="token operator">=</code> <code class="token keyword">new</code> <code class="token class-name">URL</code><code class="token punctuation">(</code><code class="token string">'https://google.com/search'</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+url<code class="token punctuation">.</code>searchParams<code class="token punctuation">.</code><code class="token function">set</code><code class="token punctuation">(</code><code class="token string">'q'</code><code class="token punctuation">,</code> <code class="token string">'pruébame!'</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+<code class="token comment">// el parámetro 'q' está codificado</code>
+xhr<code class="token punctuation">.</code><code class="token function">open</code><code class="token punctuation">(</code><code class="token string">'GET'</code><code class="token punctuation">,</code> url<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// https://google.com/search?q=test+me%21</code></code></pre>
+        </div>
+      </div>
+      
+      </div></div></div>
+<h2><a class="main__anchor" name="tipo-de-respuesta" href="https://es.javascript.info/xmlhttprequest#tipo-de-respuesta">Tipo de respuesta</a></h2><p>Podemos usar la propiedad <code>xhr.responseType</code> para asignar el formato de la respuesta:</p>
+<ul>
+<li><code>""</code> (default) – obtiene una cadena,</li>
+<li><code>"text"</code> – obtiene una cadena,</li>
+<li><code>"arraybuffer"</code> – obtiene un <code>ArrayBuffer</code> (para datos binarios, ve el capítulo <a href="https://es.javascript.info/arraybuffer-binary-arrays">ArrayBuffer, arrays binarios</a>),</li>
+<li><code>"blob"</code> – obtiene un <code>Blob</code> (para datos binarios, ver el capítulo <a href="https://es.javascript.info/blob">Blob</a>),</li>
+<li><code>"document"</code> – obtiene un documento XML (puede usar XPath y otros métodos XML)  o un documento HTML (en base al tipo MIME del dato recibido),</li>
+<li><code>"json"</code> – obtiene un JSON (automáticamente analizado).</li>
+</ul>
+<p>Por ejemplo, obtengamos una respuesta como JSON:</p>
+<div id="usx6xrqo22" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://es.javascript.info/xmlhttprequest#" title="ejecutar" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://es.javascript.info/xmlhttprequest#" title="abrir en entorno controlado" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> xhr <code class="token operator">=</code> <code class="token keyword">new</code> <code class="token class-name">XMLHttpRequest</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+xhr<code class="token punctuation">.</code><code class="token function">open</code><code class="token punctuation">(</code><code class="token string">'GET'</code><code class="token punctuation">,</code> <code class="token string">'/article/xmlhttprequest/example/json'</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+<em class="block-highlight">xhr<code class="token punctuation">.</code>responseType <code class="token operator">=</code> <code class="token string">'json'</code><code class="token punctuation">;</code></em>
+
+xhr<code class="token punctuation">.</code><code class="token function">send</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+<code class="token comment">// la respuesta es {"message": "Hola, Mundo!"}</code>
+xhr<code class="token punctuation">.</code><code class="token function-variable function">onload</code> <code class="token operator">=</code> <code class="token keyword">function</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token keyword">let</code> responseObj <code class="token operator">=</code> xhr<code class="token punctuation">.</code>response<code class="token punctuation">;</code>
+  <code class="token function">alert</code><code class="token punctuation">(</code>responseObj<code class="token punctuation">.</code>message<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Hola, Mundo!</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code></code></pre>
+        </div>
+      </div>
+      
+      </div><div class="important important_smart">
+            <div class="important__header"><span class="important__type">Por favor tome nota:</span></div>
+            <div class="important__content"><p>En los scripts antiguos puedes encontrar también las propiedades <code>xhr.responseText</code> e incluso <code>xhr.responseXML</code>.</p>
+<p>Existen por razones históricas, para obtener ya sea una cadena o un documento XML. Hoy en día, debemos seleccionar el formato en <code>xhr.responseType</code> y obtener <code>xhr.response</code> como se demuestra debajo.</p>
+</div></div>
+<h2><a class="main__anchor" name="estados" href="https://es.javascript.info/xmlhttprequest#estados">Estados</a></h2><p><code>XMLHttpRequest</code> cambia entre estados a medida que avanza. El estado actual es accesible como <code>xhr.readyState</code>.</p>
+<p>Todos los estados, como en <a href="https://xhr.spec.whatwg.org/#states">la especificación</a>:</p>
+<div id="pthqtuirtq" data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token constant">UNSENT</code> <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code> <code class="token comment">// estado inicial</code>
+<code class="token constant">OPENED</code> <code class="token operator">=</code> <code class="token number">1</code><code class="token punctuation">;</code> <code class="token comment">// llamada abierta</code>
+<code class="token constant">HEADERS_RECEIVED</code> <code class="token operator">=</code> <code class="token number">2</code><code class="token punctuation">;</code> <code class="token comment">// cabeceras de respuesta recibidas</code>
+<code class="token constant">LOADING</code> <code class="token operator">=</code> <code class="token number">3</code><code class="token punctuation">;</code> <code class="token comment">// la respuesta está cargando (un paquete de datos es recibido)</code>
+<code class="token constant">DONE</code> <code class="token operator">=</code> <code class="token number">4</code><code class="token punctuation">;</code> <code class="token comment">// solicitud completa</code></code></pre>
+        </div>
+      </div>
+      
+      </div><p>Un objeto <code>XMLHttpRequest</code> escala en orden <code>0</code> → <code>1</code> → <code>2</code> → <code>3</code> → … → <code>3</code> → <code>4</code>. El estado <code>3</code> se repite cada vez que un paquete de datos se recibe a través de la red.</p>
+<p>Podemos seguirlos usando el evento <code>readystatechange</code>:</p>
+<div id="vkf2n8ohv1" data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript">xhr<code class="token punctuation">.</code><code class="token function-variable function">onreadystatechange</code> <code class="token operator">=</code> <code class="token keyword">function</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token keyword">if</code> <code class="token punctuation">(</code>xhr<code class="token punctuation">.</code>readyState <code class="token operator">==</code> <code class="token number">3</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+    <code class="token comment">// cargando</code>
+  <code class="token punctuation">}</code>
+  <code class="token keyword">if</code> <code class="token punctuation">(</code>xhr<code class="token punctuation">.</code>readyState <code class="token operator">==</code> <code class="token number">4</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+    <code class="token comment">// solicitud finalizada</code>
+  <code class="token punctuation">}</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code></code></pre>
+        </div>
+      </div>
+      
+      </div><p>Puedes encontrar oyentes del evento <code>readystatechange</code> en código realmente viejo, está ahí por razones históricas, había un tiempo cuando no existían <code>load</code> y otros eventos. Hoy en día los manipuladores <code>load/error/progress</code> lo hacen obsoleto.</p>
+<h2><a class="main__anchor" name="abortando-solicitudes" href="https://es.javascript.info/xmlhttprequest#abortando-solicitudes">Abortando solicitudes</a></h2><p>Podemos terminar la solicitud en cualquier momento. La llamada a <code>xhr.abort()</code> hace eso:</p>
+<div id="fonjtce512" data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript">xhr<code class="token punctuation">.</code><code class="token function">abort</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// termina la solicitud</code></code></pre>
+        </div>
+      </div>
+      
+      </div><p>Este dispara el evento <code>abort</code>, y el <code>xhr.status</code> se convierte en <code>0</code>.</p>
+<h2><a class="main__anchor" name="solicitudes-sincronicas" href="https://es.javascript.info/xmlhttprequest#solicitudes-sincronicas">Solicitudes sincrónicas</a></h2><p>Si en el método <code>open</code> el tercer parámetro <code>async</code> se asigna como <code>false</code>, la solicitud se hace sincrónicamente.</p>
+<p>En otras palabras, la ejecución de JavaScript se pausa en el <code>send()</code> y se reanuda cuando la respuesta es recibida. Algo como los comandos <code>alert</code> o <code>prompt</code>.</p>
+<p>Aquí está el ejemplo reescrito, el tercer parámetro de <code>open</code> es <code>false</code>:</p>
+<div id="os605lc9d2" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;cols&quot;:[{&quot;start&quot;:53,&quot;end&quot;:58}]}]" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> xhr <code class="token operator">=</code> <code class="token keyword">new</code> <code class="token class-name">XMLHttpRequest</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+xhr<code class="token punctuation">.</code><code class="token function">open</code><code class="token punctuation">(</code><code class="token string">'GET'</code><code class="token punctuation">,</code> <code class="token string">'/article/xmlhttprequest/hello.txt'</code><code class="token punctuation">,</code> <code class="token boolean"><em class="inline-highlight">false</em></code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+<code class="token keyword">try</code> <code class="token punctuation">{</code>
+  xhr<code class="token punctuation">.</code><code class="token function">send</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+  <code class="token keyword">if</code> <code class="token punctuation">(</code>xhr<code class="token punctuation">.</code>status <code class="token operator">!=</code> <code class="token number">200</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code><code class="token template-string"><code class="token template-punctuation string">`</code><code class="token string">Error </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>xhr<code class="token punctuation">.</code>status<code class="token interpolation-punctuation punctuation">}</code></code><code class="token string">: </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>xhr<code class="token punctuation">.</code>statusText<code class="token interpolation-punctuation punctuation">}</code></code><code class="token template-punctuation string">`</code></code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+  <code class="token punctuation">}</code> <code class="token keyword">else</code> <code class="token punctuation">{</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code>xhr<code class="token punctuation">.</code>response<code class="token punctuation">)</code><code class="token punctuation">;</code>
+  <code class="token punctuation">}</code>
+<code class="token punctuation">}</code> <code class="token keyword">catch</code><code class="token punctuation">(</code>err<code class="token punctuation">)</code> <code class="token punctuation">{</code> <code class="token comment">// en lugar de onerror</code>
+  <code class="token function">alert</code><code class="token punctuation">(</code><code class="token string">"Solicitud fallida"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token punctuation">}</code></code></pre>
+        </div>
+      </div>
+      
+      </div><p>Puede verse bien, pero las llamadas sincrónicas son rara vez utilizadas porque bloquean todo el JavaScript de la página hasta que la carga está completa. En algunos navegadores se hace imposible hacer scroll. Si una llamada síncrona toma mucho tiempo, el navegador puede sugerir cerrar el sitio web “colgado”.</p>
+<p>Algunas capacidades avanzadas de <code>XMLHttpRequest</code>, como solicitar desde otro dominio o especificar un tiempo límite, no están disponibles para solicitudes síncronas. Tampoco, como puedes ver, la indicación de progreso.</p>
+<p>La razón de esto es que las solicitudes sincrónicas son utilizadas muy escasamente, casi nunca. No hablaremos más sobre ellas.</p>
+<h2><a class="main__anchor" name="cabeceras-http" href="https://es.javascript.info/xmlhttprequest#cabeceras-http">Cabeceras HTTP</a></h2><p><code>XMLHttpRequest</code> permite tanto enviar cabeceras personalizadas como leer cabeceras de la respuesta.</p>
+<p>Existen 3 métodos para las cabeceras HTTP:</p>
+<dl>
+<dt><code>setRequestHeader(name, value)</code></dt>
+<dd>
+<p>Asigna la cabecera de la solicitud con los valores <code>name</code> y <code>value</code> provistos.</p>
+<p>Por ejemplo:</p>
+<div id="l5byx30wzp" data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript">xhr<code class="token punctuation">.</code><code class="token function">setRequestHeader</code><code class="token punctuation">(</code><code class="token string">'Content-Type'</code><code class="token punctuation">,</code> <code class="token string">'application/json'</code><code class="token punctuation">)</code><code class="token punctuation">;</code></code></pre>
+        </div>
+      </div>
+      
+      </div><div class="important important_warn">
+            <div class="important__header"><span class="important__type">Limitaciones de cabeceras</span></div>
+            <div class="important__content"><p>Muchas cabeceras se administran exclusivamente por el navegador, ej. <code>Referer</code> y <code>Host</code>.
+La lista completa está <a href="https://xhr.spec.whatwg.org/#the-setrequestheader()-method">en la especificación</a>.</p>
+<p><code>XMLHttpRequest</code> no está permitido cambiarlos, por motivos de seguridad del usuario y la exactitud de la solicitud.</p>
+</div></div>
+<div class="important important_warn">
+            <div class="important__header"><span class="important__type">No se pueden eliminar cabeceras</span></div>
+            <div class="important__content"><p>Otra peculiaridad de <code>XMLHttpRequest</code> es que no puede deshacer un <code>setRequestHeader</code>.</p>
+<p>Una vez que una cabecera es asignada, ya está asignada. Llamadas adicionales agregan información a la cabecera, no la sobreescriben.</p>
+<p>Por ejemplo:</p>
+<div id="gyi3299mqa" data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript">xhr<code class="token punctuation">.</code><code class="token function">setRequestHeader</code><code class="token punctuation">(</code><code class="token string">'X-Auth'</code><code class="token punctuation">,</code> <code class="token string">'123'</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+xhr<code class="token punctuation">.</code><code class="token function">setRequestHeader</code><code class="token punctuation">(</code><code class="token string">'X-Auth'</code><code class="token punctuation">,</code> <code class="token string">'456'</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+<code class="token comment">// la cabecera será:</code>
+<code class="token comment">// X-Auth: 123, 456</code></code></pre>
+        </div>
+      </div>
+      
+      </div></div></div>
+</dd>
+<dt><code>getResponseHeader(name)</code></dt>
+<dd>
+<p>Obtiene la cabecera de la respuesta con el <code>name</code> dado (excepto <code>Set-Cookie</code> y <code>Set-Cookie2</code>).</p>
+<p>Por ejemplo:</p>
+<div id="6jbrxnfwed" data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript">xhr<code class="token punctuation">.</code><code class="token function">getResponseHeader</code><code class="token punctuation">(</code><code class="token string">'Content-Type'</code><code class="token punctuation">)</code></code></pre>
+        </div>
+      </div>
+      
+      </div></dd>
+<dt><code>getAllResponseHeaders()</code></dt>
+<dd>
+<p>Devuelve todas las cabeceras de la respuesta, excepto por <code>Set-Cookie</code> y <code>Set-Cookie2</code>.</p>
+<p>Las cabeceras se devuelven como una sola línea, ej.:</p>
+<div id="e423ol6ffm" data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-http" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span><code class=" language-http"><code class="token header-name keyword">Cache-Control:</code> max-age=31536000
+<code class="token header-name keyword">Content-Length:</code> 4260
+<code class="token header-name keyword">Content-Type:</code> image/png
+<code class="token header-name keyword">Date:</code> Sat, 08 Sep 2012 16:53:16 GMT</code></pre>
+        </div>
+      </div>
+      
+      </div><p>El salto de línea entre las cabeceras siempre es un <code>"\r\n"</code> (independiente del SO), así podemos dividirlas en cabeceras individuales. El separador entre el nombre y el valor siempre es dos puntos seguido de un espacio <code>": "</code>. Eso quedó establecido en la especificación.</p>
+<p>Así, si queremos obtener un objeto con pares nombre/valor, necesitamos tratarlas con un poco de JS.</p>
+<p>Como esto (asumiendo que si dos cabeceras tienen el mismo nombre, entonces el último sobreescribe al primero):</p>
+<div id="skdmb6it2i" data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> headers <code class="token operator">=</code> xhr
+  <code class="token punctuation">.</code><code class="token function">getAllResponseHeaders</code><code class="token punctuation">(</code><code class="token punctuation">)</code>
+  <code class="token punctuation">.</code><code class="token function">split</code><code class="token punctuation">(</code><code class="token string">'\r\n'</code><code class="token punctuation">)</code>
+  <code class="token punctuation">.</code><code class="token function">reduce</code><code class="token punctuation">(</code><code class="token punctuation">(</code><code class="token parameter">result<code class="token punctuation">,</code> current</code><code class="token punctuation">)</code> <code class="token operator">=&gt;</code> <code class="token punctuation">{</code>
+    <code class="token keyword">let</code> <code class="token punctuation">[</code>name<code class="token punctuation">,</code> value<code class="token punctuation">]</code> <code class="token operator">=</code> current<code class="token punctuation">.</code><code class="token function">split</code><code class="token punctuation">(</code><code class="token string">': '</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+    result<code class="token punctuation">[</code>name<code class="token punctuation">]</code> <code class="token operator">=</code> value<code class="token punctuation">;</code>
+    <code class="token keyword">return</code> result<code class="token punctuation">;</code>
+  <code class="token punctuation">}</code><code class="token punctuation">,</code> <code class="token punctuation">{</code><code class="token punctuation">}</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+<code class="token comment">// headers['Content-Type'] = 'image/png'</code></code></pre>
+        </div>
+      </div>
+      
+      </div></dd>
+</dl>
+<h2><a class="main__anchor" name="post-formularios" href="https://es.javascript.info/xmlhttprequest#post-formularios">POST, Formularios</a></h2><p>Para hacer una solicitud POST, podemos utilizar el objeto <a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData">FormData</a> nativo.</p>
+<p>La sintaxis:</p>
+<div id="wfse1piflh" data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> formData <code class="token operator">=</code> <code class="token keyword">new</code> <code class="token class-name">FormData</code><code class="token punctuation">(</code><code class="token punctuation">[</code>form<code class="token punctuation">]</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// crea un objeto, opcionalmente se completa con un &lt;form&gt;</code>
+formData<code class="token punctuation">.</code><code class="token function">append</code><code class="token punctuation">(</code>name<code class="token punctuation">,</code> value<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// añade un campo</code></code></pre>
+        </div>
+      </div>
+      
+      </div><p>Lo creamos, opcionalmente lleno desde un formulario, <code>append</code> (agrega) más campos si se necesitan, y entonces:</p>
+<ol>
+<li><code>xhr.open('POST', ...)</code> – se utiliza el método <code>POST</code>.</li>
+<li><code>xhr.send(formData)</code> para enviar el formulario al servidor.</li>
+</ol>
+<p>Por ejemplo:</p>
+<div id="ddcvax9h68" data-trusted="1" class="code-example" data-refresh="1" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://es.javascript.info/xmlhttprequest#" title="mostrar" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://es.javascript.info/xmlhttprequest#" title="abrir en entorno controlado" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-markup"><code class="token tag"><code class="token tag"><code class="token punctuation">&lt;</code>form</code> <code class="token attr-name">name</code><code class="token attr-value"><code class="token punctuation attr-equals">=</code><code class="token punctuation">"</code>person<code class="token punctuation">"</code></code><code class="token punctuation">&gt;</code></code>
+  <code class="token tag"><code class="token tag"><code class="token punctuation">&lt;</code>input</code> <code class="token attr-name">name</code><code class="token attr-value"><code class="token punctuation attr-equals">=</code><code class="token punctuation">"</code>name<code class="token punctuation">"</code></code> <code class="token attr-name">value</code><code class="token attr-value"><code class="token punctuation attr-equals">=</code><code class="token punctuation">"</code>John<code class="token punctuation">"</code></code><code class="token punctuation">&gt;</code></code>
+  <code class="token tag"><code class="token tag"><code class="token punctuation">&lt;</code>input</code> <code class="token attr-name">name</code><code class="token attr-value"><code class="token punctuation attr-equals">=</code><code class="token punctuation">"</code>surname<code class="token punctuation">"</code></code> <code class="token attr-name">value</code><code class="token attr-value"><code class="token punctuation attr-equals">=</code><code class="token punctuation">"</code>Smith<code class="token punctuation">"</code></code><code class="token punctuation">&gt;</code></code>
+<code class="token tag"><code class="token tag"><code class="token punctuation">&lt;/</code>form</code><code class="token punctuation">&gt;</code></code>
+
+<code class="token tag"><code class="token tag"><code class="token punctuation">&lt;</code>script</code><code class="token punctuation">&gt;</code></code><code class="token script"><code class="token language-javascript">
+  <code class="token comment">// pre llenado del objeto FormData desde el formulario</code>
+  <code class="token keyword">let</code> formData <code class="token operator">=</code> <code class="token keyword">new</code> <code class="token class-name">FormData</code><code class="token punctuation">(</code>document<code class="token punctuation">.</code>forms<code class="token punctuation">.</code>person<code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+  <code class="token comment">// agrega un campo más</code>
+  formData<code class="token punctuation">.</code><code class="token function">append</code><code class="token punctuation">(</code><code class="token string">"middle"</code><code class="token punctuation">,</code> <code class="token string">"Lee"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+  <code class="token comment">// lo enviamos</code>
+  <code class="token keyword">let</code> xhr <code class="token operator">=</code> <code class="token keyword">new</code> <code class="token class-name">XMLHttpRequest</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+  xhr<code class="token punctuation">.</code><code class="token function">open</code><code class="token punctuation">(</code><code class="token string">"POST"</code><code class="token punctuation">,</code> <code class="token string">"/article/xmlhttprequest/post/user"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+  xhr<code class="token punctuation">.</code><code class="token function">send</code><code class="token punctuation">(</code>formData<code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+  xhr<code class="token punctuation">.</code><code class="token function-variable function">onload</code> <code class="token operator">=</code> <code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token operator">=&gt;</code> <code class="token function">alert</code><code class="token punctuation">(</code>xhr<code class="token punctuation">.</code>response<code class="token punctuation">)</code><code class="token punctuation">;</code>
+</code></code><code class="token tag"><code class="token tag"><code class="token punctuation">&lt;/</code>script</code><code class="token punctuation">&gt;</code></code></code></pre>
+        </div>
+      </div>
+      
+      </div><p>El formulario fue enviado con codificación <code>multipart/form-data</code>.</p>
+<p>O, si nos gusta más JSON, entonces, un <code>JSON.stringify</code> y lo enviamos como un string.</p>
+<p>Solo no te olvides de asignar la cabecera <code>Content-Type: application/json</code>, muchos frameworks del lado del servidor decodifican automáticamente JSON con este:</p>
+<div id="ea51az6pb9" data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> xhr <code class="token operator">=</code> <code class="token keyword">new</code> <code class="token class-name">XMLHttpRequest</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+<code class="token keyword">let</code> json <code class="token operator">=</code> <code class="token constant">JSON</code><code class="token punctuation">.</code><code class="token function">stringify</code><code class="token punctuation">(</code><code class="token punctuation">{</code>
+  name<code class="token operator">:</code> <code class="token string">"John"</code><code class="token punctuation">,</code>
+  surname<code class="token operator">:</code> <code class="token string">"Smith"</code>
+<code class="token punctuation">}</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+xhr<code class="token punctuation">.</code><code class="token function">open</code><code class="token punctuation">(</code><code class="token string">"POST"</code><code class="token punctuation">,</code> <code class="token string">'/submit'</code><code class="token punctuation">)</code>
+xhr<code class="token punctuation">.</code><code class="token function">setRequestHeader</code><code class="token punctuation">(</code><code class="token string">'Content-type'</code><code class="token punctuation">,</code> <code class="token string">'application/json; charset=utf-8'</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+xhr<code class="token punctuation">.</code><code class="token function">send</code><code class="token punctuation">(</code>json<code class="token punctuation">)</code><code class="token punctuation">;</code></code></pre>
+        </div>
+      </div>
+      
+      </div><p>El método <code>.send(body)</code> es bastante omnívoro. Puede enviar casi cualquier <code>body</code>, incluyendo objetos <code>Blob</code> y <code>BufferSource</code>.</p>
+<h2><a class="main__anchor" name="progreso-de-carga" href="https://es.javascript.info/xmlhttprequest#progreso-de-carga">Progreso de carga</a></h2><p>El evento <code>progress</code> se dispara solo en la fase de descarga.</p>
+<p>Esto es: si hacemos un <code>POST</code> de algo, <code>XMLHttpRequest</code> primero sube nuestros datos (el cuerpo de la respuesta), entonces descarga la respuesta.</p>
+<p>Si estamos subiendo algo grande, entonces seguramente estaremos interesados en rastrear el progreso de nuestra carga. Pero <code>xhr.onprogress</code> no ayuda aquí.</p>
+<p>Hay otro objeto, sin métodos, exclusivamente para rastrear los eventos de subida: <code>xhr.upload</code>.</p>
+<p>Este genera eventos similares a <code>xhr</code>, pero <code>xhr.upload</code> se dispara solo en las subidas:</p>
+<ul>
+<li><code>loadstart</code> – carga iniciada.</li>
+<li><code>progress</code> – se dispara periódicamente durante la subida.</li>
+<li><code>abort</code> – carga abortada.</li>
+<li><code>error</code> – error no HTTP.</li>
+<li><code>load</code> – carga finalizada con éxito.</li>
+<li><code>timeout</code> – carga caducada (si la propiedad <code>timeout</code> está asignada).</li>
+<li><code>loadend</code> – carga finalizada con éxito o error.</li>
+</ul>
+<p>Ejemplos de manejadores:</p>
+<div id="uiavzvtzr2" data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript">xhr<code class="token punctuation">.</code>upload<code class="token punctuation">.</code><code class="token function-variable function">onprogress</code> <code class="token operator">=</code> <code class="token keyword">function</code><code class="token punctuation">(</code><code class="token parameter">event</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token function">alert</code><code class="token punctuation">(</code><code class="token template-string"><code class="token template-punctuation string">`</code><code class="token string">Uploaded </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>event<code class="token punctuation">.</code>loaded<code class="token interpolation-punctuation punctuation">}</code></code><code class="token string"> of </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>event<code class="token punctuation">.</code>total<code class="token interpolation-punctuation punctuation">}</code></code><code class="token string"> bytes</code><code class="token template-punctuation string">`</code></code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+xhr<code class="token punctuation">.</code>upload<code class="token punctuation">.</code><code class="token function-variable function">onload</code> <code class="token operator">=</code> <code class="token keyword">function</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token function">alert</code><code class="token punctuation">(</code><code class="token template-string"><code class="token template-punctuation string">`</code><code class="token string">Upload finished successfully.</code><code class="token template-punctuation string">`</code></code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+xhr<code class="token punctuation">.</code>upload<code class="token punctuation">.</code><code class="token function-variable function">onerror</code> <code class="token operator">=</code> <code class="token keyword">function</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token function">alert</code><code class="token punctuation">(</code><code class="token template-string"><code class="token template-punctuation string">`</code><code class="token string">Error durante la carga: </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>xhr<code class="token punctuation">.</code>status<code class="token interpolation-punctuation punctuation">}</code></code><code class="token template-punctuation string">`</code></code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code></code></pre>
+        </div>
+      </div>
+      
+      </div><p>Aquí un ejemplo de la vida real: indicación del progreso de subida de un archivo:</p>
+<div id="nr8xyh8dak" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:9}]" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://es.javascript.info/xmlhttprequest#" title="mostrar" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://es.javascript.info/xmlhttprequest#" title="abrir en entorno controlado" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-markup"><code class="token tag"><code class="token tag"><code class="token punctuation">&lt;</code>input</code> <code class="token attr-name">type</code><code class="token attr-value"><code class="token punctuation attr-equals">=</code><code class="token punctuation">"</code>file<code class="token punctuation">"</code></code> <code class="token special-attr"><code class="token attr-name">onchange</code><code class="token attr-value"><code class="token punctuation attr-equals">=</code><code class="token punctuation">"</code><code class="token value javascript language-javascript"><code class="token function">upload</code><code class="token punctuation">(</code><code class="token keyword">this</code><code class="token punctuation">.</code>files<code class="token punctuation">[</code><code class="token number">0</code><code class="token punctuation">]</code><code class="token punctuation">)</code></code><code class="token punctuation">"</code></code></code><code class="token punctuation">&gt;</code></code>
+
+<code class="token tag"><code class="token tag"><code class="token punctuation">&lt;</code>script</code><code class="token punctuation">&gt;</code></code><code class="token script"><code class="token language-javascript">
+<code class="token keyword">function</code> <code class="token function">upload</code><code class="token punctuation">(</code><code class="token parameter">file</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token keyword">let</code> xhr <code class="token operator">=</code> <code class="token keyword">new</code> <code class="token class-name">XMLHttpRequest</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+  <code class="token comment">// rastrea el progreso de la subida</code>
+<em class="block-highlight">  xhr<code class="token punctuation">.</code>upload<code class="token punctuation">.</code><code class="token function-variable function">onprogress</code> <code class="token operator">=</code> <code class="token keyword">function</code><code class="token punctuation">(</code><code class="token parameter">event</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+    console<code class="token punctuation">.</code><code class="token function">log</code><code class="token punctuation">(</code><code class="token template-string"><code class="token template-punctuation string">`</code><code class="token string">Uploaded </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>event<code class="token punctuation">.</code>loaded<code class="token interpolation-punctuation punctuation">}</code></code><code class="token string"> of </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>event<code class="token punctuation">.</code>total<code class="token interpolation-punctuation punctuation">}</code></code><code class="token template-punctuation string">`</code></code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+  <code class="token punctuation">}</code><code class="token punctuation">;</code></em>
+
+  <code class="token comment">// seguimiento completado: sea satisfactorio o no</code>
+  xhr<code class="token punctuation">.</code><code class="token function-variable function">onloadend</code> <code class="token operator">=</code> <code class="token keyword">function</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+    <code class="token keyword">if</code> <code class="token punctuation">(</code>xhr<code class="token punctuation">.</code>status <code class="token operator">==</code> <code class="token number">200</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      console<code class="token punctuation">.</code><code class="token function">log</code><code class="token punctuation">(</code><code class="token string">"Logrado"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code> <code class="token keyword">else</code> <code class="token punctuation">{</code>
+      console<code class="token punctuation">.</code><code class="token function">log</code><code class="token punctuation">(</code><code class="token string">"error "</code> <code class="token operator">+</code> <code class="token keyword">this</code><code class="token punctuation">.</code>status<code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code>
+  <code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+  xhr<code class="token punctuation">.</code><code class="token function">open</code><code class="token punctuation">(</code><code class="token string">"POST"</code><code class="token punctuation">,</code> <code class="token string">"/article/xmlhttprequest/post/upload"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+  xhr<code class="token punctuation">.</code><code class="token function">send</code><code class="token punctuation">(</code>file<code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token punctuation">}</code>
+</code></code><code class="token tag"><code class="token tag"><code class="token punctuation">&lt;/</code>script</code><code class="token punctuation">&gt;</code></code></code></pre>
+        </div>
+      </div>
+      
+      </div><h2><a class="main__anchor" name="solicitudes-de-origen-cruzado-cross-origin" href="https://es.javascript.info/xmlhttprequest#solicitudes-de-origen-cruzado-cross-origin">Solicitudes de origen cruzado (Cross-origin)</a></h2><p><code>XMLHttpRequest</code> puede hacer solicitudes de origen cruzado, utilizando la misma política CORS que se <a href="https://es.javascript.info/fetch-crossorigin">solicita</a>.</p>
+<p>Tal como <code>fetch</code>, no envía cookies ni autorización HTTP a otro origen por omisión. Para activarlas, asigna <code>xhr.withCredentials</code> como <code>true</code>:</p>
+<div id="ep2o6jsumd" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> xhr <code class="token operator">=</code> <code class="token keyword">new</code> <code class="token class-name">XMLHttpRequest</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+<em class="block-highlight">xhr<code class="token punctuation">.</code>withCredentials <code class="token operator">=</code> <code class="token boolean">true</code><code class="token punctuation">;</code></em>
+
+xhr<code class="token punctuation">.</code><code class="token function">open</code><code class="token punctuation">(</code><code class="token string">'POST'</code><code class="token punctuation">,</code> <code class="token string">'http://anywhere.com/request'</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token operator">...</code></code></pre>
+        </div>
+      </div>
+      
+      </div><p>Ve el capítulo <a href="https://es.javascript.info/fetch-crossorigin">Fetch: Cross-Origin Requests</a> para detalles sobre las cabeceras de origen cruzado.</p>
+<h2><a class="main__anchor" name="resumen" href="https://es.javascript.info/xmlhttprequest#resumen">Resumen</a></h2><p>Codificación típica de la solicitud GET con <code>XMLHttpRequest</code>:</p>
+<div id="nr099ptr3b" data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> xhr <code class="token operator">=</code> <code class="token keyword">new</code> <code class="token class-name">XMLHttpRequest</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+xhr<code class="token punctuation">.</code><code class="token function">open</code><code class="token punctuation">(</code><code class="token string">'GET'</code><code class="token punctuation">,</code> <code class="token string">'/my/url'</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+xhr<code class="token punctuation">.</code><code class="token function">send</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+xhr<code class="token punctuation">.</code><code class="token function-variable function">onload</code> <code class="token operator">=</code> <code class="token keyword">function</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token keyword">if</code> <code class="token punctuation">(</code>xhr<code class="token punctuation">.</code>status <code class="token operator">!=</code> <code class="token number">200</code><code class="token punctuation">)</code> <code class="token punctuation">{</code> <code class="token comment">// error HTTP?</code>
+    <code class="token comment">// maneja el error</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Error: '</code> <code class="token operator">+</code> xhr<code class="token punctuation">.</code>status<code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token keyword">return</code><code class="token punctuation">;</code>
+  <code class="token punctuation">}</code>
+
+  <code class="token comment">// obtiene la respuesta de xhr.response</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+xhr<code class="token punctuation">.</code><code class="token function-variable function">onprogress</code> <code class="token operator">=</code> <code class="token keyword">function</code><code class="token punctuation">(</code><code class="token parameter">event</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token comment">// reporta progreso</code>
+  <code class="token function">alert</code><code class="token punctuation">(</code><code class="token template-string"><code class="token template-punctuation string">`</code><code class="token string">Loaded </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>event<code class="token punctuation">.</code>loaded<code class="token interpolation-punctuation punctuation">}</code></code><code class="token string"> of </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>event<code class="token punctuation">.</code>total<code class="token interpolation-punctuation punctuation">}</code></code><code class="token template-punctuation string">`</code></code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+xhr<code class="token punctuation">.</code><code class="token function-variable function">onerror</code> <code class="token operator">=</code> <code class="token keyword">function</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+  <code class="token comment">// manejo de un error no HTTP (ej. red caída)</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code></code></pre>
+        </div>
+      </div>
+      
+      </div><p>De hecho hay más eventos, la <a href="https://xhr.spec.whatwg.org/#events">especificación moderna</a> los lista (en el orden del ciclo de vida):</p>
+<ul>
+<li><code>loadstart</code> – la solicitud ha empezado.</li>
+<li><code>progress</code> – un paquete de datos de la respuesta ha llegado, el cuerpo completo de la respuesta al momento está en <code>response</code>.</li>
+<li><code>abort</code> – la solicitud ha sido cancelada por la llamada de <code>xhr.abort()</code>.</li>
+<li><code>error</code> – un error de conexión ha ocurrido, ej. nombre de dominio incorrecto. No pasa con errores HTTP como 404.</li>
+<li><code>load</code> – la solicitud se ha completado satisfactoriamente.</li>
+<li><code>timeout</code> – la solicitud fue cancelada debido a que caducó (solo pasa si fue configurado).</li>
+<li><code>loadend</code> – se dispara después de <code>load</code>, <code>error</code>, <code>timeout</code> o <code>abort</code>.</li>
+</ul>
+<p>Los eventos <code>error</code>, <code>abort</code>, <code>timeout</code>, y <code>load</code> son mutuamente exclusivos. Solo uno de ellos puede pasar.</p>
+<p>Los eventos más usados son la carga terminada (<code>load</code>), falla de carga (<code>error</code>), o podemos usar un solo manejador <code>loadend</code> y comprobar las propiedades del objeto solicitado <code>xhr</code> para ver qué ha pasado.</p>
+<p>Ya hemos visto otro evento: <code>readystatechange</code>. Históricamente, apareció hace mucho tiempo, antes de que la especificación fuera publicada. Hoy en día no es necesario usarlo; podemos reemplazarlo con eventos más nuevos, pero puede ser encontrado a menudo en scripts viejos.</p>
+<p>Si necesitamos rastrear específicamente, entonces debemos escuchar a los mismos eventos en el objeto <code>xhr.upload</code>.</p>
+</div></article></div><div class="page__nav-wrap"><a class="page__nav page__nav_prev" href="https://es.javascript.info/url" data-tooltip="Objetos URL"><span class="page__nav-text"><span class="page__nav-text-shortcut">Ctrl + <span class="page__nav-text-arr">←</span></span></span><span class="page__nav-text-alternate">Lección anterior</span></a><a class="page__nav page__nav_next" href="https://es.javascript.info/resume-upload" data-tooltip="Carga de archivos reanudable"><span class="page__nav-text"><span class="page__nav-text-shortcut">Ctrl + <span class="page__nav-text-arr">→</span></span></span><span class="page__nav-text-alternate">Próxima lección</span></a></div><div class="article-tablet-foot tablet-only"><div class="article-tablet-foot__layout"><div class="share-icons"><span class="share-icons__title">Compartir</span><a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fes.javascript.info%2Fxmlhttprequest" rel="nofollow"></a><a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fes.javascript.info%2Fxmlhttprequest" rel="nofollow"></a></div><div class="article-tablet-foot__map"><a class="map" href="https://es.javascript.info/tutorial/map" data-action="tutorial-map"><span class="map__text">Mapa del Tutorial</span></a></div></div></div><div class="comments formatted" id="comments"><div class="comments__header"><h2 class="comments__header-title"><a href="https://es.javascript.info/xmlhttprequest#comments" name="comments">Comentarios</a></h2><div class="comments__read-before"><span class="comments__read-before-link">lea esto antes de comentar…</span><div class="comments__read-before-popup"><div class="comments__read-before-popup-i"><ul><li>Si tiene sugerencias sobre qué mejorar, por favor <a href="https://github.com/javascript-tutorial/en.javascript.info/issues/new">enviar una propuesta de GitHub</a> o una solicitud de extracción en lugar de comentar.</li><li>Si no puede entender algo en el artículo, por favor explique.</li><li>Para insertar algunas palabras de código, use la etiqueta <code>&lt;code&gt;</code>, para varias líneas – envolverlas en la etiqueta <code>&lt;pre&gt;</code>, para más de 10 líneas – utilice una entorno controlado (sandbox) (<a href="https://plnkr.co/edit/?p=preview">plnkr</a>, <a href="https://jsbin.com/">jsbin</a>, <a href="http://codepen.io/">codepen</a>…)</li></ul></div></div></div></div><div id="disqus_thread"></div><script>var disqus_config = function() { if (!this.page) this.page = {}; Object.assign(this.page, {"url":"https:\/\/es.javascript.info\/xmlhttprequest","identifier":"\/xmlhttprequest"}); };</script><script>var disqus_shortname = "es-javascript-info";</script><script>var disqus_enabled = true;</script></div></main></div><div class="sidebar page__sidebar sidebar sidebar_sticky-footer" style="top: 123px;"><button class="sidebar__toggle" data-sidebar-toggle=""></button><a class="map" href="https://es.javascript.info/tutorial/map" data-action="tutorial-map" data-tooltip="Mapa del Tutorial"></a><div class="sidebar__inner"><div class="sidebar__content"><div class="sidebar__section"><h4 class="sidebar__section-title">Capítulo</h4><nav class="sidebar__navigation"><ul class="sidebar__navigation-links"><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://es.javascript.info/network">Solicitudes de red</a></li></ul></nav></div><div class="sidebar__section"><h4 class="sidebar__section-title">Navegación de lección</h4><nav class="sidebar__navigation"><ul class="sidebar__navigation-links"><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://es.javascript.info/xmlhttprequest#lo-basico">Lo básico</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://es.javascript.info/xmlhttprequest#tipo-de-respuesta">Tipo de respuesta</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://es.javascript.info/xmlhttprequest#estados">Estados</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://es.javascript.info/xmlhttprequest#abortando-solicitudes">Abortando solicitudes</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://es.javascript.info/xmlhttprequest#solicitudes-sincronicas">Solicitudes sincrónicas</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://es.javascript.info/xmlhttprequest#cabeceras-http">Cabeceras HTTP</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://es.javascript.info/xmlhttprequest#post-formularios">POST, Formularios</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://es.javascript.info/xmlhttprequest#progreso-de-carga">Progreso de carga</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://es.javascript.info/xmlhttprequest#solicitudes-de-origen-cruzado-cross-origin">Solicitudes de origen cruzado (Cross-origin)</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://es.javascript.info/xmlhttprequest#resumen">Resumen</a></li></ul></nav></div><div class="sidebar__section"><nav class="sidebar__navigation"><ul class="sidebar__navigation-links"><li class="sidebar__navigation-link"><a class="sidebar__link" href="https://es.javascript.info/xmlhttprequest#comments">Comentarios</a></li></ul></nav></div><div class="sidebar__section"><div class="sidebar__section-title">Compartir</div><a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fes.javascript.info%2Fxmlhttprequest" rel="nofollow"></a><a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fes.javascript.info%2Fxmlhttprequest" rel="nofollow"></a></div><div class="sidebar__section"><a class="sidebar__link" href="https://github.com/javascript-tutorial/es.javascript.info/blob/master/5-network/08-xmlhttprequest" rel="nofollow">Editar en GitHub</a></div></div></div></div></div></div><div class="page-footer"><ul class="page-footer__list"><li class="page-footer__item page-footer__item_copy">©&nbsp;2007—2023&nbsp; Ilya Kantor</li><li class="page-footer__item page-footer__item_about"><a class="page-footer__link" href="https://es.javascript.info/about">acerca del proyecto</a></li><li class="page-footer__item page-footer__item_contact"><a class="page-footer__link" href="https://es.javascript.info/about#contact-us">contáctenos</a></li></ul></div><script type="text/javascript">
+				var __inScopeForCCPA = false;
+		function __uspapi(command, version, callback) {
+			var response = null;
+			var successs = false;
+			if (command === "getUSPData" && version === 1) {
+				var uspString = "1"; // Version
+				if (__inScopeForCCPA) {
+					uspString += "N"; // Has Explicit Notice for Opt Out been provided (ex footer or minor consent modal)
+					var result;
+					var consentCookie = (result = new RegExp('(?:^|; )ezoccpaconsent=([^;]*)').exec(document.cookie)) ? (result[1]) : null;
+					if (consentCookie === "nonconsent") {
+						uspString += "Y";
+					}
+					else {
+						uspString += "N";
+					}
+					uspString += "N" // Is pub a signatory to the IAB Limited Service Provider Agreement (http://www.iabprivacy.com/)
+				}
+				else {
+					uspString += "---";
+				}
+				response = {
+					uspString: uspString,
+					version: 1
+				};
+				success = true;
+			}
+			return callback(response, success);
+		};
+		function __receiveUspapiMessage(event) {
+			if (event.data.hasOwnProperty('__uspapiCall')) {
+				__uspapi('getUSPData', 1, function(uspData, success) {
+					event.source.postMessage({
+						__uspapiReturn: {
+							returnValue: uspData,
+							success: success,
+							callId: event.data.__uspapiCall.callId
+						}
+					},
+					event.origin);
+				});
+			}
+			return null;
+		};
+		window.addEventListener("message", __receiveUspapiMessage, false);
+</script>
+<script type="text/javascript" style="display:none;" async="">__ez.queue.addFile('/detroitchicago/stickyfix.js', '/detroitchicago/stickyfix.js?gcb=1&cb=37', false, [], true, true, true, false);</script>
+<script>__ez.queue.addFile('/tardisrocinante/vitals.js', '/tardisrocinante/vitals.js?gcb=1&cb=3', false, ['/parsonsmaize/mulvane.js'], true, false, true, false);</script>
+<script>var _audins_dom="javascript_info",_audins_did=538639;__ez.queue.addDelayFunc("audins.js","__ez.script.add", "//go.ezodn.com/detroitchicago/audins.js?cb=195-1");</script><noscript><div style="display:none;"><img src="//pixel.quantserve.com/pixel/p-31iz6hfFutd16.gif?labels=Domain.javascript_info,DomainId.538639" border="0" height="1" width="1" alt="Quantcast"/></div></noscript>
+<script>__ez.queue.addFile('/beardeddragon/drake.js', '/beardeddragon/drake.js?gcb=1&cb=6', false, [], true, false, true, false);</script>
+<script type="text/javascript" style="display:none;">var __ez_dims = (function() {
+		var setCookie = function( name, content, expiry ) {
+			return document.cookie = name+'='+content+((expiry)?';expires='+(new Date(Math.floor(new Date().getTime()+expiry*1000)).toUTCString()):'')+';path=/';
+		};
+		var ffid = 1;
+		var oh = window.screen.height;
+		var ow = window.screen.width;
+		var h = ffid === 1 ? oh : (oh > ow) ? oh : ow;
+		var w = ffid === 1 ? ow : (oh > ow) ? ow : oh;
+		var uh = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
+		var uw = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
+	
+		var setAllCookies = function() {
+			setCookie('ezds', encodeURIComponent('ffid='+ffid+',w='+w+',h='+h), (31536e3*7));
+			setCookie('ezohw', encodeURIComponent('w='+uw+',h='+uh), (31536e3*7));    
+		};
+	
+		if (window.ezTcfConsent && window.ezTcfConsent.loaded) {
+			if (window.ezTcfConsent.understand_audiences) { 
+				setAllCookies();
+			}
+		} else if (typeof getEzConsentData === "function") {
+			getEzConsentData().then(function (ezTcfConsent) {
+				if (ezTcfConsent && ezTcfConsent.loaded) {
+					if (ezTcfConsent.understand_audiences) { 
+						setAllCookies();
+					}
+				} else {
+					console.error("cannot get ez consent data");
+					setAllCookies();
+				}
+			});
+		} else {
+			console.error("getEzConsentData is not a function");
+			setAllCookies();
+		}
+	
+	})();</script>
+<script type="text/javascript" style="display:none;" async="">__ez.queue.addFile('/parsonsmaize/chanute.js', '/parsonsmaize/chanute.js?a=a&cb=7&dcb=195-1&shcb=34', true, ['/parsonsmaize/mulvane.js'], true, false, false, false);</script>
+<script type="text/javascript" style="display:none;" async="">__ez.queue.addFile('/porpoiseant/jellyfish.js', '/porpoiseant/jellyfish.js?a=a&cb=11&dcb=195-1&shcb=34', false, [], true, false, false, false);</script></body></html>

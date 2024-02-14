@@ -1,0 +1,673 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ecc022">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Propiedades de clase - Javascript en español - Lenguaje JS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Las propiedades de clase son variables guardadas dentro de esa clase como información (estado).">
+  <meta name="view-transition" content="same-origin">
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Propiedades de clase - Javascript en español">
+  <meta property="og:image" content="https://lenguajejs.com/javascript/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Las propiedades de clase son variables guardadas dentro de esa clase como información (estado).">
+  <meta property="og:url" content="https://lenguajejs.com/javascript/oop/propiedades-clase/">
+  <meta property="twitter:url" content="https://lenguajejs.com/javascript/oop/propiedades-clase/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Propiedades de clase - Javascript en español">
+  <meta property="twitter:description" content="Las propiedades de clase son variables guardadas dentro de esa clase como información (estado).">
+  <meta property="twitter:image" content="https://lenguajejs.com/javascript/large-summary.jpg">
+
+  </head>
+
+<body class="js menu-open " style="--logo-color: #f0db4f"><script>
+    matchMedia("(width <= 1180px)").matches && document.body.classList.toggle("menu-open");
+  </script>
+  
+
+
+
+
+
+
+
+
+<section class="menubar">
+  <div class="menubar-content">
+    <h1>Lenguaje JS</h1>
+
+    <a class="cover" title="Lenguaje JS (javascript)" href="../../index.htm" style="--image: url('../../../assets/javascript.jpg')"></a>
+
+    <header>
+      <a href="../../modulos/que-es-esm/index.htm" title="¿Qué son los módulos (ESM)?">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m14 26l1.41-1.41L7.83 17H28v-2H7.83l7.58-7.59L14 6L4 16l10 10z"></path></svg>
+      </a>
+      <a href="../../index.htm" title="Volver al índice">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 256"><path fill="#888888" d="M240 210h-18v-94.45a14.06 14.06 0 0 0-4.53-10.32l-80-75.49l-.09-.08a13.94 13.94 0 0 0-18.83 0l-.09.08l-80 75.5A14 14 0 0 0 34 115.55V210H16a6 6 0 0 0 0 12h224a6 6 0 0 0 0-12ZM46 115.55a2 2 0 0 1 .65-1.48l.09-.08l79.94-75.48a2 2 0 0 1 2.63 0L209.26 114l.08.08a2 2 0 0 1 .66 1.48V210h-52v-50a14 14 0 0 0-14-14h-32a14 14 0 0 0-14 14v50H46ZM146 210h-36v-50a2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"></path></svg>
+      </a>
+      <a href="../../dom/que-es/index.htm" title="¿Qué es el DOM?">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></path></svg>
+      </a>
+    </header>
+
+    <div style="display:none">
+      <svg id="link-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 256 256"><g fill="#888888"><path d="M208 88h-56V32Z" opacity=".2"></path><path d="m213.66 82.34l-56-56A8 8 0 0 0 152 24H56a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V88a8 8 0 0 0-2.34-5.66ZM160 51.31L188.69 80H160ZM200 216H56V40h88v48a8 8 0 0 0 8 8h48v120Z"></path></g></svg>
+      <svg id="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="#888888" d="M2 12.5C2 9.46 4.46 7 7.5 7H18c2.21 0 4 1.79 4 4s-1.79 4-4 4H9.5a2.5 2.5 0 0 1 0-5H17v2H9.41c-.55 0-.55 1 0 1H18c1.1 0 2-.9 2-2s-.9-2-2-2H7.5C5.57 9 4 10.57 4 12.5S5.57 16 7.5 16H17v2H7.5C4.46 18 2 15.54 2 12.5z"></path></svg>
+    </div>
+
+    <div class="links">
+      <span class="folder">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 512 512"><path fill="#888888" d="M41 73v304.563L88.697 151H423v-30H185.514l-16-48H41zm62.303 96L43.092 455h381.605l60.211-286H103.303z"></path></svg>
+        Orientación a objetos (OOP)
+      </span>
+            <a class="link" href="../que-es/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Orientación a objetos
+            </a>
+            <a class="link" href="../clases/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Clases en Javascript
+            </a>
+            <a class="link active" href="index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Propiedades de clase
+            </a>
+            <a class="link" href="../metodos-clase/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Métodos de clase
+            </a>
+            <a class="link" href="../herencia-clases/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Herencia de Clases
+            </a>
+    </div>
+  </div>
+
+  <div class="sidebox">
+    <svg class="close-menu" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19V5m10 1l-6 6l6 6m-6-6h14"></path></svg>
+    <div class="socials">
+      <a class="twitch" href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+      <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+      <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+      <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  const toggleMenu = () => (document.body.classList.toggle("menu-open"));
+  document.querySelector(".close-menu").addEventListener("click", toggleMenu);
+
+  matchMedia("(width <= 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+  matchMedia("(width > 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+
+  const activeLink = document.querySelector(".links .active");
+  const icon = /* svg */`<svg viewBox="0 0 24 24"><use href="#anchor-icon" /></svg>`;
+  const headers = [...document.querySelectorAll(".contents h3")].map(link => ({ text: link.textContent, id: link.id }));
+  const links = [];
+  headers.reverse().forEach(({ text, id }) => {
+    const link = document.createElement("a");
+    link.classList.add("anchor");
+    link.href = "#" + id;
+    link.insertAdjacentHTML("beforeend", icon);
+    link.insertAdjacentText("beforeend", ` ${text}`);
+    activeLink.after(link);
+  });
+</script>
+
+  <div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#js"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeJS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/javascript.jpg')">
+    <h1><a href="index.htm">Propiedades de clase</a></h1><h2 class="typewriter">¿Qué es una propiedad de clase?</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../clases/index.htm">Clases en Javascript</a>
+    <a class="current" href="index.htm">Propiedades de clase</a>
+    <a href="../metodos-clase/index.htm">Métodos de clase</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Hasta ahora, hemos hablado de <strong>Programación orientada a objetos</strong> (<em>OOP</em>) y del concepto de <strong>clase</strong> dentro de este estilo de programación. Sin embargo, tenemos que profundizar en los <strong>miembros de clase</strong>, que a grandes rasgos son <strong>propiedades</strong> o <strong>métodos</strong>. En este artículo vamos a explicar las <strong>propiedades</strong> de clase.</p>
+<h3 id="qué-es-una-propiedad-de-clase" tabindex="-1"><a class="header-anchor" href="#qué-es-una-propiedad-de-clase">¿Qué es una propiedad de clase?</a></h3>
+<p>Las <strong>clases</strong>, siendo estructuras para guardar y almacenar información, tienen unas <strong>variables</strong> que viven dentro de la clase. Esta información (<em>también llamada estado</em>) se denomina <strong>propiedad</strong> o <strong>propiedad de clase</strong> y desde ECMAScript 2020 <badge-es class="es2020"></badge-es> para crearlas se hace de la siguiente forma:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Personaje</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">;</span>                 <span class="token comment">// Propiedad sin definir (undefined)</span>
+  type <span class="token operator">=</span> <span class="token string">"Player"</span><span class="token punctuation">;</span>      <span class="token comment">// Propiedad definida</span>
+  lifes <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>            <span class="token comment">// Propiedad definida con 5 vidas restantes</span>
+  energy <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>          <span class="token comment">// Propiedad definida con 10 puntos de energía</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Tradicionalmente en Javascript, las <strong>propiedades</strong> acostumbraban a definirse a través del constructor, mediante la palabra clave <code>this</code>, por lo que es muy probable que también te las encuentres declaradas de esta forma, sin necesidad de declararlas fuera del constructor:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Personaje</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span>                 <span class="token comment">// Propiedad sin definir (undefined)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>type <span class="token operator">=</span> <span class="token string">"Player"</span><span class="token punctuation">;</span>      <span class="token comment">// Propiedad definida</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>lifes <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>            <span class="token comment">// Propiedad definida con 5 vidas restantes</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>energy <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>          <span class="token comment">// Propiedad definida con 10 puntos de energía</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Puesto que se trata de <strong>propiedades de clase</strong> y el <code>constructor()</code> es un método que se ejecuta cuando se crea el objeto (<em>instancia de clase</em>), ambas son equivalentes, ya que al crear un objeto se ejecutará el <code>constructor</code> y se crearán esas propiedades.</p>
+<p>A la hora de utilizarlas, simplemente accedemos a ellas de la misma forma que vimos en el último ejemplo, haciendo uso de la palabra clave <code>this</code>. Veamos un ejemplo un poco más elaborado, utilizando <strong>propiedades</strong> y <strong>métodos</strong>:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Personaje</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">;</span>                 <span class="token comment">// Propiedad sin definir (undefined)</span>
+  type <span class="token operator">=</span> <span class="token string">"Player"</span><span class="token punctuation">;</span>      <span class="token comment">// Propiedad definida</span>
+  lifes <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>            <span class="token comment">// Propiedad definida con 5 vidas restantes</span>
+  energy <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>          <span class="token comment">// Propiedad definida con 10 puntos de energía</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>   <span class="token comment">// Modificamos el valor de la propiedad name</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">¡Bienvenido/a, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">!</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Accedemos al valor actual de la propiedad name</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> mario <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Personaje</span><span class="token punctuation">(</span><span class="token string">"Mario"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// '¡Bienvenido/a, Mario!'</span></code></pre>
+<p>Como se puede ver, estas <strong>propiedades</strong> existen en la clase, y se puede establecer de forma que todos los objetos tengan el mismo valor, o como en el ejemplo anterior, tengan valores diferentes dependiendo del objeto en cuestión, pasándole los valores específicos por parámetro.</p>
+<h3 id="visibilidad-de-propiedades" tabindex="-1"><a class="header-anchor" href="#visibilidad-de-propiedades">Visibilidad de propiedades</a></h3>
+<p>Observa que, las <strong>propiedades de clase</strong> siempre van a tener una visibilidad específica, que puede ser <strong>pública</strong> (<em>por defecto</em>) o <strong>privada</strong>. En el primer caso, las propiedades pueden ser leídas o modificadas tanto desde dentro de la clase como desde fuera, en el segundo caso, sólo pueden ser leídas o modificadas desde el interior de la clase.</p>
+<table>
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Sintaxis</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Propiedad pública</strong></td>
+<td><code>name</code> o <code>this.name</code></td>
+<td>Se puede acceder a la propiedad desde dentro y fuera de la clase.</td>
+</tr>
+<tr>
+<td><strong>Propiedad privada</strong></td>
+<td><code>#name</code> o <code>this.#name</code></td>
+<td>Se puede acceder a la propiedad <strong>sólo</strong> desde dentro de la clase.</td>
+</tr>
+</tbody>
+</table>
+<p>Vamos a echar un vistazo a un ejemplo para entenderlo mejor.</p>
+<h4 id="propiedades-públicas" tabindex="-1"><a class="header-anchor" href="#propiedades-públicas">Propiedades públicas</a></h4>
+<p>Por defecto, las propiedades en las clases son públicas. Observa que siempre vamos a poder acceder a las propiedades desde el constructor u otros métodos (<em>dentro de la clase</em>), ya sean propiedades públicas o privadas:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Personaje</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">;</span>
+  energy <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> mario <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Personaje</span><span class="token punctuation">(</span><span class="token string">"Mario"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// { name: "Mario", energy: 10 }</span>
+mario<span class="token punctuation">.</span>name<span class="token punctuation">;</span>                               <span class="token comment">// "Mario" (se puede acceder desde fuera)</span>
+mario<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"Evil Mario"</span><span class="token punctuation">;</span>
+mario<span class="token punctuation">.</span>name<span class="token punctuation">;</span>                               <span class="token comment">// "Evil Mario" (se ha modificado desde fuera)</span></code></pre>
+<p>Observa también que en las últimas líneas, accedemos a la propiedad <code>name</code> desde fuera de la clase y la modificamos. Esto ocurre porque es una propiedad pública, y es posible hacerlo.</p>
+<h4 id="propiedades-privadas" tabindex="-1"><a class="header-anchor" href="#propiedades-privadas">Propiedades privadas</a></h4>
+<p>A partir de la versión <strong>ECMAScript</strong> <badge-es class="es2020"></badge-es>, se introduce la posibilidad de crear <a href="https://caniuse.com/#feat=mdn-javascript_classes_private_class_fields">propiedades de clase privadas</a>. Por defecto, todas las propiedades y métodos son públicos por defecto, sin embargo, si añadimos el carácter <code>#</code> justo antes del nombre de la propiedad, se tratará de una <strong>propiedad privada</strong>:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Personaje</span> <span class="token punctuation">{</span>
+  #name<span class="token punctuation">;</span>
+  energy <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>#name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> mario <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Personaje</span><span class="token punctuation">(</span><span class="token string">"Mario"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// { name: "Mario", energy: 10 }</span>
+
+<span class="token comment">// Es incorrecto, el nombre correcto de la propiedad es #name</span>
+mario<span class="token punctuation">.</span>name<span class="token punctuation">;</span> <span class="token comment">// undefined</span>
+
+<span class="token comment">// Los dos siguientes dan el mismo error (no se puede acceder a la propiedad privada)</span>
+<span class="token comment">// Uncaught SyntaxError: Private field '#name' must be declared in an enclosing class</span>
+mario<span class="token punctuation">.</span>#name<span class="token punctuation">;</span>
+mario<span class="token punctuation">.</span>#name <span class="token operator">=</span> <span class="token string">"Evil Mario"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Lo siguiente funcionará, pero ha creado otra propiedad 'name' que no es la misma que '#name'</span>
+mario<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"Evil Mario"</span><span class="token punctuation">;</span></code></pre>
+<p>Como se puede ver, las propiedades precedidas del carácter <code>#</code> son automáticamente privadas y sólo se podrá acceder a ellas desde un método de clase, ya que si se hace desde fuera obtendremos un error similar al siguiente:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Uncaught SyntaxError: Private field '#name' must be declared in an enclosing class</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Sin embargo, si se llama a un método público, que a su vez accede a la propiedad privada mediante <code>this.#name</code> todo funcionará correctamente, ya que ese método público si es accesible desde fuera de la clase y la propiedad privada si es accesible desde dentro de la clase.</p>
+<h3 id="ámbitos-de-propiedades-de-clase" tabindex="-1"><a class="header-anchor" href="#ámbitos-de-propiedades-de-clase">Ámbitos de propiedades de clase</a></h3>
+<p>Dentro de una clase tenemos dos tipos de ámbitos: <strong>ámbito de método</strong> y <strong>ámbito de clase</strong>. En primer lugar, veamos el <strong>ámbito dentro de un método</strong>. Si declaramos propiedades dentro de un método con <code>let</code> o <code>const</code>, estos elementos existirán sólo en el método en cuestión. Además, no serán accesibles desde fuera del método:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Personaje</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">"Manz"</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Constructor: "</span> <span class="token operator">+</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Método: "</span> <span class="token operator">+</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Personaje</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 'Constructor: Manz'</span>
+
+c<span class="token punctuation">.</span>name<span class="token punctuation">;</span>       <span class="token comment">// undefined</span>
+c<span class="token punctuation">.</span><span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// 'Método: '</span></code></pre>
+<p>Observa que la variable <code>name</code> solo se muestra cuando se hace referencia a ella dentro del <code>constructor()</code> que es donde se creó y el ámbito donde existe.</p>
+<p>En segundo lugar, tenemos el <strong>ámbito de clase</strong>. Si creamos propiedades de las dos formas que vimos al principio del artículo:</p>
+<ul>
+<li>Precedidas por <code>this.</code> desde dentro del constructor <badge-es class="es2015"></badge-es></li>
+<li>Al inicio de la clase, fuera del constructor <badge-es class="es2020"></badge-es></li>
+</ul>
+<p>En cualquiera de estos dos casos, las propiedades tendrán alcance en toda la clase, por lo que podremos acceder a ellas tanto desde el constructor, como desde otros métodos de la clase:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Personaje</span> <span class="token punctuation">{</span>
+  name <span class="token operator">=</span> <span class="token string">"Manz"</span><span class="token punctuation">;</span>           <span class="token comment">// ES2020+</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"Manz"</span><span class="token punctuation">;</span>    <span class="token comment">// ES2015+</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Constructor: "</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">metodo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Método: "</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Personaje</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 'Constructor: Manz'</span>
+
+c<span class="token punctuation">.</span>name<span class="token punctuation">;</span>     <span class="token comment">// 'Manz'</span>
+c<span class="token punctuation">.</span><span class="token function">metodo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 'Método: Manz'</span></code></pre>
+<blockquote>
+<p>Recuerda que si quieres evitar que estas propiedades de clase se puedan modificar desde fuera de la clase, añade el <code>#</code> antes del nombre de la propiedad al declararla. De esta forma serán propiedades privadas, y sólo se podrá acceder a ellas desde el interior de los métodos de la clase.</p>
+</blockquote>
+<h3 id="propiedades-computadas" tabindex="-1"><a class="header-anchor" href="#propiedades-computadas">Propiedades computadas</a></h3>
+<p>En algunos casos nos puede interesar utilizar lo que se llaman <strong>propiedades computadas</strong>. Las <strong>propiedades computadas</strong> son un tipo de propiedad especial que se declara como una función, y que se ejecuta cuando accedemos a la propiedad con dicho nombre. Hay dos tipos de propiedades computadas, los <strong>getters</strong> y los <strong>setters</strong>.</p>
+<h4 id="propiedades-get-getters" tabindex="-1"><a class="header-anchor" href="#propiedades-get-getters">Propiedades get (getters)</a></h4>
+<p>Veamos el primer caso, la propiedad computada <code>get</code> o también llamada <strong>getter</strong>. Para definirla, simplemente añadimos la palabra clave <code>get</code> antes del nombre de la función. De resto, se define exactamente igual que una función:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Personaje</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">;</span>
+  energy<span class="token punctuation">;</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> energy <span class="token operator">=</span> <span class="token number">10</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>energy <span class="token operator">=</span> energy<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">get</span> <span class="token function">status</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">'⭐'</span><span class="token punctuation">.</span><span class="token function">repeat</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>energy<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> mario <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Personaje</span><span class="token punctuation">(</span><span class="token string">"Mario"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+mario<span class="token punctuation">.</span>energy    <span class="token comment">// 10</span>
+mario<span class="token punctuation">.</span>status    <span class="token comment">// '⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐'</span></code></pre>
+<p>Observa que aunque la definimos como una función <code>status()</code>, luego accedemos a ella como una propiedad <code>mario.status</code>. Por eso se llama <strong>propiedad</strong> computada. La idea de este tipo de propiedades, es permitir pequeñas modificaciones sobre propiedades ya existentes (<em>en nuestro caso, energy</em>). En lugar de devolver el valor numérico, devolvemos el número de estrellas que representa la vida del personaje.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Ten mucho cuidado con acceder a la misma propiedad definida desde dentro del <code>get</code>. Si dentro del <code>get status()</code> accedes a <code>this.status</code>, se produciría un bucle infinito que podría bloquear el navegador.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h4 id="propiedades-set-setters" tabindex="-1"><a class="header-anchor" href="#propiedades-set-setters">Propiedades set (setters)</a></h4>
+<p>De la misma forma que podemos crear un <code>get</code> para obtener un valor, podemos utilizar un <code>set</code> para establecerlo. La idea es exactamente la misma, pero para modificar el valor. En este caso, el ejemplo no es tan didáctico, pero vamos a dar la funcionalidad inversa. Si establecemos un número de estrellas a <code>status</code>, las cuenta y asigna el número a <code>energy</code>:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Personaje</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">;</span>
+  energy<span class="token punctuation">;</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> energy <span class="token operator">=</span> <span class="token number">10</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>energy <span class="token operator">=</span> energy<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">get</span> <span class="token function">status</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">'⭐'</span><span class="token punctuation">.</span><span class="token function">repeat</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>energy<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">set</span> <span class="token function">status</span><span class="token punctuation">(</span><span class="token parameter">stars</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>energy <span class="token operator">=</span> stars<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> mario <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Personaje</span><span class="token punctuation">(</span><span class="token string">"Mario"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+mario<span class="token punctuation">.</span>energy    <span class="token comment">// 10</span>
+mario<span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token string">'⭐⭐⭐'</span>
+mario<span class="token punctuation">.</span>energy    <span class="token comment">// 3</span>
+mario<span class="token punctuation">.</span>status    <span class="token comment">// '⭐⭐⭐'</span></code></pre>
+<p>Observa que ahora la &quot;magia&quot; está en el <code>set status(stars)</code>. Se comporta como una función, y al asignar tres estrellas a <code>mario.status</code>, automágicamente se ha cambiado el valor de <code>mario.energy</code>. Estas <strong>propiedades computadas</strong> nos pueden venir muy bien cuando queramos modificar ligeramente ciertos elementos de una forma automática y organizada.</p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../clases/index.htm" title="Clases en Javascript">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Clases en Javascript</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../metodos-clase/index.htm" title="Métodos de clase">
+  <div>
+    <span>Métodos de clase</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/sU4e6_i_ExU" title="Consejos y buenas prácticas (IV): Javascript + Imágenes">
+  <img loading="lazy" src="../../../vi/sU4e6_i_ExU/mqdefault.jpg" alt="Consejos y buenas prácticas (IV): Javascript + Imágenes">
+</a><a href="https://youtu.be/KE2xRDM4Amg" title="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+  <img loading="lazy" src="../../../vi/KE2xRDM4Amg/mqdefault.jpg" alt="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+</a><a href="https://youtu.be/EiKYr5vjs48" title="Diferencias entre getElementById vs querySelector (y otros métodos del DOM)">
+  <img loading="lazy" src="../../../vi/EiKYr5vjs48/mqdefault.jpg" alt="Diferencias entre getElementById vs querySelector (y otros métodos del DOM)">
+</a><a href="https://youtu.be/UVauEId-jJ0" title="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+  <img loading="lazy" src="../../../vi/UVauEId-jJ0/mqdefault.jpg" alt="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+</a><a href="https://youtu.be/A11eG1o611M" title="Creador de historias con Javascript y ChatGPT">
+  <img loading="lazy" src="../../../vi/A11eG1o611M/mqdefault.jpg" alt="Creador de historias con Javascript y ChatGPT">
+</a><a href="https://youtu.be/Xi07tHFzqR8" title="Cómo CLONAR objetos en Javascript correctamente (structuredClone)">
+  <img loading="lazy" src="../../../vi/Xi07tHFzqR8/mqdefault.jpg" alt="Cómo CLONAR objetos en Javascript correctamente (structuredClone)">
+</a></div>
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajehtml.com/svg/" title="SVG">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#svg"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/css/" title="CSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/postcss/" title="PostCSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="../../../fundamentos/index.htm" title="Fundamentos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="../../index.htm" title="Javascript">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="../../../npm/index.htm" title="NPM">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="../../../webcomponents/index.htm" title="WebComponents">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="../../../vuejs/index.htm" title="VueJS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="../../../automatizadores/index.htm" title="Automatizadores">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a><a class="topic" href="../../../retos/index.htm" title="Retos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#retos"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+    
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-6', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+
+  </div></body>
+
+</html>

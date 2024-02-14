@@ -1,0 +1,645 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ecc022">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Buscar y reemplazar - Javascript en español - Lenguaje JS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Si necesitas comprobar la existencia de textos, buscarlos o reemplazarlos, este es tu lugar para aprender a hacerlo.">
+  <meta name="view-transition" content="same-origin">
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Buscar y reemplazar - Javascript en español">
+  <meta property="og:image" content="https://lenguajejs.com/javascript/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Si necesitas comprobar la existencia de textos, buscarlos o reemplazarlos, este es tu lugar para aprender a hacerlo.">
+  <meta property="og:url" content="https://lenguajejs.com/javascript/string/buscar-y-reemplazar/">
+  <meta property="twitter:url" content="https://lenguajejs.com/javascript/string/buscar-y-reemplazar/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Buscar y reemplazar - Javascript en español">
+  <meta property="twitter:description" content="Si necesitas comprobar la existencia de textos, buscarlos o reemplazarlos, este es tu lugar para aprender a hacerlo.">
+  <meta property="twitter:image" content="https://lenguajejs.com/javascript/large-summary.jpg">
+
+  </head>
+
+<body class="js menu-open " style="--logo-color: #f0db4f"><script>
+    matchMedia("(width <= 1180px)").matches && document.body.classList.toggle("menu-open");
+  </script>
+  
+
+
+
+
+
+
+
+
+<section class="menubar">
+  <div class="menubar-content">
+    <h1>Lenguaje JS</h1>
+
+    <a class="cover" title="Lenguaje JS (javascript)" href="../../index.htm" style="--image: url('../../../assets/javascript.jpg')"></a>
+
+    <header>
+      <a href="../../number/variables-numericas/index.htm" title="¿Qué es un Number?">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m14 26l1.41-1.41L7.83 17H28v-2H7.83l7.58-7.59L14 6L4 16l10 10z"></path></svg>
+      </a>
+      <a href="../../index.htm" title="Volver al índice">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 256"><path fill="#888888" d="M240 210h-18v-94.45a14.06 14.06 0 0 0-4.53-10.32l-80-75.49l-.09-.08a13.94 13.94 0 0 0-18.83 0l-.09.08l-80 75.5A14 14 0 0 0 34 115.55V210H16a6 6 0 0 0 0 12h224a6 6 0 0 0 0-12ZM46 115.55a2 2 0 0 1 .65-1.48l.09-.08l79.94-75.48a2 2 0 0 1 2.63 0L209.26 114l.08.08a2 2 0 0 1 .66 1.48V210h-52v-50a14 14 0 0 0-14-14h-32a14 14 0 0 0-14 14v50H46ZM146 210h-36v-50a2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"></path></svg>
+      </a>
+      <a href="../../objetos/que-son/index.htm" title="¿Qué son los objetos?">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></path></svg>
+      </a>
+    </header>
+
+    <div style="display:none">
+      <svg id="link-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 256 256"><g fill="#888888"><path d="M208 88h-56V32Z" opacity=".2"></path><path d="m213.66 82.34l-56-56A8 8 0 0 0 152 24H56a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V88a8 8 0 0 0-2.34-5.66ZM160 51.31L188.69 80H160ZM200 216H56V40h88v48a8 8 0 0 0 8 8h48v120Z"></path></g></svg>
+      <svg id="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="#888888" d="M2 12.5C2 9.46 4.46 7 7.5 7H18c2.21 0 4 1.79 4 4s-1.79 4-4 4H9.5a2.5 2.5 0 0 1 0-5H17v2H9.41c-.55 0-.55 1 0 1H18c1.1 0 2-.9 2-2s-.9-2-2-2H7.5C5.57 9 4 10.57 4 12.5S5.57 16 7.5 16H17v2H7.5C4.46 18 2 15.54 2 12.5z"></path></svg>
+    </div>
+
+    <div class="links">
+      <span class="folder">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 512 512"><path fill="#888888" d="M41 73v304.563L88.697 151H423v-30H185.514l-16-48H41zm62.303 96L43.092 455h381.605l60.211-286H103.303z"></path></svg>
+        Strings
+      </span>
+            <a class="link" href="../variables-texto/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              ¿Qué es un String?
+            </a>
+            <a class="link" href="../substrings/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Posiciones y substrings
+            </a>
+            <a class="link active" href="index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Buscar y reemplazar
+            </a>
+            <a class="link" href="../modificar/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Modificar cadenas de texto
+            </a>
+            <a class="link" href="../unicode/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Contenido de texto Unicode
+            </a>
+    </div>
+  </div>
+
+  <div class="sidebox">
+    <svg class="close-menu" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19V5m10 1l-6 6l6 6m-6-6h14"></path></svg>
+    <div class="socials">
+      <a class="twitch" href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+      <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+      <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+      <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  const toggleMenu = () => (document.body.classList.toggle("menu-open"));
+  document.querySelector(".close-menu").addEventListener("click", toggleMenu);
+
+  matchMedia("(width <= 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+  matchMedia("(width > 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+
+  const activeLink = document.querySelector(".links .active");
+  const icon = /* svg */`<svg viewBox="0 0 24 24"><use href="#anchor-icon" /></svg>`;
+  const headers = [...document.querySelectorAll(".contents h3")].map(link => ({ text: link.textContent, id: link.id }));
+  const links = [];
+  headers.reverse().forEach(({ text, id }) => {
+    const link = document.createElement("a");
+    link.classList.add("anchor");
+    link.href = "#" + id;
+    link.insertAdjacentHTML("beforeend", icon);
+    link.insertAdjacentText("beforeend", ` ${text}`);
+    activeLink.after(link);
+  });
+</script>
+
+  <div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#js"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeJS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/javascript.jpg')">
+    <h1><a href="index.htm">Buscar y reemplazar</a></h1><h2 class="typewriter">Búsqueda y/o reemplazo de fragmentos de textos</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../substrings/index.htm">Posiciones y substrings</a>
+    <a class="current" href="index.htm">Buscar y reemplazar</a>
+    <a href="../modificar/index.htm">Modificar cadenas de texto</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Una operación muy frecuente y habitual en Javascript, es la de <strong>comprobar la existencia</strong> de un texto, <strong>buscar</strong> o incluso <strong>reemplazar</strong> por otro texto. Dependiendo del caso, hará falta uno u otro, por lo que lo primero que debes tener claro es saber cuál necesitas. Piensa que, aunque la sintaxis o el uso de uno de ellos te resulte más sencillo que otro, hay tareas que puede que no necesites realizar gratuitamente:</p>
+<ul>
+<li>🔍 <strong>Comprobación</strong> (🔍): La más ligera de las tres. Sólo comprueba si existe el fragmento de texto.</li>
+<li>🕵️‍♀️ <strong>Búsqueda</strong> (🔍+🕵️‍♀️): Busca un fragmento de texto, devolviendo información del texto encontrado (<em>posición, texto...</em>).</li>
+<li>🔁 <strong>Reemplazo</strong> (🔍+🕵️‍♀️+🔁): Realiza una búsqueda de un texto y además un reemplazo. Suele ser más costoso.</li>
+</ul>
+<h3 id="comprobación-en-textos" tabindex="-1"><a class="header-anchor" href="#comprobación-en-textos">Comprobación en textos</a></h3>
+<p>Los siguientes métodos se utilizan para realizar algún tipo de <strong>comprobación</strong> y saber si un fragmento de texto <strong>está incluído</strong> en un <badge-type class="string"></badge-type>:</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><badge-type class="boolean"></badge-type> <code>.startsWith(text, from)</code> <badge-es class="es2015"></badge-es></td>
+<td>Comprueba si el texto comienza por <code>text</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="boolean"></badge-type> <code>.endsWith(text, to)</code> <badge-es class="es2015"></badge-es></td>
+<td>Comprueba si el texto termina por <code>text</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="boolean"></badge-type> <code>.includes(text, from)</code> <badge-es class="es2015"></badge-es></td>
+<td>Comprueba si el texto contiene el subtexto <code>text</code>.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Observa que en cada método tienes un <strong>segundo parámetro opcional</strong>, donde se puede indicar desde donde quieres empezar a comprobar (<em>en el caso de <code>from</code></em>), o hasta donde quieres comprobar (<em>en el caso de <code>to</code></em>).</p>
+</blockquote>
+<ul>
+<li>El método <code>.startsWith()</code> devolverá <code>true</code> si el <badge-type class="string"></badge-type> comienza por <code>text</code>. De lo contrario, <code>false</code>.</li>
+<li>El método <code>.endsWith()</code> devolverá <code>true</code> si el <badge-type class="string"></badge-type> acaba en <code>text</code>. De lo contrario, <code>false</code>.</li>
+<li>El método <code>.includes()</code> devolverá <code>true</code> si el <badge-type class="string"></badge-type> contiene <code>text</code>. De lo contrario, <code>false</code>.</li>
+</ul>
+<p>Veamos algunos ejemplos:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> text <span class="token operator">=</span> <span class="token string">"Manz"</span><span class="token punctuation">;</span>
+
+text<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">"M"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// true  ('Manz' empieza por 'M')</span>
+text<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// true  ('anz' empieza por 'a')</span>
+text<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">"o"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// false ('Manz' no acaba en 'o')</span>
+text<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">"n"</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// true  ('Man' acaba en 'n')</span>
+text<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"an"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// true  ('Manz' incluye 'an')</span>
+text<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"M"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// false ('anz' no incluye 'M')</span></code></pre>
+<p>Ten en cuenta que los <badge-type class="number"></badge-type> del segundo parámetro, lo que hacen es acortar el <badge-type class="string"></badge-type> (<em>por el inicio o por el final</em>) antes de realizar la comprobación.</p>
+<h3 id="búsqueda-de-cadenas-de-textos" tabindex="-1"><a class="header-anchor" href="#búsqueda-de-cadenas-de-textos">Búsqueda de cadenas de textos</a></h3>
+<p>Si necesitamos realizar una <strong>búsqueda de un texto</strong> (<em>que muchas veces no tenemos claro como es</em>) y queremos obtener información como la posición o las búsquedas encontradas, y los métodos del tema anterior de <a href="../substrings/index.htm">posiciones y substrings</a> no nos sirven (<em>o se nos quedan cortos</em>), podemos utilizar alguno de los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><badge-type class="number"></badge-type> <code>.search(regexp)</code></td>
+<td>Busca un patrón que encaje con <code>regexp</code> y devuelve la <badge-type class="number"></badge-type> posición encontrada.</td>
+</tr>
+<tr>
+<td><badge-type class="array"></badge-type> <code>.match(regexp)</code></td>
+<td>Idem a la anterior, pero devuelve las coincidencias encontradas.</td>
+</tr>
+<tr>
+<td><badge-type class="array"></badge-type> <code>.matchAll(regexp)</code> <badge-es class="es2022"></badge-es></td>
+<td>Idem a la anterior, pero devuelve un iterador para iterar por cada coincidencia.</td>
+</tr>
+</tbody>
+</table>
+<p>Estas búsquedas toman por parámetro <strong>expresiones regulares</strong>, por lo que suelen ser más potentes y flexibles que buscar sólo por texto. La diferencia fundamental entre ellas es la siguiente:</p>
+<ul>
+<li>El método <code>.search()</code> devuelve la posición de la primera ocurrencia. <code>-1</code> si no se encuentra.</li>
+<li>El método <code>.match()</code> devuelve un <badge-type class="array"></badge-type> con las coincidencias encontradas. <code>null</code> si no se encuentran.</li>
+<li>El método <code>.matchAll()</code> devuelve un iterador para poder recorrer las coincidencias encontradas.</li>
+</ul>
+<p>Veamos algunos ejemplos:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> text <span class="token operator">=</span> <span class="token string">"El gato, el perro y el pato."</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">.a.o</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">;</span>
+
+text<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span>regexp<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// 3, porque la primera coincidencia ocurre en la posición 3 (gato)</span>
+text<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span>regexp<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// ["gato", "pato"], las dos coincidencias encontradas</span></code></pre>
+<p>Por otro lado, el método <code>.matchAll()</code> es un poco más avanzado, y permite realizar la misma acción que <code>.match()</code> pero devolviendo un iterador, lo que nos permite recorrerlo en un bucle:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> text <span class="token operator">=</span> <span class="token string">"El gato, el perro y el pato."</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">.a.o</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> iterator <span class="token operator">=</span> text<span class="token punctuation">.</span><span class="token function">matchAll</span><span class="token punctuation">(</span>regexp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> ocurrence <span class="token keyword">of</span> iterator<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ocurrence<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// ['gato', index: 3, input: 'El gato, el perro y el pato.', groups: undefined]</span>
+<span class="token comment">// ['pato', index: 23, input: 'El gato, el perro y el pato.', groups: undefined]</span></code></pre>
+<p>También es posible utilizar <code>.matchAll()</code> <a href="../../arrays/desestructuracion-arrays/index.htm">desestructurando</a> su resultado, lo que nos permitirá acceder a la información de una forma más directa:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> text <span class="token operator">=</span> <span class="token string">"El gato, el perro y el pato."</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">.a.o</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> results <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>text<span class="token punctuation">.</span><span class="token function">matchAll</span><span class="token punctuation">(</span>regexp<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>    <span class="token comment">// ["gato", "pato"]</span>
+
+results<span class="token punctuation">.</span>length     <span class="token comment">// 2</span>
+results<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>index   <span class="token comment">// 3</span>
+results<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>index   <span class="token comment">// 23</span></code></pre>
+<blockquote>
+<blockquote>
+<p>Para comprender bien el funcionamiento de este método, quizás sería mejor echar un vistazo al tema de <a href="../../arrays/que-es/index.htm">Arrays</a> y de <a href="../../regexp/expresiones-regulares/index.htm">Expresiones regulares</a>, que se aborda unos capítulos más adelante.</p>
+</blockquote>
+</blockquote>
+<h3 id="reemplazar-cadenas-de-texto" tabindex="-1"><a class="header-anchor" href="#reemplazar-cadenas-de-texto">Reemplazar cadenas de texto</a></h3>
+<p>Si lo que necesitamos es reemplazar un texto, tenemos a nuestra disposición una serie de métodos, tanto en versión donde buscas mediante un <badge-type class="string"></badge-type>, como en versión donde buscas mediante una <badge-type class="regexp"></badge-type>:</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><badge-type class="string"></badge-type> <code>.replace(text, newText)</code></td>
+<td>Reemplaza la primera aparición del <badge-type class="string"></badge-type> <code>text</code> por <code>newText</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>.replace(regexp, newText)</code></td>
+<td>Idem, pero busca a partir de una <badge-type class="regexp"></badge-type> en lugar de un <badge-type class="string"></badge-type>.</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>.replaceAll(text, newText)</code> <badge-es class="es2021"></badge-es></td>
+<td>Reemplaza todas las apariciones del texto <code>text</code> por <code>newText</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>.replaceAll(regexp, newText)</code> <badge-es class="es2021"></badge-es></td>
+<td>Idem, pero busca a partir de una <badge-type class="regexp"></badge-type> en lugar de un <badge-type class="string"></badge-type>.</td>
+</tr>
+</tbody>
+</table>
+<p>Observa que dichos métodos se pueden resumir en lo siguiente:</p>
+<ul>
+<li>El método <code>replace()</code> reemplaza <strong>solo la primera aparición</strong> de un texto (<em>salvo que se use una regexp global</em>)</li>
+<li>El método <code>replaceAll()</code> reemplaza <strong>todas las apariciones</strong> de un texto.</li>
+</ul>
+<p>Veamos algunos ejemplos para ilustrarlo mejor.</p>
+<h4 id="reemplazar-textos" tabindex="-1"><a class="header-anchor" href="#reemplazar-textos">Reemplazar textos</a></h4>
+<p>En este caso, usamos los métodos <code>.replace()</code> y <code>.replaceAll()</code>:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> text <span class="token operator">=</span> <span class="token string">"Hola gato, ¿eres un perro o eres un pato?"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Reemplazar la primera ocurrencia</span>
+text<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">"g"</span><span class="token punctuation">,</span> <span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                     <span class="token comment">// "Hola pato, ¿eres un perro o eres un pato?"</span>
+text<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">"g"</span><span class="token punctuation">,</span> <span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">"o"</span><span class="token punctuation">,</span> <span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// "Hala pato, ¿eres un perro o eres un pato?"</span>
+
+<span class="token comment">// Reemplazar todas las ocurrencias</span>
+text<span class="token punctuation">.</span><span class="token function">replaceAll</span><span class="token punctuation">(</span><span class="token string">"e"</span><span class="token punctuation">,</span> <span class="token string">"i"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                  <span class="token comment">// "Hola gato, ¿iris un pirro o iris un pato?"</span>
+text<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">e</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">"i"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                    <span class="token comment">// "Hola gato, ¿iris un pirro o iris un pato?"</span></code></pre>
+<blockquote>
+<blockquote>
+<p>Ten en cuenta que <code>text</code> no cambia (<em>no muta</em>), es decir, el método <code>.replace()</code> devuelve un nuevo <badge-type class="string"></badge-type> con el texto original reemplazado. En los ejemplos anteriores, cada linea está actuando sobre la constante <code>text</code> de la primera línea.</p>
+</blockquote>
+</blockquote>
+<p>El primer grupo, reemplaza <strong>sólo la primera ocurrencia</strong> encontrada. Observa que el segundo ejemplo del primer grupo, encadenamos varios <code>.replace()</code> consecutivos, por lo que se reemplaza la primera ocurrencia de <code>g</code> por <code>p</code> y del resultado, se reemplaza la primera ocurrencia de <code>o</code> por <code>a</code>.</p>
+<p>El segundo grupo, por su parte, se utiliza <code>.replaceAll()</code> o <code>.replace()</code> con una <strong>expresión regular global</strong>, por lo que se reemplazan <strong>todas las ocurrencias</strong>.</p>
+<h4 id="reemplazar-todos-los-textos" tabindex="-1"><a class="header-anchor" href="#reemplazar-todos-los-textos">Reemplazar todos los textos</a></h4>
+<p>Como hemos dicho, la forma más potente de reemplazar todas las ocurrencias, es utilizando <code>.replace()</code> con una <strong>expresión regular global</strong>. Las expresiones regulares permiten crear <strong>patrones complejos</strong> que coicindan en múltiples casos. Por ejemplo, el siguiente caso reemplaza todas las letras vocales por una letra <code>i</code>:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> daenerys <span class="token operator">=</span> <span class="token string">"Javascript es un gran lenguaje"</span><span class="token punctuation">;</span>
+
+daenerys<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[aeou]</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">"i"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// 'Jiviscript is in grin lingiiji'</span></code></pre>
+<p>Desde <strong>ECMAScript</strong> <badge-es class="es2021"></badge-es> es posible utilizar <code>replaceAll()</code> para reemplazar <strong>todas</strong> las ocurrencias de un texto o de una expresión regular. Funciona exactamente igual que <code>replace()</code>, sólo que reemplaza todas las ocurrencias en vez de solamente la primera.</p>
+<h4 id="función-para-reemplazar" tabindex="-1"><a class="header-anchor" href="#función-para-reemplazar">Función para reemplazar</a></h4>
+<p>Además, tanto el método <code>.replace()</code> como el método <code>.replaceAll()</code>, nos permite indicar, como <strong>segundo parámetro</strong> una <badge-type class="function"></badge-type> en lugar de un <badge-type class="string"></badge-type>, permitiendo utilizar dicha función para realizar un reemplazo. En lugar de simplemente reemplazar por un <badge-type class="string"></badge-type>, se reemplaza por lo que devuelve dicha <badge-type class="function"></badge-type>.</p>
+<p>Observa ahora, la versión del <code>.replace()</code> donde le pasamos un segundo parámetro que es una <badge-type class="function"></badge-type> que reemplaza el texto encontrado:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> text <span class="token operator">=</span> <span class="token string">"Hola gato, ¿eres un perro o eres un pato?"</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token function-variable function">replaceAction</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">=></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;=</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+
+text<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">.a.o</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> replaceAction<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// "Hola =>gato&lt;=, ¿eres un perro o eres un =>pato&lt;=?"</span>
+
+text<span class="token punctuation">.</span><span class="token function">replaceAll</span><span class="token punctuation">(</span><span class="token string">"un"</span><span class="token punctuation">,</span> replaceAction<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// "Hola gato, ¿eres =>un&lt;= perro o eres =>un&lt;= pato?"</span></code></pre>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../substrings/index.htm" title="Posiciones y substrings">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Posiciones y substrings</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../modificar/index.htm" title="Modificar cadenas de texto">
+  <div>
+    <span>Modificar cadenas de texto</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/UVauEId-jJ0" title="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+  <img loading="lazy" src="../../../vi/UVauEId-jJ0/mqdefault.jpg" alt="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+</a><a href="https://youtu.be/S0YA8BadVbM" title="Cambiar clases CSS desde Javascript con classList">
+  <img loading="lazy" src="../../../vi/S0YA8BadVbM/mqdefault.jpg" alt="Cambiar clases CSS desde Javascript con classList">
+</a><a href="https://youtu.be/EiKYr5vjs48" title="Diferencias entre getElementById vs querySelector (y otros métodos del DOM)">
+  <img loading="lazy" src="../../../vi/EiKYr5vjs48/mqdefault.jpg" alt="Diferencias entre getElementById vs querySelector (y otros métodos del DOM)">
+</a><a href="https://youtu.be/Xi07tHFzqR8" title="Cómo CLONAR objetos en Javascript correctamente (structuredClone)">
+  <img loading="lazy" src="../../../vi/Xi07tHFzqR8/mqdefault.jpg" alt="Cómo CLONAR objetos en Javascript correctamente (structuredClone)">
+</a><a href="https://youtu.be/sU4e6_i_ExU" title="Consejos y buenas prácticas (IV): Javascript + Imágenes">
+  <img loading="lazy" src="../../../vi/sU4e6_i_ExU/mqdefault.jpg" alt="Consejos y buenas prácticas (IV): Javascript + Imágenes">
+</a><a href="https://youtu.be/KE2xRDM4Amg" title="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+  <img loading="lazy" src="../../../vi/KE2xRDM4Amg/mqdefault.jpg" alt="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+</a></div>
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajehtml.com/svg/" title="SVG">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#svg"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/css/" title="CSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/postcss/" title="PostCSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="../../../fundamentos/index.htm" title="Fundamentos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="../../index.htm" title="Javascript">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="../../../npm/index.htm" title="NPM">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="../../../webcomponents/index.htm" title="WebComponents">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="../../../vuejs/index.htm" title="VueJS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="../../../automatizadores/index.htm" title="Automatizadores">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a><a class="topic" href="../../../retos/index.htm" title="Retos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#retos"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+    
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-6', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+
+  </div></body>
+
+</html>

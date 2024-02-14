@@ -1,0 +1,111 @@
+/* 1er. ejemplo */
+
+.animate-content{
+    width: 90%;
+    height: auto;
+    padding: 1.5em;
+    margin: 1.5em auto;
+    border: 1px solid violet;
+    position: relative;
+}
+
+.animate-1{
+    width: 50%;
+    height: 200px;
+    margin: 2em auto;
+    padding: 0;
+    border: 1px solid blue;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animate-1 .item{
+    animation: xpan 3s;
+    -webkit-animation: xpan 3s;
+}
+
+@keyframes xpan {
+    0%{
+        width: 50px;
+        height: 50px;
+        background: red;
+    }
+
+    50%{
+        width: 100px;
+        height: 100px;
+        background: blue;
+    }
+
+    100%{
+        width: 50px;
+        height: 50px;
+        background: red;
+    }
+}
+
+/* Fin 1er. ejemplo */
+
+/* 2do. ejemplo: corazon */
+
+.animate-2{
+    margin: 1.5em auto;
+    width: 90%;
+    height: 500px;
+    border: 1px solid blue;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animate-2 .item {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  transform: rotate(45deg);
+  animation-name: beat;
+  animation-duration: 2s;
+  /* animation-iteration-count: infinite; */
+  animation-iteration-count: 4;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+
+.animate-2 .item::before,
+.animate-2 .item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.animate-2 .item::before {
+  top: 0;
+  left: -50px;
+}
+
+.animate-2 .item::after {
+  top: -50px;
+  left: 0;
+}
+
+@keyframes beat {
+  0% {
+    transform: rotate(45deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(45deg) scale(2);
+  }
+}
+
+/* Fin 2do ejemplo */

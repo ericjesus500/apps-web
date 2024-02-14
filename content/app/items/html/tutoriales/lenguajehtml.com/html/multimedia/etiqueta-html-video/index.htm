@@ -1,0 +1,573 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e44f26">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>La etiqueta HTML &lt;video&gt; - HTML en español - Lenguaje HTML</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="¿Cómo colocar videos en una página HTML? ¿Qué formatos de video debo utilizar?">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="La etiqueta HTML &lt;video&gt; - HTML en español">
+  <meta property="og:image" content="https://lenguajehtml.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="¿Cómo colocar videos en una página HTML? ¿Qué formatos de video debo utilizar?">
+  <meta property="og:url" content="https://lenguajehtml.com/html/multimedia/etiqueta-html-video/">
+  <meta property="twitter:url" content="https://lenguajehtml.com/html/multimedia/etiqueta-html-video/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="La etiqueta HTML &lt;video&gt; - HTML en español">
+  <meta property="twitter:description" content="¿Cómo colocar videos en una página HTML? ¿Qué formatos de video debo utilizar?">
+  <meta property="twitter:image" content="https://lenguajehtml.com/large-summary.jpg">
+
+  </head>
+
+<body class="html" style="--logo-color: #e44f26"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="/">
+  <svg><use href="../../../assets/logos.svg#html"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeHTML.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/html.jpg')">
+    <h1><a href="index.htm">La etiqueta HTML &lt;video&gt;</a></h1><h2 class="typewriter">Etiqueta HTML para indicar archivos de video en nuestra web</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../etiqueta-html-picture/index.htm">La etiqueta HTML &lt;picture&gt;</a>
+    <a class="current" href="index.htm">La etiqueta HTML &lt;video&gt;</a>
+    <a href="../etiqueta-html-audio/index.htm">La etiqueta HTML &lt;audio&gt;</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>En HTML5 se introduce la interesante posibilidad de <strong>mostrar videos directamente</strong> desde nuestro navegador. De hecho, si arrastramos un video a la ventana del navegador, comprobaremos que comienza a reproducirse en él. Esto ocurre porque los navegadores son capaces de mostrar imágenes, reproducir video y audio.</p>
+<p>Para mostrarlos en nuestras páginas, usaremos la etiqueta HTML <code>&lt;video&gt;</code>, la cuál tiene varios atributos que podemos utilizar:</p>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src</code></td>
+<td>Archivo o URL del video a reproducir. Obligatoria si no tiene etiquetas dentro.</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td>Indica el tamaño de ancho del video.</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td>Indica el tamaño de alto del video.</td>
+</tr>
+</tbody>
+</table>
+<p>Un primer ejemplo muy básico para colocar un video en nuestra página web podría ser el siguiente:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video.mp4<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>640<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>480<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span></code></pre>
+<p>Al igual que vimos en el apartado de <a href="../etiqueta-html-img/index.htm">etiqueta <code>&lt;img&gt;</code></a>, tenemos a nuestra disposición el atributo <code>src</code> para indicar la ruta o archivo de video, el atributo <code>width</code> para indicarle un tamaño de ancho y el atributo <code>height</code> para indicar un tamaño de alto.</p>
+<p>Indicar los valores de ancho y alto en el HTML es una buena práctica, porque reservamos el tamaño inicialmente aunque el video no se haya descargado, y así evitamos posibles saltos o cambios de tamaño que desembocan en comportamientos molestos e inesperados al cargar una web.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>Ojo</strong>: Si lo que quieres es insertar videos desde <strong>Youtube</strong>, <strong>Vimeo</strong> u otro servicio alternativo, debes utilizar la <a href="../etiqueta-html-iframe/index.htm">etiqueta HTML iframe</a> en lugar de la etiqueta <code>&lt;video&gt;</code>. Esta última sólo sirve para archivos en formato de video directamente.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="atributos-de-control" tabindex="-1"><a class="header-anchor" href="#atributos-de-control">Atributos de control</a></h3>
+<p>Pero las etiquetas <code>&lt;video&gt;</code>, al igual que las etiquetas <code>&lt;audio&gt;</code> que veremos más adelante, tienen una serie de atributos <badge-type class="boolean"></badge-type>, es decir, atributos de verdadero o falso, para activar o desactivar características. Para activarlas, simplemente tenemos que indicar el atributo en la etiqueta, para desactivarlas, simplemente lo omitimos.</p>
+<p>Estas características son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>autoplay</code></td>
+<td>Comienza a reproducir el video automáticamente. OJO, está sujeto a normas del navegador.</td>
+</tr>
+<tr>
+<td><code>loop</code></td>
+<td>Vuelve a iniciar el video cuando finaliza su reproducción (en bucle).</td>
+</tr>
+<tr>
+<td><code>muted</code></td>
+<td>Establece que el video se reproduzca con sonido muteado (silenciado).</td>
+</tr>
+<tr>
+<td><code>controls</code></td>
+<td>Muestra los controles de reproducción (por defecto no se muestran).</td>
+</tr>
+<tr>
+<td><code>playsinline</code></td>
+<td>Reproduce el video <strong>en línea</strong>, es decir, en su área de reproducción.</td>
+</tr>
+</tbody>
+</table>
+<p>Una aclaración sobre el atributo <code>playsinline</code>: En algunos dispositivos móviles, al reproducir el video, este se muestra en pantalla completa, dejando la web en un segundo plano. Si establecemos el atributo <code>playsinline</code>, obligaremos a que el video se reproduzca en el lugar donde se encuentra.</p>
+<p>Veamos un sencillo ejemplo aplicado:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video.mp4<span class="token punctuation">"</span></span> <span class="token attr-name">autoplay</span> <span class="token attr-name">muted</span> <span class="token attr-name">loop</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span></code></pre>
+<p>Este video se reproducirá automáticamente, silenciado y en modo bucle, es decir, cuando llegue al final, comenzará a reproducirse de nuevo. Ten en cuenta que un video <code>.mp4</code> que no tenga el atributo <code>controls</code>, por norma general, el usuario lo interpretará como si fuera una imagen o <code>.gif</code> animado. Si no ve claramente que hay una barra de controles, no caerá en que se trata de un video.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Desde 2017, Chrome, Firefox y otros navegadores establecieron un <a href="https://developers.google.com/web/updates/2017/09/autoplay-policy-changes">cambio de políticas</a> con el atributo de reproducción automática <code>autoplay</code>, por lo que lo más probable es que la autoreproducción no funcione salvo que el usuario haya interactuado antes en la página (<em>click, scroll, etc...</em>).</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>En algunos casos, especialmente en dispositivos móviles, puede que los videos no se reproduzcan automáticamente si tienen un canal de audio (<em>incluso aunque se use el atributo <code>muted</code></em>). Si quieres establecer un video de fondo para el diseño de una web, es aconsejable retirar el canal de audio del video. Esto hará que el video ocupe menos y no de este tipo de problemas en móviles.</p>
+</blockquote>
+</blockquote>
+<h3 id="atributos-de-precarga" tabindex="-1"><a class="header-anchor" href="#atributos-de-precarga">Atributos de precarga</a></h3>
+<p>Existen algunos atributos más para utilizar en la etiqueta <code>&lt;video&gt;</code>, que resultan muy interesantes ya que están relacionados con la precarga del video:</p>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>poster</code></td>
+<td>Muestra una imagen a modo de presentación.</td>
+</tr>
+<tr>
+<td><code>preload</code></td>
+<td>Indica como realizar la precarga del video.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="el-atributo-poster" tabindex="-1"><a class="header-anchor" href="#el-atributo-poster">El atributo <code>poster</code></a></h4>
+<p>Por defecto, las etiquetas <code>&lt;video&gt;</code> muestran el fotograma inicial del video enlazado, ya sea un fotograma del mismo o una pantalla negra inicial. Sin embargo, podemos mostrar una imagen personalizada a modo de «carátula» como lo hace, por ejemplo <strong>Youtube</strong>, de modo que el video no se llega a mostrar hasta que el usuario pulsa en el botón de <strong>play</strong>.</p>
+<p>Para ello, utilizaremos el atributo <code>poster</code>, que funciona de forma similar al atributo <code>src</code> de una imagen <code>&lt;img&gt;</code>. En ella podremos indicar la dirección de la imagen que queremos utilizar como carátula.</p>
+<h4 id="el-atributo-preload" tabindex="-1"><a class="header-anchor" href="#el-atributo-preload">El atributo <code>preload</code></a></h4>
+<p>Mediante el atributo <code>preload</code> podemos indicar al navegador como queremos que se comporte respecto a los elementos de video. Por defecto, el navegador tiene el valor <code>auto</code> en este atributo, por lo que decidirá si es necesario descargarlo o no, pero podemos utilizar los valores <code>none</code> o <code>metadata</code> para cambiar este comportamiento:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>auto</code></td>
+<td>Valor por defecto. EL navegador decide si debe descargar el video de forma anticipada o no.</td>
+</tr>
+<tr>
+<td><code>none</code></td>
+<td>Se le indica al navegador que no descargue el video hasta que se pulse el botón de play.</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td>Se le indica al navegador que descargue los metadatos del video, pero no el video en sí.</td>
+</tr>
+</tbody>
+</table>
+<p>Veamos otro ejemplo con lo que hemos aprendido:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video.webm<span class="token punctuation">"</span></span> <span class="token attr-name">poster</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>presentacion.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">preload</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>metadata<span class="token punctuation">"</span></span> <span class="token attr-name">controls</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span></code></pre>
+<p>En este caso indicamos que el navegador debe mostrar un video, pero en lugar de mostrar el primer fotograma del mismo, utilizará una imagen de presentación mediante el atributo <code>poster</code>. El archivo de video no se descargará de forma anticipada inicialmente, puesto que se ha indicado que sólo se descarguen sus metadatos (<em>título, duración, etc...</em>). Además, se ha establecido que muestre los controles por defecto.</p>
+<h3 id="formatos-de-video" tabindex="-1"><a class="header-anchor" href="#formatos-de-video">Formatos de video</a></h3>
+<p>Antes de continuar, debemos conocer una serie de conceptos básicos y los diferentes formatos de video que existen actualmente. En primer lugar, debemos saber que un archivo de video se compone de dos partes principales:</p>
+<ul>
+<li>El <strong>formato contenedor</strong>, que es el formato del video en sí.</li>
+<li><strong>Canales</strong> internos (<em>canal de audio, canal de video, etc...</em>), codificados con diferentes <strong>codecs</strong>.</li>
+</ul>
+<p><img src="formato-contenedor-video.png" alt="Formato contenedor de video" width="1175" height="522" loading="lazy"></p>
+<p>Un video simple, suele tener como mínimo, un canal de video y otro de audio, sin embargo puede tener muchos más (<em>subtítulos, imágenes, canales de audio alternativos, etc...</em>). Esto es un detalle muy importante, ya que dependiendo del formato y/o codec, puede que sea factible utilizarlo para web o no.</p>
+<p>A continuación tenemos un listado de los formatos/codecs más conocidos y utilizados para web:</p>
+<table>
+<thead>
+<tr>
+<th>Formato</th>
+<th>Códecs utilizado</th>
+<th>Características</th>
+<th>¿Recomendado?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="3">Formatos modernos</td>
+</tr>
+<tr>
+<td><a href="https://mpeg.chiariglione.org/standards/mpeg-4/mpeg-4.htm">MP4</a></td>
+<td><a href="https://www.videolan.org/developers/x264.html">x264</a>, <a href="https://www.divx.com/en/software/technologies/h264/">DivX H264</a></td>
+<td>Alta calidad. El códec x264 es libre.</td>
+<td>✅ <a href="https://caniuse.com/mpeg4">Buen soporte</a></td>
+</tr>
+<tr>
+<td><a href="https://www.webmproject.org/">WebM</a></td>
+<td>VP8, VP9</td>
+<td>Alternativa libre a MP4 de Google.</td>
+<td>✅ <a href="https://caniuse.com/webm">Buen soporte</a></td>
+</tr>
+<tr>
+<td colspan="3">Formatos de nueva generación</td>
+</tr>
+<tr>
+<td><a href="https://aomedia.org/">AV1</a></td>
+<td>Basado en VP10, Daala y Thor</td>
+<td>Compite con HEVC/H.265</td>
+<td>❌ <a href="https://caniuse.com/av1">Soporte irregular</a></td>
+</tr>
+<tr>
+<td>HEVC</td>
+<td><a href="http://x265.org/">x265</a>, <a href="https://www.divx.com/en/software/technologies/hevc/">DivX HEVC</a></td>
+<td>Futura evolución de MP4.</td>
+<td>❌ <a href="https://caniuse.com/hevc">Soporte irregular</a></td>
+</tr>
+<tr>
+<td colspan="3">Formatos más antiguos o no orientados a web</td>
+</tr>
+<tr>
+<td><a href="https://caniuse.com/ogv">OGV</a></td>
+<td><a href="https://www.theora.org/">Theora</a></td>
+<td>Alternativa libre a MP4.</td>
+<td>⚠️ <a href="https://caniuse.com/ogv">Sin soporte en Safari</a></td>
+</tr>
+<tr>
+<td>MKV</td>
+<td><a href="https://www.matroska.org/">Matroska</a></td>
+<td>Buena compresión. Potente.</td>
+<td>❌ Alto consumo CPU</td>
+</tr>
+<tr>
+<td>AVI</td>
+<td><a href="https://www.xvid.com/">XviD</a>, <a href="https://www.divx.com/">DivX 3/5</a></td>
+<td>Menor compresión que MP4.</td>
+<td>❌ Anticuado</td>
+</tr>
+</tbody>
+</table>
+<p>Otros formatos como <code>MOV</code>, <code>FLV</code>, <code>3GP</code>, <code>MPG</code>, <code>RMVB</code> o <code>ASF</code>/<code>WMV</code> no se recomiendan para su utilización en web ya que son anticuados, propietarios o poco eficientes.</p>
+<h3 id="videos-con-fallbacks-o-extras" tabindex="-1"><a class="header-anchor" href="#videos-con-fallbacks-o-extras">Videos con fallbacks o extras</a></h3>
+<p>Sin embargo, aún con toda esta información, no hemos visto ni la mitad de posibilidades multimedia que tenemos con HTML5. La etiqueta <code>&lt;video&gt;</code> también puede actuar como etiqueta contenedora e incluir varias etiquetas HTML para dotar de mayor compatibilidad, o capacidades adicionales, de forma muy similar a como lo hace la etiqueta <code>&lt;picture&gt;</code> de imágenes.</p>
+<p>Las etiquetas que podemos incluir dentro de una etiqueta <code>&lt;video&gt;</code> son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Etiqueta</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;source&gt;</code></td>
+<td>Establece un archivo de video principal o alternativo.</td>
+</tr>
+<tr>
+<td><code>&lt;track&gt;</code></td>
+<td>Establece un archivo de subtítulos principal o alternativo.</td>
+</tr>
+<tr>
+<td><code>&lt;img&gt;</code></td>
+<td>Establece una imagen como fallback, para navegadores que no soporten video.</td>
+</tr>
+</tbody>
+</table>
+<p>Un poco más adelante veremos las etiquetas <code>&lt;track&gt;</code>, que sirven para indicar subtítulos.</p>
+<h4 id="la-etiqueta-source" tabindex="-1"><a class="header-anchor" href="#la-etiqueta-source">La etiqueta <code>&lt;source&gt;</code></a></h4>
+<p>Si utilizamos la etiqueta <code>&lt;video&gt;</code> como etiqueta contenedora, podemos incluir etiquetas <code>&lt;source&gt;</code> en su interior para proporcionar videos con formatos alternativos y tener mayor compatibilidad con navegadores antiguos. De esta forma, navegadores que soporten nuevos formatos, aprovecharán estos recursos, y los que no utilizarán los antiguos o las etiquetas de fallback.</p>
+<p>Veamos una posible implementación de la etiqueta <code>&lt;video&gt;</code> como etiqueta contenedores con múltiples alternativas:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>640<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>480<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video.mp4<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video/mp4<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video.webm<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video/webm<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video.ogv<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video/ogg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>imagen.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Video no soportado<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  Su navegador no soporta contenido multimedia.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span></code></pre>
+<p>En este ejemplo, los navegadores no mostrarán todos los contenidos a la vez, sino que seguirán los siguientes pasos:</p>
+<ol>
+<li>Intenta mostrar el primer formato: <code>MP4</code>. Si el navegador no lo soporta, salta al siguiente.</li>
+<li>Intenta mostrar el segundo formato: <code>WEBM</code>. Si el navegador no lo soporta, salta al siguiente.</li>
+<li>Intenta mostrar el tercer formato: <code>OGV</code>. Si el navegador no lo soporta, salta al siguiente.</li>
+<li>Si se trata de un navegador que no soporta HTML5 ni sus etiquetas de video, intentará mostrar la imagen.</li>
+<li>Si se trata de un navegador de terminal de texto (<em>o sin capacidades gráficas</em>), mostrará el texto del final.</li>
+</ol>
+<p>De esta forma tenemos soporte completo para todo tipo de dispositivos.</p>
+<h4 id="acceso-a-segundos-específicos" tabindex="-1"><a class="header-anchor" href="#acceso-a-segundos-específicos">Acceso a segundos específicos</a></h4>
+<p>Utilizando los <a href="https://www.w3.org/TR/media-frags/">fragmentos multimedia</a> se pueden conseguir algunas acciones interesantes, como por ejemplo especificar el momento concreto del video (<em>o audio</em>) en el que se quiere empezar a reproducir o terminar de reproducir.</p>
+<p>Veamos algunos ejemplos:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">controls</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video.mp4#t=15<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span></code></pre>
+<p>En este primer caso, reproducimos el video <code>video.mp4</code> a partir del segundo <code>15</code> del mismo. Aparecerán los controles puesto que hemos definido el atributo <code>controls</code>.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">autoplay</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>clip.mp4#t=25,45<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span></code></pre>
+<p>En este segundo caso, reproducimos el video <code>clip.mp4</code> a partir del segundo <code>25</code>, hasta llegar al segundo <code>45</code>. No aparecerán los controles puesto que hemos omitido el atributo <code>controls</code>, pero como hemos definido el atributo <code>autoplay</code>, si el clip de video no tiene canal de audio, el video se reproducirá automáticamente aunque el usuario no haya interactuado previamente en la página, como generalmente se requiere.</p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../etiqueta-html-picture/index.htm" title="La etiqueta HTML &lt;picture&gt;">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>La etiqueta HTML &lt;picture&gt;</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../etiqueta-html-audio/index.htm" title="La etiqueta HTML &lt;audio&gt;">
+  <div>
+    <span>La etiqueta HTML &lt;audio&gt;</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/SVomAFpMw30" title="Consejos y buenas prácticas (II): HTML + WebFonts">
+  <img loading="lazy" src="../../../vi/SVomAFpMw30/mqdefault.jpg" alt="Consejos y buenas prácticas (II): HTML + WebFonts">
+</a><a href="https://youtu.be/LAHR5gl07ks" title="Consejos y buenas prácticas (V): Accesibilidad">
+  <img loading="lazy" src="../../../vi/LAHR5gl07ks/mqdefault.jpg" alt="Consejos y buenas prácticas (V): Accesibilidad">
+</a><a href="https://youtu.be/7oPdEM0VXOs" title="Consejos y buenas prácticas (VI): Performance">
+  <img loading="lazy" src="../../../vi/7oPdEM0VXOs/mqdefault.jpg" alt="Consejos y buenas prácticas (VI): Performance">
+</a><a href="https://youtu.be/cQIlwKSAyAc" title="Crear packs de iconos con sprites SVG">
+  <img loading="lazy" src="../../../vi/cQIlwKSAyAc/mqdefault.jpg" alt="Crear packs de iconos con sprites SVG">
+</a><a href="https://youtu.be/RW5erp81FMY" title="Consejos y buenas prácticas (I): HEAD">
+  <img loading="lazy" src="../../../vi/RW5erp81FMY/mqdefault.jpg" alt="Consejos y buenas prácticas (I): HEAD">
+</a><a href="https://youtu.be/lDPJQyXow_g" title="Consejos y buenas prácticas (VII): SEO">
+  <img loading="lazy" src="../../../vi/lDPJQyXow_g/mqdefault.jpg" alt="Consejos y buenas prácticas (VII): SEO">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-5', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

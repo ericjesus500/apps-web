@@ -1,0 +1,447 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Combinadores lógicos - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Los combinadores lógicos son pseudoclases funcionales mediante las cuales podemos simplificar nuestros selectores CSS.">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Combinadores lógicos - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/css/selectores/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Los combinadores lógicos son pseudoclases funcionales mediante las cuales podemos simplificar nuestros selectores CSS.">
+  <meta property="og:url" content="https://lenguajecss.com/css/selectores/combinadores-logicos/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/selectores/combinadores-logicos/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Combinadores lógicos - CSS en español">
+  <meta property="twitter:description" content="Los combinadores lógicos son pseudoclases funcionales mediante las cuales podemos simplificar nuestros selectores CSS.">
+  <meta property="twitter:image" content="https://lenguajecss.com/css/selectores/large-summary.jpg">
+
+  </head>
+
+<body class="css" style="--logo-color: #1e7bbf"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/css.jpg')">
+    <h1><a href="index.htm">Combinadores lógicos</a></h1><h2 class="typewriter">Formas de agrupar selectores CSS complejos</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../combinadores/index.htm">Combinadores</a>
+    <a class="current" href="index.htm">Combinadores lógicos</a>
+    <a href="../pseudoclases/index.htm">Pseudoclases</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>En ciertas situaciones, es posible que queramos crear <strong>grupos con diferentes selectores</strong> con el objetivo de escribir menos código, o reutilizar bloques de código CSS en más situaciones, de forma que sean más potentes y flexibles.</p>
+<p>La forma más sencilla de conseguir esto, es crear <strong>agrupaciones</strong> con diferentes selectores separando por <strong>comas</strong>.</p>
+<h3 id="agrupación-de-selectores" tabindex="-1"><a class="header-anchor" href="#agrupación-de-selectores">Agrupación de selectores</a></h3>
+<p>Imagina una situación en la que varios bloques de código CSS contienen las mismas propiedades con los mismos valores. Generalmente, escribir cada bloque de forma individual no es apropiado, ya que duplica un código que es exactamente igual:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.container-logo</span> <span class="token punctuation">{</span>
+  <span class="token property">border-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.container-alert</span> <span class="token punctuation">{</span>
+  <span class="token property">border-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.container-warning</span> <span class="token punctuation">{</span>
+  <span class="token property">border-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Si esto ocurre a menudo, el tamaño del documento CSS será más grande y tardará más en descargarse. Una buena práctica para evitarlo es <strong>ahorrar texto y simplificar</strong> nuestro documento CSS lo máximo posible, por lo que podemos hacer uso de la <strong>agrupación CSS</strong> utilizando el símbolo de la <strong>coma</strong>.</p>
+<p>De esta forma, podemos pasar de tener el ejemplo anterior, a tener el siguiente ejemplo (<em>que es totalmente equivalente</em>), donde hemos utilizado la agrupación para decirle al navegador que aplique dichos estilos a las diferentes clases:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.container-logo, .container-alert, .container-warning</span> <span class="token punctuation">{</span>
+  <span class="token property">border-color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Al margen de esto, dos buenas prácticas que podríamos aplicar en esta situación serían las siguientes:</p>
+<ul>
+<li>
+<p><strong>Simplifica por responsabilidades</strong>: <code>.container-alert</code> y <code>.container-warning</code> parecen tener un concepto muy similar: alertas o mensajes de advertencia. Es posible que estos selectores tengan la misma funcionalidad y sean sinónimos. Si es así, lo ideal sería refactorizar y simplificarlos a uno: <code>.container-warning</code>, haciendo desaparecer el otro.</p>
+</li>
+<li>
+<p><strong>Legibilidad por delante</strong>: El código CSS por si sólo puede ser difícil de leer y mantener. Aunque a priori puede parecer que es mejor escribir la lista de selectores uno detrás de otro, la experiencia nos dicta que deberíamos separarlos en una línea diferente cada selector. Esto lo hace mucho más legible a la hora de leer.</p>
+</li>
+</ul>
+<pre class="language-css"><code class="language-css"><span class="token selector">.container-logo,
+.container-warning</span> <span class="token punctuation">{</span>
+  <span class="token property">border-color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Estos <strong>consejos</strong> pueden parecer poco importantes, pero a medida que avanzamos con nuestro diseño y escribimos más código CSS, este se hace muy grande y difícil de mantener, por lo que cuanto más sencillo lo mantengamos, mejor.</p>
+<h3 id="qué-es-un-combinador-lógico" tabindex="-1"><a class="header-anchor" href="#qué-es-un-combinador-lógico">¿Qué es un combinador lógico?</a></h3>
+<p>Sin embargo, las <strong>comas</strong> sólo son la forma más sencilla y simple de reutilizar selectores. En CSS, tenemos a nuestra disposición una serie de mecanismos para agrupar o combinar selectores de una forma más potente y flexible, dentro de una categoría denominada <strong>combinadores lógicos</strong>.</p>
+<p>Estos <strong>combinadores lógicos</strong> nos permiten seleccionar elementos con ciertas restricciones y funcionan como una <strong>pseudoclase</strong> (<em>ver más adelante</em>), sólo que se le pueden pasar parámetros, ya que son de tipo <strong>pseudoclase funcional</strong>.</p>
+<p>Veamos los mecanismos que tenemos a nuestra disposición para ello:</p>
+<table>
+<thead>
+<tr>
+<th>Selector</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2"><strong>Lista de selectores</strong></td>
+</tr>
+<tr>
+<td><code>div, button, p</code></td>
+<td>Agrupaciones. Seleccionamos varios elementos separándolos por comas.</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Combinadores lógicos</strong></td>
+</tr>
+<tr>
+<td><code>:is()</code></td>
+<td>Agrupaciones. Idem al anterior, pero <strong>permite combinar</strong> con otros selectores.</td>
+</tr>
+<tr>
+<td><code>:where()</code></td>
+<td>Agrupaciones. Idem al anterior, pero con <strong>menor especificidad CSS</strong>.</td>
+</tr>
+<tr>
+<td><code>:has()</code></td>
+<td>Permite seleccionar <strong>elementos padre</strong> que tengan ciertas características en sus <strong>hijos</strong>.</td>
+</tr>
+<tr>
+<td><code>:not()</code></td>
+<td>Permite seleccionar elementos que <strong>no</strong> cumplan ciertas características.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="el-combinador-is" tabindex="-1"><a class="header-anchor" href="#el-combinador-is">El combinador <code>:is()</code></a></h4>
+<p>La <strong>pseudoclase funcional</strong> <code>:is()</code> es un reemplazo práctico de la agrupación de selectores mediante <strong>comas</strong>, que permite reescribir selectores complejos de una forma mucho más práctica y compacta, ya que permite combinar y acumular con otros selectores anteriores o posteriores a <code>:is()</code>.</p>
+<p>Observa el siguiente selector que agrupa tres selectores diferentes (<em>de momento, ignora la especificidad, hablaremos de ello más tarde</em>):</p>
+<pre class="language-css"><code class="language-css">.container .list<span class="token punctuation">,</span>   <span class="token comment">/* Especificidad (0,2,0) */</span>
+.container .menu<span class="token punctuation">,</span>   <span class="token comment">/* Especificidad (0,2,0) */</span>
+<span class="token selector">.container ul</span> <span class="token punctuation">{</span>     <span class="token comment">/* Especificidad (0,1,1) */</span>
+  <span class="token comment">/* ... */</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Si nos fijamos bien, la clase <code>.container</code> siempre aparece en cada uno de los tres casos, sin embargo, no hay forma de abreviarla, aunque sólo cambie la última parte. Algo que se acentúa si el selector es mucho más largo.</p>
+<p>Con la <strong>pseudoclase</strong> <code>:is()</code> si que podemos abreviar la información repetida en el ejemplo anterior, haciéndolo de la siguiente forma:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.container :is(.list, .menu, ul)</span> <span class="token punctuation">{</span>  <span class="token comment">/* Especificidad (0,2,0) */</span>
+  <span class="token comment">/* ... */</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Esto nos permite crear código mucho más compacto y sencillo de leer y escribir. Antiguamente, esta pseudoclase era conocida como <code>:matches()</code>, pero finalmente fue renombrada a <code>:is()</code>, por lo que es posible que nos la encontremos de esta forma si accedemos a documentación antigua.</p>
+<blockquote>
+<p>Sin embargo, mucho cuidado con la <strong>especificidad CSS</strong>, ya que no tiene porque ser equivalente. Con la pseudoclase <code>:is()</code>, se calcula la especificidad sumando la especificidad más alta de sus parámetros. Para el selector <code>.container .list</code> la especificidad sería <code>(0,2,0)</code> tanto usando <code>:is()</code> como no usándolo, sin embargo, en el caso del selector <code>.container ul</code>, en el primer caso sin <code>:is()</code>, la especificidad sería <code>(0,1,1)</code>, mientras que con <code>:is()</code> seguiría siendo <code>(0,2,0)</code>.</p>
+</blockquote>
+<h4 id="el-combinador-where" tabindex="-1"><a class="header-anchor" href="#el-combinador-where">El combinador <code>:where()</code></a></h4>
+<p>El combinador <code>:where()</code> funciona exactamente igual que el combinador <code>:is()</code>, la única diferencia que tiene es en cuanto a la <strong>especificidad CSS</strong>. Mientras que con <code>:is()</code>, la especificidad es el valor más alto de la lista de parámetros, en el caso de <code>:where()</code> es <strong>siempre cero</strong>.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.container :is(.list, .element, .menu)</span> <span class="token punctuation">{</span>  <span class="token comment">/* Especificidad (0,2,0) */</span>
+  <span class="token comment">/* ... */</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.container :where(.list, .element, .menu)</span> <span class="token punctuation">{</span>  <span class="token comment">/* Especificidad (0,1,0) */</span>
+  <span class="token comment">/* ... */</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Este combinador <code>:where()</code> puede ser útil para casos en los que se quiere anular la especificidad de un elemento fácilemente si se sobreescribe con otro selector.</p>
+<h4 id="el-combinador-has" tabindex="-1"><a class="header-anchor" href="#el-combinador-has">El combinador <code>:has()</code></a></h4>
+<p>La pseudoclase <code>:has()</code> permite seleccionar el elemento precedido, si sus elementos hijos cumplen los criterios indicados por parámetro. Esto puede resultar un poco confuso, pero se ve claramente en el siguiente ejemplo:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">a:has(> img)</span> <span class="token punctuation">{</span>
+  <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>En este caso, la propiedad <code>text-decoration: none</code> se aplica sobre el enlace <code>&lt;a&gt;</code>, sólo si en el interior del enlace existe una etiqueta <code>&lt;img&gt;</code>. Este ejemplo podría ser muy útil para eliminar estilos sobre imágenes que son enlaces.</p>
+<p>Algunos detalles interesantes sobre la <strong>pseudoclase funcional</strong> <code>:has()</code>:</p>
+<ul>
+<li>La pseudoclase <code>:has()</code> no se puede anidar dentro de otra <code>:has()</code>.</li>
+<li>Los pseudoelementos como <code>::before</code> o <code>::after</code> no funcionan dentro de <code>:has()</code>.</li>
+<li>La especificidad de <code>:has()</code> es el valor más alto de los selectores indicados por parámetro.</li>
+</ul>
+<h4 id="el-combinador-not" tabindex="-1"><a class="header-anchor" href="#el-combinador-not">El combinador <code>:not()</code></a></h4>
+<p>La pseudoclase de negación <code>:not()</code> es muy útil, ya que permite seleccionar todos los elementos que <strong>no cumplan</strong> los criterios indicados en sus parámetros entre paréntesis.</p>
+<p>Veamos un sencillo ejemplo:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">p:not(.general)</span> <span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid #DDD<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 8px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #FFF<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Este pequeño fragmento de código nos indica que todos los párrafos <code>&lt;p&gt;</code> que no pertenezcan a la clase <code>.general</code>, se les aplique el estilo especificado.</p>
+<p>Algunos detalles adicionales sobre la <strong>pseudoclase funcional</strong> <code>:not()</code>:</p>
+<ul>
+<li>Se puede indicar una lista de criterios por parámetro, y no uno solo (<em>como en el ejemplo anterior</em>).</li>
+<li>La pseudoclase <code>:not()</code> no acepta pseudoelementos como <code>::before</code> o <code>::after</code> por parámetro.</li>
+<li>Al igual que con <code>:is()</code>, la especificidad de <code>:not()</code> es el valor más alto de sus parámetros.</li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../combinadores/index.htm" title="Combinadores">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Combinadores</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../pseudoclases/index.htm" title="Pseudoclases">
+  <div>
+    <span>Pseudoclases</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/q4WZUTfHt6o" title="Cómo crear GRADIENTES RADIALES en CSS">
+  <img loading="lazy" src="../../../vi/q4WZUTfHt6o/mqdefault.jpg" alt="Cómo crear GRADIENTES RADIALES en CSS">
+</a><a href="https://youtu.be/Q1CXWBtxKZU" title="Grid CSS: Introducción y conceptos desde cero">
+  <img loading="lazy" src="../../../vi/Q1CXWBtxKZU/mqdefault.jpg" alt="Grid CSS: Introducción y conceptos desde cero">
+</a><a href="https://youtu.be/hiRIjRf2QD8" title="FUNCIONES de TIEMPO en CSS: ¡Controla el ritmo de tus animaciones!">
+  <img loading="lazy" src="../../../vi/hiRIjRf2QD8/mqdefault.jpg" alt="FUNCIONES de TIEMPO en CSS: ¡Controla el ritmo de tus animaciones!">
+</a><a href="https://youtu.be/FWDBGZQPzXk" title="Cómo crear GRADIENTES REPETIDOS en CSS">
+  <img loading="lazy" src="../../../vi/FWDBGZQPzXk/mqdefault.jpg" alt="Cómo crear GRADIENTES REPETIDOS en CSS">
+</a><a href="https://youtu.be/8Jh2K3tq5n0" title="Tutorial para aprender Animaciones CSS">
+  <img loading="lazy" src="../../../vi/8Jh2K3tq5n0/mqdefault.jpg" alt="Tutorial para aprender Animaciones CSS">
+</a><a href="https://youtu.be/0sFtRnbe0fo" title="Novedades de CSS: Dr. CSStrange y el multiverso">
+  <img loading="lazy" src="../../../vi/0sFtRnbe0fo/mqdefault.jpg" alt="Novedades de CSS: Dr. CSStrange y el multiverso">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

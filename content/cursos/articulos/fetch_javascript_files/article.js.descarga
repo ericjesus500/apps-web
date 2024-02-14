@@ -1,0 +1,1571 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[900],{3040:(e,t,i)=>{var o=i(5638);class s extends o.oi{static get properties(){return{responsive:{type:Boolean}}}static get styles(){return o.iv`
+    :host {
+      display: block; 
+      --dw-icon-size: 2em;
+    }
+
+    section {
+      background-color: var(--dw-action-controller-background-color, transparent);
+      width: 100%;
+      border: 1px solid #f9f9f9;
+      display: flex;
+      align-items: center;
+      padding: 10px 10px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1) , 0 2px 3px rgba(0,0,0,.1);
+    }
+    .actions {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+    }
+    
+    @media(max-width: 510px) {
+      section.responsive {
+        flex-direction: column;
+      }
+    }
+    `}render(){return o.dy`
+      <section class="${this.responsive?"responsive":""}">
+        <div class="actions">
+          <slot></slot>
+        </div>
+        <div class="right">
+          <slot name="right"></slot>
+        </div>
+      </section>
+    `}}customElements.define("dw-action-controller",s)},8586:(e,t,i)=>{var o=i(5638),s=(i(8852),i(2455));class n extends((0,s.d)(o.oi)){static get styles(){return o.iv`
+    :host {
+      display: inline-block;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    .stats {
+      background-color: var(--dw-favorite-stats-background-color, #eee);
+      padding: 3px 14px 3px 8px;
+      border-radius: 18px;
+      height: 36px;
+      border: var(--dw-favorite-stats-border, none);
+    }
+    .favorite {
+      --dw-icon-color: var(--dark-accent-color, #ff6);
+    }
+    .label {
+      margin-left: 5px;
+      display: flex;
+      align-items: center;
+    }
+    span {
+      margin-left: 2px;
+      font-size: 0.9em;
+      text-transform: uppercase;
+    }
+    b {
+      margin-left: 10px;
+      min-width: 1.75em;
+      padding: 0 7px;
+      height: 1.75em;
+      border-radius: 0.875em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--dw-favorite-stats-number-background-color, #fff);
+    }
+    @media (max-width: 550px) {
+      .label {
+        margin-left: 0px;
+      }
+      b{
+        margin-left: 7px;
+      }
+      .stats {
+        padding: 3px 9px 3px 3px;
+      }
+    }
+    `}static get properties(){return{entity:{type:String},favorites:{type:Number},id:{type:Number},isFavorite:{type:Boolean},doFavoriteLabel:{type:String},removeFavoriteLabel:{type:String}}}constructor(){super(),this.doFavoriteLabel="Seguir",this.removeFavoriteLabel="Siguiendo"}firstUpdated(){this.fav=this.shadowRoot.querySelector("dw-favorite")}render(){return o.dy`
+    <div @click="${this.toggle}" class="stats">
+      <dw-favorite
+        id="${this.id}"
+        entity="${this.entity}"
+        favorites="${this.favorites}"
+        ?isfavorite="${this.isFavorite}"
+        @click="${e=>e.stopPropagation()}"
+        @dw-favorite-changed=${this.favoriteChanged}
+      ></dw-favorite> 
+      <div class="label">
+        <span>${this.isFavorite?this.removeFavoriteLabel:this.doFavoriteLabel} </span>
+        <b>${this.favorites}</b>
+      </div>
+    </div>
+    `}toggle(){this.fav.toggle()}favoriteChanged(e){this.favorites=e.detail.favorites,this.isFavorite=e.detail.isFavorite}}customElements.define("dw-favorite-stats",n)},1378:(e,t,i)=>{i.d(t,{u:()=>a});var o=i(5638),s=i(8852),n=i(9015),r=i(2455);class a extends((0,r.d)(o.oi)){static get styles(){return o.iv`
+    :host {
+      display: inline-block;
+      line-height: 0;
+      display: flex;
+      align-items: center;
+    }
+    .favorite {
+      --dw-icon-color: var(--dark-accent-color, #ff6);
+    }
+    dw-icon {
+      cursor: pointer;
+    }
+    span {
+      margin-left: 2px;
+      font-size: 0.9em;
+    }
+    `}static get properties(){return{entity:{type:String},favorites:{type:Number},id:{type:Number},isFavorite:{type:Boolean},icon:{type:String}}}constructor(){super(),this.isFavorite=!1,this.icon="star_rate"}render(){return o.dy`
+    <dw-ajax
+      id="elajax"
+      method="post"
+      .url="/api/${this.entity}/favorite"
+      @ajax-success="${this.doSuccess}"
+      @ajax-error="${this.doError}"
+    ></dw-ajax>
+    ${this.triggerTemplate}
+    `}get triggerTemplate(){return o.dy`<dw-icon icon="${this.icon}" @click="${this.toggle}" class="${this.isFavorite?"favorite":""}"></dw-icon>`}get dataObjetc(){return{id:this.id}}toggle(){if(!this.userIsLogged())return void this.userLoginRequest();let e=this.shadowRoot.getElementById("elajax");e.data=this.dataObjetc,e.generateRequest()}doSuccess(e){this.favorites=e.detail.count,this.isFavorite=e.detail.isFavorite,this.dispatchEvent(new CustomEvent("dw-favorite-changed",{detail:{isFavorite:this.isFavorite,favorites:this.favorites}})),s.h.dispatch((0,n.h)(e.detail.msg))}doError(e){s.h.dispatch((0,n.d$)(e.detail))}}customElements.define("dw-favorite",a)},7900:(e,t,i)=>{var o=i(5638);const s=o.iv`
+  :host[hidden] { display: none;}
+  :host { display: inline-block; line-height: 0}
+  path {
+    fill: var(--dw-icon-color, #888);
+    transition: all 0.3s ease-in;
+  }
+  path[fill="none"] {
+    fill: transparent;
+  }
+  svg {
+    width: var(--dw-icon-size, 24px);
+    height: var(--dw-icon-size, 24px);
+    line-height: 24px;
+  }
+  div { display: flex;}
+`,n={thumb_down:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>`,thumb_up:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>`,done:o.dy`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>`,question_answer:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1z"/></svg>`,bookmark:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`,cancel:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`,arrow_drop_down:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`,star_rate:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path d="M9 11.3l3.71 2.7-1.42-4.36L15 7h-4.55L9 2.5 7.55 7H3l3.71 2.64L5.29 14z"/><path fill="none" d="M0 0h18v18H0z"/></svg>`,search:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`,menu:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>`,close:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`,book:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>`,label:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/></svg>`,video_library:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 12.5v-9l6 4.5-6 4.5z"/></svg>`,home:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`,wb_incandescent:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.55 18.54l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8zM11 22.45h2V19.5h-2v2.95zM4 10.5H1v2h3v-2zm11-4.19V1.5H9v4.81C7.21 7.35 6 9.28 6 11.5c0 3.31 2.69 6 6 6s6-2.69 6-6c0-2.22-1.21-4.15-3-5.19zm5 4.19v2h3v-2h-3zm-2.76 7.66l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4z"/></svg>`,dashboard:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>`,dns:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 13H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1zM7 19c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM20 3H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1zM7 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>`,web:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`,apps:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`,computer:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>`,keyboard_arrow_right:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/><path fill="none" d="M0 0h24v24H0V0z"/></svg>`,keyboard_arrow_left:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/><path fill="none" d="M0 0h24v24H0V0z"/></svg>`,cloud:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>`,cloud_download:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>`,av_timer:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M11 17c0 .55.45 1 1 1s1-.45 1-1-.45-1-1-1-1 .45-1 1zm0-14v4h2V5.08c3.39.49 6 3.39 6 6.92 0 3.87-3.13 7-7 7s-7-3.13-7-7c0-1.68.59-3.22 1.58-4.42L12 13l1.41-1.41-6.8-6.8v.02C4.42 6.45 3 9.05 3 12c0 4.97 4.02 9 9 9 4.97 0 9-4.03 9-9s-4.03-9-9-9h-1zm7 9c0-.55-.45-1-1-1s-1 .45-1 1 .45 1 1 1 1-.45 1-1zM6 12c0 .55.45 1 1 1s1-.45 1-1-.45-1-1-1-1 .45-1 1z"/></svg>`,today:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>`,account_box:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`,info:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>`,chevron_right:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`,notifications:o.dy`<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>`,monetization_on:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z"/><path fill="none" d="M0 0h24v24H0z"/></svg>`,exit_to_app:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>`,assignment:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>`,card_membership:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 2H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h4v5l4-2 4 2v-5h4c1.11 0 2-.89 2-2V4c0-1.11-.89-2-2-2zm0 13H4v-2h16v2zm0-5H4V4h16v6z"/></svg>`,warning:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>`,edit:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`,code:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>`,accessibility_new:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.5 6c-2.61.7-5.67 1-8.5 1s-5.89-.3-8.5-1L3 8c1.86.5 4 .83 6 1v13h2v-6h2v6h2V9c2-.17 4.14-.5 6-1l-.5-2zM12 6c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/><path fill="none" d="M0 0h24v24H0z"/></svg>`,chat:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`,add:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`,list:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`,person:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`,markunread_mailbox:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M-618-3000H782V600H-618zM0 0h24v24H0z" fill="none"/><path d="M20 6H10v6H8V4h6V0H6v6H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>`,arrow_drop_down_circle:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 12l-4-4h8l-4 4z"/></svg>`,arrow_drop_down:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`,assignment_ind:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm0 4c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1.4c0-2 4-3.1 6-3.1s6 1.1 6 3.1V19z"/></svg>`,insert_comment:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`,public:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>`,help:o.dy`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>`,cookie:o.dy`<svg width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(0.046875,0,0,0.046875,0,0)">
+        <path d="M438.178,76.192C390.642,28.034 327.226,0.991 259.611,0.045C252.399,-0.055 246.089,5.031 244.685,12.136C239.269,39.547 216.005,60.054 188.112,62.005C183.632,62.319 179.527,64.623 176.928,68.286C174.328,71.949 173.506,76.583 174.689,80.916C180.275,101.392 176.425,124.221 164.128,143.549C151.404,163.549 131.682,176.816 110.019,179.946C101.985,181.107 96.331,188.449 97.264,196.514C97.542,198.922 97.683,201.34 97.683,203.702C97.683,237.987 69.791,265.879 35.505,265.879C30.188,265.879 24.9,265.205 19.791,263.875C15.061,262.642 10.028,263.794 6.304,266.958C2.578,270.122 0.628,274.901 1.077,279.768C6.906,343.036 36.004,401.62 83.009,444.726C130.312,488.108 191.736,512 255.967,512C324.347,512 388.634,485.372 436.987,437.019C485.339,388.667 511.967,324.38 511.967,256C511.967,188.256 485.762,124.399 438.178,76.192ZM415.774,415.806C373.087,458.492 316.334,482 255.967,482C199.265,482 145.04,460.91 103.283,422.616C66.493,388.877 42.13,344.412 33.488,295.857C34.159,295.872 34.832,295.879 35.504,295.879C85.301,295.879 126.002,256.185 127.631,206.777C152.565,199.63 174.61,182.961 189.44,159.652C203.129,138.134 209.104,113.22 206.65,89.268C236.328,81.639 260.529,59.535 270.702,30.491C326.047,34.038 377.572,57.497 416.827,97.267C458.834,139.824 481.968,196.197 481.968,256C481.967,316.367 458.459,373.121 415.774,415.806Z" style="fill-rule:nonzero;"/>
+        <path d="M176.638,270.685C147.957,270.685 124.623,294.019 124.623,322.7C124.623,351.381 147.957,374.715 176.638,374.715C205.32,374.715 228.654,351.381 228.654,322.7C228.653,294.019 205.319,270.685 176.638,270.685ZM176.638,344.715C164.499,344.715 154.623,334.839 154.623,322.7C154.623,310.561 164.499,300.685 176.638,300.685C188.778,300.685 198.654,310.561 198.654,322.7C198.653,334.839 188.777,344.715 176.638,344.715Z" style="fill-rule:nonzero;"/>
+        <path d="M301.777,182.914C332.058,182.914 356.694,158.278 356.694,127.997C356.694,97.716 332.058,73.08 301.777,73.08C271.496,73.08 246.86,97.716 246.86,127.997C246.86,158.278 271.495,182.914 301.777,182.914ZM301.777,103.08C315.516,103.08 326.694,114.258 326.694,127.997C326.694,141.737 315.516,152.914 301.777,152.914C288.038,152.914 276.86,141.736 276.86,127.997C276.86,114.257 288.037,103.08 301.777,103.08Z" style="fill-rule:nonzero;"/>
+        <path d="M328.011,312.074C300.26,312.074 277.683,334.651 277.683,362.402C277.683,390.153 300.26,412.73 328.011,412.73C355.762,412.73 378.339,390.153 378.339,362.402C378.339,334.651 355.762,312.074 328.011,312.074ZM328.011,382.73C316.802,382.73 307.683,373.611 307.683,362.402C307.683,351.193 316.802,342.074 328.011,342.074C339.22,342.074 348.339,351.193 348.339,362.402C348.339,373.611 339.22,382.73 328.011,382.73Z" style="fill-rule:nonzero;"/>
+        <path d="M448.725,234.768C448.725,207.017 426.148,184.44 398.397,184.44C370.646,184.44 348.07,207.017 348.07,234.768C348.07,262.519 370.646,285.096 398.397,285.096C426.148,285.096 448.725,262.519 448.725,234.768ZM398.397,255.096C387.189,255.096 378.07,245.977 378.07,234.768C378.07,223.559 387.189,214.44 398.397,214.44C409.606,214.44 418.725,223.559 418.725,234.768C418.725,245.977 409.606,255.096 398.397,255.096Z" style="fill-rule:nonzero;"/>
+        <path d="M383.687,140.08C384.963,146.23 389.963,151.044 396.193,151.985C402.383,152.919 408.684,149.733 411.616,144.21C414.55,138.685 413.731,131.722 409.508,127.078C405.292,122.442 398.448,120.89 392.656,123.299C386.071,126.039 382.384,133.113 383.687,140.08Z" style="fill-rule:nonzero;"/>
+        <path d="M444.517,324.14C443.341,317.993 438.177,313.168 432.021,312.242C425.836,311.311 419.522,314.485 416.588,320.011C413.654,325.535 414.483,332.51 418.701,337.151C422.924,341.797 429.754,343.309 435.548,340.921C442.05,338.24 445.953,331.059 444.517,324.14Z" style="fill-rule:nonzero;"/>
+        <path d="M191.267,217.7C192.417,223.843 197.625,228.682 203.763,229.605C209.965,230.538 216.24,227.347 219.196,221.83C222.158,216.302 221.273,209.351 217.086,204.698C212.885,200.03 206.017,198.538 200.236,200.919C193.734,203.599 189.831,210.783 191.267,217.7Z" style="fill-rule:nonzero;"/>
+        <path d="M250.677,423.84C249.387,417.687 244.414,412.878 238.172,411.931C231.987,410.993 225.685,414.188 222.747,419.7C219.803,425.223 220.642,432.198 224.856,436.84C229.065,441.476 235.922,443.021 241.706,440.62C248.196,437.927 252.113,430.758 250.677,423.84Z" style="fill-rule:nonzero;"/>
+        <path d="M316.127,222.41C314.172,216.432 308.866,212.109 302.514,211.784C296.253,211.464 290.323,215.255 287.927,221.03C285.531,226.804 287.049,233.69 291.706,237.883C296.377,242.089 303.289,242.937 308.838,239.99C315.109,236.659 318.14,229.187 316.127,222.41Z" style="fill-rule:nonzero;"/>
+        <path d="M279.137,295.89C284.362,292.45 286.884,285.823 285.359,279.772C283.831,273.705 278.52,269.105 272.286,268.501C266.055,267.898 259.925,271.334 257.258,277.014C254.596,282.682 255.768,289.595 260.207,294.031C265.19,299.009 273.284,299.837 279.137,295.89Z" style="fill-rule:nonzero;"/>
+        <path d="M90.326,324.14C89.15,317.993 83.986,313.168 77.83,312.242C71.641,311.31 65.332,314.484 62.396,320.011C59.461,325.537 60.286,332.507 64.506,337.151C68.726,341.794 75.565,343.314 81.356,340.921C87.848,338.238 91.776,331.059 90.326,324.14Z" style="fill-rule:nonzero;"/>
+        <path d="M90.607,104.03C119.289,104.03 142.623,80.696 142.623,52.015C142.622,23.334 119.288,0 90.607,0C61.926,0 38.592,23.334 38.592,52.015C38.592,80.696 61.926,104.03 90.607,104.03ZM90.607,30C102.747,30 112.623,39.876 112.623,52.015C112.623,64.154 102.747,74.03 90.607,74.03C78.468,74.03 68.592,64.154 68.592,52.015C68.592,39.876 78.468,30 90.607,30Z" style="fill-rule:nonzero;"/>
+        <path d="M1.736,169.21C4.634,174.741 11.013,177.916 17.171,176.982C23.368,176.043 28.44,171.231 29.676,165.08C30.909,158.943 28.041,152.496 22.672,149.285C17.289,146.065 10.314,146.586 5.456,150.55C-0.09,155.077 -1.478,162.916 1.736,169.21Z" style="fill-rule:nonzero;"/>
+    </g>
+  </svg>`,add_comment:o.dy`<svg xmlns = "http://www.w3.org/2000/svg" height = "24px" viewBox = "0 0 24 24" width = "24px" fill = "#000000" ><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22 4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4zm-2 13.17L18.83 16H4V4h16v13.17zM13 5h-2v4H7v2h4v4h2v-4h4V9h-4z"/></svg>`,new_releases:o.dy`<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M23 12l-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68L23 12zm-4.51 2.11l.26 2.79-2.74.62-1.43 2.41L12 18.82l-2.58 1.11-1.43-2.41-2.74-.62.26-2.8L3.66 12l1.85-2.12-.26-2.78 2.74-.61 1.43-2.41L12 5.18l2.58-1.11 1.43 2.41 2.74.62-.26 2.79L20.34 12l-1.85 2.11zM11 15h2v2h-2zm0-8h2v6h-2z"/></svg>`,trending_down:o.dy`<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 18l2.29-2.29-4.88-4.88-4 4L2 7.41 3.41 6l6 6 4-4 6.3 6.29L22 12v6h-6z"/></svg>`},r=e=>class extends e{static get styles(){return s}render(){return o.dy`${n[this.icon]}`}static get properties(){return{icon:{type:String}}}};class a extends(r(o.oi)){constructor(){super(),this.icon="done"}}customElements.define("dw-icon",a)},3118:(e,t,i)=>{var o=i(5638),s=i(4248);class n extends((0,s.$)(o.oi)){static get styles(){return o.iv`
+      :host {
+        display: block;
+        --dw-icon-color: var(--dark-accent-color);
+        margin-bottom: 15px;
+      }
+      #all {
+        position: relative;
+        transition: all 0.3s ease-in;
+        overflow: hidden;
+      }
+      .box {
+        border-radius: 15px;
+        padding: 15px 25px 15px;
+        background-color: var(--dw-info-box-background-color, #fffdcf);
+      }
+      .flexcontent {
+        display: flex;
+        align-items: center;
+      }
+      .exit {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        --dw-icon-color: #777;
+        z-index: 1;
+        cursor: pointer;
+      }
+      .title {
+        margin-bottom: 15px;
+        font-size: 1.3em;
+        font-weight: 300;
+      }
+      .content {
+        flex-grow: 1;
+      }
+      .closed {
+        display: none;
+      }
+      .infoicon {
+        margin: 0 5px 0 -10px;
+      }
+      @media(min-width: 400px) {
+        .box {
+          --dw-icon-size: 30px;
+        }
+        .infoicon {
+          margin: 0 5px 0 -5px;
+        }
+      }
+      @media(min-width: 500px) {
+        .box {
+          --dw-icon-size: 40px;
+        }
+        .infoicon {
+          margin: 0 15px 0 0px;
+        }
+      }
+    `}static get properties(){return{opened:{type:Boolean},showCloseButton:{type:Boolean}}}constructor(){super(),this.opened=!0}render(){return o.dy`
+      <section id="all" class="${this.opened?"":"closed"}">
+        ${this.showCloseButton?o.dy`<span class="exit" @click="${this.close}"><dw-icon icon="cancel"></dw-icon></span>`:""}
+        <div class="box">
+          ${this.title?o.dy`<div class="title">${this.title}</div>`:""}
+          <div class="flexcontent">
+            <span class="infoicon"><dw-icon icon="info"></dw-icon></span>
+            <div class="content">
+              <slot></slot>
+            </div>  
+          </div>
+        </div>
+      </section>
+    `}close(){this.opened=!1}}customElements.define("dw-info-box",n)},1312:(e,t,i)=>{var o=i(5638);var s=i(777);class n extends(function(e){return class extends e{static get properties(){return{_opening:{type:Boolean},moveTop:{type:Number},moveLeft:{type:Number},_overlayClass:{type:String},horizontalAlign:{type:String},verticalAlign:{type:String},retardo:Object}}constructor(){super(),this._opening=!1,this.moveTop=0,this.moveLeft=0,this._overlayClass="",this.horizontalAlign="left",this.verticalAlign="bottom"}firstUpdated(){this.overlay=this.shadowRoot.getElementById("overlay"),this.trigger=this.shadowRoot.getElementById("trigger")}toggle(e){this._overlayClass?this.close():this.open()}cancelRetardo(){this.reardo&&clearTimeout(this.retardo),this.retardo=null}close(){this.dispatchEvent(new CustomEvent("overlay-closed",{bubbles:!0,composed:!0})),this._opening||"opened"!=this._overlayClass||(this._overlayClass="",this.cancelRetardo(),this.retardo=setTimeout((()=>{this.overlay.style.display="none"}),500))}open(){this.dispatchEvent(new CustomEvent("overlay-opened",{bubbles:!0,composed:!0})),this._opening||(this._opening=!0,this.updatePosition(),this.closeAll(),this.overlay.style.display="block",this.cancelRetardo(),this.retardo=setTimeout((()=>{this._overlayClass="opened",this._opening=!1,this.overlay.style.display="block"}),50))}updatePosition(){let e=parseInt(this.trigger.offsetWidth),t=parseInt(this.trigger.offsetHeight),i=parseInt(this.moveTop),o=parseInt(this.moveLeft),s=this.overlay.style.display;this.overlay.style.top="-1000px",this.overlay.style.display="block";let n=parseInt(this.overlay.offsetWidth),r=parseInt(this.overlay.offsetHeight);switch(this.verticalAlign){case"bottom":this.overlay.style.top=t+10+i+"px";break;case"center":this.overlay.style.top="-"+((r-t/2)/2+i)+"px";break;default:this.overlay.style.top=0-r+i+"px"}switch(this.horizontalAlign){case"left":this.setOverlayStyleLeft("-"+(n-e-25+o)+"px");break;case"right":this.setOverlayStyleLeft(e+o+"px");break;default:this.setOverlayStyleLeft("-"+((n-e)/2+o)+"px")}this.overlay.style.display=s}setOverlayStyleLeft(e){this.overlay.style.left=e;var t=this.overlay.getBoundingClientRect();if(t.left<0){let e=parseInt(this.overlay.style.left);this.overlay.style.left=e-t.left+10+"px"}}}}((0,s.N)(o.oi))){static get styles(){return o.iv`
+      :host {
+        display: block;
+        position: relative;
+        box-sizing: border-box;
+      }
+      #overlay {
+        box-sizing: border-box;    
+        color: var(--dw-menu-overlay-color, #303030);    
+        display: none;
+        z-index: var(--dile-user-config-box-zindex, 999);
+        position: absolute;
+        opacity: 0;
+        background-color: #fff;
+        border-radius: 5px;
+        width: var(--dw-menu-overlay-width, 280px);    
+        max-width: 300px;
+        padding: 1px;
+        transition: ease 0.5s;
+        transition-property: transform, opacity;
+        transform: translateY(-10px);
+        box-shadow: 0 0 20px rgba(102, 102, 102, 0.5);
+      }
+      #overlay.opened {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      #trigger {
+        display: inline-block;
+      }
+    `}render(){return o.dy`
+    <span @click="${this.toggle}" id="trigger"><slot name="trigger"></slot></span>
+    <div id="overlay" class="${this._overlayClass}" @updated="${this.updatedMethod}">
+      <slot name="content"></slot>
+    </div>
+    `}updatedMethod(){setTimeout((()=>this.close()),500)}}customElements.define("dw-menu-overlay",n)},7049:(e,t,i)=>{var o=i(5638),s=i(4248);class n extends((0,s.$)(o.oi)){static get properties(){return{opened:{type:Boolean}}}constructor(){super(),this.opened=!1}static get styles(){return o.iv`
+    :host {
+      display: block;
+    }
+    div {
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 10px;
+    }
+    .title {
+      flex-grow: 1;
+    }
+    dw-icon {
+      --dw-icon-size: 36px;
+      --dw-icon-color: #aaa;
+      position: relative;
+      transform: rotate(-90deg);
+    }
+    .iconopen {
+      transform: rotate(0deg);
+    }
+    #content {
+      overflow: hidden;
+      transition: height 0.3s ease-in;
+      -webkit-transition: height 0.3s ease-in;
+    }
+    .closed {
+      height: 0px;
+    }
+    `}render(){return o.dy`
+    <div @click=${this.toggle}>
+      <span class="title"><slot name="title"></slot></span>
+      <span class="icon"><dw-icon icon="arrow_drop_down" class="${this.opened?"iconopen":""}"></dw-icon></span>
+    </div>
+    <section id="content" class="${this.opened?"":"closed"}">
+      <slot name="content"></slot>
+    </section> 
+    `}firstUpdated(){this.content=this.shadowRoot.getElementById("content")}toggle(){this.opened=!this.opened,this.opened?this.slideShow(this.content):this.slideHide(this.content)}}customElements.define("dw-slide",n)},3851:(e,t,i)=>{var o=i(5638),s=i(2711);class n extends s.h{static get styles(){return[super.styles,o.iv`
+      :host {
+        --dw-button-background-color: transparent;
+        --dw-button-text-color: var(--primary-color);
+        --dw-button-border: none;
+        --dw-button-hover-text-color: var(--dark-primary-color);
+        --dw-button-hover-background-color: transparent;
+        --dw-button-padding-y: 3px;
+        --dw-button-padding-x: 5px;
+        --dw-button-icon-color: var(--primary-color);
+      }
+      @media(min-width: 630px) {
+        :host {
+          --dw-button-padding-x: 10px;
+        }
+      }
+    `]}}customElements.define("dw-button-transparent",n)},2711:(e,t,i)=>{i.d(t,{h:()=>s});var o=i(5638);class s extends o.oi{static get styles(){return o.iv`
+    :host {
+      display: inline-block;
+      --dw-icon-size: var(--dw-button-icon-size, 1.2em);
+      --dw-icon-color: var(--dw-button-icon-color, #fff);
+    }
+    dw-icon {
+      position: relative;
+      top: 3px;
+      margin-right: 4px;
+    }
+    span {
+      cursor: pointer;
+      display: inline-block;
+      text-transform: uppercase;
+      border-radius: var(--dw-button-border-radius, 4px);
+      padding-top: var(--dw-button-padding-y, 7px);
+      padding-bottom: var(--dw-button-padding-y, 7px);
+      padding-left: var(--dw-button-padding-x, 10px);
+      padding-right: var(--dw-button-padding-x, 10px);
+      transition: all 0.2s ease-in;
+      -webkit-transition: all 0.2s ease-in;
+      background-color: var(--dw-button-background-color, #303030);
+      color: var(--dw-button-text-color, #fff);
+      font-size: var(--dw-button-font-size, 0.9em);
+      border: var(--dw-button-border, none);
+      line-height: 1.5em;
+    }
+    span:hover {
+      background-color: var(--dw-button-hover-background-color, #ddd);
+      color: var(--dw-button-hover-text-color, #333);
+      --dw-icon-color: var(--dw-button-hover-text-color);
+    }
+    span.disabled:hover {
+      background-color: var(--dw-button-background-color, #303030);
+      color: var(--dw-button-text-color, #fff);
+      --dw-icon-color: var(--dw-button-hover-text-color);
+    }
+    .disabled {
+      opacity: 0.5;
+    }
+    `}static get properties(){return{icon:{type:String},disabled:{type:Boolean}}}constructor(){super(),this.icon=""}render(){return o.dy`
+    <span class="${this.disabled?"disabled":""}" @click=${this.doClick}>
+      ${this.icon?o.dy`<dw-icon icon="${this.icon}"></dw-icon>`:""}
+      <slot></slot>
+    </span>
+    `}doClick(e){this.disabled&&(e.stopPropagation(),this.dispatchEvent(new CustomEvent("dw-button-clicked-but-disabled",{bubbles:!0,composed:!0})))}}customElements.define("dw-button",s)},3708:(e,t,i)=>{var o=i(5638);class s extends o.oi{static get styles(){return o.iv`
+      :host {
+        display: inline-block;
+      }
+      span {
+        width: var(--dw-icon-button-size, 30px);
+        height: var(--dw-icon-button-size, 30px);
+        border-radius: var(--dw-icon-button-size, 30px);
+        background: var(--dw-icon-button-background-color, #039be5);
+        --dw-icon-color: var(--dw-icon-button-icon-color, #fff);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    `}static get properties(){return{icon:{type:String}}}render(){return o.dy`
+      <span><dw-icon icon="${this.icon}"></dw-icon></span>
+    `}}customElements.define("dw-icon-button",s)},935:(e,t,i)=>{i.d(t,{e:()=>n});i(5638);var o=i(2711),s=i(6528);class n extends((0,s.Iq)(o.h)){static get properties(){return{itemId:{type:String}}}constructor(){super(),this.addEventListener("click",(()=>{if(this.itemId){let e=document.getElementById(this.itemId);e&&this.smoothScrollElementIntoView(e)}}))}}customElements.define("dw-scroll-button",n)},7432:(e,t,i)=>{var o=i(5638);class s extends o.oi{static get styles(){return o.iv`
+      :host {
+        padding-top: 7px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+      }
+      article {
+        padding: 10px;
+        width: 100%;
+        background-color: #eee;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      span {
+        margin-left: 3px;
+        --dw-icon-color: #fff;
+      }
+      .content {
+        flex-grow: 1;
+      }
+      span {
+        --dw-icon-color: #303030;
+      }
+      @media(min-width: 450px) {
+        :host {
+          border-bottom-left-radius: 15px;
+          border-bottom-right-radius: 15px;
+          padding-top: 10px;
+        }
+        
+        article {
+          overflow: hidden;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          
+        }
+      }
+    `}static get properties(){return{icon:{type:String}}}constructor(){super()}render(){return o.dy`
+      <article>
+        <div class="content">
+          <slot></slot>
+        </div>
+        <span>
+          <dw-icon icon="${this.icon}"></dw-icon>
+        </span>
+      </article>
+    `}}customElements.define("dw-list-box",s)},8849:(e,t,i)=>{var o=i(5638);class s extends o.oi{static get styles(){return o.iv`
+    :host {
+      display: inline-block;
+      line-height: 1em;
+    }
+    div {
+      display: inline-block;                
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: #fff;
+    }
+    `}static get properties(){return{src:{type:String},alt:{type:String},size:{type:Number}}}constructor(){super(),this.alt="",this.size="36"}render(){return o.dy`<div
+      id="img"
+      role="img"
+      aria-label$="[[alt]]"
+      style="background-image: url('${this._asignImage(this.src)}'); border-radius: ${this.size+"px"}; height: var(--dw-avatar-size, ${this.size+"px"}); width: var(--dw-avatar-size, ${this.size+"px"}); background-size: var(--dw-avatar-size, ${this.size+"px"});"
+    ></div>`}_asignImage(e){return""==e?'data:image/svg+xml;utf8,<svg style="fill:%23888;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/><path d="M0 0h24v24H0z" fill="none"/></svg>':"http"==e.substr(0,4)||"/storage"==e.substr(0,8)?e:"/storage/user_images/avatar/"+e}}customElements.define("dw-avatar",s)},7465:(e,t,i)=>{var o=i(5638);class s extends o.oi{static get properties(){return{data:{type:Object},method:{type:String},url:{type:String}}}constructor(){super(),this.data={},this.method="post",this.url=""}generateRequest(){let e;switch(this.method.toLowerCase().trim()){case"post":e=axios.post(this.url,this.data);break;case"get":e=axios.get(this.url,this.data);break;case"put":e=axios.put(this.url,this.data);break;case"delete":e=axios.delete(this.url,this.data)}e.then((e=>{if(200!=e.status)throw"Conexión con servidor deficiente";{let t=e.data;if(t.error)throw t.data;this.dispatchEvent(new CustomEvent("ajax-success",{detail:t.data}))}})).catch((e=>{if(e.response){if(419===e.response.status)this.dispatchEvent(new CustomEvent("ajax-error",{detail:"Tu sesión ha caducado. Refresca la página"}));else this.dispatchEvent(new CustomEvent("ajax-error",{detail:"Acción no completada por error en el servidor"}))}else this.dispatchEvent(new CustomEvent("ajax-error",{detail:e}))}))}}customElements.define("dw-ajax",s)},7066:(e,t,i)=>{i(4608);var o=i(5638),s=i(2171),n=i(2455);class r extends((0,n.d)((0,s.M)(o.oi))){static get properties(){return{sumPositive:{type:Number},sumNegative:{type:Number}}}render(){return o.dy`
+      <style>
+      :host {
+        display: block;
+        text-align: center;
+        background-color: #f4f4f4;
+        border-radius: 10px;
+        padding: 1.7em 2em;
+        font-size: 1.2em;
+        margin-bottom: 2em;
+        font-weight: 300;
+        
+      }
+      .elem {
+        display: flex;
+        align-items: center;
+        margin: 0 0 5px;
+        padding: 10px;
+        border-radius: 10px;
+        flex-grow: 1;
+        --dw-icon-size: 36px;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+      }
+      
+      .elem-positive {
+        background-color: #3c7;
+        flex-direction: row-reverse;
+        margin-right: 10px;
+        --dw-icon-color: #fff;
+        border: 4px solid #2a5;
+        color: #fff;
+      }
+      .elem-positive div {
+        margin-right: 7px;
+        /* --dw-icon-color: #3c7; */
+      }
+      .elem-negative {
+        background-color: #b33;
+        border: 4px solid #922;
+        --dw-icon-color: #fff;
+        color: #fff;
+      }
+      .elem-negative div {
+        margin-left: 7px;
+      }
+      span {
+        cursor: pointer;
+        display: block;
+      }
+      .inactive {
+        border: none !important;
+        background-color: #ddd !important;
+        color: #666;
+      }
+      .inactive:hover {
+        background-color: #fff !important;
+      }
+      .inactivepositive {
+        --dw-icon-color: #3c7 !important;
+      }
+      .inactivenegative {
+        --dw-icon-color: #b33 !important;
+      }
+      .down {
+        position: relative;
+        top: 4px;
+      }
+
+      div.label {
+        margin-bottom: 1.2em;
+      }
+      .content {
+        display: flex;
+        align-items: center;
+      }
+      
+      
+
+      </style>
+
+      <dw-ajax
+        id="elajax"
+        method="post"
+        url="/api/article/vote"
+        @ajax-success="${this.doSuccess}"
+        @ajax-error="${this.doError}"
+      ></dw-ajax>
+     
+      <div class="label">¿Te ha resultado útil este artículo?</div>
+      <div class="content">
+        ${this.voteSumPositiveNegativeTemplate}
+      </div>
+    `}get voteSumPositiveNegativeTemplate(){return o.dy`
+      <div class="elem elem-positive ${this.votedPositive?"":"inactive inactivepositive"}" @click="${this.positiveVote}">
+        <span class="">
+          <dw-icon icon="thumb_up"></dw-icon>
+        </span>
+        <div class="sum">
+          (${this.sumPositive})
+        </div>
+      </div>
+      <div class="elem elem-negative ${this.votedNegative?"":"inactive inactivenegative"}" @click="${this.negativeVote}">
+        <span class="down">
+          <dw-icon icon="thumb_down"></dw-icon>
+        </span>
+        <div class="sum">
+          (${Math.abs(this.sumNegative)})
+        </div>
+      </div>
+    `}}customElements.define("dw-article-vote",r);i(7432);var a=i(4248),d=i(6528);class l extends((0,d.Iq)((0,a.$)(o.oi))){static get properties(){return{opened:{type:Boolean}}}constructor(){super(),this.opened=!1}static get styles(){return o.iv`
+      #elem {
+        transition: all 0.3s ease-in;
+        -webkit-transition: all 0.3s ease-in;
+      }
+      .closed {
+        padding: 0px;
+        margin-bottom: 0px;
+      }
+      #content {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease-in;
+        -webkit-transition: height 0.3s ease-in;
+      }
+      .opened {
+        padding: 10px;
+        border: 1px solid #ddd;
+        box-shadow: 3px 3px 6px #eee;
+        margin-bottom: 15px;
+      }
+    `}render(){return o.dy`
+    <div id="elem" class="${this.opened?"opened":"closed"}">
+      <slot name="trigger" @click="${this.toggle}"></slot>
+      <div id="content">
+        <slot name="content"></slot>      
+      </div>
+    </div>
+    `}firstUpdated(){this.content=this.shadowRoot.getElementById("content")}toggle(){this.opened=!this.opened}hideThis(){this.opened&&(this.opened=!1)}updated(e){e.has("opened")&&this.openedChange(this.opened)}openedChange(e){e?(this.dispatchEvent(new CustomEvent("opening",{bubbles:!0,composed:!0,detail:this})),this.slideShow(this.content),setTimeout((()=>this.smoothScrollElementIntoView(this.shadowRoot.getElementById("elem"))),500)):this.slideHide(this.content)}}customElements.define("dw-accordion-item",l);class c extends o.oi{static get properties(){return{items:Array}}render(){return o.dy`
+      <slot></slot>
+    `}firstUpdated(){let e=this.shadowRoot.querySelector("slot").assignedNodes();this.items=e.filter((e=>e instanceof l)),this.addEventListener("opening",(function(e){e.stopPropagation();for(let t in this.items)e.detail!=this.items[t]&&this.items[t].hideThis()}))}}customElements.define("dw-accordion",c);i(935);var h=i(8852),p=i(9015);class g extends o.oi{static get styles(){return o.iv`
+      :host {
+        display: block;
+      }
+    `}constructor(){super(),this.repeats=0}render(){return o.dy`
+      <slot @click="${this.ok}"></slot>
+    `}ok(){if(this.repeats++,this.repeats>=6)return!1;this.repeats<4?h.h.dispatch((0,p.h)("Muy bien! Ahora busca el botón en el manual")):this.repeats<5?h.h.dispatch((0,p.h)("El botón es como ese, pero en la página del manual!!!")):h.h.dispatch((0,p.aI)("Ya me repito mucho :)"))}}customElements.define("dw-guardar-explain",g);i(3118),i(8270);class v extends o.oi{static get styles(){return o.iv`
+    :host {
+      display: inline-block;
+    }
+    `}static get properties(){return{url:{type:String},network:{type:String}}}render(){return o.dy`
+      <a href="${this.url}" @click=${this.share}><dile-social-icon icon="${this.network}"></dile-social-icon></a>
+    `}getHeight(){return"twitter"==this.network?300:window.screen&&screen.height&&screen.height>900?800:500}getWidth(){return window.screen&&screen.width&&screen.width>900?800:600}share(e){e.preventDefault();let t=this.getHeight(),i=this.getWidth();window.open(this.url,"sharewindow",`width=${i}, height=${t}`)}}customElements.define("dw-social-share",v);class u extends o.oi{static get styles(){return o.iv`
+      :host {
+        display: block;
+        margin-bottom: 20px;
+        --dile-social-icon-size: 2em;
+      }
+      div {
+        padding: 0.5em 1em;
+        text-align: center;
+        border-radius: 1em;
+        background-color: #f0f0f0;
+      }
+      span {
+        display: block;
+        margin-bottom: 0.35rem;
+        font-size: 0.8em;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .facebook {
+        --dile-social-icon-color: #3A5CA9;
+      }
+      .twitter {
+        --dile-social-icon-color: deepskyblue;
+      }
+      .linkedin {
+        --dile-social-icon-color: #006CAC;
+      }
+      .whatsapp {
+        --dile-social-icon-color: #07E26B;
+      }
+      dw-social-share {
+        display: inline-block;
+        margin: 0 7px;
+        position: relative;
+        top: 4px;
+      }     
+      @media(min-width: 960px) {
+        span {
+          font-size: 0.9em;
+        }
+      }
+    `}static get properties(){return{callToAction:{type:String},urlFacebook:{type:String},urlTwitter:{type:String},urlLinkedin:{type:String},urlWhatsapp:{type:String}}}render(){return o.dy`
+    <div>
+      <span>${this.callToAction}</span>
+      ${this.urlFacebook?o.dy`<dw-social-share class="facebook" url="${this.urlFacebook}" network="facebook"></dw-social-share>`:""}
+      ${this.urlTwitter?o.dy`<dw-social-share class="twitter" url="${this.urlTwitter}" network="twitter"></dw-social-share>`:""}
+      ${this.urlLinkedin?o.dy`<dw-social-share class="linkedin" url="${this.urlLinkedin}" network="linkedin"></dw-social-share>`:""}
+      ${this.urlWhatsapp?o.dy`<dw-social-share class="whatsapp" url="${this.urlWhatsapp}" network="whatsapp"></dw-social-share>`:""}
+    </div>
+    `}}customElements.define("dw-share",u)},4608:(e,t,i)=>{var o=i(5638),s=(i(7026),i(8770),i(6626)),n=i(8852),r=i(9015),a=i(2455);class d extends((0,a.d)((0,s.$)(n.h)(o.oi))){static get properties(){return{opened:{type:Boolean},loggedIn:{type:Boolean}}}static get styles(){return o.iv`
+      :host {
+        display: inline-block;
+        --dile-hamburger-color: #fff; 
+        --dile-hamburger-active-color: #fff;
+        --dile-hamburger-width: 28px;
+        --dile-hamburger-height: 28px;
+        --dile-hamburger-line-separation: -8px;
+        --dile-app-drawer-background-color: var(--black-color, #253030);
+      }
+      .container {
+        margin: 0 auto;
+        max-width: 1280px;
+        width: 90%;
+      }
+      dile-hamburger {
+        position: relative;
+        top: -6px;
+        z-index: 10009;
+      }
+      header {
+        display: flex;
+        margin: 8px 0 11px;
+      }
+      h2 {
+        text-transform: uppercase;
+        padding: 5px 2px 2px;
+        font-size: 1.1em;
+        letter-spacing: 1px;
+        font-weight: 200;
+        margin: 0;
+      }
+      h2 a {
+        color: #fff;
+        text-decoration: none;
+      }
+      section {
+        border-top: 2px solid #eee;
+        padding: 15px 0;
+        margin: 0.4rem;
+      }
+      @media (min-width: 450px) {
+        dile-hamburger {
+          top: -2px;
+        }
+        h2 {
+          padding-top: 8px
+        }
+      }
+      @media (min-width: 601px) {
+        :host {
+          --dile-hamburger-width: 32px;
+          --dile-hamburger-height: 32px;
+          --dile-hamburger-line-separation: -8px;
+        }
+        dile-hamburger {
+          top: 0;
+        }
+        h2 {
+          padding-top: 12px
+        }
+        .container {
+          width: 85%;
+        }
+      }
+      @media (min-width: 993px) {
+        .container {
+          width: 70%;
+        }
+      }
+      dw-button-dark {
+        margin-right: 0.5rem;
+      }
+      
+    `}render(){return o.dy`
+      <dile-hamburger ?active="${this.opened}" @click="${this.toggle}"></dile-hamburger>
+      <dile-app-drawer ?opened="${this.opened}" @dile-app-drawer-click-outside="${this.clickOutside}">
+      <div class="interno container">
+        <header>
+          <h2>
+            <a href="/">DesarrolloWeb.com</a>
+          </h2>
+        </header>
+        <section>
+          <slot></slot>
+          ${this.userTemplate}
+        </section>
+      </div>
+      </dile-app-drawer>
+    `}constructor(){super(),this.opened=!1,this.loggedIn=!1}toggle(e){n.h.dispatch((0,r.eu)(!this.opened)),e.stopPropagation()}get userTemplate(){return o.dy`
+      ${this.loggedIn?o.dy`
+          <a href="/panel"><dw-button-dark>Panel de control</dw-button-dark></a>
+          <dw-button-dark @click="${this.requestLogout}">Logout</dw-button-dark>
+        `:o.dy`
+          <dw-button-dark @click="${this.requestLogin}">Login</dw-button-dark>
+          <a href="/register"><dw-button-dark>Registro</dw-button-dark></a>
+          `}
+    `}stateChanged(e){this.opened=e.app.headerMenuOpened,this.loggedIn=e.user.loggedIn}clickOutside(){n.h.dispatch((0,r.eu)(!1))}requestLogin(){this.clickOutside(),this.openLoginModal()}requestLogout(){document.querySelector("dw-user-control").doLogout()}}customElements.define("dw-menu",d);var l=i(2711);i(7144);class c extends o.oi{static get styles(){return o.iv`
+      :host {
+        display: inline-block;
+        margin-top: 6px;
+
+        --dile-modal-width: 100vw;
+        --dile-modal-background-color: rgba(30,30,30, 0.95);
+        --dile-modal-content-shadow-color: transparent;
+        --dile-modal-content-background-color: transparent;
+      }
+      .box {
+        width: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #textobuscar{
+        font-family: "Roboto", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        font-size: 1.1em;
+        margin-right: 10px;
+        border: 0;
+        border-radius: 4px;
+        padding: 6px;
+      }
+      #textobuscar:focus {
+        outline: none;
+      }
+      .buscador {
+        display: flex;
+      }
+      dw-icon {
+        cursor: pointer;
+      }
+    `}render(){return o.dy`
+      <dw-icon icon="search" @click="${this.open}"></dw-icon>
+      <dile-modal id="myModal">
+        <div class="box">
+        <form action="/buscar" id="cse-search-box">
+          <div class="buscador">
+            <input type="hidden" name="cx" value="partner-pub-2899450519669111">
+            <input type="hidden" name="cof" value="FORID:11">
+            <input type="text" name="q" id="textobuscar" placeholder="ej. css"> <dw-button @click="${this.search}">buscar</dw-button>
+          </div>
+          <input name="siteurl" type="hidden" value="www.desarrolloweb.com/"><input name="ref" type="hidden" value=""><input name="ss" type="hidden" value="">
+        </form>
+        </div>
+      </dile-modal>
+    `}open(){this.shadowRoot.getElementById("myModal").open(),setTimeout((()=>this.shadowRoot.getElementById("textobuscar").focus()),100)}search(){this.shadowRoot.getElementById("cse-search-box").submit()}}customElements.define("dw-search",c);var h=i(4248);class p extends((0,h.$)(o.oi)){static get properties(){return{opened:{type:Boolean},targetHeight:{type:String}}}constructor(){super(),this.targetHeight="80px"}static get styles(){return o.iv`
+      :host {
+        display: block;
+      }
+      .closed {
+        padding: 0px;
+        margin-bottom: 0px;
+      }
+      #content {
+        height: 80px;
+        overflow: hidden;
+        transition: height 0.3s ease-in;
+        -webkit-transition: height 0.3s ease-in;
+      }
+      nav {
+        padding-top: var(--dw-ver-mas-space-top, 6px);
+        cursor: pointer;
+        text-align: center;
+        font-size: 0.8em;
+        color: #888;
+        font-weight: bold;
+        border-top: var(--dw-ver-mas-border, 3px solid #eee);
+      }
+      .vermasopen span {
+        opacity: 0.6;
+        position: relative;
+        padding: 10px;
+      }
+      .vermasclose span{
+        position: relative;
+        padding: 10px;
+      }
+      .vermasclose span::before {
+        content: '';
+        border-style: solid;
+        border-width: 8px 12px 8px 0;
+        border-color: transparent #888 transparent transparent;
+        position: absolute;
+        left: -15px;
+        top: 10px;
+        transform: rotate(-90deg);
+      }
+
+      .vermasopen span::before {
+        content: '';
+        border-style: solid;
+        border-width: 8px 12px 8px 0;
+        border-color: transparent #888 transparent transparent;
+        position: absolute;
+        left: -15px;
+        top: 10px;
+        transform: rotate(90deg);
+      }
+    `}render(){return o.dy`
+    <div id="content">
+      <slot></slot>
+    </div> 
+    <nav @click="${this.toggle}" class="${this.opened?"vermasopen":"vermasclose"}">
+      <span>
+        ${this.opened?"Ver menos":"Ver más"}  
+      </span>
+    </nav>
+    `}firstUpdated(){this.content=this.shadowRoot.getElementById("content")}toggle(){this.opened=!this.opened,this.opened?this.slideShow(this.content,this.targetHeight):this.slideHide(this.content,this.targetHeight)}}customElements.define("dw-ver-mas",p);i(5266);class g extends((0,s.$)(n.h)(o.oi)){static get properties(){return{time:{type:Number},incomingMsg:{type:Object},initMsg:{type:String},initStatus:{type:String}}}static get styles(){return o.iv`
+      :host {
+        display: block;
+      }
+      @media(min-width: 500px) {
+        dile-toast {
+          --dile-toast-width: 450px;
+          --dile-toast-padding: 15px 20px;
+        }
+      }
+    `}constructor(){super(),this.time=5e3,this.initStatus="neutral"}render(){return o.dy`      
+      <dile-toast id="toast" duration=${this.time}></dile-toast>
+    `}stateChanged(e){this.incomingMsg=e.app.feedback}changeIncomingMsg(e){e&&e.msg&&e.status&&this.toast.open(e.msg,e.status)}firstUpdated(){this.toast=this.shadowRoot.getElementById("toast"),this.initMsg&&this.changeIncomingMsg({msg:this.initMsg,status:this.initStatus})}updated(e){e.has("incomingMsg")&&this.changeIncomingMsg(this.incomingMsg)}}customElements.define("dw-feedback",g);i(7474);class v extends((0,s.$)(n.h)(o.oi)){static get properties(){return{active:{type:Boolean}}}render(){return o.dy`
+      <dile-spinner-modal ?active="${this.active}"></dile-spinner-modal> 
+    `}stateChanged(e){this.active=e.app.loading}}customElements.define("dw-spinner",v);class u extends l.h{static get styles(){return[super.styles,o.iv`
+      :host {
+        --dw-button-background-color: var(--black-color, #061210);
+        --dw-button-text-color: #ddd;
+        --dw-button-border: var(--dw-button-dark-border, 1px solid #aaa);
+      }
+    `]}}customElements.define("dw-button-dark",u);i(3851),i(1312),i(7049);class m extends o.oi{static get styles(){return o.iv`
+      :host {
+        display: block;
+      }
+    `}static get properties(){return{youtubeId:{type:String}}}createRenderRoot(){return this}render(){return o.dy`
+      ${this.youtubeId?o.dy`<iframe width="560" height="315" src="https://www.youtube.com/embed/${this.youtubeId}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`:""}
+    `}}customElements.define("dw-youtube",m);customElements.define("dw-youtube-responsive",class extends m{render(){return o.dy`
+      <div class="Youtube">
+        ${super.render()}
+      </div>`}});class w extends((0,h.$)(o.oi)){static get properties(){return{msg:{type:String},status:{type:String}}}render(){return o.dy`
+    <style>
+      :host {
+        display: block;
+      }
+      section {
+        font-size: 0.9em;
+        border-radius: 5px;
+        text-align: center;
+        background-color: #ddd;
+        height: 0px;
+        overflow: hidden;
+        transition: all 0.3s ease-in;
+        -webkit-transition: all 0.3s ease-in;
+      }
+      @media(min-width: 850px) {
+        section {
+          font-size: 0.8em;
+        }
+      }
+      section p {
+        margin: 12px 5px;
+      }
+      .error {
+        background-color: rgba(220, 60, 60, 0.3);
+        border: 1px solid rgba(220, 60, 60, 0.5);
+      }
+      .success {
+        background-color: rgba(30, 220, 99, 0.3);
+        border-color: 1px solid rgba(30, 220, 99, 0.5);
+      }
+      .neutral {
+        background-color: rgba(30, 100, 250, 0.2);
+        border-color: 1px solid rgba(30, 100, 220, 0.5);
+      }
+    </style>
+    <section id="msg" class="${this.status}">
+      <p>
+        ${this.msg}
+      <p>
+    </section>
+    `}firstUpdated(){this.msgElement=this.shadowRoot.getElementById("msg")}doFeeedback(e,t){this.msg=e,this.status=t,setTimeout((()=>{this.slideShow(this.msgElement)}),100)}positiveFeedback(e){this.doFeeedback(e,"success")}negativeFeedback(e){this.doFeeedback(e,"error")}neutralFeedback(e){this.doFeeedback(e,"neutral")}clear(){this.slideHide(this.msgElement),this.msg="",this.status=""}}customElements.define("dw-inline-feedback",w);i(8849),i(5459);var f=i(8795),b=i(7780);class x extends((0,s.$)(n.h)(o.oi)){static get properties(){return{opened:{type:Boolean},loginData:{type:Object},remember:{type:Boolean}}}static get styles(){return[f.x,o.iv`
+    dile-modal {
+      --dile-modal-height: 100vh;
+      --dile-modal-width: 100vw;
+      --dile-modal-border-radius: 0;
+      --dile-modal-close-icon-size: 32px;
+      --dile-modal-content-padding: 1.5em;
+      --dile-modal-close-icon-color: #039be5;
+
+    }
+    @media(min-width: 380px) {
+      dile-modal {
+        --dile-modal-height: auto;
+        --dile-modal-width: 340px;
+        --dile-modal-border-radius: 10px;
+      }
+    }
+
+    h4 {
+      font-size: 1.1em;
+      font-weight: 300;
+      margin: 0 0 10px 2px;
+    }
+    
+    
+    label {
+      width: 100px;
+      display: inline-block;
+    }
+    .actions {
+      border-bottom: 1px solid #d5e5f5;
+      display: flex;
+      align-items: flex-start;
+      padding-bottom: 6px;
+    }
+    a{
+      text-decoration: none;
+      color: #039be5;
+    }
+    dw-inline-feedback {
+      margin: 5px 0 0px;
+    }
+    .utils {
+      margin-top: 5px;
+      font-size: 12pt;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .utils a {
+      margin-top: 10px;
+      text-align: center;
+      display: block;
+      margin-bottom: 5px;
+    }
+    dw-button {
+      margin: 8px 0;
+      font-size: 0.9em;
+    }
+    `]}constructor(){super(),this.remember=!1,this.loginData={}}render(){return o.dy`  
+      <dile-modal id="lmodal" @dile-modal-closed="${this.onModalClosed}" showCloseIcon>
+        <h4>Introduce email y clave</h4>
+        <div class="inputs">
+          <slot></slot>
+          
+          <dile-checkbox @dile-checkbox-changed=${this.rememberChanged}>Recordarme</dile-checkbox>
+
+        </div>
+
+        <dw-inline-feedback id="feedback"></dw-inline-feedback>
+        
+        <div class="actions">
+          <dw-button @click="${this.submit}">Entrar</dw-button>
+        </div>
+        
+          <div class="utils">
+            <a href="/password/reset">¿Olvidaste la clave?</a>
+            <a href="/register">Registrarse</a>
+          </div>
+        </div>
+      </dile-modal>
+    `}rememberChanged(e){this.remember=e.detail}getInputValue(e){return document.getElementById(e).value}submit(e){n.h.dispatch((0,r.nQ)(!0));let t=this.shadowRoot.getElementById("feedback");t.clear(),e.preventDefault(),this.loginData.email=this.getInputValue("loginemail"),this.loginData.password=this.getInputValue("loginpass"),this.remember?this.loginData.remember="on":this.loginData.remember="",axios.post("/login_ajax",this.loginData).then((e=>{200==e.status?(window.axios.defaults.headers.common["X-CSRF-TOKEN"]=e.data.token,n.h.dispatch((0,b.Md)(e.data.user)),n.h.dispatch((0,r.P1)(!1)),n.h.dispatch((0,r.h)("Login realizado correctamente"))):t.negativeFeedback("Se ha denegado")})).catch((e=>{let i=e.response;if(!i)return t.negativeFeedback("No se pudo conectar con el servidor"),!1;switch(i.status){case 422:if(i.data){let e=i.data.errors;e.email?t.negativeFeedback(e.email[0]):e.password&&t.negativeFeedback(e.password[0])}break;case 429:t.negativeFeedback("Demasiados intentos fallidos. Prueba más tarde.");break;case 403:t.neutralFeedback("Ya estás logueado");case 419:t.negativeFeedback("Sesión caducada. Actualiza la página")}})).then((()=>{n.h.dispatch((0,r.nQ)(!1))}))}stateChanged(e){this.opened=e.app.loginrMenuOpened;let t=this.shadowRoot.getElementById("lmodal");this.opened?t.open():t&&t.opened&&t.close()}onModalClosed(){n.h.dispatch((0,r.P1)(!1))}}customElements.define("dw-login-modal",x);class y extends((0,s.$)(n.h)(o.oi)){static get properties(){return{loggedIn:{type:Boolean},userData:{type:Object},csrf:{type:String}}}render(){return o.dy`
+      <style>
+      :host {
+        display: flex;
+        align-items: center;
+      }
+      .loginLinks {
+        display: none;
+        --dw-button-font-size: 0.8em;
+        --dw-button-padding-x: 8px;
+        --dw-button-padding-y: 6px;
+      }
+      dw-user-menu {
+        margin-top: 2px;
+      }
+      
+      @media(min-width: 480px) {
+        .loginLinks {
+          display: flex;
+        }
+        .loginMobile {
+          display: none;
+        }
+      }
+      a {
+        display: inline-block;
+      }
+      .registerlink {
+        margin-right: 10px;
+      }
+      form {
+        display: none;
+      }
+      </style>
+        ${this.loggedIn?o.dy`
+            <dw-user-menu 
+              .userData="${this.userData}"
+              .avatar="${this.userData.avatar}"
+              @logout-resquested="${this.doLogout}"
+              @overlay-opened="${this.manageOpen}"
+              @delete-notifications="${this.deleteNotifications}"
+            ></dw-user-menu>`:o.dy`
+            <div class="loginLinks">
+                <a href="/register" class="registerlink"><dw-button-dark>Registro</dw-button-dark></a>
+                <a href="#" @click="${this.openLogin}"><dw-button-dark>Login</dw-button-dark></a>
+            </div>
+            <dw-login-mobile-menu 
+              class="loginMobile"
+              @login-resquested="${this.openLogin}"
+            ></dw-login-mobile-menu>`}
+      <form method="post" action="/logout" id="logoutform">
+      </form>
+    `}firstUpdated(){n.h.dispatch((0,b.PR)()),this.firstOpened=!1}openLogin(e){e.preventDefault(),n.h.dispatch((0,r.P1)(!0))}doLogout(){this.shadowRoot.getElementById("logoutform").submit()}stateChanged(e){this.loggedIn=e.user.loggedIn,this.userData=e.user.userData}currentSessionChanged(e){n.h.dispatch((0,b.Md)(e))}manageOpen(){this.firstOpened||(this.firstOpened=!0,n.h.dispatch((0,b.f8)()))}deleteNotifications(){n.h.dispatch((0,b.Qi)())}}customElements.define("dw-user-control",y);class k extends o.oi{static get styles(){return o.iv`
+      :host {
+        display: block;
+        padding: 8px 10px;
+        background-color: var(--primary-light-color-darken1);
+        margin-bottom: 5px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 100%;
+        overflow: hidden;
+      }
+      .icon {
+        margin-right: 12px;
+      }
+      .content {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .subject, .link {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .subject {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      .notReaded {
+        --dw-icon-color: #c33;
+      }
+    `}static get properties(){return{data:{type:Object},readAt:{type:String}}}render(){return o.dy`
+      <div class="icon ${this.readAt?"":"notReaded"}">
+        <dw-icon icon="${this.data.icon?this.data.icon:"notifications"}"></dw-icon>
+      </div>
+      <div class="content">
+        <div class="subject">${this.data.subject}</div>
+        <div class="link">
+          <a href="${this.data.link}">${this.data.textLink}</a>
+        </div>
+      </div>
+    `}}customElements.define("dw-user-notification-item",k);class z extends o.oi{static get styles(){return o.iv`
+      :host {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      section {
+        max-height: 250px;
+        overflow-y: auto;
+      }
+      .delete {
+        margin-top: 10px;
+        padding: 5px;
+        text-align: center;
+        text-transform: uppercase;
+        background-color: var(--primary-color);
+        border-radius: 6px;
+        color: #fff;
+        font-size: 0.85em;
+        cursor: pointer;
+      }
+    `}static get properties(){return{notifications:{type:Array}}}render(){return o.dy`
+      ${this.notifications.length?o.dy`<section>
+                ${this.notifications.map((e=>o.dy`<dw-user-notification-item .data="${JSON.parse(e.data)}" readAt="${e.read_at?e.read_at:""}"></dw-user-notification-item>`))}
+                <div class="delete" @click="${this.deleteNotifications}">Borrar notificaciones</div>
+              </section>`:""}
+
+    `}deleteNotifications(){this.dispatchEvent(new CustomEvent("delete-notifications",{bubbles:!0,composed:!0}))}}customElements.define("dw-user-notification-list",z);const C=o.iv`
+  article {
+    --dw-icon-color: var(--primary-color);
+    --dw-icon-size: 24px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+  article dw-icon {
+    position: relative;
+    top: 3px;
+  }
+  article a {
+    flex-flow: 1;
+    margin-left: 8px;
+    color: var(--primary-color);
+  }
+`;class M extends o.oi{static get properties(){return{avatar:{type:String},userData:{type:Object}}}static get styles(){return[C,o.iv`
+    :host {
+      display: flex;
+      align-items: center;
+      
+    }
+    dw-avatar {
+      line-height: 0;
+      --dw-avatar-size: 32px;
+      margin: 0 5px;
+      cursor:pointer;
+      position: relative;
+    }
+    dw-avatar.notificated::after {
+      background-color: #d44;
+      border-radius: 20px;
+      border: 2px solid #ffffff;
+      box-sizing: content-box;
+      color: #ffffff;
+      content: attr(data-number);
+      display: block;
+      font-size: 12px;
+      line-height: 13px;
+      min-width: 13px;
+      padding: 3px;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: -8px;
+      right: -8px;
+      transform: scale(0.8);
+    }
+    
+    @media(min-width: 601px) {
+      dw-avatar {
+        --dw-avatar-size: 38px;
+      }
+    }
+
+    @media(min-width: 500px) {
+      dw-avatar {
+        margin: 0 7px;
+      }
+    }
+
+    dw-menu-overlay {
+      --dw-menu-overlay-width: 280px;
+    }
+
+    .menuOverlay {
+      padding: 10px 10px 4px;
+    }
+
+    .userData {
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #ddd;
+    }
+    .userData p {
+      margin: 0 0 5px;
+    }
+    .username {
+      font-weight: bold;
+    }
+    .exp {
+      font-size: 0.8em;
+    }
+    `]}render(){return o.dy`
+  <dw-menu-overlay movetop="-10" id="overlay" @click="${e=>e.stopPropagation()}">
+    <dw-avatar slot="trigger" class="${this.userData.unreadNotifications>0?"notificated":""}" .src="${this.avatar}" data-number="${this.userData.unreadNotifications}"></dw-avatar>
+    <div slot="content" class="menuOverlay">
+      <div class="userData">
+        <p class="username">${this.userData.name}</p>
+        <p class="exp">${this.userData.ex_points} puntos de experiencia</p>
+      </div>
+      <dw-user-notification-list .notifications="${this.userData.notifications}"></dw-user-notification-list>
+      <article>
+        <span><dw-icon icon="apps"></dw-icon></span>
+        <a href="/panel">Panel de control</a>
+      </article>
+      <article>
+        <span><dw-icon icon="exit_to_app"></dw-icon></span>
+        <a href="#" @click="${this.doLogout}">Logout</a>
+      </article>
+    </div>
+  </dw-menu-overlay>
+`}doLogout(e){e.preventDefault(),this.shadowRoot.getElementById("overlay").close(),this.dispatchEvent(new CustomEvent("logout-resquested"))}}customElements.define("dw-user-menu",M);class $ extends o.oi{static get styles(){return[C,o.iv`
+      :host {
+        display: block;
+      }
+      .loginMobile {
+        width: 26px;
+        height: 26px;
+        line-height: 26px;
+        margin: 0;
+        background-image: url(/images/iconos/login.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+      }
+
+      dw-menu-overlay {
+        --dw-menu-overlay-width: 200px;
+      }
+
+      .overlayLoginMobile {
+        padding: 10px;
+        text-align: left;
+      }
+      
+      article {
+        display: flex;
+        align-items: center;
+        margin-bottom: 6px;
+      }
+      article dw-icon {
+        position: relative;
+        top: 5px;
+      }
+      article a {
+        flex-flow: 1;
+        margin-left: 8px;
+      }
+    `]}render(){return o.dy`
+  <dw-menu-overlay moveTop="10" id="overlay">
+    <div slot="trigger" class="loginMobile"></div>
+    <div slot="content" class="overlayLoginMobile">
+      <article>
+        <span><dw-icon icon="assignment_ind"></dw-icon></span>
+        <a href="/register">Registro</a>
+      </article>
+      <article>
+        <span><dw-icon icon="chevron_right"></dw-icon></span>
+        <a href="#" @click="${this.openLogin}">Login</a>
+      </article>
+    </div>
+  </dw-menu-overlay>
+`}openLogin(e){e.preventDefault(),this.shadowRoot.getElementById("overlay").close(),this.dispatchEvent(new CustomEvent("login-resquested"))}}customElements.define("dw-login-mobile-menu",$);i(7465),i(1378),i(8586),i(3040),i(7900),i(3708),i(8270),i(7134);class E extends((0,s.$)(n.h)(o.oi)){static get styles(){return o.iv`
+      :host {
+        display: block;
+        --dile-message-background-color: #039be5;
+      }
+      dile-message {
+        position: relative;
+        z-index: 9999992;
+      }
+
+      @media(max-width: 379px) {
+        dile-message {
+          position: fixed;
+          bottom: 0;
+          width: 100vw;
+        }
+      }
+    `}static get properties(){return{opened:{type:Boolean},message:{type:String}}}constructor(){super()}firstUpdated(){this.msgElement=this.shadowRoot.getElementById("msgElement")}render(){return o.dy`
+      <dile-message .message="${this.message}" id="msgElement" ?opened="${this.opened}">
+        <slot></slot>
+      </dile-message>
+    `}stateChanged(e){this.message=e.app.topFeedback}updated(e){e.has("message")&&this.message?this.msgElement.open():this.msgElement.close()}}customElements.define("dw-top-feedback",E);i(1254);const H=o.iv`
+  .accept {
+      --dile-button-background-color: var(--dile-cookies-consent-accept-background-color, #039be5);
+      --dile-button-text-color: var(--dile-cookies-consent-accept-text-color, #fff);
+      --dile-button-border-color: var(--dile-cookies-consent-accept-border-color, transparent);
+      --dile-button-hover-background-color: var(--dile-cookies-consent-accept-hover-background-color, #0b619b);
+      --dile-button-hover-text-color: var(--dile-cookies-consent-accept-hover-text-color, #fff);
+    }
+`;class L extends o.oi{static get styles(){return[H,o.iv`
+      :host {
+        display: block;
+        z-index: 1000000000000;
+        position: relative;
+        color: #303030;
+        --dile-modal-width: 100vw;
+        --dile-modal-border-radius: 0;
+        --dile-modal-height: 100vh;
+        --dile-modal-close-icon-color: #039be5;
+        --dile-modal-content-z-index: 99999000099999;
+      }
+      .save {
+        margin-top: 0.5rem;
+      }
+      .body {
+        margin: 0 5px;
+      }
+      dile-modal {
+        position: relative;
+        z-index: 90009;
+      }
+      @media(min-width: 400px) {
+        dile-modal {
+          --dile-modal-close-icon-size: 32px;
+        }
+        .save {
+          margin-top: 0.8rem;
+        }
+        .body {
+          margin: 0 auto;
+          width: 90%;
+          
+        }
+      }
+      @media(min-width: 800px) {
+        dile-modal {
+          --dile-modal-close-icon-size: 42px;
+        }
+        .body {
+          margin: 0 auto;
+          width: 70%;
+        }
+      }
+    `]}static get properties(){return{saveConfigLabel:{type:String}}}constructor(){super()}firstUpdated(){this.elmodal=this.shadowRoot.getElementById("elmodal")}render(){return o.dy`
+      <dile-modal id="elmodal" showCloseIcon>
+        <div class="body">
+          <slot name="content"></slot>
+          <slot name="clasifications"></slot>
+          <div class="save">
+            <dile-button class="accept" @click="${this.doAccept}">${this.saveConfigLabel}</dile-button>
+          </div>
+        </div>
+      </dile-modal>
+    `}open(){this.elmodal.open()}doAccept(){let e={};document.querySelectorAll("dile-cookies-clasification").forEach((t=>{t.checked&&(e[t.id]=!0)})),this.dispatchEvent(new CustomEvent("dile-cookies-config-accepted",{bubbles:!0,composed:!0,detail:{config:e}})),this.elmodal.close()}}customElements.define("dile-cookies-config",L);class S extends o.oi{static get styles(){return[o.iv`
+      :host {
+        display: block;
+      }
+      section {
+        border: 1px solid #ddd;
+        padding: 0.5rem 0.5rem;
+        margin: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        background-color: #e3f2fd;
+      }
+      p {
+        margin: 0;
+      }
+      h2 {
+        font-size: 1.1rem;
+        margin: 0 0 0.4rem;
+      }
+      .action {
+        margin-right: 0.7rem;
+      }
+    `]}static get properties(){return{title:{type:String},text:{type:String},always:{type:Boolean},checked:{type:Boolean}}}constructor(){super()}firstUpdated(){this.always&&(this.checked=!0)}render(){return o.dy`
+      <section>
+        <div class="action">
+          <dile-checkbox 
+            .checked="${this.checked}" 
+            ?disabled="${this.always}" 
+            @dile-checkbox-changed="${this.doCheckedChange}"
+          ></dile-checkbox>
+        </div>
+        <div class="description">
+          <h2>${this.title}</h2>
+          <p>${this.text}</p>
+        </div>
+      </section>
+    `}doCheckedChange(){this.checked=this.shadowRoot.querySelector("dile-checkbox").checked}}customElements.define("dile-cookies-clasification",S);var O=i(1955);function B(e,t){var i=Object.keys(e);if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(e);t&&(o=o.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),i.push.apply(i,o)}return i}function j(e){for(var t=1;t<arguments.length;t++){var i=null!=arguments[t]?arguments[t]:{};t%2?B(Object(i),!0).forEach((function(t){_(e,t,i[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(i)):B(Object(i)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(i,t))}))}return e}function _(e,t,i){return(t=function(e){var t=function(e,t){if("object"!=typeof e||null===e)return e;var i=e[Symbol.toPrimitive];if(void 0!==i){var o=i.call(e,t||"default");if("object"!=typeof o)return o;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"==typeof t?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:i,enumerable:!0,configurable:!0,writable:!0}):e[t]=i,e}class V{constructor(){this.cookieName="dileCookies",this.getCookiesConfiguration()}getCookiesConfiguration(){if(!this.configuration){let e=O.Z.get(this.cookieName);this.configuration=void 0===e?{acceptAll:!1,configured:!1}:JSON.parse(e)}}isConfigured(){return!!this.configuration.configured}setAcceptAll(){this.configuration=j(j({},this.configuration),{},{acceptAll:!0,configured:!0}),this.saveOnCookies()}saveOnCookies(){O.Z.set(this.cookieName,JSON.stringify(this.configuration),{expires:365})}setConfig(e){this.configuration={acceptAll:!1,configured:!0,clasificationsAccepted:e},this.saveOnCookies()}getClasifications(){return this.configuration.clasificationsAccepted?this.configuration.clasificationsAccepted:{}}isAllAccepted(){return this.configuration.acceptAll}getConfiguration(){return this.configuration}}class I extends((0,h.$)(o.oi)){static get styles(){return[H,o.iv`
+
+      :host {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        bottom: 0;
+        position: fixed;
+        width: 100vw;
+        z-index: var(--dile-cookies-consent-z-index, 990000);
+      }
+      #content {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        overflow: hidden;
+        transition: height 0.3s ease-in;
+        -webkit-transition: height 0.3s ease-in;
+      }
+      section {
+        box-sizing: border-box;
+        background-color: var(--dile-cookies-consent-background-color, #eee);
+        color: var(--dile-cookies-consent-text-color, #303030);
+        border-top: 2px solid var(--dile-cookies-consent-border-top-color, #ddd);
+        display: flex;
+        align-items: center;
+        max-width: 100%;
+        width: 100%;
+        padding: 1rem 1rem;
+      }
+      .message {
+        font-size: 0.85rem;
+        line-height: 1.35rem;
+        flex-grow: 1;
+        margin-right: 0.6rem;
+      }
+      dile-button {
+        margin: 0.2rem 0.2rem;
+        --dile-button-font-size: 0.85rem;
+        --dile-button-padding-x: 0.3rem;
+        white-space: nowrap;
+      }
+
+      h3 {
+        margin: 1px 0 10px;
+        font-weight: 300;
+      }
+
+      .fullanchor {
+        font-size: 0.9rem;
+      }
+
+      @media(min-width: 420px) {
+        section {
+          width: 90%;
+        }
+      }
+
+      @media(min-width: 500px) {
+        section {
+          padding: 1.2rem 1.5rem;
+        }
+        .message {
+          font-size: 1rem;
+        }
+        dile-button {
+          --dile-button-font-size: 0.9rem;
+          --dile-button-padding-x: 0.6rem;
+          white-space: nowrap;
+        }
+      }
+      @media(min-width: 650px) {
+        section {
+          padding: 1.5rem 1.5rem;
+        }
+        dile-button {
+          margin: 0.3rem 0.3rem;
+          --dile-button-font-size: 1rem;
+        }
+        .message {
+          font-size: 1rem;
+          line-height: 1.6rem;
+          margin-right: 3rem;
+        }
+        .actions {
+          display: flex;
+        }  
+      }
+      @media(min-width: 993px) {
+        section {
+          width: 75%;
+        }
+      }
+      @media(min-width: 1280px) {
+        section {
+          max-width: 1280px;
+        }
+      }
+      `]}static get properties(){return{message:{type:String},acceptAllLabel:{type:String},configLabel:{type:String},cookiesDeclarationUrl:{type:String},configModalTitle:{type:String},cookiesDeclarationAnchorText:{type:String},saveConfigLabel:{type:String},isConfigured:{type:Boolean}}}constructor(){super(),this.message="Accept cookies",this.acceptAllLabel="All cookies",this.configLabel="Configuration",this.configModalTitle="Cookies configuration",this.cookiesDeclarationUrl="#",this.cookiesDeclarationAnchorText="Cookies declaration",this.saveConfigLabel="Save",this.configureInitialState()}configureInitialState(){if(this.cookiesController=new V,this.isConfigured=this.cookiesController.isConfigured(),document.addEventListener("DOMContentLoaded",(()=>{setTimeout((()=>{this.dispatchEvent(new CustomEvent("dile-cookies-consent-configured",{bubbles:!0,composed:!0,detail:{configuration:this.cookiesController.getConfiguration()}}))}),200)})),this.cookiesController.isAllAccepted())this.checkAll();else{let e=this.cookiesController.getClasifications();for(let t in e){let e=document.querySelector(`dile-cookies-clasification#${t}`);e&&(e.checked=!0)}}}render(){return o.dy`
+        ${this.isConfigured?"":o.dy`
+            <div id="content">
+              <section>
+                <div class="message">
+                  ${this.message}
+                </div>
+                <div class="actions">
+                  <dile-button @click="${this.saveAcceptAll}" class="accept">${this.acceptAllLabel}</dile-button>
+                  <dile-button @click="${this.doOpenConfig}">${this.configLabel}</dile-button>
+                </div>
+              </section>
+            </div>
+          `}
+        
+        <dile-cookies-config 
+          id="elconfig" 
+          saveConfigLabel="${this.saveConfigLabel}"
+          @dile-cookies-config-accepted="${this.configAccepted}"
+        >
+          <div slot="content">
+            <h3>${this.configModalTitle}</h3>
+            <a href="${this.cookiesDeclarationUrl}" class="fullanchor">${this.cookiesDeclarationAnchorText}</a>
+          </div>
+          <div slot="clasifications">
+            <slot></slot>
+          </div>
+        </dile-cookies-config>
+    `}checkAll(){document.querySelectorAll("dile-cookies-clasification").forEach((e=>e.checked=!0))}doOpenConfig(){this.shadowRoot.getElementById("elconfig").open(),this.isConfigured||this.checkAll()}saveAcceptAll(){this.cookiesController.setAcceptAll(),this.hide(),this.sendNewConfigurationEvent()}configAccepted(e){this.cookiesController.setConfig(e.detail.config),this.hide(),this.sendNewConfigurationEvent()}sendNewConfigurationEvent(){this.dispatchEvent(new CustomEvent("dile-cookies-consent-new-configuration",{bubbles:!0,composed:!0,detail:{configuration:this.cookiesController.getConfiguration()}}))}hasConsented(e){if(this.cookiesController.isAllAccepted())return!0;let t=document.querySelector(`dile-cookies-clasification#${e}`);return!!t&&t.checked}hide(){this.slideHide(this.shadowRoot.getElementById("content"))}}customElements.define("dile-cookies-consent",I)},2455:(e,t,i)=>{i.d(t,{d:()=>n});var o=i(8852),s=i(9015);const n=function(e){return class extends e{userLoginRequest(){o.h.dispatch((0,s.d$)("Debes estar logueado")),this.openLoginModal()}openLoginModal(){o.h.dispatch((0,s.P1)(!0))}userIsLogged(){let e=o.h.getState();return!(!e.user||!e.user.loggedIn)}}}},2171:(e,t,i)=>{i.d(t,{M:()=>r});var o=i(5638),s=i(8852),n=i(9015);const r=e=>class extends e{static get properties(){return{votedElement:{type:Number},sum:{type:Number},data:{type:Object},votedPositive:{type:Boolean},votedNegative:{type:Boolean},userVote:{type:Number}}}constructor(){super(),this.votedNegative=!1,this.votedPositive=!1}connectedCallback(){super.connectedCallback(),1==this.userVote?this.votedPositive=!0:-1==this.userVote&&(this.votedNegative=!0)}getPayload(e){return{id:this.votedElement,vote:e}}voteRequest(e){const t=this.getPayload(e);this.vote(t)}positiveVote(){this.userIsLogged()?(this.votedNegative=!1,this.votedPositive?(this.voteRequest(0),this.votedPositive=!1):(this.voteRequest(1),this.votedPositive=!0)):this.userLoginRequest()}negativeVote(){this.userIsLogged()?(this.votedPositive=!1,this.votedNegative?(this.voteRequest(0),this.votedNegative=!1):(this.voteRequest(-1),this.votedNegative=!0)):this.userLoginRequest()}vote(e){let t=this.shadowRoot.getElementById("elajax");t.data=e,t.generateRequest()}doSuccess(e){e.detail.vote_sum_positive||0===e.detail.vote_sum_positive?(this.sumPositive=e.detail.vote_sum_positive,this.sumNegative=e.detail.vote_sum_negative):this.sum=e.detail,s.h.dispatch((0,n.h)("Voto contabilizado"))}doError(e){s.h.dispatch((0,n.d$)(e.detail)),this.votedPositive=!1,this.votedNegative=!1}get voteSumPositiveNegativeTemplate(){return o.dy`
+      <div class="elem elem-positive">
+        <span class="${this.votedPositive?"":"inactive"}" @click="${this.positiveVote}">
+          <dw-icon icon="thumb_up"></dw-icon>
+        </span>
+        <div class="sum">
+          (${this.sumPositive})
+        </div>
+      </div>
+      <div class="elem elem-negative">
+        <span class="down ${this.votedNegative?"":"inactive"}" @click="${this.negativeVote}">
+          <dw-icon icon="thumb_down"></dw-icon>
+        </span>
+        <div class="sum">
+          (${Math.abs(this.sumNegative)})
+        </div>
+      </div>
+    `}}},9015:(e,t,i)=>{i.d(t,{Av:()=>v,K4:()=>r,MO:()=>o,P1:()=>l,TN:()=>a,Vg:()=>u,aI:()=>g,d$:()=>p,eu:()=>d,h:()=>h,nQ:()=>m,no:()=>s,sN:()=>n});const o="CHANGE_MENU_VISIBILITY",s="CHANGE_LOGIN_VISIBILITY",n="SEND_FEEDBACK",r="CHANGE_LOADING",a="SEND_TOP_FEEDBACK",d=e=>({type:o,opened:e}),l=e=>({type:s,opened:e}),c=e=>({type:n,feedback:e}),h=e=>c({msg:e,status:"success"}),p=e=>c({msg:e,status:"error"}),g=e=>c({msg:e,status:"neutral"}),v=()=>m(!0),u=()=>m(!1),m=e=>({type:r,loading:e})},9033:(e,t,i)=>{i.d(t,{D:()=>s,m:()=>o});const o="SET_ACCEPTED_ANSWER",s=e=>({type:o,id:e})},7780:(e,t,i)=>{i.d(t,{Dr:()=>n,Md:()=>r,PR:()=>a,Qi:()=>l,f8:()=>d,n_:()=>s});var o=i(9015);const s="LOG_USER",n="DELETE_NOTIFICATIONS",r=e=>({type:s,user:e}),a=()=>e=>{axios.get("/api/get_user").then((t=>{200==t.status&&t.data&&t.data.data.loggedIn&&e(r(t.data.data.user))}))},d=()=>e=>{axios.get("/api/set_notifications_to_readed").then((()=>{setTimeout((()=>{e(a())}),5e3)}))},l=()=>e=>{axios.get("/api/delete_notifications").then((t=>{if(200!=t.status||!t.data||t.data.error)throw!0;e((0,o.h)("Notificaciones borradas")),e(a())})).catch((t=>e((0,o.d$)("No se pudo borrar las notificaciones"))))}},8852:(e,t,i)=>{i.d(t,{h:()=>y});var o=i(4890),s=i(3894),n=i(9015);function r(e,t){var i=Object.keys(e);if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(e);t&&(o=o.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),i.push.apply(i,o)}return i}function a(e){for(var t=1;t<arguments.length;t++){var i=null!=arguments[t]?arguments[t]:{};t%2?r(Object(i),!0).forEach((function(t){d(e,t,i[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(i)):r(Object(i)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(i,t))}))}return e}function d(e,t,i){return(t=function(e){var t=function(e,t){if("object"!=typeof e||null===e)return e;var i=e[Symbol.toPrimitive];if(void 0!==i){var o=i.call(e,t||"default");if("object"!=typeof o)return o;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"==typeof t?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:i,enumerable:!0,configurable:!0,writable:!0}):e[t]=i,e}const l={headerMenuOpened:!1,loginrMenuOpened:!1,feedback:null,topFeedback:null,loading:!1};var c=i(7780);function h(e,t){var i=Object.keys(e);if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(e);t&&(o=o.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),i.push.apply(i,o)}return i}function p(e){for(var t=1;t<arguments.length;t++){var i=null!=arguments[t]?arguments[t]:{};t%2?h(Object(i),!0).forEach((function(t){g(e,t,i[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(i)):h(Object(i)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(i,t))}))}return e}function g(e,t,i){return(t=function(e){var t=function(e,t){if("object"!=typeof e||null===e)return e;var i=e[Symbol.toPrimitive];if(void 0!==i){var o=i.call(e,t||"default");if("object"!=typeof o)return o;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"==typeof t?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:i,enumerable:!0,configurable:!0,writable:!0}):e[t]=i,e}const v={loggedIn:!1,userData:{id:0,email:"",name:"",avatar:"",ex_points:0,notifications:[],unreadNotifications:0}};var u=i(9033);function m(e,t){var i=Object.keys(e);if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(e);t&&(o=o.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),i.push.apply(i,o)}return i}function w(e){for(var t=1;t<arguments.length;t++){var i=null!=arguments[t]?arguments[t]:{};t%2?m(Object(i),!0).forEach((function(t){f(e,t,i[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(i)):m(Object(i)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(i,t))}))}return e}function f(e,t,i){return(t=function(e){var t=function(e,t){if("object"!=typeof e||null===e)return e;var i=e[Symbol.toPrimitive];if(void 0!==i){var o=i.call(e,t||"default");if("object"!=typeof o)return o;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"==typeof t?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:i,enumerable:!0,configurable:!0,writable:!0}):e[t]=i,e}const b={acceptedAnswer:null},x=(0,o.UY)({app:function(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:l,t=arguments.length>1?arguments[1]:void 0;switch(t.type){case n.MO:return a(a({},e),{},{headerMenuOpened:t.opened});case n.no:return a(a({},e),{},{loginrMenuOpened:t.opened,topFeedback:t.topFeedback});case n.sN:return a(a({},e),{},{feedback:t.feedback});case n.TN:return a(a({},e),{},{topFeedback:t.message});case n.K4:return a(a({},e),{},{loading:t.loading});default:return e}},user:function(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:v,t=arguments.length>1?arguments[1]:void 0;switch(t.type){case c.n_:return p(p({},e),{},{loggedIn:!0,userData:p({},t.user)});case c.Dr:return p(p({},e),{},{userData:p(p({},e.userData),{},{notifications:[],unreadNotifications:0})});default:return e}},faq:function(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:b,t=arguments.length>1?arguments[1]:void 0;return t.type===u.m?w(w({},e),{},{acceptedAnswer:t.id}):e}}),y=(0,o.MT)(x,(0,o.md)(s.Z))},8795:(e,t,i)=>{i.d(t,{x:()=>o});const o=i(5638).iv`
+  * {
+    box-sizing: border-box;
+  }
+  .label {
+    color: #888;
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: 200;
+    font-size: var(--dw-form-label-font-size, 1.2em);
+  }
+  textarea.txt, input.txt {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid var(--primary-color, #303030);
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 0.9em;
+  }
+`}},e=>{e.O(0,[898],(()=>{return t=7066,e(e.s=t);var t}));e.O()}]);

@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e44f26">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Etiquetas HTML de relación - HTML en español - Lenguaje HTML</title>
+  <link rel="preload" href="../../../critical.css" as="style">
+  <link rel="preload" href="../../../assets/fonts/blinker-vf.woff2" as="font" crossorigin="">
+  <link rel="preload" href="../../../assets/fonts/scope-one-400.woff2" as="font" crossorigin="">
+  <meta name="description" content="La primera parte de un documento HTML es la cabecera, la etiqueta head. En ella podemos establecer relaciones con otros documentos o archivos.">
+  <link rel="stylesheet" href="../../../critical.css">
+  <link rel="stylesheet" href="../../../theme.css">
+  <script type="module" src="../../../main.js"></script>
+  <link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Etiquetas HTML de relación - HTML en español">
+  <meta property="og:image" content="https://lenguajehtml.com/html/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="La primera parte de un documento HTML es la cabecera, la etiqueta head. En ella podemos establecer relaciones con otros documentos o archivos.">
+  <meta property="og:url" content="https://lenguajehtml.com/html/cabecera/etiquetas-html-de-relacion/">
+  <meta property="twitter:url" content="https://lenguajehtml.com/html/cabecera/etiquetas-html-de-relacion/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Etiquetas HTML de relación - HTML en español">
+  <meta property="twitter:description" content="La primera parte de un documento HTML es la cabecera, la etiqueta head. En ella podemos establecer relaciones con otros documentos o archivos.">
+  <meta property="twitter:image:src" content="https://lenguajehtml.com/html/large-summary.jpg">
+</head>
+<body class="html post"><div class="page">
+    <div class="sidebar">
+      <div class="logo flex-center">
+  <a href="/">
+    <img width="42" height="42" src="../../../assets/logo.svg" alt="Logo">
+    Lenguaje HTML
+  </a>
+  <div class="icons" style="--icon-size: 32px; --icon-side-padding: 0.15em">
+    <a href="https://twitter.com/Manz" title="Twitter"><svg-icon type="social" name="twitter"></svg-icon></a>
+    <a href="https://twitch.tv/manzdev" title="Twitch"><svg-icon type="social" name="twitch"></svg-icon></a>
+    <a href="https://instagram.com/manz.dev" title="Instagram"><svg-icon type="social" name="instagram"></svg-icon></a>
+    <a href="https://youtube.com/ManzDev?sub_confirmation=1" title="YouTube"><svg-icon type="social" name="youtube"></svg-icon></a>
+    <a href="https://discord.manz.dev/" title="Servidor de Discord"><svg-icon type="social" name="discord"></svg-icon></a>
+  </div>
+  <span>Un sitio web de <a href="https://manz.dev/"><mark>Manz.dev</mark></a></span>
+</div>
+
+      <form class="search flex-center" action="https://www.google.com/search">
+  <label><span>Buscar:</span> <input type="search" name="q" placeholder="Buscar un tema (ej: flex, grid...)" autocomplete="off"></label>
+  <label><span>Sitio:</span> <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev"></label>
+  <div class="search-results"></div>
+</form>
+
+      
+
+<style>
+  sidebar-link {
+    --logo-image: url(../../logo.svg);
+  }
+</style>
+
+<div class="toc"><sidebar-link title="Volver al índice" href="../../index.htm" back="" direct=""></sidebar-link><sidebar-link href="../../cheatsheets/index.htm" title="HTML5 CheatSheet" direct=""></sidebar-link><sidebar-section title="Introducción a HTML5" href="../../introduccion/index.htm"><sidebar-link href="../../introduccion/que-es-html/index.htm" title="¿Qué es HTML?"></sidebar-link><sidebar-link href="../../introduccion/estructura-etiqueta-html/index.htm" title="Estructura de etiqueta HTML"></sidebar-link><sidebar-link href="../../introduccion/atributos-comunes-html/index.htm" title="Atributos comunes en HTML"></sidebar-link><sidebar-link href="../../introduccion/estructura-documento-html/index.htm" title="Estructura del documento HTML"></sidebar-link><sidebar-link href="../../introduccion/validacion-html/index.htm" title="Validación de errores HTML"></sidebar-link><sidebar-link href="../../introduccion/tabla-periodica-html5/index.htm" title="Tabla periódica de HTML5"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas semánticas" href="../../semantica/index.htm"><sidebar-link href="../../semantica/etiquetas-html-obsoletas/index.htm" title="Etiquetas HTML obsoletas"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-texto/index.htm" title="Etiquetas HTML de texto"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-agrupacion/index.htm" title="Etiquetas HTML de agrupación"></sidebar-link><sidebar-link href="../../semantica/enlaces-o-hipervinculos/index.htm" title="Enlaces o hipervínculos"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-seccion/index.htm" title="Etiquetas HTML de sección"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-tablas/index.htm" title="Etiquetas HTML de tablas"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas multimedia" href="../../multimedia/index.htm"><sidebar-link href="../../multimedia/etiquetas-html-de-imagenes/index.htm" title="Etiquetas HTML de imágenes"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-contenido-externo/index.htm" title="Etiquetas de contenido externo"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-video/index.htm" title="Etiquetas HTML de video"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-audio/index.htm" title="Etiquetas HTML de audio"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-subtitulos/index.htm" title="Etiquetas HTML de subtitulos"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de cabecera" href="../index.htm"><sidebar-link href="index.htm" title="Etiquetas HTML de relación"></sidebar-link><sidebar-link href="../etiquetas-html-de-metadatos/index.htm" title="Etiquetas HTML de metadatos"></sidebar-link><sidebar-link href="../etiquetas-html-para-redes-sociales/index.htm" title="Etiquetas HTML de redes sociales"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de formularios" href="../../formularios/index.htm"><sidebar-link href="../../formularios/crear-un-formulario/index.htm" title="Creación de un formulario"></sidebar-link><sidebar-link href="../../formularios/controles-campos-de-texto/index.htm" title="Controles: Campos de texto"></sidebar-link><sidebar-link href="../../formularios/controles-campos-numericos/index.htm" title="Controles: Campos numéricos"></sidebar-link><sidebar-link href="../../formularios/controles-campos-fecha-hora/index.htm" title="Controles: Campos de fecha/hora"></sidebar-link><sidebar-link href="../../formularios/controles-casillas-o-botones/index.htm" title="Controles: Casillas o botones"></sidebar-link><sidebar-link href="../../formularios/controles-listas-de-seleccion/index.htm" title="Controles: Listas de selección"></sidebar-link><sidebar-link href="../../formularios/controles-seleccion-color/index.htm" title="Controles: Selección de color"></sidebar-link><sidebar-link href="../../formularios/controles-seleccion-archivos/index.htm" title="Controles: Selección de archivos"></sidebar-link><sidebar-link href="../../formularios/organizacion-de-campos/index.htm" title="Organización de campos"></sidebar-link><sidebar-link href="../../formularios/botones-de-envio-de-formulario/index.htm" title="Botones de envío de formularios"></sidebar-link><sidebar-link href="../../formularios/medidores-y-barras-de-progreso/index.htm" title="Medidores y barras de progreso"></sidebar-link><sidebar-link href="../../formularios/validaciones-html5/index.htm" title="Validaciones HTML5"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de scripting" href="../../scripting/index.htm"><sidebar-link href="../../scripting/etiquetas-html-interactivas/index.htm" title="Etiquetas HTML interactivas"></sidebar-link><sidebar-link href="../../scripting/etiquetas-html-scripts/index.htm" title="Etiquetas HTML de scripts"></sidebar-link><sidebar-link href="../../scripting/eventos-html/index.htm" title="Eventos en HTML"></sidebar-link></sidebar-section></div>
+
+      
+    </div>
+    <div class="contents">
+      <header class="mega">
+  <h1>Etiquetas HTML de relación</h1></header>
+
+      <div class="content ">
+  <div class="breadcrumbs">
+  <a href="/">ATRÁS</a> <span>ᐳ</span> <a href="../../index.htm">html</a> <span>ᐳ</span> <a href="index.htm">Etiquetas HTML de relación</a>
+</div>
+<p>Habíamos mencionado que la <a href="../../introduccion/estructura-documento-html/index.htm">estructura de un documento HTML</a> debía contener siempre dos etiquetas HTML principales: la cabecera de la página o <code>&lt;head&gt;</code> y el cuerpo de la página o <code>&lt;body&gt;</code> . El primero de ellos, del que hablaremos en este apartado, se encarga de contener <strong>etiquetas de metadatos</strong> (<em>información sobre el documento</em>) así como establecer <strong>relaciones con otros documentos</strong>. El segundo de ellos, se encarga de la parte visual que verá el usuario en el navegador.</p>
+<h3 id="cabecera-del-documento" tabindex="-1">Cabecera del documento</h3>
+<p>Existen varias etiquetas que se suelen utilizar en esta sección de cabecera del documento:</p>
+<table>
+<thead>
+<tr>
+<th>Etiqueta</th>
+<th>Atributos</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;title&gt;</code></td>
+<td></td>
+<td>Título de la página (pestaña o título del navegador o en buscadores).</td>
+</tr>
+<tr>
+<td><code>&lt;base&gt;</code></td>
+<td><code>href</code>, <code>target</code></td>
+<td>URL base del documento (<em>usado para gestionar rutas relativas</em>).</td>
+</tr>
+<tr>
+<td><code>&lt;link&gt;</code></td>
+<td><code>href</code>, <code>hreflang</code>, <code>rel</code>, <code>media</code>, <code>type</code></td>
+<td>Establece una relación del documento actual con otro externo.</td>
+</tr>
+<tr>
+<td><code>&lt;meta&gt;</code></td>
+<td><code>name</code>, <code>content</code>, <code>http-equiv</code>, <code>charset</code></td>
+<td>Establece un metadato específico en el documento actual.</td>
+</tr>
+<tr>
+<td><code>&lt;style&gt;</code></td>
+<td><code>media</code>, <code>type</code></td>
+<td>Crea estilos CSS que afectarán únicamente al documento actual.</td>
+</tr>
+<tr>
+<td><code>&lt;script&gt;</code></td>
+<td><code>src</code>, <code>type</code>, <code>charset</code>, <code>async</code>, <code>defer</code></td>
+<td>Indica un script a cargar o ejecutar en la página actual.</td>
+</tr>
+</tbody>
+</table>
+<p>Existe dos etiquetas que tradicionalmente solían incluirse en la cabecera de un documento HTML. Sin embargo, actualmente también pueden utilizarse en el cuerpo de la página. Hablamos de las etiquetas <code>&lt;style&gt;</code> y <code>&lt;script&gt;</code>.</p>
+<ul>
+<li>La etiqueta <code>&lt;style&gt;</code> sirve para <a href="https://lenguajecss.com/css/introduccion/como-usar-css/#incluir-css-en-el-html-style">incluir estilos CSS en la propia página HTML</a>.</li>
+<li>La etiqueta <code>&lt;script&gt;</code> sirve para incluir código Javascript en la propia página HTML (<em>o de forma externa</em>), pero tiene una explicación mucho más extensa y la retomaremos más adelante.</li>
+</ul>
+<h3 id="título-y-codificación" tabindex="-1">Título y codificación</h3>
+<p>En el interior de la etiqueta <code>&lt;head&gt;</code> es aconsejable, como mínimo, indicar siempre las siguientes dos etiquetas:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Título del documento<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></code></pre>
+<p>En este ejemplo, la etiqueta <code>&lt;meta&gt;</code> indica que el navegador utilice la <strong>codificación UTF-8</strong> para mostrar el texto. Es muy importante utilizar siempre de forma coherente una misma codificación en todos nuestros documentos, de esta forma evitaremos problemas con vocales acentuadas, o carácteres como <code>ñ</code> , <code>¿</code> , <code>¡</code> u otros.</p>
+<p>Para evitar este tipo de problemas, se recomienda siempre realizar los siguientes pasos:</p>
+<ol>
+<li>Utilizar la etiqueta <code>&lt;meta charset=&quot;utf-8&quot;&gt;</code> en la cabecera del documento.</li>
+<li>Guarda el archivo HTML con codificación <strong>UTF-8</strong> en las opciones del editor que utilicemos.</li>
+<li>Si aún tenemos problemas de codificación, revisar la configuración del servidor web (<em>server-side</em>).</li>
+</ol>
+<p>De esta forma reducimos la probabilidad de tener problemas de este tipo.</p>
+<h3 id="otros-documentos" tabindex="-1">Otros documentos</h3>
+<p>Como habíamos comentado, la etiqueta <code>&lt;link&gt;</code> permite establecer relaciones con otros documentos. De esta forma, el navegador o cualquier sistema capaz de leer código web puede saber que un documento HTML está relacionado con otro documento (<em>independientemente del formato que sea</em>) y así relacionarse entre ellos.</p>
+<p>Veamos algunos ejemplos de relaciones que podemos establecer.</p>
+<h4 id="versiones-alternativas" tabindex="-1">Versiones alternativas</h4>
+<p>Con el valor <code>alternate</code> en el atributo <code>rel</code> de la etiqueta <code>&lt;link&gt;</code> podemos indicar que el documento actual tiene versiones alternativas en otros formatos o idiomas. El siguiente ejemplo indica que el documento HTML que estamos leyendo tiene una versión en PDF, y además, una versión HTML en inglés:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>alternate<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>document.pdf<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>application/pdf<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>alternate<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>document-en.html<span class="token punctuation">"</span></span> <span class="token attr-name">hreflang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></code></pre>
+<h4 id="referencias-a-datos" tabindex="-1">Referencias a datos</h4>
+<p>El atributo <code>rel</code> también nos permite indicar el tipo de relación que tiene el documento referenciado. Por ejemplo, a continuación indicamos una referencia al autor del documento, a la zona de ayuda, la zona de búsqueda y la licencia que cubre el contenido de la página:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>author<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://twitter.com/Manz<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>help<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://lenguajehtml.com/ayuda/<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://lenguajehtml.com/busqueda/<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>license<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://lenguajehtml.com/licencia/<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></code></pre>
+<h4 id="favicon-icono-de-pestañas" tabindex="-1">Favicon (icono de pestañas)</h4>
+<p>Cuando tenemos varias pestañas en nuestro navegador, para una búsqueda más fácil e intuitiva entre pestañas, el navegador suele colocarnos unos iconos a la izquierda del título de las pestañas. Estos iconos son conocidos como <code>favicons</code> (<em>iconos de favoritos</em>) ya que fue un invento de <strong>Internet Explorer</strong> para colocar el icono cuando el usuario añadía una página a favoritos:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>shortcut icon<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/favicon.ico<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span> <span class="token comment">&lt;!-- HTML4 --></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>icon<span class="token punctuation">"</span></span> <span class="token attr-name">sizes</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>64x64<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/favicon.png<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span> <span class="token comment">&lt;!-- HTML5 --></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>apple-touch-icon<span class="token punctuation">"</span></span> <span class="token attr-name">sizes</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>180x180<span class="token punctuation">"</span></span><br>        <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/apple-touch-icon-180x180.png<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span> <span class="token comment">&lt;!-- iPhone/iPad --></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>msapplication-TileImage<span class="token punctuation">"</span></span><br>        <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/mstile-144x144.png<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span> <span class="token comment">&lt;!-- Windows Phone --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></code></pre>
+<p>Desgraciadamente, esta característica no está definida en la especificación, por lo que cada navegador (<em>¡y cada sistema operativo!</em>) la implementa como quiere. Hay navegadores que sólo soportan favicon en formato PNG, otros que solo soportan resoluciones específicas, etc.</p>
+<blockquote>
+<p>Para generar los favicons de una forma más cómoda, aconsejo utilizar la herramienta <a href="https://realfavicongenerator.net/">Real Favicon Generator</a>, a la cuál le pasamos un logo a alta resolución y nos generará un <code>.zip</code> con el código y diferentes versiones y resoluciones de los iconos.</p>
+</blockquote>
+<h4 id="posicionamiento-google" tabindex="-1">Posicionamiento (Google)</h4>
+<p>La etiqueta <code>&lt;link&gt;</code> también nos permite indicar algunos datos interesantes de cara al buscador para evitar ser marcado como <strong>contenido duplicado</strong> o indicarle al buscador exactamente las URLs que debe tener en cuenta. Para ello, podemos utilizar los siguientes atributos:</p>
+<table>
+<thead>
+<tr>
+<th>Atributo rel</th>
+<th>Atributo href</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>canonical</code></td>
+<td><em>Dirección URL</em></td>
+<td>URL exacta que Google debería asociar al documento actual en el buscador.</td>
+</tr>
+<tr>
+<td><code>prev</code></td>
+<td><em>Dirección URL</em></td>
+<td>Si el documento actual tiene varias partes, indica la URL de la página anterior.</td>
+</tr>
+<tr>
+<td><code>next</code></td>
+<td><em>Dirección URL</em></td>
+<td>Si el documento actual tiene varias partes, indica la URL de la página siguiente.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="estilos-css-de-documento" tabindex="-1">Estilos CSS de documento</h4>
+<p>Por último, otra de las funciones más conocidas y utilizadas de la etiqueta <code>&lt;link&gt;</code> es la de establecer una relación con un <a href="http://lenguajecss.com/">documento CSS</a> para aplicar estilos a la página HTML actual (<em>y a todas las que establezcan una relación a ella</em>).</p>
+<p>Para ello, no hay más que utilizar el valor <code>stylesheet</code> en el atributo <code>rel</code> de la siguiente forma:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>index.css<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></code></pre>
+<p>Con esto, el documento HTML estará relacionado con el documento CSS <code>index.css</code> , y aplicará todos los estilos CSS que se encuentren en él. El atributo <code>type</code> es opcional y no se suele indicar, puesto que el tipo por defecto de las hojas de estilos ya es <code>text/css</code>.</p>
+
+    <nav class="prev-next"><a class="bt prev" href="../../multimedia/etiquetas-html-de-subtitulos/index.htm" title="Etiquetas HTML de subtitulos">
+    <span class="data">
+      <span>Etiquetas HTML de subtitulos</span>
+      <small>Capítulo anterior</small>
+    </span>
+  </a><a class="bt next" href="../etiquetas-html-de-metadatos/index.htm" title="Etiquetas HTML de metadatos">
+    <span class="icon">
+      <svg-icon name="arrow-right"></svg-icon>
+    </span>
+    <span class="data">
+      <span>Etiquetas HTML de metadatos</span>
+      <small>Capítulo siguiente</small>
+    </span>
+  </a></nav>
+
+    <script async="" src="../../../pagead/js/f.txt"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center; margin:auto; margin-top: 2em" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+      <div class="related">
+
+  <div class="author">
+    <div class="author-wrapper">
+      <img loading="lazy" class="circle" src="../../../assets/manz.webp" alt="Manz">
+      <div>
+        <p>Docente, divulgador informático y <a href="https://manz.dev/">streamer de código</a>. Amante de <strong>CSS</strong>, <strong>Javascript</strong>
+          y de la plataforma web. Ha trabajado como profesor en la Universidad de La Laguna y es director del curso de
+          Programación web FullStack y FrontEnd de EOI desde Tenerife. En sus ratos libres, busca GIF de gatos en Internet.</p>
+        <p class="twitch-badge">
+          <a href="https://twitch.tv/ManzDev">
+            <svg class="twitch" viewbox="0 0 1024 1024">
+              <path style="fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1;" d="m262.451 12.904-178.26 178.26v641.672h213.905v178.26l178.26-178.26h142.576L939.809 512V12.904H262.45zm35.645 71.287h570.383v392.164L725.904 618.932H583.287L458.514 743.705V618.932H298.096V84.192zM494.158 208.51v216.36h71.328V208.51h-71.328zm196 0v216.36h71.328V208.51h-71.328z"></path>
+            </svg>
+            Sígueme en Twitch
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="comentarios">
+    <script async="" src="../../../count.js" id="dsq-count-scr"></script>
+<script>
+var disqus_config = function () {
+  this.page.path = location.pathname.endsWith("/") ? location.pathname.substring(0, location.pathname.length - 1) : location.pathname;
+  this.page.url = 'https://lenguajehtml.com' + this.page.path;
+  this.page.identifier = this.page.url;
+};
+document.addEventListener('DOMContentLoaded', function() {
+  const coms = document.querySelector('#comentarios');
+  a = coms.querySelector('#disqus_button');
+  a.dataset.disqusIdentifier = 'https://lenguajehtml.com' + (location.pathname.endsWith("/") ? location.pathname.substring(0, location.pathname.length - 1) : location.pathname);
+  a.addEventListener('click', function() {
+    const div = document.createElement('div');
+    div.id = 'disqus_thread';
+    coms.appendChild(div);
+    const d = document, s = d.createElement('script');
+    s.src = '//lenguajehtml.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    this.remove();
+  });
+});
+</script>
+
+    <a class="disqus-comment-count" id="disqus_button" href="#disqus_thread" data-disqus-identifier="https://lenguajehtml.com/html/cabecera/etiquetas-html-de-relacion/">Leer comentarios</a>
+    <a class="discord" href="https://discord.manz.dev/">¡Accede a Discord y cuéntanos!</a>
+  </div>
+
+</div>
+
+    </div>
+    <div class="aside">
+      <div class="aside">
+
+  <div class="aside-top">
+    <a href="https://manz.dev/digitalocean" title="Empieza en DigitalOcean con 100$">
+      <img width="240" height="120" src="../../../assets/digital-ocean.png" alt="DigitalOcean">
+    </a>
+  </div><script type="module">
+  const ANCHOR_ICON = /* svg */`
+    <svg class="anchor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 205 205" width="36" height="36">
+      <path d="m140 129 16 16s-20 30-42 30V71c14-5 25-18 25-34 0-20-17-36-37-36-21 0-38 16-38 36 0 15 11 29 25
+              34v104c-26-2-42-27-42-27l18-18-65-9 10 63 17-17c15 12 32 37 73 37 51-1 63-29 76-40l19 19 10-64-65
+              10zM83 36c0-10 8-18 19-18s19 8 19 18c0 11-9 19-19 19s-19-8-19-19z"/>
+    </svg>`;
+  // Add inner links to sidebar menu
+  export const addInnerLinks = () => {
+    const summary = document.querySelector(".aside .summary .links");
+    const headers = Array.from(document.querySelectorAll(".content h3, .content h4"));
+    const tocLinks = [];
+    headers.forEach((e) => {
+      const link = `${location.origin}${location.pathname}#${e.id}`;
+      e.innerHTML = `<a class="permalink" href="${link}">${e.textContent} ${ANCHOR_ICON}</a>`;
+      const headerType = e.nodeName.toLowerCase();
+      const textContent = headerType === "h4" ? e.textContent.replace("La propiedad ", "").replace("La función ", "") : e.textContent;
+      tocLinks.push(`<a class="${headerType}" href="#${e.id}">${textContent}</a>`);
+    });
+    summary.insertAdjacentHTML("beforeEnd", tocLinks.join("\n"));
+  };
+
+  addInnerLinks();
+</script>
+
+<div class="summary">
+  <div class="table">Tabla de contenidos</div>
+  <div class="links"></div>
+</div>
+</div>
+
+    </div>
+  </div><footer class="main">
+  <div class="square">
+    <a href="/"><h2>Lenguaje HTML</h2></a>
+    <div class="icons">
+      <a href="https://twitter.com/Manz" title="Twitter"><svg-icon type="social" name="twitter"></svg-icon></a>
+      <a href="https://twitch.tv/manzdev" title="Twitch"><svg-icon type="social" name="twitch"></svg-icon></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg-icon type="social" name="instagram"></svg-icon></a>
+      <a href="https://youtube.com/ManzDev?sub_confirmation=1" title="YouTube"><svg-icon type="social" name="youtube"></svg-icon></a>
+      <a href="https://discord.manz.dev/" title="Servidor de Discord"><svg-icon type="social" name="discord"></svg-icon></a>
+      <a href="https://github.com/ManzDev" title="GitHub"><svg-icon type="social" name="github"></svg-icon></a>
+      <a href="https://codepen.io/Manz" title="Codepen"><svg-icon type="social" name="codepen"></svg-icon></a>
+      <a href="https://www.linkedin.com/in/joseromanhdez/" title="Linkedin"><svg-icon type="social" name="linkedin"></svg-icon></a>
+    </div>
+    <p>Documentación sobre HTML5 y las mejores herramientas y recursos para aprender a utilizar el lenguaje de marcado HTML.</p>
+    <p id="footer">Creado y mantenido por <a href="https://twitter.com/Manz">@Manz</a> con <span title="<3">❤</span></p></div>
+</footer>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-5', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+</body>
+</html>

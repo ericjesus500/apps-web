@@ -1,0 +1,43 @@
+
+var ftGUID_7906802="57485B494182FF";
+var ftConfID_7906802="0";
+var ftParams_7906802="ftOBA=1&ft_agentEnv=0&ft_referrer=https://www.anerbarrena.com/mysql-count-5979/&us_privacy=${US_PRIVACY}&site_url=https://www.anerbarrena.com/mysql-count-5979/&pub_id=1&sup_platform=1&cachebuster=352485.6901685254";
+var ftKeyword_7906802="";
+var ftCustom_7906802="";
+var ftSection_7906802="";
+var ftSegment_7906802="w2c";
+var ftSegmentList_7906802=[{s:'w2c'}];
+var ftRuleMatch_7906802="0";
+var ftTimestamp_7906802="1704100233";
+var ftGeoC2_7906802="pe";
+var ftGeoState_7906802="piu";
+var ftGeoCity_7906802="el nuro";
+var ftISP_7906802="telefonica del peru s.a.a.";
+var ftSpeed_7906802="mobile";
+var ftConnType_7906802="mobile";
+var ftDMA_7906802="-1";
+var ftLong_7906802="-81.17";
+var ftLat_7906802="-4.22";
+var ftPostal_7906802="20840";
+var ftTimeZone_7906802="-500";
+var ftMobileCarrier_7906802="movistar";
+var ftImp7906802 = {};
+ftImp7906802.privacy = "x";
+ftImp7906802.guidAge = "96";
+ftImp7906802.impID = "1A15752C-6581-1592-78A9-AA16EA5CD8C7";
+ftImp7906802.duid = "FT:57485B494182FF";
+
+ftImp7906802.ft_tpplid = "";
+ftImp7906802.ft_c = {};
+ftImp7906802.gdpr = "";
+ftImp7906802.gdpr_consent = "";
+ftImp7906802.gdpr_pd = "";
+ftImp7906802.oob_consent = "";
+ftImp7906802.gdprStoredConsent = "";
+ftImp7906802.us_privacy = "!!US_PRIVACY!";
+ftImp7906802.gpc = "";
+
+ftImp7906802.jsAppend = "1";
+var ftCreativeId_7906802 = "4225378";
+(function(){var tag=document.getElementById("ft_servedby_7906802")||function(s){return s[s.length-1]}(document.getElementsByTagName("script")),js=document.createElement("script");js.src="https://ajs-assets.ftstatic.com/ftUtils.js";js.id="ftscript_m7906802";js.setAttribute("name","ftscript_m7906802");tag.parentNode.insertBefore(js,tag)})();window.fTChecker=window.fTChecker||function(id){if(!id)return false;id=""+id;if(window.hasOwnProperty("ftUtils")){window["ft"+id]=Object.assign({},window.ftUtils.common);window["ft"+id].getBannerConfig(id)}else(function(id){window.setTimeout(function(){window.fTChecker(id)},50)})(id)};window.fTChecker("7906802");
+

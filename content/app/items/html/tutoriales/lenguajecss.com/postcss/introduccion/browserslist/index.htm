@@ -1,0 +1,513 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>¿Qué es Browserslist? - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Browserslist permite automatizar el grado de compatibilidad de algunas herramientas Javascript/CSS respecto a navegadores antiguos.">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="¿Qué es Browserslist? - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/postcss/introduccion/browserslist/browserslist.png">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Browserslist permite automatizar el grado de compatibilidad de algunas herramientas Javascript/CSS respecto a navegadores antiguos.">
+  <meta property="og:url" content="https://lenguajecss.com/postcss/introduccion/browserslist/">
+  <meta property="twitter:url" content="https://lenguajecss.com/postcss/introduccion/browserslist/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="¿Qué es Browserslist? - CSS en español">
+  <meta property="twitter:description" content="Browserslist permite automatizar el grado de compatibilidad de algunas herramientas Javascript/CSS respecto a navegadores antiguos.">
+  <meta property="twitter:image" content="https://lenguajecss.com/postcss/introduccion/browserslist/browserslist.png">
+
+  </head>
+
+<body class="css" style="--logo-color: #972321"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/postcss.jpg')">
+    <h1><a href="index.htm">¿Qué es Browserslist?</a></h1></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../configuracion-postcss/index.htm">Configuración de PostCSS</a>
+    <a class="current" href="index.htm">¿Qué es Browserslist?</a>
+    <a href="../../plugins/autoprefixer/index.htm">Autoprefixer: Prefijos CSS</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p><strong>Browserslist</strong> (<em>lista de navegadores</em>) es una herramienta para proyectos frontend (<em>independiente a PostCSS, pero desarrollada por los mismos creadores</em>) que permite automatizar el grado decompatibilidad que tendrán algunas herramientas Javascript o CSS respecto a navegadores como <strong>Internet Explorer</strong> o versiones antiguas de Chrome, Firefox, Opera, Edge o incluso Node.</p>
+<p><img src="browserslist.png" alt="Browserslist: Compatibilidad con navegadores antiguos" width="1024" height="425" loading="lazy"></p>
+<p>Esta herramienta permite al desarrollador indicar una <strong>lista de navegadores</strong> a las que quiere dar soporte y «avisar» a ciertas herramientas o utilidades de desarrollo para que realicen las operaciones oportunas para <strong>intentar</strong> garantizar que el proyecto funcione lo mejor posible en los navegadores o sistemas indicados.</p>
+<blockquote>
+<blockquote>
+<p>Por ejemplo, <strong>Autoprefixer</strong> es una herramienta que añade prefijos CSS al código CSS estándar. Si lo integramos con <strong>Browserslist</strong>, podemos indicarle hasta que navegadores vamos a dar compatibilidad, por lo que sólo incluirá prefijos en los navegadores que hemos contemplado.</p>
+</blockquote>
+</blockquote>
+<p>Dicho así, parece una herramienta increíble (<em>y en cierta forma lo es</em>), pero hay que dejar claro previamente que no se trata de una herramienta milagrosa, sino una utilidad que ahorra bastante tiempo y las aplicaciones adaptadas a ella suelen funcionar bastante bien, pero es tarea de dichas aplicaciones que realicen bien el trabajo. <strong>Browserslist</strong> sólo hace de intermediario para mediar entre desarrollador y sistema.</p>
+<h3 id="soporte-de-browserslist" tabindex="-1"><a class="header-anchor" href="#soporte-de-browserslist">Soporte de Browserslist</a></h3>
+<p>Cada vez más herramientas son capaces de trabajar conjuntamente a <strong>browserslist</strong>, pero en el momento de escribir estas líneas, algunas de las herramientas más famosas que lo soportan son:</p>
+<ul>
+<li>El plugin <a href="https://github.com/postcss/autoprefixer">autoprefixer</a> de PostCSS para añadir prefijos CSS.</li>
+<li>El preset <a href="https://babeljs.io/docs/en/next/babel-preset-env.html">@babel/preset-env</a> del transpilador Babel.</li>
+<li>El plugin <a href="https://github.com/jonathantneal/postcss-preset-env">postcss-preset-env</a> de PostCSS (<em>el babel de CSS</em>).</li>
+<li>El plugin <a href="https://github.com/amilajack/eslint-plugin-compat">eslint-plugin-compat</a> del linter de Javascript ESLint.</li>
+<li>El plugin <a href="https://github.com/ismay/stylelint-no-unsupported-browser-features">stylelint-no-unsupported-browser-features</a> del linter de CSS Stylelint.</li>
+</ul>
+<p>Además, sistemas de generación de proyectos como <a href="https://create-react-app.dev/docs/supported-browsers-features/">create-react-app</a> o <a href="https://cli.vuejs.org/guide/browser-compatibility.html">@vue/cli</a> vienen con <strong>browserslist</strong> integrado en las plantillas de los proyectos generados.</p>
+<h3 id="instalación-de-browserslist" tabindex="-1"><a class="header-anchor" href="#instalación-de-browserslist">Instalación de Browserslist</a></h3>
+<p>Para instalar <strong>browserslist</strong> y hacerlo funcionar en nuestro proyecto, sólo tenemos que instalarlo con <code>npm</code> y el flag <code>--save-dev</code>, ya que es una herramienta de desarrollo:</p>
+<pre class="language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> --save-dev browserslist</code></pre>
+<p>Esto incluirá el paquete en nuestro <code>node_modules/</code> y podremos utilizarlo en nuestros proyectos. Ten en cuenta que muchas veces ya viene instalado en proyectos generados con herramientas cli automatizadas. Para saber si ha sido bien instalado (<em>o si ya está instalado previamente en nuestro proyecto</em>) podemos escribir lo siguiente:</p>
+<pre class="language-bash"><code class="language-bash">$ npx browserslist <span class="token parameter variable">--version</span>
+browserslist <span class="token number">4.14</span>.0</code></pre>
+<p>Si <strong>browserslist</strong> está instalado correctamente, debería mostrarnos la versión instalada.</p>
+<h3 id="configuración-de-browserslist" tabindex="-1"><a class="header-anchor" href="#configuración-de-browserslist">Configuración de Browserslist</a></h3>
+<p>Configurar <strong>browserslist</strong> es relativamente sencillo. Una vez instalado, si ejecutamos el comando <code>npx browserslist</code> nos mostrará la lista de navegadores a los que considera que debe dársele soporte:</p>
+<pre class="language-bash"><code class="language-bash">$ npx browserslist
+and_chr <span class="token number">84</span>
+and_ff <span class="token number">68</span>
+and_qq <span class="token number">10.4</span>
+and_uc <span class="token number">12.12</span>
+android <span class="token number">81</span>
+baidu <span class="token number">7.12</span>
+chrome <span class="token number">84</span>
+chrome <span class="token number">83</span>
+edge <span class="token number">84</span>
+edge <span class="token number">83</span>
+edge <span class="token number">18</span>
+firefox <span class="token number">79</span>
+firefox <span class="token number">78</span>
+firefox <span class="token number">77</span>
+firefox <span class="token number">68</span>
+ie <span class="token number">11</span>
+ios_saf <span class="token number">13.4</span>-13.5
+ios_saf <span class="token number">13.3</span>
+ios_saf <span class="token number">12.2</span>-12.4
+kaios <span class="token number">2.5</span>
+op_mini all
+op_mob <span class="token number">46</span>
+opera <span class="token number">69</span>
+opera <span class="token number">68</span>
+safari <span class="token number">13.1</span>
+safari <span class="token number">13</span>
+samsung <span class="token number">12.0</span>
+samsung <span class="token number">11.1</span>-11.2</code></pre>
+<blockquote>
+<p>Por defecto, estos son los navegadores que aparecen (<em>en el momento de escribir este artículo</em>). Tiene una configuración por defecto, y varía dependiendo de las versiones que vayan saliendo, puesto que los datos se obtienen de la plataforma <a href="https://caniuse.com/">CanIUse</a>.</p>
+</blockquote>
+<p>Observando la lista anterior, se puede deducir de que navegadores se trata. Los navegadores <code>and_*</code> son versiones para Android, <code>ios_*</code> para Apple, mientras que versiones normales como <code>firefox</code>, <code>safari</code>, <code>chrome</code> o similares son las versiones de escritorio, etc...</p>
+<p>Estos navegadores aparecen porque son la configuración por defecto de <strong>Browserslist</strong>, es decir, el equivalente al valor <code>defaults</code>. Para configurarlo, la forma recomendada es editar el <a href="https://lenguajejs.com/npm/administracion/package-json/">archivo package.json</a> y editar una entrada <code>browserslist</code> (<em>recuerda, la primera plural y la segunda singular</em>):</p>
+<pre class="language-js"><code class="language-js"><span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+  <span class="token string-property property">"browserslist"</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">"defaults"</span> <span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Dicha entrada tendrá un campo <badge-type class="array"></badge-type> donde podremos ponerle los valores que más nos interesen dependiendo del proyecto. La anterior es la equivalente a no tener nada, el valor por defecto, pero podríamos incluir otras como veremos a continuación.</p>
+<blockquote>
+<p>Existen otras formas para añadir los valores de <strong>browserslist</strong>, como por ejemplo, un fichero de texto plano llamado <code>.browserslistrc</code> en la carpeta raíz del proyecto. No obstante, se recomienda utilizar la opción del campo en el <code>package.json</code>, puesto que es la estándar.</p>
+</blockquote>
+<h3 id="valores-de-browserslist" tabindex="-1"><a class="header-anchor" href="#valores-de-browserslist">Valores de Browserslist</a></h3>
+<p>Veamos cuales son los valores que podemos indicar en ese array de <code>browserslist</code>. Los valores pueden estar en mayúsculas o minúsculas (<em>son pasados a minúsculas por browserslist</em>) y la versión debe estar separada por un espacio en el caso de los navegadores de escritorio:</p>
+<table>
+<thead>
+<tr>
+<th>Ejemplo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>defaults</code></td>
+<td>Equivalente a <code>&gt; 0.5%</code>, <code>last 2 versions</code>, <code>Firefox ESR</code> y <code>not dead</code>.</td>
+</tr>
+<tr>
+<td><code>chrome 50</code></td>
+<td>Navegador de escritorio en versiones como la indicada o superior.</td>
+</tr>
+<tr>
+<td><code>firefox esr</code></td>
+<td>Firefox en su modalidad &quot;Extended Support Release&quot; (ESR).</td>
+</tr>
+<tr>
+<td><code>and_uc 11</code></td>
+<td>Navegador <a href="https://play.google.com/store/apps/details?id=com.UCMobile.intl">UC Browser</a> para Android, versión 11 o superior.</td>
+</tr>
+<tr>
+<td><code>and_qq 10</code></td>
+<td>Navegador <a href="https://play.google.com/store/apps/details?id=com.tencent.mobileqq">QQ Browser</a> para Android, versión 10 o superior.</td>
+</tr>
+<tr>
+<td><code>ie 9</code></td>
+<td>Navegador Internet Explorer, en su versión 9 o superior.</td>
+</tr>
+<tr>
+<td><code>ios_saf 11</code></td>
+<td>Navegador Safari para iOS (<em>Apple</em>), en su versión 11 o superior.</td>
+</tr>
+<tr>
+<td><code>&gt; 1%</code></td>
+<td>Navegadores utilizados más de un <code>1%</code> a nivel mundial.</td>
+</tr>
+<tr>
+<td><code>&gt; 1% in ES</code></td>
+<td>Navegadores utilizados más de un <code>1%</code> a nivel nacional (España).</td>
+</tr>
+<tr>
+<td><code>since 2015</code></td>
+<td>Todas las versiones de los navegadores lanzados desde el año <code>2015</code>.</td>
+</tr>
+<tr>
+<td><code>last 2 versions</code></td>
+<td>Los navegadores principales en su versión actual hasta 2 versiones hacia atrás.</td>
+</tr>
+<tr>
+<td><code>last 2 years</code></td>
+<td>Todas las versiones de los navegadores lanzados durante los 2 últimos años.</td>
+</tr>
+<tr>
+<td><code>dead</code></td>
+<td>Navegadores sin soporte oficial.</td>
+</tr>
+<tr>
+<td><code>unreleased versions</code></td>
+<td>Versiones alfa y beta de los navegadores.</td>
+</tr>
+<tr>
+<td><code>supports es6-module</code></td>
+<td>Navegadores que soportan <a href="https://github.com/ben-eb/caniuse-lite/tree/master/data/features">características</a> concretas. Ej: <a href="https://lenguajejs.com/javascript/caracteristicas/modulos-es6/">módulos</a>.</td>
+</tr>
+<tr>
+<td><code>node 10</code></td>
+<td>Versiones <code>10</code> o posteriores de NodeJS` |</td>
+</tr>
+<tr>
+<td><code>maintained node versions</code></td>
+<td>Versiones en mantenimiento de NodeJS.</td>
+</tr>
+<tr>
+<td><code>current *</code></td>
+<td>Versión actual del navegador precedido por esta palabra clave.</td>
+</tr>
+<tr>
+<td><code>not *</code></td>
+<td>Excluye los navegadores que vengan precedidos por esta palabra clave.</td>
+</tr>
+</tbody>
+</table>
+<p>Puedes comprobarlos en <a href="https://browsersl.ist/">browsersl.ist</a>, separando por comas los valores que quieras. Para integrarlo en el proyecto, simplemente cambia el valor <code>browserslist</code> del <code>package.json</code>, indicando cada valor como un <badge-type class="string"></badge-type> del <badge-type class="array"></badge-type> y escribe <code>npx browserslist</code> para comprobar que está todo correcto.</p>
+<h3 id="posibles-errores-de-browserslist" tabindex="-1"><a class="header-anchor" href="#posibles-errores-de-browserslist">Posibles errores de Browserslist</a></h3>
+<p>En el caso de escribir alguna palabra clave incorrecta en el <code>package.json</code>, al ejecutar <code>npx browserslist</code> nos mostrará un error al no reconocerla. Por ejemplo, si escribimos <code>chromo</code> en lugar de <code>chrome</code>, nos aparecerá un error similar al siguiente:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>browserslist</strong>: Unknown browser query <code>chromo</code>. Maybe you are using old Browserslist or made typo in query.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Si indicamos <code>chrome</code> sin indicar a continuación una versión, el error que obtenemos será el siguiente (<em>recuerda siempre indicar la versión mínima a soportar</em>):</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>browserslist</strong>: Specify versions in Browserslist query for browser chrome</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="cobertura-de-browserslist" tabindex="-1"><a class="header-anchor" href="#cobertura-de-browserslist">Cobertura de Browserslist</a></h3>
+<p>Una vez indicados unos valores específicos en el <code>package.json</code>, podemos ejecutar el comando <code>npm browserslist --coverage</code> para comprobar la cobertura de navegadores que estamos intentando soportar, de acuerdo a los datos de <strong>CanIUse</strong>. Por ejemplo, con los valores por defecto de <code>browserslist</code>, obtenemos la siguiente cobertura:</p>
+<pre class="language-bash"><code class="language-bash">$ npx browserslist <span class="token parameter variable">--coverage</span>
+These browsers account <span class="token keyword">for</span> <span class="token number">89.98</span>% of all <span class="token function">users</span> globally</code></pre>
+<p>Esto significa que actualmente estamos intentando dar soporte al <code>89,98%</code> de los navegadores utilizados en la actualidad a nivel mundial. Además, si indicamos el código del país como parámetro de la opción <code>--coverage</code> nos dará la cobertura para los navegadores en España:</p>
+<pre class="language-bash"><code class="language-bash">$ npx browserslist <span class="token parameter variable">--coverage</span><span class="token operator">=</span><span class="token string">"ES"</span>
+These browsers account <span class="token keyword">for</span> <span class="token number">92.88</span>% of all <span class="token function">users</span> <span class="token keyword">in</span> the ES</code></pre>
+<p>Vemos que la cobertura mejora, y sube hasta un <code>92,88%</code>, ya que en España el uso de navegadores es menos diverso que a nivel global.</p>
+<h3 id="base-de-datos-de-browserslist" tabindex="-1"><a class="header-anchor" href="#base-de-datos-de-browserslist">Base de datos de Browserslist</a></h3>
+<p>Browserslist se nutre de una base de datos minimalista de <strong>CanIUse</strong> que tiene descargada de forma local, para acelerar el trabajo con los datos y no tener que consultarlo en cada ocasión. Es posible que con el tiempo, esta base de datos se vuelva obsoleta o no tenga datos tan actualizados como debería:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Browserslist: caniuse-lite is outdated. Please run: <code>npx browserslist@latest --update-db</code></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>En cualquier momento podemos ejecutar el siguiente comando para actualizar esta base de datos local, descargándola en <code>node_modules/</code> y teniendo una base de datos más aproximada a la realidad actual:</p>
+<pre class="language-bash"><code class="language-bash">$ npx browserslist@latest --update-db
+Current version: <span class="token number">1.0</span>.30001113
+New version: <span class="token number">1.0</span>.30001113
+Updating caniuse-lite…
+caniuse-lite has been successfully updated</code></pre>
+<p>Listo. Con todo lo que hemos visto ya deberíamos saber utilizar <a href="https://github.com/browserslist/browserslist">browserslist</a> con soltura. Puedes hacer pruebas con alguno de los plugins comentados en uno de los primeros apartados, como por ejemplo <strong>Autoprefixer</strong>.</p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../configuracion-postcss/index.htm" title="Configuración de PostCSS">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Configuración de PostCSS</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../../plugins/autoprefixer/index.htm" title="Autoprefixer: Prefijos CSS">
+  <div>
+    <span>Autoprefixer: Prefijos CSS</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/FWDBGZQPzXk" title="Cómo crear GRADIENTES REPETIDOS en CSS">
+  <img loading="lazy" src="../../../vi/FWDBGZQPzXk/mqdefault.jpg" alt="Cómo crear GRADIENTES REPETIDOS en CSS">
+</a><a href="https://youtu.be/0sFtRnbe0fo" title="Novedades de CSS: Dr. CSStrange y el multiverso">
+  <img loading="lazy" src="../../../vi/0sFtRnbe0fo/mqdefault.jpg" alt="Novedades de CSS: Dr. CSStrange y el multiverso">
+</a><a href="https://youtu.be/pJGEELsEM1w" title="Consejos y buenas prácticas (III): CSS">
+  <img loading="lazy" src="../../../vi/pJGEELsEM1w/mqdefault.jpg" alt="Consejos y buenas prácticas (III): CSS">
+</a><a href="https://youtu.be/K-nE-kZKLRw" title="¡NOVEDADES CSS! ¿Cuánto de este código CSS eres CAPAZ de reconocer?">
+  <img loading="lazy" src="../../../vi/K-nE-kZKLRw/mqdefault.jpg" alt="¡NOVEDADES CSS! ¿Cuánto de este código CSS eres CAPAZ de reconocer?">
+</a><a href="https://youtu.be/1TbS60Fu-_M" title="Variables CSS NATIVAS: ¿Qué son y cómo funcionan?">
+  <img loading="lazy" src="../../../vi/1TbS60Fu-_M/mqdefault.jpg" alt="Variables CSS NATIVAS: ¿Qué son y cómo funcionan?">
+</a><a href="https://youtu.be/jdGpehoFoWA" title="¡Aprende a utilizar TRANSICIONES CSS!">
+  <img loading="lazy" src="../../../vi/jdGpehoFoWA/mqdefault.jpg" alt="¡Aprende a utilizar TRANSICIONES CSS!">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

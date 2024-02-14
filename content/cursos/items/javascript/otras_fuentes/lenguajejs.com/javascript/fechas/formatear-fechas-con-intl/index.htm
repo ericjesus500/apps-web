@@ -1,0 +1,813 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ecc022">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Formatear fechas con Intl - Javascript en español - Lenguaje JS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Javascript incluye una API moderna para trabajar con localización de fechas (entre otras) y representarlas nativamente de múltiples formas.">
+  <meta name="view-transition" content="same-origin">
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Formatear fechas con Intl - Javascript en español">
+  <meta property="og:image" content="https://lenguajejs.com/javascript/fechas/formatear-fechas-con-intl/custom-datetimeformat.png">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Javascript incluye una API moderna para trabajar con localización de fechas (entre otras) y representarlas nativamente de múltiples formas.">
+  <meta property="og:url" content="https://lenguajejs.com/javascript/fechas/formatear-fechas-con-intl/">
+  <meta property="twitter:url" content="https://lenguajejs.com/javascript/fechas/formatear-fechas-con-intl/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Formatear fechas con Intl - Javascript en español">
+  <meta property="twitter:description" content="Javascript incluye una API moderna para trabajar con localización de fechas (entre otras) y representarlas nativamente de múltiples formas.">
+  <meta property="twitter:image" content="https://lenguajejs.com/javascript/fechas/formatear-fechas-con-intl/custom-datetimeformat.png">
+
+  </head>
+
+<body class="js menu-open " style="--logo-color: #f0db4f"><script>
+    matchMedia("(width <= 1180px)").matches && document.body.classList.toggle("menu-open");
+  </script>
+  
+
+
+
+
+
+
+
+
+<section class="menubar">
+  <div class="menubar-content">
+    <h1>Lenguaje JS</h1>
+
+    <a class="cover" title="Lenguaje JS (javascript)" href="../../index.htm" style="--image: url('../../../assets/javascript.jpg')"></a>
+
+    <header>
+      <a href="../../eventos/que-son-eventos/index.htm" title="¿Qué son los eventos?">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m14 26l1.41-1.41L7.83 17H28v-2H7.83l7.58-7.59L14 6L4 16l10 10z"></path></svg>
+      </a>
+      <a href="../../index.htm" title="Volver al índice">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 256"><path fill="#888888" d="M240 210h-18v-94.45a14.06 14.06 0 0 0-4.53-10.32l-80-75.49l-.09-.08a13.94 13.94 0 0 0-18.83 0l-.09.08l-80 75.5A14 14 0 0 0 34 115.55V210H16a6 6 0 0 0 0 12h224a6 6 0 0 0 0-12ZM46 115.55a2 2 0 0 1 .65-1.48l.09-.08l79.94-75.48a2 2 0 0 1 2.63 0L209.26 114l.08.08a2 2 0 0 1 .66 1.48V210h-52v-50a14 14 0 0 0-14-14h-32a14 14 0 0 0-14 14v50H46ZM146 210h-36v-50a2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"></path></svg>
+      </a>
+      <a href="../../regexp/expresiones-regulares/index.htm" title="¿Qué es una expresión regular?">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></path></svg>
+      </a>
+    </header>
+
+    <div style="display:none">
+      <svg id="link-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 256 256"><g fill="#888888"><path d="M208 88h-56V32Z" opacity=".2"></path><path d="m213.66 82.34l-56-56A8 8 0 0 0 152 24H56a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V88a8 8 0 0 0-2.34-5.66ZM160 51.31L188.69 80H160ZM200 216H56V40h88v48a8 8 0 0 0 8 8h48v120Z"></path></g></svg>
+      <svg id="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="#888888" d="M2 12.5C2 9.46 4.46 7 7.5 7H18c2.21 0 4 1.79 4 4s-1.79 4-4 4H9.5a2.5 2.5 0 0 1 0-5H17v2H9.41c-.55 0-.55 1 0 1H18c1.1 0 2-.9 2-2s-.9-2-2-2H7.5C5.57 9 4 10.57 4 12.5S5.57 16 7.5 16H17v2H7.5C4.46 18 2 15.54 2 12.5z"></path></svg>
+    </div>
+
+    <div class="links">
+      <span class="folder">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 512 512"><path fill="#888888" d="M41 73v304.563L88.697 151H423v-30H185.514l-16-48H41zm62.303 96L43.092 455h381.605l60.211-286H103.303z"></path></svg>
+        Fechas y horas
+      </span>
+            <a class="link" href="../date-fechas-nativas/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              El tipo Date
+            </a>
+            <a class="link active" href="index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Formatear fechas con Intl
+            </a>
+            <a class="link" href="../fechas-relativas-con-intl/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Fechas relativas con Intl
+            </a>
+            <a class="link" href="../formatear-fechas-con-dayjs/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Formatear fechas con dayjs
+            </a>
+    </div>
+  </div>
+
+  <div class="sidebox">
+    <svg class="close-menu" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19V5m10 1l-6 6l6 6m-6-6h14"></path></svg>
+    <div class="socials">
+      <a class="twitch" href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+      <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+      <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+      <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  const toggleMenu = () => (document.body.classList.toggle("menu-open"));
+  document.querySelector(".close-menu").addEventListener("click", toggleMenu);
+
+  matchMedia("(width <= 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+  matchMedia("(width > 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+
+  const activeLink = document.querySelector(".links .active");
+  const icon = /* svg */`<svg viewBox="0 0 24 24"><use href="#anchor-icon" /></svg>`;
+  const headers = [...document.querySelectorAll(".contents h3")].map(link => ({ text: link.textContent, id: link.id }));
+  const links = [];
+  headers.reverse().forEach(({ text, id }) => {
+    const link = document.createElement("a");
+    link.classList.add("anchor");
+    link.href = "#" + id;
+    link.insertAdjacentHTML("beforeend", icon);
+    link.insertAdjacentText("beforeend", ` ${text}`);
+    activeLink.after(link);
+  });
+</script>
+
+  <div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#js"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeJS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/javascript.jpg')">
+    <h1><a href="index.htm">Formatear fechas con Intl</a></h1><h2 class="typewriter">Internacionalización y conversión de fechas</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../date-fechas-nativas/index.htm">El tipo Date</a>
+    <a class="current" href="index.htm">Formatear fechas con Intl</a>
+    <a href="../fechas-relativas-con-intl/index.htm">Fechas relativas con Intl</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Una de las partes más complejas de trabajar con fechas es <strong>formatear una fecha</strong> para mostrarla de forma adecuada (<em>o de la forma que nos interesa</em>). Una fecha tiene múltiples representaciones posibles: numéricas, alfabéticas, abreviaciones, con diferentes idiomas, estilo, orden, combinaciones entre sí, etc...</p>
+<ul>
+<li>Numéricas: <code>25/1/2021</code>, <code>25/01/2021</code>, <code>1/25/2021</code>, <code>01/25/2021</code>, <code>2021/01/25</code>, <code>25-1-2021</code>...</li>
+<li>Idiomáticas: <code>25 de Enero de 2021</code>, <code>25 de Ene. de 2021</code>, <code>25 January, 2021</code>, <code>25 Jan 2021</code>...</li>
+<li>Orden/combinaciones: <code>Jan/25/2021</code>, <code>25/Febrero/2021</code>, <code>25-Febrero-2021</code>...</li>
+</ul>
+<p>Es muy habitual, que queramos formatear esa fecha con la representación de la región a la que pertenecemos (<em>o a la que pertenece el usuario</em>), por lo que la cosa se puede complicar bastante.</p>
+<p>Por suerte, el objeto <strong>Intl</strong> posee <code>DateTimeFormat</code>, un sistema que unido a lo que ya sabemos sobre fechas del <a href="../date-fechas-nativas/index.htm">objeto Date nativo</a>, pueden hacernos la vida más fácil para dar formato a fechas:</p>
+<table>
+<thead>
+<tr>
+<th>Objeto</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Intl.DateTimeFormat</code></td>
+<td>Crea un objeto de formato con las preferencias de tu región (o la región indicada).</td>
+</tr>
+</tbody>
+</table>
+<p>Dicho objeto, tiene una serie de métodos interesantes, como por ejemplo <code>.format()</code>, en el cuál nos centraremos para saber como formatear una fecha. Los métodos de los que dispone son los siguientes:</p>
+<table class="medium">
+<thead>
+<tr>
+<th>Método</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><badge-type class="string"></badge-type> <code>.format(date)</code></td>
+<td>Formatea la fecha <code>date</code> con la configuración de región iniciada.</td>
+</tr>
+<tr>
+<td><badge-type class="array"></badge-type> <code>.formatToParts(date)</code></td>
+<td>Idem, dividiendo sus partes en un array de objetos.</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>.formatRange(a, b)</code></td>
+<td>Crea un rango con las fechas <code>a-b</code> usando la configuración de región.</td>
+</tr>
+<tr>
+<td><badge-type class="array"></badge-type> <code>.formatRangeToParts(a, b)</code></td>
+<td>Idem, pero divide sus partes en un array de objetos.</td>
+</tr>
+<tr>
+<td><badge-type class="object"></badge-type> <code>.resolvedOptions()</code></td>
+<td>Devuelve las opciones de región definidas en la instancia.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Observa que tanto <code>.format()</code> como <code>.formatRange()</code> tienen una versión <code>*ToParts()</code> que hace exactamente lo mismo, sólo que en lugar de devolver un <badge-type class="string"></badge-type>, devuelven un <badge-type class="array"></badge-type> de <badge-type class="object"></badge-type> con cada parte diferenciada.</p>
+</blockquote>
+<h3 id="crear-una-fecha" tabindex="-1"><a class="header-anchor" href="#crear-una-fecha">Crear una fecha</a></h3>
+<p>Cuando trabajamos con el objeto <code>Date</code> nativo de Javascript, tenemos opciones (<em>aunque limitadas</em>) para personalizar las fechas con las que trabajamos. Métodos como <code>.toString()</code>, <code>.toDateString()</code>, <code>.toGMTString()</code> o <code>.toISOString()</code> se pueden utilizar para personalizar el modo de representación de una fecha. Incluso podemos utilizar <code>.toLocaleDateString()</code> para formatearla dependiendo de la configuración regional del sistema del usuario:</p>
+<pre class="language-js "><code class="language-js"><span class="token comment">// 30 de Enero de 2021</span>
+<span class="token keyword">const</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">2021</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+date<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">// "Sat Jan 30 2021 00:00:00 GMT+0000 (hora estándar...)"</span>
+date<span class="token punctuation">.</span><span class="token function">toDateString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// "Sat Jan 30 2021"</span>
+date<span class="token punctuation">.</span><span class="token function">toGMTString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// "Sat, 30 Jan 2021 00:00:00 GMT"</span>
+date<span class="token punctuation">.</span><span class="token function">toISOString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// "2021-01-30T00:00:00.000Z"</span>
+date<span class="token punctuation">.</span><span class="token function">toLocaleDateString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "30/1/2021"</span></code></pre>
+<p>En caso de querer un <strong>tipo de representación</strong> diferente a las anteriores, tendríamos que optar por usar librerías externas o por crear una función personalizada que devuelva el tipo de representación buscada utilizando getters nativos, lo que puede llegar a ser una tarea tediosa.</p>
+<h3 id="formatear-una-fecha" tabindex="-1"><a class="header-anchor" href="#formatear-una-fecha">Formatear una fecha</a></h3>
+<p>En su lugar, podemos utilizar el objeto <code>Intl</code>, creando una nueva instancia de <code>DateTimeFormat()</code>. Se trata de un objeto que nos permitirá formatear fechas, indicando la configuración regional a seguir, e indepedientemente de la que tenga el usuario en su sistema. Observa el siguiente ejemplo, donde se muestra la fecha del ejemplo anterior, formateada en localización de <strong>España</strong> (<em>es</em>), <strong>Estados Unidos</strong> (<em>en-US</em>), <strong>Alemania</strong> (<em>de</em>), <strong>Azerbaiyán</strong> (<em>az</em>) o <strong>Mauritania</strong> (<em>mr</em>):</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> esDate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>DateTimeFormat</span><span class="token punctuation">(</span><span class="token string">"es"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token string">"30/1/2021"</span>
+
+<span class="token keyword">const</span> enDate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>DateTimeFormat</span><span class="token punctuation">(</span><span class="token string">"en-US"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token string">"1/30/2021"</span>
+
+<span class="token keyword">const</span> deDate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>DateTimeFormat</span><span class="token punctuation">(</span><span class="token string">"de"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token string">"30.1.2021"</span>
+
+<span class="token keyword">const</span> azDate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>DateTimeFormat</span><span class="token punctuation">(</span><span class="token string">"az"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token string">"2021-1-30"</span>
+
+<span class="token keyword">const</span> mrDate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>DateTimeFormat</span><span class="token punctuation">(</span><span class="token string">"mr"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token string">"३०/१/२०२१"</span></code></pre>
+<p>Si al instanciar <code>new Intl.DateTimeFormat()</code> no indicamos ningún parámetro, se indicará por defecto el código del país del sistema, por lo que si tenemos un navegador con el sistema en Español, sería como si se hiciera un <code>new Intl.DateTimeFormat(&quot;es-ES&quot;)</code>.</p>
+<p>Realmente, <code>new Intl.DateTimeFormat(country, options)</code> tiene dos parámetros opcionales:</p>
+<table>
+<thead>
+<tr>
+<th>Opciones</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><badge-type class="string"></badge-type> <code>country</code></td>
+<td>Código del país que usaremos para formatear el fecha. Por ejemplo, <code>es-ES</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="object"></badge-type> <code>options</code></td>
+<td>Objeto de opciones para personalizar la fecha.</td>
+</tr>
+</tbody>
+</table>
+<p>Podemos observar los parámetros por defecto si ejecutamos el método <code>.resolvedOptions()</code>, que en mi caso me muestra la siguiente salida (<em>pueden variar dependiendo de tu región</em>):</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>DateTimeFormat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">resolvedOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  <span class="token literal-property property">calendar</span><span class="token operator">:</span> <span class="token string">"gregory"</span><span class="token punctuation">,</span>        <span class="token comment">// Calendario gregoriano</span>
+  <span class="token literal-property property">locale</span><span class="token operator">:</span> <span class="token string">"es-ES"</span><span class="token punctuation">,</span>            <span class="token comment">// Español de España</span>
+  <span class="token literal-property property">numberingSystem</span><span class="token operator">:</span> <span class="token string">"latn"</span><span class="token punctuation">,</span>    <span class="token comment">// Latín</span>
+  <span class="token literal-property property">day</span><span class="token operator">:</span> <span class="token string">"numeric"</span><span class="token punctuation">,</span>             <span class="token comment">// Formato numérico: 1, 2, 3...</span>
+  <span class="token literal-property property">month</span><span class="token operator">:</span> <span class="token string">"numeric"</span><span class="token punctuation">,</span>           <span class="token comment">// Idem</span>
+  <span class="token literal-property property">year</span><span class="token operator">:</span> <span class="token string">"numeric"</span><span class="token punctuation">,</span>            <span class="token comment">// Idem</span>
+  <span class="token literal-property property">timeZone</span><span class="token operator">:</span> <span class="token string">"Atlantic/Canary"</span> <span class="token comment">// Zona horaria</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Ten en cuenta que el campo indicado en <code>locale</code> es el primer parámetro, el código de país para indicar la localización. El resto de parámetros son los que se pasan en el <badge-type class="object"></badge-type> <code>options</code> de <code>Intl.DateTimeFormat()</code> y que nosotros podemos personalizar a nuestro gusto, dependiendo de la salida que busquemos. Por ejemplo:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> dtf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>DateTimeFormat</span><span class="token punctuation">(</span><span class="token string">"es-ES"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">calendar</span><span class="token operator">:</span> <span class="token string">"gregory"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">numberingSystem</span><span class="token operator">:</span> <span class="token string">"latn"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">day</span><span class="token operator">:</span> <span class="token string">"numeric"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">month</span><span class="token operator">:</span> <span class="token string">"numeric"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">year</span><span class="token operator">:</span> <span class="token string">"numeric"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">timeZone</span><span class="token operator">:</span> <span class="token string">"Atlantic/Canary"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> date <span class="token operator">=</span> dtf<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Este objeto de opciones puede ser muy variado y con diferentes parámetros. Vamos a unirlos en diferentes grupos para ver como funcionan.</p>
+<h3 id="estilos-predefinidos-de-fecha" tabindex="-1"><a class="header-anchor" href="#estilos-predefinidos-de-fecha">Estilos predefinidos de fecha</a></h3>
+<p>En primer lugar tenemos un primer gran bloque de opciones, donde tenemos los parámetros <code>dateStyle</code> y <code>timeStyle</code>. Se trata de un sistema rápido para indicar perfiles genéricos con un estilo concreto. No se pueden utilizar junto a parámetros que veremos más tarde como <code>weekday</code>, <code>day</code>, <code>month</code> o similares:</p>
+<table>
+<thead>
+<tr>
+<th>Opción</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><badge-type class="string"></badge-type> <code>dateStyle</code></td>
+<td>Establece un perfil de estilo de fecha: <code>full</code>, <code>long</code>, <code>medium</code> o <code>short</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>timeStyle</code></td>
+<td>Establece un perfil de estilo de hora: <code>full</code>, <code>long</code>, <code>medium</code> o <code>short</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Observa que en cada ejemplo vamos cambiando los valores de <code>dateStyle</code> y <code>timeStyle</code>, y como consecuencia se muestra de diferente forma. Estos parámetros pueden mezclarse, no necesariamente tienen que ser los mismos siempre. Uno afecta a la fecha y otro a la hora:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>DateTimeFormat</span><span class="token punctuation">(</span><span class="token string">"es-ES"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">dateStyle</span><span class="token operator">:</span> <span class="token string">"full"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">timeStyle</span><span class="token operator">:</span> <span class="token string">"full"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token string">"viernes, 26 de febrero de 2021, 10:46:26 (hora estándar de Europa occidental)"</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>DateTimeFormat</span><span class="token punctuation">(</span><span class="token string">"es-ES"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">dateStyle</span><span class="token operator">:</span> <span class="token string">"long"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">timeStyle</span><span class="token operator">:</span> <span class="token string">"long"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token string">"26 de febrero de 2021, 10:47:10 WET"</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>DateTimeFormat</span><span class="token punctuation">(</span><span class="token string">"es-ES"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">dateStyle</span><span class="token operator">:</span> <span class="token string">"medium"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">timeStyle</span><span class="token operator">:</span> <span class="token string">"medium"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token string">"26 feb 2021 10:47:29"</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>DateTimeFormat</span><span class="token punctuation">(</span><span class="token string">"es-ES"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">dateStyle</span><span class="token operator">:</span> <span class="token string">"short"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">timeStyle</span><span class="token operator">:</span> <span class="token string">"short"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token string">"26/2/21 10:48"</span></code></pre>
+<h3 id="opciones-de-configuración" tabindex="-1"><a class="header-anchor" href="#opciones-de-configuración">Opciones de configuración</a></h3>
+<p>En dicho objeto de opciones también es posible añadir ciertas personalizaciones, como por ejemplo, el tipo de calendario (<em>el calendario gregoriano es el que solemos utilizar</em>), el sistema de numeración (<em>latín, por defecto</em>), la zona horaria con <code>timeZone</code> o los algoritmos de formateo o localización a utilizar:</p>
+<table>
+<thead>
+<tr>
+<th>Opción</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><badge-type class="string"></badge-type> <code>calendar</code></td>
+<td>Calendario: <code>buddhist</code>, <code>chinese</code>, <code>gregory</code> (<em>el nuestro</em>), <code>hebrew</code>, <code>japanese</code>, etc...</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>numberingSystem</code></td>
+<td>Sistema de numeración: <code>arab</code>, <code>fullwide</code>, <code>bali</code>, <code>latn</code> (<em>por defecto</em>), entre otros.</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>formatMatcher</code></td>
+<td>Indica el algoritmo de formateo a utilizar: <code>basic</code> o <code>best fit</code> (<em>por defecto</em>).</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>localeMatcher</code></td>
+<td>Indica el algoritmo de localización a utilizar: <code>lookup</code> o <code>best fit</code> (<em>por defecto</em>).</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>timeZone</code></td>
+<td>Zona horaria a usar: <code>UTC</code>, <code>Europe/London</code>, <code>Atlantic/Canary</code>, <code>Europe/Madrid</code>...</td>
+</tr>
+</tbody>
+</table>
+<p>Hay que tener en cuenta que estas opciones tendrán un valor por defecto dependiendo del sistema donde estemos trabajando.</p>
+<h3 id="formato-personalizado" tabindex="-1"><a class="header-anchor" href="#formato-personalizado">Formato personalizado</a></h3>
+<p>A diferencia de los estilos predefinidos que podemos seleccionar rápidamente con las opciones <code>dateStyle</code> y <code>timeStyle</code>, tenemos un segundo modo de personalización. Antes de nada, tener en cuenta que debemos seleccionar uno de los dos, es decir, si utilizamos <code>dateStyle</code> o <code>timeStyle</code>, no podremos utilizar ninguna de las siguientes opciones.</p>
+<p>Las opciones son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Opción</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><badge-type class="string"></badge-type> <code>weekday</code></td>
+<td>Día de la semana: <code>long</code>, <code>short</code> o <code>narrow</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>era</code></td>
+<td>Era actual: <code>long</code>, <code>short</code> o <code>narrow</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>year</code></td>
+<td>Año: <code>numeric</code> o <code>2-digit</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>month</code></td>
+<td>Mes: <code>numeric</code>, <code>2-digit</code>, <code>long</code>, <code>short</code> o <code>narrow</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>day</code></td>
+<td>Día: <code>numeric</code> o <code>2-digit</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>dayPeriod</code></td>
+<td>Periodo del día: <code>narrow</code>, <code>short</code> o <code>long</code>. Solo en <strong>inglés</strong> de momento.</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>hour</code></td>
+<td>Hora: <code>numeric</code> o <code>2-digit</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="boolean"></badge-type> <code>hour12</code></td>
+<td>Activa el formato de 12 horas (<em>01:00 p.m.</em>) o lo desactiva (<em>13:00</em>).</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>hourCycle</code></td>
+<td>Formato de 12 horas (<code>h11</code> o <code>h12</code>) o de 24 horas (<code>h23</code> o <code>h24</code>).</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>minute</code></td>
+<td>Minutos: <code>numeric</code> o <code>2-digit</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>second</code></td>
+<td>Segundos: <code>numeric</code> o <code>2-digit</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>fractionalSecondDigits</code></td>
+<td>Dígitos de las fracciones de segundos: <code>1</code>, <code>2</code> o <code>3</code>.</td>
+</tr>
+<tr>
+<td><badge-type class="string"></badge-type> <code>timeZoneName</code></td>
+<td>Nombre de la zona horaria: <code>long</code> o <code>short</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>El funcionamiento de estas opciones es muy sencillo. Simplemente se trata de añadir la característica que queremos mostrar en la representación de la hora, con el valor que más nos interese. Si no queremos mostrar alguno, simplemente lo omitimos:</p>
+<pre class="language-js "><code class="language-js"><span class="token comment">// Localización: España</span>
+<span class="token comment">// Día de la semana, día numérico e inicial del mes</span>
+<span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>DateTimeFormat</span><span class="token punctuation">(</span><span class="token string">"es"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">weekday</span><span class="token operator">:</span> <span class="token string">"long"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">day</span><span class="token operator">:</span> <span class="token string">"2-digit"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">month</span><span class="token operator">:</span> <span class="token string">"narrow"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token string">"viernes, 26 F"</span>
+
+<span class="token comment">// Localización : Inglesa</span>
+<span class="token comment">// Día en 2 dígitos, periodo del día, mes, hora y minutos</span>
+<span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>DateTimeFormat</span><span class="token punctuation">(</span><span class="token string">"en"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">day</span><span class="token operator">:</span> <span class="token string">"2-digit"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">dayPeriod</span><span class="token operator">:</span> <span class="token string">"long"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">month</span><span class="token operator">:</span> <span class="token string">"short"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">hour</span><span class="token operator">:</span> <span class="token string">"2-digit"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">minute</span><span class="token operator">:</span> <span class="token string">"2-digit"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token string">"Feb 26, 03:07 at night"</span></code></pre>
+<p>Es importante destacar que el <strong>orden de los parámetros</strong> en el <badge-type class="object"></badge-type> de opciones no importa, puesto que se colocarán en el lugar apropiado en la representación final generada. También es importante observar que cada parámetro tiene un valor que hace que la fecha se representa de una forma particular. Dependiendo de los demás valores presentes, la representación puede variar ligeramente (<em>por ejemplo, la opción era en formato largo necesita mostrar año y otros datos aunque no se indiquen</em>).</p>
+<p>A continuación puedes ver un gráfico donde se indican los diferentes valores de estas opciones, para una fecha concreta:</p>
+<p><img src="custom-datetimeformat.png" alt="Intl.DateTimeFormat" width="1054" height="499" loading="lazy"></p>
+<h3 id="formatear-partes-de-una-fecha" tabindex="-1"><a class="header-anchor" href="#formatear-partes-de-una-fecha">Formatear partes de una fecha</a></h3>
+<p>Hemos visto como trabajar con el método <code>.format(date)</code>, sin embargo, existe una variante de este método, denominada <code>.formatToParts(date)</code>. Funciona exactamente igual, sólo que la primera devuelve un <badge-type class="string"></badge-type> mientras que esta última devuelve un <badge-type class="array"></badge-type> de <badge-type class="object"></badge-type>.</p>
+<p>Por ejemplo, el último fragmento de código con este método devolvería lo siguiente:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>DateTimeFormat</span><span class="token punctuation">(</span><span class="token string">"en"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">day</span><span class="token operator">:</span> <span class="token string">"2-digit"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">dayPeriod</span><span class="token operator">:</span> <span class="token string">"long"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">month</span><span class="token operator">:</span> <span class="token string">"short"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">hour</span><span class="token operator">:</span> <span class="token string">"2-digit"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">minute</span><span class="token operator">:</span> <span class="token string">"2-digit"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">formatToParts</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Devuelve un array de objetos</span>
+<span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"month"</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"Feb"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"literal"</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">" "</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"day"</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"26"</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"literal"</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">", "</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"hour"</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"03"</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"literal"</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">":"</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"minute"</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"56"</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"literal"</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">" "</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"dayPeriod"</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"in the afternoon"</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span></code></pre>
+<p>Observa que este método nos devuelve varios objetos, con las claves <code>type</code> y <code>value</code>. Podemos utilizar la clave <code>type</code> para acceder al valor concreto que nos interesa. Además, los separadores de texto, se identifican como tipo <code>literal</code>.</p>
+<h3 id="formatear-rangos-de-fechas" tabindex="-1"><a class="header-anchor" href="#formatear-rangos-de-fechas">Formatear rangos de fechas</a></h3>
+<p>Al igual que tenemos el método <code>.format(date)</code>, también disponemos de un método llamado <code>.formatRange(date1, date2)</code>. Este método nos acepta dos fechas por parámetro para crear una fecha donde se representa un rango <code>fecha1 - fecha2</code>. La razón de esto es respetar la configuración regional con la que nos encontramos trabajando para crear dicho rango.</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> date1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">2021</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> date2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">2021</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> range <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>DateTimeFormat</span><span class="token punctuation">(</span><span class="token string">"es-ES"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">dateStyle</span><span class="token operator">:</span> <span class="token string">"medium"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">formatRange</span><span class="token punctuation">(</span>date1<span class="token punctuation">,</span> date2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Devuelve un string</span>
+<span class="token string">"1–20 ene 2020"</span></code></pre>
+<blockquote>
+<p>Al tratarse del mismo mes, observa que no se repite de nuevo las partes que ya se definen en la segunda fecha.</p>
+</blockquote>
+<p>De la misma manera que la anterior, también tiene su versión <code>.formatRangeToParts(date1, date2)</code>, que en lugar de devolvernos un <badge-type class="string"></badge-type>, nos devuelve un <badge-type class="array"></badge-type> de <badge-type class="object"></badge-type> con las partes de las fechas divididas e identificadas:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> date1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">2021</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> date2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">2021</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> range <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>DateTimeFormat</span><span class="token punctuation">(</span><span class="token string">"es-ES"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">dateStyle</span><span class="token operator">:</span> <span class="token string">"medium"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">formatRangeToParts</span><span class="token punctuation">(</span>date1<span class="token punctuation">,</span> date2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Devuelve un array de objetos:</span>
+<span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"day"</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span> <span class="token literal-property property">source</span><span class="token operator">:</span> <span class="token string">"startRange"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"literal"</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"-"</span><span class="token punctuation">,</span> <span class="token literal-property property">source</span><span class="token operator">:</span> <span class="token string">"shared"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"day"</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"20"</span><span class="token punctuation">,</span> <span class="token literal-property property">source</span><span class="token operator">:</span> <span class="token string">"endRange"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"literal"</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">" "</span><span class="token punctuation">,</span> <span class="token literal-property property">source</span><span class="token operator">:</span> <span class="token string">"shared"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"month"</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"ene"</span><span class="token punctuation">,</span> <span class="token literal-property property">source</span><span class="token operator">:</span> <span class="token string">"shared"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"literal"</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">" "</span><span class="token punctuation">,</span> <span class="token literal-property property">source</span><span class="token operator">:</span> <span class="token string">"shared"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"year"</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"2021"</span><span class="token punctuation">,</span> <span class="token literal-property property">source</span><span class="token operator">:</span> <span class="token string">"shared"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span></code></pre>
+<p>Observa que en la clave <code>source</code> de cada <badge-type class="object"></badge-type> se nos indica <code>startRange</code> si pertenece a la fecha de inicio, <code>endRange</code> si pertenece a la fecha final y <code>shared</code> si pertenece a ambas fechas.</p>
+<h3 id="soporte-de-intl" tabindex="-1"><a class="header-anchor" href="#soporte-de-intl">Soporte de Intl</a></h3>
+<p>Aunque en principio el <strong>soporte de internacionalización</strong> en navegadores es bastante bueno actualmente, puedes ver más detalladamente el soporte por características más especificas en la siguiente <a href="https://caniuse.com/?search=intl">búsqueda de Intl en CanIUse</a>:</p>
+<p><caniuse-support title="Internationalization API" feature="internationalization" edge="12/y" firefox="29/y" chrome="24/y" safari="10/y" opera="15/y" ios_saf="10.0-10.2/y" and_chr="120/y" and_ff="119/y">
+</caniuse-support></p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../date-fechas-nativas/index.htm" title="El tipo Date">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>El tipo Date</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../fechas-relativas-con-intl/index.htm" title="Fechas relativas con Intl">
+  <div>
+    <span>Fechas relativas con Intl</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/S0YA8BadVbM" title="Cambiar clases CSS desde Javascript con classList">
+  <img loading="lazy" src="../../../vi/S0YA8BadVbM/mqdefault.jpg" alt="Cambiar clases CSS desde Javascript con classList">
+</a><a href="https://youtu.be/EiKYr5vjs48" title="Diferencias entre getElementById vs querySelector (y otros métodos del DOM)">
+  <img loading="lazy" src="../../../vi/EiKYr5vjs48/mqdefault.jpg" alt="Diferencias entre getElementById vs querySelector (y otros métodos del DOM)">
+</a><a href="https://youtu.be/UVauEId-jJ0" title="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+  <img loading="lazy" src="../../../vi/UVauEId-jJ0/mqdefault.jpg" alt="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+</a><a href="https://youtu.be/Xi07tHFzqR8" title="Cómo CLONAR objetos en Javascript correctamente (structuredClone)">
+  <img loading="lazy" src="../../../vi/Xi07tHFzqR8/mqdefault.jpg" alt="Cómo CLONAR objetos en Javascript correctamente (structuredClone)">
+</a><a href="https://youtu.be/A11eG1o611M" title="Creador de historias con Javascript y ChatGPT">
+  <img loading="lazy" src="../../../vi/A11eG1o611M/mqdefault.jpg" alt="Creador de historias con Javascript y ChatGPT">
+</a><a href="https://youtu.be/KE2xRDM4Amg" title="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+  <img loading="lazy" src="../../../vi/KE2xRDM4Amg/mqdefault.jpg" alt="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+</a></div>
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajehtml.com/svg/" title="SVG">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#svg"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/css/" title="CSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/postcss/" title="PostCSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="../../../fundamentos/index.htm" title="Fundamentos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="../../index.htm" title="Javascript">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="../../../npm/index.htm" title="NPM">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="../../../webcomponents/index.htm" title="WebComponents">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="../../../vuejs/index.htm" title="VueJS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="../../../automatizadores/index.htm" title="Automatizadores">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a><a class="topic" href="../../../retos/index.htm" title="Retos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#retos"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+    
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-6', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+
+  </div></body>
+
+</html>

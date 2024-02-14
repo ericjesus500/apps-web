@@ -1,0 +1,41 @@
+@import url("../../../css2");
+
+:root {
+  --handwrite-font: "Caveat", "Courier New", monospace;
+}
+
+.post .contents {
+  background:
+    linear-gradient(#111 5%, transparent, #111 95%),
+    url("phone-bg.webp") no-repeat center left;
+  background-size: cover;
+  width: 100%;
+  max-width: 100%;
+  padding: 3em;
+  margin: 2em 0;
+  box-sizing: border-box;
+}
+
+css-book {
+  opacity: 1;
+  transition: opacity 0.5s;
+
+  &:not(:defined) {
+    opacity: 0;
+  }
+}
+
+@media (width <= 1024px) {
+  #app { display: none; }
+
+  #warning {
+    padding: 1.5rem;
+    background: #801a11;
+    color: #fff;
+    text-align: center;
+  }
+}
+
+@media (width >= 1024px) {
+  #warning { display: none; }
+}

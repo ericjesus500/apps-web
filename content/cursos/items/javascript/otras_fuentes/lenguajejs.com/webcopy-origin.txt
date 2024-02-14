@@ -1,0 +1,1424 @@
+Uri: https://i3.ytimg.com/vi/1TbS60Fu-_M/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vi\1TbS60Fu-_M\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/8Jh2K3tq5n0/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vi\8Jh2K3tq5n0\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/A11eG1o611M/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vi\A11eG1o611M\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/Aq_VPZ4oTAs/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vi\Aq_VPZ4oTAs\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/EiKYr5vjs48/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vi\EiKYr5vjs48\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/FWDBGZQPzXk/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vi\FWDBGZQPzXk\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/j1-QNzikFCY/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vi\j1-QNzikFCY\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/K-nE-kZKLRw/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vi\K-nE-kZKLRw\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/KE2xRDM4Amg/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vi\KE2xRDM4Amg\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/OjI8jMcKN8s/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vi\OjI8jMcKN8s\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/OQtAyXHeKnc/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vi\OQtAyXHeKnc\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/q4WZUTfHt6o/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vi\q4WZUTfHt6o\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/S0YA8BadVbM/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vi\S0YA8BadVbM\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/sU4e6_i_ExU/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vi\sU4e6_i_ExU\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/uMMLQNgsivg/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vi\uMMLQNgsivg\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/UVauEId-jJ0/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vi\UVauEId-jJ0\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/xabCn0BUhos/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vi\xabCn0BUhos\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://i3.ytimg.com/vi/Xi07tHFzqR8/mqdefault.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vi\Xi07tHFzqR8\mqdefault.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajejs.com/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/assets/automatizadores.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\automatizadores.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajejs.com/assets/fonts/jost-vf.woff
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\fonts\jost-vf.woff
+Content Type: font/woff2
+
+Uri: https://lenguajejs.com/assets/fonts/jost-vf.woff2
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\fonts\jost-vf.woff2
+Content Type: font/woff2
+
+Uri: https://lenguajejs.com/assets/fonts/victor-mono-500.woff
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\fonts\victor-mono-500.woff
+Content Type: font/woff2
+
+Uri: https://lenguajejs.com/assets/fonts/victor-mono-500.woff2
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\fonts\victor-mono-500.woff2
+Content Type: font/woff2
+
+Uri: https://lenguajejs.com/assets/fundamentos.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\fundamentos.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajejs.com/assets/header-css.webp
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\header-css.webp
+Content Type: image/webp
+
+Uri: https://lenguajejs.com/assets/header-html.webp
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\header-html.webp
+Content Type: image/webp
+
+Uri: https://lenguajejs.com/assets/header-js.webp
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\header-js.webp
+Content Type: image/webp
+
+Uri: https://lenguajejs.com/assets/header-terminal.webp
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\header-terminal.webp
+Content Type: image/webp
+
+Uri: https://lenguajejs.com/assets/icons/book.svg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\icons\book.svg
+Content Type: image/svg+xml
+
+Uri: https://lenguajejs.com/assets/icons/logos.svg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\icons\logos.svg
+Content Type: image/svg+xml
+
+Uri: https://lenguajejs.com/assets/icons/social.svg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\icons\social.svg
+Content Type: image/svg+xml
+
+Uri: https://lenguajejs.com/assets/javascript.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\javascript.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajejs.com/assets/logos.svg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\logos.svg
+Content Type: image/svg+xml
+
+Uri: https://lenguajejs.com/assets/logos/manzdev-logo.webp
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\logos\manzdev-logo.webp
+Content Type: image/webp
+
+Uri: https://lenguajejs.com/assets/manzdev-hover.webp
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\manzdev-hover.webp
+Content Type: image/webp
+
+Uri: https://lenguajejs.com/assets/manzdev-profile.webp
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\manzdev-profile.webp
+Content Type: image/webp
+
+Uri: https://lenguajejs.com/assets/npm.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\npm.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajejs.com/assets/retos.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\retos.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajejs.com/assets/stickers/manzdev-corn.gif
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\stickers\manzdev-corn.gif
+Content Type: image/gif
+
+Uri: https://lenguajejs.com/assets/stickers/manzdev-dance.gif
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\stickers\manzdev-dance.gif
+Content Type: image/gif
+
+Uri: https://lenguajejs.com/assets/stickers/manzdev-gold.gif
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\stickers\manzdev-gold.gif
+Content Type: image/gif
+
+Uri: https://lenguajejs.com/assets/stickers/manzdev-tip.gif
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\stickers\manzdev-tip.gif
+Content Type: image/gif
+
+Uri: https://lenguajejs.com/assets/stickers/manzdev-yar.gif
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\stickers\manzdev-yar.gif
+Content Type: image/gif
+
+Uri: https://lenguajejs.com/assets/stickers/manzdev.gif
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\stickers\manzdev.gif
+Content Type: image/gif
+
+Uri: https://lenguajejs.com/assets/vuejs.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\vuejs.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajejs.com/assets/webcomponents.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\assets\webcomponents.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajejs.com/automatizadores/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\automatizadores\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/automatizadores/introduccion/commonjs-vs-es-modules/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\automatizadores\introduccion\commonjs-vs-es-modules\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/automatizadores/introduccion/commonjs-vs-es-modules/commonjs-vs-esm.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\automatizadores\introduccion\commonjs-vs-es-modules\commonjs-vs-esm.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/automatizadores/introduccion/que-es-un-automatizador/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\automatizadores\introduccion\que-es-un-automatizador\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/automatizadores/logo.svg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\automatizadores\logo.svg
+Content Type: image/svg+xml
+
+Uri: https://lenguajejs.com/automatizadores/parcel/guia-tutorial-inicial-de-parcel/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\automatizadores\parcel\guia-tutorial-inicial-de-parcel\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/automatizadores/parcel/parcel-build-mode/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\automatizadores\parcel\parcel-build-mode\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/automatizadores/parcel/parcel-serve-mode/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\automatizadores\parcel\parcel-serve-mode\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/automatizadores/rollup/guia-tutorial-inicial-de-rollup/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\automatizadores\rollup\guia-tutorial-inicial-de-rollup\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/automatizadores/rollup/servidor-desarrollo-con-rollup/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\automatizadores\rollup\servidor-desarrollo-con-rollup\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/automatizadores/vite/guia-tutorial-inicial-de-vite/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\automatizadores\vite\guia-tutorial-inicial-de-vite\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/automatizadores/web-dev-server/guia-inicial-web-dev-server/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\automatizadores\web-dev-server\guia-inicial-web-dev-server\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/automatizadores/web-dev-server/guia-inicial-web-dev-server/web-dev-server.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\automatizadores\web-dev-server\guia-inicial-web-dev-server\web-dev-server.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/cdn-cgi/images/browser-bar.png?1376755637
+File Name: C:\Downloaded Web Sites\lenguajejs.com\cdn-cgi\images\browser-bar.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/cdn-cgi/images/cf-icon-browser.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\cdn-cgi\images\cf-icon-browser.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/cdn-cgi/images/cf-icon-cloud.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\cdn-cgi\images\cf-icon-cloud.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/cdn-cgi/images/cf-icon-error.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\cdn-cgi\images\cf-icon-error.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/cdn-cgi/images/cf-icon-horizontal-arrow.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\cdn-cgi\images\cf-icon-horizontal-arrow.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/cdn-cgi/images/cf-icon-ok.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\cdn-cgi\images\cf-icon-ok.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/cdn-cgi/images/cf-icon-server.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\cdn-cgi\images\cf-icon-server.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/cdn-cgi/images/cf-no-screenshot-error.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\cdn-cgi\images\cf-no-screenshot-error.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/cdn-cgi/images/cf-no-screenshot-warn.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\cdn-cgi\images\cf-no-screenshot-warn.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/cdn-cgi/images/icon-exclamation.png?1376755637
+File Name: C:\Downloaded Web Sites\lenguajejs.com\cdn-cgi\images\icon-exclamation.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/cdn-cgi/l/email-protection
+File Name: C:\Downloaded Web Sites\lenguajejs.com\cdn-cgi\l\email-protection.html
+Content Type: text/html
+
+Uri: https://lenguajejs.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+File Name: C:\Downloaded Web Sites\lenguajejs.com\cdn-cgi\scripts\5c5dd728\cloudflare-static\email-decode.min.js
+Content Type: application/javascript
+
+Uri: https://lenguajejs.com/cdn-cgi/styles/cf.errors.css
+File Name: C:\Downloaded Web Sites\lenguajejs.com\cdn-cgi\styles\cf.errors.css
+Content Type: text/css
+
+Uri: https://lenguajejs.com/favicon.ico
+File Name: C:\Downloaded Web Sites\lenguajejs.com\favicon.ico
+Content Type: image/x-icon
+
+Uri: https://lenguajejs.com/fundamentos/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/fundamentos/bucles-e-iteraciones/bucles-for/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\bucles-e-iteraciones\bucles-for\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/fundamentos/bucles-e-iteraciones/bucles-while/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\bucles-e-iteraciones\bucles-while\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/fundamentos/bucles-e-iteraciones/interrumpir-bucles/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\bucles-e-iteraciones\interrumpir-bucles\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/fundamentos/bucles-e-iteraciones/que-son/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\bucles-e-iteraciones\que-son\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/fundamentos/estructuras-de-control/condicionales-if-else/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\estructuras-de-control\condicionales-if-else\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/fundamentos/estructuras-de-control/condicionales-switch/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\estructuras-de-control\condicionales-switch\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/fundamentos/estructuras-de-control/flujo-de-ejecucion/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\estructuras-de-control\flujo-de-ejecucion\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/fundamentos/estructuras-de-control/flujo-de-ejecucion/anidacion.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\estructuras-de-control\flujo-de-ejecucion\anidacion.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/fundamentos/estructuras-de-control/flujo-de-ejecucion/bucles-flujo-repeticion.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\estructuras-de-control\flujo-de-ejecucion\bucles-flujo-repeticion.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/fundamentos/estructuras-de-control/flujo-de-ejecucion/flujo-condicional.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\estructuras-de-control\flujo-de-ejecucion\flujo-condicional.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/fundamentos/estructuras-de-control/flujo-de-ejecucion/flujo-secuencial.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\estructuras-de-control\flujo-de-ejecucion\flujo-secuencial.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/fundamentos/estructuras-de-control/flujo-de-ejecucion/funciones.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\estructuras-de-control\flujo-de-ejecucion\funciones.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/fundamentos/estructuras-de-control/operador-ternario/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\estructuras-de-control\operador-ternario\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/fundamentos/estructuras-de-datos/ambitos-o-contextos/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\estructuras-de-datos\ambitos-o-contextos\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/fundamentos/estructuras-de-datos/ambitos-o-contextos/scope-simba.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\estructuras-de-datos\ambitos-o-contextos\scope-simba.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajejs.com/fundamentos/estructuras-de-datos/tipos-de-datos/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\estructuras-de-datos\tipos-de-datos\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/fundamentos/estructuras-de-datos/variables-y-constantes/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\estructuras-de-datos\variables-y-constantes\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/fundamentos/funciones/parametros/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\funciones\parametros\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/fundamentos/funciones/que-es-una-funcion/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\funciones\que-es-una-funcion\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/fundamentos/introduccion/comentarios-de-codigo/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\introduccion\comentarios-de-codigo\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/fundamentos/introduccion/conceptos-previos/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\introduccion\conceptos-previos\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/fundamentos/introduccion/conceptos-previos/bucles-iteraciones.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\introduccion\conceptos-previos\bucles-iteraciones.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/fundamentos/introduccion/conceptos-previos/comentarios-indentacion.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\introduccion\conceptos-previos\comentarios-indentacion.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/fundamentos/introduccion/conceptos-previos/funciones-parametros.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\introduccion\conceptos-previos\funciones-parametros.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/fundamentos/introduccion/conceptos-previos/programa-algoritmo.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\introduccion\conceptos-previos\programa-algoritmo.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/fundamentos/introduccion/conceptos-previos/variables-constantes-tipo-de-dato.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\introduccion\conceptos-previos\variables-constantes-tipo-de-dato.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/fundamentos/introduccion/convenciones-de-nombres/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\introduccion\convenciones-de-nombres\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/fundamentos/introduccion/convenciones-de-nombres/hardest-problem.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\introduccion\convenciones-de-nombres\hardest-problem.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajejs.com/fundamentos/introduccion/indentacion-de-codigo/indentacion/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\introduccion\indentacion-de-codigo\indentacion\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/fundamentos/logo.svg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\fundamentos\logo.svg
+Content Type: image/svg+xml
+
+Uri: https://lenguajejs.com/home.css
+File Name: C:\Downloaded Web Sites\lenguajejs.com\home.css
+Content Type: text/css
+
+Uri: https://lenguajejs.com/home.js
+File Name: C:\Downloaded Web Sites\lenguajejs.com\home.js
+Content Type: application/javascript
+
+Uri: https://lenguajejs.com/index.js
+File Name: C:\Downloaded Web Sites\lenguajejs.com\index.js
+Content Type: application/javascript
+
+Uri: https://lenguajejs.com/javascript/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/arrays/array-functions/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\arrays\array-functions\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/arrays/buscar-y-comprobar/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\arrays\buscar-y-comprobar\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/arrays/desestructuracion-arrays/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\arrays\desestructuracion-arrays\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/arrays/modificar-subarrays/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\arrays\modificar-subarrays\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/arrays/ordenacion/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\arrays\ordenacion\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/arrays/que-es/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\arrays\que-es\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/asincronia/async-await/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\asincronia\async-await\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/asincronia/callbacks/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\asincronia\callbacks\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/asincronia/callbacks/ryuu-callback.gif
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\asincronia\callbacks\ryuu-callback.gif
+Content Type: image/gif
+
+Uri: https://lenguajejs.com/javascript/asincronia/promesas/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\asincronia\promesas\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/asincronia/promesas/promises.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\asincronia\promesas\promises.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/asincronia/promise-api/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\asincronia\promise-api\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/asincronia/que-es/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\asincronia\que-es\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/asincronia/que-es/asincronia-javascript.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\asincronia\que-es\asincronia-javascript.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/calidad-de-codigo/eslint/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\calidad-de-codigo\eslint\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/cheatsheets/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\cheatsheets\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/cheatsheets/cheatsheet.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\cheatsheets\cheatsheet.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/cheatsheets/CheatsheetDonation.cdn.js
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\cheatsheets\CheatsheetDonation.cdn.js
+Content Type: application/javascript
+
+Uri: https://lenguajejs.com/javascript/dom/animate-elementos-dom/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\dom\animate-elementos-dom\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/dom/atributos-del-dom/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\dom\atributos-del-dom\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/dom/contenido-elemento-dom/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\dom\contenido-elemento-dom\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/dom/crear-elementos-dom/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\dom\crear-elementos-dom\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/dom/crear-elementos-dom/createelement-dom.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\dom\crear-elementos-dom\createelement-dom.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/dom/insertar-elementos-dom/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\dom\insertar-elementos-dom\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/dom/insertar-elementos-dom/beforebegin-afterbegin-beforeend-afterend.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\dom\insertar-elementos-dom\beforebegin-afterbegin-beforeend-afterend.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/dom/insertar-elementos-dom/createelement-dom.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\dom\insertar-elementos-dom\createelement-dom.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/dom/insertar-elementos-dom/prepend-append.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\dom\insertar-elementos-dom\prepend-append.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/dom/insertar-elementos-dom/replacewith-replacechildren.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\dom\insertar-elementos-dom\replacewith-replacechildren.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/dom/manipular-clases-css/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\dom\manipular-clases-css\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/dom/navegar-elementos-dom/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\dom\navegar-elementos-dom\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/dom/que-es/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\dom\que-es\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/dom/que-es/que-es-dom.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\dom\que-es\que-es-dom.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/dom/seleccionar-elementos-dom/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\dom\seleccionar-elementos-dom\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/eventos/addeventlistener-handleevent/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\eventos\addeventlistener-handleevent\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/eventos/addeventlistener/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\eventos\addeventlistener\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/eventos/custom-events/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\eventos\custom-events\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/eventos/emision-eventos/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\eventos\emision-eventos\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/eventos/eventos-html/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\eventos\eventos-html\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/eventos/eventos-javascript/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\eventos\eventos-javascript\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/eventos/eventos-navegador/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\eventos\eventos-navegador\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/eventos/objeto-event/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\eventos\objeto-event\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/eventos/propagacion-eventos/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\eventos\propagacion-eventos\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/eventos/que-son-eventos/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\eventos\que-son-eventos\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/eventos/que-son-eventos/eventos-javascript.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\eventos\que-son-eventos\eventos-javascript.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/fechas/date-fechas-nativas/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\fechas\date-fechas-nativas\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/fechas/fechas-relativas-con-intl/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\fechas\fechas-relativas-con-intl\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/fechas/formatear-fechas-con-dayjs/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\fechas\formatear-fechas-con-dayjs\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/fechas/formatear-fechas-con-intl/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\fechas\formatear-fechas-con-intl\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/fechas/formatear-fechas-con-intl/custom-datetimeformat.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\fechas\formatear-fechas-con-intl\custom-datetimeformat.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/introduccion/como-funciona/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\introduccion\como-funciona\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/introduccion/consola-de-javascript/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\introduccion\consola-de-javascript\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/introduccion/ecmascript/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\introduccion\ecmascript\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/introduccion/funciones/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\introduccion\funciones\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/introduccion/operadores-avanzados/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\introduccion\operadores-avanzados\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/introduccion/operadores-basicos/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\introduccion\operadores-basicos\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/introduccion/que-es-javascript/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\introduccion\que-es-javascript\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/introduccion/tipos-de-datos/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\introduccion\tipos-de-datos\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/logo.svg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\logo.svg
+Content Type: image/svg+xml
+
+Uri: https://lenguajejs.com/javascript/modulos/dynamic-import/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\modulos\dynamic-import\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/modulos/export/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\modulos\export\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/modulos/import-map/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\modulos\import-map\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/modulos/import/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\modulos\import\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/modulos/que-es-esm/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\modulos\que-es-esm\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/modulos/que-es-esm/function-classes-files.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\modulos\que-es-esm\function-classes-files.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/multimedia/api-multimedia-nativa/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\multimedia\api-multimedia-nativa\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/number/bigint/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\number\bigint\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/number/conversiones-numericas/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\number\conversiones-numericas\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/number/objeto-math/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\number\objeto-math\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/number/que-es-nan/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\number\que-es-nan\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/number/variables-numericas/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\number\variables-numericas\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/number/variables-numericas/safe-integer.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\number\variables-numericas\safe-integer.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/objetos/clonar-o-copiar-elementos/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\objetos\clonar-o-copiar-elementos\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/objetos/clonar-o-copiar-elementos/copia-valor-referencia.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\objetos\clonar-o-copiar-elementos\copia-valor-referencia.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/objetos/desestructuracion-objetos/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\objetos\desestructuracion-objetos\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/objetos/iteradores/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\objetos\iteradores\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/objetos/json/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\objetos\json\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/objetos/que-son/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\objetos\que-son\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/oop/clases/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\oop\clases\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/oop/clases/clases-objetos.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\oop\clases\clases-objetos.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/oop/herencia-clases/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\oop\herencia-clases\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/oop/herencia-clases/herencia.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\oop\herencia-clases\herencia.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/oop/metodos-clase/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\oop\metodos-clase\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/oop/propiedades-clase/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\oop\propiedades-clase\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/oop/que-es/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\oop\que-es\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/oop/que-es/programacion-orientada-objetos.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\oop\que-es\programacion-orientada-objetos.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/peticiones-http/ajax/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\peticiones-http\ajax\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/peticiones-http/ajax/ajax.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\peticiones-http\ajax\ajax.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/peticiones-http/ajax/mpa-spa.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\peticiones-http\ajax\mpa-spa.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/peticiones-http/cors/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\peticiones-http\cors\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/peticiones-http/cors/cors.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\peticiones-http\cors\cors.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/peticiones-http/cors/network-dev-tools-headers.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\peticiones-http\cors\network-dev-tools-headers.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/peticiones-http/fetch/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\peticiones-http\fetch\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/peticiones-http/url/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\peticiones-http\url\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/peticiones-http/url/query-strings.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\peticiones-http\url\query-strings.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/peticiones-http/url/url-parts-optionals.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\peticiones-http\url\url-parts-optionals.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/peticiones-http/url/url-parts.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\peticiones-http\url\url-parts.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/peticiones-http/xhr/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\peticiones-http\xhr\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/regexp/buscar-capturar/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\regexp\buscar-capturar\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/regexp/crear-expresiones-regulares/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\regexp\crear-expresiones-regulares\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/regexp/expresiones-regulares/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\regexp\expresiones-regulares\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/regexp/expresiones-regulares/regexp.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\regexp\expresiones-regulares\regexp.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/regexp/flags/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\regexp\flags\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/set-map/operaciones-conjuntos/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\set-map\operaciones-conjuntos\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/set-map/operaciones-conjuntos/conjuntos.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\set-map\operaciones-conjuntos\conjuntos.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/javascript/set-map/que-es-map-weakmap/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\set-map\que-es-map-weakmap\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/set-map/que-es-set-weakset/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\set-map\que-es-set-weakset\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/string/buscar-y-reemplazar/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\string\buscar-y-reemplazar\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/string/modificar/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\string\modificar\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/string/substrings/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\string\substrings\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/string/unicode/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\string\unicode\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/string/variables-texto/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\string\variables-texto\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/web-apis/speechsynthesis/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\web-apis\speechsynthesis\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/javascript/web-apis/temporizadores/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\javascript\web-apis\temporizadores\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/npm/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\npm\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/npm/administracion/actualizar-dependencias-npm/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\npm\administracion\actualizar-dependencias-npm\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/npm/administracion/actualizar-dependencias-npm/npm-check.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\npm\administracion\actualizar-dependencias-npm\npm-check.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/npm/administracion/actualizar-dependencias-npm/semver.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\npm\administracion\actualizar-dependencias-npm\semver.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/npm/administracion/carpeta-node_modules/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\npm\administracion\carpeta-node_modules\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/npm/administracion/carpeta-node_modules/node_modules-heaviest-object-universe.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\npm\administracion\carpeta-node_modules\node_modules-heaviest-object-universe.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajejs.com/npm/administracion/carpeta-node_modules/npkill.gif
+File Name: C:\Downloaded Web Sites\lenguajejs.com\npm\administracion\carpeta-node_modules\npkill.gif
+Content Type: image/gif
+
+Uri: https://lenguajejs.com/npm/administracion/carpeta-node_modules/vulnerabilities-npm-audit.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\npm\administracion\carpeta-node_modules\vulnerabilities-npm-audit.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/npm/administracion/crear-nuevo-proyecto/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\npm\administracion\crear-nuevo-proyecto\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/npm/administracion/instalar-paquetes-npm/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\npm\administracion\instalar-paquetes-npm\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/npm/administracion/package-json/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\npm\administracion\package-json\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/npm/administracion/scripts-de-npm/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\npm\administracion\scripts-de-npm\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/npm/administracion/scripts-de-npm/ntl.gif
+File Name: C:\Downloaded Web Sites\lenguajejs.com\npm\administracion\scripts-de-npm\ntl.gif
+Content Type: image/gif
+
+Uri: https://lenguajejs.com/npm/introduccion/instalacion-node-con-nvm/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\npm\introduccion\instalacion-node-con-nvm\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/npm/introduccion/instalacion-node-con-pnpm/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\npm\introduccion\instalacion-node-con-pnpm\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/npm/introduccion/instalaciones-globales/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\npm\introduccion\instalaciones-globales\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/npm/introduccion/instalaciones-globales/parrotsay.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\npm\introduccion\instalaciones-globales\parrotsay.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/npm/introduccion/problemas-permisos-npm/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\npm\introduccion\problemas-permisos-npm\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/npm/introduccion/que-es/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\npm\introduccion\que-es\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/npm/logo.svg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\npm\logo.svg
+Content Type: image/svg+xml
+
+Uri: https://lenguajejs.com/retos/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/retos/logo.svg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\logo.svg
+Content Type: image/svg+xml
+
+Uri: https://lenguajejs.com/retos/nivel-facil/basic-card/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\nivel-facil\basic-card\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/retos/nivel-facil/basic-card/preview.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\nivel-facil\basic-card\preview.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/retos/nivel-facil/rock-paper-scissors/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\nivel-facil\rock-paper-scissors\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/retos/nivel-facil/rock-paper-scissors/rock-paper-scissors.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\nivel-facil\rock-paper-scissors\rock-paper-scissors.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/retos/nivel-medio/bingo/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\nivel-medio\bingo\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/retos/nivel-medio/bingo/bingo.mp4
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\nivel-medio\bingo\bingo.mp4
+Content Type: video/mp4
+
+Uri: https://lenguajejs.com/retos/nivel-medio/bingo/preview.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\nivel-medio\bingo\preview.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajejs.com/retos/nivel-medio/mp3-player/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\nivel-medio\mp3-player\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/retos/nivel-medio/mp3-player/lechuck.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\nivel-medio\mp3-player\lechuck.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajejs.com/retos/nivel-medio/mp3-player/monkey-mix.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\nivel-medio\mp3-player\monkey-mix.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajejs.com/retos/nivel-medio/mp3-player/monkey.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\nivel-medio\mp3-player\monkey.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajejs.com/retos/nivel-medio/mp3-player/mp3-player.mp4
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\nivel-medio\mp3-player\mp3-player.mp4
+Content Type: video/mp4
+
+Uri: https://lenguajejs.com/retos/nivel-medio/mp3-player/preview.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\nivel-medio\mp3-player\preview.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajejs.com/retos/nivel-medio/mp3-player/scummbar.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\nivel-medio\mp3-player\scummbar.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajejs.com/retos/nivel-medio/mp3-player/songs.json.txt
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\nivel-medio\mp3-player\songs.json.txt
+Content Type: text/plain
+
+Uri: https://lenguajejs.com/retos/nivel-medio/mp3-player/structure.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\nivel-medio\mp3-player\structure.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/retos/recursos/colores/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\recursos\colores\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/retos/recursos/como-empezar/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\recursos\como-empezar\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/retos/recursos/iconos/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\recursos\iconos\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/retos/recursos/imagenes/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\recursos\imagenes\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/retos/recursos/tipografias/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\retos\recursos\tipografias\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/vuejs/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/vuejs/cheatsheets/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\cheatsheets\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/vuejs/cheatsheets/cheatsheet.webp
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\cheatsheets\cheatsheet.webp
+Content Type: image/webp
+
+Uri: https://lenguajejs.com/vuejs/cheatsheets/CheatsheetDonation.cdn.js
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\cheatsheets\CheatsheetDonation.cdn.js
+Content Type: application/javascript
+
+Uri: https://lenguajejs.com/vuejs/componentes/archivos-vue/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\componentes\archivos-vue\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/vuejs/componentes/archivos-vue/componentes-vue.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\componentes\archivos-vue\componentes-vue.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/vuejs/componentes/ciclo-vida/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\componentes\ciclo-vida\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/vuejs/componentes/ciclo-vida/vue-lifecycle.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\componentes\ciclo-vida\vue-lifecycle.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/vuejs/componentes/composition-api/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\componentes\composition-api\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/vuejs/componentes/composition-api/options-api-composition-api.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\componentes\composition-api\options-api-composition-api.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/vuejs/componentes/instancias-vue/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\componentes\instancias-vue\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/vuejs/componentes/options-api/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\componentes\options-api\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/vuejs/componentes/options-api/vue-options-api.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\componentes\options-api\vue-options-api.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/vuejs/componentes/que-es-un-componente/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\componentes\que-es-un-componente\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/vuejs/componentes/reactividad-api/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\componentes\reactividad-api\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/vuejs/componentes/reactividad-api/reactividad-vue-3.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\componentes\reactividad-api\reactividad-vue-3.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/vuejs/directivas-vue/que-son-directivas/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\directivas-vue\que-son-directivas\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/vuejs/directivas-vue/que-son-directivas/directivas-vue.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\directivas-vue\que-son-directivas\directivas-vue.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/vuejs/directivas-vue/v-bind/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\directivas-vue\v-bind\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/vuejs/directivas-vue/v-bind/v-bind.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\directivas-vue\v-bind\v-bind.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/vuejs/directivas-vue/v-for/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\directivas-vue\v-for\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/vuejs/directivas-vue/v-for/directiva-v-for.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\directivas-vue\v-for\directiva-v-for.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/vuejs/directivas-vue/v-on/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\directivas-vue\v-on\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/vuejs/directivas-vue/v-on/v-on.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\directivas-vue\v-on\v-on.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/vuejs/directivas-vue/v-show-y-v-if/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\directivas-vue\v-show-y-v-if\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/vuejs/introduccion/@vue-cli/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\introduccion\@vue-cli\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/vuejs/introduccion/@vue-cli/vue-cli.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\introduccion\@vue-cli\vue-cli.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/vuejs/introduccion/create-vue/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\introduccion\create-vue\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/vuejs/introduccion/estructura-carpetas/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\introduccion\estructura-carpetas\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/vuejs/introduccion/estructura-carpetas/vue-estructura-carpetas.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\introduccion\estructura-carpetas\vue-estructura-carpetas.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/vuejs/introduccion/primeros-pasos/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\introduccion\primeros-pasos\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/vuejs/introduccion/primeros-pasos/vue-main.js-app.vue.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\introduccion\primeros-pasos\vue-main.js-app.vue.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/vuejs/introduccion/que-es-un-framework/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\introduccion\que-es-un-framework\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/vuejs/introduccion/que-es-un-framework/frameworks-javascript.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\introduccion\que-es-un-framework\frameworks-javascript.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/vuejs/introduccion/que-es-vue/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\introduccion\que-es-vue\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/vuejs/introduccion/que-es-vue/vuejs.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\introduccion\que-es-vue\vuejs.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/vuejs/logo.svg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\vuejs\logo.svg
+Content Type: image/svg+xml
+
+Uri: https://lenguajejs.com/webcomponents/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/atomico/introduccion-a-atomico/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\atomico\introduccion-a-atomico\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/atomico/props-y-hooks-en-atomico/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\atomico\props-y-hooks-en-atomico\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/atomico/props-y-hooks-en-atomico/props-atomico.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\atomico\props-y-hooks-en-atomico\props-atomico.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/webcomponents/cheatsheets/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\cheatsheets\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/cheatsheets/cheatsheet.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\cheatsheets\cheatsheet.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/webcomponents/cheatsheets/CheatsheetDonation.cdn.js
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\cheatsheets\CheatsheetDonation.cdn.js
+Content Type: application/javascript
+
+Uri: https://lenguajejs.com/webcomponents/componentes/atributos-webcomponent/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\componentes\atributos-webcomponent\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/componentes/css-en-custom-elements/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\componentes\css-en-custom-elements\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/componentes/custom-elements/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\componentes\custom-elements\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/componentes/custom-elements/custom-elements.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\componentes\custom-elements\custom-elements.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/webcomponents/componentes/estructura-componente/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\componentes\estructura-componente\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/componentes/estructura-componente/estructura-componente.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\componentes\estructura-componente\estructura-componente.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/webcomponents/componentes/plantillas-html-webcomponents/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\componentes\plantillas-html-webcomponents\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/componentes/plantillas-html-webcomponents/appendchild-insertadjacenthtml.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\componentes\plantillas-html-webcomponents\appendchild-insertadjacenthtml.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/webcomponents/componentes/plantillas-html-webcomponents/webcomponent-modular.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\componentes\plantillas-html-webcomponents\webcomponent-modular.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/webcomponents/componentes/que-son-webcomponents/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\componentes\que-son-webcomponents\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/componentes/que-son-webcomponents/custom-elements-templates-shadow-dom-es-modules.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\componentes\que-son-webcomponents\custom-elements-templates-shadow-dom-es-modules.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/webcomponents/componentes/que-son-webcomponents/que-son-webcomponents.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\componentes\que-son-webcomponents\que-son-webcomponents.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/webcomponents/comunicacion/custom-events-webcomponents/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\comunicacion\custom-events-webcomponents\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/comunicacion/custom-events-webcomponents/custom-events-webcomponents.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\comunicacion\custom-events-webcomponents\custom-events-webcomponents.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/webcomponents/funcionalidad/ciclo-vida-webcomponent/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\funcionalidad\ciclo-vida-webcomponent\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/funcionalidad/ciclo-vida-webcomponent/webcomponents-lifecycle-diagram.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\funcionalidad\ciclo-vida-webcomponent\webcomponents-lifecycle-diagram.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/webcomponents/funcionalidad/clase-webcomponent/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\funcionalidad\clase-webcomponent\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/funcionalidad/clase-webcomponent/webcomponents-class.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\funcionalidad\clase-webcomponent\webcomponents-class.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/webcomponents/funcionalidad/eventos-en-webcomponents/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\funcionalidad\eventos-en-webcomponents\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/funcionalidad/eventos-en-webcomponents/events.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\funcionalidad\eventos-en-webcomponents\events.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/webcomponents/funcionalidad/registro-de-custom-elements/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\funcionalidad\registro-de-custom-elements\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/funcionalidad/registro-de-custom-elements/registro-custom-elements.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\funcionalidad\registro-de-custom-elements\registro-custom-elements.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/webcomponents/lit/componentes/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\lit\componentes\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/lit/componentes/lit-element.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\lit\componentes\lit-element.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/webcomponents/lit/css-en-litelement/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\lit\css-en-litelement\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/lit/css-en-litelement/lit-element-css-classmap-stylemap.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\lit\css-en-litelement\lit-element-css-classmap-stylemap.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/webcomponents/lit/lit-html/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\lit\lit-html\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/lit/lit-html/lit-html.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\lit\lit-html\lit-html.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/webcomponents/lit/propiedades-y-atributos/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\lit\propiedades-y-atributos\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/lit/propiedades-y-atributos/properties-attributes.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\lit\propiedades-y-atributos\properties-attributes.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/webcomponents/logo.svg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\logo.svg
+Content Type: image/svg+xml
+
+Uri: https://lenguajejs.com/webcomponents/shadow-dom/css-parts/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\shadow-dom\css-parts\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/shadow-dom/css-scoping/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\shadow-dom\css-scoping\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/shadow-dom/css-webcomponents/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\shadow-dom\css-webcomponents\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/shadow-dom/css-webcomponents/css-webcomponents.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\shadow-dom\css-webcomponents\css-webcomponents.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajejs.com/webcomponents/shadow-dom/light-dom-shadow-dom/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\shadow-dom\light-dom-shadow-dom\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/shadow-dom/light-dom-shadow-dom/dom-light-shadow.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\shadow-dom\light-dom-shadow-dom\dom-light-shadow.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajejs.com/webcomponents/shadow-dom/light-dom-shadow-dom/light-dom-shadow-dom.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\shadow-dom\light-dom-shadow-dom\light-dom-shadow-dom.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/webcomponents/shadow-dom/que-es-shadow-dom/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\shadow-dom\que-es-shadow-dom\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/shadow-dom/que-es-shadow-dom/shadow-dom-gandalf-balrog.jpg
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\shadow-dom\que-es-shadow-dom\shadow-dom-gandalf-balrog.jpg
+Content Type: image/jpeg
+
+Uri: https://lenguajejs.com/webcomponents/shadow-dom/que-es-shadow-dom/shadow-dom.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\shadow-dom\que-es-shadow-dom\shadow-dom.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/webcomponents/shadow-dom/que-es-shadow-dom/virtual-dom.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\shadow-dom\que-es-shadow-dom\virtual-dom.png
+Content Type: image/png
+
+Uri: https://lenguajejs.com/webcomponents/shadow-dom/shadow-dom-declarativo/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\shadow-dom\shadow-dom-declarativo\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/shadow-dom/slots/
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\shadow-dom\slots\index.htm
+Content Type: text/html
+
+Uri: https://lenguajejs.com/webcomponents/shadow-dom/slots/slots-dom.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\webcomponents\shadow-dom\slots\slots-dom.png
+Content Type: image/png
+
+Uri: https://manz.dev/manz-logo.png
+File Name: C:\Downloaded Web Sites\lenguajejs.com\manz-logo.png
+Content Type: image/png
+
+Uri: https://www.google-analytics.com/analytics.js
+File Name: C:\Downloaded Web Sites\lenguajejs.com\analytics.js
+Content Type: text/javascript
+

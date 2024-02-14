@@ -1,0 +1,422 @@
+body {
+  background-color: #dcdbc7;
+  font-size: 12px;
+  font-family: "museo-sans", sans-serif;
+  font-weight: 100;
+  color: black;
+}
+#barraSuperior {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  z-index: 1;
+}
+#barraSuperior img {
+  float: left;
+  height: 35px;
+  margin-top: 3px;
+  margin-left: 5px;
+}
+#barraSuperior h2 {
+  text-align: right;
+  margin-top: 10px;
+  margin-right: 5px;
+  color: #dcdbc7;
+  font-family: "museo-sans", sans-serif;
+  font-weight: 100;
+}
+#barraLateral {
+  position: fixed;
+  left: 0;
+  top: 50px;
+  bottom: 0;
+  width: 150px;
+  background-color: #3d3f4c;
+  z-index: 1;
+  overflow: auto;
+}
+#barraLateral .herramienta {
+  width: 80%;
+  height: 70px;
+  margin: 0 10%;
+  text-align: center;
+  padding-top: 10px;
+}
+#barraLateral .herramienta p {
+  margin: 0;
+  text-align: center;
+  font-size: 1.5em;
+  color: white;
+  font-family: "museo-sans", sans-serif;
+}
+#barraLateral .herramienta:hover {
+  background-color: #d67a63;
+  transition: all 1s;
+  cursor: pointer;
+}
+#barraLateral .botonSeleccionado {
+  border: 2px solid #d67a63;
+}
+#contenedor {
+  position: fixed;
+  overflow: auto;
+  left: 150px;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  background-color: #dcdbc7;
+  z-index: 1;
+}
+#lienzo,
+#canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4000px;
+  height: 4000px;
+}
+#lienzo {
+  z-index: 5;
+}
+#canvas {
+  z-index: 10;
+  display: none;
+}
+#pantallaBlanca {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  opacity: .7;
+  z-index: 90;
+  display: none;
+}
+#pantallaBlancaError {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  opacity: .7;
+  z-index: 97;
+  display: none;
+}
+/**
+Cuadros
+*/
+.dialogo {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -350px;
+  margin-top: -200px;
+  width: 700px;
+  height: 400px;
+  background-color: #6e97ab;
+  border-radius: 10px;
+  z-index: 95;
+  display: none;
+}
+.dialogo h1 {
+  text-align: center;
+  font-family: "museo-sans", sans-serif;
+  color: #344048;
+  font-size: 3em;
+  font-weight: 100;
+  margin: 10px 0 10px 0;
+}
+.dialogo p {
+  margin: 0 0 0 20px;
+  color: #b7cbd5;
+}
+.dialogo .cerrarDialogo {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 60px;
+  height: 40px;
+  background-image: url("../img/btCerrar.png");
+}
+.dialogo .cerrarDialogo:hover {
+  cursor: pointer;
+  background-image: url("../img/btBorrar.png");
+}
+.dialogo .tituloDialogo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 70px;
+}
+.dialogoMedio {
+  width: 750px !important;
+  height: 500px !important;
+  margin-top: -250px !important;
+  margin-left: -375px !important;
+}
+.error {
+  background-color: #b9695e !important;
+  z-index: 100 !important;
+}
+.error ul {
+  font-size: 2.30769231em;
+  font-family: "museo-sans", sans-serif;
+  font-weight: 100;
+  color: #dcdbc7;
+}
+.error .capaError {
+  position: absolute;
+  left: 0;
+  top: 70px;
+  width: 100%;
+  height: 80px;
+}
+.capaNombre {
+  position: absolute;
+  left: 0;
+  top: 70px;
+  width: 100%;
+  height: 80px;
+}
+.capaFuerte {
+  position: absolute;
+  left: 0;
+  top: 150px;
+  width: 100%;
+  height: 80px;
+}
+.capaISA {
+  top: 150px !important;
+  height: 360px !important;
+}
+.capaISA select {
+  margin-left: 20px;
+}
+.capaAtributos {
+  position: absolute;
+  left: 0;
+  top: 150px;
+  width: 700px;
+  height: 240px;
+}
+.capaAtributos .capaListaAtributos {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: 210px;
+  bottom: 0;
+  overflow-y: auto;
+}
+.capaAtributos .capaListaAtributos .lineaAtributo input[type="text"] {
+  width: 450px;
+  margin-left: 20px;
+}
+.capaAtributosFuerte {
+  top: 230px !important;
+  height: 160px !important;
+}
+.capaAtributosFuerte .capaListaAtributos {
+  height: 130px !important;
+}
+.capaListaAtributosMin {
+  height: 80px !important;
+  margin-left: 30px;
+}
+.tablaAtributos {
+  margin-left: 20px;
+}
+.tablaAtributos tr td {
+  width: 60px;
+  text-align: center;
+}
+.tablaAtributos tr td select {
+  width: 60px;
+}
+.tablaAtributos tr td:nth-of-type(1) {
+  text-align: left;
+  width: 630px;
+}
+.tablaEntidades {
+  margin-left: 10px;
+}
+.tablaEntidades tr td {
+  width: 60px;
+  text-align: center;
+}
+.tablaEntidades tr td select {
+  width: 60px;
+}
+.tablaEntidades tr td:nth-of-type(1) {
+  text-align: left;
+  width: 540px;
+}
+.tablaEntidades tr td:nth-of-type(1) select {
+  width: 450px;
+}
+.capaEntidades {
+  position: absolute;
+  left: 0;
+  bottom: 80px;
+  width: 100%;
+  height: 141.17647059px;
+}
+.capaListaEntidades {
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 80px !important;
+}
+.capaAjustes {
+  position: absolute;
+  left: 0;
+  top: 70px;
+  width: 100%;
+  bottom: 80px;
+}
+.capaBotones {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  height: 60px;
+}
+input[type="text"],
+select {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid white;
+  font-size: 2.30769231em;
+  font-family: "museo-sans", sans-serif;
+  font-weight: 100;
+  color: white;
+  width: 620px;
+}
+select {
+  width: 450px;
+}
+option {
+  background-color: #3d3f4c;
+}
+label,
+.label {
+  color: #b7cbd5;
+  font-size: 1.76470588em;
+}
+button {
+  height: 40px;
+  width: 160px;
+  text-align: center;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 2.5em;
+  font-family: "museo-sans", sans-serif;
+  font-weight: normal;
+  color: #344048;
+  background-color: #b7cbd5;
+}
+button:hover {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+button.botonError {
+  background-color: #f8a499;
+}
+button.botonError:hover {
+  background-color: #fbd2cc;
+}
+.botonCentrado {
+  position: absolute;
+  left: 50%;
+  margin-left: -80px;
+}
+img a {
+  border: none;
+}
+img.iconoPeque {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+.derecha {
+  float: right;
+}
+.margen {
+  margin-left: 20px;
+}
+::-webkit-input-placeholder {
+  color: #d7e2e8;
+}
+/* WebKit */
+:-moz-placeholder {
+  color: #d7e2e8;
+}
+/* Firefox 18- */
+::-moz-placeholder {
+  color: #d7e2e8;
+}
+/* Firefox 19+ */
+:-ms-input-placeholder {
+  color: #d7e2e8;
+}
+/* IE 10+ */
+::selection {
+  background: #566b7c;
+  /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #566b7c;
+  /* Gecko Browsers */
+}
+#canvas {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 4000px;
+  height: 4000px;
+  z-index: -1;
+  display: none;
+}
+#loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #dcdbc7;
+  z-index: 200;
+}
+#loading #imagenLoading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 200px;
+  height: 230px;
+  margin-left: -100px;
+  margin-top: -115px;
+}
+#loading #imagenLoading h2 {
+  font-size: 28px;
+  text-align: center;
+  color: #3d3f4c;
+}
+#saveFile {
+  position: fixed;
+  width: 300px;
+  height: 200px;
+  background-color: yellow;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -100px;
+  z-index: 200;
+}

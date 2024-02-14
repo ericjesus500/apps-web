@@ -1,0 +1,1392 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e44f26">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <title>Lenguaje HTML5 - HTML en español - Lenguaje HTML</title>
+  <link rel="preload" href="../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Lenguaje de marcado HTML5 utilizado en el desarrollo web para crear el contenido y la estructura de una página web.">
+  
+  <link rel="stylesheet" href="../home.css">
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Lenguaje HTML5 - HTML en español">
+  <meta property="og:image" content="https://lenguajehtml.com/html/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Lenguaje de marcado HTML5 utilizado en el desarrollo web para crear el contenido y la estructura de una página web.">
+  <meta property="og:url" content="https://lenguajehtml.com/html/">
+  <meta property="twitter:url" content="https://lenguajehtml.com/html/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Lenguaje HTML5 - HTML en español">
+  <meta property="twitter:description" content="Lenguaje de marcado HTML5 utilizado en el desarrollo web para crear el contenido y la estructura de una página web.">
+  <meta property="twitter:image" content="https://lenguajehtml.com/html/large-summary.jpg">
+
+  </head>
+
+<body class="html" style="--logo-color: #e44f26"><div class="book page">
+    <header class="book hero">
+
+  <a class="sitelogo" href="/">
+  <svg><use href="../assets/logos.svg#html"></use></svg>
+  <img class="manzdev" src="../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeHTML.com</div>
+  </div>
+</a>
+
+  <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  <div class="logo" style="--label-image: url(logo.svg)">
+  <div class="disc"><div class="label"></div></div>
+  <img class="cover" width="400" height="400" src="../assets/html.jpg" alt="Lenguaje HTML5">
+</div>
+<div class="text">
+  <h1>Lenguaje HTML5</h1>
+  <div class="subtitle"></div>
+  <p class="description">Lenguaje de marcado HTML5 utilizado en el desarrollo web para crear el contenido y la estructura de una página web.</p>
+</div>
+
+<script>
+  const logo = document.querySelector(".logo");
+  logo.addEventListener("click", () => logo.classList.toggle("closed"));
+</script>
+
+  <div class="buttons">
+  <a class="btn" href="/">← Volver</a><a class="btn" href="cheatsheets/index.htm">Guía rápida</a><a class="btn" href="https://manz.dev/">Más sobre ManzDev</a>
+</div>
+
+
+</header>
+
+    <section class="bg dark contents">
+  <div class="contents-container"><header class="category-header">
+          <h2>Introducción a HTML5</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="introduccion/que-es-html/index.htm">
+    <span>¿Qué es HTML?</span>
+    <span class="text">HTML, el código y las etiquetas</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="introduccion/estructura-etiqueta-html/index.htm">
+    <span>Estructura de etiqueta HTML</span>
+    <span class="text">Partes y características de una etiqueta HTML</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="introduccion/atributos-comunes-html/index.htm">
+    <span>Atributos comunes en HTML</span>
+    <span class="text">Atributos comunes en la mayoría de las etiquetas</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semifull" title="~16min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="introduccion/estructura-documento-html/index.htm">
+    <span>Estructura del documento HTML</span>
+    <span class="text">Partes de una página o documento HTML</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="introduccion/validacion-html/index.htm">
+    <span>Validación de errores HTML</span>
+    <span class="text">Proceso de revisión de errores en el código HTML</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semishort" title="~2min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="introduccion/etiquetas-html-obsoletas/index.htm">
+    <span>Etiquetas HTML obsoletas</span>
+    <span class="text">Etiquetas HTML que no deben ser utilizadas hoy en día</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="introduccion/tabla-periodica-html5/index.htm">
+    <span>Tabla periódica de HTML5</span>
+    <span class="text">Tabla periódica interactiva con los elementos HTML5</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level "></span>
+      <span class="size"></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Etiquetas de cabecera</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="cabecera/que-son-etiquetas-cabecera/index.htm">
+    <span>¿Qué son las etiquetas head?</span>
+    <span class="text">Bases de las etiquetas de cabecera de un documento HTML</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="cabecera/etiqueta-html-meta/index.htm">
+    <span>La etiqueta HTML &lt;meta&gt;</span>
+    <span class="text">Metadatos e información del documento HTML</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock long" title="~13min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="cabecera/etiqueta-html-link/index.htm">
+    <span>La etiqueta HTML &lt;link&gt;</span>
+    <span class="text">Establecer relaciones con otros documentos</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock long" title="~15min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="cabecera/etiquetas-html-para-redes-sociales/index.htm">
+    <span>Etiquetas para redes sociales</span>
+    <span class="text">Previsualizaciones en enlaces en redes sociales</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~7min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="cabecera/etiquetas-precarga-html/index.htm">
+    <span>Etiquetas HTML de precarga</span>
+    <span class="text">Resource Hints: Precarga anticipada de enlaces</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level advanced">difícil</span>
+      <span class="size"><div class="clock semihalf" title="~8min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Etiquetas de agrupación</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="agrupacion/que-son/index.htm">
+    <span>Las etiquetas de agrupación</span>
+    <span class="text">Etiquetas con finalidad de organización y agrupación</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~8min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="agrupacion/etiqueta-html-div/index.htm">
+    <span>La etiqueta HTML &lt;div&gt;</span>
+    <span class="text">Agrupaciones y divisiones de elementos</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock half" title="~10min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="agrupacion/etiquetas-html-ul-ol/index.htm">
+    <span>Las etiquetas HTML &lt;ul&gt; y &lt;ol&gt;</span>
+    <span class="text">Etiquetas HTML para crear listas de elementos</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock half" title="~9min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="agrupacion/etiqueta-html-blockquote/index.htm">
+    <span>La etiqueta HTML &lt;blockquote&gt;</span>
+    <span class="text">Bloques de citas o referencias</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~7min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="agrupacion/etiqueta-html-pre/index.htm">
+    <span>La etiqueta HTML &lt;pre&gt;</span>
+    <span class="text">Escribir texto preformateado</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="agrupacion/etiqueta-html-dl/index.htm">
+    <span>La etiqueta HTML &lt;dl&gt;</span>
+    <span class="text">Etiquetas HTML para crear listas de descripciones</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~1min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="agrupacion/etiqueta-html-figure/index.htm">
+    <span>La etiqueta HTML &lt;figure&gt;</span>
+    <span class="text">Contenedor de ilustraciones o figuras</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2011</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~1min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Etiquetas multimedia</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="multimedia/etiqueta-html-img/index.htm">
+    <span>La etiqueta HTML &lt;img&gt;</span>
+    <span class="text">Etiqueta HTML para mostrar imágenes en una web</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock half" title="~9min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="multimedia/etiqueta-html-picture/index.htm">
+    <span>La etiqueta HTML &lt;picture&gt;</span>
+    <span class="text">Etiqueta HTML de nueva generación para mostrar imágenes</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2015</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~7min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="multimedia/etiqueta-html-video/index.htm">
+    <span>La etiqueta HTML &lt;video&gt;</span>
+    <span class="text">Etiqueta HTML para indicar archivos de video en nuestra web</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock half" title="~10min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="multimedia/etiqueta-html-audio/index.htm">
+    <span>La etiqueta HTML &lt;audio&gt;</span>
+    <span class="text">Etiqueta HTML para indicar archivos de audio en nuestra web</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="multimedia/etiqueta-html-track/index.htm">
+    <span>La etiqueta HTML &lt;track&gt;</span>
+    <span class="text">Etiqueta HTML para añadir subtítulos a nuestros videos o audios</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2014</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="multimedia/etiqueta-html-iframe/index.htm">
+    <span>La etiqueta HTML &lt;iframe&gt;</span>
+    <span class="text">Etiqueta HTML para colocar contenido externo en nuestra web.</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~8min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Etiquetas de texto</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="texto/que-son/index.htm">
+    <span>Etiquetas semánticas de texto</span>
+    <span class="text">Etiquetas para separar la semántica de un texto</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="texto/enlaces-o-hipervinculos/index.htm">
+    <span>Enlaces o hipervínculos</span>
+    <span class="text">Etiqueta para referenciar otros documentos o recursos</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="texto/etiqueta-html-a/index.htm">
+    <span>La etiqueta HTML &lt;a&gt;</span>
+    <span class="text">Etiqueta para crear enlaces a otras páginas</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semilong" title="~11min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="texto/etiqueta-html-strong/index.htm">
+    <span>La etiqueta HTML &lt;strong&gt;</span>
+    <span class="text">Etiqueta para marcar un texto como importante o prioritario</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="texto/etiqueta-html-em/index.htm">
+    <span>La etiqueta HTML &lt;em&gt;</span>
+    <span class="text">Etiqueta para enfatizar un fragmento de texto</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="texto/etiqueta-html-mark/index.htm">
+    <span>La etiqueta HTML &lt;mark&gt;</span>
+    <span class="text">Etiqueta para destacar textos y dirigir la atención</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~1min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="texto/etiqueta-html-s/index.htm">
+    <span>La etiqueta HTML &lt;s&gt;</span>
+    <span class="text">Etiqueta utilizada para marcar contenidos imprecisos o irrelevantes</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~1min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="texto/etiqueta-html-span/index.htm">
+    <span>La etiqueta HTML &lt;span&gt;</span>
+    <span class="text">Etiqueta para delimitar o agrupar fragmentos de texto</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="texto/etiqueta-html-q-cite/index.htm">
+    <span>La etiqueta HTML &lt;q&gt; y &lt;cite&gt;</span>
+    <span class="text">Etiquetas para citar mensajes, frases o títulos de obras</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="texto/etiqueta-html-sup-sub/index.htm">
+    <span>La etiqueta HTML &lt;sup&gt; y &lt;sub&gt;</span>
+    <span class="text">Etiqueta para establecer superíndices y subíndices</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~2min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="texto/etiqueta-html-small/index.htm">
+    <span>La etiqueta HTML &lt;small&gt;</span>
+    <span class="text">Etiqueta para hacer pequeñas aclaraciones o advertencias</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~1min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="texto/etiqueta-html-abbr-dfn/index.htm">
+    <span>La etiqueta HTML &lt;abbr&gt; y &lt;dfn&gt;</span>
+    <span class="text">Etiqueta para mostrar abreviaturas o definiciones</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~2min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="texto/etiqueta-html-br-wbr/index.htm">
+    <span>La etiqueta HTML &lt;br&gt; y &lt;wbr&gt;</span>
+    <span class="text">Etiquetas para definir los diferentes saltos de línea</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~2min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="texto/etiqueta-html-kbd-samp/index.htm">
+    <span>La etiqueta HTML &lt;kbd&gt; y &lt;samp&gt;</span>
+    <span class="text">Etiquetas para representar entrada o salida de información</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~2min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="texto/etiqueta-html-time/index.htm">
+    <span>La etiqueta HTML &lt;time&gt; y &lt;data&gt;</span>
+    <span class="text">Etiqueta para representar fechas o datos para máquinas</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="texto/etiqueta-html-code/index.htm">
+    <span>La etiqueta HTML &lt;code&gt;</span>
+    <span class="text">Etiqueta para establecer fragmentos de código en línea</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="texto/etiqueta-html-ins-del/index.htm">
+    <span>La etiqueta HTML &lt;ins&gt; y &lt;del&gt;</span>
+    <span class="text">Etiqueta para indicar información añadida o eliminada</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Etiquetas semánticas</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="semantica/que-son/index.htm">
+    <span>Etiquetas semánticas de sección</span>
+    <span class="text">Etiquetas semánticas que van más allá del &lt;div&gt;</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~5min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="semantica/etiqueta-html-article/index.htm">
+    <span>La etiqueta HTML &lt;article&gt;</span>
+    <span class="text">Etiqueta semántica para definir entidades importantes</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~5min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="semantica/etiqueta-html-nav/index.htm">
+    <span>La etiqueta HTML &lt;nav&gt;</span>
+    <span class="text">Etiqueta semántica para secciones de navegación</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="semantica/etiqueta-html-header-footer/index.htm">
+    <span>La etiqueta &lt;header&gt; y &lt;footer&gt;</span>
+    <span class="text">Etiqueta semántica para cabeceras y pie de sección</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~8min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="semantica/etiqueta-html-search/index.htm">
+    <span>La etiqueta HTML &lt;search&gt;</span>
+    <span class="text">Etiqueta semántica para zonas de búsqueda</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2023</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~2min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="semantica/etiqueta-html-section-main-aside/index.htm">
+    <span>La etiqueta HTML &lt;section&gt;</span>
+    <span class="text">Etiqueta semántica para secciones concretas la página</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semilong" title="~11min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="semantica/etiqueta-html-h1/index.htm">
+    <span>La etiqueta HTML &lt;h1&gt; ... &lt;h6&gt;</span>
+    <span class="text">Etiqueta semántica para títulares o encabezados</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="semantica/etiqueta-html-address/index.htm">
+    <span>La etiqueta HTML &lt;address&gt;</span>
+    <span class="text">Etiqueta semántica para información de contacto</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~1min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Etiquetas de tablas</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="tablas/etiqueta-html-table/index.htm">
+    <span>La etiqueta HTML &lt;table&gt;</span>
+    <span class="text">Etiquetas para mostrar datos tabulares</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~5min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="tablas/tablas-celdas-irregulares/index.htm">
+    <span>Tablas con celdas irregulares</span>
+    <span class="text">Combinar celdas de una tabla HTML</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock half" title="~9min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="tablas/organizacion-tablas/index.htm">
+    <span>Organización de tablas HTML</span>
+    <span class="text">Etiquetas semánticas para organizar partes de la tabla</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock half" title="~10min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="tablas/columnas-en-tablas/index.htm">
+    <span>Columnas en tablas HTML</span>
+    <span class="text">Modificar características de columnas en tablas</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock long" title="~14min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Etiquetas de formularios</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="formularios/etiqueta-html-form/index.htm">
+    <span>La etiqueta &lt;form&gt;</span>
+    <span class="text">Creación de formularios HTML para su envío</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~8min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="formularios/etiqueta-html-input/index.htm">
+    <span>La etiqueta HTML &lt;input&gt;</span>
+    <span class="text">Controles: Campos de entrada de texto</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semilong" title="~12min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="formularios/etiqueta-html-textarea/index.htm">
+    <span>La etiqueta HTML &lt;textarea&gt;</span>
+    <span class="text">Controles: Campos de entrada de texto extensos</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="formularios/etiqueta-html-input-numeros/index.htm">
+    <span>La etiqueta &lt;input&gt; con números</span>
+    <span class="text">Controles: Campos de entrada numéricos</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2014</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~8min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="formularios/etiqueta-html-input-fechas/index.htm">
+    <span>La etiqueta &lt;input&gt; con fechas</span>
+    <span class="text">Controles: Campos de entrada con fechas</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2021</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock half" title="~10min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="formularios/etiqueta-html-input-checkbox-radio/index.htm">
+    <span>La etiqueta &lt;input&gt; con casillas</span>
+    <span class="text">Controles: Casillas de verificación y radio</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~8min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="formularios/etiqueta-html-input-color/index.htm">
+    <span>La etiqueta &lt;input&gt; con colores</span>
+    <span class="text">Controles: Campos para elegir colores</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2019</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~2min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="formularios/etiqueta-html-select/index.htm">
+    <span>La etiqueta HTML &lt;select&gt;</span>
+    <span class="text">Listas de opciones desplegables</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semilong" title="~11min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="formularios/etiqueta-html-datalist/index.htm">
+    <span>La etiqueta HTML &lt;datalist&gt;</span>
+    <span class="text">Listas de opciones autocompletables</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2019</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock half" title="~10min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="formularios/etiqueta-html-input-file/index.htm">
+    <span>La etiqueta &lt;input&gt; con ficheros</span>
+    <span class="text">Controles: Envío de archivos</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock short" title="~5min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="formularios/organizacion-de-campos/index.htm">
+    <span>Organización de campos</span>
+    <span class="text">Etiquetas para ordenar y organizar campos</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semilong" title="~11min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="formularios/etiqueta-html-progress/index.htm">
+    <span>La etiqueta HTML &lt;progress&gt;</span>
+    <span class="text">Controles: Barras de progreso</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2014</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="formularios/etiqueta-html-meter/index.htm">
+    <span>La etiqueta HTML &lt;meter&gt;</span>
+    <span class="text">Controles: Medidores, umbrales y valores óptimos</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2017</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~7min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="formularios/etiqueta-html-input-submit/index.htm">
+    <span>La etiqueta HTML &lt;input&gt; submit</span>
+    <span class="text">Botones de envío de formularios</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semilong" title="~11min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Validaciones de formularios</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="validaciones/que-son-validaciones/index.htm">
+    <span>¿Qué son las validaciones?</span>
+    <span class="text">La importancia de validar correctamente los datos</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="validaciones/validaciones-html5/index.htm">
+    <span>Validaciones básicas con HTML5</span>
+    <span class="text">Atributos de validación de HTML</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semilong" title="~12min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="validaciones/atributo-pattern/index.htm">
+    <span>El artibuto pattern (RegExp)</span>
+    <span class="text">Validaciones avanzadas con patrones en HTML</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level advanced">difícil</span>
+      <span class="size"><div class="clock half" title="~9min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Etiquetas de scripting</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="scripting/etiqueta-html-script/index.htm">
+    <span>Etiqueta HTML &lt;script&gt;</span>
+    <span class="text">Etiqueta para ejecutar código Javascript en una página</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~7min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="scripting/atributo-defer-async/index.htm">
+    <span>Atributos defer y async</span>
+    <span class="text">Modos de carga de las etiquetas &lt;script&gt;</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level advanced">difícil</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="scripting/script-type-module/index.htm">
+    <span>Los módulos Javascript (ESM)</span>
+    <span class="text">Etiqueta &lt;script&gt; con el atributo type=module</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level advanced">difícil</span>
+      <span class="size"><div class="clock semihalf" title="~8min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="scripting/bloque-de-datos/index.htm">
+    <span>Bloque de datos desconocido</span>
+    <span class="text">Etiqueta &lt;script&gt; con información desconocida</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level advanced">difícil</span>
+      <span class="size"><div class="clock semihalf" title="~8min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Etiquetas interactivas</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="interactivas/etiqueta-html-details/index.htm">
+    <span>Etiqueta HTML &lt;details&gt;</span>
+    <span class="text">Elementos desplegables (Acordeón HTML)</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2019</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="interactivas/popover-elementos-emergentes/index.htm">
+    <span>Popovers: Elementos emergentes</span>
+    <span class="text">Contenido emergente con atributo popover</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2023</span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="interactivas/etiqueta-html-dialog/index.htm">
+    <span>La etiqueta &lt;dialog&gt;</span>
+    <span class="text">Ventanas de diálogo nativas y ventanas modales</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year">2022</span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~7min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="interactivas/eventos-html/index.htm">
+    <span>Eventos en HTML</span>
+    <span class="text">Conectar una acción de usuario con Javascript</span>
+    <div class="extra">
+      <span class="base"><div title="Importante">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="var(--color)" stroke-width="2"></circle>
+    <path fill="var(--color)" d="M12.35 15.56a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zm0-10.5c1.48 0 2.74 1.18 2.74 2.72 0 1.97-.7 4.56-1.12 5.89-.22.7-.85 1.2-1.62 1.2-.7 0-1.4-.5-1.6-1.2l-.22-.56a22.43 22.43 0 0 1-.91-5.33 2.78 2.78 0 0 1 2.73-2.73z"></path>
+  </svg>
+</div></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock half" title="~9min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="interactivas/atributo-contenteditable/index.htm">
+    <span>El atributo contenteditable</span>
+    <span class="text">Convertir el texto de una etiqueta en editable</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semishort" title="~3min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="interactivas/atributo-hidden/index.htm">
+    <span>El atributo hidden</span>
+    <span class="text">Un atributo para marcar secciones como ocultas</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock short" title="~5min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="index.htm" title="HTML5">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/css/" title="CSS">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/postcss/" title="PostCSS">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/fundamentos/" title="Fundamentos">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/javascript/" title="Javascript">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/npm/" title="NPM">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/webcomponents/" title="WebComponents">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/vuejs/" title="VueJS">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/automatizadores/" title="Automatizadores">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  </div>
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-5', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

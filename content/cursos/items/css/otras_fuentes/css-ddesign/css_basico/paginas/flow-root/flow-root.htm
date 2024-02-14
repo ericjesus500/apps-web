@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Ejemplos clearfix - campusMVP</title>
+    <style>
+        .ejemplo1 {}
+
+        .ejemplo2 {
+            overflow:hidden;
+        }
+
+        .ejemplo3 {}
+
+        .clearfix:after {
+            content:"";
+            display:block;
+            clear:both;
+        }
+
+        .ejemplo4 {
+            display:flow-root;
+        }
+
+
+        /* maquetación del ejemplo */
+
+        html {
+            background:#333;
+        }
+
+        body {
+            font: 16px 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width:100%;
+            max-width:800px;
+            background:#fff;
+            margin:1em auto;
+            padding:1em 2em 5em;
+        }
+
+        
+
+        a {
+            color: #0789DB;
+        }
+
+        .contenedor {
+            margin:2em auto 3em;
+            padding:0.5em;
+            width:350px;
+            border:2px solid #f90;
+        }
+
+        
+        img {
+            float:left;
+            margin: 0 0.5em 0 0;
+        }
+        
+        p {
+            margin:0.2em 0;
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin: 0.5em auto;
+            color: #00324b;
+            color: #0789DB;
+            margin-bottom: 0.5em;
+            margin-top: 2em;
+            font-weight: 600;
+        }
+
+        h1 {font-size: 1.8em;
+            color:#f90;
+        }
+
+        h2::before {
+            content:"";
+            clear:both;
+        }
+
+        .ejemplo1 + h2 {
+            margin-top: 4em;
+        }
+
+        h2 + p {
+            text-align:center;
+        }
+    </style>
+</head>
+<body">
+    <h1>Ejemplos <em>display:flow-root</em> y <em>clearfix</em></h1>
+    <h2>Ejemplo 1- la presentación por defecto</h2>
+    <div class="contenedor ejemplo1">
+        <img src="logo-campusMVP.png" alt="logo campusMVP"/> 
+        <p>Aquí tenemos un &lt;p&gt; con texto.</p>
+    </div>
+
+    <h2>Ejemplo 2 - Usando <code>overflow:hidden</code></h2>
+    <div class="contenedor ejemplo2">
+        <img src="logo-campusMVP.png" alt="logo campusMVP"/> 
+        <p>Aquí tenemos un &lt;p&gt; con texto.</p>
+    </div>
+
+    <h2> Ejemplo 3 - Con el pseudoelemento <code>:after</code></h2>
+    <div class="contenedor ejemplo3 clearfix">
+        <img src="logo-campusMVP.png" alt="logo campusMVP"/> 
+        <p>Aquí tenemos un &lt;p&gt; con texto.</p>
+    </div>
+
+   <h2> Ejemplo 4 - Con el nuevo <code>display:flow-root</code></h2>
+    <p>Si no lo ves bien es porque tu navegador no lo soporta. Pruébalo en Google Canary o en Firefox Nightlies.</p>
+    <div class="contenedor ejemplo4">
+        <img src="logo-campusMVP.png" alt="logo campusMVP"/> 
+        <p>Aquí tenemos un &lt;p&gt; con texto.</p>
+    </div>
+</body>
+</html>

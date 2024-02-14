@@ -1,0 +1,12 @@
+/* TEAM */
+    Author: Jorge Sánchez
+    twitter: @jorgesancheznet
+    Location: Villamuriel de Cerrato, España (Spain)
+
+/* SITE */
+    Last update 29/8/2015
+    Language: Castellano
+    Doctype: HTML5
+    IDE: Webstorm, Sublime Text, Photoshop
+    Standards: CSS3, HTML5, JavbaScript, ECMScript6, LESS
+    Componentes: Apache Server Configs, jQuery, Raphaeljs, canvg, Babel

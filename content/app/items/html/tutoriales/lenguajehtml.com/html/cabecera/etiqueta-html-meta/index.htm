@@ -1,0 +1,640 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e44f26">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>La etiqueta HTML &lt;meta&gt; - HTML en español - Lenguaje HTML</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="La cabecera de un documento HTML se suele utilizar para incluir un tipo de información transparente, también llamados metadatos.">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="La etiqueta HTML &lt;meta&gt; - HTML en español">
+  <meta property="og:image" content="https://lenguajehtml.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="La cabecera de un documento HTML se suele utilizar para incluir un tipo de información transparente, también llamados metadatos.">
+  <meta property="og:url" content="https://lenguajehtml.com/html/cabecera/etiqueta-html-meta/">
+  <meta property="twitter:url" content="https://lenguajehtml.com/html/cabecera/etiqueta-html-meta/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="La etiqueta HTML &lt;meta&gt; - HTML en español">
+  <meta property="twitter:description" content="La cabecera de un documento HTML se suele utilizar para incluir un tipo de información transparente, también llamados metadatos.">
+  <meta property="twitter:image" content="https://lenguajehtml.com/large-summary.jpg">
+
+  </head>
+
+<body class="html" style="--logo-color: #e44f26"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="/">
+  <svg><use href="../../../assets/logos.svg#html"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeHTML.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/html.jpg')">
+    <h1><a href="index.htm">La etiqueta HTML &lt;meta&gt;</a></h1><h2 class="typewriter">Metadatos e información del documento HTML</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../que-son-etiquetas-cabecera/index.htm">¿Qué son las etiquetas head?</a>
+    <a class="current" href="index.htm">La etiqueta HTML &lt;meta&gt;</a>
+    <a href="../etiqueta-html-link/index.htm">La etiqueta HTML &lt;link&gt;</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Quizás, una de las etiquetas HTML más populares que se colocan en el <code>&lt;head&gt;</code> de un documento HTML es la etiqueta <code>&lt;meta&gt;</code>. Se trata de una etiqueta que nos permite indicar metadatos o información interna del documento HTML. Estos datos no se suelen mostrar visualmente en la página, sino que el navegador los lee para conocer información relevante y utilizarlos en situaciones específicas.</p>
+<h3 id="la-etiqueta-de-metadatos" tabindex="-1"><a class="header-anchor" href="#la-etiqueta-de-metadatos">La etiqueta de metadatos</a></h3>
+<p>Por norma general, la etiqueta <code>&lt;meta&gt;</code> tiene los atributos <code>name</code> y <code>content</code>. Dependiendo del valor que le demos a <code>name</code>, tendremos que indicar un valor <code>content</code> correspondiente. Sin embargo, también existen algunas excepciones donde no hay que añadir estos atributos, sino otros diferentes.</p>
+<h4 id="tipo-de-codificación" tabindex="-1"><a class="header-anchor" href="#tipo-de-codificación">Tipo de codificación</a></h4>
+<p>La etiqueta <code>&lt;meta&gt;</code> más popular probablemente sea <code>&lt;meta charset=&quot;utf-8&quot;&gt;</code>: una etiqueta que permite indicar el tipo de codificación de nuestro documento HTML. ¿Qué es el tipo de codificación? Pues a grandes rasgos, la forma en la que se muestran los carácteres de texto de una página.</p>
+<p>Si en alguna ocasión has visto textos como <code>cÃ³digo</code> o <code>tambiÃ©n</code> es porque probablemente tenga una codificación incorrecta o no se le haya establecido esta etiqueta:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Título del documento<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></code></pre>
+<p>En el valor del atributo <code>charset</code> realmente se puede indicar cualquier tipo de codificación, pero la más utilizada y recomendada es <code>utf-8</code>, la cuál permite tener un buen sistema de codificación, muy extendido y que soporta una gran variedad de carácteres, suficiente para la mayoría de idiomas y textos.</p>
+<h4 id="datos-del-documento" tabindex="-1"><a class="header-anchor" href="#datos-del-documento">Datos del documento</a></h4>
+<p>No obstante, existen otras etiquetas <code>&lt;meta&gt;</code> donde se utilizan los atributos <code>name</code> y <code>content</code> para indicar metadatos en el documento. Veamos algunos de los más conocidos que sirven para indicar datos importantes de una página:</p>
+<table>
+<thead>
+<tr>
+<th>Valor name</th>
+<th>Valor content</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>description</code></td>
+<td><em>texto</em></td>
+<td>Indica la descripción de la página que aparece en buscadores.</td>
+</tr>
+<tr>
+<td><code>keywords</code></td>
+<td><em>palabras clave</em></td>
+<td>Lista de palabras clave separadas por comas. Google no la tiene en cuenta.</td>
+</tr>
+<tr>
+<td><code>author</code></td>
+<td><em>nombre</em></td>
+<td>Indica el nombre del autor de la página.</td>
+</tr>
+<tr>
+<td><code>application-name</code></td>
+<td><em>nombre</em></td>
+<td>Indica el nombre de la aplicación web. Debería usarse sólo si es una webapp.</td>
+</tr>
+<tr>
+<td><code>generator</code></td>
+<td><em>software</em></td>
+<td>Indica el software utilizado para crear la página web.</td>
+</tr>
+</tbody>
+</table>
+<p>La etiqueta meta <code>description</code> sirve para indicar unas breves frases donde se explique el contenido de la página actual. Entre otras cosas, sirve para las descripciones que salen bajo los enlaces de los resultados de búsqueda en Google, cuando la página es indexada. En general, suele ser un texto entre <strong>50-160 carácteres</strong>.</p>
+<p>Por su parte, la etiqueta meta <code>keywords</code> solicita una lista de palabras clave separadas por comas que tengan relación con el sitio web. Actualmente, Google no las considera (<em>se abusaba de ellas para hacer spam</em>), sin embargo, otros buscadores o sistemas sí que lo hacen.</p>
+<p>Veamos ahora un ejemplo con dichas etiquetas aplicadas:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>En esta página encontrarás documentación sobre HTML.<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>keywords<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>html, lenguaje, lenguaje de marcado, código html, etiqueta<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>author<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Manz<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>application-name<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ManzDev Skynet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>generator<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>VSCode<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></code></pre>
+<p>Otras etiquetas meta como <code>author</code>, <code>application-name</code> o <code>generator</code> se utilizan para aportar información que podría ser de utilidad, pero que no se utiliza en ningún sitio específico.</p>
+<h4 id="tema-de-color-del-navegador" tabindex="-1"><a class="header-anchor" href="#tema-de-color-del-navegador">Tema de color del navegador</a></h4>
+<p>En los navegadores que lo soporten, una etiqueta <code>&lt;meta&gt;</code> muy curiosa es la que proporciona la posibilidad de establecer un tema de color para personalizar los colores de la interfaz del navegador que estemos utilizando. Para ello, tenemos que utilizar el atributo <code>name=&quot;theme-color&quot;</code> y asociarle un color en hexadecimal:</p>
+<table>
+<thead>
+<tr>
+<th>Valor name</th>
+<th>Valor content</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>theme-color</code></td>
+<td><em>color</em></td>
+<td><a href="https://lenguajecss.com/css/colores-y-fondos/colores-css/">Color en hexadecimal</a> de la barra de navegación.</td>
+</tr>
+</tbody>
+</table>
+<p>Al establecer este atributo en una etiqueta <code>&lt;meta&gt;</code>, el navegador coloreará la barra de direcciones con el color hexadecimal indicado en el atributo <code>content</code> de nuestro fragmento de código:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>theme-color<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#1e7bbf<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></code></pre>
+<p>Así pues, con esto conseguiremos que por ejemplo, un dispositivo móvil con Android y Google Chrome, muestre la barra de navegación de la siguiente forma:</p>
+<p><img src="meta-theme.png" alt="Meta theme" width="700" height="493" loading="lazy"></p>
+<p>Sin embargo, actualmente, el soporte para esta característica es muy irregular, y muchos navegadores aún no lo soportan. Por ejemplo, en Chrome, sólo funciona en dispositivos móviles donde el sistema tenga el modo claro activado.</p>
+<p><caniuse-support title="theme-color Meta Tag" feature="meta-theme-color" edge="✗/n" firefox="✗/n" chrome="73/a" safari="15/y" opera="✗/n" ios_saf="15.0-15.1/y" and_chr="116/y" and_ff="✗/n">
+</caniuse-support></p>
+<h4 id="metadatos-seo-para-google" tabindex="-1"><a class="header-anchor" href="#metadatos-seo-para-google">Metadatos SEO para Google</a></h4>
+<p>Algunas de las etiquetas <code>&lt;meta&gt;</code> son bien conocidas como etiquetas que pueden mejorar el SEO (<em>posicionamiento</em>) de una página en buscadores como Google. Al margen de etiquetas <code>&lt;meta&gt;</code> como <code>description</code> o <code>&lt;title&gt;</code>, que son las principales en temas de posicionamiento, Google es capaz de leer otros metadatos que le indicarán como realizar ciertas acciones:</p>
+<table>
+<thead>
+<tr>
+<th>Valor name</th>
+<th>Valor content</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>google</code></td>
+<td><code>nositelinkssearchbox</code></td>
+<td>Indica a Google que no muestre el minibuscador en los <a href="https://support.google.com/webmasters/answer/47334?hl=es">sitelinks</a>.</td>
+</tr>
+<tr>
+<td><code>google</code></td>
+<td><code>notranslate</code></td>
+<td>Indica a Google que no debe traducir la página.</td>
+</tr>
+<tr>
+<td><code>robots</code></td>
+<td><em>parámetros</em></td>
+<td>Indica al robot de un buscador si debe indexar o no la página.</td>
+</tr>
+</tbody>
+</table>
+<p>Un pequeño ejemplo de esta etiqueta con los citados atributos:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>google<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nositelinkssearchbox<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>google<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>notranslate<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>robots<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>index, nofollow<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></code></pre>
+<p>Observa que la etiqueta <code>&lt;meta name=&quot;robots&quot;&gt;</code> puede tener varios parámetros (<em>separados por comas</em>) para indicarle a Google diferentes detalles. Veamos que valores podemos establecer:</p>
+<table>
+<thead>
+<tr>
+<th>Parámetros</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>index</code></td>
+<td>Sugiere a Google que se quiere indexar el contenido de la página en el buscador.</td>
+</tr>
+<tr>
+<td><code>noindex</code></td>
+<td>Indica a Google que <strong>no debe indexar</strong> el contenido de la página en el buscador.</td>
+</tr>
+<tr>
+<td><code>follow</code></td>
+<td>Sugiere a Google que siga los enlaces que encuentre en la página.</td>
+</tr>
+<tr>
+<td><code>nofollow</code></td>
+<td>Indica a Google que no debe seguir los enlaces que encuentre en la página.</td>
+</tr>
+<tr>
+<td><code>nosnippet</code></td>
+<td>Indica a Google que no muestre fragmentos (descripción, etc...).</td>
+</tr>
+<tr>
+<td><code>noodp</code></td>
+<td>Indica a Google que no use la descripción alternativa de <a href="https://www.dmoz.org/">DMOZ</a>. Obsoleto actualmente.</td>
+</tr>
+<tr>
+<td><code>noarchive</code></td>
+<td>Indica a Google que no almacene una versión en caché de la página.</td>
+</tr>
+<tr>
+<td><code>unavailable_after</code> <em>fecha</em></td>
+<td>Establece una fecha de caducidad para que no se rastree más la página.</td>
+</tr>
+<tr>
+<td><code>noimageindex</code></td>
+<td>Indica a Google que no indexe la página en resultados de Google Imágenes.</td>
+</tr>
+<tr>
+<td><code>none</code></td>
+<td>Equivalente a indicar los parámetros <strong>noindex, nofollow</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>De esta lista, el desarrollador puede elegir los valores correspondientes que más le interesen e indicarlos mediante la etiqueta <code>&lt;meta name=&quot;robots&quot;&gt;</code>. Mucho cuidado con no indicar valores que tengan significados opuestos.</p>
+<h4 id="viewport-del-navegador" tabindex="-1"><a class="header-anchor" href="#viewport-del-navegador">Viewport del navegador</a></h4>
+<p>Otro metadato muy utilizado hoy en día es el que se puede indicar con la etiqueta <code>&lt;meta name=&quot;viewport&quot;&gt;</code>. Para entenderlo, hay que tener muy claro primero que significa exactamente <code>viewport</code>: la <strong>región visible</strong> del navegador, esto es, la parte que se ve a simple vista de la página en nuestro navegador.</p>
+<table>
+<thead>
+<tr>
+<th>Valor name</th>
+<th>Valor content</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>viewport</code></td>
+<td><em>parámetros</em></td>
+<td>Comportamiento de la región visible del navegador. Ver <a href="https://lenguajecss.com/css/responsive-web-design/que-es/">Responsive</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>Y es que esta etiqueta permite establecer como se va a comportar el <strong>responsive</strong> en nuestra página. Muchas veces te habrás encontrado con páginas que en móvil simplemente aparecen igual que en escritorio y simplemente permiten que el usuario haga zoom para verlo mejor.</p>
+<p>Con esta etiqueta, podemos evitar ese comportamiento y establecer una escala mucho más grande, para luego con CSS aplicar una configuración diferente para dispositivos móviles, donde sea más cómoda su visualización e interacción.</p>
+<p>Por ejemplo, veamos un fragmento de código típico que suele utilizarse con esta etiqueta. Observa que todos los parámetro se incluyen en el atributo <code>content</code>, separándose con comas y estableciendo sus valores con <code>=</code>:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width,initial-scale=1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></code></pre>
+<p>Así pues, la etiqueta <code>&lt;meta name=&quot;viewport&quot;&gt;</code> nos permite indicar ciertos parámetros o comportamientos que queremos aplicar a dicha región visible del navegador, generalmente relacionados con el responsive. Los <strong>parámetros</strong> que podemos utilizar son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th>Valor por defecto</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>width</code></td>
+<td><code>device-width</code></td>
+<td>Establece el tamaño del viewport. Permite valores numéricos.</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td><code>device-height</code></td>
+<td>Idem al anterior, pero respecto al alto. Permite valores numéricos.</td>
+</tr>
+<tr>
+<td><code>initial-scale</code></td>
+<td><code>1</code></td>
+<td>Establece la escala inicial que tendrá el dispositivo. Valores entre <code>0.1</code> y <code>10</code>.</td>
+</tr>
+<tr>
+<td><code>minimum-scale</code></td>
+<td><code>0.1</code></td>
+<td>Idem al anterior, pero estableciendo la escala mínima que tendrá el dispositivo.</td>
+</tr>
+<tr>
+<td><code>maximum-scale</code></td>
+<td><code>10</code></td>
+<td>Idem al anterior, pero estableciendo la escala máxima que tendrá el dispositivo.</td>
+</tr>
+<tr>
+<td><code>user-scalable</code></td>
+<td><code>1</code></td>
+<td>Mediante <code>1</code> o <code>yes</code> se permite que el usuario haga zoom. Con <code>0</code> o <code>no</code>, se impide.</td>
+</tr>
+<tr>
+<td><code>interactive-widget</code></td>
+<td><code>resizes-visual</code></td>
+<td>Comportamiento de widgets de UI como el teclado virtual. <br><small>Otros valores posibles: <code>resizes-content</code> o <code>overlays-content</code>.</small></td>
+</tr>
+</tbody>
+</table>
+<p>Habitualmente, los valores indicados suelen ser <code>width</code> y <code>initial-scale</code>, sin embargo, el desarrollador puede especificar los que considere necesarios.</p>
+<h3 id="metadatos-simulados-de-servidor" tabindex="-1"><a class="header-anchor" href="#metadatos-simulados-de-servidor">Metadatos simulados de servidor</a></h3>
+<p>Existe una serie de etiquetas de metadatos especiales que indican a los robots del buscador o al navegador, que deben modificar las cabeceras HTTP para realizar acciones que suelen hacerse habitualmente desde el lado del servidor. Estas operaciones, en la mayoría de los casos, es mejor hacerlas directamente desde el servidor, sin embargo, proporcionan una alternativa en el caso que no sea posible.</p>
+<p>Para diferenciarlas, en lugar de utilizar el atributo <code>name</code>, se utiliza el atributo <code>http-equiv</code>. Sin embargo, recuerda que estas etiquetas pueden ser ignoradas por algunos navegadores o robots de búsqueda, o incluso ser contraproducentes o afectar negativamente al rendimiento. Muchas de ellas existen sólo por motivos históricos.</p>
+<h4 id="redirección-javascript" tabindex="-1"><a class="header-anchor" href="#redirección-javascript">Redirección Javascript</a></h4>
+<p>La etiqueta <code>&lt;meta http-equiv=&quot;refresh&quot;&gt;</code> nos permite establecer <strong>redirecciones</strong> desde el lado del cliente. Hay que tener mucho cuidado, ya que las redirecciones que queremos hacer por motivos SEO o similares, deben hacerse desde servidor y establecer un código de error concreto, como <code>301</code> o <code>302</code>. Además, desde cliente la web se carga y luego hace redirección, al contrario que en servidor, donde no se carga, sino que hace primero la redirección.</p>
+<p>La sintaxis es la siguiente:</p>
+<table>
+<thead>
+<tr>
+<th>Valor http-equiv</th>
+<th>Valor content</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>refresh</code></td>
+<td><em>segundos</em><code>;url=</code><em>URL</em></td>
+<td>Redirige a la URL después del número de segundos indicado.</td>
+</tr>
+</tbody>
+</table>
+<p>Veamos esta etiqueta en acción por si no se entiende bien:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>refresh<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>30;url=https://manz.dev/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></code></pre>
+<p>En este caso, estamos estableciendo que al cargarse la web y transcurrir <strong>30 segundos</strong>, el navegador debería realizar una redirección y moverse desde la página actual a la página <code>https://manz.dev/</code>.</p>
+<h4 id="etiquetas-de-caché" tabindex="-1"><a class="header-anchor" href="#etiquetas-de-caché">Etiquetas de caché</a></h4>
+<p>Otros ejemplos clásicos de etiquetas <code>&lt;meta http-equiv&gt;</code> son las que tienen que ver con el caché de la página. Nuevamente, mencionar que estos detalles hoy en día suelen definirse en el lado del servidor, en lugar de mediante estas etiquetas. Algunos ejemplos de los atributos que se pueden utilizar son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Valor http-equiv</th>
+<th>Valor content</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>expires</code></td>
+<td><em>fecha</em></td>
+<td>Fecha a partir de la cuál se considera <strong>caché expirada</strong>.</td>
+</tr>
+<tr>
+<td><code>cache-control</code></td>
+<td><code>max-age=</code><em>N</em></td>
+<td>Indica que la caché es válida hasta que transcurran <code>N</code> segundos.</td>
+</tr>
+<tr>
+<td><code>cache-control</code></td>
+<td><code>must-revalidate</code></td>
+<td>Usado con el anterior, permite guardar y evaluar si se puede usar caché.</td>
+</tr>
+<tr>
+<td><code>cache-control</code></td>
+<td><code>public</code></td>
+<td>Indica al navegador que puede ser guardada en una caché pública.</td>
+</tr>
+<tr>
+<td><code>cache-control</code></td>
+<td><code>private</code></td>
+<td>Indica al navegador que sólo puede guardarse en caché de navegador.</td>
+</tr>
+<tr>
+<td><code>cache-control</code></td>
+<td><code>no-cache</code></td>
+<td>Indica al navegador que evalue si utilizar el caché o no.</td>
+</tr>
+<tr>
+<td><code>cache-control</code></td>
+<td><code>no-store</code></td>
+<td>Indica al navegador que la página no debería guardarse en caché.</td>
+</tr>
+</tbody>
+</table>
+<p>Y finalmente, un ejemplo aplicando cada una de estas etiquetas:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>expires<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Fri, 29 Apr 2016 12:56:00 GMT<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cache-control<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>no-cache<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></code></pre>
+<p>Antiguamente también existían algunas etiquetas como <code>&lt;meta http-equiv=&quot;pragma&quot;&gt;</code> que actualmente se encuentran marcadas como obsoletas y que deben evitar utilizarse.</p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../que-son-etiquetas-cabecera/index.htm" title="¿Qué son las etiquetas head?">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>¿Qué son las etiquetas head?</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../etiqueta-html-link/index.htm" title="La etiqueta HTML &lt;link&gt;">
+  <div>
+    <span>La etiqueta HTML &lt;link&gt;</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/RW5erp81FMY" title="Consejos y buenas prácticas (I): HEAD">
+  <img loading="lazy" src="../../../vi/RW5erp81FMY/mqdefault.jpg" alt="Consejos y buenas prácticas (I): HEAD">
+</a><a href="https://youtu.be/cQIlwKSAyAc" title="Crear packs de iconos con sprites SVG">
+  <img loading="lazy" src="../../../vi/cQIlwKSAyAc/mqdefault.jpg" alt="Crear packs de iconos con sprites SVG">
+</a><a href="https://youtu.be/LAHR5gl07ks" title="Consejos y buenas prácticas (V): Accesibilidad">
+  <img loading="lazy" src="../../../vi/LAHR5gl07ks/mqdefault.jpg" alt="Consejos y buenas prácticas (V): Accesibilidad">
+</a><a href="https://youtu.be/7oPdEM0VXOs" title="Consejos y buenas prácticas (VI): Performance">
+  <img loading="lazy" src="../../../vi/7oPdEM0VXOs/mqdefault.jpg" alt="Consejos y buenas prácticas (VI): Performance">
+</a><a href="https://youtu.be/lDPJQyXow_g" title="Consejos y buenas prácticas (VII): SEO">
+  <img loading="lazy" src="../../../vi/lDPJQyXow_g/mqdefault.jpg" alt="Consejos y buenas prácticas (VII): SEO">
+</a><a href="https://youtu.be/SVomAFpMw30" title="Consejos y buenas prácticas (II): HTML + WebFonts">
+  <img loading="lazy" src="../../../vi/SVomAFpMw30/mqdefault.jpg" alt="Consejos y buenas prácticas (II): HTML + WebFonts">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-5', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

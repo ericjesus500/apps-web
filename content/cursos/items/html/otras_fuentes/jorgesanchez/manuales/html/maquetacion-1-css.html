@@ -1,0 +1,527 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Jorge Sánchez. Manual de HTML5 y CSS3. Maquetación (1). Columnas y Flexbox</title>
+    <script src="../../cgm1lsq.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link rel="stylesheet" href="../../lib/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="../../css/manual.css?f=20181104">
+</head>
+<body>
+<div id="mail">
+    <div id="formularioMail">
+        <p><a href="#"><img src="../../img/cerrar.png" alt="Cerrar" id="cerrarMail"></a></p>
+        <h1>Enviar mensaje</h1>
+        <form action="#" id="formMail" method="POST">
+            <input type="nombre" name="nombre" id="nombre" placeholder="nombre y apellidos" required="">
+            <input type="email" name="email" id="email" placeholder="tu email" required="">
+            <input type="asunto" placeholder="asunto" name="asunto" id="asunto" required="">
+            <textarea name="contenido" id="contenido" cols="30" rows="5" placeholder="texto del mensaje" required=""></textarea>
+            <button>ENVIAR</button>
+        </form>
+    </div>
+</div>
+<div id="btMenu">
+    <div id="franja1" class="franja"></div>
+    <div id="franja2" class="franja"></div>
+    <div id="franja3" class="franja"></div>
+</div>
+
+<div id="barraSocial">
+    <a href="https://twitter.com/jorgesancheznet">
+        <img src="../../img/twitter.png" alt="twitter" class="btSocial" title="jorgesancheznet en twitter">
+    </a>
+    <a href="https://facebook.com/jorgesancheznet">
+        <img src="../../img/facebook.png" alt="FaceBook" class="btSocial" title="jorgesancheznet en facebook">
+    </a>
+    <a href="https://youtube.com/jorgesancheznet">
+        <img src="../../img/youtube.png" alt="You Tube" class="btSocial" title="jorgesancheznet en YouTube">
+    </a>
+    <a href="https://github.com/jorgesancheznet">
+        <img src="../../img/github.png" alt="Git Hub" class="btSocial" title="jorgesancheznet en GitHub">
+    </a>
+    <a href="#" id="btMail" class="enlaceMail">
+        <img src="../../img/mail.png" alt="Enviar email" class="btSocial" title="Enviar email">
+    </a>
+</div>
+
+
+<header>
+    <div id="logo">
+        <a href="/">
+        <img src="../../img/logo.png" alt="JorgeSanchez.net logo" id="iLogo1">
+        <img src="../../img/logoMini.png" alt="JorgeSanchez.net logo" id="iLogo2">
+        </a>
+    </div>
+</header>
+
+<section id="cuerpo">
+    <h1 class="superPrincipal">Manual de HTML5 y CSS3</h1>
+    <h1 class="titulo1"><span class="numero0">[21] </span><br>Maquetación (1). Columnas y Flexbox</h1>    
+    
+<div id="_idContainer012" class="Marco-de-texto-b-sico">
+			<h2 class="titulo2"><span class="numero2">[21.1] </span><a id="_idTextAnchor000"></a>creación de columnas</h2>
+			<p class="Normal2">CSS3 permite establecer columnas en un elemento, de forma que el contenido del mismo se organice en base a dichas columnas.</p>
+			<h3 class="titulo3"><span class="numero3">[21.1.1]</span><a id="_idTextAnchor001"></a>anchura y número de columnas</h3>
+			<p class="Normal">Las propiedades fundamentales para ello son:</p>
+			<ul>
+				<li class="punto"><strong class="Negritta">column-count</strong>. Establece el número de columnas que tendrá elemento. El contenido se despliega formando el número de columnas que se indique</li>
+				<li class="punto"><strong class="Negritta">column-width</strong>. Establece la anchura mínima de cada columna. Si se han establecido por ejemplo cuatro columnas y la anchura de cada una es de 200 píxeles, cuando la pantalla sea de 100 píxeles, se mostrarán cuatro columnas de 250 píxeles cada una. Cuando sea de 600 píxeles, sólo se mostrarán tres columnas de 200 píxeles cada una. Si es de 500 píxeles, se mostrarán dos columnas de 250 cada una.</li>
+				<li class="punto"><strong class="Negritta">columns</strong>. Permite establecer las dos propiedades anteriores a la vez. </li>
+			</ul>
+			<p class="normalespacio">Ejemplo:</p>
+			<table id="table001" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;!doctype html&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;html</strong> <span class="atributo">lang=</span><span class="texto">”es</span><span class="texto">”</span><strong class="resaltado">&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;head&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;meta </strong><span class="atributo">charset=</span><span class="texto">”UTF-8</span><span class="texto">”</span><strong class="resaltado">&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;title&gt;</strong>Columnas<strong class="resaltado">&lt;/title&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;style&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">        div{</strong></pre>
+							<pre class="codigo">            <span class="atributo">border:</span><span class="texto">1px solid black</span>;</pre>
+							<pre class="codigo">            <span class="atributo">background-color:</span><span class="texto"> gray</span>;;</pre>
+							<pre class="codigo"><strong class="resaltado">        }</strong></pre>
+							<pre class="codigo">        #capa2{</pre>
+							<table id="table002" class="tablaRemarcada">
+								<colgroup>
+									<col>
+								</colgroup>
+								<tbody>
+									<tr class="tablaRemarcada">
+										<td class="tablaRemarcada celda-remarcada">
+											<pre class="codigo"><span class="atributo">           columns:</span><span class="texto">4;</span></pre>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<pre class="codigo">            <span class="atributo">background-color:</span><span class="texto">white;</span></pre>
+							<pre class="codigo">        }</pre>
+							<pre class="codigo">        <strong class="resaltado">@media all and (</strong><span class="atributo">max-width: 900p</span><span class="atributo">x</span>){</pre>
+							<pre class="codigo">            #capa2{</pre>
+							<table id="table003" class="tablaRemarcada">
+								<colgroup>
+									<col>
+								</colgroup>
+								<tbody>
+									<tr class="tablaRemarcada">
+										<td class="tablaRemarcada celda-remarcada">
+											<pre class="codigo"><span class="atributo">              columns:</span><span class="texto">2;</span></pre>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<pre class="codigo">            }</pre>
+							<pre class="codigo">        }</pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;/style&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/head&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table id="table004" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;body&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;div </strong><span class="atributo">id=</span><span class="texto">”capa1”</span><strong class="resaltado">&gt;</strong></pre>
+							<pre class="codigo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aut, consequatur debitis eaque eveniet exexercitationem ipsum minima mollitia, neque nulla porro, quibusdam sunt! Ab accusamus atque deleniti eaque excepturifugiat id ipsum minus nisi odit pariatur placeat porro, quae quo repellat sequi tenetur voluptate voluptatibus!</pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;div</strong> <span class="atributo">id=</span><span class="texto">”capa2”</span><strong class="resaltado">&gt;</strong>Ad alias aut, commodi dicta dignissimos dolore dolores eum fuga id ipsam ipsum laborum nam officia</pre>
+							<pre class="codigo">placeat reprehenderit sed similique? A ab cum esse explicabo nisi nulla voluptates. A atque aut consectetur culpa</pre>
+							<pre class="codigo">cupiditate dicta dolorem dolorum esse iste iure magni maiores, molestiae molestias mollitia non officiis, optio</pre>
+							<pre class="codigo">perferendis porro praesentium provident quae quidem sint soluta suscipit ullam, unde veritatis. Animi atque</pre>
+							<pre class="codigo">doloremque eaque earum ex facilis magnam maxime nobis quia quis quisquam quos repudiandae saepe, sed tempora ullamut voluptas. Amet beatae dicta expedita facilis fugit harum ipsa iure iusto molestias nulla placeat porro possimus praesentium, quas, rem tempore!</pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;div</strong> <span class="atributo">id=</span><span class="texto">”capa3”</span><strong class="resaltado">&gt;</strong>Alias ex fuga fugit id maxime odit voluptatum. Culpa dolor eum harum in magni molestias, repellat.Debitis dolorum facilis labore quasi tempora. Ab culpa fugiat, incidunt mollitia nisi officiis quia quos,repellendus sapiente sed, temporibus unde vero? Accusamus, aperiam at atque cum</pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/body&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/html&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal">Resultado (con una pantalla de 1100 píxeles de anchura):</p>
+			<p class="Normal"><img src="mquetacion-1-css-web-resources/image/1.png" alt=""></p>
+			<p class="Normal">Si la resolución fuera de 900 píxeles:</p>
+			<p class="Normal"><img src="mquetacion-1-css-web-resources/image/2.png" alt=""></p>
+			<p class="Normal">Cuando no se indica ancho, se toma la mitad del espacio para cada columna.</p>
+			<h3 class="titulo3"><span class="numero3">[21.1.2]</span><a id="_idTextAnchor002"></a>otras propiedades para columnas</h3>
+			<ul>
+				<li class="punto"><strong class="Negritta">column-rule-width</strong>. Establece la anchura de la línea que va entre cada columna (por defecto no aparece dicha línea)</li>
+				<li class="punto"><strong class="Negritta">column-rule-style</strong>. Permite usar el estilo de la línea que va entre columnas. Por defecto es <strong class="Negritta">none </strong>(que no haya línea), pero se puede indicar <strong class="Negritta">solid</strong>, <strong class="Negritta">dashed</strong>, <strong class="Negritta">dotted</strong>,... es decir cualquier estilo de línea.</li>
+				<li class="punto"><strong class="Negritta">column-rule-color</strong>. Color de la línea entre columnas</li>
+				<li class="punto"><strong class="Negritta">column-rule</strong>. Permite establecer las tres propiedades anteriores a la vez. Ejemplo (Safari y los navegadores de Microsoft requieren prefijo):<table id="table005" class="tabla-codigo _idGenTablePara-1"><colgroup><col></colgroup><tbody><tr class="tabla-codigo"><td class="tabla-codigo celda-codigo"><pre class="codigo"><strong class="resaltado">-moz-column-rule:</strong><span class="atributo">1px solid black</span>;</pre><pre class="codigo"><strong class="resaltado">-webkit-column-rule:</strong><span class="atributo">1px solid black</span>;</pre><pre class="codigo"><strong class="resaltado">column-rule:</strong><span class="atributo">1px solid black</span>;</pre></td></tr></tbody></table></li>
+				<li class="punto"><strong class="Negritta">column-gap</strong>. Establece la distancia entre columnas.</li>
+				<li class="punto"><strong class="Negritta">column-span</strong>. Se aplica a un elemento que va dentro de otro al que se le han aplicado columnas. Normalmente vale uno, haciendo que el elemento ocupe una sola columna, pero si se indica otro número el elemento ocupará tantas columnas como dicte dicho número. Si se indica como valor, la palabra <strong class="Negritta">all</strong>, entonces el elemento ocupa todas las columnas. <p class="sinpunto">Desgraciadamente no funciona en <strong class="Negritta">Firefox </strong>y en los navegadores <strong class="Negritta">webkit</strong>,  solo se admite la palabra <strong class="Negritta">all</strong> o bien indicar <strong class="Negritta">1 </strong>(valor por defecto). </p></li>
+			</ul>
+			<p class="normalespacio">Ejemplo:</p>
+			<table id="table006" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;!doctype </strong><span class="atributo">html</span><strong class="resaltado">&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;html </strong><span class="atributo">lang=</span><span class="texto">”es”</span><strong class="resaltado">&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;head&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;meta </strong><span class="atributo">charset=</span><span class="texto">”UTF-8”</span><strong class="resaltado">&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;title&gt;</strong>Document<strong class="resaltado">&lt;/title&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;style&gt;</strong></pre>
+							<table id="table007" class="tablaRemarcada">
+								<colgroup>
+									<col>
+								</colgroup>
+								<tbody>
+									<tr class="tablaRemarcada">
+										<td class="tablaRemarcada celda-remarcada">
+											<pre class="codigo">        #capa{</pre>
+											<pre class="codigo">            <strong class="resaltado">-webkit-columns:</strong> <span class="atributo">3 200px</span>;</pre>
+											<pre class="codigo">            -<strong class="resaltado">moz-columns:</strong> <span class="atributo">3 200px</span>;</pre>
+											<pre class="codigo">            <strong class="resaltado">columns:</strong><span class="atributo"> 3 200px</span>;</pre>
+											<pre class="codigo"> <strong class="resaltado">       }</strong></pre>
+											<pre class="codigo"><strong class="resaltado">        h1 {</strong></pre>
+											<pre class="codigo"><strong class="resaltado">            -webkit-column-span: </strong><span class="atributo">all</span>;</pre>
+											<pre class="codigo"><strong class="resaltado">            column-span: </strong><span class="atributo">all</span>;</pre>
+											<pre class="codigo"> <strong class="resaltado">       }</strong></pre>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<pre class="codigo"><strong class="resaltado">    &lt;/style&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/head&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;body&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;div</strong> <span class="atributo">id=</span><span class="texto">”capa”</span><strong class="resaltado">&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;p&gt;</strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias aliquid, animi, architecto consequatur delectus dicta dignissimos enim eum eveniet fuga ipsam iure nesciunt perferendis porro recusandae tenetur ut</pre>
+							<pre class="codigo">voluptatum?<strong class="resaltado">&lt;/p&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;h1&gt;</strong>Este es el texto que ocupa todas las columnas<strong class="resaltado">&lt;/h1&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;p&gt;</strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at culpa enim nobis nostrum quas voluptatum.Aliquam animi atque autem consequuntur delectus deleniti dignissimos distinctio dolorem dolorum eaque eos esseexercitationem natus officia repellendus repudiandae, sequi similique ut veniam voluptates. Eius error eum incidunt quaerat recusandae? Dolorem eligendi ex non quos rem sit! Assumenda doloribus error et expeditamollitia officia pariatur ratione velit voluptatibus. Alias cupiditate dignissimos, eveniet fuga, iure magnimaio<strong class="resaltado">&lt;/p&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/body&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/html&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal">Resultado:</p>
+			<p class="Normal"><img src="mquetacion-1-css-web-resources/image/3.png" alt=""></p>
+			<h2 class="titulo2"><span class="numero2">[21.2] </span><a id="_idTextAnchor003"></a>distribución de contenido de tipo caja flexible (<strong class="Negritta">flexbox</strong>)</h2>
+			<h3 class="titulo3"><span class="numero3">[21.2.1]</span><a id="_idTextAnchor004"></a>display:flex</h3>
+			<p class="Normal2">La propiedad <strong class="Negritta">display </strong>permite una visualización de elementos conocida como flex, que permite distribuir los contenidos en forma de caja flexible. Se trata de columnas adaptables, que admiten tamaños y alineaciones variables.</p>
+			<p class="Normal">Es muy interesante y potente, aunque es una forma de maquetar bastante moderna, casi todos los navegadores actuales la permiten. </p>
+			<p class="Normal">Cuando a un elemento le indicamos <strong class="Negritta">display:flex</strong>, éste se convierte en un contenedor de caja flexible. Es decir, se tratará de un contenedor de elementos cuya disposición admitirá propiedades de tipo <em class="cursiva">flex</em>.</p>
+			<p class="Normal">Ejemplo (<a href="https://codepen.io/jorgesancheznet/pen/LmYJwe"><span class="hyperlink">https://codepen.io/jorgesancheznet/pen/LmYJwe</span></a>):</p>
+			<table id="table008" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;!doctype </strong><span class="atributo">html</span><strong class="resaltado">&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;html </strong><span class="atributo">lang</span><span class="texto">=”es”</span><strong class="resaltado">&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;head&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;meta </strong><span class="atributo">charset</span><span class="texto">=”UTF-8”</span>&gt;</pre>
+							<pre class="codigo">    <strong class="resaltado">&lt;title&gt;</strong>Document<strong class="resaltado">&lt;/title&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;style&gt;</strong></pre>
+							<pre class="codigo">        <strong class="resaltado">main{</strong></pre>
+							<table id="table009" class="tablaRemarcada">
+								<colgroup>
+									<col>
+								</colgroup>
+								<tbody>
+									<tr class="tablaRemarcada">
+										<td class="tablaRemarcada celda-remarcada">
+											<pre class="codigo"><strong class="resaltado">            </strong><span class="atributo">display</span><strong class="resaltado">: </strong><span class="texto">flex</span>;</pre>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<pre class="codigo">       <strong class="resaltado"> }</strong></pre>
+						</td>
+					</tr>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">        #capa1{</strong></pre>
+							<pre class="codigo">            <span class="atributo">background-color:</span> <span class="texto">yellow</span>;</pre>
+							<pre class="codigo">        <strong class="resaltado">}</strong></pre>
+							<pre class="codigo"><strong class="resaltado">        #capa2{</strong></pre>
+							<pre class="codigo">           <strong class="resaltado"> </strong><span class="atributo">background-color:</span> <span class="texto">blue</span>;</pre>
+							<pre class="codigo">       <strong class="resaltado"> }</strong></pre>
+							<pre class="codigo"><strong class="resaltado">        #capa3{</strong></pre>
+							<pre class="codigo">            <span class="atributo">background-color:</span> <span class="texto">green</span>;</pre>
+							<pre class="codigo">        <strong class="resaltado">}</strong></pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;/style&gt;&lt;/head&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;body&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;main&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;div id=”</strong><span class="atributo">capa1</span><strong class="resaltado">”&gt;</strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eius eum illoimpedit maiores molestiae natus! Animi deleniti enim, laudantium quasi quo sit voluptas? Ducimus nequeperferendis quia quos?</pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;div id=”</strong><span class="atributo">capa2</span><strong class="resaltado">”</strong>&gt;A aperiam dicta dolorem excepturi harum, hic inventore ipsa laborum, maiores nihil odit optio, quis unde. Ab aspernatur cum dolore ducimus illo quia quidem velit! Esse officia sequi totam velit!</pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;div id=”</strong><span class="atributo">capa3</span><strong class="resaltado">”&gt;</strong>Eveniet itaque iure officia quasi quos sit tempore. Accusantium consequuntur excepturi exercitationem fugiat fugit ipsam nobis quas recusandae reiciendis repellat! Atque neque perspiciatis quae sunt</pre>
+							<pre class="codigo"> ut? Iste neque reiciendis unde.</pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/main&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/body&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/html&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal">Resultado:</p>
+			<p class="Normal"><img src="mquetacion-1-css-web-resources/image/4.png" alt=""></p>
+			<h3 class="titulo3"><span class="numero3">[21.2.2]</span><a id="_idTextAnchor005"></a>propiedades flexbox para el contenedor</h3>
+			<p class="normalespacio">Supongamos que tenemos este código:</p>
+			<table id="table010" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;head&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;meta</strong> <span class="atributo">charset=</span><span class="texto">”UTF-8”</span><strong class="resaltado">&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;title&gt;</strong>Ejemplo FlexBox<strong class="resaltado">&lt;/title&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;style&gt;</strong></pre>
+							<pre class="codigo">        #contenedor{</pre>
+							<table id="table011" class="tablaRemarcada">
+								<colgroup>
+									<col>
+								</colgroup>
+								<tbody>
+									<tr class="tablaRemarcada">
+										<td class="tablaRemarcada celda-remarcada">
+											<pre class="codigo">            <strong class="resaltado">display:</strong><span class="atributo">flex</span>;</pre>
+											<pre class="codigo">            <strong class="resaltado">width:</strong><span class="atributo">400px</span>;</pre>
+											<pre class="codigo"><strong class="resaltado">            height:</strong><span class="atributo">200px</span>;</pre>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<pre class="codigo">            <strong class="resaltado">border:</strong><span class="atributo">1px solid black</span></pre>
+							<pre class="codigo">        }</pre>
+							<table id="table012" class="tablaRemarcada">
+								<colgroup>
+									<col>
+								</colgroup>
+								<tbody>
+									<tr class="tablaRemarcada">
+										<td class="tablaRemarcada celda-remarcada">
+											<pre class="codigo">        .contenidoCorto{</pre>
+											<pre class="codigo">            <strong class="resaltado">width:</strong><span class="atributo">50px</span>;</pre>
+											<pre class="codigo">            <strong class="resaltado">height:</strong><span class="atributo">50px</span>;</pre>
+											<pre class="codigo">        }</pre>
+											<pre class="codigo">        .contenidoAlto{</pre>
+											<pre class="codigo">            <strong class="resaltado">width:</strong><span class="atributo">50px</span>;</pre>
+											<pre class="codigo">            <strong class="resaltado">height:</strong><span class="atributo">100px</span>;</pre>
+											<pre class="codigo">        }</pre>
+											<pre class="codigo">        .contenidoAncho{</pre>
+											<pre class="codigo">            <strong class="resaltado">width:</strong><span class="atributo">100px</span>;</pre>
+											<pre class="codigo">            <strong class="resaltado">height:</strong><span class="atributo">50px</span>;</pre>
+											<pre class="codigo">        }</pre>
+											<pre class="codigo">        .contenidoGrande{</pre>
+											<pre class="codigo">            <strong class="resaltado">width:</strong><span class="atributo">100px</span>;</pre>
+											<pre class="codigo">            <strong class="resaltado">height:</strong><span class="atributo">100px</span>;</pre>
+											<pre class="codigo">        }</pre>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<pre class="codigo">        }</pre>
+							<pre class="codigo">    <strong class="resaltado">&lt;/style&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/head&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;body&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;div </strong><span class="atributo">id=</span><span class="texto">”contenedor”</span><strong class="resaltado">&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">    &lt;div </strong><span class="atributo">id=</span><span class="texto">”capa1”</span> <span class="atributo">style=</span><span class="texto">”background-color:red” </span></pre>
+							<pre class="codigo"><span class="texto">&#9;&#9;</span><span class="atributo">class=</span><span class="texto">”contenidoCorto” </span><strong class="resaltado">&gt;&lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">   &lt;div </strong><span class="atributo">id=</span><span class="texto">”capa2”</span> <span class="atributo">style=</span><span class="texto">”background-color:green” </span></pre>
+							<pre class="codigo"><span class="texto">&#9;&#9;</span><span class="atributo">class=</span><span class="texto">”contenidoAncho” </span><strong class="resaltado">&gt;&lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">   &lt;div </strong><span class="atributo">id=</span><span class="texto">”capa3”</span> <span class="atributo">style=</span><span class="texto">”background-color:gray” </span></pre>
+							<pre class="codigo"><span class="texto">&#9;&#9;</span><span class="atributo">class=</span><span class="texto">”contenidoAlto” </span><strong class="resaltado">&gt;&lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">   &lt;div </strong><span class="atributo">id=</span><span class="texto">”capa4”</span> <span class="atributo">style=</span><span class="texto">”background-color:blue” </span></pre>
+							<pre class="codigo"><span class="texto">&#9;&#9;</span><span class="atributo">class=</span><span class="texto">”contenidoGrande” </span><strong class="resaltado">&gt;&lt;/div&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table id="table013" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">  &lt;div </strong><span class="atributo">id=</span><span class="texto">”capa5”</span> <span class="atributo">style=</span><span class="texto">”background-color:pink” </span></pre>
+							<pre class="codigo"><span class="texto">&#9;&#9;</span><span class="atributo">class=</span><span class="texto">”contenidoCorto” </span><strong class="resaltado">&gt;&lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">   &lt;div </strong><span class="atributo">id=</span><span class="texto">”capa6”</span> <span class="atributo">style=</span><span class="texto">”background-color:orange” </span></pre>
+							<pre class="codigo"><span class="texto">&#9;&#9;</span><span class="atributo">class=</span><span class="texto">”contenidoAncho” </span><strong class="resaltado">&gt;&lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">   &lt;div </strong><span class="atributo">id=</span><span class="texto">”capa7”</span> <span class="atributo">style=</span><span class="texto">”background-color:red” </span></pre>
+							<pre class="codigo"><span class="texto">&#9;&#9;</span><span class="atributo">class=</span><span class="texto">”contenidoGrande” </span><strong class="resaltado">&gt;&lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/body&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/html&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal">Produciría este resultado:</p>
+			<p class="Normal"><img src="mquetacion-1-css-web-resources/image/5.png" alt=""></p>
+			<p class="Normal">Realmente el contenido no cabe a lo ancho (el contenedor tiene una anchura de 400 píxeles y la suma de las anchuras de las capas internas nos da  550 píxeles), pero por defecto las capas contenidas ajustan su tamaño automáticamente al contenedor. La anchura de cada capa interna se recalcula proporcionalmente a la anchura indicada en ellas</p>
+			<p class="Normal">A la capa contenedora se le pueden aplicar propiedades que modifiquen este comportamiento por defecto. Todas ellas sólo funcionan si se ha indicado que tenemos una distribución flexible (<em class="cursiva">display:flex</em>) en la capa contenedora.</p>
+			<ul>
+				<li class="punto"><strong class="Negritta">flex-direction</strong>. Indica en qué dirección se distribuyen los contenidos de la capa. Puede ser:<ul><li class="Punto2"><strong class="Negritta">row</strong>. En forma de fila de izquierda a derecha. Es el valor por defecto.</li><li class="Punto2"><strong class="Negritta">row-reverse</strong>. El fila, pero de derecha a izquierda</li><li class="Punto2"><strong class="Negritta">column</strong>. En forma de columna de arriba a abajo</li><li class="Punto2"><strong class="Negritta">column-reverse</strong>. En forma de columna de abajo a arriba</li></ul></li>
+			</ul>
+			<p class="P-rrafo-b-sico"><img src="mquetacion-1-css-web-resources/image/6.png" alt=""></p>
+			<ul>
+				<li class="punto"><strong class="Negritta">flex-wrap</strong>. Por defecto los contenidos se distribuyen en una única línea (valor <strong class="Negritta">no-wrap</strong>). Esta propiedad permite que se distribuyan en varias líneas si es necesario (valor <strong class="Negritta">wrap</strong>).<p class="sinpunto"><img src="mquetacion-1-css-web-resources/image/7.png" alt=""></p><p class="sinpunto">En la imagen anterior, las capas están configuradas con las propiedades <em class="cursiva">flex-direction:row </em>y <em class="cursiva">flex-wrap:wrap</em>, de forma que se distribuyen en forma de fila pero ahora se respeta su tamaño haciendo que ocupen las capas interiores dos filas.</p></li>
+				<li class="punto"><strong class="Negritta">flex-flow</strong>. Permite asignar mediante una sola propiedad, las dos anteriores. Ejemplo:<table id="table014" class="tabla-codigo _idGenTablePara-2"><colgroup><col></colgroup><tbody><tr class="tabla-codigo"><td class="tabla-codigo celda-codigo"><pre class="codigo"><strong class="resaltado">flex-flow:</strong><span class="atributo">row wrap</span>;</pre></td></tr></tbody></table></li>
+				<li class="punto"><strong class="Negritta">justify-content</strong>. Indican como se distribuyen las capas interiores dentro de la capa contenedora. Sólo tiene efecto cuando se ha elegido flujo de tipo envolvente (<strong class="Negritta">wrap)</strong>. Esta propiedad tiene estos valores:<ul><li class="Punto2"><strong class="Negritta">flex-start</strong>. Las capas interiores se distribuyen alineadas a la izquierda</li><li class="Punto2"><strong class="Negritta">flex-end</strong>. Las capas interiores se distribuyen alineadas a la derecha</li><li class="Punto2"><strong class="Negritta">center</strong>. Las capas interiores aparecen centradas en la capa contenedora</li><li class="Punto2"><strong class="Negritta">space-between</strong>. Las capas interiores aparecen distribuidas de forma justificada a la izquierda y derecha dejan espacios entre ellas para conseguir ese efecto.</li><li class="Punto2"><strong class="Negritta">space-around</strong>. Parecida a la anterior, sólo que en este caso el espacio se deja entre las capas y también por fuera de ellas.</li></ul><p class="sinpunto">Gráficamente (usando las capas anteriores como ejemplo) estas son todas las posibilidades:</p><p class="sinpunto"><img src="mquetacion-1-css-web-resources/image/8.png" alt=""></p></li>
+				<li class="punto"><strong class="Negritta">align-items</strong>. En este caso se indica como se distribuyen las capas interiores a lo largo del eje vertical. Posibilidades:<ul><li class="Punto2"><strong class="Negritta">flex-start</strong>. Las capas interiores se distribuyen de arriba a abajo.</li><li class="Punto2"><strong class="Negritta">flex-end</strong>. Las capas interiores se alinean en el borde inferior.</li><li class="Punto2"><strong class="Negritta">center</strong>. Las capas interiores se centran en vertical</li><li class="Punto2"><strong class="Negritta">stretch</strong>. Las capas estiran su tamaño para que ocupen desde el borde superior hasta el borde inferior. </li><li class="Punto2"><strong class="Negritta">baseline</strong>. Las capas interiores se distribuyen desde la línea base de su contenido (sin contenido, la alineación no tiene efecto).</li></ul><p class="sinpunto"><img src="mquetacion-1-css-web-resources/image/9.png" alt=""></p><p class="sinpunto">Estas son las alineaciones conseguidas usando el ejemplo de capas visto. Para el último resultado (<strong class="Negritta">stretch</strong>) se ha retirado la altura (propiedad <em class="cursiva">height</em>) de las las capas interiores; de otro modo <em class="cursiva">stretch </em>no podría conseguir ese resultado.</p></li>
+			</ul>
+			<p class="Normal"><strong class="Negritta"><img src="mquetacion-1-css-web-resources/image/10.png" alt=""></strong></p>
+			<ul>
+				<li class="punto"><strong class="Negritta">align-content</strong>. Propiedad similar a <strong class="Negritta">justifiy-content</strong>, pero referida al eje vertical. Tiene más posibilidades que <strong class="Negritta">align-item</strong>, por lo que se usa más habitualmente que ella. En realidad son distintas, sus resultados difieren bastante. Posibles valores:<ul><li class="Punto2"><strong class="Negritta">flex-start</strong>. Las capas interiores se apilan de arriba a abajo.</li><li class="Punto2"><strong class="Negritta">flex-end</strong>. Las capas interiores se apilan en el borde inferior.</li><li class="Punto2"><strong class="Negritta">center</strong>. Las capas interiores se apilan en el centro del contenedor.</li><li class="Punto2"><strong class="Negritta">stretch</strong>. Las capas estiran su tamaño para que ocupen desde el borde superior hasta el borde inferior. </li><li class="Punto2"><strong class="Negritta">space-between</strong>. Las capas se alinean de arriba a abajo y dejan un espacio proporcional entre cada línea.</li><li class="Punto2"><strong class="Negritta">space-around</strong>. Las capas se alinean de arriba a abajo y dejan un espacio proporcional entre cada línea. Además ese mismo espacio entre cada línea se deja arriba de la primera línea y debajo de la última, por lo que no quedan situadas justo en los bordes.<h3 class="titulo3"><span class="numero3">[21.2.3]</span><a id="_idTextAnchor006"></a>propiedades para el contenido</h3></li></ul></li>
+			</ul>
+			<p class="Normal2">Se trata de propiedades que se aplican a las capas interiores para modificar la forma en la que una capa concreta se ha de comportar.</p>
+			<ul>
+				<li class="punto"><strong class="Negritta">flex-grow</strong>. Indica la capacidad de crecer que tiene una capa concreta. Se marca con un número entero que por defecto vale uno. Si marcamos 2, decimos que la capa ocuparía el doble de lo normal (en horizontal).<p class="sinpunto">Si modificamos el código CSS de las capas interiores de los ejemplos puestos en los apartados anteriores, de esta forma:</p><table id="table015" class="tabla-codigo _idGenTablePara-1"><colgroup><col></colgroup><tbody><tr class="tabla-codigo"><td class="tabla-codigo celda-codigo"><pre class="codigo">#contenedor{</pre><pre class="codigo">&#9;<strong class="resaltado">display:</strong><span class="atributo">flex</span>;</pre><pre class="codigo">&#9;<strong class="resaltado">width:</strong><span class="atributo">400px</span>; <strong class="resaltado">height:</strong><span class="atributo">300px</span>;</pre><pre class="codigo">&#9;<strong class="resaltado">border:</strong><span class="atributo">1px solid black</span>;</pre><pre class="codigo">}.contenidoCorto{</pre><pre class="codigo">&#9;<strong class="resaltado">flex-grow:</strong><span class="atributo">1</span>;</pre><pre class="codigo">}</pre><pre class="codigo">.contenidoAlto{</pre><pre class="codigo">&#9;<strong class="resaltado">flex-grow:</strong><span class="atributo">1</span>;</pre><pre class="codigo">}</pre><pre class="codigo">.contenidoAncho{</pre><pre class="codigo">&#9;<strong class="resaltado">flex-grow:</strong><span class="atributo">2</span>;</pre><pre class="codigo">}</pre><pre class="codigo">.contenidoGrande{</pre><pre class="codigo">      <strong class="resaltado">flex-grow:</strong><span class="atributo">2</span>;</pre><pre class="codigo">}</pre></td></tr></tbody></table></li>
+			</ul>
+			<p class="sinpunto">El resultado visual sería:</p>
+			<p class="sinpunto"><img src="mquetacion-1-css-web-resources/image/flex-grow-1.jpg" alt=""></p>
+			<p class="sinpunto">Asignando tamaños de altura:</p>
+			<table id="table016" class="tabla-codigo _idGenTablePara-1">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo">.contenidoCorto{</pre>
+							<pre class="codigo">&#9;flex-grow:1;</pre>
+							<pre class="codigo">      <strong class="resaltado">height:</strong><span class="atributo">50px</span><strong class="resaltado">;</strong></pre>
+							<pre class="codigo">}</pre>
+							<pre class="codigo">.contenidoAlto{</pre>
+							<pre class="codigo">&#9;flex-grow:1;</pre>
+							<pre class="codigo">      <strong class="resaltado">height:</strong><span class="atributo">100px</span></pre>
+							<pre class="codigo">}</pre>
+							<pre class="codigo">.contenidoAncho{</pre>
+							<pre class="codigo">&#9;flex-grow:2;</pre>
+							<pre class="codigo">      <strong class="resaltado">height:</strong><span class="atributo">50px</span>;</pre>
+							<pre class="codigo">}</pre>
+							<pre class="codigo">.contenidoGrande{</pre>
+							<pre class="codigo">&#9;flex-grow:2;</pre>
+							<pre class="codigo">      <strong class="resaltado">height:</strong><span class="atributo">100px</span>:</pre>
+							<pre class="codigo">}</pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="sinpunto">Resultado:</p>
+			<p class="sinpunto"><img src="mquetacion-1-css-web-resources/image/flex-grow-2.png" alt=""></p>
+			<ul>
+				<li class="punto"><strong class="Negritta">order</strong>. Permite indicar un número entero que altera el orden en el que aparecen las capas interiores. Normalmente las capas interiores aparecen en el orden en el que aparecen en el código.</li>
+				<li class="punto"><strong class="Negritta">align-self</strong>. Indica qué alineación sigue la capa interior. Si por ejemplo para el contenedor hemos indicado <em class="cursiva">align-item:flex-start</em>, todas las capas interiores se pegarán al borde superior; si a una concreta le indicamos un <em class="cursiva">align-self:flex-end</em>, esa capa concreta se pega al borde inferior.<table id="table017" class="tabla-codigo _idGenTablePara-1"><colgroup><col></colgroup><tbody><tr class="tabla-codigo"><td class="tabla-codigo celda-codigo"><pre class="codigo">&lt;!doctype html&gt;</pre><pre class="codigo">&lt;html lang=”en”&gt;</pre><pre class="codigo">&lt;head&gt;</pre><pre class="codigo">    &lt;meta charset=”UTF-8”&gt;</pre><pre class="codigo">    &lt;meta name=”viewport”</pre><pre class="codigo">          content=”width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0”&gt;</pre><pre class="codigo">    &lt;meta http-equiv=”X-UA-Compatible” content=”ie=edge”&gt;</pre><pre class="codigo">    &lt;title&gt;Document&lt;/title&gt;</pre><pre class="codigo">    &lt;style&gt;</pre><pre class="codigo">        main{</pre><pre class="codigo">            display: grid;</pre><pre class="codigo">            width:500px;</pre><pre class="codigo">            grid-template-columns: 10% 20% 30% 40%;</pre><pre class="codigo">            grid-template-rows: 100vh;</pre><pre class="codigo">        }</pre><pre class="codigo">        #capa1{</pre><pre class="codigo">            background-color: yellow;</pre><pre class="codigo">        }</pre><pre class="codigo">        #capa2{</pre><pre class="codigo">            background-color: blue;</pre><pre class="codigo">        }</pre><pre class="codigo">        #capa3{</pre><pre class="codigo">            background-color: green;</pre><pre class="codigo">        }</pre><pre class="codigo">        #capa4{</pre><pre class="codigo">            background-color: pink;</pre><pre class="codigo">        }</pre><pre class="codigo">        footer{</pre><pre class="codigo">            background-color: black;</pre><pre class="codigo">            width:500px;</pre><pre class="codigo">            height:300px;</pre><pre class="codigo">        }</pre><pre class="codigo">    &lt;/style&gt;</pre><pre class="codigo">&lt;/head&gt;</pre></td></tr><tr class="tabla-codigo"><td class="tabla-codigo celda-codigo"><pre class="codigo">&lt;body&gt;</pre><pre class="codigo">&lt;main&gt;</pre><pre class="codigo">    &lt;div id=”capa1”&gt;&lt;/div&gt;</pre><pre class="codigo">    &lt;div id=”capa2”&gt;&lt;/div&gt;</pre><pre class="codigo">    &lt;div id=”capa3”&gt;&lt;/div&gt;</pre><pre class="codigo">    &lt;div id=”capa4”&gt;&lt;/div&gt;</pre><pre class="codigo">&lt;/main&gt;</pre><pre class="codigo">&lt;footer&gt;&lt;/footer&gt;</pre><pre class="codigo">&lt;/body&gt;</pre><pre class="codigo">&lt;/html&gt;</pre></td></tr></tbody></table></li>
+			</ul>
+			<p class="Normal">A ese contenedor, además se le indican las propiedades que especifican las características de la malla mediante propiedades especiales. </p>
+			<p class="Normal">Así, hay dos propiedades que permiten especificar a cantidad y tamaño de las filas y columnas de nuestra malla.</p>
+			<h4 class="titulo4"><span class="numeroOculto">83</span>especificar columnas</h4>
+			<p class="Normal2">La propiedad que permite especificar columnas es <strong class="Negritta">grid-template-columns</strong>. Su valor es el tamaño de cada columna. Los tamaños se pueden indicar con tamaños absolutos:</p>
+			<table id="table018" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">grid-template-columns:</strong>100px 300px 500px;</pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal">El código anterior indica que el contenido tendrá 3 columnas, la primera de 100 píxeles, la segunda de 300 y la tercera de 500.</p>
+			<p class="Normal">Se pueden especificar tamaños relativos:</p>
+			<table id="table019" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">grid-template-columns</strong>: 10% 20% 30%;</pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal">Pero los porcentajes no se refieren a la anchura del contenedor. La suma de las anchuras de las columnas es del 60%, pero realmente ocuparán todo el contenedor. Lo que sí conseguiremos es que la tercera columna ocupe tres veces más que la primera.</p>
+		</div>
+
+</section>
+
+<nav>
+    <ul>
+        <li><a href="/">&gt; Volver a JorgeSanchez.net</a></li>
+    </ul>
+    
+
+<ul>
+    <p>Manual de HTML5 y CSS3:</p>
+    <li><a href="introduccion-lenguajes-de-marcas.html">&gt; Introducción a los lenguajes de marcas</a></li>
+    <li><a href="introduccion-html.html">&gt; Introducción a HTML5</a></li>
+    <li><a href="edicion-basica-html.html">&gt; Edición básica de documentos HTML</a></li>
+    <li><a href="texto-y-parrafo-html.html">&gt; Elementos de texto y párrafo</a></li>
+    <li><a href="elementos-estructurales-html.html">&gt; Elementos estructurales</a></li>
+    <li><a href="enlaces-html.html">&gt; Enlaces</a></li>
+    <li><a href="imagenes-html.html">&gt; Imágenes</a></li>
+    <li><a href="multimedia-html.html">&gt; Elementos multimedia</a></li>
+    <li><a href="introduccion-a-css.html">&gt; Introducción a CSS</a></li>
+    <li><a href="selectores-css.html">&gt; Selectores CSS</a></li>
+    <li><a href="unidades-colores-css.html">&gt; Unidades y Colores en CSS</a></li>
+    <li><a href="formato-fuente-parrafo-css.html">&gt; Formato de fuente y párrafo</a></li>
+    <li><a href="formato-caja-lista-css.html">&gt; Formato de caja y lista</a></li>
+    <li><a href="tablas-html.html">&gt; Tablas</a></li>
+    <li><a href="formularios-html.html">&gt; Formularios</a></li>
+    <li><a href="visualizacion-css.html">&gt; Visualización de elementos</a></li>
+    <li><a href="posicionamiento-css.html">&gt; Posicionamiento mediante CSS</a></li>
+    <li><a href="transformaciones-css.html">&gt; Transformaciones mediante CSS</a></li>
+    <li><a href="animaciones-css.html">&gt; Animaciones mediante CSS</a></li>
+    <li><a href="generacion-de-contenido-css.html">&gt; Generación de contenido automático</a></li>
+    <li><a href="maquetacion-1-css.html">&gt; Maquetación (1). Columnas y Flexbox</a></li>
+</ul>
+
+
+
+</nav>
+
+<script src="../../lib/jquery.min.js"></script>
+<script src="../../lib/jquery.easing.min.js"></script>
+<script src="../../lib/jquery.scrollTo.min.js"></script>
+<script src="../../lib/perfect-scrollbar.jquery.min.js"></script>
+<script src="../../js/manual.js?f=20170221"></script>
+<!--Analytics-->
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35972106-1']);
+    _gaq.push(['_setLocalRemoteServerMode']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</body>
+</html>
+

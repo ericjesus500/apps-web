@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)https://www.manualweb.net/html/estructura-envio-formularios-html/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Estructura y Envío de Formularios HTML | Manual Web</title>
+    <meta name="description" content="Una de las cosas importantes que tenemos que saber de los formularios HTML es cómo funciona la Estructura y envío de formularios.">
+    <meta name="keywords" content="">
+
+    <link rel="stylesheet" href="./estruct_envio_formularios_html_files/main.css">
+    <link rel="stylesheet" href="./estruct_envio_formularios_html_files/font-awesome.min.css">
+
+    <link rel="shortcut icon" href="https://www.manualweb.net/favicon.ico?1">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Estructura y Envío de Formularios HTML | Manual Web</title>
+<meta name="generator" content="Jekyll v4.3.2">
+<meta property="og:title" content="Estructura y Envío de Formularios HTML">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Una de las cosas importantes que tenemos que saber de los formularios HTML es cómo funciona la Estructura y envío de formularios.">
+<meta property="og:description" content="Una de las cosas importantes que tenemos que saber de los formularios HTML es cómo funciona la Estructura y envío de formularios.">
+<link rel="canonical" href="https://www.manualweb.net/html/estructura-envio-formularios-html/">
+<meta property="og:url" content="https://www.manualweb.net/html/estructura-envio-formularios-html/">
+<meta property="og:site_name" content="Manual Web">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-11-23T20:15:37+01:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Estructura y Envío de Formularios HTML">
+<meta name="twitter:site" content="@">
+<meta name="twitter:creator" content="@manual_web">
+<script src="./estruct_envio_formularios_html_files/cb=gapi.loaded_2" async=""></script><script type="text/javascript" async="" src="./estruct_envio_formularios_html_files/analytics.js.descarga"></script><script async="" type="text/javascript" src="./estruct_envio_formularios_html_files/cmp2.js.descarga"></script><script src="./estruct_envio_formularios_html_files/cb=gapi.loaded_1" async=""></script><script src="./estruct_envio_formularios_html_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="./estruct_envio_formularios_html_files/js"></script><script async="" type="text/javascript" src="./estruct_envio_formularios_html_files/choice.js.descarga"></script><script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-11-23T20:15:37+01:00","datePublished":"2023-11-23T20:15:37+01:00","description":"Una de las cosas importantes que tenemos que saber de los formularios HTML es cómo funciona la Estructura y envío de formularios.","headline":"Estructura y Envío de Formularios HTML","url":"https://www.manualweb.net/html/estructura-envio-formularios-html/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="canonical" href="https://www.manualweb.net/html/estructura-envio-formularios-html/">
+    <link rel="alternate" type="application/rss+xml" title="Manual Web" href="https://www.manualweb.net/feed.xml">
+    
+<script async="" src="./estruct_envio_formularios_html_files/js(1)"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-449940-9');
+</script>
+
+
+
+    <!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+    <script type="text/javascript" async="true">
+    (function() {
+      var host = 'www.manualweb.net';
+      var element = document.createElement('script');
+      var firstScript = document.getElementsByTagName('script')[0];
+      var url = 'https://cmp.quantcast.com'
+        .concat('/choice/', 'wmc6-28PW38Fn', '/', host, '/choice.js?tag_version=V2');
+      var uspTries = 0;
+      var uspTriesLimit = 3;
+      element.async = true;
+      element.type = 'text/javascript';
+      element.src = url;
+    
+      firstScript.parentNode.insertBefore(element, firstScript);
+    
+      function makeStub() {
+        var TCF_LOCATOR_NAME = '__tcfapiLocator';
+        var queue = [];
+        var win = window;
+        var cmpFrame;
+    
+        function addFrame() {
+          var doc = win.document;
+          var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+    
+          if (!otherCMP) {
+            if (doc.body) {
+              var iframe = doc.createElement('iframe');
+    
+              iframe.style.cssText = 'display:none';
+              iframe.name = TCF_LOCATOR_NAME;
+              doc.body.appendChild(iframe);
+            } else {
+              setTimeout(addFrame, 5);
+            }
+          }
+          return !otherCMP;
+        }
+    
+        function tcfAPIHandler() {
+          var gdprApplies;
+          var args = arguments;
+    
+          if (!args.length) {
+            return queue;
+          } else if (args[0] === 'setGdprApplies') {
+            if (
+              args.length > 3 &&
+              args[2] === 2 &&
+              typeof args[3] === 'boolean'
+            ) {
+              gdprApplies = args[3];
+              if (typeof args[2] === 'function') {
+                args[2]('set', true);
+              }
+            }
+          } else if (args[0] === 'ping') {
+            var retr = {
+              gdprApplies: gdprApplies,
+              cmpLoaded: false,
+              cmpStatus: 'stub'
+            };
+    
+            if (typeof args[2] === 'function') {
+              args[2](retr);
+            }
+          } else {
+            if(args[0] === 'init' && typeof args[3] === 'object') {
+              args[3] = Object.assign(args[3], { tag_version: 'V2' });
+            }
+            queue.push(args);
+          }
+        }
+    
+        function postMessageEventHandler(event) {
+          var msgIsString = typeof event.data === 'string';
+          var json = {};
+    
+          try {
+            if (msgIsString) {
+              json = JSON.parse(event.data);
+            } else {
+              json = event.data;
+            }
+          } catch (ignore) {}
+    
+          var payload = json.__tcfapiCall;
+    
+          if (payload) {
+            window.__tcfapi(
+              payload.command,
+              payload.version,
+              function(retValue, success) {
+                var returnMsg = {
+                  __tcfapiReturn: {
+                    returnValue: retValue,
+                    success: success,
+                    callId: payload.callId
+                  }
+                };
+                if (msgIsString) {
+                  returnMsg = JSON.stringify(returnMsg);
+                }
+                if (event && event.source && event.source.postMessage) {
+                  event.source.postMessage(returnMsg, '*');
+                }
+              },
+              payload.parameter
+            );
+          }
+        }
+    
+        while (win) {
+          try {
+            if (win.frames[TCF_LOCATOR_NAME]) {
+              cmpFrame = win;
+              break;
+            }
+          } catch (ignore) {}
+    
+          if (win === window.top) {
+            break;
+          }
+          win = win.parent;
+        }
+        if (!cmpFrame) {
+          addFrame();
+          win.__tcfapi = tcfAPIHandler;
+          win.addEventListener('message', postMessageEventHandler, false);
+        }
+      };
+    
+      makeStub();
+    
+      var uspStubFunction = function() {
+        var arg = arguments;
+        if (typeof window.__uspapi !== uspStubFunction) {
+          setTimeout(function() {
+            if (typeof window.__uspapi !== 'undefined') {
+              window.__uspapi.apply(window.__uspapi, arg);
+            }
+          }, 500);
+        }
+      };
+    
+      var checkIfUspIsReady = function() {
+        uspTries++;
+        if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+          console.warn('USP is not accessible');
+        } else {
+          clearInterval(uspInterval);
+        }
+      };
+    
+      if (typeof window.__uspapi === 'undefined') {
+        window.__uspapi = uspStubFunction;
+        var uspInterval = setInterval(checkIfUspIsReady, 6000);
+      }
+    })();
+    </script>
+    <!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+
+    <script type="text/javascript" src="./estruct_envio_formularios_html_files/manualweb_14336.js.descarga" async=""></script>
+<style type="text/css"> .qc-cmp-button.qc-cmp-secondary-button:hover {    background-color: #368bd6 !important;    border-color: transparent !important;  }  .qc-cmp-button.qc-cmp-secondary-button:hover {    color: #ffffff !important;  }  .qc-cmp-button.qc-cmp-secondary-button {    color: #368bd6 !important;  }  .qc-cmp-button.qc-cmp-secondary-button {    background-color: #eee !important;    border-color: transparent !important;  } </style><style>.gc-bubbleDefault{background-color:transparent!important;text-align:left;padding:0!important;margin:0!important;border:0!important;table-layout:auto!important}.gc-reset{background-color:transparent!important;border:0!important;padding:0!important;margin:0!important;text-align:left}.pls-bubbleTop{border-bottom:1px solid #ccc!important}.pls-contentLeft,.pls-topTail,.pls-vertShimLeft{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/border_3.gif)!important}.pls-topTail{background-repeat:repeat-x!important;background-position:bottom!important}.pls-vertShim{background-color:#fff!important;text-align:right}.tbl-grey .pls-vertShim{background-color:#f5f5f5!important}.pls-vertShimLeft{background-repeat:repeat-y!important;background-position:100%!important;height:4px}.pls-vertShimRight{height:4px}.pls-confirm-container .pls-vertShim{background-color:#fff3c2!important}.pls-contentWrap{background-color:#fff!important;position:relative!important;vertical-align:top}.pls-contentLeft{background-repeat:repeat-y;background-position:100%;vertical-align:top}.pls-dropRight{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropR_3.png)!important;background-repeat:repeat-y!important;vertical-align:top}.pls-dropBL,.pls-dropTR .pls-dropBR,.pls-tailleft,.pls-vert,.pls-vert img{vertical-align:top}.pls-dropBottom{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropB_3.png)!important;background-repeat:repeat-x!important;width:100%;vertical-align:top}.pls-topLeft{background:inherit!important;text-align:right;vertical-align:bottom}.pls-topRight{background:inherit!important;text-align:left;vertical-align:bottom}.pls-bottomLeft{background:inherit!important;text-align:right}.pls-bottomRight{background:inherit!important;text-align:left;vertical-align:top}.pls-tailbottom,.pls-tailleft,.pls-tailright,.pls-tailtop{display:none;position:relative}.pls-dropBL,.pls-dropBR,.pls-dropTR,.pls-tailbottom,.pls-tailleft,.pls-tailright,.pls-tailtop{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite_3.png)!important;background-repeat:no-repeat}.tbl-grey .pls-dropBL,.tbl-grey .pls-dropBR,.tbl-grey .pls-dropTR,.tbl-grey .pls-tailbottom,.tbl-grey .pls-tailleft,.tbl-grey .pls-tailright,.tbl-grey .pls-tailtop{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite-grey.png)!important}.pls-tailbottom{background-position:-23px 0}.pls-confirm-container .pls-tailbottom{background-position:-23px -10px}.pls-tailtop{background-position:-19px -20px}.pls-tailright{background-position:0 0}.pls-tailleft{background-position:-10px 0}.pls-tailtop{vertical-align:top}.gc-bubbleDefault td{line-height:0;font-size:0}.pls-tailbottom,.pls-topLeft img,.pls-topRight img{vertical-align:bottom}.bubbleDropTR,.pls-bottomLeft,.pls-bottomLeft img,.pls-dropBottom img,.pls-dropBottomL img,.pls-dropBottomR img{vertical-align:top}.pls-dropTR{background-position:0 -22px}.pls-dropBR{background-position:0 -27px}.pls-dropBL{background-position:0 -16px}.pls-spacerbottom,.pls-spacerleft,.pls-spacerright,.pls-spacertop{position:static!important}.pls-spinner{bottom:0;position:absolute;left:0;margin:auto;right:0;top:0}</style></head>
+
+<body style="">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="https://www.manualweb.net/">
+                <span><img src="./estruct_envio_formularios_html_files/curso.png"></span> Manual Web
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="https://www.manualweb.net/java/">Java</a></li>
+                <li><a href="https://www.manualweb.net/html5/">HTML5</a></li>
+                <li><a href="https://www.manualweb.net/mongodb/">MongoDB</a></li>
+                <li><a href="https://www.manualweb.net/javascript/">Javascript</a></li>
+                <li><a href="https://www.manualweb.net/tutoriales/">Más...</a></li>
+            </ul>
+            <div class="navbar-right">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group has-feedback">
+                        <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input type="text" class="form-control tt-hint" readonly="" autocomplete="off" spellcheck="false" tabindex="-1" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);" dir="ltr"><input id="search-box" type="text" class="form-control tt-input" placeholder="Search..." autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"><div class="tt-dataset tt-dataset-pages"></div></div></span>
+                        <i class="fa fa-search form-control-feedback"></i>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href="https://github.com/manualweb/manualweb"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                    <li><a href="http://twitter.com/manual_web"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="http://www.facebook.com/manualweb"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="http://youtube.com/lineadecodigo"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.manualweb.net/feed.xml"><i class="fa fa-feed" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="container">
+    <div class="row">
+
+
+      <div class="col-md-8 col-md-push-4">
+          <h1>Estructura y Envío de Formularios HTML</h1>
+          <img src="./estruct_envio_formularios_html_files/html.png" id="logo-manual" class="img-responsive">
+          <div id="markdown-content-container"><p>Una de las cosas importantes que tenemos que saber de los formularios <a href="http://www.manualweb.net/html/">HTML</a> es cómo funciona la Estructura y envío de formularios.</p>
+
+<h2 id="etiquetando-el-formulario">Etiquetando el formulario</h2>
+
+<p>Hemos visto cómo insertar campos para que el usuario introduzca información en el formulario. En algunos casos hemos visto que aunque el campo tiene un dato de valor no lleva una etiqueta asociada. Es verdad que podemos poner texto al lado del elemento de entrada de datos. Por ejemplo en un checkbox:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Equipo: <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"betis"</span> <span class="na">name=</span><span class="s">"equipo"</span> <span class="na">value=</span><span class="s">"Real Betis"</span><span class="nt">/&gt;</span>Real Betis
+</code></pre></div></div>
+
+<p>¿Quién nos dice que el texto asociado al checkbox es “Equipo” o “Real Betis”? Para resolver esto el lenguaje <a href="http://www.manualweb.net/html/">HTML</a> nos proporciona el <a href="http://www.w3api.com/HTML/label">elemento label</a>.</p>
+
+<p>La sintaxis del <a href="http://www.w3api.com/HTML/label">elemento label</a> es la siguiente:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"identificador"</span><span class="nt">&gt;</span>Texto de la Etiqueta<span class="nt">&lt;/label&gt;</span>
+</code></pre></div></div>
+
+<p>El <strong>atributo for</strong> llevará asociado un identificador que deberá de coincidir con el valor de algún <a href="http://www.w3api.com/HTML/id">atributo id</a> de uno de los elementos del formulario. Y será sobre ese elemento sobre el que quede asociado.</p>
+
+<p>De esta forma, en el caso que definimos anteriormente sobre el checkbox, la forma correcta de asociar una etiqueta al elemento será la siguiente:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Equipo: <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"betis"</span> <span class="na">name=</span><span class="s">"equipo"</span> <span class="na">value=</span><span class="s">"Real Betis"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"betis"</span><span class="nt">&gt;</span>Real Betis<span class="nt">&lt;/label&gt;</span>
+</code></pre></div></div>
+
+<h2 id="estructura-del-formulario">Estructura del formulario</h2>
+
+<p>En <a href="http://www.manualweb.net/html/">HTML</a> contamos con dos elementos para dar una <strong><em>estructura a los formularios</em></strong>. Estos elementos: <a href="http://www.w3api.com/HTML/fieldset">fieldset</a> y <a href="http://www.w3api.com/HTML/legend">legend</a> nos ayudan a agrupar los datos relacionados dentro del formulario.</p>
+
+<p>Pero vayamos por parte. El primero es <a href="http://www.w3api.com/HTML/fieldset">fieldset</a>, este es un elemento que agrupa a diferentes elementos del formulario, elementos que están relacionados entre ellos.</p>
+
+<p>La sintaxis de <a href="http://www.w3api.com/HTML/fieldset">fieldset</a> es la siguiente:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;fieldset&gt;</span>...<span class="nt">&lt;/fieldset&gt;</span>
+</code></pre></div></div>
+
+<p>Entre estos elementos aparecerán los campos del formulario. Por ejemplo si tenemos campos personales básicos podemos agruparlos de la siguiente forma:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;fieldset&gt;</span>
+ <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"nombre"</span><span class="nt">&gt;</span>Nombre<span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"nombre"</span><span class="nt">/&gt;</span>
+ <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"apellido"</span><span class="nt">&gt;</span>Apellido<span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"apellido"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/fieldset&gt;</span>
+</code></pre></div></div>
+
+<p>El <a href="http://www.w3api.com/HTML/legend">elemento legend</a> nos servirá para darle un significado a una agrupación</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;fieldset&gt;</span>
+ <span class="nt">&lt;legend&gt;</span>Introduzca sus datos personales<span class="nt">&lt;/legend&gt;</span>
+ <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"nombre"</span><span class="nt">&gt;</span>Nombre<span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"nombre"</span><span class="nt">/&gt;</span>
+ <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"apellido"</span><span class="nt">&gt;</span>Apellido<span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"apellido"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/fieldset&gt;</span>
+</code></pre></div></div>
+
+<h2 id="hacer-foco-en-el-formulario">Hacer foco en el formulario</h2>
+
+<p>Cuando construyamos un formulario deberemos de preocuparnos por cómo hacer foco en los elementos. Está claro que si utilizamos un navegador web el uso del ratón nos facilitará el ir rellenando cada uno de los campos del formulario.</p>
+
+<p>Pero piensa en alguien que no tenga un ratón o bien que utilice un agente de usuario no visual adaptado para discapacitados. En este caso y para temas de accesibilidad tenemos dos formas de hacer foco en el formulario. Una será el uso de la tabulación, y el otro el uso de teclas de acceso.</p>
+
+<h3 id="tabulaciones-por-el-formulario">Tabulaciones por el formulario</h3>
+
+<p>Para las navegaciones por tabulación en el formulario existe el <strong>atributo tabindex</strong>. Este atributo que lo podemos encontrar en todos los elementos de un formulario nos sirve para establecer un orden mediante números ordinales de los campos del formulario. La estructura del <strong>atributo tabindex</strong> es:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tabindex="numero"
+</code></pre></div></div>
+
+<p>De esta forma podríamos establecer el orden de un formulario de dos datos básicos y un botón mediante el siguiente código:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"nombre"</span><span class="nt">&gt;</span>Nombre<span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">tabindex=</span><span class="s">"1"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"nombre"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"apellido"</span><span class="nt">&gt;</span>Apellido<span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">tabindex=</span><span class="s">"2"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"apellido"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"envio"</span> <span class="na">tabindex=</span><span class="s">"3"</span><span class="nt">&gt;</span>Enviar Formulario<span class="nt">&lt;/button&gt;</span>
+</code></pre></div></div>
+
+<h3 id="teclas-de-acceso">Teclas de acceso</h3>
+
+<p>Otra forma de poder acceder a un elemento del formulario es asignando al elemento una tecla de acceso. De esta manera cuando pulsamos esta tecla (en combinación con alguna definida en el sistema, como la tecla ALT para Windows) iremos directamente a dicho elemento.</p>
+
+<p>El atributo que nos permite hacer esto es el <strong>atributo accesskey</strong>. La estructura del <strong>atributo accesskey</strong> es la siguiente:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>accesskey=tecla
+</code></pre></div></div>
+
+<p>Así podríamos definir un campo de un formulario al cual fuésemos al pulsar sobre la “tecla N”:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"nombre"</span> <span class="na">accesskey=</span><span class="s">"N"</span><span class="nt">&gt;</span>Nombre<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">tabindex=</span><span class="s">"1"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"nombre"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h2 id="deshabilitar-controles">Deshabilitar controles</h2>
+
+<p>A la hora de crear un formulario puede darse el caso que haya algunos campos que en determinados momentos nos aparezcan deshabilitados. Es decir, que el usuario no pueda modificar el valor de dichos campos.</p>
+
+<p>Para poder deshabilitar los controles de un formulario contamos con el <strong>atributo disabled</strong>. La estructura del <strong>atributo disabled</strong> es directamente:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>disabled
+</code></pre></div></div>
+
+<p>De esta manera si queremos deshabilitar nuestro anterior campo de texto que nos permitía insertar un nombre escribimos lo siguiente:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"nombre"</span> <span class="na">accesskey=</span><span class="s">"N"</span><span class="nt">&gt;</span>Nombre<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">disabled</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"nombre"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>No podremos hacer foco sobre los elementos de un formulario que estén deshabilitados. De igual manera al hacer tabulación tampoco se podrá tabular sobre ellos. Además no se enviarán como parte de la petición del formulario.</p>
+
+<p>En el caso de que queramos buscar el mismo efecto de que el elemento esté deshabilitado, pero que se pueda tabular, hacer foco y enviar, tenemos el atributo de solo lectura o readonly.</p>
+
+<p>La estructura del <strong>atributo readonly</strong> es básica:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>readonly
+</code></pre></div></div>
+
+<p>Si lo aplicamos nuevamente a nuestro campo de texto tendremos:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"nombre"</span> <span class="na">accesskey=</span><span class="s">"N"</span><span class="nt">&gt;</span>Nombre<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">readonly</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"nombre"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>El atributo readonly solo se puede aplicar a <a href="http://www.w3api.com/HTML/input">elementos input</a> y <a href="http://www.w3api.com/HTML/textarea">textarea</a>.</p>
+
+<h2 id="envío-del-formulario">Envío del formulario</h2>
+
+<p>Una vez que ya hemos construido nuestro formulario solo nos quedará una cosa, esta será enviar el formulario.</p>
+
+<p>Para enviar el formulario deberemos de controlar dos cosas. Por un lado a dónde lo vamos a enviar, es decir, cual es la URL del programa destino (o página destino) que va a procesar los datos del formulario y que nos va a dar una respuesta. Por otro lado está el tipo de envío de los parámetros. En el caso del tipo de envío tenemos la posibilidad de hacerlo mediante un formato GET (con los datos visibles) o POST (con los datos no visibles).</p>
+
+<p>Ambos elementos los configuraremos dentro del <a href="http://www.w3api.com/HTML/form">elemento form</a>.</p>
+
+<h3 id="destino-del-formulario">Destino del formulario</h3>
+
+<p>Para establecer el destino del formulario tenemos el <a href="http://www.w3api.com/HTML/form/action">atributo action</a>. El <a href="http://www.w3api.com/HTML/form/action">atributo action</a> tiene la URL de destino del formulario. La estructura del <a href="http://www.w3api.com/HTML/form/action">atributo action</a> es:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"url-destino"</span><span class="nt">&gt;</span> … <span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<p>Las URL de destino suelen ser programas o código de servidor, ya sea <a href="http://www.manualweb.net/java/">Java</a>, <a href="http://www.manualweb.net/php/">PHP</a>, Node, <a href="http://www.manualweb.net/php/">ASP</a>,… Los cuales recuperan la información del formulario, la manipulan y nos devuelven una nueva página <a href="http://www.manualweb.net/html/">HTML</a>.</p>
+
+<h3 id="tipo-de-envío-get-y-post">Tipo de envío: GET y POST</h3>
+
+<p>Para establecer el tipo de envío del formulario tenemos el <a href="http://www.w3api.com/wiki/HTML/form/method">atributo method</a>. El <a href="http://www.w3api.com/wiki/HTML/form/method">atributo method</a> puede tener dos valores: GET y POST. El atributo method lo encontramos dentro del <a href="http://www.w3api.com/HTML/form">elemento form</a>:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"GET|POST"</span><span class="nt">&gt;</span> … <span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<p>A la hora de enviar los ** formularios de forma GET** lo que vamos a conseguir es que a la URL destino del formulario se le añaden los parámetros con los datos del formulario en la estructura:</p>
+
+<p><samp>action?nombre1=valor1&amp;nombre2=valor2&amp;...&amp;nombreN=valorN</samp></p>
+
+<p>Si tenemos el siguiente formulario:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"envio.php"</span> <span class="na">method=</span><span class="s">"GET"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"nombre"</span><span class="nt">&gt;</span>Nombre<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"nombre"</span> <span class="na">name=</span><span class="s">"nombre"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"apellido"</span><span class="nt">&gt;</span>Apellido<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"apellido"</span> <span class="na">name=</span><span class="s">"apellido"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"envio"</span><span class="nt">&gt;</span>Enviar Formulario<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<p>Lo que se enviará en la URL será algo parecido a:</p>
+
+<p><samp>envio.php?name=Victor&amp;apellido=Cuervo</samp></p>
+
+<p>Es importante que nos fijemos que utiliza el valor que hay dentro de los <a href="http://www.w3api.com/wiki/HTML/form/name">atributos name</a> para realizar el envío. Si indicamos que el método de envío del formulario es POST lo que hará el navegador es enviar los datos junto al cuerpo del formulario y no se verán en la URL.</p>
+
+<p>Así, en el siguiente formulario:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"envio.php"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"nombre"</span><span class="nt">&gt;</span>Nombre<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"nombre"</span> <span class="na">name=</span><span class="s">"nombre"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"apellido"</span><span class="nt">&gt;</span>Apellido<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"apellido"</span> <span class="na">name=</span><span class="s">"apellido"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"envio"</span><span class="nt">&gt;</span>Enviar Formulario<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<p>Solo veremos, al enviarlo:</p>
+
+<p><samp>enviar.php</samp></p>
+
+<h3 id="formato-del-contenido-del-formulario">Formato del contenido del formulario</h3>
+
+<p>Cuando enviamos el formulario deberemos de saber qué sucede con el contenido. Es decir, si lo envía de alguna forma en especial o con algún tipo de tratamiento. Lo primero que tenemos que saber es que el campo que permite establecer el formato del contenido del formulario es <strong>enctype</strong>, que es un atributo del <a href="http://www.w3api.com/HTML/form">elemento form</a>:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">enctype=</span><span class="s">"formato-contenido"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<p>Los formularios, por defecto, se envían mediante el formato <strong>application/x-www-form-urlencoded.</strong> Este formato lo que hace es sustituir los espacios por + y convierte los caracteres especiales en secuencias de escape. Por otro lado las combinaciones de nombre valor las separa por un = y las parejas con símbolos &amp;. Como ya vimos en las peticiones del tipo GET.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">enctype=</span><span class="s">"application/x-www-form-urlencoded"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<p>Si bien, en el caso de que queramos enviar formularios con un gran volumen de información o con imágenes, deberemos de utilizar el tipo <strong>multipart/form-data</strong>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">enctype=</span><span class="s">"multipart/form-data"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<p>Los formularios que utilizan el tipo <strong>multipart/form-data</strong> contienen una serie de partes conocidas como form-data en las que va cada uno de los campos enviados en el formulario.</p>
+
+<p>De esta forma si tenemos el siguiente formulario:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">enctype=</span><span class="s">"multipart/form-data"</span> <span class="na">action=</span><span class="s">"envio.php"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"nombre"</span><span class="nt">&gt;</span>Nombre<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"nombre"</span> <span class="na">name=</span><span class="s">"nombre"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"apellido"</span><span class="nt">&gt;</span>Apellido<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"apellido"</span> <span class="na">name=</span><span class="s">"apellido"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"fichero"</span><span class="nt">&gt;</span>Fichero<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">id=</span><span class="s">fichero"</span> <span class="na">name=</span><span class="s">"fichero"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"envio"</span><span class="nt">&gt;</span>Enviar Formulario<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<p>La petición multipart podría ser de la siguiente forma:</p>
+
+<pre>-----------------------------931237358445456570660578548
+Content-Disposition: form-data; name="nombre"
+
+Victor
+-----------------------------931237358445456570660578548
+Content-Disposition: form-data; name="apellido"
+
+Cuervo
+-----------------------------931237358445456570660578548
+Content-Disposition: form-data; name="fichero"; filename="fotografia.png"
+Content-Type: image/png</pre>
+
+</div>
+
+          <p class="text-center">
+            <br>
+            <a target="_blank" href="https://github.com/manualweb/manualweb/blob/master/_html/formualario-estructura-envio.md" class="btn btn-default githubEditButton" role="button">
+              <i class="fa fa-pencil fa-lg"></i> Mejora esta página
+            </a>
+          </p>
+
+          <!-- Manual Web - Responsive -->
+<div class="row publicidad">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1617825704006857" data-ad-slot="4594437162" data-ad-format="auto"></ins>
+     <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+          <hr>
+          
+
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+      <div>
+      <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="https://www.manualweb.net/html/formularios-html/">
+            <span aria-hidden="true">←</span> Anterior
+          </a>
+        </li>
+      
+      
+        <li class="next disabled">
+          <a>
+            Siguiente <span aria-hidden="true">→</span>
+          </a>
+        </li>
+      
+    </ul>
+    </div>
+    
+
+<div class="clear"></div>
+
+
+
+      </div>
+
+
+        <div class="col-md-4 col-md-pull-8">
+
+          
+<h1>Tutorial Html</h1>
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="https://www.manualweb.net/html/estructura-envio-formularios-html/#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+          Introducción HTML
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/introduccion-world-wide-web/">Introducción a la World Wide Web</a>
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/introduccion-html/">Introducción al HTML</a>
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/historia-html-inicios/">Historia del HTML: Los Inicios</a>
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/historia-html-estandar/">Historia del HTML: El Estándar</a>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="https://www.manualweb.net/html/estructura-envio-formularios-html/#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+          Documentos HTML
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/tipos-documentos-html/">Tipos de Documentos HTML</a>
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/sintaxis-html/">Sintaxis de HTML</a>
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/documento-html/">Documento HTML</a>
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/mi-primera-pagina-html/">Mi Primera Página HTML</a>
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/metatags-html/">Metadatos: Las metatags de HTML</a>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="https://www.manualweb.net/html/estructura-envio-formularios-html/#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+          Texto HTML
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/texto-basico-html/">Texto Básico en HTML</a>
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/texto-avanzado-html/">Texto Avanzado en HTML</a>
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/entidades-html/">Entidades HTML</a>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="https://www.manualweb.net/html/estructura-envio-formularios-html/#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+          Colores e Imágenes HTML
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/colores-html/">Colores HTML</a>
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/imagenes-html/">Imágenes HTML</a>
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/mapas-html/">Mapas HTML</a>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="https://www.manualweb.net/html/estructura-envio-formularios-html/#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+          Enlaces HTML
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/enlaces-html/">Enlaces HTML</a>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="https://www.manualweb.net/html/estructura-envio-formularios-html/#collapse-6" aria-expanded="false" aria-controls="collapse-6">
+          Listas HTML
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/listas-html/">Listas HTML</a>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="https://www.manualweb.net/html/estructura-envio-formularios-html/#collapse-7" aria-expanded="false" aria-controls="collapse-7">
+          Agrupaciones HTML
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/agrupaciones-html/">Agrupaciones HTML</a>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="https://www.manualweb.net/html/estructura-envio-formularios-html/#collapse-8" aria-expanded="false" aria-controls="collapse-8">
+          Tablas HTML
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/tablas-html/">Tablas HTML</a>
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/tablas-basicas-html/">Tablas Básicas HTML</a>
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/tablas-avanzadas-html/">Tablas Avanzadas HTML</a>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="https://www.manualweb.net/html/estructura-envio-formularios-html/#collapse-9" aria-expanded="true" aria-controls="collapse-9" class="">
+          Formularios HTML
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-9" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" aria-expanded="true" style="">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="https://www.manualweb.net/html/formularios-html/">Formularios HTML</a>
+        
+          
+          
+          <a class="list-group-item active" href="https://www.manualweb.net/html/estructura-envio-formularios-html/">Estructura y Envío de Formularios HTML</a>
+        
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+
+          <h2>Descargar</h2>
+          <a href="https://gitprint.com/victorcuervo/manualweb/blob/master/html/pdf/tutorial-html-pdf.md"><img class="pull-right" src="./estruct_envio_formularios_html_files/pdf.png"></a>
+          El manual se encuentra en continua revisión. Desde aquí puedes descargarte la última versión del <strong>Tutorial HTML</strong>.
+
+          <!-- Manual Web - Responsive -->
+<div class="row publicidad">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1617825704006857" data-ad-slot="4594437162" data-ad-format="auto"></ins>
+     <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+          <h2>Vídeos HTML</h2>
+          <script src="./estruct_envio_formularios_html_files/platform.js.descarga" gapi_processed="true"></script>
+          <div id="___ytsubscribe_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 121px; height: 24px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 121px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;" tabindex="0" vspace="0" width="100%" id="I0_1700803820203" name="I0_1700803820203" src="./estruct_envio_formularios_html_files/subscribe_embed.html" data-gapiattached="true"></iframe></div><br>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="./estruct_envio_formularios_html_files/videoseries.html" allowfullscreen=""></iframe>
+          </div>
+
+        </div>
+
+    </div>
+</div>
+
+        </div>
+    </div><iframe name="__tcfapiLocator" style="display: none;" src="./estruct_envio_formularios_html_files/saved_resource.html"></iframe>
+
+    <footer class="footer">
+    <div class="container">
+
+      <span class="pull-right">
+        Manual Web 2023
+      </span>
+
+        <p class="text-center">
+            <a href="https://www.manualweb.net/blog/2023/04/07/actualizado-manual-javascript-pdf-en-abril-23/">Blog</a> |
+            <a href="https://www.manualweb.net/descargas/">Descargas</a> |
+            <a href="https://www.manualweb.net/acerca-de/">Acerca de</a> |
+            <a href="https://www.manualweb.net/lista-de-correo/">Lista de Correo</a> |
+            <a href="https://www.manualweb.net/contactar/">Contactar</a>
+        </p>
+
+  </div>
+</footer>
+
+    <script>
+  var baseurl = ''
+</script>
+<script src="./estruct_envio_formularios_html_files/jquery-1.10.2.min.js.descarga"></script>
+<script src="./estruct_envio_formularios_html_files/bootstrap.min.js.descarga"></script>
+<script src="./estruct_envio_formularios_html_files/typeahead.bundle.min.js.descarga"></script>
+
+<script src="./estruct_envio_formularios_html_files/main.js.descarga"></script>
+
+<script async="" src="./estruct_envio_formularios_html_files/f.txt"></script>
+
+
+
+<iframe name="oauth2relay832156382" id="oauth2relay832156382" src="./estruct_envio_formularios_html_files/postmessageRelay.html" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><div style="display: block; visibility: hidden; position: absolute; width: 106px; left: -1000px; top: -1000px;"><table cellpadding="0" cellspacing="0" dir="ltr" style="width:106px;" frame="void" rules="none" class=" gc-bubbleDefault pls-container"><tbody><tr class="gc-reset"><td class="pls-topLeft gc-reset"><img class="gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./estruct_envio_formularios_html_files/border_3.gif"></td><td class="pls-topTail gc-reset"><img class="pls-tailbottom gc-reset" style="width:15px !important; height:9px !important; max-width: 15px !important; max-height: 9px !important;" src="./estruct_envio_formularios_html_files/spacer.gif"><img class="pls-spacerbottom gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./estruct_envio_formularios_html_files/spacer.gif"></td><td class="pls-topRight gc-reset"><img class="gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./estruct_envio_formularios_html_files/border_3.gif"></td></tr><tr class="gc-reset"><td class="pls-vertShimLeft gc-reset"><img class="gc-reset" style="width:1px !important; height:4px !important; max-width: 1px !important; max-height: 4px !important;" src="./estruct_envio_formularios_html_files/spacer.gif"></td><td class="pls-vertShim gc-reset"><img class="gc-reset" style="width:1px !important; height:4px !important; max-width: 1px !important; max-height: 4px !important;" src="./estruct_envio_formularios_html_files/spacer.gif"></td><td class="pls-vertShimRight gc-reset"><img class="pls-dropTR gc-reset" style="width:5px !important; height:4px !important; max-width: 5px !important; max-height: 4px !important;" src="./estruct_envio_formularios_html_files/spacer.gif"></td></tr><tr class="gc-reset"><td class="pls-contentLeft gc-reset"><img class="pls-tailright gc-reset" style="width:9px !important; height:15px !important; max-width: 9px !important; max-height: 15px !important;" src="./estruct_envio_formularios_html_files/spacer.gif"><img class="pls-spacerright gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./estruct_envio_formularios_html_files/spacer.gif"></td><td class="pls-contentWrap gc-reset"><div class="goog-bubble-content gc-reset"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="margin:0px;position:absolute;z-index:1;border-style:none;outline:none;width:100px;" tabindex="0" vspace="0" width="100%" id="I0_1700803823356" name="I0_1700803823356" src="./estruct_envio_formularios_html_files/subscribe_embed(1).html"></iframe></div></td><td class="pls-dropRight gc-reset"><img class="pls-tailleft gc-reset" style="width:12px !important; height:19px !important; max-width: 12px !important; max-height: 19px !important;" src="./estruct_envio_formularios_html_files/spacer.gif"><img class="pls-spacerleft gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./estruct_envio_formularios_html_files/spacer.gif"></td></tr><tr class="gc-reset"><td class="pls-bottomLeft gc-reset"><img class="gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./estruct_envio_formularios_html_files/border_3.gif"></td><td class="gc-reset"><table cellpadding="0" cellspacing="0" style="width:100%" class="gc-reset"><tbody><tr class="gc-reset"><td class="pls-vert gc-reset"><img class="pls-dropBL gc-reset" style="width:4px !important; height:5px !important; max-width: 4px !important; max-height: 5px !important;" src="./estruct_envio_formularios_html_files/spacer.gif"></td><td class="pls-dropBottom gc-reset"><img class="pls-tailtop gc-reset" style="width:19px !important; height:13px !important; max-width: 19px !important; max-height: 13px !important;" src="./estruct_envio_formularios_html_files/spacer.gif"><img class="pls-spacertop gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./estruct_envio_formularios_html_files/spacer.gif"></td></tr></tbody></table></td><td class="pls-vert gc-reset"><img class="pls-dropBR gc-reset" style="width:5px !important; height:5px !important; max-width: 5px !important; max-height: 5px !important;" src="./estruct_envio_formularios_html_files/spacer.gif"></td></tr></tbody></table></div></body></html>

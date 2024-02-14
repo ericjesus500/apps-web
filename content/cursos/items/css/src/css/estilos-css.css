@@ -1,0 +1,1076 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  text-align: justify;
+}
+
+.bi-check-all,
+.bi-back {
+  color: blue;
+}
+
+figure,
+figcaption {
+  text-align: center;
+}
+
+h1 {
+  color: #00769f;
+}
+
+h2 {
+  color: #009bc5;
+}
+
+h3 {
+  color: #133e36;
+  font-size: 1.3em;
+}
+
+h4 {
+  color: #04bfa1;
+  padding: 0.5em 0;
+  margin-left: 1.2em;
+}
+
+h5 {
+  color: #3f879c;
+  padding: 1em 2em;
+}
+
+figure {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em 2em;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+video {
+  width: 90%;
+  margin: 1em auto;
+  display: block;
+}
+
+.h6 {
+  color: #f65e5e;
+  padding: 20px 0;
+  margin: 0;
+  font-size: 20px;
+}
+
+p.subtitulo {
+  background-color: rgb(250, 248, 225);
+  font-size: 1.2rem;
+}
+
+.position-nav-2 {
+  background-color: rgb(250, 248, 225);
+}
+
+.contenedor {
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  margin: 0px auto;
+  background: #fff;
+}
+
+.indice-container {
+  width: 25%;
+  height: auto;
+  min-width: 300px;
+  background: #fff;
+}
+
+.contenido {
+  min-width: 500px;
+}
+
+.section,
+.article {
+  min-width: 500px;
+  margin: 1.3em auto;
+}
+
+.section {
+  width: 100%;
+}
+
+.article {
+  width: 90%;
+}
+
+.list-indice-item,
+.sub-list-indice-item {
+  line-height: 1.2em;
+}
+
+.list-indice-item {
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.list-indice-item a {
+  text-decoration: none;
+}
+
+.sub-list-indice {
+  margin-left: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sub-list-indice-item {
+  font-size: 1rem;
+  margin-left: 0;
+  padding: 0;
+}
+
+.sub-list-indice-item a {
+  display: block;
+  text-decoration: none;
+  margin-left: 1.2em;
+}
+
+.destacado {
+  border-left-style: solid;
+  border-left-width: 10px;
+  border-left-color: #608ac9;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(96, 138, 201, 0.4);
+}
+
+.div-organizador {
+  width: 100%;
+  max-width: 100%;
+  min-width: 500px;
+  height: auto;
+  margin: 1em auto;
+  border: 1px solid red;
+}
+
+.list {
+  padding: 1em 0;
+  width: 95%;
+  max-width: 95%;
+  font-size: 1.2rem;
+  margin: 1em;
+  position: relative;
+  /* border: 1px dashed red; */
+}
+
+.list-item {
+  margin-left: 1.4em;
+  padding: 1em 0;
+  width: 95%;
+}
+
+.list-style-none {
+  list-style: none;
+}
+
+.list-item-type-title {
+  font-size: 1.2rem;
+  margin-left: 1.4em;
+  padding: 1.2em;
+  list-style-type: square;
+}
+
+.pre-list {
+  background-color: #e8ebe8;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  margin-left: 4em;
+  width: 80%;
+  white-space: pre-line;
+  font-size: 1rem;
+  padding: 1em 2em;
+  /* border: 1px solid orange; */
+}
+
+span {
+  color: blue;
+}
+
+.span {
+  font-weight: bold;
+}
+
+.div-pre {
+  width: 100%;
+  max-width: 100%;
+}
+
+.div-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.div-graphic-position {
+  width: 80%;
+  height: auto;
+  margin: 1em auto;
+  border: 1px solid blue;
+  font-size: 1.2em;
+  position: relative;
+}
+
+.div-graphic-position .box-1,
+.div-graphic-position .box-2 {
+  width: 50%;
+  height: 150px;
+  margin: 1.5em auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.div-graphic-position .box-1 {
+  background-color: #608ac9;
+}
+
+.div-graphic-position .box-2 {
+  background-color: rgba(96, 138, 201, 0.4);
+}
+
+.div-graphic-pos-relative-box1 .box-1 {
+  opacity: 0.7;
+  position: relative;
+  top: 50px;
+  right: 50px;
+}
+
+.div-graphic-pos-relative-box2 .box-2 {
+  opacity: 0.7;
+  position: relative;
+  top: -50px;
+  right: -50px;
+}
+
+.div-graphic-position-original {
+  width: 80%;
+  height: auto;
+  margin: 1em auto;
+  border: 1px solid blue;
+  text-align: center;
+  font-size: 1.2em;
+  position: relative;
+}
+
+.div-graphic-position-original .box-1,
+.div-graphic-position-original .box-2,
+.div-graphic-position-original .box-3,
+.div-graphic-position-original .box-4,
+.div-graphic-position-original .box-5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  width: 25%;
+  height: 100px;
+}
+
+.div-graphic-position-original .box-1 {
+  background-color: red;
+}
+
+.div-graphic-position-original .box-2 {
+  background-color: green;
+}
+
+.div-graphic-position-original .box-3 {
+  background-color: blue;
+}
+
+.div-graphic-position-original .box-4 {
+  background-color: #5c615c;
+}
+
+.div-graphic-position-original .box-5 {
+  background-color: orange;
+}
+
+.div-z-index {
+  height: 450px;
+  min-height: 450px;
+}
+
+.div-z-index .box-1,
+.div-z-index .box-2,
+.div-z-index .box-3,
+.div-z-index .box-4 {
+  width: 50%;
+  height: 150px;
+  margin: 1.5em auto;
+}
+
+.div-z-index .box-1 {
+  background-color: #608ac9;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.div-z-index .box-2 {
+  background-color: blue;
+  position: relative;
+  top: -100px;
+  left: -25px;
+}
+
+.div-z-index .box-3 {
+  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -200px;
+  left: -50px;
+}
+
+.div-z-index .box-4 {
+  background-color: coral;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -300px;
+  left: -75px;
+}
+
+.div-video {
+  width: 95%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.div-graphic-position-absolute .box-1 {
+  position: absolute;
+  left: 160px;
+}
+
+.div-graphic-position-ejercicio {
+  width: 80%;
+  height: 500px;
+  margin: 1em auto;
+  border: 1px solid blue;
+  position: relative;
+}
+
+.div-graphic-position-ejercicio .box-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.div-graphic-position-ejercicio .box-2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.div-graphic-position-ejercicio .box-3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.div-graphic-position-ejercicio .box-4 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.div-graphic-position-ejercicio .box-5 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.div-graphic-position-sticky {
+  width: 80%;
+  height: 800px;
+  margin: 1em auto;
+  border: 1px solid blue;
+  position: relative;
+  overflow: scroll;
+}
+
+.div-graphic-position-sticky .slide {
+  height: 300px;
+  background-color: grey;
+  font-size: 3em;
+  text-align: center;
+  line-height: 6em;
+}
+
+.div-graphic-position-sticky .menu {
+  background: darkcyan;
+  padding: 0.5em;
+  text-align: center;
+  font-size: 2em;
+  width: 100%;
+  position: sticky;
+  top: 0;
+}
+
+.div-graphic-position-sticky .title {
+  margin: 1em;
+  text-align: center;
+  line-height: 1.5em;
+  text-transform: uppercase;
+}
+
+.div-graphic-position-sticky .text {
+  font-size: 1.2em;
+}
+
+.div-graphic-position-z-index {
+  width: 50%;
+  height: 350px;
+  margin: 1em auto;
+  border: 1px solid blue;
+  position: relative;
+}
+
+.div-graphic-position-z-index .box {
+  width: 100px;
+  height: 100px;
+  font-size: 1.2em;
+  line-height: 1em;
+  text-align: center;
+  position: relative;
+}
+
+.div-graphic-position-z-index .box-1,
+.div-graphic-position-z-index .box-2,
+.div-graphic-position-z-index .box-3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.div-graphic-position-z-index .box-1 {
+  background-color: darkcyan;
+}
+
+.div-graphic-position-z-index .box-2 {
+  background-color: darkkhaki;
+  top: -38px;
+  left: 38px;
+}
+
+.div-graphic-position-z-index .box-3 {
+  background-color: darkmagenta;
+  top: -76px;
+  left: 76px;
+}
+
+.div-graphic-item-z_index {
+  width: 50%;
+  height: 350px;
+  margin: 1em auto;
+  border: 1px solid blue;
+  position: relative;
+}
+
+.div-graphic-item-z_index .box {
+  width: 100px;
+  height: 100px;
+  font-size: 1.2em;
+  line-height: 1em;
+  text-align: center;
+  position: relative;
+}
+
+.div-graphic-item-z_index .box-1,
+.div-graphic-item-z_index .box-2,
+.div-graphic-item-z_index .box-3 {
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+}
+
+.div-graphic-item-z_index .box-1 {
+  background-color: darkcyan;
+  z-index: 3;
+}
+
+.div-graphic-item-z_index .box-2 {
+  background-color: darkkhaki;
+  top: -38px;
+  left: 38px;
+  z-index: 2;
+}
+
+.div-graphic-item-z_index .box-3 {
+  z-index: 1;
+  background-color: darkmagenta;
+  top: -76px;
+  left: 76px;
+}
+
+.div-graphic-item-inline {
+  width: 90%;
+  height: 150px;
+  margin: 1em auto;
+  border: 1px solid blue;
+  position: relative;
+}
+
+.div-graphic-item-inline .inline {
+  background-color: lightsalmon;
+  font-size: 1.4em;
+  padding-bottom: 1.2em;
+}
+
+.div-graphic-item-inline .bloque {
+  background-color: aqua;
+  font-size: 1.2em;
+}
+
+.div-graphic-item-inline_sin_background {
+  width: 90%;
+  height: 150px;
+  margin: 1em auto;
+  border: 1px solid blue;
+  position: relative;
+}
+
+.div-graphic-item-inline_sin_background .inline {
+  font-size: 1.4em;
+  padding-bottom: 1.2em;
+}
+
+.div-graphic-item-inline_sin_background .bloque {
+  background-color: aqua;
+  font-size: 1.2em;
+}
+
+.div-graphic-item-inline-block {
+  width: 90%;
+  height: 200px;
+  margin: 1em auto;
+  border: 1px solid blue;
+  position: relative;
+}
+
+.div-graphic-item-inline-block .inline {
+  background-color: lightsalmon;
+  font-size: 1.4em;
+  display: inline-block;
+  margin-bottom: 2em;
+}
+
+.div-graphic-item-inline-block .bloque {
+  background-color: aqua;
+  font-size: 1.2em;
+}
+
+.div-graphic-item-pseudoclases {
+  width: 95%;
+  height: auto;
+  margin: 1em auto;
+  font-size: 1.2em;
+  position: relative;
+  /* border: 1px solid blue; */
+}
+
+.div-graphic-item-form {
+  width: 80%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid red;
+}
+
+.div-graphic-item-form input,
+.div-graphic-item-form label {
+  display: block;
+  margin: 1.2em 1.2em;
+}
+
+.div-graphic-item-form .input:enabled {
+  background: red;
+  color: white;
+}
+
+.div-graphic-item-form .input:disabled {
+  background-color: yellow;
+  border: none;
+}
+
+.div-graphic-item-form .input:checked + label {
+  font-size: 2em;
+}
+
+.div-graphic-item-form .input:in-range {
+  background: green;
+}
+
+.div-graphic-item-form .input:out-of-range {
+  background: blue;
+}
+
+.div-graphic-item-form .input:optional {
+  background: purple;
+}
+
+.div-graphic-item-form .input:required {
+  background: lightcoral;
+}
+
+.div-graphic-item-form .input:valid {
+  background: green;
+}
+
+.div-graphic-item-form .input:invalid {
+  background: red;
+}
+
+.div-graphic-item-child {
+  width: 80%;
+  height: auto;
+  margin: 1.2em auto;
+  font-size: 1.2em;
+  border: 1px solid blue;
+}
+
+.div-graphic-item-child .first-child .hijo:first-child {
+  background-color: blue;
+  color: white;
+}
+
+.div-graphic-item-child .last-child .hijo:last-child {
+  background-color: blue;
+  color: white;
+}
+
+.div-graphic-item-child .nth-child .hijo:nth-child(2) {
+  background-color: red;
+  color: white;
+}
+
+.div-graphic-item-odd {
+  width: 80%;
+  height: auto;
+  margin: 1.2em auto;
+  font-size: 1.2em;
+  border: 1px solid orange;
+}
+
+.div-graphic-item-odd .nth-child .hijo:nth-child(odd) {
+  background-color: orange;
+  color: white;
+}
+
+.div-graphic-item-even {
+  width: 80%;
+  height: auto;
+  margin: 1.2em auto;
+  font-size: 1.2em;
+  border: 1px solid burlywood;
+}
+
+.div-graphic-item-even .nth-child .hijo:nth-child(even) {
+  background-color: burlywood;
+  color: white;
+}
+
+.div-graphic-item-ecuaciones {
+  width: 80%;
+  height: auto;
+  margin: 1.2em auto;
+  font-size: 1.2em;
+  border: 1px solid lightsalmon;
+}
+
+.div-graphic-item-ecuaciones .nth-child .hijo:nth-child(3n) {
+  background-color: lightsalmon;
+  color: white;
+}
+
+.div-graphic-item-last-child {
+  width: 80%;
+  height: auto;
+  margin: 1.2em auto;
+  font-size: 1.2em;
+  border: 1px solid skyblue;
+}
+
+.div-graphic-item-last-child .nth-child .hijo:nth-last-child(4) {
+  background-color: skyblue;
+  color: blueviolet;
+}
+
+.div-graphic-item-of-type {
+  width: 80%;
+  height: auto;
+  margin: 1.2em auto;
+  font-size: 1.2em;
+  border: 1px solid lightpink;
+}
+
+.div-graphic-item-of-type .first-of-type .hijo:first-of-type {
+  background-color: lightpink;
+  color: blueviolet;
+}
+
+.div-graphic-item-of-type .last-of-type .hijo:last-of-type {
+  background-color: lightpink;
+  color: blueviolet;
+}
+
+.div-graphic-item-of-type .nth-of-type .hijo:nth-of-type(5) {
+  background-color: lightpink;
+  color: blueviolet;
+}
+
+.div-graphic-item-of-type .nth-last-of-type .hijo:nth-last-of-type(2) {
+  background-color: lightpink;
+  color: blueviolet;
+}
+
+.div-graphic-item-not {
+  width: 80%;
+  height: auto;
+  margin: 1.2em auto;
+  font-size: 1.2em;
+  border: 1px solid greenyellow;
+}
+
+.div-graphic-item-not .clase_comun {
+  text-align: center;
+  line-height: 1.4em;
+}
+
+.div-graphic-item-not .not .clase_comun:not(div) {
+  background-color: greenyellow;
+}
+
+:root {
+  --color: red;
+  --border: 3px solid yellow;
+}
+
+.div-graphic-item-variables {
+  width: 80%;
+  height: auto;
+  margin: 1.2em auto;
+  font-size: 1.2em;
+  border: 1px solid blue;
+}
+
+.div-graphic-item-variables .parrafo {
+  color: var(--color);
+}
+
+.div-graphic-item-variables .article-dos {
+  --color: green;
+}
+
+.div-graphic-item-variables .article-dos .parrafo {
+  color: var(--color);
+}
+
+.div-graphic-item-variables .check:checked + .box {
+  --color: purple;
+}
+
+.div-graphic-item-variables .box {
+  width: 100px;
+  height: 100px;
+  background: var(--color);
+  border: var(--border);
+}
+
+.div-graphic-item-background {
+  width: 100%;
+  height: auto;
+  margin: 1.2em auto;
+  font-size: 1.2em;
+  /* border: 1px solid blue; */
+}
+
+.div-graphic-item-background .pre-list {
+  width: 90%;
+  white-space: pre-line;
+}
+
+.div-graphic-item-background [class^="bg-"] {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0 auto;
+  height: 150px;
+  border: 1px solid red;
+}
+
+.div-graphic-item-background .bg-color {
+  background-color: purple;
+}
+
+.div-graphic-item-background .bg-image {
+  background-image: url(../img/logo.png);
+}
+
+.div-graphic-item-background .bg-size {
+  background-image: url(../img/logo.png);
+  background-size: contain;
+}
+
+.div-graphic-item-background .bg-repeat {
+  background-image: url(../img/logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.div-graphic-item-background .bg-position {
+  background-image: url(../img/logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.div-graphic-item-background .bg-clip {
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.div-graphic-item-background .bg-clip .border-box {
+  margin: 1em;
+  width: 50%;
+  height: 150px;
+  color: white;
+  border: 5px dotted red;
+  background-image: url(../img/cafe.jpeg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-clip: border-box;
+  padding: 25px;
+}
+
+.div-graphic-item-background .bg-clip .padding-box {
+  margin: 1em;
+  width: 50%;
+  height: 150px;
+  color: white;
+  border: 5px dotted red;
+  background-image: url(../img/cafe.jpeg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+  padding: 25px;
+}
+
+.div-graphic-item-background .bg-clip .content-box {
+  margin: 1em;
+  width: 50%;
+  height: 150px;
+  color: white;
+  border: 5px dotted red;
+  background-image: url(../img/cafe.jpeg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  padding: 25px;
+}
+
+.div-graphic-item-background .bg-origin {
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.div-graphic-item-background .bg-origin .border-box {
+  margin: 1em;
+  width: 50%;
+  height: 150px;
+  color: white;
+  border: 5px dotted red;
+  background-image: url(../img/cafe.jpeg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  padding: 25px;
+}
+
+.div-graphic-item-background .bg-origin .padding-box {
+  margin: 1em;
+  width: 50%;
+  height: 150px;
+  color: white;
+  border: 5px dotted red;
+  background-image: url(../img/cafe.jpeg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: padding-box;
+  padding: 25px;
+}
+
+.div-graphic-item-background .bg-origin .content-box {
+  margin: 1em;
+  width: 50%;
+  height: 150px;
+  color: white;
+  border: 5px dotted red;
+  background-image: url(../img/cafe.jpeg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  padding: 25px;
+}
+
+.div-graphic-item-background .div-attachment {
+  width: 95%;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px dotted orange;
+  overflow: hidden;
+}
+
+.div-graphic-item-background .div-attachment .bg-attachment {
+  width: 100%;
+  background-image: url(../img/cafe.jpeg);
+  background-size: contain;
+  background-attachment: fixed;
+  padding-bottom: 300px;
+}
+
+.div-graphic-item-background .bg-multiple {
+  width: 95%;
+  height: 200px;
+  background-image: url(../img/logo.png), url(../img/cafe.jpeg);
+  background-size: 10%, cover;
+  background-repeat: no-repeat;
+  background-position: bottom right, center;
+}
+
+.div-graphic-pixel {
+  width: 90%;
+  height: auto;
+  margin: 1.2em auto;
+  border: 1px solid blue;
+}
+
+.div-graphic-pixel p.doce_px {
+  font-size: 12px;
+}
+
+.div-graphic-em {
+  width: 90%;
+  height: auto;
+  margin: 1.2em auto;
+  border: 1px solid blue;
+}
+
+.div-graphic-em p.unem {
+  font-size: 16px;
+}
+
+.div-graphic-em span.dosem {
+  font-size: 32px;
+}
+
+.div-graphic-em p.diezpx {
+  font-size: 10px;
+}
+
+.div-graphic-em span.veintepx {
+  font-size: 20px;
+}
+
+.div-graphic-rem {
+  width: 90%;
+  height: auto;
+  margin: 1.2em auto;
+  border: 1px solid blue;
+}
+
+.div-graphic-rem .veintepx {
+  font-size: 20px;
+}
+
+.div-graphic-rem .dosrem {
+  font-size: 2rem;
+}
+
+.div-graphic-porcentaje {
+  width: 90%;
+  height: auto;
+  margin: 1.2em auto;
+  border: 1px solid blue;
+}
+
+.div-graphic-porcentaje .doscientosporciento {
+  font-size: 40px;
+}
+
+.div-graphic-porcentaje .cienporciento {
+  font-size: 100%;
+}
+
+.div-graphic-list-image {
+  width: 90%;
+  height: auto;
+  margin: 1.2em auto;
+  border: 1px solid blue;
+}
+
+.div-graphic-list-image s ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.div-graphic-list-image .list__item {
+  list-style: none;
+}
+
+.div-graphic-list-image .list__item::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-image: url(../img/check.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-right: 1em;
+}
+
+.sub-item__title {
+  margin-left: 70%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.sub-item__title-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.sub-item__title-links li {
+  padding: 1em 0;
+}

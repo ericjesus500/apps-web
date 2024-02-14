@@ -1,0 +1,458 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>La propiedad clip-path - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="La propiedad clip-path de CSS nos permite establecer recortes de partes concretas de nuestra página con formas concretas o personalizadas con CSS o SVG.">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="La propiedad clip-path - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="La propiedad clip-path de CSS nos permite establecer recortes de partes concretas de nuestra página con formas concretas o personalizadas con CSS o SVG.">
+  <meta property="og:url" content="https://lenguajecss.com/css/mascaras-y-recortes/clip-path/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/mascaras-y-recortes/clip-path/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="La propiedad clip-path - CSS en español">
+  <meta property="twitter:description" content="La propiedad clip-path de CSS nos permite establecer recortes de partes concretas de nuestra página con formas concretas o personalizadas con CSS o SVG.">
+  <meta property="twitter:image" content="https://lenguajecss.com/large-summary.jpg">
+
+  </head>
+
+<body class="css" style="--logo-color: #1e7bbf"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/css.jpg')">
+    <h1><a href="index.htm">La propiedad clip-path</a></h1><h2 class="typewriter">Diferentes formas de realizar recortes mediante CSS</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../shape-outside/index.htm">La propiedad shape-outside</a>
+    <a class="current" href="index.htm">La propiedad clip-path</a>
+    <a href="../mask-image/index.htm">La propiedad mask-image</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Hace algún tiempo, existió una propiedad CSS llamada <code>clip</code>, cuya intención era permitir recortes con ciertas formas como rectángulos. Sin embargo, hoy en día ha sido marcada como obsoleta, en favor de una nueva propiedad llamada <code>clip-path</code>.</p>
+<p>Esta propiedad permite realizar un recorte con una forma concreta, ocultando toda la región externa del recorte. Su utilización es muy sencilla y permite realizar formas muy flexibles y versátiles.</p>
+<p>La sintaxis de la propiedad es la siguiente:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>clip-path</code></td>
+<td><strong>none</strong></td>
+<td>Deja el elemento sin recortar o elimina el recorte.</td>
+</tr>
+<tr>
+<td><code>clip-path</code></td>
+<td><badge-type class="shape"></badge-type></td>
+<td>Crea un recorte con una <a href="../formas-basicas/index.htm">forma geométrica básica</a>.</td>
+</tr>
+<tr>
+<td><code>clip-path</code></td>
+<td><code>url(&quot;file.svg#name&quot;)</code></td>
+<td>Crea un recorte con forma del elemento con <code>id</code> <code>&quot;name&quot;</code> de una imagen externa SVG.</td>
+</tr>
+</tbody>
+</table>
+<p>La propiedad <code>clip-path</code> en general puede tomar estos tres tipos de valores:</p>
+<ul>
+<li><code>none</code>, el valor por defecto, donde no utilizamos ningún tipo de recorte (<em>o lo desactivamos si lo había</em>).</li>
+<li><badge-type class="shape"></badge-type>, es decir, una <strong>forma básica específica</strong></li>
+<li><code>url()</code>, donde indicamos una imagen SVG para utilizar un recorte personalizado usado en su interior mediante <code>&lt;clipPath&gt;</code>.</li>
+</ul>
+<h3 id="formas-básicas-de-recorte" tabindex="-1"><a class="header-anchor" href="#formas-básicas-de-recorte">Formas básicas de recorte</a></h3>
+<p>Con la propiedad <code>clip-path</code> podemos crear recortes con formas geométricas básicas, utilizando las siguientes funciones:</p>
+<table>
+<thead>
+<tr>
+<th>Función CSS</th>
+<th>Descripción</th>
+<th>Más info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>inset()</code></td>
+<td>Rectángulos o cuadrados que se amplían hacia dentro.</td>
+<td><a href="../formas-basicas/index.htm#la-funci%C3%B3n-inset">Aprender más sobre inset()</a></td>
+</tr>
+<tr>
+<td><code>circle()</code></td>
+<td>Formas círculares.</td>
+<td><a href="../formas-basicas/index.htm#funci%C3%B3n-circle">Aprender más sobre circle()</a></td>
+</tr>
+<tr>
+<td><code>ellipse()</code></td>
+<td>Elipses u óvalos. Idéntico a los círculos pero con ancho/alto dispares.</td>
+<td><a href="../formas-basicas/index.htm#funci%C3%B3n-ellipse">Aprender más sobre ellipse()</a></td>
+</tr>
+<tr>
+<td><code>polygon()</code></td>
+<td>Polígonos y formas con 3 o más vértices.</td>
+<td><a href="../formas-basicas/index.htm#funci%C3%B3n-polygon">Aprender más sobre polygon()</a></td>
+</tr>
+<tr>
+<td><code>path()</code></td>
+<td>Trayectos SVG específicos.</td>
+<td><a href="../formas-basicas/index.htm#la-funci%C3%B3n-path">Aprender más sobre path()</a></td>
+</tr>
+</tbody>
+</table>
+<p>Estas formas básicas de recorte nos permiten establecer unos parámetros para definir así la forma geométrica detalladamente. Por ejemplo, observa como utilizamos la propiedad <code>polygon()</code>:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.box</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> hotpink<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">polygon</span><span class="token punctuation">(</span>0 0<span class="token punctuation">,</span> 100% 0<span class="token punctuation">,</span> 50% 100%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>Observa que indicamos 3 puntos de corte:</p>
+<ul>
+<li><code>0 0</code>: El punto inicial</li>
+<li><code>100% 0</code>: El segundo punto, arriba a la derecha</li>
+<li><code>50% 100%</code>: El punto final, abajo al medio</li>
+</ul>
+<p>El recorte sería el siguiente:</p>
+<p><img src="../formas-basicas/clip-path-polygon.png" alt="Clip-path con forma poligonal mediante función polygon" width="827" height="630" loading="lazy"></p>
+<blockquote>
+<p>Si quieres saber más sobre estos recortes, en este artículo explicamos esta y otras <a href="../formas-basicas/index.htm">formas geométricas básicas</a> diferentes que pueden ser utilizadas mediante la propiedad de <code>clip-path</code>.</p>
+</blockquote>
+<p><caniuse-support title="Basic_shape" feature="mdn-css_properties_clip-path_basic_shape" edge="79/y" firefox="54/y" chrome="23/y" safari="7/y" opera="15/y" ios_saf="7/y" and_chr="25/y" and_ff="54/y">
+</caniuse-support></p>
+<h3 id="usando-un-svg-de-recorte" tabindex="-1"><a class="header-anchor" href="#usando-un-svg-de-recorte">Usando un SVG de recorte</a></h3>
+<p>Además de las formas básicas, también podemos utilizar código <code>SVG</code> (<em>o una imagen SVG externa</em>) que contengan una definición de un elemento <code>&lt;clipPath&gt;</code>. De esta forma, desde CSS le indicamos que utilice dicho recorte en una zona de nuestra página, pudiendo ayudarnos de SVG para hacer formas mucho más específicas.</p>
+<p>La sintaxis es la siguiente, donde se hace referencia a un fichero externo mediante <code>url()</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Valores</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>url(&quot;#name&quot;)</code></td>
+<td>Recorta una forma siguiendo un <code>&lt;clipPath&gt;</code> SVG con el id <code>name</code>.</td>
+</tr>
+<tr>
+<td><code>url(&quot;file.svg#name&quot;)</code></td>
+<td>Idem al anterior, pero desde un fichero SVG externo <code>file.svg</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Observa que en la primera de ellas no se indica el nombre del fichero <code>SVG</code>, sino que solamente se indica el identificador del elemento, es decir, el nombre del <code>id</code> del elemento a referenciar. En este caso, se buscará el <code>&lt;clipPath&gt;</code> en un código SVG en línea en el propio documento HTML.</p>
+<p>En el segundo caso, indicamos tanto el nombre del fichero <code>.svg</code> como el <code>id</code>, por lo tanto, buscará el <code>&lt;clipPath&gt;</code> con el <code>id</code> indicado en un archivo externo.</p>
+<p>Así pues, un ejemplo podría ser el siguiente:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>clipPath</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>shape1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span> <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>M 0,0 H 29 L 7,26 H 58 L 34,0 H 65 V 72 L 32,100 0,72 Z<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>clipPath</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.box</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> hotpink<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>#shape1<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>De esta forma, hemos indicado que utilice el recorte del fichero <code>.svg</code> con el id <code>shape1</code>. En el caso de tenerlo en un fichero <code>.svg</code> externo, simplemente habría que indicar el nombre antes del id: <code>url(&quot;file.svg#shape1&quot;)</code>.</p>
+<p>El soporte de esta propiedad es bastante bueno a día de hoy:</p>
+<p><caniuse-support title="Css properties clip-path svg" feature="mdn-css_properties_clip-path_svg" edge="12/y" firefox="52/y" chrome="23/y" safari="7/y" opera="15/y" ios_saf="7/y" and_chr="25/y" and_ff="52/y">
+</caniuse-support></p>
+<blockquote>
+<p><strong>OJO</strong>: Al realizar recortes, toda la región que quede fuera del mismo no se dibujará en el navegador. En <a href="https://bennettfeely.com/clippy/">Clippy (BennettFeely)</a> tienes una fantástica herramienta para crear recortes personalizados de forma gráfica y rápida.</p>
+</blockquote>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../shape-outside/index.htm" title="La propiedad shape-outside">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>La propiedad shape-outside</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../mask-image/index.htm" title="La propiedad mask-image">
+  <div>
+    <span>La propiedad mask-image</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/wIGAyJGx2kc" title="CSS Cards: Baraja de cartas diseñada sólo con HTML y CSS">
+  <img loading="lazy" src="../../../vi/wIGAyJGx2kc/mqdefault.jpg" alt="CSS Cards: Baraja de cartas diseñada sólo con HTML y CSS">
+</a><a href="https://youtu.be/q4WZUTfHt6o" title="Cómo crear GRADIENTES RADIALES en CSS">
+  <img loading="lazy" src="../../../vi/q4WZUTfHt6o/mqdefault.jpg" alt="Cómo crear GRADIENTES RADIALES en CSS">
+</a><a href="https://youtu.be/1TbS60Fu-_M" title="Variables CSS NATIVAS: ¿Qué son y cómo funcionan?">
+  <img loading="lazy" src="../../../vi/1TbS60Fu-_M/mqdefault.jpg" alt="Variables CSS NATIVAS: ¿Qué son y cómo funcionan?">
+</a><a href="https://youtu.be/8tTMYgHBQPI" title="Analizando las preguntas del STATE OF CSS 2022">
+  <img loading="lazy" src="../../../vi/8tTMYgHBQPI/mqdefault.jpg" alt="Analizando las preguntas del STATE OF CSS 2022">
+</a><a href="https://youtu.be/0sFtRnbe0fo" title="Novedades de CSS: Dr. CSStrange y el multiverso">
+  <img loading="lazy" src="../../../vi/0sFtRnbe0fo/mqdefault.jpg" alt="Novedades de CSS: Dr. CSStrange y el multiverso">
+</a><a href="https://youtu.be/K-nE-kZKLRw" title="¡NOVEDADES CSS! ¿Cuánto de este código CSS eres CAPAZ de reconocer?">
+  <img loading="lazy" src="../../../vi/K-nE-kZKLRw/mqdefault.jpg" alt="¡NOVEDADES CSS! ¿Cuánto de este código CSS eres CAPAZ de reconocer?">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

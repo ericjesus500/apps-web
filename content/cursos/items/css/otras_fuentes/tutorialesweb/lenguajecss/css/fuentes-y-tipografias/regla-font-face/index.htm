@@ -1,0 +1,607 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>La regla @font-face - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="En CSS es posible descargar y precargar en el navegador tipografías que el usuario no tiene instaladas, utilizando la regla @font-face. Aprendamos como funciona.">
+  <meta name="view-transition" content="same-origin">
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="La regla @font-face - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="En CSS es posible descargar y precargar en el navegador tipografías que el usuario no tiene instaladas, utilizando la regla @font-face. Aprendamos como funciona.">
+  <meta property="og:url" content="https://lenguajecss.com/css/fuentes-y-tipografias/regla-font-face/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/fuentes-y-tipografias/regla-font-face/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="La regla @font-face - CSS en español">
+  <meta property="twitter:description" content="En CSS es posible descargar y precargar en el navegador tipografías que el usuario no tiene instaladas, utilizando la regla @font-face. Aprendamos como funciona.">
+  <meta property="twitter:image" content="https://lenguajecss.com/large-summary.jpg">
+
+  </head>
+
+<body class="css menu-open " style="--logo-color: #1e7bbf"><script>
+    matchMedia("(width <= 1180px)").matches && document.body.classList.toggle("menu-open");
+  </script>
+  
+
+
+
+
+
+
+
+
+<section class="menubar">
+  <div class="menubar-content">
+    <h1>Lenguaje CSS</h1>
+
+    <a class="cover" title="Lenguaje CSS (css)" href="../../index.htm" style="--image: url('../../../assets/css.jpg')"></a>
+
+    <header>
+      <a href="../../calidad-de-codigo/minificar-css/index.htm" title="Minificar CSS">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m14 26l1.41-1.41L7.83 17H28v-2H7.83l7.58-7.59L14 6L4 16l10 10z"></path></svg>
+      </a>
+      <a href="../../index.htm" title="Volver al índice">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 256"><path fill="#888888" d="M240 210h-18v-94.45a14.06 14.06 0 0 0-4.53-10.32l-80-75.49l-.09-.08a13.94 13.94 0 0 0-18.83 0l-.09.08l-80 75.5A14 14 0 0 0 34 115.55V210H16a6 6 0 0 0 0 12h224a6 6 0 0 0 0-12ZM46 115.55a2 2 0 0 1 .65-1.48l.09-.08l79.94-75.48a2 2 0 0 1 2.63 0L209.26 114l.08.08a2 2 0 0 1 .66 1.48V210h-52v-50a14 14 0 0 0-14-14h-32a14 14 0 0 0-14 14v50H46ZM146 210h-36v-50a2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"></path></svg>
+      </a>
+      <a href="../../representacion-datos/tablas-css/index.htm" title="Tablas CSS">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></path></svg>
+      </a>
+    </header>
+
+    <div style="display:none">
+      <svg id="link-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 256 256"><g fill="#888888"><path d="M208 88h-56V32Z" opacity=".2"></path><path d="m213.66 82.34l-56-56A8 8 0 0 0 152 24H56a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V88a8 8 0 0 0-2.34-5.66ZM160 51.31L188.69 80H160ZM200 216H56V40h88v48a8 8 0 0 0 8 8h48v120Z"></path></g></svg>
+      <svg id="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="#888888" d="M2 12.5C2 9.46 4.46 7 7.5 7H18c2.21 0 4 1.79 4 4s-1.79 4-4 4H9.5a2.5 2.5 0 0 1 0-5H17v2H9.41c-.55 0-.55 1 0 1H18c1.1 0 2-.9 2-2s-.9-2-2-2H7.5C5.57 9 4 10.57 4 12.5S5.57 16 7.5 16H17v2H7.5C4.46 18 2 15.54 2 12.5z"></path></svg>
+    </div>
+
+    <div class="links">
+      <span class="folder">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 512 512"><path fill="#888888" d="M41 73v304.563L88.697 151H423v-30H185.514l-16-48H41zm62.303 96L43.092 455h381.605l60.211-286H103.303z"></path></svg>
+        Fuentes y tipografías
+      </span>
+            <a class="link" href="../elegir-tipografia/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              ¿Qué son las tipografías?
+            </a>
+            <a class="link" href="../tipografias/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Tipografías en CSS
+            </a>
+            <a class="link" href="../ajustes-tipografias/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Ajustes en tipografías
+            </a>
+            <a class="link active" href="index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              La regla @font-face
+            </a>
+            <a class="link" href="../tipografias-google-fonts/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Tipografías de Google Fonts
+            </a>
+            <a class="link" href="../fuentes-variables/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Fuentes variables CSS
+            </a>
+            <a class="link" href="../textos-y-alineaciones/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Textos y alineaciones
+            </a>
+            <a class="link" href="../text-decoration/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Decoraciones de texto
+            </a>
+            <a class="link" href="../font-display/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Modo de carga de tipografías
+            </a>
+            <a class="link" href="../caracteristicas-personalizadas/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Características personalizadas
+            </a>
+    </div>
+  </div>
+
+  <div class="sidebox">
+    <svg class="close-menu" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19V5m10 1l-6 6l6 6m-6-6h14"></path></svg>
+    <div class="socials">
+      <a class="twitch" href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+      <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+      <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+      <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  const toggleMenu = () => (document.body.classList.toggle("menu-open"));
+  document.querySelector(".close-menu").addEventListener("click", toggleMenu);
+
+  matchMedia("(width <= 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+  matchMedia("(width > 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+
+  const activeLink = document.querySelector(".links .active");
+  const icon = /* svg */`<svg viewBox="0 0 24 24"><use href="#anchor-icon" /></svg>`;
+  const headers = [...document.querySelectorAll(".contents h3")].map(link => ({ text: link.textContent, id: link.id }));
+  const links = [];
+  headers.reverse().forEach(({ text, id }) => {
+    const link = document.createElement("a");
+    link.classList.add("anchor");
+    link.href = "#" + id;
+    link.insertAdjacentHTML("beforeend", icon);
+    link.insertAdjacentText("beforeend", ` ${text}`);
+    activeLink.after(link);
+  });
+</script>
+
+  <div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/css.jpg')">
+    <h1><a href="index.htm">La regla @font-face</a></h1><h2 class="typewriter">Utilizar tipografías específicas (no instaladas)</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../ajustes-tipografias/index.htm">Ajustes en tipografías</a>
+    <a class="current" href="index.htm">La regla @font-face</a>
+    <a href="../tipografias-google-fonts/index.htm">Tipografías de Google Fonts</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Utilizar tipografías en CSS es maravilloso. Permite personalizar nuestra página web con fuentes elegantes y atractivas. Sin embargo, este sistema tenía originalmente un problema: <strong>dependen de que la tipografía esté instalada en el sistema</strong>. Si utilizamos la propiedad <code>font-family</code> y especificamos una tipografía que no está instalada en el sistema, pasará a utilizar otra tipografía alternativa.</p>
+<p>Sin embargo, que el usuario tenga que instalar la tipografía antes de visitar una web no es algo práctico. Por lo tanto, se ideó una forma para que los navegadores puedan precargar tipografías sin que el usuario tenga que instalar dichas tipografías.</p>
+<h3 id="tipografías-no-instaladas" tabindex="-1"><a class="header-anchor" href="#tipografías-no-instaladas">Tipografías no instaladas</a></h3>
+<p>Imaginemos que tenemos el siguiente fragmento de código CSS:</p>
+<pre class="language-css "><code class="language-css"><span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> Vegur<span class="token punctuation">,</span> Georgia<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<ul>
+<li>Un usuario con la tipografía <a href="https://www.fontsquirrel.com/fonts/vegur">Vegur</a> instalada, vería sin problemas el diseño ideal.</li>
+<li>Si no tiene la tipografía <strong>Vegur</strong> instalada en el sistema, la vería con la segunda tipografía: <strong>Georgia</strong>.</li>
+<li>Si tampoco tiene la tipografía <strong>Georgia</strong> instalada, buscará una tipografía de sistema «sin serifa».</li>
+</ul>
+<blockquote>
+<p>Muchas tipografías tienen <strong>derechos de autor</strong> y no se deberían utilizar en nuestra página web si no hemos pagado su licencia. Antes de utilizar una tipografía, investiga que tipo de licencia tiene o si puedes utilizarla. Si tienes dudas, busca tipografías de <strong>dominio púbico</strong> o <strong>CC0</strong>.</p>
+</blockquote>
+<h3 id="la-regla-font-face" tabindex="-1"><a class="header-anchor" href="#la-regla-font-face">La regla <code>@font-face</code></a></h3>
+<p>Para solucionar el problema de utilizar una tipografía que el usuario no tiene instalada en su sistema, utilizaremos la regla <code>@font-face</code> de CSS. Dicha regla nos permite descargar en el navegador una tipografía desde una página y utilizarla <strong>aunque no esté instalada en el sistema</strong>. Todo ello de forma transparente al usuario.</p>
+<p><youtube-video v="jhg2xas3av0" alt="Carga MÁS RÁPIDO tu sitio web OPTIMIZANDO TIPOGRAFÍAS"></youtube-video></p>
+<p>Observa el siguiente ejemplo de código donde precargamos la tipografía <strong>Open Sans</strong>, utilizando la regla CSS <code>@font-face</code>. Esta regla suele colocarse al principio del fichero CSS para avisar al navegador que vamos a utilizar una tipografía que es muy posible que no se encuentre instalada.</p>
+<p>En el ejemplo siguiente, lo hemos hecho con la tipografía <a href="https://fonts.google.com/specimen/Open+Sans">Open Sans</a>, una fuente libre creada por <strong>Steve Matteson</strong> para Google:</p>
+<pre class="language-css "><code class="language-css"><span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'Open Sans'</span><span class="token punctuation">;</span>
+  <span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> 400<span class="token punctuation">;</span>
+  <span class="token property">src</span><span class="token punctuation">:</span>
+    <span class="token function">local</span><span class="token punctuation">(</span><span class="token string">"Open Sans"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"/fonts/opensans.woff2"</span><span class="token punctuation">)</span></span> <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"woff2"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"/fonts/opensans.woff"</span><span class="token punctuation">)</span></span> <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"woff"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"/fonts/opensans.ttf"</span><span class="token punctuation">)</span></span> <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"truetype"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Basicamente, abrimos un bloque <code>@font-face</code>, establecemos su nombre mediante <code>font-family</code> y, opcionalmente, definimos sus características mediante propiedades como <code>font-style</code> o <code>font-weight</code>.</p>
+<p>El factor clave viene a la hora de <strong>indicar la tipografía a utilizar</strong>, que se hace mediante la propiedad <code>src</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Significado</th>
+<th>Soporte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>local(&quot;Nombre&quot;)</code></td>
+<td>¿Está la fuente instalada? Si es así, no hace falta descargarla, la usa.</td>
+<td>✅ Todos</td>
+</tr>
+<tr>
+<td><code>url(&quot;file.woff2&quot;)</code></td>
+<td>Formato <a href="https://www.w3.org/TR/WOFF2/">Web Open Font Format 2</a>. Mejora de <code>WOFF</code> con <a href="https://github.com/google/brotli">Brotli</a>.</td>
+<td>✅ <a href="https://caniuse.com/woff2">Bueno</a></td>
+</tr>
+<tr>
+<td><code>url(&quot;file.woff&quot;)</code></td>
+<td>Formato <a href="https://es.wikipedia.org/wiki/Web_Open_Font_Format">Web Open Font Format</a>. Es un <code>TTF</code> comprimido, ideal para web.</td>
+<td>✅ <a href="https://caniuse.com/woff">Bueno</a></td>
+</tr>
+<tr>
+<td><code>url(&quot;file.ttf&quot;)</code></td>
+<td>Formato <a href="https://en.wikipedia.org/wiki/TrueType">True Type</a> / <a href="https://en.wikipedia.org/wiki/OpenType">Open Type</a>. <code>.ttf</code> o <code>.otf</code>. Para soportar navegadores antiguos.</td>
+<td>☑️ <a href="https://caniuse.com/ttf">Bueno</a></td>
+</tr>
+<tr>
+<td><code>url(&quot;file.eot&quot;)</code></td>
+<td>Formato <a href="https://en.wikipedia.org/wiki/Embedded_OpenType">Embedded OpenType</a>. Mejora de <code>OTF</code>, propietaria de Microsoft.</td>
+<td>❌ <a href="https://caniuse.com/eot">Sólo IE</a></td>
+</tr>
+<tr>
+<td><code>url(&quot;file.svg&quot;)</code></td>
+<td>Tipografías creadas como formas SVG. <strong>No usar</strong>, considerada <strong>obsoleta</strong>.</td>
+<td>❌ <a href="https://caniuse.com/svg-fonts">No usar</a></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<blockquote>
+<p>Es buena práctica usar la expresión <code>local()</code> seguida de los formatos <code>WOFF2</code> y <code>WOFF</code> (<em>en dicho orden</em>), dando así soporte a la mayoría de navegadores, ya que <code>WOFF</code> tiene muy buen soporte. Para dar soporte a navegadores muy antiguos quizás podría ser necesario incluir también el formato <code>TTF</code>.</p>
+</blockquote>
+</blockquote>
+<p>Observa que tras indicar la <code>url()</code> con el archivo con la tipografía, una buena práctica es indicar el formato de la tipografía, para que el navegador lo conozca antes de descargar la tipografía y anticiparse al soporte que podría tener ese navegador. La sintaxis a utilizar sería la siguiente:</p>
+<table>
+<thead>
+<tr>
+<th>Sintaxis clásica</th>
+<th>Sintaxis moderna</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>format(&quot;woff2&quot;)</code></td>
+<td><code>format(woff2)</code></td>
+<td>Formato <code>.woff2</code></td>
+</tr>
+<tr>
+<td><code>format(&quot;woff&quot;)</code></td>
+<td><code>format(woff)</code></td>
+<td>Formato <code>.woff</code></td>
+</tr>
+<tr>
+<td><code>format(&quot;truetype&quot;)</code></td>
+<td><code>format(truetype)</code></td>
+<td>Formato <code>.ttf</code> o <code>.otf</code></td>
+</tr>
+<tr>
+<td><code>format(&quot;collection&quot;)</code></td>
+<td><code>format(collection)</code></td>
+<td>Formato <code>.otc</code> o <code>.ttc</code></td>
+</tr>
+<tr>
+<td><code>format(&quot;*-variations&quot;)</code></td>
+<td><code>format(*) tech(variations)</code></td>
+<td>Formato <code>.woff2</code>, <code>.woff</code>, <code>.ttf</code> o <code>.otf</code></td>
+</tr>
+</tbody>
+</table>
+<p>La nueva sintaxis <code>tech()</code> aún no está soportada ampliamente en navegadores:</p>
+<p><caniuse-support title="Tech_keyword" feature="mdn-css_at-rules_font-face_src_tech_keyword" edge="✗/n" firefox="preview/y" chrome="✗/n" safari="17/y" opera="✗/n" ios_saf="17/y" and_chr="✗/n" and_ff="✗/n">
+</caniuse-support></p>
+<p>La regla <code>@font-face</code> permite cargar <strong>cualquier tipografía</strong> que queramos. A continuación, en el siguiente artículo, vamos a ver como cargar tipografías desde Google Fonts, que aunque es mucho más sencillo para el programador, sólo permite cargar tipografías que existan en dicho repositorio. Piensa que si la tipografía que quieres usar no está en Google Fonts, necesitarás usar <code>@font-face</code>.</p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../ajustes-tipografias/index.htm" title="Ajustes en tipografías">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Ajustes en tipografías</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../tipografias-google-fonts/index.htm" title="Tipografías de Google Fonts">
+  <div>
+    <span>Tipografías de Google Fonts</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/1TbS60Fu-_M" title="Variables CSS NATIVAS: ¿Qué son y cómo funcionan?">
+  <img loading="lazy" src="../../../vi/1TbS60Fu-_M/mqdefault.jpg" alt="Variables CSS NATIVAS: ¿Qué son y cómo funcionan?">
+</a><a href="https://youtu.be/pJGEELsEM1w" title="Consejos y buenas prácticas (III): CSS">
+  <img loading="lazy" src="../../../vi/pJGEELsEM1w/mqdefault.jpg" alt="Consejos y buenas prácticas (III): CSS">
+</a><a href="https://youtu.be/Q1CXWBtxKZU" title="Grid CSS: Introducción y conceptos desde cero">
+  <img loading="lazy" src="../../../vi/Q1CXWBtxKZU/mqdefault.jpg" alt="Grid CSS: Introducción y conceptos desde cero">
+</a><a href="https://youtu.be/hiRIjRf2QD8" title="FUNCIONES de TIEMPO en CSS: ¡Controla el ritmo de tus animaciones!">
+  <img loading="lazy" src="../../../vi/hiRIjRf2QD8/mqdefault.jpg" alt="FUNCIONES de TIEMPO en CSS: ¡Controla el ritmo de tus animaciones!">
+</a><a href="https://youtu.be/I-EFAmX-vhE" title="Flex CSS: Alinear, centrar y reordenar elementos">
+  <img loading="lazy" src="../../../vi/I-EFAmX-vhE/mqdefault.jpg" alt="Flex CSS: Alinear, centrar y reordenar elementos">
+</a><a href="https://youtu.be/D5fJxaLCjKg" title="Configurar VSCODE para CORREGIR tu CSS AUTOMÁTICAMENTE">
+  <img loading="lazy" src="../../../vi/D5fJxaLCjKg/mqdefault.jpg" alt="Configurar VSCODE para CORREGIR tu CSS AUTOMÁTICAMENTE">
+</a></div>
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajehtml.com/svg/" title="SVG">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#svg"></use>
+  </svg>
+</a><a class="topic" href="../../index.htm" title="CSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="../../../postcss/index.htm" title="PostCSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/fundamentos/" title="Fundamentos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/javascript/" title="Javascript">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/npm/" title="NPM">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/webcomponents/" title="WebComponents">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/vuejs/" title="VueJS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/automatizadores/" title="Automatizadores">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/retos/" title="Retos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#retos"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+    
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+
+  </div></body>
+
+</html>

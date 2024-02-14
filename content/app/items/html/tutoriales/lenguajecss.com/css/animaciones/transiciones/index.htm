@@ -1,0 +1,462 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Transiciones CSS - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Mediante las transiciones CSS podemos suavizar cambios repentinos de estilo para que se realicen de forma gradual y suave.">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Transiciones CSS - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Mediante las transiciones CSS podemos suavizar cambios repentinos de estilo para que se realicen de forma gradual y suave.">
+  <meta property="og:url" content="https://lenguajecss.com/css/animaciones/transiciones/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/animaciones/transiciones/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Transiciones CSS - CSS en español">
+  <meta property="twitter:description" content="Mediante las transiciones CSS podemos suavizar cambios repentinos de estilo para que se realicen de forma gradual y suave.">
+  <meta property="twitter:image" content="https://lenguajecss.com/large-summary.jpg">
+
+  </head>
+
+<body class="css" style="--logo-color: #1e7bbf"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/css.jpg')">
+    <h1><a href="index.htm">Transiciones CSS</a></h1><h2 class="typewriter">Suavizar cambios de estilo en interacciones del usuario</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../../responsive-web-design/preferencias-usuario/index.htm">Preferencias de usuario</a>
+    <a class="current" href="index.htm">Transiciones CSS</a>
+    <a href="../timing-function/index.htm">Funciones de tiempo</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Como vimos en el apartado de <strong>selectores</strong>, podemos utilizar pseudoclases como <code>:hover</code> para cambiar los estilos cuando el usuario mueva el ratón sobre el elemento HTML que tiene dicha pseudoclase. Esto provoca un cambio de estilo, y le da al usuario la confirmación de que está preparado para confirmar una selección o acceder a una nueva sección.</p>
+<p>En CSS aparecen uno de los aspectos más interesantes de una web interactiva: <strong>las transiciones</strong>. Hasta ahora, al utilizar una pseudoclase como <code>:hover</code>, el cambio de estilos ocurría de golpe, pasando de un estado inicial a otro final. Utilizando <strong>transiciones</strong> tenemos a nuestra disposición una gran flexibilidad que nos permitirá dotar de atractivos efectos de transición que harán que nuestros diseños sean más elegantes y agradables.</p>
+<p><youtube-video v="jdGpehoFoWA" alt="¡Aprende a utilizar TRANSICIONES CSS!"></youtube-video></p>
+<p>Las <strong>transiciones</strong> se basan en un principio muy básico: conseguir un <strong>efecto suavizado</strong> entre un estado inicial y un estado final al realizar una acción.</p>
+<h3 id="propiedades-de-transición" tabindex="-1"><a class="header-anchor" href="#propiedades-de-transición">Propiedades de transición</a></h3>
+<p>Las propiedades CSS que podemos utilizar relacionadas con las <strong>transiciones</strong> son las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedades</th>
+<th>Descripción</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>transition-property</code></td>
+<td>Propiedades CSS afectadas por la transición.</td>
+<td><strong>all</strong> | <code>none</code> | <em>propiedad css</em></td>
+</tr>
+<tr>
+<td><code>transition-duration</code></td>
+<td>Tiempo de duración.</td>
+<td><strong>0</strong> | <badge-type class="time"></badge-type></td>
+</tr>
+<tr>
+<td><code>transition-timing-function</code></td>
+<td>Ritmo de la transición.</td>
+<td><a href="../timing-function/index.htm">Ver funciones de tiempo</a></td>
+</tr>
+<tr>
+<td><code>transition-delay</code></td>
+<td>Tiempo de retardo inicial.</td>
+<td><strong>0</strong> | <badge-type class="time"></badge-type></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Observa que por defecto las transiciones están habilitadas para <strong>todas</strong> las propiedades CSS involucradas. Sin embargo, tienen una duración de <strong>0s</strong>. Salvo que cambiemos esta duración, no se realizará transición.</p>
+</blockquote>
+<p>Veamos como funciona cada una de estas propiedades detalladamente:</p>
+<h4 id="transition-property" tabindex="-1"><a class="header-anchor" href="#transition-property">transition-property</a></h4>
+<p>En primer lugar, la propiedad <code>transition-property</code> se utiliza para especificar la <strong>propiedad a la que que afectará la transición</strong>. Podemos especificar la propiedad concreta (<em><code>width</code> o <code>color</code>, por ejemplo</em>) o simplemente especificar <code>all</code> para que se aplique a todos los elementos con los que se encuentre. Por otro lado, <code>none</code> hace que no se aplique ninguna transición.</p>
+<table>
+<thead>
+<tr>
+<th>Propiedades</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>all</code></td>
+<td>Aplica la transición a todas las propiedades css.</td>
+</tr>
+<tr>
+<td><code>none</code></td>
+<td>No aplica transición. El cambio se producirá de golpe (<em>brusco</em>).</td>
+</tr>
+<tr>
+<td><em>propiedad css</em></td>
+<td>Aplica la transición sólo a la propiedad css especificada.</td>
+</tr>
+</tbody>
+</table>
+<p>Ten en cuenta que para la transición se efectue correctamente, deberíamos tener un <strong>estado inicial</strong> y un <strong>estado final</strong>, en caso contrario, el navegador podría no saber uno de esos estados y por lo tanto, no podría efectuar la transición. En algunos casos no será necesario el <strong>estado inicial</strong> puesto que tomará el valor por defecto en ese caso.</p>
+<p>A continuación, veamos un ejemplo aplicado a la propiedad <code>transition-property</code>:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.element</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* Primer ejemplo: Anima todas las propiedades que cambien de estado */</span>
+  <span class="token property">transition-property</span><span class="token punctuation">:</span> all 4s<span class="token punctuation">;</span>
+
+  <span class="token comment">/* Segundo ejemplo: Anima sólo el ancho, el resto no transicionan, cambian de golpe */</span>
+  <span class="token property">transition-property</span><span class="token punctuation">:</span> width 4s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>Nota</strong>: Debes saber que no todas las propiedades CSS son animables (<em>o transicionables</em>). Por norma general, la mayoría de las propiedades que son cuantificables (<em>valores numéricos, porcentajes, valores hexadecimales como colores, etc...</em>) son animables, sin embargo, otras propiedades no lo son. Por ejemplo, la propiedad <code>background-image</code> para gradientes no se puede animar actualmente.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h4 id="transition-duration" tabindex="-1"><a class="header-anchor" href="#transition-duration">transition-duration</a></h4>
+<p>Con la propiedad <code>transition-duration</code> especificaremos la <strong>duración de la transición</strong>, desde el inicio de la transición, hasta su finalización. Se recomienda siempre comenzar con valores cortos, para que las transiciones sean rápidas y elegantes. Recuerda que por defecto, las transiciones tienen una duración de <strong>0s</strong>, por lo que si no cambias este valor, cambiará de golpe y será lo mismo que no tener transición.</p>
+<blockquote>
+<p><strong>Ojo</strong>: Si establecemos una duración demasiado alta, el navegador realizará la transición a trozos intermitentes, lo que hará que se vea a golpes. Además, transiciones muy largas resultarán molestas a los usuarios.</p>
+</blockquote>
+<h4 id="transition-delay" tabindex="-1"><a class="header-anchor" href="#transition-delay">transition-delay</a></h4>
+<p>Por último, la propiedad <code>transition-delay</code> nos ofrece la posibilidad de <strong>retrasar el inicio de la transición</strong> un número de segundos determinado. Si se omite, la transición comienza inmediatamente.</p>
+<p>Veamos un pequeño ejemplo de todas estas propiedades de transición. Utilizaremos la <strong>función de tiempo</strong> <code>linear</code>, que explicaremos en el próximo capítulo:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">a</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #ddd<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #222<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 8px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">a:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #666<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 25px<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid #888<span class="token punctuation">;</span>
+
+  <span class="token property">transition-property</span><span class="token punctuation">:</span> all<span class="token punctuation">;</span>
+  <span class="token property">transition-duration</span><span class="token punctuation">:</span> 0.5s<span class="token punctuation">;</span>
+  <span class="token property">transition-timing-function</span><span class="token punctuation">:</span> linear<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>En este ejemplo, con <code>all</code> hemos determinado animar todas las propiedades que cambien:</p>
+<ul>
+<li>La propiedad <code>background</code> de color de fondo cambiará de <code>#ddd</code> a <code>#fff</code></li>
+<li>La propiedad <code>color</code> de color de texto cambiará de <code>#222</code> a <code>#666</code></li>
+<li>La propiedad <code>padding</code> del tamaño del relleno cambiará de <code>8px</code> a <code>25px</code></li>
+<li>La propiedad <code>border</code> cambiará de <code>0</code> a <code>1px solid #888</code>.</li>
+</ul>
+<p>Este último es un caso especial, puesto que cambia de estilos porque toma el <strong>estilo inicial por defecto</strong>, que es un borde de <code>0px</code> de grosor. Cada una de estas transiciones se realizarán a un ritmo lineal, durante <code>0.5s</code> de duración.</p>
+<h3 id="atajo-transiciones" tabindex="-1"><a class="header-anchor" href="#atajo-transiciones">Atajo: Transiciones</a></h3>
+<p>Como siempre, podemos resumir todas estas operaciones en una propiedad de atajo denominada <code>transition</code>. Los valores del ejemplo superior, se podrían escribir como se puede ver a continuación (<em>si no necesitas algún valor, se puede omitir</em>):</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">a:hover</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* transition: &lt;property> &lt;duration> &lt;timing-function> &lt;delay> */</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 0.5s linear<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Observa que estamos omitiendo el último valor. Si quisieramos un retardo de <code>2s</code> a la hora de hacer una transición, bastaría con añadir un <code>2s</code> después de <code>linear</code>.</p>
+<p>Si quieres ver un ejemplo real de uso de transiciones, en el siguiente video explico como hacer la animación de la cabecera de <a href="https://manz.dev/">Manz.dev</a> utilizando transiciones:</p>
+<p><youtube-video v="984ry_jsExA" alt="Ejemplo de animación de Manz.dev con transiciones"></youtube-video></p>
+<h3 id="transiciones-de-entrada-y-salida" tabindex="-1"><a class="header-anchor" href="#transiciones-de-entrada-y-salida">Transiciones de entrada y salida</a></h3>
+<p>Aprovechando la <strong>cascada de CSS</strong>, podemos hacer transiciones de entrada y salida diferentes.</p>
+<p>Si nos fijamos bien, la transición del ejemplo anterior se aplica sólo al mover el ratón sobre el elemento (<em>transición de entrada</em>). Sin embargo, si movemos el ratón fuera del enlace, no se produce transición, sino que realiza el cambio de forma brusca. Esto ocurre porque le estamos diciendo que solo realice la transición cuando tenemos el ratón encima (<code>:hover</code>), en caso contrario no lo hará porque no hay definidas propiedades de transición.</p>
+<p>Si movemos las propiedades de transición al primer bloque, se aplicarán tanto en las <strong>transiciones de entrada</strong> como en las <strong>transiciones de salida</strong>. Por otro lado, si indicamos unas propiedades <code>transition-*</code> en <code>a</code> y otras en <code>a:hover</code> con diferentes valores, podremos conseguir (<em>por ejemplo</em>) duraciones diferentes.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">a</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 8px<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> background 0.2s linear<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">a:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> background 2s linear<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>En este caso, cuando mueves el ratón encima del enlace, la transición tardará 2 segundos en ponerse en rojo. Sin embargo, cuando quitemos el ratón del elemento, se producirá en <code>0.2</code> segundos ya que se efectua la transición del primer bloque.</p>
+<p>¡Recuerda siempre tener cuidado con la herencia, cascada y especificidad!</p>
+<h3 id="transiciones-diferentes" tabindex="-1"><a class="header-anchor" href="#transiciones-diferentes">Transiciones diferentes</a></h3>
+<p>También es posible que queramos indicar, por ejemplo, diferentes duraciones dependiendo de la propiedad CSS. Por ejemplo, que tarde mucho en cambiar el ancho del elemento, pero muy poco en cambiar el color de fondo.</p>
+<p>Para ello, podemos separar con comas las diferentes propiedades que queremos transicionar:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">a</span> <span class="token punctuation">{</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span>
+    width 3s<span class="token punctuation">,</span>
+    background-color 0.5s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>De esta forma, la transición de la propiedad <code>width</code> tardará 3 segundos, mientras que la del color de fondo durará sólo <code>0.5s</code>.</p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../../responsive-web-design/preferencias-usuario/index.htm" title="Preferencias de usuario">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Preferencias de usuario</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../timing-function/index.htm" title="Funciones de tiempo">
+  <div>
+    <span>Funciones de tiempo</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/hiRIjRf2QD8" title="FUNCIONES de TIEMPO en CSS: ¡Controla el ritmo de tus animaciones!">
+  <img loading="lazy" src="../../../vi/hiRIjRf2QD8/mqdefault.jpg" alt="FUNCIONES de TIEMPO en CSS: ¡Controla el ritmo de tus animaciones!">
+</a><a href="https://youtu.be/Q1CXWBtxKZU" title="Grid CSS: Introducción y conceptos desde cero">
+  <img loading="lazy" src="../../../vi/Q1CXWBtxKZU/mqdefault.jpg" alt="Grid CSS: Introducción y conceptos desde cero">
+</a><a href="https://youtu.be/0sFtRnbe0fo" title="Novedades de CSS: Dr. CSStrange y el multiverso">
+  <img loading="lazy" src="../../../vi/0sFtRnbe0fo/mqdefault.jpg" alt="Novedades de CSS: Dr. CSStrange y el multiverso">
+</a><a href="https://youtu.be/oou7K8QEMSE" title="¡Zoom en CSS! La propiedad object-view-box">
+  <img loading="lazy" src="../../../vi/oou7K8QEMSE/mqdefault.jpg" alt="¡Zoom en CSS! La propiedad object-view-box">
+</a><a href="https://youtu.be/L7Hi32qBIxI" title="Cómo crear SOMBRAS EN CAJAS (box-shadow)">
+  <img loading="lazy" src="../../../vi/L7Hi32qBIxI/mqdefault.jpg" alt="Cómo crear SOMBRAS EN CAJAS (box-shadow)">
+</a><a href="https://youtu.be/q4WZUTfHt6o" title="Cómo crear GRADIENTES RADIALES en CSS">
+  <img loading="lazy" src="../../../vi/q4WZUTfHt6o/mqdefault.jpg" alt="Cómo crear GRADIENTES RADIALES en CSS">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

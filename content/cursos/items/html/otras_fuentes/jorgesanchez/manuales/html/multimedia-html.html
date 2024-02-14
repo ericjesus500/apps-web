@@ -1,0 +1,842 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Jorge Sánchez. Manual de HTML5 y CSS3. Elementos multimedia</title>
+    <script src="../../cgm1lsq.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link rel="stylesheet" href="../../lib/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="../../css/manual.css?f=20181104">
+</head>
+<body>
+<div id="mail">
+    <div id="formularioMail">
+        <p><a href="#"><img src="../../img/cerrar.png" alt="Cerrar" id="cerrarMail"></a></p>
+        <h1>Enviar mensaje</h1>
+        <form action="#" id="formMail" method="POST">
+            <input type="nombre" name="nombre" id="nombre" placeholder="nombre y apellidos" required="">
+            <input type="email" name="email" id="email" placeholder="tu email" required="">
+            <input type="asunto" placeholder="asunto" name="asunto" id="asunto" required="">
+            <textarea name="contenido" id="contenido" cols="30" rows="5" placeholder="texto del mensaje" required=""></textarea>
+            <button>ENVIAR</button>
+        </form>
+    </div>
+</div>
+<div id="btMenu">
+    <div id="franja1" class="franja"></div>
+    <div id="franja2" class="franja"></div>
+    <div id="franja3" class="franja"></div>
+</div>
+
+<div id="barraSocial">
+    <a href="https://twitter.com/jorgesancheznet">
+        <img src="../../img/twitter.png" alt="twitter" class="btSocial" title="jorgesancheznet en twitter">
+    </a>
+    <a href="https://facebook.com/jorgesancheznet">
+        <img src="../../img/facebook.png" alt="FaceBook" class="btSocial" title="jorgesancheznet en facebook">
+    </a>
+    <a href="https://youtube.com/jorgesancheznet">
+        <img src="../../img/youtube.png" alt="You Tube" class="btSocial" title="jorgesancheznet en YouTube">
+    </a>
+    <a href="https://github.com/jorgesancheznet">
+        <img src="../../img/github.png" alt="Git Hub" class="btSocial" title="jorgesancheznet en GitHub">
+    </a>
+    <a href="#" id="btMail" class="enlaceMail">
+        <img src="../../img/mail.png" alt="Enviar email" class="btSocial" title="Enviar email">
+    </a>
+</div>
+
+
+<header>
+    <div id="logo">
+        <a href="/">
+        <img src="../../img/logo.png" alt="JorgeSanchez.net logo" id="iLogo1">
+        <img src="../../img/logoMini.png" alt="JorgeSanchez.net logo" id="iLogo2">
+        </a>
+    </div>
+</header>
+
+<section id="cuerpo">
+    <h1 class="superPrincipal">Manual de HTML5 y CSS3</h1>
+    <h1 class="titulo1"><span class="numero0">[8] </span><br>Elementos multimedia</h1>    
+    
+<div id="_idContainer003" class="Marco-de-texto-b-sico">
+			<h2 class="titulo2"><span class="numero2">[8.1] </span><a id="_idTextAnchor000"></a>elementos multimedia</h2>
+			<p class="Normal2">Indudablemente no se puede concebir una página web hoy en día sin incluir en ella elementos visuales atractivos. En este sentido se conoce como multimedia el hecho de incorporar medios procedentes de diversos formatos.</p>
+			<p class="Normal">Esencialmente la base es la inclusión de imágenes, pero también es cada vez más común la inclusión de vídeos, sonido. También hay que tener en cuenta que hay otros elementos que proceden de tecnologías más complejas, como es el caso de los elementos de tipo Flash. Todo aquello que no sea texto, está metido respecto a este capítulo, en el mismo carro.</p>
+			<p class="Normal">El hecho de que podamos incluir una imagen en la página requiere que tengamos en cuenta como funcionan los navegadores.</p>
+			<p class="Normal">Como hemos explicado en los primeros capítulos, una página web es un documento de texto que utiliza el lenguaje etiquetado  HTML, el navegador interpreta las etiquetas HTML y así da formato de forma apropiada a los distintos elementos de la página. Evidentemente cualquier contenido que no sea texto queda fuera de este planteamiento. </p>
+			<p class="Normal">Por lo tanto la idea para ese contenido parte de estas premisas:</p>
+			<p class="Numeros"><span class="numeroNumero">[1]</span>El contenido no textual de una página web se suele almacenar en un archivo aparte. Es decir, si deseamos incorporar una imagen, ésta deberá estar almacenada en un archivo; no se puede copiar y pegar la misma en la página al estilo de los programas como Word esa idea debe quedar desterrada de nuestra mente. </p>
+			<p class="sinNumero">Sí es posible colocar algunos elementos multimedia directamente en el código HTML de la página, pero siempre y cuando se definan con lenguajes de etiquetas compatibles con los navegadores. Tal es el caso, por ejemplo, de SVG (formato XML de imagen vectorial) o MathML (lenguaje XML para representar ecuaciones matemáticas).</p>
+			<p class="Numeros"><span class="numeroNumero">[2]</span>El archivo formará parte de nuestro sitio web, cuando publiquemos en Internet nuestro código, todos los archivos multimedia que se muestran en nuestras páginas se deben subir también, haciendo que la ruta local hacia ellos no cambie al subirlos.</p>
+			<p class="Numeros"><span class="numeroNumero">[3]</span>Para que el contenido del archivo forme parte de la página, en el código de la misma se usará una etiqueta (por ejemplo i<strong class="Negritta">mg</strong> para las imágenes) que haga referencia a ese archivo, de modo que el contenido será un elemento más dentro de la página. </p>
+			<p class="Numeros"><span class="numeroNumero">[4]</span>La etiqueta se coloca en la posición de la página en la que queremos que aparezca el contenido del archivo. Mediante la propia etiqueta, normalmente, tendremos atributos que nos permiten indicar el tamaño con el que queremos ver el contenido y otros detalles que pueden ser muy importantes para su correcta visualización.</p>
+			<p class="Numeros"><span class="numeroNumero">[5]</span>El contenido del archivo será visible en el navegador si el navegador web tiene capacidad para mostrarle. Esto es fundamental, podemos intentar colocar por ejemplo una hoja de cálculo hecha en el programa <strong class="Negritta">Excel</strong> de <strong class="Negritta">Microsoft</strong>, pero no será posible porque los navegadores no tienen capacidad de mostrar ese contenido. </p>
+			<p class="Numeros"><span class="numeroNumero">[6]</span>Este último punto implica una idea fundamental, sólo se puede mostrar contenido compatible con el navegador. Más exactamente, con el navegador del usuario. De nada sirve que instalemos en nuestro navegador plugins (extensiones en los navegadores) especiales para mostrar elementos concretos. Si los usuarios no tienen ese plugin, el contenido no le podrán ver. Por lo que solo deberemos utilizar elementos multimedia que sepamos que son muy compatibles, teniendo en cuenta qué navegadores se usan habitualmente por parte de los usuarios.</p>
+			<p class="sinNumero">Un ejemplo muy paradigmático es lo que ha ocurrido con los contenidos de tipo <strong class="Negritta">Flash</strong>. Cuando ese tipo de contenido se hizo muy popular, los navegadores incluían de base el plugin para poder mostrar elementos Flash. Incluso se exigía al usuario que su navegador incluyera dicho plugin para poder ver algunas páginas. Pero Flash ha acarreado cierta mala fama en estos últimos años por el uso extensivo de recursos y por, según algunas compañías, causar problemas en sus navegadores. </p>
+			<p class="sinNumero">En la actualidad el plugin de Flash está en claro desuso. Ahora ya no se incluye este plugin de base en la mayoría de navegadores. Por lo tanto es muy arriesgado para un creador de aplicaciones web crear elementos de este tipo y se ha optado por utilizar otras técnicas para dotar a las páginas de la interactividad y potencia gráfica que ofrecían los plugins de Flash.</p>
+			<p class="Numeros"><span class="numeroNumero">[7]</span>Hay que tener en cuenta que el contenido multimedia suele ocupar mucho, por lo que es fundamental optimizarlo y/o aplicar técnicas de tipo <strong class="Negritta">streaming</strong> (especialmente en el caso del vídeo) que permitan ir visualizando el contenido poco a poco a medida que se descarga. Es fácil entender esta idea observando como funciona la visualización de vídeos, por ejemplo, en YouTube.</p>
+			<h3 class="titulo3"><span class="numero3">[8.1.1]</span><a id="_idTextAnchor001"></a>el problema de la incompatibilidad de formatos</h3>
+			<p class="Normal2">Dejando de lado los contenidos especiales (como Flash, Silverlight u otros formatos complejos), cualquier aplicación web actual muestra imágenes y, cada vez más, vídeo y audio.</p>
+			<p class="Normal">El problema es el formato de estos elementos, ya vimos en el tema anterior la cantidad de formatos diferentes que poseen las imágenes. En el caso del vídeo y el audio el problema es mayor.</p>
+			<p class="Normal">El vídeo es un tipo de contenido que ocupa mucho espacio por lo que la lucha ha sido siempre comprimir al máximo su tamaño. Para ello se utiliza software especial capaz de decodificar y codificar vídeo haciendo que ocupe muy poco espacio. La potencia de los actuales procesadores permite realizar esa ardua tarea incluso a tiempo real (mientras el vídeo se reproduce).</p>
+			<p class="Normal">El problema es que el navegador tiene que tener incorporado ese software, llamado popularmente <strong class="Negritta">codec</strong>. No solo eso: tiene que ser el mismo codec. </p>
+			<p class="Normal">En el vídeo (también en el audio), los archivos se graban eligiendo un tipo concreto de vídeo, como por ejemplo puede ser <strong class="Negritta">mp4</strong>. Sin embargo el hecho es que un archivo de vídeo es un contenedor de elementos multimedia que incluye: las imágenes de vídeo, el audio, metadatos y otras informaciones. Lo normal es que se usen al menos dos codecs: uno para el audio y otro para el vídeo. Incluso el mismo formato puede usar diferentes codecs para cada cosa.</p>
+			<p class="Normal">En definitiva las posibilidades son enormes porque hay decenas de codecs (aunque algunos más populares que otros). Por lo tanto poder reproducir un elemento concreto dependerá de si el navegador incorpora los codecs concretos.</p>
+			<p class="Normal">De esta forma si incorporamos vídeo a nuestra página a través de un enlace normal:</p>
+			<table id="table001" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;a</strong><span class="atributo"> href=</span><span class="texto">”video1.mpeg”</span><strong class="resaltado">&gt;</strong>Ver vídeo<strong class="resaltado">&lt;/a&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal2">El navegador buscará si disponemos del plugin apropiado para ver el vídeo. Si no es así, simplemente lo descargará en nuestro ordenador al no poder mostrar el contenido directamente.</p>
+			<p class="Normal">En otros tipos de elementos multimedia pasará parecido. Como ya se ha comentado los navegadores deben ser capaces de traducir el tipo de contenido concreto, bien porque de base incorporan esta posibilidad o porque se añaden plugins para ello.</p>
+			<h2 class="titulo2"><span class="numero2">[8.2] </span><a id="_idTextAnchor002"></a>vídeos en las páginas web</h2>
+			<h3 class="titulo3"><span class="numero3">[8.2.1]</span><a id="_idTextAnchor003"></a>formatos de vídeo</h3>
+			<p class="Normal2">Como ya hemos comentado, el vídeo posee numerosos formatos relacionados con los diversos codecs y tipos de contenedores del mismo. Como cada navegador ha apostado por unos codecs concretos de vídeo, lo normal es que los creadores de contenido graben los vídeos usando varios codecs y formatos.</p>
+			<p class="Normal">En la siguiente dirección disponemos de una lista de compatibilidad en audio y vídeo:</p>
+			<p class="Normal"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats#Browser_compatibility"><span class="hyperlink">https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats#Browser_compatibility</span></a> </p>
+			<p class="Normal">En HTML 5 se ha simplificado, en parte, el problema ya que se habla solo de tres formatos de vídeo:</p>
+			<ul>
+				<li class="punto"><strong class="Negritta">MP4</strong>. Probablemente el más popular ya que es muy compatible con los navegadores de los dispositivos móviles. Se basa en el formato <strong class="Negritta">MPEG-4</strong> <strong class="Negritta">parte 14</strong> de vídeo (creado por el grupo de trabajo especificación del MPEG (<em class="cursiva">Moving Pictures Experts Group</em>) pensada para la reproducción de vídeo en línea.<p class="sinpunto">Normalmente usa el codec <strong class="Negritta">H264 </strong>para el vídeo, pero también se puede usar <strong class="Negritta">FLAC</strong> y otros codecs.  Para el audio se usan, normalmente, los codecs <strong class="Negritta">MP3 </strong>o el <strong class="Negritta">AAC</strong>. Este contenido tiene asociado el tipo MIME (indicación oficial de contenido) <strong class="Negritta">video/mp4</strong>.</p></li>
+				<li class="punto"><strong class="Negritta">WebM</strong>. Popularizado por Google, pero ya muy compatible con casi todos los navegadores se ha creado para optimizar la visualización de vídeo a través de los navegadores. Suele usar como códec <strong class="Negritta">VP8</strong>, pero ya se empieza a usar <strong class="Negritta">VP9 </strong>(supera al anterior). Para el audio lo normal es que use el códec <strong class="Negritta">Vorbis</strong>. Su tipo MIME es <strong class="Negritta">video/webm</strong>.</li>
+				<li class="punto"><strong class="Negritta">OGG Vídeo</strong>. Formato creado por la fundación <strong class="Negritta">Xiph.org</strong> bajo la premisa de ser un formato abierto y sin patentes. Suele usar el codec de vídeo <strong class="Negritta">Theora</strong> y para el audio <strong class="Negritta">Vorbis </strong>u <strong class="Negritta">Opus</strong>. La extensión de sus archivos suele ser <strong class="Negritta">ogv</strong>, pero su tipo MIME es <strong class="Negritta">video/ogg</strong>.<h3 class="titulo3"><span class="numero3">[8.2.2]</span><strong class="Negritta"><a id="_idTextAnchor004"></a>inserción de vídeo</strong></h3></li>
+			</ul>
+			<p class="Normal2">Se hace a través del elemento video. Ejemplo:</p>
+			<table id="table002" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;video </strong><span class="atributo">src=</span><span class="texto">“ejemplo.mp4”</span><strong class="resaltado">&gt;&lt;/video&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h4 class="titulo4"><span class="numeroOculto">21</span><strong class="Negritta">atributos del elemento </strong><em class="cursiva">video</em></h4>
+			<table id="table003" class="tabla-manual">
+				<colgroup>
+					<col>
+					<col>
+				</colgroup>
+				<thead>
+					<tr class="tabla-manual">
+						<td class="tabla-manual cabecera-tabla">
+							<p class="cabeceraTabla">atributo</p>
+						</td>
+						<td class="tabla-manual cabecera-tabla">
+							<p class="cabeceraTabla">uso</p>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">src</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">URL al vídeo que se desea mostrar</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">width</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Anchura del vídeo en nuestra página</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">height</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Altura del vídeo en nuestra página</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">autoplay</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Usa el valor fijo <em class="cursiva">autoplay </em>(o no se indica valor alguno) para indicar que el vídeo se inicia automáticamente en cuanto se descargue</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">loop</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Usa el valor fijo <em class="cursiva">loop</em> (o no se indica valor alguno) para indicar que el vídeo se ejecuta automáticamente una y otra vez</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">controls</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Con valor <em class="cursiva">controls</em> (o no indicando valor alguno) indica que el navegador mostrará controles para que el usuario pueda controlar la reproducción del vídeo de reproducción (pausa, <span lang="en-US">play</span>,…)</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">preload</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Indica al navegador una recomendación sobre cómo debemos realizar la descarga. Posibilidades:</p>
+							<ul>
+								<li class="Normal"><strong class="Negritta">auto</strong>. El vídeo se descarga en cuanto se carga la página</li>
+								<li class="Normal"><strong class="Negritta" lang="en-US">none</strong>. El vídeo no se descarga. Cuando el usuario pulse <span lang="en-US">play</span>, se descargará.</li>
+								<li class="Normal"><strong class="Negritta" lang="en-US">metadata</strong>. Descarga los metadatos del vídeo, no el vídeo en sí</li>
+							</ul>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">poster</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Permite indicar la dirección URL a una imagen que se mostrará mientras el vídeo no se está reproduciendo. Si no se usa este atributo, se usa el primer fotograma del vídeo como póster.</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">muted</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Atributo sin valor que marca que el vídeo se debe reproducir sin audio.</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal2">Ejemplo:</p>
+			<table id="table004" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;video</strong> <span class="atributo">src=</span><span class="texto">“carrera.mp4” </span><span class="atributo">controls autoplay </span></pre>
+							<pre class="codigo"><span class="atributo">       poster=</span><span class="texto">”f1.jpg”</span><strong class="resaltado">&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;/video</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal2">Se mostrará el vídeo <em class="cursiva">carrera.mp4</em> de modo que se empezará a reproducir en cuanto se cargue. Antes de la carga del vídeo se mostrará la imagen <em class="cursiva">f1.jpg</em>, el vídeo se reproducirá inmediatamente (si que haga falta que el usuario pulse play).</p>
+			<h3 class="titulo3"><span class="numero3">[8.2.3]</span><a id="_idTextAnchor005"></a>uso de diferentes formatos de vídeo</h3>
+			<p class="Normal2">Dentro del elemento <strong class="Negritta">vídeo</strong>, podemos incorporar elementos <strong class="Negritta">source </strong>que hagan referencia a distintas fuentes de vídeo. <strong class="Negritta">source </strong>dispone de estos atributos:</p>
+			<table id="table005" class="tabla-manual">
+				<colgroup>
+					<col>
+					<col>
+				</colgroup>
+				<thead>
+					<tr class="tabla-manual">
+						<td class="tabla-manual cabecera-tabla">
+							<p class="cabeceraTabla">atributo</p>
+						</td>
+						<td class="tabla-manual cabecera-tabla">
+							<p class="cabeceraTabla">uso</p>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">src</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">URL a la fuente de vídeo</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">type</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Tipo de vídeo que queremos mostrar. Se usa un tipo MIME para especificar el tipo</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal"><span lang="en-US">Ejemplo:</span></p>
+			<table id="table006" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;video</strong><span class="atributo"> autoplay=</span><span class="texto">”autoplay”</span><span class="atributo"> controls=</span><span class="texto">”controls”</span><span class="atributo"> <br>poster=</span><span class="texto">”foto1.jpg”</span><span class="atributo"> </span><strong class="resaltado">&gt;</strong><br>    <strong class="resaltado">&lt;source</strong><span class="atributo"> src=</span><span class="texto">”video.mp4”</span><span class="atributo"> <br>    type=</span><span class="texto">”video/mp4;codecs=’avc1.42E01E, mp40a.40.2’“</span><span class="atributo"> </span><strong class="resaltado">&gt;</strong><br>    <strong class="resaltado">&lt;source</strong><span class="atributo"> src=</span><span class="texto">”video.ogv”</span><span class="atributo"> </span></pre>
+							<pre class="codigo"><span class="atributo">  type=</span><span class="texto">”video/ogg;codecs=’theora, vorbis’ “</span><span class="atributo"> </span><strong class="resaltado">&gt;</strong><br>No se puede mostrar el vídeo en este navegador<br><strong class="resaltado">&lt;/video&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal2">Dentro de <strong class="Negritta" lang="en-US">type</strong><span lang="en-US">,</span> el uso de codecs es opcional, ya que si el navegador no reconoce el formato no suele hacer caso a los <strong class="Negritta">codecs</strong> que se indiquen (aunque a veces les descarga). La idea es que si el primer formato no se reconoce (primer elemento <strong class="Negritta" lang="en-US">source</strong>), se intenta el segundo y así sucesivamente. Si ninguno es reproducible por el navegador actual, éste mostrará la frase final tras el último <strong class="Negritta" lang="en-US">source</strong>.</p>
+			<h3 class="titulo3"><span class="numero3">[8.2.4]</span><a id="_idTextAnchor006"></a>subtítulos</h3>
+			<p class="Normal2">Se realiza mediante elementos de tipo <strong class="Negritta">track</strong>, los cuales se colocan dentro de la etiqueta <strong class="Negritta">video</strong>. Desde hace un par de años, casi todos los navegadores manejan los subtítulos, aunque todavía hay algunas carencias al respecto.</p>
+			<p class="Normal">Los subtítulos son textos que permiten traducir el contenido del vídeo. Por ejemplo un vídeo podría estar grabado en inglés y los subtítulos nos enseñarías el texto traducido en español a tiempo real. Hay varios formatos de subtítulos pero el estándar en la web es <strong class="Negritta">WebVTT </strong>(<em class="cursiva">Web Video Text Tracks</em>). Normalmente se utilizan archivos de texto cuya extensión es vtt basados en este estándar. </p>
+			<p class="Normal">Ejemplo de archivo vtt:</p>
+			<table id="table007" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo">WEBVTT</pre>
+							<pre class="codigo">1</pre>
+							<pre class="codigo">00:00:00.150 --&gt; 00:00:01.300</pre>
+							<pre class="codigo">¿Habéis visto a Sara?</pre>
+							<pre class="codigo">2</pre>
+							<pre class="codigo">00:00:01.540 --&gt; 00:00:03.800</pre>
+							<pre class="codigo">-No</pre>
+							<pre class="codigo">-Yo tampoco la he visto</pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal2">En este archivo la primera frase se muestra en el primer segundo del vídeo. En los dos segundos siguientes so mostrará el otro texto. En el navegador Chrome, y en algunos otros, se permite dar formato CSS al texto de los subtítulos.</p>
+			<p class="Normal">El elemento track que permite asignar subtítulos a un vídeo posee los siguientes atributos:</p>
+			<table id="table008" class="tabla-manual">
+				<colgroup>
+					<col>
+					<col>
+				</colgroup>
+				<thead>
+					<tr class="tabla-manual">
+						<td class="tabla-manual cabecera-tabla">
+							<p class="cabeceraTabla">atributo</p>
+						</td>
+						<td class="tabla-manual cabecera-tabla">
+							<p class="cabeceraTabla">uso</p>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">src</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">URL al archivo VTT o SRT que contiene los subtítulos</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">kind</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Tipo de subtítulos. Posibilidades:</p>
+							<ul>
+								<li class="punto"><strong class="Negritta" lang="en-US">subtitles</strong>. Subtítulos normales</li>
+								<li class="punto"><strong class="Negritta" lang="en-US">captions</strong>. Igual que el anterior pero con posibilidad de añadir sonidos, música y otros elementos más allá de la traducción del diálogo. El caso más utilizado este tipo de “tracks” son los audios especiales para personas con problemas de visión o textos para personas con problemas de audición.</li>
+								<li class="punto"><strong class="Negritta" lang="en-US">descriptions</strong>. Texto alternativo e independiente de la película. También muy utilizado para ayudar a interpretar el audio del vídeo a las personas sordas.</li>
+								<li class="punto"><strong class="Negritta" lang="en-US">chapters</strong>. Contiene los capítulos que permiten navegar de forma ágil por la película</li>
+								<li class="punto"><strong class="Negritta" lang="en-US">metadata</strong>. Metadatos de la película. No visibles para los usuarios, se usan con JavaScript.</li>
+							</ul>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">label</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Nombre de los subtítulos para reconocerlos en caso de haber indicado varios. Es el texto con el que aparece el nombre del idioma en el navegador al elegir un subtítulo u otro.</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">srclang</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Código de idioma (oficial según la norma ISO <strong class="Negritta">BCP 47</strong>) de los subtítulos: por ejemplo <strong class="Negritta">es </strong>para español, <strong class="Negritta">en </strong>para inglés, <strong class="Negritta">fr </strong>francés, etc.</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">default</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Indica los subtítulos que se deben de cargar por defecto si no es posible saber el idioma de preferencia del usuario.</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="normalespacio">Ejemplo:</p>
+			<table id="table009" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;video</strong><span class="atributo"> autoplay=</span><span class="texto">”autoplay”</span><span class="atributo"> controls=</span><span class="texto">”controls”</span><span class="atributo"> poster=</span><span class="texto">”foto1.jpg” </span><strong class="resaltado">&gt;</strong><br>    <strong class="resaltado">&lt;source</strong><span class="atributo"> src=</span><span class="texto">”video.mp4” </span><span class="atributo">type=</span><span class="texto">”video/mp4“</span><span class="atributo"> </span><strong class="resaltado">&gt;</strong><br>    <strong class="resaltado">&lt;source</strong><span class="atributo"> src=</span><span class="texto">”video.ogv”</span><span class="atributo"> type=</span><span class="texto">”video/ogg“</span><span class="atributo"> </span><strong class="resaltado">&gt;</strong><br>    <strong class="resaltado">&lt;track</strong><span class="atributo"> src=</span><span class="texto">”spa.vtt”</span><span class="atributo"> kind=</span><span class="texto">”subtitles” </span><span class="atributo">srclang=</span><span class="texto">”es”</span> </pre>
+							<pre class="codigo">           <span class="atributo">label=</span><span class="texto">”Español”</span><span class="atributo"> </span><strong class="resaltado">&gt;</strong><br>    <strong class="resaltado">&lt;track</strong><span class="atributo"> src=</span><span class="texto">”deu.vtt”</span><span class="atributo"> kind=</span><span class="texto">”subtitles”</span> <span class="atributo">srclang=</span><span class="texto">”de”</span> </pre>
+							<pre class="codigo">           <span class="atributo">label=</span><span class="texto">”Alemán”</span><span class="atributo"> </span><strong class="resaltado">&gt;</strong><br>    El navegador no puede mostrar el vídeo<br><strong class="resaltado">&lt;/video&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2 class="titulo2"><span class="numero2">[8.3] </span><a id="_idTextAnchor007"></a>audio en las páginas web</h2>
+			<p class="Normal2">Insertar audio en una páginas web es muy similar a insertar vídeo. El elemento que lo hace posible, se llama precisamente audio. Sus atributos (que funcionan igual que con el elemento <strong class="Negritta">video</strong>) son:</p>
+			<table id="table010" class="tabla-manual">
+				<colgroup>
+					<col>
+					<col>
+				</colgroup>
+				<thead>
+					<tr class="tabla-manual">
+						<td class="tabla-manual cabecera-tabla">
+							<p class="cabeceraTabla">atributo</p>
+						</td>
+						<td class="tabla-manual cabecera-tabla">
+							<p class="cabeceraTabla">valor</p>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">src</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">URL a la fuente de audio que estamos insertando</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">autoplay</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">El audio se reproducirá inmediatamente no se esperará a que el usuario pulse el botón Play</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">loop</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">El audio se repetirá continuamente</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">controls</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Se muestran los controles de ese audio (<strong class="Negritta">play</strong>, <strong class="Negritta">rewind</strong>, <strong class="Negritta">pause</strong>, etc.)</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">preload</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Recomendación sobre cómo debemos realizar la descarga. Posibilidades:</p>
+							<ul>
+								<li class="punto"><strong class="Negritta">auto</strong>. El audio se descarga en cuanto se carga la página</li>
+								<li class="punto"><strong class="Negritta" lang="en-US">none</strong>. El audio no se descarga. Cuando el usuario pulse <span lang="en-US">play</span>, se descargará.</li>
+								<li class="punto"><strong class="Negritta" lang="en-US">metadata</strong>. Descarga los metadatos del audio, no el audio en sí</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal2">Con el audio hay el mismo problema con la cuestión de los codecs y los formatos, por lo que también es habitual convertir el audio a distintos formatos y dar opciones dentro de la etiqueta audio gracias a la etiqueta <strong class="Negritta" lang="en-US">source</strong><span lang="en-US">. </span>Ejemplo:</p>
+			<table id="table011" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;audio</strong><span class="atributo"> controls=</span><span class="texto">”controls”</span><span class="atributo"> autoplay</span><strong class="resaltado">&gt;</strong><br>&#9;<strong class="resaltado">&lt;source</strong><span class="atributo"> src=</span><span class="texto">”audio1.ogg”</span><span class="atributo"> type=</span><span class="texto">”audio/ogg”</span><strong class="resaltado">&gt;</strong><br>&#9;<strong class="resaltado">&lt;source</strong><span class="atributo"> src=</span><span class="texto">”audio2.mp3”</span><span class="atributo"> type=</span><span class="texto">”audio/mpeg”</span><strong class="resaltado">&gt;</strong><br>&#9;No se puede reproducir el archivo de audio<br><strong class="resaltado">&lt;/audio&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2 class="titulo2"><span class="numero2">[8.4] </span><a id="_idTextAnchor008"></a><a id="_idTextAnchor009"></a><a id="_idTextAnchor010"></a>elemento canvas</h2>
+			<p class="Normal2">En inglés <strong class="Negritta" lang="en-US">canvas</strong> significa <em class="cursiva">lienzo</em>, y define muy bien para que sirve este elemento creado en la norma HTML5. Es uno de los componentes de HTML5 más famosos por el gran aporte que ha supuesto al dinamismo de las páginas web.</p>
+			<p class="Normal">Mediante este elemento dispondremos de un área que podremos utilizar donde queramos para dibujar elementos gráficos mediante las instrucciones gráficas del lenguaje JavaScript. Eso ha permitido (gracias a la potencia de JavaScript) crear juegos, animaciones y elementos visuales atractivos en las páginas web.</p>
+			<h4 class="titulo4"><span class="numeroOculto">22</span>atributos de <span lang="en-US">canvas</span></h4>
+			<ul>
+				<li class="punto"><strong class="Negritta">id</strong>. Es el atributo que utilizan todos los elementos HTML para identificarles. En el caso de canvas es casi obligatorio su uso para poder hacer referencia al mismo desde el lenguaje JavaScript.</li>
+				<li class="punto"><strong class="Negritta" lang="en-US">width</strong><span lang="en-US">. </span>Anchura del lienzo (funciona igual que en el caso de <strong class="Negritta">img</strong>)</li>
+				<li class="punto"><strong class="Negritta" lang="en-US">height</strong>. Altura del lienzo.</li>
+			</ul>
+			<p class="Normal2">Ejemplo de uso de <strong class="Negritta" lang="en-US">canvas</strong><span lang="en-US"> </span>(posee código JavaScript):</p>
+			<table id="table012" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;canvas</strong><span class="atributo"> id=</span><span class="texto">”lienzo1”</span><span class="atributo"> width=</span><span class="texto">”600”</span><span class="atributo"> height=</span><span class="texto">”400”</span><strong class="resaltado">&gt;</strong><br><strong class="resaltado">&lt;script</strong><span class="atributo"> type</span><span class="texto">=”text/javascript”</span><strong class="resaltado">&gt;</strong><br>&#9;&#9;var canvas=document.getElementById(“lienzo1”);<br>&#9;&#9;var contexto=canvas.getContext(“2d”);<br>&#9;&#9;contexto.lineWidth=2;<br>&#9;&#9;for(i=0;i&lt;=600;i+=20){<br>&#9;&#9;&#9;contexto.moveTo(0,0);<br>&#9;&#9;&#9;contexto.lineTo(i,400)<br>&#9;&#9;&#9;contexto.stroke();<br>&#9;&#9;}<br><strong class="resaltado">&lt;/script&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal2">Mediante la etiqueta script podemos colocar código en lenguaje JavaScript, desde ese código podemos utilizar el lienzo para dibujar. </p>
+			<p class="Normal2">El resultado del código anterior es la imagen:</p>
+			<p class="Normal2"><img src="multimedia-html-web-resources/image/1.png" alt=""></p>
+			<p class="Normal">En cualquier caso es un elemento que no está reconocido en muchos navegadores (aunque sí en todos los modernos).</p>
+			<h2 class="titulo2"><span class="numero2">[8.5] </span><a id="_idTextAnchor011"></a>inserción directa de imágenes SVG</h2>
+			<p class="Normal2">En el tema anterior hemos visto que es posible insertar imágenes SVG (imágenes de tipo vectorial) a través del elemento <strong class="Negritta">img</strong> al igual que las imágenes JPEG o PNG por ejemplo. Sin embargo las imágenes SVG están construidas en un dialecto de XML que cualquier navegador de hoy en día reconoce.</p>
+			<p class="Normal">Es decir, podemos insertar el código SVG directamente en una página web. Ejemplo:</p>
+			<table id="table013" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="sintaxis"><strong class="resaltado">&lt;svg</strong><span class="atributo"> xmlns</span>=<span class="texto">”http://www.w3.org/2000/svg”</span><strong class="resaltado">&gt;</strong><br>        ..etiquetas svg    <br><strong class="resaltado">&lt;/svg&gt;   </strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal">Dentro del elemento <strong class="Negritta">svg</strong> se colocan las etiquetas que permiten dibujar en el área del svg. En principio si no indicamos tamaño alguno, todo el área de la página web se utiliza para dibujar en SVG, pero podemos indicar atributos <strong class="Negritta">width</strong> y <strong class="Negritta">height</strong> para indicar tamaños concretos. </p>
+			<p class="Normal">Las etiquetas que se pueden utilizar dentro de <strong class="Negritta">svg</strong> pertenecen al lenguaje estándar SVG y rebasan el propósito de este manual, pero un ejemplo de ellas sería:</p>
+			<table id="table014" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;h1&gt;</strong>Dibujo SVG<strong class="resaltado">&lt;/h1&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado">&lt;svg</strong><span class="atributo"> xmlns=</span><span class="texto">”http://www.w3c.org/2000/svg”</span><span class="atributo"> height=</span><span class="texto">”400”</span><strong class="resaltado">&gt;</strong><br><strong class="resaltado">    &lt;rect</strong><span class="atributo"> id=</span><span class="texto">”rec1”</span><span class="atributo"> x=</span><span class="texto">”50”</span><span class="atributo"> y=</span><span class="texto">”50”</span><span class="atributo"> width=</span><span class="texto">”300”</span><span class="atributo"> <br>           height=</span><span class="texto">”100”</span><span class="atributo"> fill=</span><span class="texto">”red”</span><span class="atributo"> </span><strong class="resaltado">&gt;</strong><br><strong class="resaltado">    &lt;ellipse</strong><span class="atributo"> id=</span><span class="texto">”elips1”</span><span class="atributo"> cx=</span><span class="texto">”200”</span><span class="atributo"> cy=</span><span class="texto">”100</span>”<span class="atributo"> rx=</span><span class="texto">”50”</span><span class="atributo"> <br>            ry=</span><span class="texto">”75</span>”<span class="atributo"> fill=</span><span class="texto">”blue</span>”<span class="atributo"> </span><strong class="resaltado">&gt;</strong><br><strong class="resaltado">&lt;/svg&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal2">El resultado:</p>
+			<p class="Normal"><img src="multimedia-html-web-resources/image/2.png" alt="" class="pequena"></p>
+			<h2 class="titulo2"><span class="numero2">[8.6] </span><a id="_idTextAnchor012"></a>ecuaciones matemáticas</h2>
+			<p class="Normal2">El lenguaje <strong class="Negritta">MathML</strong> es un clásico de los lenguajes derivados de XML. Su aplicación es mostrar ecuaciones matemáticas al estilo del lenguaje <strong class="Negritta">LaTeX</strong>, consiguiendo la tipografía y forma visual apropiada para las fórmulas. Aunque se considera parte de HTML 5, solo Safari y Firefox admiten este lenguaje. </p>
+			<p class="Normal">Ejemplo de código MathML:</p>
+			<table id="table015" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;math&gt;<br>   &lt;msub&gt;&lt;mi&gt;</strong>x<strong class="resaltado">&lt;/mi&gt;&lt;mtext&gt;</strong>0<strong class="resaltado">&lt;/mtext&gt;&lt;/msub&gt;<br>   &lt;mo&gt;=&lt;/mo&gt;<br>   &lt;mn&gt;</strong>2<strong class="resaltado">&lt;/mn&gt;<br>   &lt;msup&gt;<br>       &lt;mfenced</strong><span class="atributo"> open=</span><span class="texto">”(“ </span><span class="atributo">close=</span><span class="texto">”)”</span><strong class="resaltado">&gt;</strong><br><strong class="resaltado">           &lt;mfrac&gt;<br>               &lt;msup&gt;<br>                   &lt;mi&gt;</strong>y<strong class="resaltado">&lt;/mi&gt;&lt;mn&gt;</strong>2<strong class="resaltado">&lt;/mn&gt;<br>               &lt;/msup&gt;<br>               &lt;msup&gt;<br>                   &lt;mi&gt;</strong>z<strong class="resaltado">&lt;/mi&gt;&lt;mn&gt;</strong>3<strong class="resaltado">&lt;/mn&gt;<br>               &lt;/msup&gt;<br>           &lt;/mfrac&gt;<br>       &lt;/mfenced&gt;<br>       &lt;mn&gt;</strong>2<strong class="resaltado">&lt;/mn&gt;<br>   &lt;/msup&gt;<br>&lt;/math&gt; </strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal2">Obtiene el resultado:<img src="multimedia-html-web-resources/image/ecuacion.png" alt="" style="display:inline;width:20px;"></p>
+			<h2 class="titulo2"><span class="numero2">[8.7] </span><a id="_idTextAnchor013"></a>incorporación de otros elementos multimedia</h2>
+			<p class="Normal2">Nuevamente en HTML 5 ha habido una preocupación sobre cómo utilizar elementos multimedia en una página web. Hasta la aceptación de HTML 5 ha sido problemática la forma de añadir elementos multimedia. </p>
+			<p class="Normal">El uso de <strong class="Negritta">Flash</strong> simplificó esta posibilidad dada la potencia de esta tecnología, pero dificultaba el aprendizaje para realizar páginas y exigía utilizar una forma de trabajar ajena a HTML y que además dependía de una empresa en concreto (<strong class="Negritta">Adobe</strong>). Actualmente la idea de muchos creadores es ir retirando Flash y aprovechar las nuevas capacidades de HTML 5 para la multimedia.</p>
+			<p class="Normal">En especial HTML 5 avanza enormemente en cuestiones relacionadas con el vídeo y gracias al elemento <strong class="Negritta" lang="en-US">canvas</strong><span lang="en-US">, </span>gran parte de lo que sólo parecía poder hacerse mediante Flash, es posible hacerlo ahora sin salirse del estándar HTML.  </p>
+			<h3 class="titulo3"><span class="numero3">[8.7.1]</span><a id="_idTextAnchor014"></a>el problema del vídeo y el audio</h3>
+			<p class="Normal2">El problema es el mismo que con las imágenes, es que hay numerosos formatos de vídeo y audio y que cada navegador tiene capacidades distintas al respecto. Es decir, cada navegador es capaz de reproducir directamente sólo un conjunto pequeño de tipos de vídeo.</p>
+			<p class="Normal">Por ello muchos usuarios conocedores de estos problemas saben que en los navegadores hay que instalar plugins (extensiones) para poder ver vídeos u oír música. No es un problema sólo de los navegadores, casi es el problema fundamental del mundo de la imagen, el vídeo y el audio.</p>
+			<p class="Normal">De esta forma si incorporamos vídeo a nuestra página a través de un enlace normal:</p>
+			<table id="table016" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;a</strong><span class="atributo"> href=</span><span class="texto">”video1.mpeg”</span><strong class="resaltado">&gt;</strong>Ver vídeo<strong class="resaltado">&lt;/a&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal2">El navegador buscará si disponemos del plugin apropiado para ver el vídeo, si no es así simplemente lo descargará en nuestro ordenador al no poder mostrar él el contenido.</p>
+			<h3 class="titulo3"><span class="numero3">[8.7.2]</span><a id="_idTextAnchor015"></a>etiqueta <strong class="Negritta" lang="en-US">embed</strong></h3>
+			<p class="Normal2">Se trata de una etiqueta ya veterana que se utiliza para colocar en una página web elementos no pertenecientes al  lenguaje HTML de cualquier tipo: como animaciones Flash, vídeo, audio, etc.</p>
+			<p class="Normal">Usa los siguientes atributos:</p>
+			<table id="table017" class="tabla-manual">
+				<colgroup>
+					<col>
+					<col>
+				</colgroup>
+				<thead>
+					<tr class="tabla-manual">
+						<td class="tabla-manual cabecera-tabla cabecera-tabla">
+							<p class="cabeceraTabla">atributos</p>
+						</td>
+						<td class="tabla-manual cabecera-tabla cabecera-tabla">
+							<p class="cabeceraTabla">uso</p>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">src</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">URL al recurso que se desea mostrar</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">type</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Tipo MIME (según la norma IANA de tipos de medios) que indica el tipo de recurso al que se refiere el elemento <span lang="en-US">embed</span>.</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">height</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Altura de la ventana que mostrará el recurso</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">width</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Anchura de la ventana que mostrará el recurso</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 class="titulo3"><span class="numero3">[8.7.3]</span><a id="_idTextAnchor016"></a>etiqueta <strong class="Negritta" lang="en-US">object</strong></h3>
+			<p class="Normal2">Está etiqueta está orientada a sustituir a la anterior y permite incorporar cualquier tipo de contenido a una página web. Tiene más posibilidades que la anterior. Los atributos posibles son:</p>
+			<table id="table018" class="tabla-manual">
+				<colgroup>
+					<col>
+					<col>
+				</colgroup>
+				<thead>
+					<tr class="tabla-manual">
+						<td class="tabla-manual cabecera-tabla">
+							<p class="cabeceraTabla">atributo</p>
+						</td>
+						<td class="tabla-manual cabecera-tabla">
+							<p class="cabeceraTabla">uso</p>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">data</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">URL al recurso que se desea mostrar</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">type</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Tipo MIME que indica el contenido del recurso que se incorpora con la etiqueta. </p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">height</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Altura de la ventana que mostrará el recurso</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">width</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Anchura de la ventana que mostrará el recurso</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">usemap</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Permite indicar el nombre de  un mapa de imágenes (usando <strong class="Negritta">#nombre</strong>) que actuará sobre el objeto. El mapa de imágenes funcionará igual que con la etiqueta img (según lo comentado en el apartado dedicado a los mapas de imágenes)</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">name</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Permite indicar un nombre para el objeto</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">form</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Indica el nombre del formulario al que pertenece este objeto</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h4 class="titulo4"><span class="numeroOculto">23</span>elemento <strong class="Negritta">param</strong></h4>
+			<p class="Normal2">Elemento interior a <strong class="Negritta" lang="en-US">object </strong><span lang="en-US">(n</span>o tiene sentido sin él), que permite especificar parámetros al objeto incrustado. A través de <strong class="Negritta">param</strong> pasamos instrucciones al plugin que reproduce el objeto a fin de que lo haga según nuestras necesidades. </p>
+			<p class="Normal">La forma de indicar los parámetros es mediante los atributos <strong class="Negritta">name</strong> (en el que se indica el nombre del atributo) y <strong class="Negritta">value</strong> (valor del atributo)</p>
+			<p class="Normal2">Ejemplo:</p>
+			<table id="table019" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;object</strong><span class="atributo"> data=</span>”Wildlife.wmv”<span class="atributo"> type=</span>”video/x-ms-wmv”<span class="atributo"> width=</span>”500”<span class="atributo"> height=</span>”300”<strong class="resaltado">&gt;</strong><br>      <strong class="resaltado">&lt;param</strong><span class="atributo"> name=</span>”autoplay”<span class="atributo"> value=</span>”true”<span class="atributo"> </span><strong class="resaltado">/&gt;</strong><br><strong class="resaltado">&lt;/object&gt;</strong>  </pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal2">En el ejemplo el vídeo (en caso de que el navegador pueda reproducirle), se ejecutará automáticamente al cargar la página gracias a que se ha indicado el parámetro <strong class="Negritta">autoplay</strong> con valor <strong class="Negritta" lang="en-US">true</strong><span lang="en-US">.</span></p>
+			<h3 class="titulo3"><span class="numero3">[8.7.4]</span><a id="_idTextAnchor017"></a>elemento <strong class="Negritta">iframe</strong></h3>
+			<p class="Normal2">Es un elemento que había desaparecido en el estándar pero que HTML 5 ha recuperado. La idea original es colocar un documento dentro de otro documento, es decir sirve para incrustar contenido de una dirección dentro de la página que le hace referencia. Su popularidad actual se debe a <strong class="Negritta">youtube</strong> y otras páginas que nos sugieren el uso de esta etiqueta para incrustar contenido procedente de ellas; por lo que es una etiqueta de uso muy habitual para incrustar contenido multimedia (aunque <strong class="Negritta">iframe</strong> significa marco interior e inicialmente estaba pensado para los obsoletos marcos).</p>
+			<p class="Normal">Atributos:</p>
+			<table id="table020" class="tabla-manual">
+				<colgroup>
+					<col>
+					<col>
+				</colgroup>
+				<thead>
+					<tr class="tabla-manual">
+						<td class="tabla-manual cabecera-tabla">
+							<p class="cabeceraTabla">atributo</p>
+						</td>
+						<td class="tabla-manual cabecera-tabla">
+							<p class="cabeceraTabla">uso</p>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">src</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">URL al recurso que se desea mostrar</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">width</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Anchura del objeto en nuestra página</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">height</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Altura del objeto en nuestra página</p>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">sandbox</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">Permite indicar restricciones al contenido incorporado por iframe. Los posibles valores son:</p>
+							<ul>
+								<li class="punto"><strong class="Negritta">allow-same-origin</strong>. Hace que el contenido sea tratado como si tuviera el mismo origen que la página que contiene al elemento iframe</li>
+								<li class="punto"><strong class="Negritta">allow-top-navigation</strong>. Permite que el marco pueda navegador por la página web.</li>
+								<li class="punto"><strong class="Negritta">allow-forms</strong>. Permite formularios en el contenido</li>
+								<li class="punto"><strong class="Negritta">allow-scripts</strong>. Permite la ejecución de scripts dentro del elemento iframe.</li>
+								<li class="punto">Sin indicar nada (“”), se aplican todas las restricciones anteriores.</li>
+							</ul>
+						</td>
+					</tr>
+					<tr class="tabla-manual">
+						<td class="tabla-manual primera-celda-tabla">
+							<p class="Normal2"><strong class="Negritta">seamless</strong></p>
+						</td>
+						<td class="tabla-manual celda-normal">
+							<p class="Normal2">No se utiliza porque ningún navegador le reconoce todavía. Hace que el iframe sea tratado como si fuera parte normal de la página web (no se mostrarán bordes, indicaciones del destino, barras de desplazamiento,…)</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+</section>
+
+<nav>
+    <ul>
+        <li><a href="/">&gt; Volver a JorgeSanchez.net</a></li>
+    </ul>
+    
+
+<ul>
+    <p>Manual de HTML5 y CSS3:</p>
+    <li><a href="introduccion-lenguajes-de-marcas.html">&gt; Introducción a los lenguajes de marcas</a></li>
+    <li><a href="introduccion-html.html">&gt; Introducción a HTML5</a></li>
+    <li><a href="edicion-basica-html.html">&gt; Edición básica de documentos HTML</a></li>
+    <li><a href="texto-y-parrafo-html.html">&gt; Elementos de texto y párrafo</a></li>
+    <li><a href="elementos-estructurales-html.html">&gt; Elementos estructurales</a></li>
+    <li><a href="enlaces-html.html">&gt; Enlaces</a></li>
+    <li><a href="imagenes-html.html">&gt; Imágenes</a></li>
+    <li><a href="multimedia-html.html">&gt; Elementos multimedia</a></li>
+    <li><a href="introduccion-a-css.html">&gt; Introducción a CSS</a></li>
+    <li><a href="selectores-css.html">&gt; Selectores CSS</a></li>
+    <li><a href="unidades-colores-css.html">&gt; Unidades y Colores en CSS</a></li>
+    <li><a href="formato-fuente-parrafo-css.html">&gt; Formato de fuente y párrafo</a></li>
+    <li><a href="formato-caja-lista-css.html">&gt; Formato de caja y lista</a></li>
+    <li><a href="tablas-html.html">&gt; Tablas</a></li>
+    <li><a href="formularios-html.html">&gt; Formularios</a></li>
+    <li><a href="visualizacion-css.html">&gt; Visualización de elementos</a></li>
+    <li><a href="posicionamiento-css.html">&gt; Posicionamiento mediante CSS</a></li>
+    <li><a href="transformaciones-css.html">&gt; Transformaciones mediante CSS</a></li>
+    <li><a href="animaciones-css.html">&gt; Animaciones mediante CSS</a></li>
+    <li><a href="generacion-de-contenido-css.html">&gt; Generación de contenido automático</a></li>
+    <li><a href="maquetacion-1-css.html">&gt; Maquetación (1). Columnas y Flexbox</a></li>
+</ul>
+
+
+
+</nav>
+
+<script src="../../lib/jquery.min.js"></script>
+<script src="../../lib/jquery.easing.min.js"></script>
+<script src="../../lib/jquery.scrollTo.min.js"></script>
+<script src="../../lib/perfect-scrollbar.jquery.min.js"></script>
+<script src="../../js/manual.js?f=20170221"></script>
+<!--Analytics-->
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35972106-1']);
+    _gaq.push(['_setLocalRemoteServerMode']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</body>
+</html>
+

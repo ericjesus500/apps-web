@@ -1,0 +1,762 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ecc022">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Crear expresiones regulares - Javascript en español - Lenguaje JS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Para poder construir expresiones regulares efectivas hay que conocer los carácteres o símbolos especiales que poseen. Te los explico">
+  <meta name="view-transition" content="same-origin">
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Crear expresiones regulares - Javascript en español">
+  <meta property="og:image" content="https://lenguajejs.com/javascript/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Para poder construir expresiones regulares efectivas hay que conocer los carácteres o símbolos especiales que poseen. Te los explico">
+  <meta property="og:url" content="https://lenguajejs.com/javascript/regexp/crear-expresiones-regulares/">
+  <meta property="twitter:url" content="https://lenguajejs.com/javascript/regexp/crear-expresiones-regulares/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Crear expresiones regulares - Javascript en español">
+  <meta property="twitter:description" content="Para poder construir expresiones regulares efectivas hay que conocer los carácteres o símbolos especiales que poseen. Te los explico">
+  <meta property="twitter:image" content="https://lenguajejs.com/javascript/large-summary.jpg">
+
+  </head>
+
+<body class="js menu-open " style="--logo-color: #f0db4f"><script>
+    matchMedia("(width <= 1180px)").matches && document.body.classList.toggle("menu-open");
+  </script>
+  
+
+
+
+
+
+
+
+
+<section class="menubar">
+  <div class="menubar-content">
+    <h1>Lenguaje JS</h1>
+
+    <a class="cover" title="Lenguaje JS (javascript)" href="../../index.htm" style="--image: url('../../../assets/javascript.jpg')"></a>
+
+    <header>
+      <a href="../../fechas/date-fechas-nativas/index.htm" title="El tipo Date">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m14 26l1.41-1.41L7.83 17H28v-2H7.83l7.58-7.59L14 6L4 16l10 10z"></path></svg>
+      </a>
+      <a href="../../index.htm" title="Volver al índice">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 256"><path fill="#888888" d="M240 210h-18v-94.45a14.06 14.06 0 0 0-4.53-10.32l-80-75.49l-.09-.08a13.94 13.94 0 0 0-18.83 0l-.09.08l-80 75.5A14 14 0 0 0 34 115.55V210H16a6 6 0 0 0 0 12h224a6 6 0 0 0 0-12ZM46 115.55a2 2 0 0 1 .65-1.48l.09-.08l79.94-75.48a2 2 0 0 1 2.63 0L209.26 114l.08.08a2 2 0 0 1 .66 1.48V210h-52v-50a14 14 0 0 0-14-14h-32a14 14 0 0 0-14 14v50H46ZM146 210h-36v-50a2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"></path></svg>
+      </a>
+      <a href="../../multimedia/api-multimedia-nativa/index.htm" title="API de Audio Javascript">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></path></svg>
+      </a>
+    </header>
+
+    <div style="display:none">
+      <svg id="link-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 256 256"><g fill="#888888"><path d="M208 88h-56V32Z" opacity=".2"></path><path d="m213.66 82.34l-56-56A8 8 0 0 0 152 24H56a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V88a8 8 0 0 0-2.34-5.66ZM160 51.31L188.69 80H160ZM200 216H56V40h88v48a8 8 0 0 0 8 8h48v120Z"></path></g></svg>
+      <svg id="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="#888888" d="M2 12.5C2 9.46 4.46 7 7.5 7H18c2.21 0 4 1.79 4 4s-1.79 4-4 4H9.5a2.5 2.5 0 0 1 0-5H17v2H9.41c-.55 0-.55 1 0 1H18c1.1 0 2-.9 2-2s-.9-2-2-2H7.5C5.57 9 4 10.57 4 12.5S5.57 16 7.5 16H17v2H7.5C4.46 18 2 15.54 2 12.5z"></path></svg>
+    </div>
+
+    <div class="links">
+      <span class="folder">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 512 512"><path fill="#888888" d="M41 73v304.563L88.697 151H423v-30H185.514l-16-48H41zm62.303 96L43.092 455h381.605l60.211-286H103.303z"></path></svg>
+        Expresiones regulares
+      </span>
+            <a class="link" href="../expresiones-regulares/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              ¿Qué es una expresión regular?
+            </a>
+            <a class="link" href="../flags/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Propiedades y flags
+            </a>
+            <a class="link" href="../buscar-capturar/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Buscar y capturar textos
+            </a>
+            <a class="link active" href="index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Crear expresiones regulares
+            </a>
+    </div>
+  </div>
+
+  <div class="sidebox">
+    <svg class="close-menu" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19V5m10 1l-6 6l6 6m-6-6h14"></path></svg>
+    <div class="socials">
+      <a class="twitch" href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+      <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+      <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+      <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  const toggleMenu = () => (document.body.classList.toggle("menu-open"));
+  document.querySelector(".close-menu").addEventListener("click", toggleMenu);
+
+  matchMedia("(width <= 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+  matchMedia("(width > 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+
+  const activeLink = document.querySelector(".links .active");
+  const icon = /* svg */`<svg viewBox="0 0 24 24"><use href="#anchor-icon" /></svg>`;
+  const headers = [...document.querySelectorAll(".contents h3")].map(link => ({ text: link.textContent, id: link.id }));
+  const links = [];
+  headers.reverse().forEach(({ text, id }) => {
+    const link = document.createElement("a");
+    link.classList.add("anchor");
+    link.href = "#" + id;
+    link.insertAdjacentHTML("beforeend", icon);
+    link.insertAdjacentText("beforeend", ` ${text}`);
+    activeLink.after(link);
+  });
+</script>
+
+  <div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#js"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeJS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/javascript.jpg')">
+    <h1><a href="index.htm">Crear expresiones regulares</a></h1><h2 class="typewriter">Carácteres especiales dentro de las expresiones regulares</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../buscar-capturar/index.htm">Buscar y capturar textos</a>
+    <a class="current" href="index.htm">Crear expresiones regulares</a>
+    <a href="../../multimedia/api-multimedia-nativa/index.htm">API de Audio Javascript</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Crear <strong>expresiones regulares</strong> puede parecer fácil al principio, sin embargo, es muy fácil crear expresiones regulares que tengan resultados no previstos, por lo que hay que practicar mucho y tener cierta experiencia con ellas.</p>
+<p>Antes de comenzar a crear <strong>expresiones regulares</strong> hay que aprender bien quizás la parte más compleja: los <strong>carácteres o símbolos especiales</strong> que poseen. Ciertos carácteres tienen un significado especial dentro de las expresiones regulares, e incluso, muchos de ellos dependen de donde se encuentren para tener ese significado especial.</p>
+<h3 id="clases-básicas" tabindex="-1"><a class="header-anchor" href="#clases-básicas">Clases básicas</a></h3>
+<p>Empecemos con algunos de los más sencillos:</p>
+<table>
+<thead>
+<tr>
+<th>Caracter especial</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.</code></td>
+<td>Comodín, significa <strong>cualquier caracter</strong> (letra, número, símbolo...), pero que ocupe sólo <strong>1 carácter</strong>.</td>
+</tr>
+<tr>
+<td><code>\</code></td>
+<td>Precedido de un carácter especial, lo invalida (se llama «escapar»).</td>
+</tr>
+</tbody>
+</table>
+<p>En esta pequeña tabla vemos los caracteres especiales más básicos por lo que podemos partir para aprender expresiones regulares. Veamos algunos ejemplos aplicándolos:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">M.nz</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"Manz"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// true (el texto "Manz" encaja con el patrón)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"manz"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// false (La «M» debe ser mayúscula)</span>
+
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">M.nz</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">;</span>
+
+regexp<span class="token punctuation">.</span>ignoreCase        <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"manz"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// true (ignoramos mayús/minús con el flag «i»)</span></code></pre>
+<p>Como puedes ver, el <code>.</code> se utiliza como símbolo o carácter especial y significa «cualquier carácter». No obstante, podríamos añadir un <code>\</code> antes del <code>.</code>, y así <strong>escapar el punto</strong> y que en lugar de tener un significado especial (<em>cualquier carácter</em>) tenga el significado <strong>literalmente un punto</strong>:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">gato.</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"gatos."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"gatosa"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"gatos "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// true</span>
+
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">gato\.</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"gatos."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// true (es literalmente el punto)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"gatosa"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// false</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"gatos "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// false</span></code></pre>
+<p>El escapado de carácteres es esencial en las expresiones regulares, ya que es frecuente necesitar utilizarlo.</p>
+<h3 id="conjunto-de-carácteres" tabindex="-1"><a class="header-anchor" href="#conjunto-de-carácteres">Conjunto de carácteres</a></h3>
+<p>Dentro de las expresiones regulares, los corchetes <code>[]</code> tienen un significado especial. Se trata de un mecanismo para englobar un <strong>conjunto de carácteres personalizado</strong> o <strong>alternativas</strong>. Pero por otro lado, si incluimos un circunflejo <code>^</code> en el interior de los corchetes, invertimos el significado, pasando a significar <strong>que no exista</strong> el conjunto de carácteres personalizado:</p>
+<table>
+<thead>
+<tr>
+<th>Caracter especial</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[]</code></td>
+<td>Rango de carácteres. Cualquiera de los caracteres del interior de los corchetes.</td>
+</tr>
+<tr>
+<td><code>[^]</code></td>
+<td>Que no exista cualquiera de los caracteres del interior de los corchetes.</td>
+</tr>
+<tr>
+<td><code>|</code></td>
+<td>Establece una alternativa: lo que está a la izquierda o lo que está a la derecha.</td>
+</tr>
+</tbody>
+</table>
+<p>Por último, tenemos el «pipe» <code>|</code>, con el que podemos establecer alternativas. Veamos un ejemplo aplicado a esto, para que se verá más claro:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[aeiou]</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">;</span>    <span class="token comment">// RegExp que acepta vocales (mayús/minús)</span>
+
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment">// true (es vocal)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"E"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment">// true (es vocal, ignora mayus/minus porque tiene flag «i»)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"t"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment">// false (no es vocal)</span>
+
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[^aeiou]</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">;</span>   <span class="token comment">// RegExp que acepta lo que no sea vocal (mayús/minús)</span>
+
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment">// false</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"E"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment">// false</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"T"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"m"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment">// true</span>
+
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">casa|cama</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>   <span class="token comment">// RegExp que acepta "casa" o "cama"</span>
+
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"casa"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"cama"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"capa"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment">// false</span>
+
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">cas(i|o)ta</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>  <span class="token comment">// RegExp que acepta "casita" o "casota"</span>
+
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"casita"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"casota"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"caseta"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// false</span></code></pre>
+<p>Como se puede ver, con los paréntesis <code>()</code> puedes agrupar una parte más específica para indicar alternativas, aunque recuerda que con los paréntesis estás haciendo <a href="../buscar-capturar/index.htm">capturas de textos con Expresiones regulares</a>.</p>
+<h4 id="rangos-de-carácteres" tabindex="-1"><a class="header-anchor" href="#rangos-de-carácteres">Rangos de carácteres</a></h4>
+<p>En el interior de los corchetes <code>[]</code>, si establecemos dos carácteres separados por guión, por ejemplo <code>[0-9]</code>, se entiende que indicamos el rango de carácteres entre <code>0</code> y <code>9</code>, sin tener que escribirlos todos explícitamente.</p>
+<p>De esta forma podemos crear rangos como <code>[A-Z]</code> (<em>una letra mayúscula</em>) o <code>[a-z]</code> (<em>una letra minúscula</em>), o incluso varios rangos como <code>[A-Za-z0-9]</code> (<em>una letra mayúscula, minúscula o un dígito del 0 al 9</em>):</p>
+<table>
+<thead>
+<tr>
+<th>Caracter especial</th>
+<th>Alternativa</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[0-9]</code></td>
+<td><code>\d</code></td>
+<td>Un dígito del <code>0</code> al <code>9</code>.</td>
+</tr>
+<tr>
+<td><code>[^0-9]</code></td>
+<td><code>\D</code></td>
+<td>No exista un dígito del <code>0</code> al <code>9</code>.</td>
+</tr>
+<tr>
+<td><code>[A-Z]</code></td>
+<td></td>
+<td>Letra mayúscula de la <code>A</code> a la <code>Z</code>. Excluye <code>ñ</code> o letras acentuadas.</td>
+</tr>
+<tr>
+<td><code>[a-z]</code></td>
+<td></td>
+<td>Letra minúscula de la <code>a</code> a la <code>z</code>. Excluye <code>ñ</code> o letras acentuadas.</td>
+</tr>
+<tr>
+<td><code>[A-Za-z0-9]</code></td>
+<td><code>\w</code></td>
+<td>Carácter alfanumérico (letra mayúscula, minúscula o dígito).</td>
+</tr>
+<tr>
+<td><code>[^A-Za-z0-9]</code></td>
+<td><code>\W</code></td>
+<td>No exista carácter alfanumérico (letra mayúscula, minúscula o dígito).</td>
+</tr>
+<tr>
+<td><code>[ \t\r\n\f]</code></td>
+<td><code>\s</code></td>
+<td>Carácter de espacio en blanco (espacio, <code>TAB</code>, <code>CR</code>, <code>LF</code> o <code>FF</code>).</td>
+</tr>
+<tr>
+<td><code>[^ \t\r\n\f]</code></td>
+<td><code>\S</code></td>
+<td>No exista carácter de espacio en blanco (espacio, <code>TAB</code>, <code>CR</code>, <code>LF</code> o <code>FF</code>).</td>
+</tr>
+<tr>
+<td></td>
+<td><code>\xN</code></td>
+<td>Carácter hexadecimal número <code>N</code>.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>\uN</code></td>
+<td>Carácter Unicode número <code>N</code>.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>En las expresiones regulares podemos tanto escribir el <strong>caracter especial</strong> como la <strong>notación alternativa</strong>, que son equivalentes y significan lo mismo. Por ejemplo, es lo mismo escribir <code>[0-9]</code> que <code>\d</code>. Algunos programadores encuentran más explicativa la primera forma y otros más cómoda la segunda.</p>
+</blockquote>
+<h3 id="anclas" tabindex="-1"><a class="header-anchor" href="#anclas">Anclas</a></h3>
+<p>Hay algo importante que hemos omitido hasta ahora. Dentro de las expresiones regulares, las <strong>anclas</strong> son un recurso muy importante, ya que permiten delimitar los patrones de búsqueda e indicar si empiezan o terminan por carácteres concretos, siendo mucho más específicos al realizar la búsqueda:</p>
+<table>
+<thead>
+<tr>
+<th>Caracter especial</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>^</code></td>
+<td>Ancla. Delimita el inicio del patrón. Significa <strong>empieza por</strong>.</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>Ancla. Delimita el final del patrón. Significa <strong>acaba en</strong>.</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>Límite de una palabra separada por espacios, puntuación o inicio/final.</td>
+</tr>
+<tr>
+<td><code>\B</code></td>
+<td>Opuesta al anterior. Posición entre 2 caracteres alfanuméricos o no alfanuméricos.</td>
+</tr>
+</tbody>
+</table>
+<p>Para entender esto bien, veamos varios ejemplos. En los primeros ejemplos vamos a aplicar las anclas <code>^</code> y <code>$</code> en la expresión regular para delimitar el inicio y el final de un texto:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^mas</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">;</span>     <span class="token comment">// Debe empezar por "mas"</span>
+
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"Formas"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// false  (contiene "mas", pero no empieza por "mas")</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"Master"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// true (empieza por "mas" y tiene el flag «i»)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"masticar"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// true</span>
+
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">do$</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">;</span>      <span class="token comment">// Debe terminar por "do"</span>
+
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"Vívido"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"Dominó"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// false (contiene "do" pero no acaba por "do")</span></code></pre>
+<p>Por otro lado, si utilizamos <code>\b</code> se nos permite indicar si el texto adyacente está seguido (<em>o precedido</em>) de un límite de palabra (<em>espacio</em>), puntuación (<em>comas o puntos</em>) o inicio o final del <badge-type class="string"></badge-type>:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">fo\b</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"Esto es un párrafo de texto."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// true (tras "fo" hay un límite de palabra)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"Esto es un párrafo."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">// true (tras "fo" hay un signo de puntuación)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"Un círculo es una forma."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// false (tras "fo" sigue la palabra)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"Frase que termina en fo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// true (tras "fo" termina el string)</span></code></pre>
+<p>Por último, <code>\B</code> es la operación opuesta a <code>\b</code>, por lo que podemos utilizarla cuando nos interesa que el texto no esté delimitado por una palabra, puntuación o string en sí.</p>
+<h3 id="cuantificadores" tabindex="-1"><a class="header-anchor" href="#cuantificadores">Cuantificadores</a></h3>
+<p>En las <strong>expresiones regulares</strong> los cuantificadores permiten indicar <strong>cuántas veces</strong> se puede repetir el carácter inmediatamente anterior. Existen varios tipos de cuantificadores:</p>
+<table>
+<thead>
+<tr>
+<th>Caracter especial</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>*</code></td>
+<td>El carácter anterior puede aparecer <code>0</code> o más veces.</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>El carácter anterior puede aparecer <code>1</code> o más veces.</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>El carácter anterior puede aparecer o no (es opcional).</td>
+</tr>
+<tr>
+<td><code>{n}</code></td>
+<td>El carácter anterior aparece <code>n</code> veces.</td>
+</tr>
+<tr>
+<td><code>{n,}</code></td>
+<td>El carácter anterior aparece <code>n</code> o más veces.</td>
+</tr>
+<tr>
+<td><code>{n,m}</code></td>
+<td>El carácter anterior aparece de <code>n</code> a <code>m</code> veces.</td>
+</tr>
+</tbody>
+</table>
+<p>Veamos algunos ejemplos para aprender a aplicarlos. Comencemos con el primero, el caracter especial <code>*</code> (<em>0 o más veces</em>):</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">a*</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>   <span class="token comment">// 'a' aparece 0 o más veces en el string</span>
+
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// true ('a' aparece 0 veces)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// true ('a' aparece 1 veces)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"aa"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// true ('a' aparece 2 veces)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"aba"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// true ('a' aparece 2 veces)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"bbb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// true ('a' aparece 0 veces)</span></code></pre>
+<p>El cuantificador <code>+</code> es muy parecido al cuantificador <code>*</code> anterior, sólo que con el cuentificador <code>+</code> es necesario que el carácter anterior aparezca al menos una vez, al contrario que con <code>*</code> que permitía que no apareciera:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">a+</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>    <span class="token comment">// 'a' aparece 1 o más veces (equivalente a /aa*/)</span>
+
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// false ('a' aparece 0 veces)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// true ('a' aparece 1 veces)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"aa"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// true ('a' aparece 2 veces)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"aba"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// true ('a' aparece 2 veces)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"bbb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// false ('a' aparece 0 veces)</span></code></pre>
+<p>Por otro lado, el cuantificador <code>?</code> se suele utilizar para indicar que el carácter anterior es opcional (<em>puede aparecer o puede no aparecer</em>). Normalmente se utiliza cuando quieres indicar que no importa que aparezca un carácter opcional:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">disparos?</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">;</span>      <span class="token comment">// Acepta tanto "disparo" como "disparos"</span>
+
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"Escuché disparos en la habitación."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"Efectuó un disparo al sujeto."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"La pistola era de agua."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment">// false</span></code></pre>
+<p>Esto nos permite establecer carácteres opcionales de forma muy sencilla y cómoda.</p>
+<h4 id="cuantificadores-numéricos" tabindex="-1"><a class="header-anchor" href="#cuantificadores-numéricos">Cuantificadores numéricos</a></h4>
+<p>Los tres cuantificadores siguientes, se utilizan cuando necesitamos concretar más el número de repeticiones del caracter anterior. Por ejemplo, <code>{n}</code> indica un número exacto, <code>{n,}</code> indica al menos <code>n</code> veces y <code>{n,m}</code> establece que se puede repetir de <code>n</code> a <code>m</code> veces:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[0-9]{2}</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>    <span class="token comment">// Un número formado por 2 dígitos (del 0 al 9)</span>
+
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">;</span>              <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token number">88</span><span class="token punctuation">)</span><span class="token punctuation">;</span>              <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment">// false (no son 2 dígitos)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment">// true (tiene al menos 2 dígitos)</span></code></pre>
+<p>Observa que el último aparece como <code>true</code>. Esto ocurre porque en la expresión regular no se han establecido <strong>anclas</strong> que delimiten el inicio y/o el final del texto. Si las añadimos, es más estricto con las comprobaciones:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^[0-9]{2}$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>    <span class="token comment">// Un número de exactamente 2 dígitos (del 0 al 9)</span>
+
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                 <span class="token comment">// false (no llega a 2 dígitos)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token number">55</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment">// false (no tiene exáctamente 2 dígitos)</span>
+
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^[0-9]{3,}$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token number">33</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment">// false (debe tener al menos 3 dígitos)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token number">4923</span><span class="token punctuation">)</span><span class="token punctuation">;</span>              <span class="token comment">// true</span>
+
+<span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^[0-9]{2,5}$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                 <span class="token comment">// false (no tiene de 2 a 5 dígitos)</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token number">444</span><span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment">// true</span>
+regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token number">543213</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment">// false (no tiene de 2 a 5 dígitos)</span></code></pre>
+<blockquote>
+<blockquote>
+<p>Si quieres profundizar con las <strong>expresiones regulares</strong>, puedes jugar a <a href="https://manzdev.github.io/regex-people/">RegEx People</a>, un pequeño y básico juego para aprender a utilizar las expresiones regulares y buscar patrones, con su código fuente disponible en <a href="https://github.com/ManzDev/regex-people">GitHub</a>.</p>
+</blockquote>
+</blockquote>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../buscar-capturar/index.htm" title="Buscar y capturar textos">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Buscar y capturar textos</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../../multimedia/api-multimedia-nativa/index.htm" title="API de Audio Javascript">
+  <div>
+    <span>API de Audio Javascript</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/UVauEId-jJ0" title="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+  <img loading="lazy" src="../../../vi/UVauEId-jJ0/mqdefault.jpg" alt="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+</a><a href="https://youtu.be/KE2xRDM4Amg" title="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+  <img loading="lazy" src="../../../vi/KE2xRDM4Amg/mqdefault.jpg" alt="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+</a><a href="https://youtu.be/A11eG1o611M" title="Creador de historias con Javascript y ChatGPT">
+  <img loading="lazy" src="../../../vi/A11eG1o611M/mqdefault.jpg" alt="Creador de historias con Javascript y ChatGPT">
+</a><a href="https://youtu.be/Xi07tHFzqR8" title="Cómo CLONAR objetos en Javascript correctamente (structuredClone)">
+  <img loading="lazy" src="../../../vi/Xi07tHFzqR8/mqdefault.jpg" alt="Cómo CLONAR objetos en Javascript correctamente (structuredClone)">
+</a><a href="https://youtu.be/sU4e6_i_ExU" title="Consejos y buenas prácticas (IV): Javascript + Imágenes">
+  <img loading="lazy" src="../../../vi/sU4e6_i_ExU/mqdefault.jpg" alt="Consejos y buenas prácticas (IV): Javascript + Imágenes">
+</a><a href="https://youtu.be/EiKYr5vjs48" title="Diferencias entre getElementById vs querySelector (y otros métodos del DOM)">
+  <img loading="lazy" src="../../../vi/EiKYr5vjs48/mqdefault.jpg" alt="Diferencias entre getElementById vs querySelector (y otros métodos del DOM)">
+</a></div>
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajehtml.com/svg/" title="SVG">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#svg"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/css/" title="CSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/postcss/" title="PostCSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="../../../fundamentos/index.htm" title="Fundamentos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="../../index.htm" title="Javascript">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="../../../npm/index.htm" title="NPM">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="../../../webcomponents/index.htm" title="WebComponents">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="../../../vuejs/index.htm" title="VueJS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="../../../automatizadores/index.htm" title="Automatizadores">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a><a class="topic" href="../../../retos/index.htm" title="Retos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#retos"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+    
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-6', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+
+  </div></body>
+
+</html>

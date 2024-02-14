@@ -1,0 +1,464 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Listas CSS - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Con CSS se puede cambiar el comportamiento de las listas HTML para que muestren otra numeración, o un espacio de separación diferente.">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Listas CSS - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Con CSS se puede cambiar el comportamiento de las listas HTML para que muestren otra numeración, o un espacio de separación diferente.">
+  <meta property="og:url" content="https://lenguajecss.com/css/representacion-datos/listas-css/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/representacion-datos/listas-css/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Listas CSS - CSS en español">
+  <meta property="twitter:description" content="Con CSS se puede cambiar el comportamiento de las listas HTML para que muestren otra numeración, o un espacio de separación diferente.">
+  <meta property="twitter:image" content="https://lenguajecss.com/large-summary.jpg">
+
+  </head>
+
+<body class="css" style="--logo-color: #1e7bbf"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/css.jpg')">
+    <h1><a href="index.htm">Listas CSS</a></h1><h2 class="typewriter">Dar estilo a listas HTML</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../tablas-css/index.htm">Tablas CSS</a>
+    <a class="current" href="index.htm">Listas CSS</a>
+    <a href="../contadores-css/index.htm">Contadores CSS</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Al crear listas HTML mediante las etiquetas <code>&lt;ol&gt;</code> o <code>&lt;ul&gt;</code>, dichas etiquetas poseen propiedades CSS específicas para alterar el estilo o características de las marcas o viñetas que se crean a la izquierda de los items de la lista, mediante la etiqueta HTML <code>&lt;li&gt;</code>.</p>
+<h3 id="propiedades-css-para-listas" tabindex="-1"><a class="header-anchor" href="#propiedades-css-para-listas">Propiedades CSS para listas</a></h3>
+<p>Por ejemplo, a continuación tenemos las propiedades principales de las listas:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>list-style-image</code></td>
+<td><strong>none</strong> | <code>url(</code><em>image.png</em><code>)</code></td>
+<td>Indica una imagen para usar como viñeta de ítem.</td>
+</tr>
+<tr>
+<td><code>list-style-position</code></td>
+<td><code>inside</code> | <strong>outside</strong></td>
+<td>Establece o elimina indentación de ítems sobre la lista.</td>
+</tr>
+<tr>
+<td><code>list-style-type</code></td>
+<td><strong>disc</strong> | <strong>decimal</strong> | <em>type</em> | <code>none</code></td>
+<td>Establece el tipo de viñeta que se va a utilizar.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="la-propiedad-list-style-image" tabindex="-1"><a class="header-anchor" href="#la-propiedad-list-style-image">La propiedad list-style-image</a></h4>
+<p>A través de la propiedad <code>list-style-image</code> podemos indicar la URL de una imagen para utilizarla a modo de icono o viñeta en cada ítem de la lista, es decir, en cada ítem <code>&lt;li&gt;</code>. Esta propiedad, por defecto, tiene el valor <strong>none</strong>, o lo que es lo mismo, no establece ninguna imagen por cada ítem de la lista.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">li</span> <span class="token punctuation">{</span>
+  <span class="token property">list-style-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"https://manz.dev/assets/stickers/batmanz.png"</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p>Un detalle a tener en cuenta, es que esta propiedad se puede usar tanto en los ítems <code>&lt;li&gt;</code> de cada punto de la lista, como en sus contenedores <code>&lt;ul&gt;</code> o <code>&lt;ol&gt;</code>.</p>
+</blockquote>
+<h4 id="la-propiedad-list-style-position" tabindex="-1"><a class="header-anchor" href="#la-propiedad-list-style-position">La propiedad list-style-position</a></h4>
+<p>Por otro lado, la propiedad <code>list-style-position</code> permite establecer una indentación a todos los ítems de la lista, estableciendolos desplazados a la derecha (<em>inside</em>), el lado interior de la lista, o sin desplazar (<em>outside</em>), el lado exterior de la lista, opción por defecto.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">ul</span> <span class="token punctuation">{</span>
+  <span class="token property">list-style-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"https://manz.dev/assets/stickers/batmanz.png"</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+  <span class="token property">list-style-position</span><span class="token punctuation">:</span> inside<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="la-propiedad-list-style-type" tabindex="-1"><a class="header-anchor" href="#la-propiedad-list-style-type">La propiedad list-style-type</a></h4>
+<p>La tercera propiedad, <code>list-style-type</code> nos permite indicar que tipo de viñetas tendrán las listas (<em>en el caso de no estar utilizando ningun imagen</em>).
+Se establecen varios grupos que veremos en el siguiente apartado. Cada uno de ellos se puede utilizar con cualquier tipo de lista, pero generalmente, se recomienda tener en cuenta el tipo de lista. Por ejemplo, si tenemos una lista <code>&lt;ul&gt;</code> (<em>no ordenada</em>), aunque es posible, quizás una viñeta numerada no tenga mucho sentido.</p>
+<p>Por defecto, las listas <code>&lt;ul&gt;</code> (<em>no numeradas</em>) utilizan la opción <code>disc</code> por defecto, mientras que las listas <code>&lt;ol&gt;</code> (<em>numeradas</em>) utilizan la opción <code>decimal</code> por defecto, mostrando una lista numérica decimal.</p>
+<h3 id="viñetas-css-para-las-listas" tabindex="-1"><a class="header-anchor" href="#viñetas-css-para-las-listas">Viñetas CSS para las listas</a></h3>
+<p>A través de la propiedad <code>list-style-type</code> que hemos mencionado podemos cambiar el tipo de viñeta que utilizaremos en una lista a nuestro antojo. Conviene conocer todos los tipos que existen, que aunque algunos son muy sencillos, tenemos muchos otros que dependen de los idiomas, sistemas numéricos u otros aspectos.</p>
+<script src="DemoList.cdn.js"></script>
+<style>
+  .type-container {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 10px 0;
+  }
+</style>
+<h4 id="listas-con-símbolos" tabindex="-1"><a class="header-anchor" href="#listas-con-símbolos">Listas con símbolos</a></h4>
+<p>Este primer grupo, especialmente indicado para listas sin orden <code>&lt;ul&gt;</code>, por ejemplo, donde se utilizará un símbolo como viñeta que no representa ningún orden específico:</p>
+<div class="type-container">
+  <demo-list type="disc"></demo-list>
+  <demo-list type="circle"></demo-list>
+  <demo-list type="square"></demo-list>
+  <demo-list type="disclosure-open"></demo-list>
+  <demo-list type="disclosure-closed"></demo-list>
+</div>
+<h4 id="listas-numéricas" tabindex="-1"><a class="header-anchor" href="#listas-numéricas">Listas numéricas</a></h4>
+<p>Si lo que queremos es establecer una lista numerada <code>&lt;ol&gt;</code>, los valores recomendados deberían ser uno de los siguientes:</p>
+<div class="type-container">
+  <demo-list type="decimal"></demo-list>
+  <demo-list type="decimal-leading-zero"></demo-list>
+  <demo-list type="lower-roman"></demo-list>
+  <demo-list type="upper-roman"></demo-list>
+  <demo-list type="armenian" alias="upper-armenian"></demo-list>
+  <demo-list type="lower-armenian"></demo-list>
+  <demo-list type="bengali"></demo-list>
+  <demo-list type="georgian"></demo-list>
+  <demo-list type="arabic-indic"></demo-list>
+  <demo-list type="cambodian" alias="khmer"></demo-list>
+  <demo-list type="cjk-decimal"></demo-list>
+  <demo-list type="devanagari"></demo-list>
+  <demo-list type="gujarati"></demo-list>
+  <demo-list type="gurmukhi"></demo-list>
+  <demo-list type="hebrew"></demo-list>
+  <demo-list type="kannada"></demo-list>
+  <demo-list type="lao"></demo-list>
+  <demo-list type="malayalam"></demo-list>
+  <demo-list type="mongolian"></demo-list>
+  <demo-list type="myanmar"></demo-list>
+  <demo-list type="oriya"></demo-list>
+  <demo-list type="persian"></demo-list>
+  <demo-list type="tamil"></demo-list>
+  <demo-list type="telugu"></demo-list>
+  <demo-list type="thai"></demo-list>
+  <demo-list type="tibetan"></demo-list>
+  <demo-list type="cjk-earthly-branch"></demo-list>
+  <demo-list type="cjk-earthly-stem"></demo-list>
+</div>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Ten en cuenta que en algunos navegadores o sistemas operativos puede que los apartados anteriores no se muestren correctamente, ya que los está generando a partir de la compatibilidad del navegador utilizado.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h4 id="listas-alfabéticas" tabindex="-1"><a class="header-anchor" href="#listas-alfabéticas">Listas alfabéticas</a></h4>
+<p>En el caso de querer utilizar una lista numerada <code>&lt;ol&gt;</code>, pero querer &quot;numerarla&quot; con letras, es posible con alguna de estas posibilidades:</p>
+<div class="type-container">
+  <demo-list type="lower-alpha" alias="lower-latin"></demo-list>
+  <demo-list type="upper-alpha" alias="upper-latin"></demo-list>
+  <demo-list type="lower-greek"></demo-list>
+  <demo-list type="hiragana"></demo-list>
+  <demo-list type="hiragana-iroha"></demo-list>
+  <demo-list type="katakana"></demo-list>
+  <demo-list type="katakana-iroha"></demo-list>
+</div>
+<h4 id="listas-complejas" tabindex="-1"><a class="header-anchor" href="#listas-complejas">Listas complejas</a></h4>
+<p>Dentro de las listas complejas podemos encontrar un primer grupo japonés, un segundo grupo coreano y un tercer grupo chino:</p>
+<div class="type-container">
+  <demo-list type="japanese-informal"></demo-list>
+  <demo-list type="japanese-formal"></demo-list>
+  <demo-list type="korean-hangul-formal"></demo-list>
+  <demo-list type="korean-hangul-informal"></demo-list>
+  <demo-list type="korean-hanja-formal"></demo-list>
+  <demo-list type="simp-chinese-informal"></demo-list>
+  <demo-list type="simp-chinese-formal"></demo-list>
+  <demo-list type="trad-chinese-informal"></demo-list>
+  <demo-list type="trad-chinese-formal"></demo-list>
+  <demo-list type="cjk-ideographic"></demo-list>
+</div>
+<h3 id="el-pseudoelemento-marker" tabindex="-1"><a class="header-anchor" href="#el-pseudoelemento-marker">El pseudoelemento ::marker</a></h3>
+<p>Al utilizar listas, puedes utilizar el pseudoelemento <code>::marker</code> para hacer referencia a la viñeta en cuestión. De esta forma, podrás cambiar los estilos de dicha viñeta o retocarlos. Observa el siguiente ejemplo:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">ul</span> <span class="token punctuation">{</span>
+  <span class="token property">list-style-type</span><span class="token punctuation">:</span> upper-roman<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">li::marker</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p>Ten en cuenta que no es posible utilizar cualquier propiedad en este pseudoelemento, y solo es posible utilizar algunas propiedades como <code>color</code>, <code>content</code> u otras.</p>
+</blockquote>
+<h3 id="atajo-la-propiedad-list-style" tabindex="-1"><a class="header-anchor" href="#atajo-la-propiedad-list-style">Atajo: La propiedad list-style</a></h3>
+<p>Como en la mayoría de propiedades de CSS, existe una propiedad &quot;shorthand&quot; de atajo que nos permite indicar los valores anteriores en una sola propiedad. Para ello, utilizaremos <code>list-style</code> con el orden aconsejado siguiente:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">li</span> <span class="token punctuation">{</span>
+    <span class="token comment">/* list-style: &lt;type> &lt;position> &lt;image> */</span>
+    <span class="token property">list-style</span><span class="token punctuation">:</span> circle inside none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Observa que en primer lugar utilizaremos el valor de la propiedad <code>list-style-type</code>, en segundo lugar el valor de la propiedad <code>list-style-position</code> y en tercer y último lugar, el valor de la propiedad <code>list-style-image</code>. En caso de no necesitar indicar alguno de ellos, simplemente podemos omitirlo.</p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../tablas-css/index.htm" title="Tablas CSS">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Tablas CSS</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../contadores-css/index.htm" title="Contadores CSS">
+  <div>
+    <span>Contadores CSS</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/jhg2xas3av0" title="¡Carga MÁS RÁPIDO tu sitio web OPTIMIZANDO TIPOGRAFÍAS!">
+  <img loading="lazy" src="../../../vi/jhg2xas3av0/mqdefault.jpg" alt="¡Carga MÁS RÁPIDO tu sitio web OPTIMIZANDO TIPOGRAFÍAS!">
+</a><a href="https://youtu.be/Wou2koTiIyU" title="Grid CSS: Centrar, distribuir y alinear elementos">
+  <img loading="lazy" src="../../../vi/Wou2koTiIyU/mqdefault.jpg" alt="Grid CSS: Centrar, distribuir y alinear elementos">
+</a><a href="https://youtu.be/hju7SXmiK7Y" title="Cómo crear SOMBRAS DE TEXTO (text-shadow)">
+  <img loading="lazy" src="../../../vi/hju7SXmiK7Y/mqdefault.jpg" alt="Cómo crear SOMBRAS DE TEXTO (text-shadow)">
+</a><a href="https://youtu.be/9jea2qDdw7Y" title="Cómo crear SOMBRAS IDÉNTICAS (drop-shadow)">
+  <img loading="lazy" src="../../../vi/9jea2qDdw7Y/mqdefault.jpg" alt="Cómo crear SOMBRAS IDÉNTICAS (drop-shadow)">
+</a><a href="https://youtu.be/1TbS60Fu-_M" title="Variables CSS NATIVAS: ¿Qué son y cómo funcionan?">
+  <img loading="lazy" src="../../../vi/1TbS60Fu-_M/mqdefault.jpg" alt="Variables CSS NATIVAS: ¿Qué son y cómo funcionan?">
+</a><a href="https://youtu.be/FWDBGZQPzXk" title="Cómo crear GRADIENTES REPETIDOS en CSS">
+  <img loading="lazy" src="../../../vi/FWDBGZQPzXk/mqdefault.jpg" alt="Cómo crear GRADIENTES REPETIDOS en CSS">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

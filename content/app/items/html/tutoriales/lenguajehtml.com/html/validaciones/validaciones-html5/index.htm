@@ -1,0 +1,476 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e44f26">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Validaciones básicas con HTML5 - HTML en español - Lenguaje HTML</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="HTML tiene varios atributos especiales para campos de entrada de datos que permiten restrigir y validas la información proporcionada por el usuario">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Validaciones básicas con HTML5 - HTML en español">
+  <meta property="og:image" content="https://lenguajehtml.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="HTML tiene varios atributos especiales para campos de entrada de datos que permiten restrigir y validas la información proporcionada por el usuario">
+  <meta property="og:url" content="https://lenguajehtml.com/html/validaciones/validaciones-html5/">
+  <meta property="twitter:url" content="https://lenguajehtml.com/html/validaciones/validaciones-html5/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Validaciones básicas con HTML5 - HTML en español">
+  <meta property="twitter:description" content="HTML tiene varios atributos especiales para campos de entrada de datos que permiten restrigir y validas la información proporcionada por el usuario">
+  <meta property="twitter:image" content="https://lenguajehtml.com/large-summary.jpg">
+
+  </head>
+
+<body class="html" style="--logo-color: #e44f26"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="/">
+  <svg><use href="../../../assets/logos.svg#html"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeHTML.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/html.jpg')">
+    <h1><a href="index.htm">Validaciones básicas con HTML5</a></h1><h2 class="typewriter">Atributos de validación de HTML</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../que-son-validaciones/index.htm">¿Qué son las validaciones?</a>
+    <a class="current" href="index.htm">Validaciones básicas con HTML5</a>
+    <a href="../atributo-pattern/index.htm">El artibuto pattern (RegExp)</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Tradicionalmente, la validación de un formulario se ha hecho siempre en Javascript, sin embargo, HTML5 introduce unos nuevos <strong>atributos</strong> para formularios que permiten realizar la <strong>validación del formulario directamente en HTML5</strong>, sin necesidad de recurrir a Javascript. El caso ideal sería aplicar una capa de validación HTML5, y si se desea algo adicional o más potente, recurrir a Javascript.</p>
+<p>En muchos de los campos de entrada de datos de nuestro formulario, se pueden utilizar ciertos <strong>atributos HTML5</strong> para realizar validaciones básicas. Algunos de estos atributos ya lo hemos visto en apartados anteriores, sin embargo, vamos a comentarlos uno por uno:</p>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Puede actuar sobre...</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>maxlength</code></td>
+<td>Campos de texto</td>
+<td>No permite escribir textos superiores a un cierto número de carácteres.</td>
+</tr>
+<tr>
+<td><code>minlength</code></td>
+<td>Campos de texto</td>
+<td>Establece la longitud mínima del texto requerida.</td>
+</tr>
+<tr>
+<td><code>min</code></td>
+<td>Campos numéricos</td>
+<td>Establece el número mínimo permitido.</td>
+</tr>
+<tr>
+<td></td>
+<td>Campos de fecha</td>
+<td>Establece la fecha/hora mínima permitida.</td>
+</tr>
+<tr>
+<td><code>max</code></td>
+<td>Campos numéricos</td>
+<td>Establece el número máximo permitido.</td>
+</tr>
+<tr>
+<td></td>
+<td>Campos de fecha</td>
+<td>Establece la fecha/hora máxima permitida.</td>
+</tr>
+<tr>
+<td><code>step</code></td>
+<td>Campos numéricos</td>
+<td>Establece el salto de números permitido. Por defecto, <code>1</code>.</td>
+</tr>
+<tr>
+<td></td>
+<td>Campos de fecha</td>
+<td>Establece el salto de días/seg permitido. Por defecto, <code>1</code>.</td>
+</tr>
+<tr>
+<td><code>required</code></td>
+<td>Campos en general</td>
+<td>Campo obligatorio. Se debe rellenar para enviar formulario.</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td>Campos en general</td>
+<td>Campo desactivado. No se puede modificar. No se envía.</td>
+</tr>
+<tr>
+<td><code>readonly</code></td>
+<td>Campos en general</td>
+<td>Campo de sólo lectura. No se puede modificar. Se envía.</td>
+</tr>
+</tbody>
+</table>
+<p>Estos son los atributos principales de validación. Para entender bien cuando un campo pasa la validación y cuando no, vamos añadir unos estilos CSS a nuestra página:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">:is(input, textarea):invalid</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">:is(input, textarea):valid</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Estos estilos harán que si un campo <code>&lt;input&gt;</code> o <code>&lt;textarea&gt;</code> de un formulario no pasa la validación, aparezca en <strong>rojo</strong>. En caso contrario, si pasa la validación, aparecerá en <strong>verde</strong>.</p>
+<h3 id="los-atributos-minlength-y-maxlength" tabindex="-1"><a class="header-anchor" href="#los-atributos-minlength-y-maxlength">Los atributos <code>minlength</code> y <code>maxlength</code></a></h3>
+<p>El atributo <code>minlength</code> y el atributo <code>maxlength</code> son atributos para restringir la longitud de texto escriba en un campo de entrada de texto. Puede utilizarse tanto en elementos <code>&lt;input&gt;</code> de tipo <code>text</code>, <code>search</code>, <code>url</code>, <code>tel</code>, <code>email</code>, <code>password</code>, como en elementos <code>&lt;textarea&gt;</code>.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  Usuario:
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Por ejemplo, Juan<span class="token punctuation">"</span></span>
+          <span class="token attr-name">minlength</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>5<span class="token punctuation">"</span></span> <span class="token attr-name">maxlength</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>40<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  Password:
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Contraseña<span class="token punctuation">"</span></span>
+          <span class="token attr-name">minlength</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>11<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>Este ejemplo plantea dos validaciones de tamaño en los campos <code>&lt;input&gt;</code>. Si intentamos escribir más carácteres de los permitidos, comprobaremos que el navegador bloquea y no deja seguir escribiendo:</p>
+<ul>
+<li>El usuario debe tener entre <code>5</code> y <code>40</code> carácteres.</li>
+<li>El password debe tener <code>11</code> carácteres como mínimo.</li>
+</ul>
+<h3 id="los-atributos-min-y-max" tabindex="-1"><a class="header-anchor" href="#los-atributos-min-y-max">Los atributos <code>min</code> y <code>max</code></a></h3>
+<p>El atributo <code>min</code> y <code>max</code> (<em>no confundir con los anteriores</em>) sirven para establecer un valor mínimo o máximo permitido en campos de entrada <code>&lt;input&gt;</code> de datos numéricos (<em>número o rango</em>) o de fecha (<em>fecha, mes, semana, hora o fecha-hora</em>):</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  Edad:
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>number<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>age<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>25<span class="token punctuation">"</span></span>
+          <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>18<span class="token punctuation">"</span></span> <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>60<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  Fecha de inicio:
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>date<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>date<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2024-07-22<span class="token punctuation">"</span></span>
+          <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2024-01-01<span class="token punctuation">"</span></span> <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2024-12-01<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>En este ejemplo planteamos dos campos <code>&lt;input&gt;</code> que tienen validaciones con los atributos <code>min</code> y <code>max</code>:</p>
+<ul>
+<li>La edad debe estar entre <code>18</code> y <code>60</code>. Se puede escribir otro valor, pero no pasará la validación (<em>en rojo</em>).</li>
+<li>Si usamos las flechitas del <code>&lt;input&gt;</code> solo nos permitirá movernos entre el rango permitido.</li>
+<li>La fecha de inicio debe estar entre <code>01/01/2024</code> y <code>01/12/2024</code>. otro valor, no pasará la validación.</li>
+<li>Los valores permitidos son siempre del año <code>2024</code>, por lo que ese campo se bloqueará (<em>en gris</em>).</li>
+<li>Si usamos el widget del calendario, nos bloquea en gris las opciones no permitidas por validación.</li>
+</ul>
+<h3 id="el-atributo-step" tabindex="-1"><a class="header-anchor" href="#el-atributo-step">El atributo <code>step</code></a></h3>
+<p>De la misma forma que en el apartado anterior, el atributo <code>step</code> nos permite realizar validaciones en los campos numéricos o de fechas. En esta ocasión, el atributo <code>step</code> trabaja conjuntamente con los atributos <code>min</code> y <code>max</code> y establece el incremento o decremento que es posible permitir.</p>
+<p>Así pues, por ejemplo, si en un valor numérico tenemos un <code>min</code> de <code>5</code> y un <code>max</code> de <code>10</code>...</p>
+<ul>
+<li>Con un <code>step</code> a <code>1</code> se permitirán los valores <code>5</code>, <code>6</code>, <code>7</code>, <code>8</code>, <code>9</code> y <code>10</code>.</li>
+<li>Con un <code>step</code> a <code>2</code> se permitirán los valores <code>5</code>, <code>7</code>, <code>9</code>.</li>
+<li>Con un <code>step</code> a <code>3</code> se permitirán los valores <code>5</code> y <code>8</code>.</li>
+<li>Con un <code>step</code> a <code>4</code> se permitirán los valores <code>5</code> y <code>9</code>.</li>
+<li>Con un <code>step</code> a <code>5</code> se permitirán los valores <code>5</code> y <code>10</code>.</li>
+<li>Valores <code>step</code> superiores a <code>5</code> sólo permitirá el valor inicial, es decir, <code>5</code>.</li>
+</ul>
+<p>De la misma forma, podemos utilizar el atributo <code>step</code> para fechas:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  Número:
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>number<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>number<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>5<span class="token punctuation">"</span></span>
+          <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>5<span class="token punctuation">"</span></span> <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>10<span class="token punctuation">"</span></span> <span class="token attr-name">step</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  Fecha de inicio:
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>date<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>date<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2024-07-22<span class="token punctuation">"</span></span>
+          <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2024-01-01<span class="token punctuation">"</span></span> <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2024-12-01<span class="token punctuation">"</span></span> <span class="token attr-name">step</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>Observa que para los campos de fecha, el valor <code>step</code> representa <strong>días</strong>, por lo que si indicamos un <code>step</code> a <code>2</code>, al pulsar sobre el calendario, observaremos que nos muestra un calendario con los días pares bloqueados en gris (<em>no pasan la validación</em>).</p>
+<h3 id="el-atributo-required" tabindex="-1"><a class="header-anchor" href="#el-atributo-required">El atributo <code>required</code></a></h3>
+<p>Por defecto, los campos de entrada de datos de un formulario son opcionales. Por esa razón, aunque tengamos un campo de datos vacío, nos mostrará el color de fondo verde.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  Nombre:
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span> <span class="token attr-name">required</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>Sin embargo, si le añadimos el atributo <code>required</code>, estaremos indicando que ese campo de entrada de datos es obligatorio, y no de no rellenarse, no cumpliría la validación y por lo tanto el navegador no dejará enviar el formulario.</p>
+<blockquote>
+<p>El atributo <code>required</code> se puede utilizar prácticamente con cualquier campo de entrada de datos, salvo <code>&lt;input&gt;</code> de tipo <code>hidden</code>, <code>color</code>, <code>range</code> o los botones de reseteo o envío de formulario.</p>
+</blockquote>
+<h3 id="el-atributo-disabled" tabindex="-1"><a class="header-anchor" href="#el-atributo-disabled">El atributo <code>disabled</code></a></h3>
+<p>El atributo <code>disabled</code> nos permite desactivar un campo de entrada o elemento HTML de modo que el usuario no puede interactuar con él:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  Nombre:
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>Observa que los dos campos <code>&lt;input&gt;</code> tienen el atributo <code>disabled</code> indicado. Por lo tanto, la caja de texto nos aparecerá en gris, desactivada, sin posibilidad de que el usuario introduzca información. Por otro lado, el botón <code>submit</code> nos aparecerá también desactivado, de modo que es imposible pulsar en él para enviar el formulario.</p>
+<blockquote>
+<blockquote>
+<p>Si tenemos un botón de envío de formulario activo, pero alguno de los campos del formulario tiene el atributo <code>disabled</code>, el navegador enviará los datos del formulario, pero no del elemento desactivado.</p>
+</blockquote>
+</blockquote>
+<h3 id="el-atributo-readonly" tabindex="-1"><a class="header-anchor" href="#el-atributo-readonly">El atributo <code>readonly</code></a></h3>
+<p>Aunque parecen muy similares, el atributo <code>readonly</code> tiene ciertas diferencias con el atributo <code>disabled</code>. En principio y aparentemente, el atributo <code>readonly</code> también desactiva los campos de entrada a los que se le aplica. Sin embargo, hay una pequeña diferencia respecto al anterior:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  Nombre:
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span> <span class="token attr-name">readonly</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>En este caso, el <code>&lt;input type=&quot;text&quot;&gt;</code> nos aparecerá como un campo normal, sin embargo, no podremos modificar su contenido (<em>es de solo lectura</em>). Se puede interpretar que funciona exactamente igual que el <code>disabled</code>, pero tiene una diferencia principal: mientras que los campos <strong>desactivados</strong> y los campos de <strong>sólo lectura</strong> no permiten modificar su contenido, sólo el campo <strong>desactivado</strong> no se envía en el formulario. En el caso de un <strong>campo de sólo lectura</strong>, siempre se enviará al pulsar el botón de envío de formulario.</p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../que-son-validaciones/index.htm" title="¿Qué son las validaciones?">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>¿Qué son las validaciones?</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../atributo-pattern/index.htm" title="El artibuto pattern (RegExp)">
+  <div>
+    <span>El artibuto pattern (RegExp)</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/cQIlwKSAyAc" title="Crear packs de iconos con sprites SVG">
+  <img loading="lazy" src="../../../vi/cQIlwKSAyAc/mqdefault.jpg" alt="Crear packs de iconos con sprites SVG">
+</a><a href="https://youtu.be/lDPJQyXow_g" title="Consejos y buenas prácticas (VII): SEO">
+  <img loading="lazy" src="../../../vi/lDPJQyXow_g/mqdefault.jpg" alt="Consejos y buenas prácticas (VII): SEO">
+</a><a href="https://youtu.be/7oPdEM0VXOs" title="Consejos y buenas prácticas (VI): Performance">
+  <img loading="lazy" src="../../../vi/7oPdEM0VXOs/mqdefault.jpg" alt="Consejos y buenas prácticas (VI): Performance">
+</a><a href="https://youtu.be/RW5erp81FMY" title="Consejos y buenas prácticas (I): HEAD">
+  <img loading="lazy" src="../../../vi/RW5erp81FMY/mqdefault.jpg" alt="Consejos y buenas prácticas (I): HEAD">
+</a><a href="https://youtu.be/LAHR5gl07ks" title="Consejos y buenas prácticas (V): Accesibilidad">
+  <img loading="lazy" src="../../../vi/LAHR5gl07ks/mqdefault.jpg" alt="Consejos y buenas prácticas (V): Accesibilidad">
+</a><a href="https://youtu.be/SVomAFpMw30" title="Consejos y buenas prácticas (II): HTML + WebFonts">
+  <img loading="lazy" src="../../../vi/SVomAFpMw30/mqdefault.jpg" alt="Consejos y buenas prácticas (II): HTML + WebFonts">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-5', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

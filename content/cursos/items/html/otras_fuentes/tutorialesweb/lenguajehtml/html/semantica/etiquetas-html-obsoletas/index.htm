@@ -1,0 +1,454 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e44f26">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Etiquetas HTML obsoletas - HTML en español - Lenguaje HTML</title>
+  <link rel="preload" href="../../../critical.css" as="style">
+  <link rel="preload" href="../../../assets/fonts/blinker-vf.woff2" as="font" crossorigin="">
+  <link rel="preload" href="../../../assets/fonts/scope-one-400.woff2" as="font" crossorigin="">
+  <meta name="description" content="En HTML5 hay varias etiquetas HTML que han dejado de utilizarse como &lt;center&gt; o &lt;font&gt;. Conócelas todas.">
+  <link rel="stylesheet" href="../../../critical.css">
+  <link rel="stylesheet" href="../../../theme.css">
+  <script type="module" src="../../../main.js"></script>
+  <link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Etiquetas HTML obsoletas - HTML en español">
+  <meta property="og:image" content="https://lenguajehtml.com/html/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="En HTML5 hay varias etiquetas HTML que han dejado de utilizarse como &lt;center&gt; o &lt;font&gt;. Conócelas todas.">
+  <meta property="og:url" content="https://lenguajehtml.com/html/semantica/etiquetas-html-obsoletas/">
+  <meta property="twitter:url" content="https://lenguajehtml.com/html/semantica/etiquetas-html-obsoletas/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Etiquetas HTML obsoletas - HTML en español">
+  <meta property="twitter:description" content="En HTML5 hay varias etiquetas HTML que han dejado de utilizarse como &lt;center&gt; o &lt;font&gt;. Conócelas todas.">
+  <meta property="twitter:image:src" content="https://lenguajehtml.com/html/large-summary.jpg">
+</head>
+<body class="html post"><div class="page">
+    <div class="sidebar">
+      <div class="logo flex-center">
+  <a href="/">
+    <img width="42" height="42" src="../../../assets/logo.svg" alt="Logo">
+    Lenguaje HTML
+  </a>
+  <div class="icons" style="--icon-size: 32px; --icon-side-padding: 0.15em">
+    <a href="https://twitter.com/Manz" title="Twitter"><svg-icon type="social" name="twitter"></svg-icon></a>
+    <a href="https://twitch.tv/manzdev" title="Twitch"><svg-icon type="social" name="twitch"></svg-icon></a>
+    <a href="https://instagram.com/manz.dev" title="Instagram"><svg-icon type="social" name="instagram"></svg-icon></a>
+    <a href="https://youtube.com/ManzDev?sub_confirmation=1" title="YouTube"><svg-icon type="social" name="youtube"></svg-icon></a>
+    <a href="https://discord.manz.dev/" title="Servidor de Discord"><svg-icon type="social" name="discord"></svg-icon></a>
+  </div>
+  <span>Un sitio web de <a href="https://manz.dev/"><mark>Manz.dev</mark></a></span>
+</div>
+
+      <form class="search flex-center" action="https://www.google.com/search">
+  <label><span>Buscar:</span> <input type="search" name="q" placeholder="Buscar un tema (ej: flex, grid...)" autocomplete="off"></label>
+  <label><span>Sitio:</span> <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev"></label>
+  <div class="search-results"></div>
+</form>
+
+      
+
+<style>
+  sidebar-link {
+    --logo-image: url(../../logo.svg);
+  }
+</style>
+
+<div class="toc"><sidebar-link title="Volver al índice" href="../../index.htm" back="" direct=""></sidebar-link><sidebar-link href="../../cheatsheets/index.htm" title="HTML5 CheatSheet" direct=""></sidebar-link><sidebar-section title="Introducción a HTML5" href="../../introduccion/index.htm"><sidebar-link href="../../introduccion/que-es-html/index.htm" title="¿Qué es HTML?"></sidebar-link><sidebar-link href="../../introduccion/estructura-etiqueta-html/index.htm" title="Estructura de etiqueta HTML"></sidebar-link><sidebar-link href="../../introduccion/atributos-comunes-html/index.htm" title="Atributos comunes en HTML"></sidebar-link><sidebar-link href="../../introduccion/estructura-documento-html/index.htm" title="Estructura del documento HTML"></sidebar-link><sidebar-link href="../../introduccion/validacion-html/index.htm" title="Validación de errores HTML"></sidebar-link><sidebar-link href="../../introduccion/tabla-periodica-html5/index.htm" title="Tabla periódica de HTML5"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas semánticas" href="../index.htm"><sidebar-link href="index.htm" title="Etiquetas HTML obsoletas"></sidebar-link><sidebar-link href="../etiquetas-html-de-texto/index.htm" title="Etiquetas HTML de texto"></sidebar-link><sidebar-link href="../etiquetas-html-de-agrupacion/index.htm" title="Etiquetas HTML de agrupación"></sidebar-link><sidebar-link href="../enlaces-o-hipervinculos/index.htm" title="Enlaces o hipervínculos"></sidebar-link><sidebar-link href="../etiquetas-html-de-seccion/index.htm" title="Etiquetas HTML de sección"></sidebar-link><sidebar-link href="../etiquetas-html-de-tablas/index.htm" title="Etiquetas HTML de tablas"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas multimedia" href="../../multimedia/index.htm"><sidebar-link href="../../multimedia/etiquetas-html-de-imagenes/index.htm" title="Etiquetas HTML de imágenes"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-contenido-externo/index.htm" title="Etiquetas de contenido externo"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-video/index.htm" title="Etiquetas HTML de video"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-audio/index.htm" title="Etiquetas HTML de audio"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-subtitulos/index.htm" title="Etiquetas HTML de subtitulos"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de cabecera" href="../../cabecera/index.htm"><sidebar-link href="../../cabecera/etiquetas-html-de-relacion/index.htm" title="Etiquetas HTML de relación"></sidebar-link><sidebar-link href="../../cabecera/etiquetas-html-de-metadatos/index.htm" title="Etiquetas HTML de metadatos"></sidebar-link><sidebar-link href="../../cabecera/etiquetas-html-para-redes-sociales/index.htm" title="Etiquetas HTML de redes sociales"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de formularios" href="../../formularios/index.htm"><sidebar-link href="../../formularios/crear-un-formulario/index.htm" title="Creación de un formulario"></sidebar-link><sidebar-link href="../../formularios/controles-campos-de-texto/index.htm" title="Controles: Campos de texto"></sidebar-link><sidebar-link href="../../formularios/controles-campos-numericos/index.htm" title="Controles: Campos numéricos"></sidebar-link><sidebar-link href="../../formularios/controles-campos-fecha-hora/index.htm" title="Controles: Campos de fecha/hora"></sidebar-link><sidebar-link href="../../formularios/controles-casillas-o-botones/index.htm" title="Controles: Casillas o botones"></sidebar-link><sidebar-link href="../../formularios/controles-listas-de-seleccion/index.htm" title="Controles: Listas de selección"></sidebar-link><sidebar-link href="../../formularios/controles-seleccion-color/index.htm" title="Controles: Selección de color"></sidebar-link><sidebar-link href="../../formularios/controles-seleccion-archivos/index.htm" title="Controles: Selección de archivos"></sidebar-link><sidebar-link href="../../formularios/organizacion-de-campos/index.htm" title="Organización de campos"></sidebar-link><sidebar-link href="../../formularios/botones-de-envio-de-formulario/index.htm" title="Botones de envío de formularios"></sidebar-link><sidebar-link href="../../formularios/medidores-y-barras-de-progreso/index.htm" title="Medidores y barras de progreso"></sidebar-link><sidebar-link href="../../formularios/validaciones-html5/index.htm" title="Validaciones HTML5"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de scripting" href="../../scripting/index.htm"><sidebar-link href="../../scripting/etiquetas-html-interactivas/index.htm" title="Etiquetas HTML interactivas"></sidebar-link><sidebar-link href="../../scripting/etiquetas-html-scripts/index.htm" title="Etiquetas HTML de scripts"></sidebar-link><sidebar-link href="../../scripting/eventos-html/index.htm" title="Eventos en HTML"></sidebar-link></sidebar-section></div>
+
+      
+    </div>
+    <div class="contents">
+      <header class="mega">
+  <h1>Etiquetas HTML obsoletas</h1><h2>Etiquetas que no deben ser utilizadas hoy en día</h2></header>
+
+      <div class="content ">
+  <div class="breadcrumbs">
+  <a href="/">ATRÁS</a> <span>ᐳ</span> <a href="../../index.htm">html</a> <span>ᐳ</span> <a href="index.htm">Etiquetas HTML obsoletas</a>
+</div>
+<p>Con el paso y transición de versiones anteriores (<em>HTML4 o XHTML</em>) a <strong>HTML5</strong>, hay muchas etiquetas HTML que han sido marcadas como obsoletas y se recomienda dejar de utilizarlas cuanto antes. Es posible que algunas de ellas aún funcionen en navegadores actuales, pero llegará un momento que dejarán de ser soportadas por el navegador.</p>
+<p>Aquí tienen una lista de las <strong>etiquetas HTML obsoletas</strong> que no deberían utilizarse:</p>
+<h3 id="etiquetas-obsoletas" tabindex="-1">Etiquetas obsoletas</h3>
+<p>Las siguientes etiquetas ya no se utilizan en HTML5 y han sido marcadas como <strong>obsoletas</strong>. Se recomienda no utilizarlas o utilizar una de las <strong>alternativas propuestas</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Etiqueta obsoleta</th>
+<th>Descripción</th>
+<th>Alternativa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;applet&gt;</code></td>
+<td>Etiqueta para applets Java.</td>
+<td><code>&lt;embed&gt;</code>, <code>&lt;object&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;acronym&gt;</code></td>
+<td>Indica un acrónimo.</td>
+<td><code>&lt;acronym&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;bgsound&gt;</code></td>
+<td>Especifica un sonido de fondo.</td>
+<td><code>&lt;audio&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;dir&gt;</code></td>
+<td>Indica una lista de archivos o carpetas.</td>
+<td><code>&lt;ul&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;frame&gt;</code></td>
+<td>Define un marco específico.</td>
+<td><code>&lt;iframe&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;frameset&gt;</code></td>
+<td>Define un conjunto de marcos.</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>&lt;noframes&gt;</code></td>
+<td>Indica una alternativa si el navegador no soporta marcos.</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>&lt;hgroup&gt;</code></td>
+<td>Agrupa encabezados.</td>
+<td><code>&lt;header&gt;</code>, <code>&lt;div&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;isindex&gt;</code></td>
+<td>Campo para búscar en el documento.</td>
+<td><code>&lt;input&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;listing&gt;</code>, <code>&lt;xmp&gt;</code></td>
+<td>Fragmentos de código fuente.</td>
+<td><code>&lt;pre&gt;&lt;code&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;noembed&gt;</code></td>
+<td>Alternativa (fallback) para contenidos.</td>
+<td><code>&lt;object&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;strike&gt;</code></td>
+<td>Muestra un texto tachado.</td>
+<td><code>&lt;del&gt;</code>, <code>&lt;s&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;basefont&gt;</code></td>
+<td>Define una tipografía por defecto.</td>
+<td><a href="/css/propiedades/fuentes-y-tipografias">CSS: font-family</a></td>
+</tr>
+<tr>
+<td><code>&lt;big&gt;</code></td>
+<td>Aumenta el tamaño del texto.</td>
+<td><a href="/css/propiedades/fuentes-y-tipografias">CSS: font-size</a></td>
+</tr>
+<tr>
+<td><code>&lt;blink&gt;</code></td>
+<td>Muestra el texto de forma parpadeante.</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>&lt;center&gt;</code></td>
+<td>Centra el texto.</td>
+<td><a href="/css/propiedades/textos-y-alineaciones">CSS: text-align</a></td>
+</tr>
+<tr>
+<td><code>&lt;font&gt;</code></td>
+<td>Cambia la tipografía o sus características.</td>
+<td><a href="/css/propiedades/fuentes-y-tipografias">CSS: font-family</a></td>
+</tr>
+<tr>
+<td><code>&lt;marquee&gt;</code></td>
+<td>Muestra el texto moviéndose de un lado a otro.</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>&lt;multicol&gt;</code></td>
+<td>Columnas múltiples.</td>
+<td>CSS: columnas</td>
+</tr>
+<tr>
+<td><code>&lt;nobr&gt;</code></td>
+<td>Evita que un texto haga un salto de línea.</td>
+<td><a href="/css/propiedades/textos-y-alineaciones">CSS: white-space</a></td>
+</tr>
+<tr>
+<td><code>&lt;spacer&gt;</code></td>
+<td>Inserta un espacio horizontal.</td>
+<td><code>&amp;nbsp;</code></td>
+</tr>
+<tr>
+<td><code>&lt;tt&gt;</code></td>
+<td>Muestra el texto con una fuente monoespaciada.</td>
+<td><a href="/css/propiedades/fuentes-y-tipografias">CSS: font-family</a></td>
+</tr>
+<tr>
+<td><code>&lt;menu&gt;</code></td>
+<td>Crea menús de listados.</td>
+<td><code>&lt;ul&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="atributos-obsoletos" tabindex="-1">Atributos obsoletos</h3>
+<p>De la misma forma que ocurre con las etiquetas, existen una serie de atributos de ciertas etiquetas que han pasado a dejar de utilizarse. A continuación tienes una lista con algunos de dichos atributos:</p>
+<table>
+<thead>
+<tr>
+<th>Atributo obsoleto</th>
+<th>Pertenece a...</th>
+<th>Descripción</th>
+<th>Alternativa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>charset</code></td>
+<td><code>&lt;a&gt;</code>, <code>&lt;link&gt;</code></td>
+<td>Codificación del enlace.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>&lt;a&gt;</code>, <code>&lt;embed&gt;</code>,<br> <code>&lt;img&gt;</code>, <code>&lt;option&gt;</code></td>
+<td>Establece un ancla.</td>
+<td><code>id</code></td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td><code>&lt;script&gt;</code></td>
+<td>Indica el lenguaje utilizado.</td>
+<td><code>type</code></td>
+</tr>
+<tr>
+<td><code>link</code></td>
+<td><code>&lt;body&gt;</code></td>
+<td>Indica el color de los enlaces.</td>
+<td><a href="/css/selectores/pseudoclases">CSS: :link</a></td>
+</tr>
+<tr>
+<td><code>alink</code></td>
+<td><code>&lt;body&gt;</code></td>
+<td>Indica el color de los enlaces.</td>
+<td><a href="/css/selectores/pseudoclases">CSS: :active</a></td>
+</tr>
+<tr>
+<td><code>vlink</code></td>
+<td><code>&lt;body&gt;</code></td>
+<td>Indica el color de los enlaces.</td>
+<td><a href="/css/selectores/pseudoclases">CSS: :visited</a></td>
+</tr>
+<tr>
+<td><code>bgcolor</code></td>
+<td><code>&lt;body&gt;</code></td>
+<td>Indica el color de fondo de página.</td>
+<td><a href="/css/propiedades/fondos-css">CSS: background-color</a></td>
+</tr>
+<tr>
+<td><code>align</code>, <code>valign</code></td>
+<td><code>&lt;table&gt;</code></td>
+<td>Indica la alineación vertical/horizontal.</td>
+<td><a href="/css/propiedades/textos-y-alineaciones">CSS: alineaciones</a></td>
+</tr>
+<tr>
+<td><code>hspace</code>, <code>vspace</code></td>
+<td><code>&lt;table&gt;</code>, <code>&lt;iframe&gt;</code></td>
+<td>Indica espacios en tablas/marcos.</td>
+<td><a href="/css/propiedades/modelo-de-cajas">CSS: modelo de cajas</a></td>
+</tr>
+<tr>
+<td><code>allowtransparency</code></td>
+<td><code>&lt;iframe&gt;</code></td>
+<td>Permite transparencia.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>frameborder</code></td>
+<td><code>&lt;iframe&gt;</code></td>
+<td>Indica el borde de los marcos flotantes.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scrolling</code></td>
+<td><code>&lt;iframe&gt;</code></td>
+<td>Permite o no hacer scroll en un marco.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>align</code>, <code>border</code></td>
+<td><code>&lt;img&gt;</code>, <code>&lt;table&gt;</code></td>
+<td>Indica que alineación o borde utilizar.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>cellpadding</code></td>
+<td><code>&lt;table&gt;</code></td>
+<td>Indica espacios entre celdas de tabla.</td>
+<td><a href="/css/propiedades/tablas-css">CSS: tablas</a></td>
+</tr>
+<tr>
+<td><code>cellspacing</code></td>
+<td><code>&lt;table&gt;</code></td>
+<td>Indica espacios entre celdas de tabla.</td>
+<td><a href="/css/propiedades/tablas-css">CSS: tablas</a></td>
+</tr>
+<tr>
+<td><code>nowrap</code></td>
+<td><code>&lt;td&gt;</code>, <code>&lt;th&gt;</code></td>
+<td>Establece fijo el tamaño de una celda.</td>
+<td><a href="/css/propiedades/modelo-de-cajas#dimensiones">CSS: tamaños</a></td>
+</tr>
+</tbody>
+</table>
+
+    <nav class="prev-next"><a class="bt prev" href="../../introduccion/tabla-periodica-html5/index.htm" title="Tabla periódica de HTML5">
+    <span class="data">
+      <span>Tabla periódica de HTML5</span>
+      <small>Capítulo anterior</small>
+    </span>
+  </a><a class="bt next" href="../etiquetas-html-de-texto/index.htm" title="Etiquetas HTML de texto">
+    <span class="icon">
+      <svg-icon name="arrow-right"></svg-icon>
+    </span>
+    <span class="data">
+      <span>Etiquetas HTML de texto</span>
+      <small>Capítulo siguiente</small>
+    </span>
+  </a></nav>
+
+    <script async="" src="../../../pagead/js/f.txt"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center; margin:auto; margin-top: 2em" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+      <div class="related">
+
+  <div class="author">
+    <div class="author-wrapper">
+      <img loading="lazy" class="circle" src="../../../assets/manz.webp" alt="Manz">
+      <div>
+        <p>Docente, divulgador informático y <a href="https://manz.dev/">streamer de código</a>. Amante de <strong>CSS</strong>, <strong>Javascript</strong>
+          y de la plataforma web. Ha trabajado como profesor en la Universidad de La Laguna y es director del curso de
+          Programación web FullStack y FrontEnd de EOI desde Tenerife. En sus ratos libres, busca GIF de gatos en Internet.</p>
+        <p class="twitch-badge">
+          <a href="https://twitch.tv/ManzDev">
+            <svg class="twitch" viewbox="0 0 1024 1024">
+              <path style="fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1;" d="m262.451 12.904-178.26 178.26v641.672h213.905v178.26l178.26-178.26h142.576L939.809 512V12.904H262.45zm35.645 71.287h570.383v392.164L725.904 618.932H583.287L458.514 743.705V618.932H298.096V84.192zM494.158 208.51v216.36h71.328V208.51h-71.328zm196 0v216.36h71.328V208.51h-71.328z"></path>
+            </svg>
+            Sígueme en Twitch
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="comentarios">
+    <script async="" src="../../../count.js" id="dsq-count-scr"></script>
+<script>
+var disqus_config = function () {
+  this.page.path = location.pathname.endsWith("/") ? location.pathname.substring(0, location.pathname.length - 1) : location.pathname;
+  this.page.url = 'https://lenguajehtml.com' + this.page.path;
+  this.page.identifier = this.page.url;
+};
+document.addEventListener('DOMContentLoaded', function() {
+  const coms = document.querySelector('#comentarios');
+  a = coms.querySelector('#disqus_button');
+  a.dataset.disqusIdentifier = 'https://lenguajehtml.com' + (location.pathname.endsWith("/") ? location.pathname.substring(0, location.pathname.length - 1) : location.pathname);
+  a.addEventListener('click', function() {
+    const div = document.createElement('div');
+    div.id = 'disqus_thread';
+    coms.appendChild(div);
+    const d = document, s = d.createElement('script');
+    s.src = '//lenguajehtml.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    this.remove();
+  });
+});
+</script>
+
+    <a class="disqus-comment-count" id="disqus_button" href="#disqus_thread" data-disqus-identifier="https://lenguajehtml.com/html/semantica/etiquetas-html-obsoletas/">Leer comentarios</a>
+    <a class="discord" href="https://discord.manz.dev/">¡Accede a Discord y cuéntanos!</a>
+  </div>
+
+</div>
+
+    </div>
+    <div class="aside">
+      <div class="aside">
+
+  <div class="aside-top">
+    <a href="https://manz.dev/digitalocean" title="Empieza en DigitalOcean con 100$">
+      <img width="240" height="120" src="../../../assets/digital-ocean.png" alt="DigitalOcean">
+    </a>
+  </div><script type="module">
+  const ANCHOR_ICON = /* svg */`
+    <svg class="anchor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 205 205" width="36" height="36">
+      <path d="m140 129 16 16s-20 30-42 30V71c14-5 25-18 25-34 0-20-17-36-37-36-21 0-38 16-38 36 0 15 11 29 25
+              34v104c-26-2-42-27-42-27l18-18-65-9 10 63 17-17c15 12 32 37 73 37 51-1 63-29 76-40l19 19 10-64-65
+              10zM83 36c0-10 8-18 19-18s19 8 19 18c0 11-9 19-19 19s-19-8-19-19z"/>
+    </svg>`;
+  // Add inner links to sidebar menu
+  export const addInnerLinks = () => {
+    const summary = document.querySelector(".aside .summary .links");
+    const headers = Array.from(document.querySelectorAll(".content h3, .content h4"));
+    const tocLinks = [];
+    headers.forEach((e) => {
+      const link = `${location.origin}${location.pathname}#${e.id}`;
+      e.innerHTML = `<a class="permalink" href="${link}">${e.textContent} ${ANCHOR_ICON}</a>`;
+      const headerType = e.nodeName.toLowerCase();
+      const textContent = headerType === "h4" ? e.textContent.replace("La propiedad ", "").replace("La función ", "") : e.textContent;
+      tocLinks.push(`<a class="${headerType}" href="#${e.id}">${textContent}</a>`);
+    });
+    summary.insertAdjacentHTML("beforeEnd", tocLinks.join("\n"));
+  };
+
+  addInnerLinks();
+</script>
+
+<div class="summary">
+  <div class="table">Tabla de contenidos</div>
+  <div class="links"></div>
+</div>
+</div>
+
+    </div>
+  </div><footer class="main">
+  <div class="square">
+    <a href="/"><h2>Lenguaje HTML</h2></a>
+    <div class="icons">
+      <a href="https://twitter.com/Manz" title="Twitter"><svg-icon type="social" name="twitter"></svg-icon></a>
+      <a href="https://twitch.tv/manzdev" title="Twitch"><svg-icon type="social" name="twitch"></svg-icon></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg-icon type="social" name="instagram"></svg-icon></a>
+      <a href="https://youtube.com/ManzDev?sub_confirmation=1" title="YouTube"><svg-icon type="social" name="youtube"></svg-icon></a>
+      <a href="https://discord.manz.dev/" title="Servidor de Discord"><svg-icon type="social" name="discord"></svg-icon></a>
+      <a href="https://github.com/ManzDev" title="GitHub"><svg-icon type="social" name="github"></svg-icon></a>
+      <a href="https://codepen.io/Manz" title="Codepen"><svg-icon type="social" name="codepen"></svg-icon></a>
+      <a href="https://www.linkedin.com/in/joseromanhdez/" title="Linkedin"><svg-icon type="social" name="linkedin"></svg-icon></a>
+    </div>
+    <p>Documentación sobre HTML5 y las mejores herramientas y recursos para aprender a utilizar el lenguaje de marcado HTML.</p>
+    <p id="footer">Creado y mantenido por <a href="https://twitter.com/Manz">@Manz</a> con <span title="<3">❤</span></p></div>
+</footer>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-5', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+</body>
+</html>

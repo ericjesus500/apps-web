@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>align-content</title>
+	<style>
+		*{
+			box-sizing: border-box;			
+		}
+
+		body{			
+			text-align: center;
+			font-family: Arial, serif;
+		}
+
+		h1, h2{
+			padding: 30px 0;
+		}
+
+		.content{
+			width: 90%;
+			height: 500px;
+			margin: 10px auto;
+			border: 2px solid #C0C0C0AA;			
+		}
+
+		.box{
+			width: 50%;
+			height: 50px;
+		}
+
+		.box:nth-child(1){
+			background-color: skyblue;
+		}
+
+		.box:nth-child(2){
+			background-color: orange;
+		}
+
+		.box:nth-child(3){
+			background-color: #b21016;
+		}
+
+		.d-flex{
+			display: flex;
+		}
+
+		.f-wrap{
+			flex-wrap: wrap;
+		}
+
+		.ac-start{
+			align-content: start;
+		}
+
+		.ac-end{
+			align-content: end;
+		}
+
+		.ac-center{
+			align-content: center;
+		}
+
+		.ac-flex-start{
+			align-content: flex-start;
+		}
+
+		.ac-flex-end{
+			align-content: flex-end;
+		}
+
+		.ac-space-between{
+			align-content: space-between;
+		}
+
+		.ac-space-around{
+			align-content: space-around;
+		}
+
+		.ac-space-evenly{
+			align-content: space-evenly;
+		}
+
+		.ac-stretch{
+			align-content: stretch;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>align-content</h1>
+
+	<h2>align-content: start</h2>
+	<div class="content d-flex f-wrap ac-start">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>		
+	</div>
+
+	<h2>align-content: end</h2>
+	<div class="content d-flex f-wrap ac-end">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>		
+	</div>
+
+	<h2>align-content: center</h2>
+	<div class="content d-flex f-wrap ac-center">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>		
+	</div>
+
+	<h2>align-content: flex-start</h2>
+	<div class="content d-flex f-wrap ac-flex-start">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>		
+	</div>
+
+	<h2>align-content: flex-end</h2>
+	<div class="content d-flex f-wrap ac-flex-end">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>		
+	</div>
+
+	<h2>align-content: space-between</h2>
+	<div class="content d-flex f-wrap ac-space-between">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>		
+	</div>
+
+	<h2>align-content: space-around</h2>
+	<div class="content d-flex f-wrap ac-space-around">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>		
+	</div>
+
+	<h2>align-content: space-evenly</h2>
+	<div class="content d-flex f-wrap ac-space-evenly">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>		
+	</div>
+
+	<h2>align-content: stretch</h2>
+	<div class="content d-flex f-wrap ac-stretch">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>		
+	</div>
+
+</body>
+</html>

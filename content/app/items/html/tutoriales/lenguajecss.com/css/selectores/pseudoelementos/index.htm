@@ -1,0 +1,572 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Pseudoelementos CSS - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Los pseudoelementos CSS permiten aplicar estilos que añaden elementos (o estilos) que realmente no existen originalmente en el documento HTML.">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Pseudoelementos CSS - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/css/selectores/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Los pseudoelementos CSS permiten aplicar estilos que añaden elementos (o estilos) que realmente no existen originalmente en el documento HTML.">
+  <meta property="og:url" content="https://lenguajecss.com/css/selectores/pseudoelementos/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/selectores/pseudoelementos/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Pseudoelementos CSS - CSS en español">
+  <meta property="twitter:description" content="Los pseudoelementos CSS permiten aplicar estilos que añaden elementos (o estilos) que realmente no existen originalmente en el documento HTML.">
+  <meta property="twitter:image" content="https://lenguajecss.com/css/selectores/large-summary.jpg">
+
+  </head>
+
+<body class="css" style="--logo-color: #1e7bbf"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/css.jpg')">
+    <h1><a href="index.htm">Pseudoelementos CSS</a></h1><h2 class="typewriter">Formas de seleccionar aspectos inexistentes en el HTML</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../pseudoclases-formularios/index.htm">Pseudoclases de formularios</a>
+    <a class="current" href="index.htm">Pseudoelementos CSS</a>
+    <a href="../../reglas-css/que-son-reglas-css/index.htm">¿Qué son las reglas CSS?</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Hasta ahora, hemos visto selectores básicos, atributos, combinadores y pseudoclases. Sin embargo, existe una última categoría, un poco más extraña y fuera de lo común, pero que en muchos casos nos puede resultar bastante interesante para dar estilo a ciertos detalles.</p>
+<h3 id="qué-es-un-pseudoelemento" tabindex="-1"><a class="header-anchor" href="#qué-es-un-pseudoelemento">¿Qué es un Pseudoelemento?</a></h3>
+<p>Los <strong>pseudoelementos</strong> son una característica de CSS que permite hacer referencias a «comportamientos virtuales no tangibles», dicho de otra forma, seleccionar y dar estilo a elementos que no existen en el HTML, o que no son un simple elemento en sí.</p>
+<p>La sintaxis de los pseudoelementos está precedida de <strong>dos puntos dobles</strong> (<code>::</code>) para diferenciarlos de las pseudoclases, las cuales sólo tienen <strong>dos puntos</strong> (<code>:</code>). No obstante, este cambio surgió posteriormente, por lo que aún hoy en día es frecuente ver fragmentos de código con pseudoelementos con la sintaxis de pseudoclase con <strong>un solo par de puntos</strong> <code>:</code>.</p>
+<p><img src="sintaxis-pseudoelementos.png" alt="Sintaxis avanzada" width="1017" height="283" loading="lazy"></p>
+<h3 id="contenido-generado" tabindex="-1"><a class="header-anchor" href="#contenido-generado">Contenido generado</a></h3>
+<p>Dentro de la categoría de los <strong>pseudoelementos CSS</strong>, como punto central, y quizás la más conocida, se encuentra la propiedad <code>content</code>. Esta propiedad se utiliza en selectores que incluyen los pseudoelementos <code>::before</code> o <code>::after</code> (<em>que explicaremos un poco más adelante</em>), y su objetivo es indicar que vamos a crear contenido antes o después del elemento indicado en cuestión.</p>
+<p>Veamos un pequeño resumen de los elementos que participan en esta categoría:</p>
+<table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>content</code></td>
+<td>Propiedad para generar contenido. Sólo usable en <code>::before</code> o <code>::after</code>.</td>
+</tr>
+<tr>
+<td><code>::before</code></td>
+<td>Aplica los estilos <strong>antes</strong> del elemento indicado.</td>
+</tr>
+<tr>
+<td><code>::after</code></td>
+<td>Aplica los estilos <strong>después</strong> del elemento indicado.</td>
+</tr>
+<tr>
+<td><code>attr()</code></td>
+<td>Función que hace referencia al atributo HTML indicado.</td>
+</tr>
+</tbody>
+</table>
+<p>Vamos a explicar como funciona cada uno de ellos.</p>
+<h4 id="propiedad-content" tabindex="-1"><a class="header-anchor" href="#propiedad-content">Propiedad content</a></h4>
+<p>La propiedad <code>content</code> admite parámetros de diverso tipo, incluso concatenando información mediante espacios. Podemos utilizar varios tipos de contenido:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><badge-type class="string"></badge-type> <code>&quot;...&quot;</code></td>
+<td>Añade el contenido de texto indicado.</td>
+<td><code>content: &quot;Contenido:&quot;;</code></td>
+</tr>
+<tr>
+<td><code>attr(</code><em>atributo</em><code>)</code></td>
+<td>Añade el valor del atributo HTML indicado.</td>
+<td><code>content: attr(href);</code></td>
+</tr>
+<tr>
+<td><badge-type class="image"></badge-type> <code>url(...)</code></td>
+<td>Añade la imagen indicada en la <code>URL</code>.</td>
+<td><code>content: url(icon.png);</code></td>
+</tr>
+<tr>
+<td><badge-type class="gradient"></badge-type></td>
+<td>Añade un gradiente del tamaño indicado.</td>
+<td><code>content: linear-gradient(red, blue);</code></td>
+</tr>
+<tr>
+<td><badge-type class="counter"></badge-type></td>
+<td>Define un <a href="../../representacion-datos/contadores-css/index.htm">contador CSS</a> para mostrar.</td>
+<td><code>content: counter(item);</code></td>
+</tr>
+</tbody>
+</table>
+<p>Ten en cuenta que la propiedad <code>content</code> sólo funciona dentro de los pseudoelementos <code>::before</code> y <code>::after</code> que explicaremos a continuación. No puede utilizarse en otro lugar.</p>
+<h4 id="pseudoelemento-before" tabindex="-1"><a class="header-anchor" href="#pseudoelemento-before">Pseudoelemento <code>::before</code></a></h4>
+<p>Los pseudoelementos <code>::before</code> y <code>::after</code> permiten hacer referencia a «justo antes del elemento» y «justo después del elemento», respectivamente. Además de selectores básicos como clase o id, combinadores, atributos o pseudoclases, puedes añadir un pseudoelemento, precedido por doble <code>:</code>.</p>
+<p>En el caso del pseudoelemento <code>::before</code>, el navegador se encargará de añadir contenido <strong>antes</strong> del inicio de la etiqueta de apertura del elemento que has seleccionado con el resto del selector:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">q::before</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"«"</span><span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #888<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>En este caso, estamos añadiendo el texto <code>«</code> justo antes de los elementos <code>&lt;q&gt;</code> que aparezcan en nuestro documento, además de pintarlos de color gris. De esta forma, podemos generar información (<em>usualmente con fines decorativos</em>) que no existe en el HTML, pero que por circunstancias de diseño sería más apropiado colocar en el código CSS.</p>
+<h4 id="pseudoelemento-after" tabindex="-1"><a class="header-anchor" href="#pseudoelemento-after">Pseudoelemento <code>::after</code></a></h4>
+<p>De la misma forma, tenemos el pseudoelemento <code>::after</code>, que permitirá añadir contenido después de la etiqueta de cierre en cuestión. El código correspondiente sería el siguiente:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">q::after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"»"</span><span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #888<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Los ejemplos anteriores unidos, permitirían insertar el carácter <code>«</code> antes de las citas indicadas con el elemento HTML <code>&lt;q&gt;</code> y el carácter <code>»</code> al finalizar la misma, ambas de color gris.</p>
+<h4 id="función-attr" tabindex="-1"><a class="header-anchor" href="#función-attr">Función <code>attr()</code></a></h4>
+<p>Es interesante recalcar la utilidad de la función CSS <code>attr(A)</code>. Esta función se puede utilizar en la propiedad <code>content</code> para recuperar el valor del <strong>atributo HTML</strong> especificado en <code>A</code>. Veamos un ejemplo para clarificarlo, concatenándolo con un texto aplicado en la propiedad <code>content</code>:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">a::after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">" ( "</span> <span class="token function">attr</span><span class="token punctuation">(</span>href<span class="token punctuation">)</span> <span class="token string">" )"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Este pequeño ejemplo de código CSS, realiza una búsqueda de elementos que sean enlaces <code>&lt;a&gt;</code>, y posteriormente (<code>::after</code>) muestra un contenido de texto posterior donde, envuelto entre paréntesis, escribe el contenido del atributo <code>href</code> del enlace tratado. Esto puede ser realmente útil en una página de estilos que se aplica a una página en el momento de imprimir, en los cuales se pierde la información del enlace al no ser un medio interactivo.</p>
+<blockquote>
+<p><strong>Truco</strong>: También se puede utilizar la función <code>url()</code> para añadir una imagen al contenido generado, tal y como lo hacemos en la propiedad <code>background</code>, por ejemplo.</p>
+</blockquote>
+<h3 id="pseudoelementos-tipográficos" tabindex="-1"><a class="header-anchor" href="#pseudoelementos-tipográficos">Pseudoelementos tipográficos</a></h3>
+<p>Aunque <code>::before</code> y <code>::after</code> suelen ser los ejemplos de pseudoelementos más frecuentes, existen muchos otros pseudoelementos. Por ejemplo, dentro de una categoría de <strong>pseudoelementos tipográficos</strong>, podemos encontrar los pseudoelementos <code>::first-letter</code> o <code>::first-line</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Pseudoelemento</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>::first-letter</code></td>
+<td>Aplica los estilos en la primera letra del texto.</td>
+</tr>
+<tr>
+<td><code>::first-line</code></td>
+<td>Aplica los estilos en la primera línea del texto.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="pseudoelemento-first-letter" tabindex="-1"><a class="header-anchor" href="#pseudoelemento-first-letter">Pseudoelemento <code>::first-letter</code></a></h4>
+<p>El pseudoelemento <code>::first-letter</code>, como su propio nombre indica, permite seleccionar y dar estilo a la primera letra del texto indicado. Así podremos recrear el efecto clásico de cuentos infantiles o algunas otras obras, donde la primera letra se establece mucho más grande que el resto del texto y con una tipografía decorativa mucho más llamativa.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'Open Sans'</span><span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">p::first-letter</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'Fancy Decorative'</span><span class="token punctuation">,</span> serif<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 4rem<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Un posible resultado de este fragmento de código sería el siguiente:</p>
+<p><img src="first-letter-first-line.png" alt="First-letter y First-line en CSS" width="1017" height="283" loading="lazy"></p>
+<h4 id="pseudoelemento-first-line" tabindex="-1"><a class="header-anchor" href="#pseudoelemento-first-line">Pseudoelemento <code>::first-line</code></a></h4>
+<p>Por otro lado, el pseudoelemento <code>::first-line</code> es muy útil para aplicar un estilo solamente a la <strong>primera línea</strong> del texto indicado. Puede ser interesante si queremos cambiar algún detalle, pero que afecte exclusivamente a la primera línea, independientemente del tamaño que tenga (<em>lo calcula el navegador</em>).</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'Open Sans'</span><span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #333<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">p::first-line</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #999<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Obviamente, se puede aplicar a otros elementos o clases en el selector de CSS, en este caso lo hemos hecho a un elemento de párrafo <code>&lt;p&gt;</code>, ya que se trata de un párrafo de texto.</p>
+<h3 id="pseudoelementos-de-resaltado" tabindex="-1"><a class="header-anchor" href="#pseudoelementos-de-resaltado">Pseudoelementos de resaltado</a></h3>
+<p>Existe una serie de pseudoelementos orientados a la selección o resaltado de texto en un documento HTML mostrado a través de un navegador. Veamos que pseudoelementos tenemos a nuestra disposición:</p>
+<table>
+<thead>
+<tr>
+<th>Pseudoelemento</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>::selection</code></td>
+<td>Aplica estilos al fragmento de texto seleccionado por el usuario.</td>
+</tr>
+<tr>
+<td><code>::target-text</code></td>
+<td>Aplica estilos al fragmento de texto enlazado tras el ancla de la URL.</td>
+</tr>
+<tr>
+<td><code>::spelling-error</code></td>
+<td>Aplica estilos al fragmento de texto resaltado por error ortográfico.</td>
+</tr>
+<tr>
+<td><code>::grammar-error</code></td>
+<td>Aplica estilos al fragmento de texto resaltado por error gramatical.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="pseudoelemento-selection" tabindex="-1"><a class="header-anchor" href="#pseudoelemento-selection">Pseudoelemento <code>::selection</code></a></h4>
+<p>Cuando seleccionamos un <strong>fragmento de texto</strong>, el navegador suele aplicar un color de fondo que depende del sistema operativo, del tema, o similar. Al igual que ocurre con la propiedad <code>accent-color</code>, es posible que queramos aprovechar esto para definir un color que tengan sentido con los colores corporativos de la marca o web, por lo que podríamos cambiarlo haciendo uso del pseudoelemento <code>::selection</code>:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">::selection</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> indigo<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="pseudoelemento-target-text" tabindex="-1"><a class="header-anchor" href="#pseudoelemento-target-text">Pseudoelemento <code>::target-text</code></a></h4>
+<p>En algunos casos, al crear un enlace a una página, tras el ancla de la URL definida con el carácter <code>#</code>, se puede añadir el fragmento de texto <code>:~:text=</code> seguido del texto, palabra o frase a buscar en la propia página. Al hacer esto, el navegador resaltará esa parte para que sea más sencillo encontrarla.</p>
+<p>Esta página suele estar destacada con color de fondo amarillo sobre letras negras, pero podemos personalizarlo a través del pseudoelemento <code>::target-text</code>:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">::target-text</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> lime<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Ahora, en una URL terminada en <code>#:~:text=ManzDev</code>, todos los textos <code>ManzDev</code> aparecerían resaltados en el color seleccionado por <code>::target-text</code>.</p>
+<p><caniuse-support title="Css selectors target-text" feature="mdn-css_selectors_target-text" edge="89/y" firefox="✗/n" chrome="89/y" safari="✗/n" opera="75/y" ios_saf="✗/n" and_chr="89/y" and_ff="✗/n">
+</caniuse-support></p>
+<h4 id="pseudoelemento-spelling-error" tabindex="-1"><a class="header-anchor" href="#pseudoelemento-spelling-error">Pseudoelemento <code>::spelling-error</code></a></h4>
+<p>El pseudoelemento <code>::spelling-error</code> nos permite modificar los estilos que se aplican a como se muestra un error ortográfico en el navegador, que normalmente se visualiza con un subrayado ondulado rojo en la palabra o texto afectado.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">::spelling-error</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> darkred<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p><caniuse-support title="Css selectors spelling-error" feature="mdn-css_selectors_spelling-error" edge="✗/n" firefox="✗/n" chrome="✗/n" safari="✗/n" opera="✗/n" ios_saf="✗/n" and_chr="✗/n" and_ff="✗/n">
+</caniuse-support></p>
+<h4 id="pseudoelemento-grammar-error" tabindex="-1"><a class="header-anchor" href="#pseudoelemento-grammar-error">Pseudoelemento <code>::grammar-error</code></a></h4>
+<p>Por su parte, el pseudoelemento <code>::grammar-error</code> es exactamente igual al anterior, sólo que se encarga de señalar los errores gramaticales del texto, y no los ortográficos.</p>
+<p><caniuse-support title="Css selectors grammar-error" feature="mdn-css_selectors_grammar-error" edge="✗/n" firefox="✗/n" chrome="✗/n" safari="✗/n" opera="✗/n" ios_saf="✗/n" and_chr="✗/n" and_ff="✗/n">
+</caniuse-support></p>
+<h3 id="otros-pseudoelementos" tabindex="-1"><a class="header-anchor" href="#otros-pseudoelementos">Otros pseudoelementos</a></h3>
+<p>Al margen de los anteriores, nos quedan algunos otros pseudoelementos que cabe destacar:</p>
+<table>
+<thead>
+<tr>
+<th>Pseudoelemento</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>::marker</code></td>
+<td>Aplica estilos a los elementos de cada ítem de una lista.</td>
+</tr>
+<tr>
+<td><code>::backdrop</code></td>
+<td>Aplica estilos al fondo exterior de un elemento en primer plano (sin que afecte a este).</td>
+</tr>
+<tr>
+<td><code>::placeholder</code></td>
+<td>Aplica estilos a los textos de sugerencia de los campos <code>&lt;input&gt;</code>.</td>
+</tr>
+<tr>
+<td><code>::file-selector-button</code></td>
+<td>Aplica estilos a los botones de campo <code>&lt;input&gt;</code> de subir archivos.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="pseudoelemento-marker" tabindex="-1"><a class="header-anchor" href="#pseudoelemento-marker">Pseudoelemento <code>::marker</code></a></h4>
+<p>El pseudoelemento <code>::marker</code> sirve para hacer referencias a los signos o marcas de la listas (<code>&lt;ol&gt;</code> o <code>&lt;ul&gt;</code>), en el caso de que queramos que tengan un estilo diferente al del texto de la lista.</p>
+<p>Se aplican a los elementos <code>&lt;li&gt;</code> de los ítems de una lista. Veamos un ejemplo:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">ul ::marker</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Esto mostraría el texto de la lista <code>&lt;ul&gt;</code> con el color habitual que tenga (<em>por ejemplo, negro</em>), pero los signos que preceden a cada ítem de la lista, apareciendo en color verde.</p>
+<h4 id="pseudoelemento-backdrop" tabindex="-1"><a class="header-anchor" href="#pseudoelemento-backdrop">Pseudoelemento <code>::backdrop</code></a></h4>
+<p>El pseudoelemento <code>::backdrop</code> nos permite aplicar estilos como oscurecer o desenfocar el fondo detrás de un elemento para darle más protagonismo al elemento que está en primer plano. Este elemento debe ser un diálogo o mensaje modal, que comunica información y hay que prestarle atención y poner el foco en él.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dialog</span><span class="token punctuation">></span></span>Hello!!!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dialog</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">const</span> dialog <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"dialog"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+dialog<span class="token punctuation">.</span><span class="token function">showModal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+<span class="token selector">dialog::backdrop</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0.5<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>En este caso, <code>::backdrop</code> es un pseudoelemento que aplicará los estilos al fondo, sin que afecte al elemento del primer plano. También se podría utilizar junto a la propiedad CSS <code>backdrop-filter</code> con el valor <code>blur(2px)</code> (<em>o algo similar</em>), donde se desenfocará y se le restará importancia al fondo y el usuario se centrará en el mensaje o la información de primer plano.</p>
+<h4 id="pseudoelemento-placeholder" tabindex="-1"><a class="header-anchor" href="#pseudoelemento-placeholder">Pseudoelemento <code>::placeholder</code></a></h4>
+<p>Mediante el pseudoelemento <code>::placeholder</code> podemos dar estilos particulares a los elementos <code>&lt;input&gt;</code> que tienen el atributo <code>placeholder</code> definido. El atributo <code>placeholder</code> sirve para indicar una sugerencia o mensaje de ayuda o de información con la finalidad de ese campo de texto, normalmente una ayuda de lo que deben escribir o similar.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">input::placeholder</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> darkred<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Con <code>::placeholder</code> podremos cambiar este color, por ejemplo, que suele ser un gris apagado por defecto.</p>
+<h4 id="pseudoelemento-file-selector-button" tabindex="-1"><a class="header-anchor" href="#pseudoelemento-file-selector-button">Pseudoelemento <code>::file-selector-button</code></a></h4>
+<p>El pseudoelemento <code>::file-selector-button</code> hace referencia al <code>&lt;button&gt;</code> que se incluye dentro de un elemento <code>&lt;input type=&quot;file&quot;&gt;</code>, o lo que es lo mismo, un botón para enviar ficheros a través de un formulario. De esta forma, podemos personalizar la apariciencia del botón del formulario.</p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../pseudoclases-formularios/index.htm" title="Pseudoclases de formularios">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Pseudoclases de formularios</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../../reglas-css/que-son-reglas-css/index.htm" title="¿Qué son las reglas CSS?">
+  <div>
+    <span>¿Qué son las reglas CSS?</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/OQtAyXHeKnc" title="Grid CSS: Grids por área">
+  <img loading="lazy" src="../../../vi/OQtAyXHeKnc/mqdefault.jpg" alt="Grid CSS: Grids por área">
+</a><a href="https://youtu.be/uMMLQNgsivg" title="Parcel CSS: ¿Una ALTERNATIVA RÁPIDA a PostCSS?">
+  <img loading="lazy" src="../../../vi/uMMLQNgsivg/mqdefault.jpg" alt="Parcel CSS: ¿Una ALTERNATIVA RÁPIDA a PostCSS?">
+</a><a href="https://youtu.be/esjagdcozX0" title="Flex CSS: ¡Aprendiendo las bases!">
+  <img loading="lazy" src="../../../vi/esjagdcozX0/mqdefault.jpg" alt="Flex CSS: ¡Aprendiendo las bases!">
+</a><a href="https://youtu.be/pJGEELsEM1w" title="Consejos y buenas prácticas (III): CSS">
+  <img loading="lazy" src="../../../vi/pJGEELsEM1w/mqdefault.jpg" alt="Consejos y buenas prácticas (III): CSS">
+</a><a href="https://youtu.be/D5fJxaLCjKg" title="Configurar VSCODE para CORREGIR tu CSS AUTOMÁTICAMENTE">
+  <img loading="lazy" src="../../../vi/D5fJxaLCjKg/mqdefault.jpg" alt="Configurar VSCODE para CORREGIR tu CSS AUTOMÁTICAMENTE">
+</a><a href="https://youtu.be/s_16bzmnGoY" title="Grid CSS: Líneas con nombre">
+  <img loading="lazy" src="../../../vi/s_16bzmnGoY/mqdefault.jpg" alt="Grid CSS: Líneas con nombre">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

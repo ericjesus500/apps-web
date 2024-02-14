@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)https://www.freecodecamp.org/espanol/news/el-manual-de-arreglos-en-javascript/ -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        
+            <title>Manual de arreglos en JavaScript: Métodos de arreglos de JS explicados con ejemplos</title>
+        
+        <meta name="HandheldFriendly" content="True">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+        
+            <link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="./manual_arreglos_javascript_files/css2">
+        
+
+        
+        
+    <link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="./manual_arreglos_javascript_files/prism.min.css">
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://cdn.freecodecamp.org/news-assets/prism/1.29.0/themes/prism.min.css"
+  />
+</noscript>
+<link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="./manual_arreglos_javascript_files/prism-unescaped-markup.min.css">
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://cdn.freecodecamp.org/news-assets/prism/1.29.0/plugins/unescaped-markup/prism-unescaped-markup.min.css"
+  />
+</noscript>
+
+<script type="text/javascript" async="" src="./manual_arreglos_javascript_files/js"></script><script type="text/javascript" async="" src="./manual_arreglos_javascript_files/analytics.js.descarga"></script><script type="text/javascript" async="" src="./manual_arreglos_javascript_files/js(1)"></script><script async="" src="./manual_arreglos_javascript_files/gtm.js.descarga"></script><script defer="" src="./manual_arreglos_javascript_files/prism-core.min.js.descarga"></script>
+<script defer="" src="./manual_arreglos_javascript_files/prism-autoloader.min.js.descarga"></script>
+
+
+
+        
+        <link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="./manual_arreglos_javascript_files/global-2c6f2910a9.css">
+        <link rel="stylesheet" type="text/css" href="./manual_arreglos_javascript_files/screen-e9fc5800e5.css">
+        <link rel="stylesheet" type="text/css" href="./manual_arreglos_javascript_files/search-bar-971612c5db.css">
+
+        
+        <script defer="" src="./manual_arreglos_javascript_files/algoliasearch.min.js.descarga"></script>
+        <script defer="" src="./manual_arreglos_javascript_files/autocomplete.min.js.descarga"></script>
+
+        
+        <script defer="" src="./manual_arreglos_javascript_files/dayjs.min.js.descarga"></script>
+        <script defer="" src="./manual_arreglos_javascript_files/localizedFormat.min.js.descarga"></script>
+        <script defer="" src="./manual_arreglos_javascript_files/relativeTime.min.js.descarga"></script>
+
+        
+        
+            <script defer="" src="./manual_arreglos_javascript_files/es.min.js.descarga"></script>
+        
+
+        
+        <script>let client,index;document.addEventListener("DOMContentLoaded",(()=>{client=algoliasearch("QMJYL5WYTI","89770b24481654192d7a5c402c6ad9a0"),index=client.initIndex("news-es")})),document.addEventListener("DOMContentLoaded",(()=>{const e=window.screen.width,t=window.screen.height,n=e>=767&&t>=768?8:5,o=document.getElementById("search-form"),s=document.getElementById("search-input"),a=document.getElementById("dropdown-container");let i,d,c;s.addEventListener("input",(e=>{i=e.target.value})),o.addEventListener("submit",(e=>{e.preventDefault(),function(){if(d=document.getElementsByClassName("aa-cursor")[0],d&&i){const e=d.querySelector("a").href;window.location.assign(e)}else!d&&i&&c&&window.location.assign(`https://www.freecodecamp.org/espanol/news/search?query=${i}`)}()}));const l=autocomplete("#search-input",{hint:!1,keyboardShortcuts:["s",191],openOnFocus:!0,appendTo:a,debug:!0},[{source:autocomplete.sources.hits(index,{hitsPerPage:n}),debounce:250,templates:{suggestion:e=>(c=!0,`\n            <a href="${e.url}">\n              <div class="algolia-result">\n                <span>${e._highlightResult.title.value}</span>\n              </div>\n            </a>\n          `),empty:()=>(c=!1,'\n            <div class="aa-suggestion footer-suggestion no-hits-footer">\n              <div class="algolia-result">\n                <span>\n                  No se encontraron tutoriales\n                </span>\n              </div>\n            </div>\n          '),footer:e=>{if(!e.isEmpty)return`\n              <div class="aa-suggestion footer-suggestion">\n                <a id="algolia-footer-selector" href="https://www.freecodecamp.org/espanol/news/search?query=${i}">\n                  <div class="algolia-result algolia-footer">\n                    Ver todos los resultados de ${i}\n                  </div>\n                </a>\n              </div>\n            `}}}]).on("autocomplete:selected",((e,t,n,o)=>{d=t?t.url:`https://www.freecodecamp.org/espanol/news/search?query=${i}`,"click"!==o.selectionMethod&&"tabKey"!==o.selectionMethod&&c&&window.location.assign(d)}));document.addEventListener("click",(e=>{e.target!==s&&l.autocomplete.close()}))})),document.addEventListener("DOMContentLoaded",(()=>{dayjs.extend(dayjs_plugin_localizedFormat),dayjs.extend(dayjs_plugin_relativeTime),dayjs.locale("es")}));const isAuthenticated=document.cookie.split(";").some((e=>e.trim().startsWith("jwt_access_token="))),isDonor=document.cookie.split(";").some((e=>e.trim().startsWith("isDonor=true")));</script>
+
+        
+        
+    
+        <script data-ad-client="ca-pub-9482786369113753" src="./manual_arreglos_javascript_files/f.txt" crossorigin="anonymous" async=""></script>
+    
+
+
+        
+        
+        
+
+        
+        
+
+        <link rel="icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico" type="image/png">
+        
+        
+            <link rel="canonical" href="https://www.freecodecamp.org/espanol/news/el-manual-de-arreglos-en-javascript/">
+        
+        <meta name="referrer" content="no-referrer-when-downgrade">
+
+        
+
+        
+    <meta name="description" content="Artículo original escrito por: TAPAS ADHIKARY [https://www.freecodecamp.org/news/author/tapas/] Artículo original: The JavaScript Array Handbook – JS Array Methods Explained with Examples [https://www.freecodecamp.org/news/the-javascript-array-handbook/] Traducido y adaptado por: Sil Zubikarai [/espanol/news/author/sil/] En programación, un arreglo es una colección de elementos o cosas. Los arreglos guardan data como elementos y los regresan cuando los">
+
+    
+    <meta property="og:site_name" content="freeCodeCamp.org">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Manual de arreglos en JavaScript: Métodos de arreglos de JS explicados con ejemplos">
+    
+        <meta property="og:description" content="Artículo original escrito por: TAPAS ADHIKARY [https://www.freecodecamp.org/news/author/tapas/] Artículo original: The JavaScript Array Handbook – JS Array Methods Explained with Examples [https://www.freecodecamp.org/news/the-javascript-array-handbook/] Traducido y adaptado por: Sil Zubikarai [/espanol/news/author/sil/] En programación, un arreglo es una colección de elementos o cosas. Los arreglos guardan data como elementos y los regresan cuando los">
+    
+    <meta property="og:url" content="https://www.freecodecamp.org/espanol/news/el-manual-de-arreglos-en-javascript/">
+    <meta property="og:image" content="https://www.freecodecamp.org/espanol/news/content/images/2022/01/freeCodeCamp-Cover-1.png">
+    <meta property="article:published_time" content="2022-01-12T21:29:05.000Z">
+    <meta property="article:modified_time" content="2022-01-12T21:29:05.000Z">
+    
+        <meta property="article:tag" content="JavaScript">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/freecodecamp">
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Manual de arreglos en JavaScript: Métodos de arreglos de JS explicados con ejemplos">
+    
+        <meta name="twitter:description" content="Artículo original escrito por: TAPAS ADHIKARY [https://www.freecodecamp.org/news/author/tapas/] Artículo original: The JavaScript Array Handbook – JS Array Methods Explained with Examples [https://www.freecodecamp.org/news/the-javascript-array-handbook/] Traducido y adaptado por: Sil Zubikarai [/espanol/news/author/sil/] En programación, un arreglo es una colección de elementos o cosas. Los arreglos guardan data como elementos y los regresan cuando los">
+    
+    <meta name="twitter:url" content="https://www.freecodecamp.org/espanol/news/el-manual-de-arreglos-en-javascript/">
+    <meta name="twitter:image" content="https://www.freecodecamp.org/espanol/news/content/images/2022/01/freeCodeCamp-Cover-1.png">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Sil Zubikarai">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="JavaScript">
+    <meta name="twitter:site" content="@freecodecampes">
+    
+        <meta name="twitter:creator" content="@Otsonoir">
+    
+
+    <meta property="og:image:width" content="900">
+    <meta property="og:image:height" content="500">
+
+
+        
+    <script type="application/ld+json">{
+	"@context": "https://schema.org",
+	"@type": "Article",
+	"publisher": {
+		"@type": "Organization",
+		"name": "freeCodeCamp.org",
+		"url": "https://www.freecodecamp.org/espanol/news/",
+		"logo": {
+			"@type": "ImageObject",
+			"url": "https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg",
+			"width": 2100,
+			"height": 240
+		}
+	},
+	"image": {
+		"@type": "ImageObject",
+		"url": "https://www.freecodecamp.org/espanol/news/content/images/2022/01/freeCodeCamp-Cover-1.png",
+		"width": 900,
+		"height": 500
+	},
+	"url": "https://www.freecodecamp.org/espanol/news/el-manual-de-arreglos-en-javascript/",
+	"mainEntityOfPage": {
+		"@type": "WebPage",
+		"@id": "https://www.freecodecamp.org/espanol/news/"
+	},
+	"datePublished": "2022-01-12T21:29:05.000Z",
+	"dateModified": "2022-01-12T21:29:05.000Z",
+	"keywords": "JavaScript",
+	"description": "Artículo original escrito por: TAPAS ADHIKARY\n[https://www.freecodecamp.org/news/author/tapas/]\nArtículo original: The JavaScript Array Handbook – JS Array Methods Explained\nwith Examples [https://www.freecodecamp.org/news/the-javascript-array-handbook/]\nTraducido y adaptado por: Sil Zubikarai [/espanol/news/author/sil/]\n\nEn programación, un arreglo es una colección de elementos o cosas. Los arreglos\nguardan data como elementos y los regresan cuando los necesitas.\n\nLa estructura de datos de arre",
+	"headline": "Manual de arreglos en JavaScript: Métodos de arreglos de JS explicados con ejemplos",
+	"author": {
+		"@type": "Person",
+		"name": "Sil Zubikarai",
+		"url": "https://www.freecodecamp.org/espanol/news/author/sil/",
+		"sameAs": [
+			"https://twitter.com/Otsonoir"
+		],
+		"image": {
+			"@type": "ImageObject",
+			"url": "https://www.freecodecamp.org/espanol/news/content/images/2020/12/20155919_1600700269940992_6548742899546399238_n.jpg",
+			"width": 720,
+			"height": 960
+		}
+	}
+}</script>
+
+
+        <meta name="generator" content="Eleventy">
+        <link rel="alternate" type="application/rss+xml" title="freeCodeCamp.org" href="https://www.freecodecamp.org/espanol/news/rss/">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+
+<!-- Web Monetization (https://webmonetization.org/) -->
+<meta name="monetization" content="$ilp.uphold.com/LJmbPn7WD4JB">
+<!-- end Web Monetization -->
+
+<!-- dataLayer setup -->
+<script>
+window.dataLayer = window.dataLayer || [];
+</script>
+<!-- End dataLayer setup -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5D6RKKP');</script>
+<!-- End Google Tag Manager -->
+        
+    </head>
+    
+    
+        <body class="home-template">
+    
+        <div class="site-wrapper">
+            <nav class="site-nav nav-padding">
+    <div class="site-nav-left">
+        
+<form id="search-form" data-test-label="search-bar">
+    <div role="search" class="searchbox__wrapper">
+        <label class="fcc_sr_only" for="search-input">
+            Buscar
+        </label>
+        <input type="search" placeholder="
+    Search 700+ tutorials
+" id="search-input" class="aa-input" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style=""><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre>
+        <button type="submit" class="ais-SearchBox-submit">
+            <svg class="ais-SearchBox-submitIcon" xmlns="https://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 40 40">
+    <path d="M26.804 29.01c-2.832 2.34-6.465 3.746-10.426 3.746C7.333 32.756 0 25.424 0 16.378 0 7.333 7.333 0 16.378 0c9.046 0 16.378 7.333 16.378 16.378 0 3.96-1.406 7.594-3.746 10.426l10.534 10.534c.607.607.61 1.59-.004 2.202-.61.61-1.597.61-2.202.004L26.804 29.01zm-10.426.627c7.323 0 13.26-5.936 13.26-13.26 0-7.32-5.937-13.257-13.26-13.257C9.056 3.12 3.12 9.056 3.12 16.378c0 7.323 5.936 13.26 13.258 13.26z"></path>
+</svg>
+
+            <span class="fcc_sr_only">Enviar tu consulta de búsqueda</span>
+        </button>
+        <div id="dropdown-container"><span class="algolia-autocomplete" style="position: absolute; z-index: 100; display: none; direction: ltr;"><span class="aa-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0" style="display: block; left: 0px; right: auto;"><div class="aa-dataset-1"></div></span></span></div>
+    </div>
+</form>
+
+    </div>
+    <div class="site-nav-middle">
+        <a class="site-nav-logo" href="https://www.freecodecamp.org/espanol/news" data-test-label="site-nav-logo"><img src="./manual_arreglos_javascript_files/fcc_primary.svg" alt="freeCodeCamp.org"></a>
+    </div>
+    <div class="site-nav-right">
+        <div class="nav-group">
+            <a class="nav-forum" id="nav-forum" rel="noopener noreferrer" href="https://forum.freecodecamp.org/c/espanol/522" target="_blank" data-test-label="forum-button">Foro</a>
+            <a class="toggle-button-nav" id="nav-donate" rel="noopener noreferrer" href="https://www.freecodecamp.org/espanol/donate/" target="_blank" data-test-label="donate-button">Donar</a>
+        </div>
+    </div>
+</nav>
+
+
+            
+            <a class="banner" id="banner" data-test-label="banner" rel="noopener noreferrer" target="_blank" href="https://www.freecodecamp.org/espanol/donate" text-variation="authenticated">
+    <p id="banner-text">Support our charity and our mission. <span>Donate to freeCodeCamp.org</span>.</p>
+</a>
+
+
+    
+    <script>document.addEventListener("DOMContentLoaded",(()=>{const e=document.getElementById("banner"),t=document.getElementById("banner-text");isAuthenticated?(t.innerHTML="Support our charity and our mission. <span>Donate to freeCodeCamp.org</span>.",e.href="https://www.freecodecamp.org/espanol/donate",e.setAttribute("text-variation","authenticated")):isDonor?(t.innerHTML="Gracias por apoyar a freeCodeCamp a través de <span>tus donaciones</span>.",e.href="https://www.freecodecamp.org/espanol/news/how-to-donate-to-free-code-camp/",e.setAttribute("text-variation","donor")):(t.innerHTML="Aprender a codificar — <span>gratis 3,000-horas currículo</span>",e.href="https://www.freecodecamp.org/espanol",e.setAttribute("text-variation","default"))}));</script>
+
+
+            <div id="error-message"></div>
+
+            
+    <main id="site-main" class="post-template site-main outer">
+        <div class="inner ad-layout">
+            <article class="post-full post ">
+                <header class="post-full-header">
+                    <section class="post-full-meta">
+                        <time class="post-full-meta-date" datetime="Wed Jan 12 2022 21:29:05 GMT+0000 (Coordinated Universal Time)">
+                            12 de enero de 2022
+                        </time>
+                        
+                            <span class="date-divider">/</span>
+                            <a dir="ltr" href="https://www.freecodecamp.org/espanol/news/tag/javascript/">
+                                #JavaScript
+                            </a>
+                        
+                    </section>
+                    <h1 class="post-full-title">Manual de arreglos en JavaScript: Métodos de arreglos de JS explicados con ejemplos</h1>
+                </header>
+                <div class="post-full-author-header" data-test-label="author-header-no-bio">
+                    
+                        
+                            
+    
+    
+    
+
+    <section class="author-card" data-test-label="author-card">
+        
+            
+    <img srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w60/2020/12/20155919_1600700269940992_6548742899546399238_n.jpg 60w" sizes="60px" src="./manual_arreglos_javascript_files/20155919_1600700269940992_6548742899546399238_n.jpg" class="author-profile-image" alt="Sil Zubikarai" width="720" height="960" onerror="this.style.display=&#39;none&#39;" data-test-label="profile-image">
+  
+        
+
+        <section class="author-card-content author-card-content-no-bio">
+            <span class="author-card-name">
+                <a href="https://www.freecodecamp.org/espanol/news/author/sil/" data-test-label="profile-link">
+                    
+                        Sil Zubikarai
+                    
+                </a>
+            </span>
+            
+        </section>
+    </section>
+
+                        
+                    
+                </div>
+                
+                    <figure class="post-full-image">
+                        
+    <picture>
+      <source media="(max-width: 700px)" sizes="1px" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7 1w">
+      <source media="(min-width: 701px)" sizes="(max-width: 800px) 400px, (max-width: 1170px) 700px, 1400px" srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w300/2022/01/freeCodeCamp-Cover-1.png 300w,https://www.freecodecamp.org/espanol/news/content/images/size/w600/2022/01/freeCodeCamp-Cover-1.png 600w,https://www.freecodecamp.org/espanol/news/content/images/size/w1000/2022/01/freeCodeCamp-Cover-1.png 1000w,https://www.freecodecamp.org/espanol/news/content/images/size/w2000/2022/01/freeCodeCamp-Cover-1.png 2000w">
+      <img onerror="this.style.display=&#39;none&#39;" src="./manual_arreglos_javascript_files/freeCodeCamp-Cover-1.png" alt="Manual de arreglos en JavaScript: Métodos de arreglos de JS explicados con ejemplos" ,="" width="900" height="500">
+    </picture>
+  
+                    </figure>
+                
+                <section class="post-full-content">
+                    <div class="post-and-sidebar">
+                        <section class="post-content " data-test-label="post-content">
+                            
+<p><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Artículo original escrito por</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>:</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> </strong></strong></strong></strong></strong></strong></strong></strong><a href="https://www.freecodecamp.org/news/author/tapas/">TAPAS ADHIKARY</a><br><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Artículo original</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>:</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><a href="https://www.freecodecamp.org/news/the-javascript-array-handbook/">The JavaScript Array Handbook – JS Array Methods Explained with Examples</a><br><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Traducido y adaptado por</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>:</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><a href="https://www.freecodecamp.org/espanol/news/author/sil/"><strong>Sil Zubikarai</strong></a></p><p>En programación, un <code>arreglo</code> es una colección de elementos o cosas. Los arreglos guardan data como elementos y los regresan cuando los necesitas.</p><p>La estructura de datos de arreglo es ampliamente usada en todos los lenguajes de programación que la soportan.</p><p>En este manual, te enseñará todo acerca de los arreglos en JavaScript. Aprenderás acerca de lo complejo del manejo de datos, destructurando, los métodos de arreglo más comúnmente usados, y más.</p><h2 id="-por-qu-escrib-este-art-culo">¿Por qué escribí este artículo?</h2><p>Hay muchos buenos artículos de arreglos de JavaScript ya disponibles alrededor de internet. Entonces ¿por qué escribí otro artículo del mismo título? ¿Cuál es la motivación?</p><p>Bien, a lo largo de los años de interactuar con mi meentes, Me he dado cuenta de que muchos principiantes necesitan un tutorial que cubra los arreglos a fondo de principio a fin con ejemplos.</p><p>Entonces he decidido crear tal artículo lleno de ejemplos significativos. Si tú eres principiante de JavaScript, espero que lo encuentres de mucha ayuda.</p><p>Pero inclusive para un experimentado desarrollador, este manual puede ser útil para ayudar a repasar cosas que tú necesites. Yo también estoy aprendiendo todo esto de nuevo mientras escribo acerca de él. Así que vamos de lleno.</p><h2 id="-qu-es-un-arreglo-en-javascript">¿Qué es un arreglo en JavaScript?</h2><p>Un par de <code>square brackets []</code> representa un arreglo en JavaScript. Todos los elementos en un arreglo están separados por una <code>comma(,)</code>.</p><p>En JavaScript, los arreglos pueden ser una colección de elementos de cualquier tipo. Esto significa que tú puedes crear un arreglo &nbsp;con elementos de tipo Cadena , Boolean, Número, Objetos, e incluso otros Arreglos.</p><p>Aquí hay un ejemplo de un arreglo con otros cuatro elementos: tipo Número, Boolean, Cadena &nbsp;y Objecto.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> mixedTypedArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token string">'freeCodeCamp'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre><p>La posición de un elemento en el arreglo es conocido como <code>indice</code>. En JavaScript, el indice del arreglo empieza con <code>0</code>, e incrementa uno a uno con cada elemento.</p><p>Entonces, por ejemplo, en el arreglo de arriba, el elemento 100 es en <code>indice 0</code>, cierto si está en <code>indice 1</code>, 'freeCodeCamp' está en <code>indice 2</code>, y así.</p><p>El número de elementos en el arreglo determina su longitud. Por ejemplo, la longitud del arreglo de arriba es cuatro.</p><p>Curiosamente, los arreglos de JavaScript no tienen longitud fija. Tú puedes cambiar la longitud en cualquier momento asignando un valor numérico positivo. Aprenderemos más acerca de esto dentro de poco.</p><h2 id="como-crear-un-arreglo-en-javascript">Como crear un arreglo en JavaScript</h2><p>Tú puedes crear un arreglo de diferentes formas en JavaScript. La forma más sencilla es asignar un valor de arreglo a una variable. </p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> salad <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre><p>También puedes usar el constructor de Arreglo para crear un arreglo.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> salad <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><blockquote> Tenga en cuenta: <code>new Array(2)</code> creará un arreglo de longitud 2 y ninguno de los elementos son definidos en él. Sin embargo, <code>new Array(1,2)</code> creará un arreglo de longitud dos con elementos 1 y 2 en él.</blockquote><p>Hay otros métodos como &nbsp;<code>Array.of()</code> y <code>Array.from()</code>, y el &nbsp;<code>spread</code> operador(<code>...</code>) &nbsp;que te ayuda a crear arreglos, también. Aprenderemos acerca de ellos después en este artículo.</p><h2 id="como-obtener-elementos-de-un-arreglo-en-js">Como obtener elementos de un arreglo en JS</h2><p>Tu puedes acceder y traer elementos de un arreglo usando su indice. Tú necesitas usar la sintaxis <code>square bracket</code> para acceder a los elementos del arreglo.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> element <span class="token operator">=</span> array<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre><p>Según sus casos de uso, tú debes escoger acceder a los elementos del arreglo uno por uno o en un bucle.</p><p>Cuando accedes &nbsp;a &nbsp;elementos usando un indice como este:</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> salad <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+salad<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// '?'</span>
+salad<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// '?'</span>
+salad<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// '?'</span></code></pre><p>Puedes usar la longitud de un arreglo para retroceder y acceder elementos.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> salad <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> len <span class="token operator">=</span> salad<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+salad<span class="token punctuation">[</span>len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// '?'</span>
+salad<span class="token punctuation">[</span>len <span class="token operator">-</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// '?'</span></code></pre><p>También puedes iterar a través del arreglo usando el común bucle <code>for</code> o <code>forEach</code>, o cualquier otro bucle.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> salad <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>salad<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Element at index </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>i<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>salad<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre><p>Y aquí esta el resultado:</p><figure class="kg-card kg-image-card"><img src="./manual_arreglos_javascript_files/image-30.png" class="kg-image" alt="image-30" width="600" height="400" loading="lazy"></figure><h2 id="como-a-adir-elementos-al-arreglo-en-js">Como añadir elementos al arreglo en JS</h2><p>Usa el método <code>push()</code> para añadir un elemento en el arreglo. El método <code>push()</code> añade un elemento &nbsp;al final del arreglo. Ve como añadimos algunos cacahuetes a la ensalada, como esto:</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> salad <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+salad<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'?'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><p>Ahora el arreglo salad es:</p><p>["?", "?", "?", "?", "?", "?", "?", "?"]</p><p>Nota que el método <code>push()</code> añade un elemento al final del arreglo. Si tu quieres añadir un elemento al inicio del arreglo, vas a necesitar &nbsp;usar el método <code>unshift()</code>.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> salad <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+salad<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span><span class="token string">'?'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><p>Ahora el arreglo salad es:</p><p>["?", "?", "?", "?", "?", "?", "?", "?"]</p><h2 id="como-eliminar-elementos-de-un-arreglo-en-js">Como eliminar elementos de un arreglo en JS</h2><p>La manera más sencilla de eliminar un solo elemento de un arreglo usando el método <code>pop()</code> . Cada vez que llamas el método <code>pop()</code>, este elimina un elemento del final de un arreglo. Entonces este regresa con el elemento eliminado &nbsp;y cambia el arreglo original.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> salad <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+salad<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ?</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>salad<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ['?', '?', '?', '?', '?', '?']</span></code></pre><p>Usa el método <code>shift()</code> para eliminar un elemento desde el principio del arreglo. Como el método <code>pop()</code>, &nbsp;<code>shift()</code> &nbsp;regresa el elemento eliminado y cambia el arreglo original.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> ensalada <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+salad<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ?</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ensalada<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ['?', '?', '?', '?', '?', '?'];</span></code></pre><h2 id="como-copiar-y-clonar-un-arreglo-en-js">Como copiar y clonar un arreglo en JS</h2><p>Tu puedes copiar y clonar un arreglo a un nuevo arreglo usando el metodo <code>slice()</code>. Vea que el método <code>slice()</code> no cambia el arreglo original. En cambio crea una nueva copia superficial del arreglo original.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> ensalada <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> ensaladaCopy <span class="token operator">=</span> ensalada<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ensaladaCopy<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ['?', '?', '?', '?', '?', '?', '?']</span>
+
+ensalada <span class="token operator">===</span> ensaladaCopy<span class="token punctuation">;</span> <span class="token comment">// returns false</span></code></pre><p>Alternativamente, tú puedes usar el operador <code>spread</code> para crear una copia del arreglo. Aprenderemos sobre eso pronto.</p><h2 id="como-determinar-si-el-valor-es-un-arreglo-en-js">Como determinar si el valor es un arreglo en JS</h2><p>Tú puedes determinar si un valor es un arreglo usando el método <code>Array.isArray(value)</code>. El método regresa verdadero si el valor que pasa es un arreglo.</p><pre class="language-js" tabindex="0"><code class="language-js">Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// returns true</span>
+Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span><span class="token string">'?'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// returns false</span>
+Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token string-property property">'tomate'</span><span class="token operator">:</span> <span class="token string">'?'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// returns false</span>
+Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// returns true</span></code></pre><h2 id="desestructuraci-n-de-arreglos-en-javascript">Desestructuración de arreglos en JavaScript</h2><p>Con ECMAScript 6 (ES6), tenemos una nueva sintaxis para extraer múltiples propiedades de un arreglo y asignarlas a variables de una sola vez. Es útil para ayudar a mantener tu código limpio y conciso. Esta nueva sintaxis es llamada sintaxis de &nbsp;desestructuración.</p><p>Aquí hay un ejemplo de extraer valores de un arreglo usando la sintaxis de desestructuración:</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">let</span> <span class="token punctuation">[</span>tomate<span class="token punctuation">,</span> hongo<span class="token punctuation">,</span> zanahoria<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre><p>Ahora tú puedes usar las variables en tu código:</p><pre class="language-js" tabindex="0"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>tomate<span class="token punctuation">,</span> hongo<span class="token punctuation">,</span> zanahoria<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output, ? ? ?</span></code></pre><p>Para hacer lo mismo sin desestructurar, se vería como esto:</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">let</span> vegetales <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> tomate <span class="token operator">=</span> vegetales<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> hongo<span class="token operator">=</span> vegetales<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> zanahoria<span class="token operator">=</span> vegetales<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre><p>Así, la sintaxis desestructurar te salva de escribir un montón de código. Esto le da un gran impulso a la productividad.</p><h2 id="como-asignar-un-valor-por-defecto-a-una-variable">Como asignar un valor por defecto a una variable</h2><p>Tú puedes asignar un valor por defecto usando desestructuración cuando no hay valor o es <code>undefined</code> para el elemento arreglo</p><p>En el ejemplo de abajo, asignamos por defecto el valor de la variable hongos.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">let</span> <span class="token punctuation">[</span>tomate <span class="token punctuation">,</span> hongos <span class="token operator">=</span> <span class="token string">'?'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>tomate<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// '?'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>hongos<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// '?'</span></code></pre><h2 id="como-saltar-el-valor-en-un-arreglo">Como Saltar el Valor en &nbsp;un Arreglo</h2><p>Cuando estás desestructurando, tú puedes saltar un elemento de un arreglo a un variable. Por ejemplo, puedes no estar interesado en todos los elementos de un arreglo. En este caso, saltarse un valor es útil.</p><p>En el ejemplo de abajo, nosotros saltamos el elemento hongo. Note el espacio en la declaración de variable en el lado izquierdo de la expresión.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">let</span> <span class="token punctuation">[</span>tomate<span class="token punctuation">,</span> <span class="token punctuation">,</span> zanahoria<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>tomate<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// '?'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>zanahoria<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// '?'</span></code></pre><h2 id="desestructurando-un-arreglo-anidado-en-js"><strong>Desestructurando un &nbsp;Arreglo Anidado en JS</strong></h2><p>En JavaScript, los arreglos se pueden &nbsp;anidar. Esto significa que un arreglo puede tener otro arreglo como elemento. Él anidamiento de arreglo &nbsp;puede ir a más profundidad.</p><p>Por ejemplo, vamos a crear un arreglo anidado para frutas. El tiene pocas frutas y un arreglo de vegetales en él.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">let</span> frutas <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre><p>Como puedes acceder a '?' &nbsp;desde el arreglo de arriba. De nuevo, tú puedes hacer esto desestructurando, como esto:</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> veg <span class="token operator">=</span> frutas<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// returns the array ['?', '?', '?']</span>
+<span class="token keyword">const</span> zanahoria <span class="token operator">=</span> veg<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// returns '?'</span></code></pre><p>Alternativamente, tú puedes usar esta sintaxis corta:</p><pre class="language-js" tabindex="0"><code class="language-js">fruits<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// returns '?'</span></code></pre><p>Tú también puede acceder usando la sintaxis de desestructurado, como esto:</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">let</span> <span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token punctuation">,</span><span class="token punctuation">,</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token punctuation">,</span>zanahoria<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre><h2 id="como-usar-la-sintaxis-spread-y-el-resto-de-par-metros-en-javascript">Como usar la sintaxis Spread y el resto de parámetros en JavaScript</h2><p>Desde ES6, podemos usar el <code>...</code> (si, tres puntos consecutivos) como sintaxis spread &nbsp;y el resto de los parámetros en la desestructuración de arreglo.</p><ul><li> Por el resto del parámetro, el &nbsp;<code>...</code> aparece en el lado izquierdo de desestructuración.</li><li> Para la sintaxis spread, el <code>...</code> aparece en el lado derecho de la desestructuración.</li></ul><h2 id="como-usar-el-resto-del-par-metro-en-js"><strong>Como usar el resto del parámetro en JS</strong></h2><p>Con el Resto del Parámetro, &nbsp;podemos organizar los elementos de la izquierda de un arreglo en un nuevo arreglo. El resto de los parámetros deben ser la última variable en la sintaxis de desestructuración.</p><p>En el ejemplo de abajo, tenemos organizados los dos primeros elementos de un arreglo a las variables tomate y hongo. El resto de los elementos son organizados a la variable <code>rest</code> &nbsp;usando el <code>...</code>. La variable <code>rest</code> es un nuevo arreglo conteniendo los elementos sobrantes.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">[</span>tomate<span class="token punctuation">,</span> hongo<span class="token punctuation">,</span> <span class="token operator">...</span>rest<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>tomate<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// '?'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>hongo<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// '?'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>rest<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["?", "?", "?", "?", "?"]</span></code></pre><h2 id="como-usar-el-operador-spread-en-js"><strong>Como usar el Operador Spread en JS</strong></h2><p>Con el operador spread, podemos crear un clon/copia del arreglo existente como este:</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> ensalada <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> ensaladaCloned <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>ensalada<span class="token punctuation">]</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ensaladaCloned<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["?", "?", "?", "?", "?", "?", "?"]</span>
+
+ensalada <span class="token operator">===</span> ensaladaCloned <span class="token comment">// false</span></code></pre><h2 id="desestructuraci-n-de-casos-de-uso-en-javascript">Desestructuración de Casos de uso en JavaScript</h2><p>Vamos a ver algunos emocionantes usos-casos de desestructuración de arreglo, el operador spread, y el resto del parámetro.</p><h2 id="como-cambiar-los-valores-con-desestructuraci-n"><strong>Como cambiar los Valores con Desestructuración</strong></h2><p>Podemos cambiar el valor de dos variables fácilmente usando la sintaxis de desestructuración de arreglo.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">let</span> primero <span class="token operator">=</span> <span class="token string">'?'</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> segundo <span class="token operator">=</span> <span class="token string">'?'</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span>primero<span class="token punctuation">,</span> segundo<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>segundo<span class="token punctuation">,</span> primero<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>primero<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// '?'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>segundo<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// '?'</span></code></pre><h2 id="como-combinar-dos-arreglos"><strong>Como &nbsp;combinar dos arreglos</strong></h2><p>Podemos combinar dos arreglos y crear un nuevo arreglo con todos los elementos de ambos arreglos. Vamos a tomar dos arreglos– uno con un par de caras sonrientes y otro con algunos vegetales.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> emotion <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> veggies <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre><p>Ahora, podemos combinarlos para crear un nuevo arreglo.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> emotionalVeggies <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>emotion<span class="token punctuation">,</span> <span class="token operator">...</span>veggies<span class="token punctuation">]</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>emotionalVeggies<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["?", "?", "?", "?", "?", "?"]</span></code></pre><h2 id="m-todos-de-arreglo-javascript">Métodos de arreglo JavaScript</h2><p>Hasta ahora, hemos visto algunas propiedades de arreglos y métodos. Vamos &nbsp;a recapitular rápidamente los que hemos visto.</p><ul><li><code>push()</code> – Inserta un elemento al final del arreglo.</li><li><code>unshift()</code> – Inserta un elemento al inicio del arreglo.</li><li><code>pop()</code> – &nbsp;Remueve un elemento del final del arreglo.</li><li><code>shift()</code> – Remueve un elemento del principio del arreglo.</li><li><code>slice()</code> – Crea una copia sombra del arreglo.</li><li><code>Array.isArray()</code> – Determina si el valor es un arreglo.</li><li><code>length</code> – Determina el tamaño del arreglo.</li></ul><p>Ahora aprenderemos sobre otros importantes métodos de arreglo JS con ejemplos.</p><h2 id="como-crear-remover-actualizar-y-acceder-arreglos-en-javascript-"><strong>Como Crear, Remover, Actualizar, y Acceder Arreglos en JavaScript.</strong></h2><p>En esta sección, aprenderemos acerca de métodos que puedas usar para crear un nuevo arreglo, &nbsp;remover elementos para hacer un arreglo vacío, acceder elementos, &nbsp;y mucho más.</p><h3 id="el-m-todo-de-arreglo-concat-">El método de arreglo concat() </h3><p>El método <strong><strong><code>concat()</code></strong> </strong>combina uno o más arreglos y regresa un arreglo combinado. Es un método inmutable. Esto significa que no cambia(muta) un arreglo existente.</p><p>Vamos a concatenar dos arreglos.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> first <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> second <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> merged <span class="token operator">=</span> first<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>second<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>merged<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1, 2, 3, 4, 5, 6]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>first<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1, 2, 3]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>second<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [4, 5, 6]</span></code></pre><p>Usando el método <strong><strong><code>concat()</code></strong> </strong>podemos combinar más de dos arreglos. Podemos combinar cualquier número de arreglos con esta sintaxis:</p><pre class="language-js" tabindex="0"><code class="language-js">array<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>arr1<span class="token punctuation">,</span> arr2<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span>arrN<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><p>Aquí hay un ejemplo:</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> first <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> second <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> third <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> merged <span class="token operator">=</span> first<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>second<span class="token punctuation">,</span> third<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>merged<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1, 2, 3, 4, 5, 6, 7, 8, 9]</span></code></pre><h3 id="el-m-todo-de-arreglo-join-">El método de arreglo join() </h3><p>El método <strong><strong><code>join()</code></strong> </strong>junta todos los elementos de un arreglo usando un separador &nbsp;y regresa una cadena. El separador por defecto usado para juntar &nbsp;es <code>comma(,)</code>.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> emotions <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> joined <span class="token operator">=</span> emotions<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>joined<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "?,?,?,?"</span>
+</code></pre><p>Tú puedes pasar un separador de tu elección para juntar elementos. Aquí es un ejemplo de juntar elementos con un separador personalizado.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> joined <span class="token operator">=</span> emotions<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'&lt;=&gt;'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>joined<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "?&lt;=&gt;?&lt;=&gt;?&lt;=&gt;?"</span></code></pre><p>Invocando el método <code>join()</code> en un arreglo vacío regresa una cadena vacía:</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// returns ""</span></code></pre><h3 id="el-m-todo-de-arreglo-fill-">El método de arreglo fill()</h3><p>El método <code>fill()</code> llena un arreglo con un valor estático. Tú puedes cambiar todos los elementos a valores estáticos o cambiar algunos pocos elementos seleccionados. Nota el método <code>fill()</code> cambia el arreglo original.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">,</span> <span class="token string">'green'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+colors<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token string">'pink'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>colors<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["pink", "pink", "pink"]</span></code></pre><p>Aquí hay un ejemplo donde cambiamos solo los dos últimos elementos de un arreglo usando el método <code>fill()</code>:</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">,</span> <span class="token string">'green'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+colors<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token string">'pink'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["red", "pink", "pink"]</span></code></pre><p>En este caso, el primer argumento del método <code>fill()</code> es el valor con el que cambiamos. El segundo argumento es el índice de &nbsp;inicio que se va a cambiar. &nbsp;Este empeiza con <code>0</code>. El último argumento es para determinar donde dejar de llenar. El valor maximo podria ser &nbsp;<code>colors.length</code>.</p><p>Por favor, checa esto en este hilo de Twitter para un uso práctico del método <code>fill()</code>.</p><figure class="kg-card kg-embed-card"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="" title="Contenido incrustado" src="./manual_arreglos_javascript_files/Tweet.html" data-tweet-id="1360185996768251904" style="box-sizing: inherit; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-size: 22px; vertical-align: middle; position: static; visibility: visible; width: 550px; height: 544px; display: block; flex-grow: 1;" loading="lazy"></iframe></figure><p>También, puedes encontrar este demo proyecto de ayuda: <a href="https://github.com/atapas/array-fill-color-cards">https://github.com/atapas/array-fill-color-cards</a>.</p><h3 id="el-m-todo-de-arreglo-includes-">El método de arreglo includes()</h3><p>Tú puedes determinar la presencia de un elemento en un arreglo usando el método <code>includes()</code>. Si un elemento es encontrado, el método regresa <code>true</code>, y de otra forma <code>false</code>.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'tom'</span><span class="token punctuation">,</span> <span class="token string">'alex'</span><span class="token punctuation">,</span> <span class="token string">'bob'</span><span class="token punctuation">,</span> <span class="token string">'john'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+names<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'tom'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// returns true</span>
+names<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'july'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// returns false</span></code></pre><h3 id="el-m-todo-de-arreglo-indexof-">El método de arreglo &nbsp;indexOf()</h3><p>Si tú quieres saber la posición &nbsp;índice de un elemento arreglo. Tú puedes usar el método &nbsp;<code>indexOf()</code> para obtener eso. Devuelve el índice de la primera aparición de un elemento en el arreglo. Si un elemento no se encuentra, el &nbsp;método <code>indexOf()</code> regresa <code>-1</code>.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> nombres <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'tom'</span><span class="token punctuation">,</span> <span class="token string">'alex'</span><span class="token punctuation">,</span> <span class="token string">'bob'</span><span class="token punctuation">,</span> <span class="token string">'john'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+nombres<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'alex'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// returns 1</span>
+nombres<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'rob'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// returns -1</span></code></pre><p>Hay otro método <code>lastIndexOf()</code> esto ayuda a encontrar el índice de la última aparición de un elemento en un arreglo. Como <code>indexOf()</code>, <code>lastIndexOf()</code> también regresa <code>-1</code> cuando el elemento no es encontrado.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> nombres <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'tom'</span><span class="token punctuation">,</span> <span class="token string">'alex'</span><span class="token punctuation">,</span> <span class="token string">'bob'</span><span class="token punctuation">,</span> <span class="token string">'tom'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+nombres<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'tom'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// returns 0</span>
+nombres<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">'tom'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// returns 3</span></code></pre><h3 id="el-m-todo-de-arreglo-reverse-">El método de arreglo reverse()</h3><p> Como el nombre sugiere, el método <code>reverse()</code> reserva la posición del elemento en un arreglo entonces el último elemento va en la primera posición y la primera en la última.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> nombres <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'tom'</span><span class="token punctuation">,</span> <span class="token string">'alex'</span><span class="token punctuation">,</span> <span class="token string">'bob'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+nombres<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// returns ["bob", "alex", "tom"]</span>
+</code></pre><p>El método <code>reverse()</code> modifica el arreglo original.</p><h3 id="el-m-todo-de-arreglo-sort-">El método de arreglo sort()</h3><p>El método <code>sort()</code> es probablemente uno de los métodos más usados de arreglo. El método por predeterminado <code>sort()</code> convierte los tipos de elemento &nbsp;en cadena y luego los arregla. El orden de clasificación predeterminado es ascendente. El método sort () cambia la matriz original.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> nombres <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'tom'</span><span class="token punctuation">,</span> <span class="token string">'alex'</span><span class="token punctuation">,</span> <span class="token string">'bob'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+nombres<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// returns ["alex", "bob", "tom"]</span></code></pre><p>El método sort () acepta una función de comparación opcional como argumento. Puedes escribir una función de comparación y pasar al método sort () para anular el comportamiento de clasificación predeterminado.</p><p>Vamos a tomar un arreglo de números y ordenarlos de manera ascendente y descendente con la función sort.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> numeros <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">37</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
+</code></pre><p>Primero, podemos invocar el método por defecto &nbsp;<code>sort()</code> y ver el output:</p><pre class="language-js" tabindex="0"><code class="language-js">numeros<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><p>Ahora el orden del arreglo es , [1,10,100, 13, 23, 37, 5, 56, 9]. Bien eso no es el resultado esperado. &nbsp;Pero esto pasa por que el método default <code>sort()</code> convierte los elementos de la cadena de texto y luego lo compara basado en los valores de la unidad de código <code>UTF-16</code></p><p>Para resolver esto, vamos a escribir la funcion comparadora. Aqui hay una para el orden ascendente:</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">function</span> <span class="token function">ascendingComp</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>a<span class="token operator">-</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre><p>Ahora pasa esto por el método <code>sort()</code>:</p><pre class="language-js" tabindex="0"><code class="language-js">numeros<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>ascendingComp<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// retruns [1, 5, 9, 10, 13, 23, 37, 56, 100]</span>
+
+<span class="token comment">/* 
+
+También podemos codificarlo como,
+
+numeros.sort(function(a, b) {
+  return (a-b);
+});
+
+O,  con la funcion arrow,
+
+numeros.sort((a, b) =&gt; (a-b));
+
+*/</span></code></pre><p>Para el orden descendente, haz esto:</p><pre class="language-js" tabindex="0"><code class="language-js">numeros<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>b<span class="token operator">-</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><p>Checa esto en el repositorio GitHub para mas ejemplos de clasificación y tips <a href="https://github.com/atapas/js-array-sorting">https://github.com/atapas/js-array-sorting</a>.</p><h3 id="el-m-todo-de-arreglo-splice-">El método de arreglo splice()</h3><p>El método <code>splice()</code> ayuda a añadir, actualizar, y remover elementos de un arreglo. Este método puede ser un poco confuso al principio, pero una vez que &nbsp;conoces como usarlo apropiadamente, lo harás bien.</p><p>El propósito principal del método <code>splice()</code> es eliminar elementos de un arreglo. Regresa un arreglo con los elementos borrados y modifica el arreglo original. Pero puedes añadir y remplazar elementos usándolo.</p><p>Para añadir un elemento usando el método <code>splice()</code>, necesitamos pasar la posición donde queremos añadir, &nbsp;cuantos elementos a borrar empezando con la posición, y con el elemento a añadir.</p><p>En el ejemplo de abajo, estamos añadiendo un elemento <code>zack</code> en el índice &nbsp;<code>1</code> &nbsp;sin borrar ningún elemento.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> nombres <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'tom'</span><span class="token punctuation">,</span> <span class="token string">'alex'</span><span class="token punctuation">,</span> <span class="token string">'bob'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+nombres<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'zack'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>nombres<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["tom", "zack", "alex", "bob"]</span></code></pre><p>Hecha un vistazo al siguiente ejemplo. Ahí estamos eliminando un elemento del <code>indice 2</code> (el tercer elemento) y añadiendo un nuevo elemento, <code>zack</code>. El &nbsp;método <code>splice()</code> regresa un arreglo con el elemento eliminado, <code>bob</code>.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> nombres <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'tom'</span><span class="token punctuation">,</span> <span class="token string">'alex'</span><span class="token punctuation">,</span> <span class="token string">'bob'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> deleted <span class="token operator">=</span> nombres<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'zack'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>deleted<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["bob"]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>nombres<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["tom", "alex", "zack"]</span></code></pre><p>Checa esto en este hilo de &nbsp;Twitter y aprende como el método <code>splice()</code> te ayuda a hacer un arreglo vacío.</p><figure class="kg-card kg-embed-card"><iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="" title="Contenido incrustado" src="./manual_arreglos_javascript_files/Tweet(1).html" data-tweet-id="1313112900085579776" style="box-sizing: inherit; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-size: 22px; vertical-align: middle; position: static; visibility: visible; width: 550px; height: 443px; display: block; flex-grow: 1;" loading="lazy"></iframe></figure><h2></h2><h3 id="m-todos-de-arreglos-est-ticos-en-javascript">Métodos de arreglos estáticos en JavaScript</h3><p>En JavaScript, tenemos tres métodos de arreglos estáticos. Hemos visto ya <code>Array.isArray()</code>. Vamos a ver los otros dos ahora.</p><h3 id="el-m-todo-de-arreglo-array-from-">El método de arreglo Array.from()</h3><p>Vamos a un fragmento simple de código HTML que contiene un div y una lista de pocos elementos:</p><pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span> 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre><p>Ahora vamos a consultar el DOM usando el método <code>getElementsByTagName()</code>.</p><pre class="language-js" tabindex="0"><code class="language-js">document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><p>Regresa un <code>HTMLCollection</code> que se ve así:</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="./manual_arreglos_javascript_files/htmlCollec.png" class="kg-image" alt="htmlCollec" width="600" height="400" loading="lazy"><figcaption>HTMLCollection is an Array-Like Object</figcaption></figure><p>Entonces es como un arreglo. Ahora vamos a tratar de iterar sobre ella usando <code>forEach</code>:</p><pre class="language-js" tabindex="0"><code class="language-js">document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+ <span class="token comment">// Do something here..</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre><p>Adivina ¿cuál es el output? Es un error como este:</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="./manual_arreglos_javascript_files/htmlcolc_error.png" class="kg-image" alt="htmlcolc_error" width="600" height="400" loading="lazy"><figcaption>Error while using forEach on the Array-Like object</figcaption></figure><p>¿Pero por qué? Por qué la el <code>HTMLCollection</code> no es un arreglo. Es un objeto <code>Array-Like</code>. Entonces tu no puedes iterar sobre él usando <code>forEach</code>.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="./manual_arreglos_javascript_files/htmlCollec_object.png" class="kg-image" alt="htmlCollec_object" width="600" height="400" loading="lazy"><figcaption>The proto is Object</figcaption></figure><p>Aquí es donde deberías usar el método <code>Array.from()</code>. Convierte el objeto tipo arreglo a un arreglo para que así puedas realizar todas las operaciones de arreglo en el.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> collection <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre><p>Aquí esta &nbsp;<code>collection</code> que es un arreglo:</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="./manual_arreglos_javascript_files/collection.png" class="kg-image" alt="collection" width="600" height="400" loading="lazy"><figcaption>The proto is Array</figcaption></figure><h3 id="el-m-todo-de-arreglo-array-of-">El método de arreglo Array.of() </h3><p>El método <code>Array.of()</code> crea un nuevo arreglo usando cualquier número de elementos de cualquier tipo.</p><pre class="language-js" tabindex="0"><code class="language-js">Array<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token string">'test'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string-property property">'name'</span><span class="token operator">:</span> <span class="token string">'Alex'</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre><p>El output se ve como esto:</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="./manual_arreglos_javascript_files/image-49.png" class="kg-image" alt="image-49" width="600" height="400" loading="lazy"><figcaption>Output of the Array.of() method</figcaption></figure><h3 id="el-m-todo-de-iterador-de-arreglo-en-javascript">El método de iterador de arreglo en JavaScript</h3><p>Ahora vamos a aprender acerca de los métodos de iterador de arreglo. &nbsp;Hay mucha métodos muy útiles para iterar a través de un arreglo y realizar cálculos, tomar decisiones, &nbsp;filtrar cosas y más.</p><p>Hasta ahora, no hemos visto algún ejemplo de objetos de arreglo. En esta seccion, usaremos los siguientes arreglos de objetos para explicar y demostrar los métodos a continuación.</p><p>Este arreglo contiene la información de algunos estudiantes suscritos a varios cursos pagados:</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">let</span> estudiantes <span class="token operator">=</span> <span class="token punctuation">[</span>
+   <span class="token punctuation">{</span>
+      <span class="token string-property property">'id'</span><span class="token operator">:</span> <span class="token number">001</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'f_nombre'</span><span class="token operator">:</span> <span class="token string">'Alex'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'l_nombre'</span><span class="token operator">:</span> <span class="token string">'B'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'genero'</span><span class="token operator">:</span> <span class="token string">'M'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'casado'</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'edad'</span><span class="token operator">:</span> <span class="token number">22</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'paga'</span><span class="token operator">:</span> <span class="token number">250</span><span class="token punctuation">,</span>  
+      <span class="token string-property property">'cursos'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'JavaScript'</span><span class="token punctuation">,</span> <span class="token string">'React'</span><span class="token punctuation">]</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token punctuation">{</span>
+      <span class="token string-property property">'id'</span><span class="token operator">:</span> <span class="token number">002</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'f_nombre'</span><span class="token operator">:</span> <span class="token string">'Ibrahim'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'l_nombre'</span><span class="token operator">:</span> <span class="token string">'M'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'genero'</span><span class="token operator">:</span> <span class="token string">'M'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'casado'</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'edad'</span><span class="token operator">:</span> <span class="token number">32</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'paga'</span><span class="token operator">:</span> <span class="token number">150</span><span class="token punctuation">,</span>  
+      <span class="token string-property property">'cursos'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'JavaScript'</span><span class="token punctuation">,</span> <span class="token string">'PWA'</span><span class="token punctuation">]</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token punctuation">{</span>
+      <span class="token string-property property">'id'</span><span class="token operator">:</span> <span class="token number">003</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'f_nombre'</span><span class="token operator">:</span> <span class="token string">'Rubi'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'l_nombre'</span><span class="token operator">:</span> <span class="token string">'S'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'genero'</span><span class="token operator">:</span> <span class="token string">'F'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'casado'</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'edad'</span><span class="token operator">:</span> <span class="token number">27</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'pago'</span><span class="token operator">:</span> <span class="token number">350</span><span class="token punctuation">,</span>  
+      <span class="token string-property property">'cursos'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'Blogging'</span><span class="token punctuation">,</span> <span class="token string">'React'</span><span class="token punctuation">,</span> <span class="token string">'UX'</span><span class="token punctuation">]</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token punctuation">{</span>
+      <span class="token string-property property">'id'</span><span class="token operator">:</span> <span class="token number">004</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'f_nombre'</span><span class="token operator">:</span> <span class="token string">'Zack'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'l_nombre'</span><span class="token operator">:</span> <span class="token string">'F'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'genero'</span><span class="token operator">:</span> <span class="token string">'M'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'casado'</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'edad'</span><span class="token operator">:</span> <span class="token number">36</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'pago'</span><span class="token operator">:</span> <span class="token number">250</span><span class="token punctuation">,</span>  
+      <span class="token string-property property">'cursos'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'Git'</span><span class="token punctuation">,</span> <span class="token string">'React'</span><span class="token punctuation">,</span> <span class="token string">'Branding'</span><span class="token punctuation">]</span>
+   <span class="token punctuation">}</span> 
+<span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre><p>Bien vamos a empezar. Todos los métodos de arreglo iterativo toma funciones como un argumento. Tú necesitas especificar la lógica para iterar y aplicarla en la función.</p><h3 id="el-m-todo-de-arreglo-filter-">El método de arreglo filter()</h3><p>El método filtró crea un nuevo arreglo con todos los elementos que satisfagan la condición mencionada en la función. Vamos a encontrar el estudiante que es femenino. Entonces la condición de filtro debería ser que el genero sea igual a 'F'.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> femaleStudents <span class="token operator">=</span> students<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> element<span class="token punctuation">.</span>gender <span class="token operator">===</span> <span class="token string">'F'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>femaleStudents<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><p>El output es este:</p><figure class="kg-card kg-image-card"><img src="./manual_arreglos_javascript_files/image-50.png" class="kg-image" alt="image-50" width="600" height="400" loading="lazy"></figure><p>Eso está bien. El estudiante con el nombre <code>Rubi</code> es la única estudiante femenina que tenemos hasta ahora.</p><h3 id="el-m-todo-de-array-map-">El método de array map()</h3><p> El método <code>map()</code><strong> &nbsp;</strong>crea un nuevo arreglo iterando a través de los elementos y aplicando la lógica que proveemos en la función como argumento. Vamos a crear un nuevo arreglo de los nombres completos de todos los estudiantes en el arreglo de <code>students</code>.</p><pre class="language-js" tabindex="0"><code class="language-js">
+<span class="token keyword">const</span> fullNames <span class="token operator">=</span> students<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string-property property">'fullName'</span><span class="token operator">:</span> element<span class="token punctuation">[</span><span class="token string">'f_name'</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> element<span class="token punctuation">[</span><span class="token string">'l_name'</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>fullNames<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><p>El output se veria como esto:</p><figure class="kg-card kg-image-card"><img src="./manual_arreglos_javascript_files/image-51.png" class="kg-image" alt="image-51" width="600" height="400" loading="lazy"></figure><p>Aquí veremos un nuevo arreglo con el <code>fullName</code> &nbsp;propiedades que son calculadas usando las propiedades &nbsp;<code>f_name</code> &nbsp;y &nbsp;<code>l_name</code> &nbsp;de cada objeto de estudiantes.</p><h3 id="el-m-todo-de-arreglo-reduce-">El método de arreglo reduce()</h3><p>El método <code>reduce()</code> aplica la función reducer de cada elemento del arreglo y regresa el valor output. Vamos a aplicar la función reducer en el arreglo <code>students</code> para calcular la cantidad total a pagar por todos los estudiantes.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> total <span class="token operator">=</span> students<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>
+   <span class="token punctuation">(</span><span class="token parameter">accumulator<span class="token punctuation">,</span> student<span class="token punctuation">,</span> currentIndex<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      accumulator <span class="token operator">=</span> accumulator <span class="token operator">+</span> student<span class="token punctuation">.</span>paid<span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token punctuation">(</span>accumulator<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+<span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>total<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1000</span></code></pre><p>En el código de arriba,</p><ul><li> Iniciamos con el &nbsp;<code>accumulator</code> con &nbsp;<code>0</code>.</li><li> Aplicamos el método <code>reduce</code> en cada uno de los objetos <code>student</code>. &nbsp;Accedemos la propiedad <code>paid</code> y la añadimos al accumulator.</li><li> Finalmente regresaremos el accumulator.</li></ul><h3 id="el-m-todo-de-arreglo-some-">El método de arreglo some().</h3><p>El método <code>some()</code> regresa un valor booleano (verdadero/falso) basado al menos en un elemento en el arreglo pasando la condición en la función. vamos a ver si ahí hay algún estudiante menor de 30 años de edad.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">let</span> hasStudentBelow30 <span class="token operator">=</span> students<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> element<span class="token punctuation">.</span>age <span class="token operator">&lt;</span> <span class="token number">30</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>hasStudentBelow30<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span></code></pre><p>Sí, vamos a ver si hay al &nbsp;menos un estudiante menor de 30.</p><h3 id="el-m-todo-de-arreglo-find-">El método de arreglo find()</h3><p>Usando el metodo <code>some()</code>, tenemos que ver si hay algún estudiante debajo de la edad de 30 años. Vamos a encontrar que estudiante es.</p><p>Para hacer eso, usaremos el método <code>find()</code>. Este regresa el primer elemento encontrado del arreglo que satisface la condición de la función.</p><p>Los arreglos tienen otro metodo relacionado, <code>findIndex()</code>, eso regresa el índice del elemento que encontramos usando el método <code>find()</code>. Si no hay elementos que cumplan la condición el <code>findIndex()</code> regresa <code>-1</code>.</p><p>En el ejemplo de abajo, &nbsp;pasamos la función al método <code>find()</code> que checa la edad de cada estudiante. Y regresa el &nbsp;estudiante emparejado cuando la condición es cumplida.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> estudiante <span class="token operator">=</span> estudiantes<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> element<span class="token punctuation">.</span>age <span class="token operator">&lt;</span> <span class="token number">30</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>estudiante<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><p>El resultado es este:</p><figure class="kg-card kg-image-card"><img src="./manual_arreglos_javascript_files/image-52.png" class="kg-image" alt="image-52" width="600" height="400" loading="lazy"></figure><p>Como vimos, &nbsp;Alex es quien tiene 22 años de edad. Lo encontramos.</p><h3 id="el-m-todo-de-arreglo-every-">El método de arreglo every()</h3><p>El método <code>every()</code> detecta si cada &nbsp;elemento del arreglo satisface la condición pasada en la función. Vamos a encontrar si todos los estudiantes que se han suscrito al menos dos cursos.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> atLeastTwoCourses <span class="token operator">=</span> students<span class="token punctuation">.</span><span class="token function">every</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">elements<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> elements<span class="token punctuation">.</span>courses<span class="token punctuation">.</span>length <span class="token operator">&gt;=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>atLeastTwoCourses<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span></code></pre><p>Como es esperado, podemos ver que el resultado es <code>true</code>.</p><h2 id="m-todos-de-arreglos-propuestos">Métodos de arreglos propuestos</h2><p>En mayo de 2021, ECMAScript tiene un método en propuesta, el método at ().</p><h3 id="el-m-todo-at-"> El método at()</h3><p>El método propuesto <code>at()</code> debería ayudarte a acceder a los elementos de un arreglo usando un número de índice negativo. A partir de ahora, esto no es posible. tu puede acceder elemento solo desde el inicio del arreglo usando un número de índice positivo.</p><p>Acceder elementos de la parte de atrás del arreglo es posible usando el valor length. Con la inclusión del método <code>at()</code>, tú podrás acceder a los elementos usando ambos índices positivo y negativo con un solo método.</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> junkFoodILove <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+junkFoodILove<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ?</span>
+junkFoodILove<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ?</span>
+junkFoodILove<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ?</span>
+junkFoodILove<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ?</span>
+junkFoodILove<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ?</span>
+junkFoodILove<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined</span>
+</code></pre><p>Aquí hay una demostracion rapida de ello:</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="./manual_arreglos_javascript_files/demo-3.gif" class="kg-image" alt="demo-3" width="600" height="400" loading="lazy"><figcaption>Javascript Array at() method demo</figcaption></figure><p>Puedes usar este polyfill para lograr la funcionalidad del método <code>at()</code> hasta que este método sea añadido al lenguaje JavaScript. Por favor checa este repositorio de GitHub &nbsp;para &nbsp;los ejemplos del método <code>at()</code>: <a href="https://github.com/atapas/js-array-at-method">https://github.com/atapas/js-array-at-method</a>.</p><h2 id="antes-que-terminemos-">Antes que terminemos...</h2><p>Espero que te haya resultado útil este artículo, y te ayude a entender los arreglos de JavaScript más claramente. Por favor practica los ejemplos multiples veces para obtener un buen retenimiento de ellos. Puedes encontrar todos los ejemplos de codigo en mi repositorio de GitHub.</p><p>Conectemonos. Tú puedes encontrarme activo en <a href="https://twitter.com/tapasadhikary">Twitter (@tapasadhikary)</a>. Por favor siente libre de dar follow.</p>
+
+                        </section>
+                        
+                            <div class="sidebar">
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                            </div>
+                        
+                    </div>
+                    <hr>
+                    
+                        <div class="post-full-author-header" data-test-label="author-header-with-bio">
+                            
+                                
+    
+    
+    
+
+    <section class="author-card" data-test-label="author-card">
+        
+            
+    <img srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w60/2020/12/20155919_1600700269940992_6548742899546399238_n.jpg 60w" sizes="60px" src="./manual_arreglos_javascript_files/20155919_1600700269940992_6548742899546399238_n.jpg" class="author-profile-image" alt="Sil Zubikarai" width="720" height="960" onerror="this.style.display=&#39;none&#39;" loading="lazy" data-test-label="profile-image">
+  
+        
+
+        <section class="author-card-content ">
+            <span class="author-card-name">
+                <a href="https://www.freecodecamp.org/espanol/news/author/sil/" data-test-label="profile-link">
+                    
+                        Sil Zubikarai
+                    
+                </a>
+            </span>
+            
+                
+                    <p data-test-label="default-bio">
+                        Leer <a href="https://www.freecodecamp.org/espanol/news/author/sil/">más publicaciones</a>.
+                    </p>
+                
+            
+        </section>
+    </section>
+
+                            
+                        </div>
+                        <hr>
+                    
+
+                    
+                    
+                        
+    
+
+
+<p data-test-label="social-row-cta" class="social-row">
+    If you read this far, thank the author to show them you care. <button id="tweet-btn" class="cta-button" data-test-label="tweet-button" onclick="window.open(
+    &#39;https://twitter.com/intent/tweet?text=Gracias%20%40Otsonoir%20por%20escribir%20este%20%C3%BAtil%20art%C3%ADculo.%0A%0AManual%20de%20arreglos%20en%20JavaScript%3A%20M%C3%A9todos%20de%20arreglos%20de%20JS%20explicados%20con%20ejemplos%0A%0Ahttps://www.freecodecamp.org/espanol/news/el-manual-de-arreglos-en-javascript/&#39;,
+    &#39;share-twitter&#39;,
+    &#39;width=550, height=235&#39;
+  ); return false;">Say Thanks</button>
+</p>
+
+
+    
+    <script>document.addEventListener("DOMContentLoaded",(()=>{const t=document.getElementById("tweet-btn"),e=window.location,o="Manual%20de%20arreglos%20en%20JavaScript%3A%20M%C3%A9todos%20de%20arreglos%20de%20JS%20explicados%20con%20ejemplos".replace(/&#39;/g,"%27"),n="",r="@Otsonoir",i=Boolean("");let s;if(i&&(n||r)){const t={originalPostAuthor:"",currentPostAuthor:"Sil Zubikarai"};s=encodeURIComponent(`Gracias ${n||t.originalPostAuthor} por escribir este útil artículo y ${r||t.currentPostAuthor} por traducirlo.`)}else!i&&r&&(s=encodeURIComponent(`Gracias ${r} por escribir este útil artículo.`));const a=`window.open(\n    '${s?`https://twitter.com/intent/tweet?text=${s}%0A%0A${o}%0A%0A${e}`:`https://twitter.com/intent/tweet?text=${o}%0A%0A${e}`}',\n    'share-twitter',\n    'width=550, height=235'\n  ); return false;`;t.setAttribute("onclick",a)}));</script>
+
+
+                        
+
+<div class="learn-cta-row" data-test-label="learn-cta-row">
+    <p>
+        Aprende a codificar de forma gratuita. El plan de estudios de código abierto de freeCodeCamp ha ayudado a más de 40,000 personas a obtener trabajos como desarrolladores. <a href="https://www.freecodecamp.org/espanol/learn/" class="cta-button" id="learn-to-code-cta" rel="noopener noreferrer" target="_blank">Empezar</a>
+    </p>
+</div>
+
+                    
+                </section>
+                
+                    <div class="banner-ad bottom">
+                        <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                    </div>
+                
+            </article>
+        </div>
+    </main>
+
+
+            
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-top">
+            <div class="footer-desc-col">
+                <p data-test-label="tax-exempt-status">freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charity organization (United States Federal Tax Identification Number: 82-0779546)</p>
+                <p data-test-label="mission-statement">Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public.</p>
+                <p data-test-label="donation-initiatives">Las donaciones a freeCodeCamp van dirigidas a nuestras iniciativas educativas y ayudan a pagar servidores, servicios y personal.</p>
+                <p class="footer-donation" data-test-label="donate-text">
+                    Puedes hacer <a href="https://www.freecodecamp.org/espanol/donate/" class="inline" rel="noopener noreferrer" target="_blank">una donación deducible de impuestos aquí</a>.
+                </p>
+            </div>
+            <div class="trending-guides" data-test-label="trending-guides">
+                <div class="col-header">Guías de tendencias</div>
+                <div class="trending-guides-row">
+                    <div class="footer-col footer-col-1">
+                        <a href="https://www.freecodecamp.org/espanol/news/como-clonar-una-branch-en-git/" rel="noopener noreferrer" target="_blank">Git Clone
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/metodologia-agile/" rel="noopener noreferrer" target="_blank">Métodos Agile
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/python-if-name-main/" rel="noopener noreferrer" target="_blank">Python Main
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/javascript-callback-functions-what-are-callbacks-in-js-and-how-to-use-them/" rel="noopener noreferrer" target="_blank">Callback
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/curso-debounce-javascript-como-hacer-que-tu-js-espere/" rel="noopener noreferrer" target="_blank">Debounce
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/url-codificacion-como-utilizar-encodeuricomponent-javascript/" rel="noopener noreferrer" target="_blank">URL Encode
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/make-it-blink-html-tutorial-how-to-use-the-blink-tag-with-code-examples/" rel="noopener noreferrer" target="_blank">Blink HTML
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/tuplas-listas-python/" rel="noopener noreferrer" target="_blank">Python Tupla
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/como-agregar-elementos-a-un-arreglo/" rel="noopener noreferrer" target="_blank">JavaScript Push
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/java-list-tutorial-util-list-api-example/" rel="noopener noreferrer" target="_blank">Java List
+                        </a>
+                    </div>
+                    <div class="footer-col footer-col-2">
+                        <a href="https://www.freecodecamp.org/espanol/news/diseno-ux-convertirse-en-un-disenador-de-experiencia-de-usuario/" rel="noopener noreferrer" target="_blank">UX
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/pensamiento-de-diseno-emprendedores-desarrolladores/" rel="noopener noreferrer" target="_blank">Proceso de Diseño
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/lista-de-numeros-primos-una-grafica-con-todos-los/" rel="noopener noreferrer" target="_blank">Números Primos
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/product-design-explicado-en-un-espanol-sencillo/" rel="noopener noreferrer" target="_blank">Diseño de Producto
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/what-is-digital-design-and-why-does-it-matter/" rel="noopener noreferrer" target="_blank">Digital Design
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/los-mejores-juegos-online-para-aprender-programar/" rel="noopener noreferrer" target="_blank">Juegos de Código
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/svm-machine-learning-tutorial-what-is-the-support-vector-machine-algorithm-explained-with-code-examples/" rel="noopener noreferrer" target="_blank">SVM
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/javascript-foreach-how-to-loop-through-an-array-in-js/" rel="noopener noreferrer" target="_blank">JavaScript forEach
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/google-bert-nlp-machine-learning-tutorial/" rel="noopener noreferrer" target="_blank">Google BERT
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/create-table-sql-server-con-ejemplo/" rel="noopener noreferrer" target="_blank">Create Table SQL
+                        </a>
+                    </div>
+                    <div class="footer-col footer-col-3">
+                        <div class="footer-left">
+                            <a href="https://www.freecodecamp.org/espanol/news/diseno-web-responsive-como-hacer-que-un-sitio-web-se-vea-bien-en-telefonos-y-tabletas/" rel="noopener noreferrer" target="_blank">Diseño Web Responsive
+                            </a>
+                            <a href="https://www.freecodecamp.org/espanol/news/que-es-svg-explicacion-de-etiquetas-imagenes/" rel="noopener noreferrer" target="_blank">¿Qué es un archivo SVG?
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/pdf-password-remover-guide-how-to-remove-password-protection-from-a-pdf/" rel="noopener noreferrer" target="_blank">PDF Password Remover
+                            </a>
+                            <a href="https://www.freecodecamp.org/espanol/news/que-es-un-archivo-pdf-como-lo-abres/" rel="noopener noreferrer" target="_blank">¿Qué es un Archivo PDF?
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/what-is-python-used-for-10-coding-uses-for-the-python-programming-language/" rel="noopener noreferrer" target="_blank">What Is Python?
+                            </a>
+                        </div>
+
+                        <div class="footer-right">
+                            <a href="https://www.freecodecamp.org/espanol/news/que-is-tls-explicado-en-espanol-simple/" rel="noopener noreferrer" target="_blank">¿Qué es TLS?
+                            </a>
+                            <a href="https://www.freecodecamp.org/espanol/news/que-es-una-red-lan-explicada-en-espanol/" rel="noopener noreferrer" target="_blank">¿Qué es una red LAN?
+                            </a>
+                            <a href="https://www.freecodecamp.org/espanol/news/node-js-npm-tutorial/" rel="noopener noreferrer" target="_blank">¿Qué es npm?
+                            </a>
+                            <a href="https://www.freecodecamp.org/espanol/news/rsync-ejemplos-opciones-y-copiar-archivos-atraves-ssh/" rel="noopener noreferrer" target="_blank">Ejemplos de RSync
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/how-to-use-the-tree-based-algorithm-for-machine-learning/" rel="noopener noreferrer" target="_blank">Random Forest
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="col-header" data-test-label="our-nonprofit">Our Charity</div>
+            <div class="footer-divider"></div>
+            <div class="our-nonprofit">
+                <a href="https://www.freecodecamp.org/espanol/news/acerca-de-freecodecamp-preguntas-frecuentes/" rel="noopener noreferrer" target="_blank" data-test-label="about">
+                    Acerca de
+                </a>
+                <a href="https://www.linkedin.com/school/free-code-camp/people/" rel="noopener noreferrer" target="_blank" data-test-label="alumni">
+                    Red de ex-Alumnos
+                </a>
+                <a href="https://github.com/freeCodeCamp/" rel="noopener noreferrer" target="_blank" data-test-label="open-source">
+                    Código abierto
+                </a>
+                <a href="https://www.freecodecamp.org/news/shop/" rel="noopener noreferrer" target="_blank" data-test-label="shop">
+                    Tienda
+                </a>
+                <a href="https://www.freecodecamp.org/espanol/news/preguntas-comunes-de-soporte-tecnico/" rel="noopener noreferrer" target="_blank" data-test-label="support">
+                    Soporte
+                </a>
+                <a href="https://www.freecodecamp.org/news/sponsors/" rel="noopener noreferrer" target="_blank" data-test-label="sponsors">
+                    Patrocinadores
+                </a>
+                <a href="https://www.freecodecamp.org/espanol/news/politica-de-honestidad-academica/" rel="noopener noreferrer" target="_blank" data-test-label="honesty">
+                    Honestidad Académica
+                </a>
+                <a href="https://www.freecodecamp.org/espanol/news/codigo-de-conducta/" rel="noopener noreferrer" target="_blank" data-test-label="coc">
+                    Código de Conducta
+                </a>
+                <a href="https://www.freecodecamp.org/news/privacy-policy/" rel="noopener noreferrer" target="_blank" data-test-label="privacy">
+                    Política de privacidad
+                </a>
+                <a href="https://www.freecodecamp.org/news/terms-of-service/" rel="noopener noreferrer" target="_blank" data-test-label="tos">
+                    Términos de servicio
+                </a>
+                <a href="https://www.freecodecamp.org/news/copyright-policy/" rel="noopener noreferrer" target="_blank" data-test-label="copyright">
+                    Política de derechos de autor
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+        </div>
+
+        
+        
+        
+
+        <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5D6RKKP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+        
+    <script defer="" src="./manual_arreglos_javascript_files/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon="{&quot;rayId&quot;:&quot;8443cc172b7c9525&quot;,&quot;version&quot;:&quot;2023.10.0&quot;,&quot;token&quot;:&quot;bdb993c6dde44e178aabd9555e75e4f4&quot;}" crossorigin="anonymous"></script>
+
+
+</body></html>

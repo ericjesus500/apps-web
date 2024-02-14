@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>LenguajeCSS.com | Documentación sobre diseño web - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Documentación sobre CSS y las mejores herramientas y recursos para aprender a utilizar el lenguaje de marcado CSS (Hojas de estilo).">
+  
+  <link rel="stylesheet" href="home.css">
+  <script type="module" src="home.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="LenguajeCSS.com | Documentación sobre diseño web - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Documentación sobre CSS y las mejores herramientas y recursos para aprender a utilizar el lenguaje de marcado CSS (Hojas de estilo).">
+  <meta property="og:url" content="https://lenguajecss.com/">
+  <meta property="twitter:url" content="https://lenguajecss.com/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="LenguajeCSS.com | Documentación sobre diseño web - CSS en español">
+  <meta property="twitter:description" content="Documentación sobre CSS y las mejores herramientas y recursos para aprender a utilizar el lenguaje de marcado CSS (Hojas de estilo).">
+  <meta property="twitter:image" content="https://lenguajecss.com/large-summary.jpg">
+
+  </head>
+
+<body class="css" style="--logo-color: #1e7bbf"><div class="page">
+    <header class="hero">
+
+  <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+
+  <div class="wrapper column">
+    <div class="text">
+      <a class="logo-header" href="index.htm">
+        <svg class="logo">
+          <use href="assets/icons/logos.svg#css"></use>
+        </svg>
+        <h1>LenguajeCSS</h1>
+      </a>
+      <p><strong>CSS</strong> es un lenguaje de estilos para dotar de apariencia y aspecto visual a una página o sitio web (entre otras cosas). También es conocido como el mayor enemigo de los programadores backend. En esta página te ayudo a aprender a dominarlo.</p>
+
+    </div>
+    <div class="buttons">
+      <a class="btn" href="css/index.htm">Aprender CSS</a><a class="btn" href="css/cheatsheets/index.htm">Guía rápida</a><a class="btn" href="css/introduccion/guia-css/index.htm">CSS telefónico</a><a class="btn" href="https://discord.manz.dev/">Acceder a Discord</a>
+      
+      
+    </div>
+  </div>
+
+</header>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="css/index.htm" title="CSS">
+  <svg class="logo">
+    <use href="assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="postcss/index.htm" title="PostCSS">
+  <svg class="logo">
+    <use href="assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/fundamentos/" title="Fundamentos">
+  <svg class="logo">
+    <use href="assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/javascript/" title="Javascript">
+  <svg class="logo">
+    <use href="assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/npm/" title="NPM">
+  <svg class="logo">
+    <use href="assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/webcomponents/" title="WebComponents">
+  <svg class="logo">
+    <use href="assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/vuejs/" title="VueJS">
+  <svg class="logo">
+    <use href="assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/automatizadores/" title="Automatizadores">
+  <svg class="logo">
+    <use href="assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+
+
+<section class="bg videos">
+
+  <div class="wrapper column">
+    <h2>Videos de Youtube</h2>
+    <p>En mi canal de Youtube encontrarás videos con conceptos de desarrollo web:</p>
+
+    <div class="list"><a href="https://youtu.be/K-nE-kZKLRw" title="¡NOVEDADES CSS! ¿Cuánto de este código CSS eres CAPAZ de reconocer?">
+  <img loading="lazy" src="vi/K-nE-kZKLRw/mqdefault.jpg" alt="¡NOVEDADES CSS! ¿Cuánto de este código CSS eres CAPAZ de reconocer?">
+</a><a href="https://youtu.be/I-EFAmX-vhE" title="Flex CSS: Alinear, centrar y reordenar elementos">
+  <img loading="lazy" src="vi/I-EFAmX-vhE/mqdefault.jpg" alt="Flex CSS: Alinear, centrar y reordenar elementos">
+</a><a href="https://youtu.be/8tTMYgHBQPI" title="Analizando las preguntas del STATE OF CSS 2022">
+  <img loading="lazy" src="vi/8tTMYgHBQPI/mqdefault.jpg" alt="Analizando las preguntas del STATE OF CSS 2022">
+</a><a href="https://youtu.be/g5QVe65vPd4" title="Grid CSS: Celdas irregulares">
+  <img loading="lazy" src="vi/g5QVe65vPd4/mqdefault.jpg" alt="Grid CSS: Celdas irregulares">
+</a><a href="https://youtu.be/sU4e6_i_ExU" title="Consejos y buenas prácticas (IV): Javascript + Imágenes">
+  <img loading="lazy" src="vi/sU4e6_i_ExU/mqdefault.jpg" alt="Consejos y buenas prácticas (IV): Javascript + Imágenes">
+</a><a href="https://youtu.be/0sFtRnbe0fo" title="Novedades de CSS: Dr. CSStrange y el multiverso">
+  <img loading="lazy" src="vi/0sFtRnbe0fo/mqdefault.jpg" alt="Novedades de CSS: Dr. CSStrange y el multiverso">
+</a><a href="https://youtu.be/wIGAyJGx2kc" title="CSS Cards: Baraja de cartas diseñada sólo con HTML y CSS">
+  <img loading="lazy" src="vi/wIGAyJGx2kc/mqdefault.jpg" alt="CSS Cards: Baraja de cartas diseñada sólo con HTML y CSS">
+</a><a href="https://youtu.be/Wou2koTiIyU" title="Grid CSS: Centrar, distribuir y alinear elementos">
+  <img loading="lazy" src="vi/Wou2koTiIyU/mqdefault.jpg" alt="Grid CSS: Centrar, distribuir y alinear elementos">
+</a><a href="https://youtu.be/hju7SXmiK7Y" title="Cómo crear SOMBRAS DE TEXTO (text-shadow)">
+  <img loading="lazy" src="vi/hju7SXmiK7Y/mqdefault.jpg" alt="Cómo crear SOMBRAS DE TEXTO (text-shadow)">
+</a></div>
+  </div>
+</section>
+
+
+
+
+<section class="cssart">
+
+  <div class="wrapper column">
+    <h2>Dibujos con CSS</h2>
+    <p>Estos dibujos que tenemos a continuación están hechos con CSS... ¿No te lo crees?</p>
+
+    <div class="list"><a href="https://youtu.be/Aq_VPZ4oTAs" title="Caja Funko Pop dibujada con código CSS / Javascript">
+  <img loading="lazy" src="vi/Aq_VPZ4oTAs/mqdefault.jpg" alt="Caja Funko Pop dibujada con código CSS / Javascript">
+</a><a href="https://youtu.be/OjI8jMcKN8s" title="Nintendo GAMEBOY dibujada con código CSS">
+  <img loading="lazy" src="vi/OjI8jMcKN8s/mqdefault.jpg" alt="Nintendo GAMEBOY dibujada con código CSS">
+</a><a href="https://youtu.be/TluRUeb4V94" title="Teléfono Alcatel One Touch Easy dibujado con código CSS">
+  <img loading="lazy" src="vi/TluRUeb4V94/mqdefault.jpg" alt="Teléfono Alcatel One Touch Easy dibujado con código CSS">
+</a><a href="https://youtu.be/j1-QNzikFCY" title="Interfaz (UI) de PCFútbol 2.0 con Javascript y CSS">
+  <img loading="lazy" src="vi/j1-QNzikFCY/mqdefault.jpg" alt="Interfaz (UI) de PCFútbol 2.0 con Javascript y CSS">
+</a></div>
+
+    <p>Más <a href="https://manz.dev/streams">Dibujos con CSS</a>.</p>
+  </div>
+
+</section>
+
+<section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+
+  </div>
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

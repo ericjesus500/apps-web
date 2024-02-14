@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>display inline</title>
+	<style>
+
+		body{
+			text-align: center;
+		}
+
+		.content{
+			width: 600px;
+			height: 400px;
+			border: 1px solid black;
+			padding: 30px 30px;
+			margin: 30px auto;
+		}
+
+		.box{
+			width: 100px;
+			height: 100px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #fff;			
+			border-width: 1px;
+			border-style: solid;			
+			font-size: 20px;
+			font-family: Arial;
+			margin: 20px 0;			
+		}
+
+		.box:nth-child(1){
+			background: skyblue;
+		}
+
+		.box:nth-child(2){
+			background: violet;
+		}
+
+		.box:nth-child(3){
+			background: orange;
+		}
+
+		.box-inline{
+			display: inline;			
+		}
+
+		.div-lista{
+			margin: 40px 0;			
+		}
+
+		.list{
+			line-height: 2;
+			font-size: 20px;
+			text-align-last: left;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	<h1>Original</h1>
+	<div class="content">
+		<div class="box">box 1</div>
+		<div class="box">box 2</div>
+		<div class="box">box 3</div>
+	</div>
+	<h1>display: inline</h1>
+	<div class="content">
+		<div class="box box-inline">box 1: Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, labore.</div>
+		<div class="box box-inline">box 2: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores consectetur libero tempora deserunt illo? Eius id ducimus dolores explicabo alias.</div>
+		<div class="box box-inline">box 3: Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur consequuntur itaque numquam temporibus quis corporis.</div>
+		<div class="div-lista">
+			<ul class="list">
+			  <li>Cada box pierde sus dimensiones.</li>
+			  <li>Cada box se ajusta a su contenido.</li>
+			  <li>En cada box se puede usar padding.</li>
+			</ul>
+		</div>	
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,798 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Flex CSS: Alinear elementos - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="¿Necesitas alinear elementos con CSS? ¿Distribuirlos? ¿Centrarlos? Aquí te explico como hacerlo con CSS para no olvidarte más.">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Flex CSS: Alinear elementos - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/css/maquetacion-y-colocacion/flex/flex-css.png">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="¿Necesitas alinear elementos con CSS? ¿Distribuirlos? ¿Centrarlos? Aquí te explico como hacerlo con CSS para no olvidarte más.">
+  <meta property="og:url" content="https://lenguajecss.com/css/maquetacion-y-colocacion/flex-alinear/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/maquetacion-y-colocacion/flex-alinear/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Flex CSS: Alinear elementos - CSS en español">
+  <meta property="twitter:description" content="¿Necesitas alinear elementos con CSS? ¿Distribuirlos? ¿Centrarlos? Aquí te explico como hacerlo con CSS para no olvidarte más.">
+  <meta property="twitter:image" content="https://lenguajecss.com/css/maquetacion-y-colocacion/flex/flex-css.png">
+
+  </head>
+
+<body class="css" style="--logo-color: #1e7bbf"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/css.jpg')">
+    <h1><a href="index.htm">Flex CSS: Alinear elementos</a></h1><h2 class="typewriter">O «cómo centrar un div con Flex»</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../flex/index.htm">Flex CSS: Introducción</a>
+    <a class="current" href="index.htm">Flex CSS: Alinear elementos</a>
+    <a href="../flex-organizar/index.htm">Flex CSS: Flexibilidad</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Cuestiones habituales en el mundo de CSS suelen ser <strong>«Cómo centrar con Flex»</strong>, <strong>«cómo alinear verticalmente»</strong> o <strong>«cómo alinear horizontalmente»</strong>. En este artículo, vamos a dar un repaso a las propiedades de alineación de elementos, para que no se te vuelva a resistir como distribuir los elementos de un contenedor <strong>Flex</strong>.</p>
+<h3 id="propiedades-de-alineación" tabindex="-1"><a class="header-anchor" href="#propiedades-de-alineación">Propiedades de alineación</a></h3>
+<p>Ahora, tras el tema de <a href="../flex/index.htm">Introducción a Flex</a>, tenemos un control básico de un contenedor con ítems flexibles. Pero para alinear correctamente, necesitamos conocer las propiedades existentes dentro de flex para disponer los ítems dependiendo de nuestro objetivo.</p>
+<p>Vamos a echar un vistazo a las siguientes propiedades, donde algunas actuan en el <strong>eje principal</strong> 1️⃣ (<em>recordemos que por defecto es el horizontal</em>), mientras que otras actuan en el <strong>eje secundario</strong> 2️⃣ (<em>por defecto, el eje vertical</em>):</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th style="text-align:center">Actúa en eje</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>justify-content</code></td>
+<td><strong>start</strong> | end | center | space-between | space-around | space-evenly</td>
+<td style="text-align:center">1️⃣</td>
+</tr>
+<tr>
+<td><code>align-items</code></td>
+<td>start | end | center | <strong>stretch</strong> | baseline</td>
+<td style="text-align:center">2️⃣</td>
+</tr>
+<tr>
+<td><code>align-content</code></td>
+<td>start | end | center | space-between | space-around | space-evenly | <strong>stretch</strong></td>
+<td style="text-align:center">2️⃣</td>
+</tr>
+</tbody>
+</table>
+<p>De esta pequeña lista, hay que centrarse en la primera y la segunda propiedad, ya que son las principales. La última propiedad, <code>align-content</code> solo tiene efecto si tenemos un contenedor <strong>flex multilinea</strong>.</p>
+<blockquote>
+<p>Es posible que a veces hayas encontrado valores como <code>flex-start</code> o <code>flex-end</code>, en lugar de <code>start</code> o <code>end</code>. Antiguamente, las palabras claves de estas propiedades tenían el prefijo <code>flex-</code>, pero aunque funcionen, se recomienda usar la versión sin el prefijo.</p>
+</blockquote>
+<p>Antes, un pequeño resumen:</p>
+<ul>
+<li><code>justify-content</code>: Se utiliza para alinear los ítems del <strong>eje principal</strong> (<em>por defecto, el horizontal</em>).</li>
+<li><code>align-items</code>: Usada para alinear los ítems del <strong>eje secundario</strong> (<em>por defecto, el vertical</em>).</li>
+<li><code>align-content</code>: Se utiliza para alinear el contenido del <strong>eje secundario</strong> entre líneas (<em>sólo en contenedor multilinea</em>).</li>
+</ul>
+<p><youtube-video v="I-EFAmX-vhE" alt="Flex CSS: Alinear, centrar y reordenar elementos"></youtube-video></p>
+<h3 id="alineación-de-elementos" tabindex="-1"><a class="header-anchor" href="#alineación-de-elementos">Alineación de elementos</a></h3>
+<h4 id="la-propiedad-justify-content" tabindex="-1"><a class="header-anchor" href="#la-propiedad-justify-content">La propiedad justify-content</a></h4>
+<p>La primera propiedad, <code>justify-content</code>, sirve para colocar los ítems de un contenedor mediante una disposición concreta a lo largo del <strong>eje principal</strong> (<em>por defecto, en horizontal</em>). Los valores que puede tomar esta propiedad son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>start</strong></td>
+<td>Agrupa los ítems al <strong>inicio</strong> del eje principal.</td>
+</tr>
+<tr>
+<td><code>end</code></td>
+<td>Agrupa los ítems al <strong>final</strong> del eje principal.</td>
+</tr>
+<tr>
+<td><code>center</code></td>
+<td>Agrupa los ítems al <strong>centro</strong> del eje principal.</td>
+</tr>
+<tr>
+<td><code>space-between</code></td>
+<td>Distribuye los ítems dejando espacio <strong>entre ellos</strong>.</td>
+</tr>
+<tr>
+<td><code>space-around</code></td>
+<td>Distribuye los ítems dejando espacio <strong>alrededor de ellos</strong>.</td>
+</tr>
+<tr>
+<td><code>space-evenly</code></td>
+<td>Distribuye como <code>space-around</code>, pero con un <strong>espacio exactamente igual</strong> alrededor de ellos.</td>
+</tr>
+</tbody>
+</table>
+<p>Con cada uno de estos valores, modificaremos la disposición de los ítems del contenedor donde se aplica, pasando a colocarse como se ve en el ejemplo interactivo siguiente (<em>nótense los números para observar el orden de cada ítem</em>):</p>
+<div class="example example-4">
+  <strong>justify-content:</strong>
+  <button class="mode" data-property="justify-content" data-value="start">start</button>
+  <button class="mode" data-property="justify-content" data-value="end">end</button>
+  <button class="mode" data-property="justify-content" data-value="center">center</button>
+  <button class="mode" data-property="justify-content" data-value="space-between">space-between</button>
+  <button class="mode" data-property="justify-content" data-value="space-around">space-around</button>
+  <button class="mode" data-property="justify-content" data-value="space-evenly">space-evenly</button>
+  <div class="container">
+    <div class="item item-1">1</div>
+    <div class="item item-2">2</div>
+    <div class="item item-3">3</div>
+  </div>
+</div>
+<style>
+  .example-4 .container {
+    display: flex;
+    background: steelblue;
+    min-height: 125px;
+  }
+  .example-4 .item {
+    border: 2px solid black;
+    background-color: grey;
+    color: white;
+    width: 50px;
+    height: 50px;
+  }
+</style>
+<script>
+  (() => {
+    const buttons = Array.from(document.querySelectorAll(".example-4 button.mode"));
+    const container = document.querySelector(".example-4 .container");
+    buttons.forEach(button => button.onclick = () => container.style[button.dataset.property] = button.dataset.value);
+  })();
+</script>
+<h4 id="la-propiedad-align-items" tabindex="-1"><a class="header-anchor" href="#la-propiedad-align-items">La propiedad align-items</a></h4>
+<p>Existe otra propiedad importante denominada <code>align-items</code>. Se encarga de alinear los ítems en el <strong>eje secundario</strong> del contenedor. Hay que tener cuidado de no confundir <code>align-items</code> con <code>align-content</code>, puesto que el segundo actúa sobre cada una de las líneas de un contenedor multilinea (<em>no tiene efecto si no usamos <code>flex-wrap</code></em>), mientras que <code>align-items</code> lo hace sobre la única línea que tiene un contenedor flex sin wrap.</p>
+<p>Los valores que puede tomar <code>align-items</code> son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>start</code></td>
+<td>Alinea los ítems al <strong>inicio</strong> del eje secundario.</td>
+</tr>
+<tr>
+<td><code>end</code></td>
+<td>Alinea los ítems al <strong>final</strong> del eje secundario.</td>
+</tr>
+<tr>
+<td><code>center</code></td>
+<td>Alinea los ítems al <strong>centro</strong> del eje secundario.</td>
+</tr>
+<tr>
+<td><strong>stretch</strong></td>
+<td>Alinea los ítems <strong>estirándolos</strong> de modo que cubran desde el inicio hasta el final del contenedor.</td>
+</tr>
+<tr>
+<td><code>baseline</code></td>
+<td>Alinea los ítems en el contenedor según la <strong>base</strong> del contenido de los ítems del contenedor.</td>
+</tr>
+</tbody>
+</table>
+<p>Veamos un ejemplo interactivo con <code>justify-content</code> y <code>align-items</code>:</p>
+<div class="example example-6">
+  <strong>justify-content:</strong>
+  <button class="mode" data-property="justify-content" data-value="start">start</button>
+  <button class="mode" data-property="justify-content" data-value="end">end</button>
+  <button class="mode" data-property="justify-content" data-value="center">center</button>
+  <button class="mode" data-property="justify-content" data-value="space-between">space-between</button>
+  <button class="mode" data-property="justify-content" data-value="space-around">space-around</button>
+  <button class="mode" data-property="justify-content" data-value="space-evenly">space-evenly</button>
+  <br>
+  <strong>align-items:</strong>
+  <button class="mode" data-property="align-items" data-value="start">start</button>
+  <button class="mode" data-property="align-items" data-value="end">end</button>
+  <button class="mode" data-property="align-items" data-value="center">center</button>
+  <button class="mode" data-property="align-items" data-value="stretch">stretch</button>
+  <button class="mode" data-property="align-items" data-value="baseline">baseline</button>
+  <div class="container">
+    <div class="item item-1">1</div>
+    <div class="item item-2">2</div>
+    <div class="item item-3">3</div>
+  </div>
+</div>
+<style>
+  .example-6 .container {
+    display: flex;
+    background: steelblue;
+    min-height: 150px;
+  }
+  .example-6 .item {
+    border: 2px solid black;
+    background-color: grey;
+    color: white;
+    width: 50px;
+    min-height: 50px;
+  }
+</style>
+<script>
+  (() => {
+    const buttons = Array.from(document.querySelectorAll(".example-6 button.mode"));
+    const container = document.querySelector(".example-6 .container");
+    buttons.forEach(button => button.onclick = () => container.style[button.dataset.property] = button.dataset.value);
+  })();
+</script>
+<h3 id="alineación-multilínea" tabindex="-1"><a class="header-anchor" href="#alineación-multilínea">Alineación multilínea</a></h3>
+<h4 id="la-propiedad-align-content" tabindex="-1"><a class="header-anchor" href="#la-propiedad-align-content">La propiedad align-content</a></h4>
+<p>Una vez entendidos los casos anteriores, debemos atender a la propiedad <code>align-content</code>, que es un caso particular de <code>align-items</code>. Nos servirá cuando estemos tratando con un <strong>contenedor flex multilinea</strong> creado mediante <code>flex-wrap</code>. Los contenedores multilinea son un tipo de contenedor en el que, cuando los ítems no caben en el ancho disponible, el eje principal se divide en múltiples líneas.</p>
+<p>De esta forma, <code>align-content</code> servirá para alinear cada una de las líneas del contenedor multilinea. Los valores que puede tomar la propiedad <code>align-content</code> son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>start</code></td>
+<td>Agrupa los ítems al <strong>inicio</strong> del eje principal.</td>
+</tr>
+<tr>
+<td><code>end</code></td>
+<td>Agrupa los ítems al <strong>final</strong> del eje principal.</td>
+</tr>
+<tr>
+<td><code>center</code></td>
+<td>Agrupa los ítems al <strong>centro</strong> del eje principal.</td>
+</tr>
+<tr>
+<td><code>space-between</code></td>
+<td>Distribuye los ítems desde el <strong>inicio hasta el final</strong>.</td>
+</tr>
+<tr>
+<td><code>space-around</code></td>
+<td>Distribuye los ítems dejando el mismo espacio <strong>a los lados</strong> de cada uno.</td>
+</tr>
+<tr>
+<td><strong>stretch</strong></td>
+<td><strong>Estira</strong> los ítems para ocupar de forma equitativa todo el espacio.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Recuerda que estaremos modificando la disposición en vertical, salvo que estemos usando <code>flex-direction: column</code>, en cuyo caso, el eje principal sería horizontal.</p>
+</blockquote>
+<p>En el ejemplo siguiente, veremos que al indicar un contenedor de <strong>200 píxels de alto</strong> con ítems de <strong>50px</strong> de alto y un <strong>flex-wrap</strong> establecido para tener contenedores multilinea, podemos utilizar la propiedad <code>align-content</code> para alinear los ítems de forma vertical de modo que se queden en la zona inferior del contenedor:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #CCC<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+
+  <span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap<span class="token punctuation">;</span>
+  <span class="token property">align-content</span><span class="token punctuation">:</span> end<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.item</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #777<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Observa como funciona la propiedad <code>align-content</code> en el siguiente ejemplo interactivo:</p>
+<div class="example example-5">
+  <strong>align-content:</strong>
+  <button class="mode" data-property="align-content" data-value="start">start</button>
+  <button class="mode" data-property="align-content" data-value="end">end</button>
+  <button class="mode" data-property="align-content" data-value="center">center</button>
+  <button class="mode" data-property="align-content" data-value="space-between">space-between</button>
+  <button class="mode" data-property="align-content" data-value="space-around">space-around</button>
+  <button class="mode" data-property="align-content" data-value="stretch">stretch</button>
+  <div class="container">
+    <div class="item item-1">1</div>
+    <div class="item item-2">2</div>
+    <div class="item item-3">3</div>
+    <div class="item item-1">4</div>
+    <div class="item item-2">5</div>
+    <div class="item item-3">6</div>
+    <div class="item item-1">7</div>
+    <div class="item item-2">8</div>
+    <div class="item item-3">9</div>
+  </div>
+</div>
+<style>
+  .example-5 .container {
+    display: flex;
+    flex-wrap: wrap;
+    background: steelblue;
+    width: 300px;
+    min-height: 175px;
+  }
+  .example-5 .item {
+    border: 2px solid black;
+    background-color: grey;
+    color: white;
+    width: 50px;
+    min-height: 50px;
+  }
+</style>
+<script>
+  (() => {
+    const buttons = Array.from(document.querySelectorAll(".example-5 button.mode"));
+    const container = document.querySelector(".example-5 .container");
+    buttons.forEach(button => button.onclick = () => container.style[button.dataset.property] = button.dataset.value);
+  })();
+</script>
+<h3 id="alineaciones-específicas" tabindex="-1"><a class="header-anchor" href="#alineaciones-específicas">Alineaciones específicas</a></h3>
+<h4 id="la-propiedad-align-self" tabindex="-1"><a class="header-anchor" href="#la-propiedad-align-self">La propiedad align-self</a></h4>
+<p>Por otro lado, la propiedad <code>align-self</code> actúa exactamente igual que <code>align-items</code>, sin embargo es la primera propiedad de flex que vemos que se utiliza sobre un <strong>ítem hijo específico</strong> y no sobre el elemento padre contenedor. Salvo por este detalle, funciona exactamente igual que <code>align-items</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valores</th>
+<th>Actúa en eje</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>align-self</code></td>
+<td><strong>auto</strong> | start | end | center | stretch | baseline</td>
+<td>2️⃣</td>
+</tr>
+</tbody>
+</table>
+<p>Gracias a ese detalle, <code>align-self</code> nos permite cambiar el comportamiento de <code>align-items</code> y sobreescribirlo con <strong>comportamientos específicos</strong> para ítems concretos que no queremos que se comporten igual que el resto.</p>
+<p>La propiedad <code>align-self</code> puede tomar los siguientes valores:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>start</code></td>
+<td>Alinea los ítems al <strong>inicio</strong> del contenedor.</td>
+</tr>
+<tr>
+<td><code>end</code></td>
+<td>Alinea los ítems al <strong>final</strong> del contenedor.</td>
+</tr>
+<tr>
+<td><code>center</code></td>
+<td>Alinea los ítems al <strong>centro</strong> del contenedor.</td>
+</tr>
+<tr>
+<td><code>stretch</code></td>
+<td>Alinea los ítems <strong>estirándolos</strong> al tamaño del contenedor.</td>
+</tr>
+<tr>
+<td><code>baseline</code></td>
+<td>Alinea los ítems en el contenedor según la <strong>base</strong> de los ítems.</td>
+</tr>
+<tr>
+<td><strong>auto</strong></td>
+<td>Hereda el valor de <strong>align-items</strong> del padre (si no se ha definido, es <strong>stretch</strong>).</td>
+</tr>
+</tbody>
+</table>
+<p>Como vemos, se comporta igual que la propiedad <code>align-items</code>, salvo con la adición del valor <strong>auto</strong>, que si se especifica, el navegador le asignará el valor de la propiedad <code>align-items</code> del contenedor padre. En caso de no existir, el valor por defecto será <strong>stretch</strong>.</p>
+<p>Veamos un ejemplo para verlo en funcionamiento:</p>
+<div class="example example-7">
+  <strong>justify-content:</strong>
+  <button class="mode" data-property="justify-content" data-value="start">start</button>
+  <button class="mode" data-property="justify-content" data-value="end">end</button>
+  <button class="mode" data-property="justify-content" data-value="center">center</button>
+  <button class="mode" data-property="justify-content" data-value="space-between">space-between</button>
+  <button class="mode" data-property="justify-content" data-value="space-around">space-around</button>
+  <button class="mode" data-property="justify-content" data-value="space-evenly">space-evenly</button>
+  <br>
+  <strong>align-items:</strong>
+  <button class="mode" data-property="align-items" data-value="start">start</button>
+  <button class="mode" data-property="align-items" data-value="end">end</button>
+  <button class="mode" data-property="align-items" data-value="center">center</button>
+  <button class="mode" data-property="align-items" data-value="stretch">stretch</button>
+  <button class="mode" data-property="align-items" data-value="baseline">baseline</button>
+  <br>
+  <strong>align-self:</strong>
+  <button class="self" data-property="align-self" data-value="start">start</button>
+  <button class="self" data-property="align-self" data-value="end">end</button>
+  <button class="self" data-property="align-self" data-value="center">center</button>
+  <button class="self" data-property="align-self" data-value="stretch">stretch</button>
+  <button class="self" data-property="align-self" data-value="baseline">baseline</button>
+  <button class="self" data-property="align-self" data-value="auto">auto</button>
+  <div class="container">
+    <div class="item item-1">1</div>
+    <div class="item item-2">2</div>
+    <div class="item item-3">3</div>
+    <div class="item item-4">4</div>
+    <div class="item item-5">5</div>
+    <div class="item item-6">self</div>
+  </div>
+</div>
+<style>
+  .example-7 .container {
+    display: flex;
+    background: steelblue;
+    min-height: 150px;
+  }
+  .example-7 .item {
+    border: 2px solid black;
+    background-color: grey;
+    color: white;
+    width: 50px;
+    min-height: 50px;
+  }
+  .example-7 .item-6 {
+    background: orangered;
+  }
+</style>
+<script>
+  (() => {
+    const buttons = Array.from(document.querySelectorAll(".example-7 button.mode"));
+    const selfButtons = Array.from(document.querySelectorAll(".example-7 button.self"));
+    const container = document.querySelector(".example-7 .container");
+    const self = document.querySelector(".example-7 .item-6");
+    buttons.forEach(button => button.onclick = () => container.style[button.dataset.property] = button.dataset.value);
+    selfButtons.forEach(button => button.onclick = () => self.style[button.dataset.property] = button.dataset.value);
+  })();
+</script>
+<h3 id="atajo-alineaciones" tabindex="-1"><a class="header-anchor" href="#atajo-alineaciones">Atajo: Alineaciones</a></h3>
+<p>Existe una propiedad de atajo con la que se pueden establecer los valores de las propiedades <code>align-content</code> y <code>justify-content</code> de una sola vez. Dicha propiedad es <code>place-content</code> y funciona de la siguiente forma:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+
+  <span class="token comment">/* 2 parámetros */</span>
+  <span class="token property">place-content</span><span class="token punctuation">:</span> start end<span class="token punctuation">;</span>
+  <span class="token comment">/* Equivalente a... */</span>
+  <span class="token property">align-content</span><span class="token punctuation">:</span> start<span class="token punctuation">;</span>
+  <span class="token property">justify-content</span><span class="token punctuation">:</span> end<span class="token punctuation">;</span>
+
+  <span class="token comment">/* 1 parámetro */</span>
+  <span class="token property">place-content</span><span class="token punctuation">:</span> start<span class="token punctuation">;</span>
+  <span class="token comment">/* Equivalente a... */</span>
+  <span class="token property">align-content</span><span class="token punctuation">:</span> start<span class="token punctuation">;</span>
+  <span class="token property">justify-content</span><span class="token punctuation">:</span> start<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>En la siguiente charla, retransmitida por <a href="https://twitch.tv/ManzDev">mi canal de Twitch</a>, explicamos como crear una baraja de cartas de Poker, utilizando exclusivamente sistemas de maquetación de CSS, como <strong>Flex</strong>, Grid, posicionamiento u otros detalles.</p>
+<p><youtube-video v="wIGAyJGx2kc" alt="Baraja de cartas con Flexbox, CSS Grid y otros"></youtube-video></p>
+<h3 id="orden-de-los-elementos" tabindex="-1"><a class="header-anchor" href="#orden-de-los-elementos">Orden de los elementos</a></h3>
+<p>Por último, y quizás una de las propiedades más interesantes, es <code>order</code>. Se trata de una propiedad mediante la cual podemos modificar y establecer un orden de los elementos mediante números:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>order</code></td>
+<td><strong>0</strong> | <badge-type class="number"></badge-type></td>
+<td>Número (peso) que indica el orden de aparición de los ítems.</td>
+</tr>
+</tbody>
+</table>
+<p>Por defecto, todos los elementos hijos de un contenedor flex tienen establecido un <code>order</code> por defecto al valor <code>0</code>, aunque no se especifique de forma explícita. Si indicamos una propiedad <code>order</code> con un valor numérico diferente, irá recolocando los ítems según dicho número, colocando antes los elementos con un número <code>order</code> más pequeño (<em>incluso valores negativos</em>) y después los elementos con números más altos.</p>
+<div class="example example-10">
+  <strong>order (item-1):</strong>
+  <input class="mode" type="number" data-target="item-1" data-property="order" value="0">
+  <br>
+  <strong>order (item-2):</strong>
+  <input class="mode" type="number" data-target="item-2" data-property="order" value="0">
+  <br>
+  <strong>order (item-3):</strong>
+  <input class="mode" type="number" data-target="item-3" data-property="order" value="0">
+  <div class="container">
+    <div class="item item-1">1</div>
+    <div class="item item-2">2</div>
+    <div class="item item-3">3</div>
+  </div>
+</div>
+<style>
+  .example-10 .container {
+    display: flex;
+    background: steelblue;
+  }
+  .example-10 input {
+    padding: 2px 4px;
+    width: 45px;
+  }
+  .example-10 .item {
+    border: 2px solid black;
+    background-color: grey;
+    color: white;
+    width: 50px;
+    height: 50px;
+  }
+</style>
+<script>
+  (() => {
+    const inputs = Array.from(document.querySelectorAll(".example-10 input.mode"));
+    inputs.forEach(input => input.oninput = () => document.querySelector(`.example-10 div.${input.dataset.target}`).style.order = input.value);
+  })();
+</script>
+<p>Esta característica se vuelve muy potente en combinación con las estrategias de <code>flex-direction</code> o incluso <a href="../../responsive-web-design/media-queries/index.htm">Media Queries</a>, ya que podríamos recolocar fácilmente elementos que son contenedores de secciones de la web, de modo que una zona concreta, por ejemplo, un submenú, aparezca arriba en escritorio y abajo en móvil.</p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../flex/index.htm" title="Flex CSS: Introducción">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Flex CSS: Introducción</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../flex-organizar/index.htm" title="Flex CSS: Flexibilidad">
+  <div>
+    <span>Flex CSS: Flexibilidad</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/I-EFAmX-vhE" title="Flex CSS: Alinear, centrar y reordenar elementos">
+  <img loading="lazy" src="../../../vi/I-EFAmX-vhE/mqdefault.jpg" alt="Flex CSS: Alinear, centrar y reordenar elementos">
+</a><a href="https://youtu.be/W6fAzw3HoWg" title="Cómo crear GRADIENTES LINEALES en CSS">
+  <img loading="lazy" src="../../../vi/W6fAzw3HoWg/mqdefault.jpg" alt="Cómo crear GRADIENTES LINEALES en CSS">
+</a><a href="https://youtu.be/K-nE-kZKLRw" title="¡NOVEDADES CSS! ¿Cuánto de este código CSS eres CAPAZ de reconocer?">
+  <img loading="lazy" src="../../../vi/K-nE-kZKLRw/mqdefault.jpg" alt="¡NOVEDADES CSS! ¿Cuánto de este código CSS eres CAPAZ de reconocer?">
+</a><a href="https://youtu.be/8Jh2K3tq5n0" title="Tutorial para aprender Animaciones CSS">
+  <img loading="lazy" src="../../../vi/8Jh2K3tq5n0/mqdefault.jpg" alt="Tutorial para aprender Animaciones CSS">
+</a><a href="https://youtu.be/q4WZUTfHt6o" title="Cómo crear GRADIENTES RADIALES en CSS">
+  <img loading="lazy" src="../../../vi/q4WZUTfHt6o/mqdefault.jpg" alt="Cómo crear GRADIENTES RADIALES en CSS">
+</a><a href="https://youtu.be/g5QVe65vPd4" title="Grid CSS: Celdas irregulares">
+  <img loading="lazy" src="../../../vi/g5QVe65vPd4/mqdefault.jpg" alt="Grid CSS: Celdas irregulares">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

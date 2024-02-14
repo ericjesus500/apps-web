@@ -1,0 +1,410 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e44f26">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Creación de un formulario - HTML en español - Lenguaje HTML</title>
+  <link rel="preload" href="../../../critical.css" as="style">
+  <link rel="preload" href="../../../assets/fonts/blinker-vf.woff2" as="font" crossorigin="">
+  <link rel="preload" href="../../../assets/fonts/scope-one-400.woff2" as="font" crossorigin="">
+  <meta name="description" content="Con HTML5 es muy sencillo crear formularios para que el usuario pueda introducir información. Veamos como crear uno.">
+  <link rel="stylesheet" href="../../../critical.css">
+  <link rel="stylesheet" href="../../../theme.css">
+  <script type="module" src="../../../main.js"></script>
+  <link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Creación de un formulario - HTML en español">
+  <meta property="og:image" content="https://lenguajehtml.com/html/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Con HTML5 es muy sencillo crear formularios para que el usuario pueda introducir información. Veamos como crear uno.">
+  <meta property="og:url" content="https://lenguajehtml.com/html/formularios/crear-un-formulario/">
+  <meta property="twitter:url" content="https://lenguajehtml.com/html/formularios/crear-un-formulario/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Creación de un formulario - HTML en español">
+  <meta property="twitter:description" content="Con HTML5 es muy sencillo crear formularios para que el usuario pueda introducir información. Veamos como crear uno.">
+  <meta property="twitter:image:src" content="https://lenguajehtml.com/html/large-summary.jpg">
+</head>
+<body class="html post"><div class="page">
+    <div class="sidebar">
+      <div class="logo flex-center">
+  <a href="/">
+    <img width="42" height="42" src="../../../assets/logo.svg" alt="Logo">
+    Lenguaje HTML
+  </a>
+  <div class="icons" style="--icon-size: 32px; --icon-side-padding: 0.15em">
+    <a href="https://twitter.com/Manz" title="Twitter"><svg-icon type="social" name="twitter"></svg-icon></a>
+    <a href="https://twitch.tv/manzdev" title="Twitch"><svg-icon type="social" name="twitch"></svg-icon></a>
+    <a href="https://instagram.com/manz.dev" title="Instagram"><svg-icon type="social" name="instagram"></svg-icon></a>
+    <a href="https://youtube.com/ManzDev?sub_confirmation=1" title="YouTube"><svg-icon type="social" name="youtube"></svg-icon></a>
+    <a href="https://discord.manz.dev/" title="Servidor de Discord"><svg-icon type="social" name="discord"></svg-icon></a>
+  </div>
+  <span>Un sitio web de <a href="https://manz.dev/"><mark>Manz.dev</mark></a></span>
+</div>
+
+      <form class="search flex-center" action="https://www.google.com/search">
+  <label><span>Buscar:</span> <input type="search" name="q" placeholder="Buscar un tema (ej: flex, grid...)" autocomplete="off"></label>
+  <label><span>Sitio:</span> <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev"></label>
+  <div class="search-results"></div>
+</form>
+
+      
+
+<style>
+  sidebar-link {
+    --logo-image: url(../../logo.svg);
+  }
+</style>
+
+<div class="toc"><sidebar-link title="Volver al índice" href="../../index.htm" back="" direct=""></sidebar-link><sidebar-link href="../../cheatsheets/index.htm" title="HTML5 CheatSheet" direct=""></sidebar-link><sidebar-section title="Introducción a HTML5" href="../../introduccion/index.htm"><sidebar-link href="../../introduccion/que-es-html/index.htm" title="¿Qué es HTML?"></sidebar-link><sidebar-link href="../../introduccion/estructura-etiqueta-html/index.htm" title="Estructura de etiqueta HTML"></sidebar-link><sidebar-link href="../../introduccion/atributos-comunes-html/index.htm" title="Atributos comunes en HTML"></sidebar-link><sidebar-link href="../../introduccion/estructura-documento-html/index.htm" title="Estructura del documento HTML"></sidebar-link><sidebar-link href="../../introduccion/validacion-html/index.htm" title="Validación de errores HTML"></sidebar-link><sidebar-link href="../../introduccion/tabla-periodica-html5/index.htm" title="Tabla periódica de HTML5"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas semánticas" href="../../semantica/index.htm"><sidebar-link href="../../semantica/etiquetas-html-obsoletas/index.htm" title="Etiquetas HTML obsoletas"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-texto/index.htm" title="Etiquetas HTML de texto"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-agrupacion/index.htm" title="Etiquetas HTML de agrupación"></sidebar-link><sidebar-link href="../../semantica/enlaces-o-hipervinculos/index.htm" title="Enlaces o hipervínculos"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-seccion/index.htm" title="Etiquetas HTML de sección"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-tablas/index.htm" title="Etiquetas HTML de tablas"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas multimedia" href="../../multimedia/index.htm"><sidebar-link href="../../multimedia/etiquetas-html-de-imagenes/index.htm" title="Etiquetas HTML de imágenes"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-contenido-externo/index.htm" title="Etiquetas de contenido externo"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-video/index.htm" title="Etiquetas HTML de video"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-audio/index.htm" title="Etiquetas HTML de audio"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-subtitulos/index.htm" title="Etiquetas HTML de subtitulos"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de cabecera" href="../../cabecera/index.htm"><sidebar-link href="../../cabecera/etiquetas-html-de-relacion/index.htm" title="Etiquetas HTML de relación"></sidebar-link><sidebar-link href="../../cabecera/etiquetas-html-de-metadatos/index.htm" title="Etiquetas HTML de metadatos"></sidebar-link><sidebar-link href="../../cabecera/etiquetas-html-para-redes-sociales/index.htm" title="Etiquetas HTML de redes sociales"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de formularios" href="../index.htm"><sidebar-link href="index.htm" title="Creación de un formulario"></sidebar-link><sidebar-link href="../controles-campos-de-texto/index.htm" title="Controles: Campos de texto"></sidebar-link><sidebar-link href="../controles-campos-numericos/index.htm" title="Controles: Campos numéricos"></sidebar-link><sidebar-link href="../controles-campos-fecha-hora/index.htm" title="Controles: Campos de fecha/hora"></sidebar-link><sidebar-link href="../controles-casillas-o-botones/index.htm" title="Controles: Casillas o botones"></sidebar-link><sidebar-link href="../controles-listas-de-seleccion/index.htm" title="Controles: Listas de selección"></sidebar-link><sidebar-link href="../controles-seleccion-color/index.htm" title="Controles: Selección de color"></sidebar-link><sidebar-link href="../controles-seleccion-archivos/index.htm" title="Controles: Selección de archivos"></sidebar-link><sidebar-link href="../organizacion-de-campos/index.htm" title="Organización de campos"></sidebar-link><sidebar-link href="../botones-de-envio-de-formulario/index.htm" title="Botones de envío de formularios"></sidebar-link><sidebar-link href="../medidores-y-barras-de-progreso/index.htm" title="Medidores y barras de progreso"></sidebar-link><sidebar-link href="../validaciones-html5/index.htm" title="Validaciones HTML5"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de scripting" href="../../scripting/index.htm"><sidebar-link href="../../scripting/etiquetas-html-interactivas/index.htm" title="Etiquetas HTML interactivas"></sidebar-link><sidebar-link href="../../scripting/etiquetas-html-scripts/index.htm" title="Etiquetas HTML de scripts"></sidebar-link><sidebar-link href="../../scripting/eventos-html/index.htm" title="Eventos en HTML"></sidebar-link></sidebar-section></div>
+
+      
+    </div>
+    <div class="contents">
+      <header class="mega">
+  <h1>Creación de un formulario</h1></header>
+
+      <div class="content ">
+  <div class="breadcrumbs">
+  <a href="/">ATRÁS</a> <span>ᐳ</span> <a href="../../index.htm">html</a> <span>ᐳ</span> <a href="index.htm">Creación de un formulario</a>
+</div>
+<p>HTML5 proporciona una serie de etiquetas interesantes para utilizar en formularios (<em>además de las ya existentes en versiones anteriores</em>). Los <strong>formularios</strong> son una forma sencilla de establecer mecanismos para que el usuario pueda introducir información en una página web de forma sencilla e intuitiva, y el sitio web sea capaz de procesarla correctamente y añadirla en una base de datos de la página, enviarla por email o procesarla para mostrar información final al usuario.</p>
+<p>Nuestros <strong>objetivos al crear un formulario</strong> HTML5 deben ser los siguientes:</p>
+<ul>
+<li>Hacer lo más <strong>sencillo</strong> posible el proceso de inserción de datos por parte del usuario.</li>
+<li>Intentar que la experiencia de usuario sea lo más <strong>agradable</strong> posible.</li>
+<li>Intentar que los datos introducidos estén en un <strong>formato predecible</strong> y esperado.</li>
+<li>Reducir los errores al introducir datos en la medida de lo posible.</li>
+<li>Comunicar claramente si ocurren errores al introducir datos.</li>
+</ul>
+<h3 id="contenedor-de-formulario" tabindex="-1">Contenedor de formulario</h3>
+<p>Para comenzar con la creación de un formulario, el primer paso es indicar una etiqueta contenedora <code>&lt;form&gt;</code>, que incluirá toda la información que se quiere recoger en ese formulario:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>De esta forma, se puede incluso crear varias etiquetas <code>&lt;form&gt;</code> por página, pudiendo así crear varios formularios diferentes, como por ejemplo, uno para realizar una búsqueda en la página, otro para dejar un comentario y otro para enviar un email al autor.</p>
+<blockquote>
+<blockquote>
+<p>También es posible colocar campos de formulario <strong>fuera</strong> de una etiqueta <code>&lt;form&gt;</code>, sin embargo, no tendrán un funcionamiento específico y necesitaría manejarse desde Javascript.</p>
+</blockquote>
+</blockquote>
+<p>La etiqueta <code>&lt;form&gt;</code> dispone de varios <strong>atributos</strong> para utilizar:</p>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>action</code></td>
+<td><em>URL</em></td>
+<td>Dirección URL del back-end donde se enviará la información del formulario.</td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td><strong>get</strong> | <code>post</code></td>
+<td>Método HTTP de envío. <code>GET</code> a través de URL, <code>POST</code> para envío extenso.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><em>nombre</em></td>
+<td>Nombre del formulario. Útil para procesar posteriormente.</td>
+</tr>
+<tr>
+<td><code>target</code></td>
+<td><em>destino</em></td>
+<td>Nombre del lugar donde se abrirá el formulario. <code>\_blank</code> para nueva pestaña.</td>
+</tr>
+<tr>
+<td><code>enctype</code></td>
+<td><em>tipo</em></td>
+<td>Codificación para el envío del formulario. Importante para envío de archivos.</td>
+</tr>
+<tr>
+<td><code>accept-charset</code></td>
+<td><em>codificación</em></td>
+<td>Fuerza a utilizar una codificación en los parámetros de texto del formulario.</td>
+</tr>
+<tr>
+<td><code>autocomplete</code></td>
+<td><strong>on</strong> | <code>off</code></td>
+<td>Activa o desactiva el autocompletado para todos los campos del formulario.</td>
+</tr>
+<tr>
+<td><code>novalidate</code></td>
+<td><badge-type class="boolean"></badge-type></td>
+<td>Con este atributo presente, el formulario obvia la validación HTML5.</td>
+</tr>
+</tbody>
+</table>
+<p>Así pues, un primer formulario base de ejemplo (<em>aún vacío, sin campos de entrada de datos, sólo con la etiqueta contenedora</em>) podría ser el que vemos en el siguiente ejemplo:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>formulario<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send.php<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>Nótese que se definen 3 atributos base en <code>&lt;form&gt;</code>:</p>
+<ul>
+<li>En <code>action</code> se indica la dirección donde se enviarán los datos cuando el usuario pulse el botón de enviar. En caso de omitirse esta información, se enviarían los datos a la propia página actual, volviéndola a cargar.</li>
+<li>En <code>method</code> se define el tipo de método HTTP a utilizar. Utilizaremos el método <code>GET</code> cuando nos interese que los datos se envíen en la propia URL. En caso contrario, <code>POST</code>.</li>
+<li>En <code>name</code> el nombre del formulario para cuando necesitemos hacer referencia a él (<em>generalmente desde Javascript o desde backend</em>).</li>
+</ul>
+<h3 id="tipos-de-datos" tabindex="-1">Tipos de datos</h3>
+<p>Para que un usuario pueda introducir información en un formulario, requiere que se le indiquen una serie de campos que le permitan introducir la información de la forma más cómoda y rápida posible. Para ello, debemos saber a priori que <strong>tipo de dato</strong> le vamos a pedir al usuario (<em>texto, numérico, fecha, etc...</em>), y así saber que tipo de campo de entrada de datos es más conveniente colocar.</p>
+<table>
+<thead>
+<tr>
+<th>Información a obtener</th>
+<th>Ejemplos</th>
+<th>Etiqueta y atributo a utilizar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Información de texto</td>
+<td>Nombres, apellidos, direcciones físicas...</td>
+<td><code>&lt;input&gt;</code><br><code>&lt;textarea&gt;</code></td>
+</tr>
+<tr>
+<td>Números o cantidades</td>
+<td>Edades, precios, cuantías...</td>
+<td><code>&lt;input&gt;</code> para números</td>
+</tr>
+<tr>
+<td>Fechas u horas</td>
+<td>Fecha de nacimiento, inicio de evento...</td>
+<td><code>&lt;input&gt;</code> para fechas</td>
+</tr>
+<tr>
+<td>Verdadero/falso</td>
+<td>Si/No, Opción A/B, ON/OFF...</td>
+<td><code>&lt;input type=&quot;checkbox&quot;&gt;</code></td>
+</tr>
+<tr>
+<td>Opción única</td>
+<td>(Elegir una opción de 2 ó más posibles)</td>
+<td><code>&lt;input type=&quot;radio&quot;&gt;</code><br><code>&lt;select&gt;</code></td>
+</tr>
+<tr>
+<td>Varias opciones</td>
+<td>(Elegir varias opciones de 2 ó más posibles)</td>
+<td><code>&lt;select multiple&gt;</code><br><code>&lt;input type=&quot;checkbox&quot;&gt;</code></td>
+</tr>
+<tr>
+<td>Opción única abierta</td>
+<td>(Elegir una opción o indicar una propia)</td>
+<td><code>&lt;datalist&gt;</code></td>
+</tr>
+<tr>
+<td>Selección de color</td>
+<td>(Escoger un color o tonalidad)</td>
+<td><code>&lt;input type=&quot;color&quot;&gt;</code></td>
+</tr>
+<tr>
+<td>Selección de archivo</td>
+<td>(Escoger un archivo para enviar)</td>
+<td><code>&lt;input type=&quot;file&quot;&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>En HTML5, de forma nativa, el navegador proporciona estos <strong>campos de entrada</strong> en los que el usuario puede introducir información específica. Cada uno de ellos tiene sus propias particularidades y características, además de que hay que tener cuidado con algunos, ya que pueden no estar soportados por completo en todos los navegadores.</p>
+<h3 id="campos-de-entrada" tabindex="-1">Campos de entrada</h3>
+<p>Una de las etiquetas que más utilizaremos para obtener información a modo de campo de entrada de datos en un formulario es la etiqueta <code>&lt;input&gt;</code>. Su funcionalidad más utilizada es la de servir como campo de texto:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>formulario<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send.php<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token comment">&lt;!-- Primer campo de entrada de datos --></span><br>  Nombre de usuario:<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nombre<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>  <span class="token comment">&lt;!-- Botón de envío del formulario --></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Enviar<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>En este ejemplo tenemos un pequeño formulario donde se le pide al usuario su nombre con la etiqueta <code>&lt;input type=&quot;text&quot;&gt;</code> y, posteriormente, se coloca un botón para enviar el formulario con la etiqueta <code>&lt;input type=&quot;submit&quot;&gt;</code>. Aunque vemos que se trata de la misma etiqueta <code>&lt;input&gt;</code>, dependiendo del valor indicado en el atributo <strong>type</strong> realizará una tarea u otra.</p>
+<h3 id="la-etiqueta-input" tabindex="-1">La etiqueta &quot;input&quot;</h3>
+<p>La etiqueta <code>&lt;input&gt;</code> tiene una gran cantidad de atributos (<em>algunos dependiendo del valor de type, que mostraremos más adelante</em>). Estos son los atributos que podemos utilizar de forma general para prácticamente cualquier campo de entrada de datos con la etiqueta <code>&lt;input&gt;</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td><em>tipo de campo</em></td>
+<td>Indica el tipo de campo del que se trata.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><em>nombre del campo</em></td>
+<td>Indica el nombre del campo para hacer referencia más tarde.</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><em>valor por defecto</em></td>
+<td>Indica el valor inicial que tendrá ese campo de datos.</td>
+</tr>
+<tr>
+<td><code>form</code></td>
+<td><em>nombre del formulario</em></td>
+<td>Asocia este campo de datos con un formulario específico.</td>
+</tr>
+<tr>
+<td><code>placeholder</code></td>
+<td><em>sugerencia</em></td>
+<td>Indica una sugerencia al usuario antes de escribir.</td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td><em>número</em></td>
+<td>Tamaño visual (<em>número de carácteres</em>) del campo de datos.</td>
+</tr>
+<tr>
+<td><code>autocomplete</code></td>
+<td><strong>on</strong> | <code>off</code></td>
+<td>Activa o desactiva el autocompletado para este campo.</td>
+</tr>
+<tr>
+<td><code>autofocus</code></td>
+<td>-</td>
+<td>Establece el foco (<em>coloca el cursor</em>) en este campo al cargar la página.</td>
+</tr>
+</tbody>
+</table>
+<p>El atributo <strong>type</strong> nos permitirá indicar que tipo de campo de dato mostrará en el navegador (<em>text, number, date... los veremos más adelante</em>). Mediante el atributo <strong>name</strong> le daremos un nombre al campo de texto, así cuando enviemos la información del formulario, podremos manejarla desde javascript o desde el back-end haciendo referencia a dicho nombre.</p>
+<p>Iremos viendo más atributos en cada campo específico que trataremos en los siguientes temas.</p>
+
+    <nav class="prev-next"><a class="bt prev" href="../../cabecera/etiquetas-html-para-redes-sociales/index.htm" title="Etiquetas HTML de redes sociales">
+    <span class="data">
+      <span>Etiquetas HTML de redes sociales</span>
+      <small>Capítulo anterior</small>
+    </span>
+  </a><a class="bt next" href="../controles-campos-de-texto/index.htm" title="Controles: Campos de texto">
+    <span class="icon">
+      <svg-icon name="arrow-right"></svg-icon>
+    </span>
+    <span class="data">
+      <span>Controles: Campos de texto</span>
+      <small>Capítulo siguiente</small>
+    </span>
+  </a></nav>
+
+    <script async="" src="../../../pagead/js/f.txt"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center; margin:auto; margin-top: 2em" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+      <div class="related">
+
+  <div class="author">
+    <div class="author-wrapper">
+      <img loading="lazy" class="circle" src="../../../assets/manz.webp" alt="Manz">
+      <div>
+        <p>Docente, divulgador informático y <a href="https://manz.dev/">streamer de código</a>. Amante de <strong>CSS</strong>, <strong>Javascript</strong>
+          y de la plataforma web. Ha trabajado como profesor en la Universidad de La Laguna y es director del curso de
+          Programación web FullStack y FrontEnd de EOI desde Tenerife. En sus ratos libres, busca GIF de gatos en Internet.</p>
+        <p class="twitch-badge">
+          <a href="https://twitch.tv/ManzDev">
+            <svg class="twitch" viewbox="0 0 1024 1024">
+              <path style="fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1;" d="m262.451 12.904-178.26 178.26v641.672h213.905v178.26l178.26-178.26h142.576L939.809 512V12.904H262.45zm35.645 71.287h570.383v392.164L725.904 618.932H583.287L458.514 743.705V618.932H298.096V84.192zM494.158 208.51v216.36h71.328V208.51h-71.328zm196 0v216.36h71.328V208.51h-71.328z"></path>
+            </svg>
+            Sígueme en Twitch
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="comentarios">
+    <script async="" src="../../../count.js" id="dsq-count-scr"></script>
+<script>
+var disqus_config = function () {
+  this.page.path = location.pathname.endsWith("/") ? location.pathname.substring(0, location.pathname.length - 1) : location.pathname;
+  this.page.url = 'https://lenguajehtml.com' + this.page.path;
+  this.page.identifier = this.page.url;
+};
+document.addEventListener('DOMContentLoaded', function() {
+  const coms = document.querySelector('#comentarios');
+  a = coms.querySelector('#disqus_button');
+  a.dataset.disqusIdentifier = 'https://lenguajehtml.com' + (location.pathname.endsWith("/") ? location.pathname.substring(0, location.pathname.length - 1) : location.pathname);
+  a.addEventListener('click', function() {
+    const div = document.createElement('div');
+    div.id = 'disqus_thread';
+    coms.appendChild(div);
+    const d = document, s = d.createElement('script');
+    s.src = '//lenguajehtml.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    this.remove();
+  });
+});
+</script>
+
+    <a class="disqus-comment-count" id="disqus_button" href="#disqus_thread" data-disqus-identifier="https://lenguajehtml.com/html/formularios/crear-un-formulario/">Leer comentarios</a>
+    <a class="discord" href="https://discord.manz.dev/">¡Accede a Discord y cuéntanos!</a>
+  </div>
+
+</div>
+
+    </div>
+    <div class="aside">
+      <div class="aside">
+
+  <div class="aside-top">
+    <a href="https://manz.dev/digitalocean" title="Empieza en DigitalOcean con 100$">
+      <img width="240" height="120" src="../../../assets/digital-ocean.png" alt="DigitalOcean">
+    </a>
+  </div><script type="module">
+  const ANCHOR_ICON = /* svg */`
+    <svg class="anchor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 205 205" width="36" height="36">
+      <path d="m140 129 16 16s-20 30-42 30V71c14-5 25-18 25-34 0-20-17-36-37-36-21 0-38 16-38 36 0 15 11 29 25
+              34v104c-26-2-42-27-42-27l18-18-65-9 10 63 17-17c15 12 32 37 73 37 51-1 63-29 76-40l19 19 10-64-65
+              10zM83 36c0-10 8-18 19-18s19 8 19 18c0 11-9 19-19 19s-19-8-19-19z"/>
+    </svg>`;
+  // Add inner links to sidebar menu
+  export const addInnerLinks = () => {
+    const summary = document.querySelector(".aside .summary .links");
+    const headers = Array.from(document.querySelectorAll(".content h3, .content h4"));
+    const tocLinks = [];
+    headers.forEach((e) => {
+      const link = `${location.origin}${location.pathname}#${e.id}`;
+      e.innerHTML = `<a class="permalink" href="${link}">${e.textContent} ${ANCHOR_ICON}</a>`;
+      const headerType = e.nodeName.toLowerCase();
+      const textContent = headerType === "h4" ? e.textContent.replace("La propiedad ", "").replace("La función ", "") : e.textContent;
+      tocLinks.push(`<a class="${headerType}" href="#${e.id}">${textContent}</a>`);
+    });
+    summary.insertAdjacentHTML("beforeEnd", tocLinks.join("\n"));
+  };
+
+  addInnerLinks();
+</script>
+
+<div class="summary">
+  <div class="table">Tabla de contenidos</div>
+  <div class="links"></div>
+</div>
+</div>
+
+    </div>
+  </div><footer class="main">
+  <div class="square">
+    <a href="/"><h2>Lenguaje HTML</h2></a>
+    <div class="icons">
+      <a href="https://twitter.com/Manz" title="Twitter"><svg-icon type="social" name="twitter"></svg-icon></a>
+      <a href="https://twitch.tv/manzdev" title="Twitch"><svg-icon type="social" name="twitch"></svg-icon></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg-icon type="social" name="instagram"></svg-icon></a>
+      <a href="https://youtube.com/ManzDev?sub_confirmation=1" title="YouTube"><svg-icon type="social" name="youtube"></svg-icon></a>
+      <a href="https://discord.manz.dev/" title="Servidor de Discord"><svg-icon type="social" name="discord"></svg-icon></a>
+      <a href="https://github.com/ManzDev" title="GitHub"><svg-icon type="social" name="github"></svg-icon></a>
+      <a href="https://codepen.io/Manz" title="Codepen"><svg-icon type="social" name="codepen"></svg-icon></a>
+      <a href="https://www.linkedin.com/in/joseromanhdez/" title="Linkedin"><svg-icon type="social" name="linkedin"></svg-icon></a>
+    </div>
+    <p>Documentación sobre HTML5 y las mejores herramientas y recursos para aprender a utilizar el lenguaje de marcado HTML.</p>
+    <p id="footer">Creado y mantenido por <a href="https://twitter.com/Manz">@Manz</a> con <span title="<3">❤</span></p></div>
+</footer>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-5', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+</body>
+</html>

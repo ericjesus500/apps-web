@@ -1,0 +1,66 @@
+.content{
+    border: 2px solid blue;
+    margin:20px auto;
+    padding: 0;
+    width: 90%;
+    height: auto;
+}
+
+.foto{
+    border: 1px dashed orange;
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.circle{    
+    clip-path: circle(200px);
+}
+
+.circle-at{
+    /*clip-path: circle(200px at 100px 300px);*/
+    clip-path: circle(200px at 30% 300px);
+}
+
+.circle-at-pal-clave{
+    clip-path: circle(400px at bottom right);
+}
+
+.circle-at-top{
+    clip-path: circle(200px at top);
+}
+
+.circle-at-left{
+    clip-path: circle(200px at left);
+}
+
+.ellipse{
+    /*clip-path: ellipse(300px 100px);*/
+    /*clip-path: ellipse(300px 200px at top)*/
+    clip-path: ellipse(300px 100px at right bottom);
+}
+
+.inset{
+    /*clip-path: inset(200px round 20px);*/
+    clip-path: inset(200px round 20px 100px);
+}
+
+.polygon{
+    /*clip-path: polygon(centroX centroY, poscEjeX1 poscEjeY1, poscEjeX2 poscEjeY2);
+    */
+    clip-path: polygon(0 0, 50% 25%, 100% 0, 75% 50%, 100% 100%, 50% 75%, 0 100%, 25% 50%);
+}
+
+.polygon-efect{
+    clip-path: polygon(0 0, 50% 25%, 100% 0, 75% 50%, 100% 100%, 50% 75%, 0 100%, 25% 50%);
+    transition: clip-path .5s;
+    -webkit-transition: clip-path .5s;
+    -moz-transition: clip-path .5s;
+    -ms-transition: clip-path .5s;
+    -o-transition: clip-path .5s;
+}
+
+.polygon-efect:hover{
+    clip-path: polygon(0 0, 50% 0%, 100% 0, 100% 50%, 100% 100%, 50% 100%, 0 100%, 0% 50%);
+}

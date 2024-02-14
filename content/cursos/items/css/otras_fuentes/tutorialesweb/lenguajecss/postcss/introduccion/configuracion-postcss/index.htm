@@ -1,0 +1,600 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Configuración de PostCSS - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="En este artículo puedes aprender a configurar correctamente PostCSS y aplicar los plugins que más te interesen para transformar tu código CSS.">
+  <meta name="view-transition" content="same-origin">
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Configuración de PostCSS - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="En este artículo puedes aprender a configurar correctamente PostCSS y aplicar los plugins que más te interesen para transformar tu código CSS.">
+  <meta property="og:url" content="https://lenguajecss.com/postcss/introduccion/configuracion-postcss/">
+  <meta property="twitter:url" content="https://lenguajecss.com/postcss/introduccion/configuracion-postcss/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Configuración de PostCSS - CSS en español">
+  <meta property="twitter:description" content="En este artículo puedes aprender a configurar correctamente PostCSS y aplicar los plugins que más te interesen para transformar tu código CSS.">
+  <meta property="twitter:image" content="https://lenguajecss.com/large-summary.jpg">
+
+  </head>
+
+<body class="css menu-open " style="--logo-color: #972321"><script>
+    matchMedia("(width <= 1180px)").matches && document.body.classList.toggle("menu-open");
+  </script>
+  
+
+
+
+
+
+
+
+
+<section class="menubar">
+  <div class="menubar-content">
+    <h1>Lenguaje CSS</h1>
+
+    <a class="cover" title="Lenguaje CSS (postcss)" href="../../index.htm" style="--image: url('../../../assets/postcss.jpg')"></a>
+
+    <header>
+      <a href="../../../css/dibujar-con-css/como-empezar/index.htm" title="¿Cómo dibujar con CSS?">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m14 26l1.41-1.41L7.83 17H28v-2H7.83l7.58-7.59L14 6L4 16l10 10z"></path></svg>
+      </a>
+      <a href="../../index.htm" title="Volver al índice">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 256"><path fill="#888888" d="M240 210h-18v-94.45a14.06 14.06 0 0 0-4.53-10.32l-80-75.49l-.09-.08a13.94 13.94 0 0 0-18.83 0l-.09.08l-80 75.5A14 14 0 0 0 34 115.55V210H16a6 6 0 0 0 0 12h224a6 6 0 0 0 0-12ZM46 115.55a2 2 0 0 1 .65-1.48l.09-.08l79.94-75.48a2 2 0 0 1 2.63 0L209.26 114l.08.08a2 2 0 0 1 .66 1.48V210h-52v-50a14 14 0 0 0-14-14h-32a14 14 0 0 0-14 14v50H46ZM146 210h-36v-50a2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"></path></svg>
+      </a>
+      <a href="../../plugins/autoprefixer/index.htm" title="Autoprefixer: Prefijos CSS">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></path></svg>
+      </a>
+    </header>
+
+    <div style="display:none">
+      <svg id="link-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 256 256"><g fill="#888888"><path d="M208 88h-56V32Z" opacity=".2"></path><path d="m213.66 82.34l-56-56A8 8 0 0 0 152 24H56a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V88a8 8 0 0 0-2.34-5.66ZM160 51.31L188.69 80H160ZM200 216H56V40h88v48a8 8 0 0 0 8 8h48v120Z"></path></g></svg>
+      <svg id="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="#888888" d="M2 12.5C2 9.46 4.46 7 7.5 7H18c2.21 0 4 1.79 4 4s-1.79 4-4 4H9.5a2.5 2.5 0 0 1 0-5H17v2H9.41c-.55 0-.55 1 0 1H18c1.1 0 2-.9 2-2s-.9-2-2-2H7.5C5.57 9 4 10.57 4 12.5S5.57 16 7.5 16H17v2H7.5C4.46 18 2 15.54 2 12.5z"></path></svg>
+    </div>
+
+    <div class="links">
+      <span class="folder">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 512 512"><path fill="#888888" d="M41 73v304.563L88.697 151H423v-30H185.514l-16-48H41zm62.303 96L43.092 455h381.605l60.211-286H103.303z"></path></svg>
+        Introducción a PostCSS
+      </span>
+            <a class="link" href="../que-es/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              ¿Qué es PostCSS?
+            </a>
+            <a class="link active" href="index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Configuración de PostCSS
+            </a>
+            <a class="link" href="../browserslist/index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              ¿Qué es Browserslist?
+            </a>
+    </div>
+  </div>
+
+  <div class="sidebox">
+    <svg class="close-menu" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19V5m10 1l-6 6l6 6m-6-6h14"></path></svg>
+    <div class="socials">
+      <a class="twitch" href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+      <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+      <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+      <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  const toggleMenu = () => (document.body.classList.toggle("menu-open"));
+  document.querySelector(".close-menu").addEventListener("click", toggleMenu);
+
+  matchMedia("(width <= 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+  matchMedia("(width > 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+
+  const activeLink = document.querySelector(".links .active");
+  const icon = /* svg */`<svg viewBox="0 0 24 24"><use href="#anchor-icon" /></svg>`;
+  const headers = [...document.querySelectorAll(".contents h3")].map(link => ({ text: link.textContent, id: link.id }));
+  const links = [];
+  headers.reverse().forEach(({ text, id }) => {
+    const link = document.createElement("a");
+    link.classList.add("anchor");
+    link.href = "#" + id;
+    link.insertAdjacentHTML("beforeend", icon);
+    link.insertAdjacentText("beforeend", ` ${text}`);
+    activeLink.after(link);
+  });
+</script>
+
+  <div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/postcss.jpg')">
+    <h1><a href="index.htm">Configuración de PostCSS</a></h1></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../que-es/index.htm">¿Qué es PostCSS?</a>
+    <a class="current" href="index.htm">Configuración de PostCSS</a>
+    <a href="../browserslist/index.htm">¿Qué es Browserslist?</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Una vez sabemos <a href="../que-es/index.htm">que es PostCSS</a> (<em>y que funciona a base de plugins</em>), podemos realiza una detallada <a href="https://www.npmjs.com/search?q=postcss">búsqueda de PostCSS en NPM</a> para encontrar paquetes que nos servirán para nuestros proyectos, pero que sin duda, se haría incómodo configurar y ejecutar desde una <strong>línea de comandos</strong> debido a la gran cantidad de configuración necesaria.</p>
+<p>Es entonces cuando nos comienza a interesar crear un <strong>fichero de configuración</strong> donde guardar toda la información de como gestionar <strong>PostCSS</strong> en nuestro proyecto, que plugins utilizar, así como otros detalles relacionados.</p>
+<h3 id="parámetros-de-postcss" tabindex="-1"><a class="header-anchor" href="#parámetros-de-postcss">Parámetros de PostCSS</a></h3>
+<p>Antes de comenzar con el fichero de configuración, vamos a ver algunas de las opciones que tiene <strong>PostCSS</strong> en su línea de comandos, que también se podrán aplicar más adelante en el fichero de configuración:</p>
+<table>
+<thead>
+<tr>
+<th>Opción</th>
+<th>Abrev.</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--output</code> <badge-type class="string"></badge-type></td>
+<td><code>-o</code></td>
+<td>Indica el fichero de destino que se generará, habitualmente <code>index.css</code>.</td>
+</tr>
+<tr>
+<td><code>--dir</code> <badge-type class="string"></badge-type></td>
+<td><code>-d</code></td>
+<td>Indica una carpeta de destino. Útil cuando quieres convertir varios archivos.</td>
+</tr>
+<tr>
+<td><code>--map</code></td>
+<td><code>-m</code></td>
+<td>Indica un <strong>sourcemap</strong> (relación entre origen y destino), habitualmente <code>index.css.map</code>.</td>
+</tr>
+<tr>
+<td><code>--no-map</code></td>
+<td></td>
+<td>Desactiva la generación de la última línea del CSS con el <strong>sourcemapping</strong>.</td>
+</tr>
+<tr>
+<td><code>--verbose</code></td>
+<td></td>
+<td>Activa la modalidad de depuración (muestra todo lo que hace).</td>
+</tr>
+<tr>
+<td><code>--watch</code></td>
+<td></td>
+<td>PostCSS se queda activo esperando cambios en ficheros, y procesando en ese caso.</td>
+</tr>
+<tr>
+<td><code>--env</code> <badge-type class="string"></badge-type></td>
+<td></td>
+<td>Establece variables de entorno.</td>
+</tr>
+<tr>
+<td><code>--use</code> <badge-type class="array"></badge-type></td>
+<td></td>
+<td>Usa los plugins de PostCSS indicados.</td>
+</tr>
+<tr>
+<td><code>--ext</code> <badge-type class="string"></badge-type></td>
+<td></td>
+<td>Utiliza la extensión indicada en los ficheros de destino. Útil para usar con <code>-d</code>.</td>
+</tr>
+<tr>
+<td><code>--config</code> <badge-type class="string"></badge-type></td>
+<td></td>
+<td>Establece la carpeta donde buscará los archivos de configuración. Por defecto, raíz.</td>
+</tr>
+</tbody>
+</table>
+<p>Uno de los parámetros más interesantes es <code>--watch</code>, que permite mantener <strong>PostCSS</strong> vigilando cambios en el fichero (<em>o carpeta</em>) indicado y cuando detecte que hay cambios (<em>escribimos en nuestro editor</em>), ejecuta <strong>PostCSS</strong> actualizando los cambios en el fichero destino generado.</p>
+<h3 id="fichero-de-configuración" tabindex="-1"><a class="header-anchor" href="#fichero-de-configuración">Fichero de configuración</a></h3>
+<p><strong>PostCSS</strong> permite crear ficheros de configuración para obtener todos esos parámetros de dicho fichero y no tener que pasarselos a <code>postcss</code> desde la linea de comandos. Generalmente, estos ficheros tienen el nombre <code>.postcssrc</code> o <code>postcss.config.js</code>. En el caso de que exista alguno de los dos en la carpeta raíz del proyecto, <strong>PostCSS</strong> cargará la configuración que reside en ellos.</p>
+<blockquote>
+<p>Si queremos indicarle otra ruta (<em>en lugar de la carpeta raíz</em>) podemos utilizar el parámetro <code>postcss --config data</code>, que buscará un fichero de configuración en la carpeta <code>data</code>.</p>
+</blockquote>
+<p>Los <strong>ficheros de configuración</strong> suelen tener uno de los siguientes nombres:</p>
+<table>
+<thead>
+<tr>
+<th>Nombre del fichero</th>
+<th>Formato</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.postcssrc</code></td>
+<td>JSON</td>
+<td>Fichero oculto. No soporta comentarios ni código JS. Más sencillo.</td>
+</tr>
+<tr>
+<td><code>postcss.config.js</code></td>
+<td>Javascript</td>
+<td>Soporta comentarios. Permite código JS. Más flexible.</td>
+</tr>
+</tbody>
+</table>
+<p>Por ejemplo, queremos crear un <strong>fichero de configuración</strong> que cargue dos plugin de <strong>PostCSS</strong>. En primer lugar, el plugin <a href="https://github.com/jonathantneal/postcss-nesting">postcss-nesting</a> del que hablamos en el artículo anterior, y en segundo lugar, otro plugin bastante popular llamado <a href="https://github.com/postcss/autoprefixer">autoprefixer</a>, que sirve para añadir automáticamente los prefijos CSS de navegadores.</p>
+<p>Así pues, deberíamos crear un fichero <code>.postcssrc</code> (<em>JSON</em>) en la carpeta raíz del proyecto:</p>
+<pre class="language-js "><code class="language-js"><span class="token punctuation">{</span>
+  <span class="token string-property property">"plugins"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">"postcss-nesting"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"autoprefixer"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Si en cambio preferimos crear su fichero de configuración equivalente en Javascript, lo nombramos como <code>postcss.config.js</code> (<em>Javascript</em>) y escribimos el código que tenemos a continuación, que se interpreta como código Javascript de <strong>NodeJS</strong> (<em>ambos son equivalentes</em>):</p>
+<pre class="language-js "><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">"postcss-nesting"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>       <span class="token comment">/* Nesting CSS */</span>
+    <span class="token string-property property">"autoprefixer"</span><span class="token operator">:</span> <span class="token boolean">true</span>           <span class="token comment">/* CSS Vendor prefixes */</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p>Observa que en esta última modalidad debemos usar <code>module.exports</code>, que es el sistema de módulos legacy que utiliza Node, y en lugar de un JSON se trata de un objeto Javascript, donde a diferencia del anterior podemos utilizar comentarios o incluso lógica Javascript.</p>
+</blockquote>
+<p>El formato de configuración de <strong>PostCSS</strong>, es un formato JSON en el que la clave <code>plugins</code> contiene una lista de plugins de PostCSS, donde la clave es el nombre del paquete y el valor puede ser:</p>
+<ul>
+<li><badge-type class="boolean"></badge-type> a <code>true</code>, que significa que el plugin está activado.</li>
+<li><badge-type class="boolean"></badge-type> a <code>false</code>, que significa que el plugin está desactivado.</li>
+<li><badge-type class="object"></badge-type> con más elementos, que se usará como opciones del plugin en cuestión.</li>
+</ul>
+<p>Por ejemplo, observa el contenido de ejemplo de este <code>postcss.config.js</code>. En él, activamos el plugin <code>postcss-preset-env</code>, pero en lugar de aplicarle un booleano para activar o desactivarlo, le indicamos un <badge-type class="object"></badge-type> donde establecemos una configuración personalizada, que a su vez, <strong>PostCSS</strong> transmitirá al plugin para que tome los valores indicados:</p>
+<pre class="language-js "><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">"postcss-preset-env"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string-property property">"stage"</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      <span class="token string-property property">"features"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string-property property">"nesting-rules"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Más adelante veremos como funciona este plugin en cuestión, pero lo importante es que quede claro la forma de indicar los parámetros, en este caso, enviando un parámetro <code>stage</code> con valor numérico <code>3</code> y un objeto <code>features</code> que tiene la caracaterística <code>nesting-rules</code> activada.</p>
+<h3 id="ejecutando-postcss" tabindex="-1"><a class="header-anchor" href="#ejecutando-postcss">Ejecutando PostCSS</a></h3>
+<p>Una vez tengamos la configuración deseada guardada en nuestro <strong>fichero de configuración</strong>, por ejemplo, <code>postcss.config.js</code>, sólo nos quedaría ejecutar el comando <code>postcss</code>:</p>
+<pre class="language-bash "><code class="language-bash">$ npx postcss <span class="token parameter variable">--watch</span> src/css/index.pcss <span class="token parameter variable">-o</span> dist/css/index.css</code></pre>
+<p>En este ejemplo, busca automáticamente el fichero de configuración <code>postcss.config.js</code>, aplica los datos que tenemos en él, y luego obtiene los datos que le pasamos a <code>postcss</code> mediante la linea de comandos, donde:</p>
+<ul>
+<li>Con <code>--watch</code> indicamos que no termine la ejecución de <strong>PostCSS</strong>, sino que vigile cambios y vuelva a generar el <code>.css</code> final si los hay.</li>
+<li>Con <code>src/css/index.pcss</code> indicamos la ruta y nombre del fichero <strong>PostCSS</strong> de origen.</li>
+<li>Con <code>-o dist/css/index.css</code> indicamos la ruta y nombre del fichero <code>.css</code> de destino.</li>
+</ul>
+<blockquote>
+<p>Ten en cuenta que habitualmente, para trabajar con <strong>PostCSS</strong> se suele utiliza una herramienta de automatización como <strong>Webpack</strong>, <strong>Parcel</strong>, <strong>Gulp</strong>, <strong>Rollup</strong> o similar, que permite gestionar el proyecto y organizarlo todo en conjunto. Aquí nos centramos en aprender sólo <strong>PostCSS</strong>.</p>
+</blockquote>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../que-es/index.htm" title="¿Qué es PostCSS?">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>¿Qué es PostCSS?</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../browserslist/index.htm" title="¿Qué es Browserslist?">
+  <div>
+    <span>¿Qué es Browserslist?</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/OQtAyXHeKnc" title="Grid CSS: Grids por área">
+  <img loading="lazy" src="../../../vi/OQtAyXHeKnc/mqdefault.jpg" alt="Grid CSS: Grids por área">
+</a><a href="https://youtu.be/8Jh2K3tq5n0" title="Tutorial para aprender Animaciones CSS">
+  <img loading="lazy" src="../../../vi/8Jh2K3tq5n0/mqdefault.jpg" alt="Tutorial para aprender Animaciones CSS">
+</a><a href="https://youtu.be/984ry_jsExA" title="CÓMO hacer la ANIMACIÓN del header de Manz.dev">
+  <img loading="lazy" src="../../../vi/984ry_jsExA/mqdefault.jpg" alt="CÓMO hacer la ANIMACIÓN del header de Manz.dev">
+</a><a href="https://youtu.be/jhg2xas3av0" title="¡Carga MÁS RÁPIDO tu sitio web OPTIMIZANDO TIPOGRAFÍAS!">
+  <img loading="lazy" src="../../../vi/jhg2xas3av0/mqdefault.jpg" alt="¡Carga MÁS RÁPIDO tu sitio web OPTIMIZANDO TIPOGRAFÍAS!">
+</a><a href="https://youtu.be/FWDBGZQPzXk" title="Cómo crear GRADIENTES REPETIDOS en CSS">
+  <img loading="lazy" src="../../../vi/FWDBGZQPzXk/mqdefault.jpg" alt="Cómo crear GRADIENTES REPETIDOS en CSS">
+</a><a href="https://youtu.be/0sFtRnbe0fo" title="Novedades de CSS: Dr. CSStrange y el multiverso">
+  <img loading="lazy" src="../../../vi/0sFtRnbe0fo/mqdefault.jpg" alt="Novedades de CSS: Dr. CSStrange y el multiverso">
+</a></div>
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajehtml.com/svg/" title="SVG">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#svg"></use>
+  </svg>
+</a><a class="topic" href="../../../css/index.htm" title="CSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="../../index.htm" title="PostCSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/fundamentos/" title="Fundamentos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/javascript/" title="Javascript">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/npm/" title="NPM">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/webcomponents/" title="WebComponents">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/vuejs/" title="VueJS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/automatizadores/" title="Automatizadores">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajejs.com/retos/" title="Retos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#retos"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+    
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+
+  </div></body>
+
+</html>

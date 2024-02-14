@@ -1,0 +1,410 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#b59374">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <title>Automatizadores - Javascript en español - Lenguaje JS</title>
+  <link rel="preload" href="../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="En el ecosistema Javascript, un automatizador es un sistema que permite organizar y estructurar una aplicación web, agilizando tareas repetitivas y facilitando su creación.">
+  <meta name="view-transition" content="same-origin">
+  <link rel="stylesheet" href="../home.css">
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Automatizadores - Javascript en español">
+  <meta property="og:image" content="https://lenguajejs.com/automatizadores/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="En el ecosistema Javascript, un automatizador es un sistema que permite organizar y estructurar una aplicación web, agilizando tareas repetitivas y facilitando su creación.">
+  <meta property="og:url" content="https://lenguajejs.com/automatizadores/">
+  <meta property="twitter:url" content="https://lenguajejs.com/automatizadores/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Automatizadores - Javascript en español">
+  <meta property="twitter:description" content="En el ecosistema Javascript, un automatizador es un sistema que permite organizar y estructurar una aplicación web, agilizando tareas repetitivas y facilitando su creación.">
+  <meta property="twitter:image" content="https://lenguajejs.com/automatizadores/large-summary.jpg">
+
+  </head>
+
+<body class="js " style="--logo-color: #f0db4f"><div class="book page">
+    <header class="book hero">
+
+  <a class="sitelogo" href="../index.htm">
+  <svg><use href="../assets/logos.svg#js"></use></svg>
+  <img class="manzdev" src="../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeJS.com</div>
+  </div>
+</a>
+
+  <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  <div class="logo" style="--label-image: url(logo.svg); ">
+  <div class="disc"><div class="label"></div></div>
+  <img class="cover" width="400" height="400" src="../assets/automatizadores.jpg" alt="Automatizadores">
+</div>
+<div class="text">
+  <h1>Automatizadores</h1>
+  <div class="subtitle"></div>
+  <p class="description">En el ecosistema Javascript, un automatizador es un sistema que permite organizar y estructurar una aplicación web, agilizando tareas repetitivas y facilitando su creación.</p>
+</div>
+
+<script>
+  const logo = document.querySelector(".logo");
+  logo.addEventListener("click", () => logo.classList.toggle("closed"));
+</script>
+
+  <div class="buttons">
+  <a class="btn" href="../index.htm">← Volver</a><a class="btn" href="https://manz.dev/">Más sobre ManzDev</a>
+</div>
+
+
+</header>
+
+    <section class="bg dark contents">
+  <div class="contents-container"><header class="category-header">
+          <h2>Introducción a automatizadores</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="introduccion/que-es-un-automatizador/index.htm">
+    <span>¿Qué es un automatizador?</span>
+    <span class="text">Empaquetadores Javascript para automatizar tareas</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semishort" title="~2min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="introduccion/commonjs-vs-es-modules/index.htm">
+    <span>CommonJS vs ES Modules</span>
+    <span class="text">CJS, ESM y otros módulos para Javascript</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level advanced">difícil</span>
+      <span class="size"><div class="clock semihalf" title="~7min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Vite</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="vite/guia-tutorial-inicial-de-vite/index.htm">
+    <span>Guía tutorial inicial de Vite</span>
+    <span class="text">Primeros pasos para utilizar el empaquetador ViteJS</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock short" title="~4min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Rollup</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="rollup/guia-tutorial-inicial-de-rollup/index.htm">
+    <span>Guía tutorial inicial de Rollup</span>
+    <span class="text">Empaquetador Javascript enfocado en ESM</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock long" title="~13min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="rollup/servidor-desarrollo-con-rollup/index.htm">
+    <span>Servidor de desarrollo con Rollup</span>
+    <span class="text">Añadiendo un servidor local de desarrollo a Rollup</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~7min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Parcel</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="parcel/guia-tutorial-inicial-de-parcel/index.htm">
+    <span>Guía tutorial inicial de Parcel</span>
+    <span class="text">Empaquetador Javascript enfocado en la sencillez</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level easy">fácil</span>
+      <span class="size"><div class="clock semihalf" title="~8min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="parcel/parcel-serve-mode/index.htm">
+    <span>Modo de desarrollo de Parcel</span>
+    <span class="text">Guía para trabajar con Parcel en nuestro sistema</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock short" title="~5min"></div></span>
+    </div>
+  </a>
+</div><div class="post-item">
+  <a href="parcel/parcel-build-mode/index.htm">
+    <span>Modo de producción de Parcel</span>
+    <span class="text">Guía para subir nuestra app con Parcel</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level medium">medio</span>
+      <span class="size"><div class="clock semihalf" title="~6min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+<header class="category-header">
+          <h2>Web Dev Server</h2>
+        </header>
+        
+
+<div class="modules-container">
+  <div class="post-item">
+  <a href="web-dev-server/guia-inicial-web-dev-server/index.htm">
+    <span>Guía inicial de Web Dev Server</span>
+    <span class="text">Empaquetador Javascript enfocado en workflows sin compilación</span>
+    <div class="extra">
+      <span class="base"></span>
+      <span class="year"></span>
+      <span class="level advanced">difícil</span>
+      <span class="size"><div class="clock semifull" title="~20min"></div></span>
+    </div>
+  </a>
+</div>
+</div>
+
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajehtml.com/svg/" title="SVG">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#svg"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/css/" title="CSS">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/postcss/" title="PostCSS">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="../fundamentos/index.htm" title="Fundamentos">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="../javascript/index.htm" title="Javascript">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="../npm/index.htm" title="NPM">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="../webcomponents/index.htm" title="WebComponents">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="../vuejs/index.htm" title="VueJS">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="index.htm" title="Automatizadores">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a><a class="topic" href="../retos/index.htm" title="Retos">
+  <svg class="logo">
+    <use href="../assets/icons/logos.svg#retos"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  </div>
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-6', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

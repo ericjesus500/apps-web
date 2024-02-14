@@ -1,0 +1,730 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ecc022">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>ESLint: Linter Javascript - Javascript en español - Lenguaje JS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="ESLint es un linter Javascript, una herramienta que examina el código buscando problemas, errores de sintaxis, e incluso ayudando a corregir malas prácticas en el estilo de programación.">
+  <meta name="view-transition" content="same-origin">
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="ESLint: Linter Javascript - Javascript en español">
+  <meta property="og:image" content="https://lenguajejs.com/javascript/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="ESLint es un linter Javascript, una herramienta que examina el código buscando problemas, errores de sintaxis, e incluso ayudando a corregir malas prácticas en el estilo de programación.">
+  <meta property="og:url" content="https://lenguajejs.com/javascript/calidad-de-codigo/eslint/">
+  <meta property="twitter:url" content="https://lenguajejs.com/javascript/calidad-de-codigo/eslint/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="ESLint: Linter Javascript - Javascript en español">
+  <meta property="twitter:description" content="ESLint es un linter Javascript, una herramienta que examina el código buscando problemas, errores de sintaxis, e incluso ayudando a corregir malas prácticas en el estilo de programación.">
+  <meta property="twitter:image" content="https://lenguajejs.com/javascript/large-summary.jpg">
+
+  </head>
+
+<body class="js menu-open " style="--logo-color: #f0db4f"><script>
+    matchMedia("(width <= 1180px)").matches && document.body.classList.toggle("menu-open");
+  </script>
+  
+
+
+
+
+
+
+
+
+<section class="menubar">
+  <div class="menubar-content">
+    <h1>Lenguaje JS</h1>
+
+    <a class="cover" title="Lenguaje JS (javascript)" href="../../index.htm" style="--image: url('../../../assets/javascript.jpg')"></a>
+
+    <header>
+      <a href="../../set-map/que-es-set-weakset/index.htm" title="¿Qué es un Set?">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m14 26l1.41-1.41L7.83 17H28v-2H7.83l7.58-7.59L14 6L4 16l10 10z"></path></svg>
+      </a>
+      <a href="../../index.htm" title="Volver al índice">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 256"><path fill="#888888" d="M240 210h-18v-94.45a14.06 14.06 0 0 0-4.53-10.32l-80-75.49l-.09-.08a13.94 13.94 0 0 0-18.83 0l-.09.08l-80 75.5A14 14 0 0 0 34 115.55V210H16a6 6 0 0 0 0 12h224a6 6 0 0 0 0-12ZM46 115.55a2 2 0 0 1 .65-1.48l.09-.08l79.94-75.48a2 2 0 0 1 2.63 0L209.26 114l.08.08a2 2 0 0 1 .66 1.48V210h-52v-50a14 14 0 0 0-14-14h-32a14 14 0 0 0-14 14v50H46ZM146 210h-36v-50a2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"></path></svg>
+      </a>
+      <a href="../../modulos/que-es-esm/index.htm" title="¿Qué son los módulos (ESM)?">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></path></svg>
+      </a>
+    </header>
+
+    <div style="display:none">
+      <svg id="link-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 256 256"><g fill="#888888"><path d="M208 88h-56V32Z" opacity=".2"></path><path d="m213.66 82.34l-56-56A8 8 0 0 0 152 24H56a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V88a8 8 0 0 0-2.34-5.66ZM160 51.31L188.69 80H160ZM200 216H56V40h88v48a8 8 0 0 0 8 8h48v120Z"></path></g></svg>
+      <svg id="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="#888888" d="M2 12.5C2 9.46 4.46 7 7.5 7H18c2.21 0 4 1.79 4 4s-1.79 4-4 4H9.5a2.5 2.5 0 0 1 0-5H17v2H9.41c-.55 0-.55 1 0 1H18c1.1 0 2-.9 2-2s-.9-2-2-2H7.5C5.57 9 4 10.57 4 12.5S5.57 16 7.5 16H17v2H7.5C4.46 18 2 15.54 2 12.5z"></path></svg>
+    </div>
+
+    <div class="links">
+      <span class="folder">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 512 512"><path fill="#888888" d="M41 73v304.563L88.697 151H423v-30H185.514l-16-48H41zm62.303 96L43.092 455h381.605l60.211-286H103.303z"></path></svg>
+        Calidad de código
+      </span>
+            <a class="link active" href="index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              ESLint: Linter Javascript
+            </a>
+    </div>
+  </div>
+
+  <div class="sidebox">
+    <svg class="close-menu" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19V5m10 1l-6 6l6 6m-6-6h14"></path></svg>
+    <div class="socials">
+      <a class="twitch" href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+      <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+      <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+      <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  const toggleMenu = () => (document.body.classList.toggle("menu-open"));
+  document.querySelector(".close-menu").addEventListener("click", toggleMenu);
+
+  matchMedia("(width <= 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+  matchMedia("(width > 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+
+  const activeLink = document.querySelector(".links .active");
+  const icon = /* svg */`<svg viewBox="0 0 24 24"><use href="#anchor-icon" /></svg>`;
+  const headers = [...document.querySelectorAll(".contents h3")].map(link => ({ text: link.textContent, id: link.id }));
+  const links = [];
+  headers.reverse().forEach(({ text, id }) => {
+    const link = document.createElement("a");
+    link.classList.add("anchor");
+    link.href = "#" + id;
+    link.insertAdjacentHTML("beforeend", icon);
+    link.insertAdjacentText("beforeend", ` ${text}`);
+    activeLink.after(link);
+  });
+</script>
+
+  <div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#js"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeJS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/javascript.jpg')">
+    <h1><a href="index.htm">ESLint: Linter Javascript</a></h1><h2 class="typewriter">Revisión de errores o problemas</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../../set-map/que-es-map-weakmap/index.htm">¿Qué es un Map?</a>
+    <a class="current" href="index.htm">ESLint: Linter Javascript</a>
+    <a href="../../modulos/que-es-esm/index.htm">¿Qué son los módulos (ESM)?</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Aprender a programar en Javascript (<em>o en cualquier lenguaje, en realidad</em>) es una tarea que requiere irse perfeccionando continuamente. Una vez hemos aprendido las bases y fundamentos de lenguaje, una estupenda recomendación sería la de utilizar una herramienta llamada <strong>linter</strong>.</p>
+<p>Los <strong>linters</strong> se encargan de examinar el código del programador y lo ayudan a avisarlo cuando detectan errores de sintaxis, código incorrecto, malas prácticas o incluso ayudarlo a seguir unas normas de estilo. Esto favorece escribir código de calidad y acostumbra al usuario a solventar ciertos problemas comunes en fases tempranas (<em>y no tan tempranas</em>) como programador.</p>
+<blockquote>
+<p>Hay que tener claro que un <strong>linter</strong> no sólo busca errores que hacen que nuestro código no funcione, sino que también nos ayuda a corregir malos hábitos que desembocan en problemas. Un programa puede ser válido y funcionar, pero aún así, <strong>ESLint</strong> puede encontrar errores en él.</p>
+</blockquote>
+<h3 id="qué-es-eslint" tabindex="-1"><a class="header-anchor" href="#qué-es-eslint">¿Qué es ESLint?</a></h3>
+<p><a href="https://eslint.org/">ESLint</a> es un <strong>linter</strong> para <strong>código Javascript</strong>. Ayuda a detectar que se cumplan unas ciertas normas y criterios (<em>personalizables por el programador</em>) para que el código Javascript escrito siga unos estándares y estilos de calidad, favoreciendo la escritura de código correcto, coherente y consistente. Aunque existen otros linters Javascript (<em>JSHint, JSLint, etc...</em>), <strong>ESLint</strong> se ha establecido como herramienta estándar de facto.</p>
+<p><strong>ESLint</strong> es totalmente configurable y puedes indicarle que criterios (<em>llamados reglas</em>) quieres que utilice y cuales prefieres que ignore, adaptándose a las necesidades de cualquier empresa, programador o equipo de trabajo.</p>
+<h3 id="instalación-de-eslint" tabindex="-1"><a class="header-anchor" href="#instalación-de-eslint">Instalación de ESLint</a></h3>
+<blockquote>
+<blockquote>
+<p><strong>ESLint</strong> requiere como mínimo <strong>Node 12.22+</strong> para funcionar, sin embargo, siempre recomendamos tener la última versión estable de <strong>Node</strong> instalada, para lo cuál puedes seguir nuestro tutorial de <a href="../../../npm/introduccion/instalacion-node-con-nvm/index.htm">Instalación de NVM</a>, un control de versiones que hará que la tarea sea muy cómoda y flexible.</p>
+</blockquote>
+</blockquote>
+<p>Para instalar <strong>ESLint</strong> en nuestro proyecto haremos lo siguiente:</p>
+<pre class="language-bash "><code class="language-bash">$ <span class="token function">npm</span> init @eslint/config
+
+Need to <span class="token function">install</span> the following packages:
+  @eslint/create-config
+Ok to proceed? <span class="token punctuation">(</span>y<span class="token punctuation">)</span></code></pre>
+<p>Este comando se encargará de ejecutar un asistente de instalación y configuración de <strong>ESLint</strong>. Te preguntará una serie de cuestiones y a partir de ellas creará un archivo de configuración e instalará los paquetes necesarios (<em>que dependen de las respuestas del asistente</em>).</p>
+<blockquote>
+<blockquote>
+<p>El comando <code>npx</code> es una herramienta para ejecutar comandos que viene incorporada junto a <code>npm</code>, en la instalación de <strong>Node</strong>. Si no la conoces, lee esta sección: <a href="../../../npm/administracion/instalar-paquetes-npm/index.htm#el-comando-npx">¿Qué es npx?</a>.</p>
+</blockquote>
+</blockquote>
+<h3 id="configuración-inicial-de-eslint" tabindex="-1"><a class="header-anchor" href="#configuración-inicial-de-eslint">Configuración inicial de ESLint</a></h3>
+<p>Al arrancarse el asistente para configurar <strong>ESLint</strong> en nuestro proyecto, nos preguntará algunas cuestiones sobre el proyecto a revisar. Hagamos un repaso rápido por las opciones que nos aparecen:</p>
+<h4 id="modo-de-eslint" tabindex="-1"><a class="header-anchor" href="#modo-de-eslint">Modo de ESLint</a></h4>
+<p>Esta opción nos permite seleccionar el <strong>modo</strong> en el que funcionará el linter. Se recomienda utilizar la última opción, la más completa de todas:</p>
+<pre class="language-bash "><code class="language-bash">? How would you like to use ESLint?
+  To check syntax only
+  To check syntax and <span class="token function">find</span> problems
+<span class="token operator">></span> To check syntax, <span class="token function">find</span> problems, and enforce code style</code></pre>
+<p>La primera opción, revisa sólo la sintaxis de nuestro código. La segunda opción, además ayuda a encontrar potenciales problemas en el código. Por último, la tercera opción <strong>y la opción recomendada</strong>, hace todo lo anterior y además sigue unas determinadas normas de estilo para ayudar al programador a corregir malos hábitos o malas prácticas y hacer el código más coherente y legible.</p>
+<h4 id="módulos-javascript" tabindex="-1"><a class="header-anchor" href="#módulos-javascript">Módulos Javascript</a></h4>
+<p>Esta opción nos permite seleccionar la forma en la que importamos código Javascript desde otros archivos. Si estamos utilizando las palabras clave <code>import</code> y/o <code>export</code> en nuestro código, deberemos seleccionar la primera, ya que estamos utilizando <a href="../../modulos/que-es-esm/index.htm">módulos ESM</a>, sin embargo, si utilizamos <code>require</code> o <code>module.exports</code>, deberemos utilizar la segunda por que estamos utilizando <strong>módulos de NodeJS</strong>:</p>
+<pre class="language-bash "><code class="language-bash">? What <span class="token builtin class-name">type</span> of modules does your project use?
+<span class="token operator">></span> JavaScript modules <span class="token punctuation">(</span>import/export<span class="token punctuation">)</span>
+  CommonJS <span class="token punctuation">(</span>require/exports<span class="token punctuation">)</span>
+  None of these</code></pre>
+<p>Si tienes más dudas, echa un vistazo al artículo <a href="../../../automatizadores/introduccion/commonjs-vs-es-modules/index.htm">Diferencias entre módulos ECMAScript (ESM) y CommonJS</a>.</p>
+<h4 id="framework-javascript" tabindex="-1"><a class="header-anchor" href="#framework-javascript">Framework Javascript</a></h4>
+<p>Esta opción nos da la posibilidad de indicar si estamos utilizando un framework Javascript específico como <strong>React</strong> o <strong>Vue.js</strong> y así poder adaptarse a la sintaxis correspondiente de estos frameworks. Si no fuera el caso, seleccionamos <strong>None of these</strong>:</p>
+<pre class="language-bash "><code class="language-bash">? Which framework does your project use?
+  React
+  Vue.js
+<span class="token operator">></span> None of these</code></pre>
+<h4 id="soporte-de-typescript" tabindex="-1"><a class="header-anchor" href="#soporte-de-typescript">Soporte de TypeScript</a></h4>
+<p>Si estamos transpilando nuestro código de <strong>Typescript</strong> a <strong>Javascript</strong>, podemos indicar en el linter que estamos utilizándolo. De lo contrario, simplemente indicamos que no lo utilizamos.</p>
+<pre class="language-bash "><code class="language-bash">? Does your project use TypeScript?
+<span class="token operator">></span> No
+  Yes</code></pre>
+<h4 id="javascript-cliente-o-servidor" tabindex="-1"><a class="header-anchor" href="#javascript-cliente-o-servidor">¿Javascript cliente o servidor?</a></h4>
+<p>Ojo con esta opción. Las opciones no son exclusivas, sino que podemos marcar una o varias (<em>utilizando <kbd>SPACE</kbd></em>). Con esta opción enfocamos el linter para revisar código teniendo en cuenta si va dirigido exclusivamente a navegadores (<em>sin Node</em>), si es código Javascript de <strong>NodeJS</strong> o un híbrido donde se usan ambas:</p>
+<pre class="language-bash "><code class="language-bash">? Where does your code run?
+<span class="token operator">></span> Browser
+<span class="token operator">></span> Node</code></pre>
+<h4 id="guía-de-estilo-javascript" tabindex="-1"><a class="header-anchor" href="#guía-de-estilo-javascript">Guía de estilo Javascript</a></h4>
+<p>Esta es una de las opciones más importantes, ya que con ella nutrimos al linter con la información necesaria para saber como corregir nuestro código Javascript. La opción <strong>recomendable</strong> es la primera, donde le decimos que utilice una guía de estilo popular. Posteriormente, <strong>ESLint</strong> nos ofrecerá una de las tres más famosas (<em>aunque se pueden utilizar otras fuera del asistente</em>).</p>
+<pre class="language-bash "><code class="language-bash">? How would you like to define a style <span class="token keyword">for</span> your project?
+<span class="token operator">></span> Use a popular style guide
+  Answer questions about your style
+  Inspect your JavaScript file<span class="token punctuation">(</span>s<span class="token punctuation">)</span></code></pre>
+<p>La segunda opción, <strong>Answer questions about your style</strong>, nos preguntará una serie de cuestiones sobre nuestro código para ir creando una serie de reglas de forma manual. La última opción, <strong>Inspect your JavaScript file(s)</strong>, es posible que no aparezca en algunos casos. Se encarga de analizar los ficheros de código <code>.js</code> existentes para inferir una configuración a partir de ellos.</p>
+<h4 id="use-a-popular-style-guide" tabindex="-1"><a class="header-anchor" href="#use-a-popular-style-guide">Use a popular style guide</a></h4>
+<p>Si seleccionamos la primera opción en el punto anterior, <strong>ESLint</strong> nos dará a elegir una guía de estilos de las siguientes, consideradas las más populares y extendidas:</p>
+<table>
+<thead>
+<tr>
+<th>Promotores</th>
+<th>GitHub</th>
+<th>Nombre del paquete (NPM)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.airbnb.es/">Airbnb</a></td>
+<td><a href="https://github.com/airbnb/javascript">@airbnb/javascript</a></td>
+<td><code>eslint-config-airbnb</code></td>
+</tr>
+<tr>
+<td><a href="https://standardjs.com/">StandardJS</a></td>
+<td><a href="https://github.com/standard/standard">@standard/standard</a></td>
+<td><code>eslint-config-standard</code></td>
+</tr>
+<tr>
+<td><a href="https://www.google.com/">Google</a></td>
+<td><a href="https://github.com/google/eslint-config-google">@google/eslint-config-google</a></td>
+<td><code>eslint-config-google</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/xojs/xo">XO</a></td>
+<td><a href="https://github.com/xojs/eslint-config-xo">@xojs/eslint-config-xo</a></td>
+<td><code>eslint-config-xo</code></td>
+</tr>
+</tbody>
+</table>
+<p>Cada una de ellas, tiene una serie de reglas preconfiguradas que luego, puedes modificar o cambiar si lo deseas. También puedes crear/modificar tu propio conjunto de reglas, aunque eso te llevará un poco más de tiempo.</p>
+<p>Además de estos paquetes del asistente, existen muchos otros como <code>eslint-config-react-app</code>, <code>eslint-config-prettier</code>, <code>eslint-config-eslint</code>, <code>eslint-config-jest-enzyme</code> (<em>u otros</em>) que puedes buscar en NPM con un simple <code>npm search eslint-config</code> e instalar con un <code>npm install</code> seguido del nombre del paquete.</p>
+<blockquote>
+<blockquote>
+<p>Aunque el asistente de <strong>ESLint</strong> instala y configura los paquetes necesarios automáticamente, si queremos hacerlo con una guía de estilo diferente no basta con hacer el <code>npm install</code>, sino que además hay que modificar el archivo de configuración como veremos más adelante.</p>
+</blockquote>
+</blockquote>
+<h4 id="formato-de-configuración" tabindex="-1"><a class="header-anchor" href="#formato-de-configuración">Formato de configuración</a></h4>
+<p>Esta opción nos pregunta en que formato queremos guardar la configuración de ESLint. Podemos utilizar formato <code>.js</code>, formato <code>.yaml</code> o formato <code>.json</code>. Los más extendidos suelen ser el formato <code>.js</code> y el formato <code>.json</code>. Por lo que puedes elegir cualquiera de los dos:</p>
+<pre class="language-bash "><code class="language-bash">? What <span class="token function">format</span> <span class="token keyword">do</span> you want your config <span class="token function">file</span> to be in?
+<span class="token operator">></span> Javascript
+  YAML
+  JSON</code></pre>
+<p>Quizás, el formato más flexible es el formato Javascript <code>.js</code>, ya que podemos meter lógica Javascript de NodeJS para modificar la configuración. Por esta razón, es de las más frecuentes.</p>
+<h4 id="instalación-de-paquetes-npm" tabindex="-1"><a class="header-anchor" href="#instalación-de-paquetes-npm">Instalación de paquetes NPM</a></h4>
+<p>Por último, y dependiendo de las opciones escogidas, el último mensaje que nos aparecerá será el siguiente, en el que nos dice los paquetes de NPM que necesita instalar y si queremos que lo haga por nosotros. Respondemos que sí y nos ahorramos hacer un <code>npm install</code> manualmente:</p>
+<pre class="language-bash "><code class="language-bash">? Would you like to <span class="token function">install</span> them now with npm?
+  No
+<span class="token operator">></span> Yes</code></pre>
+<h4 id="cuestiones-sobre-nuestro-estilo" tabindex="-1"><a class="header-anchor" href="#cuestiones-sobre-nuestro-estilo">Cuestiones sobre nuestro estilo</a></h4>
+<p>En el caso de que no queramos utilizar un paquete de reglas preconfiguradas, <strong>ESLint</strong> permite crear uno desde cero mediante unas pocas preguntas que nos irá realizando y determinarán la base del estilo que utilizaremos:</p>
+<pre class="language-bash "><code class="language-bash">? Answer questions about style
+<span class="token operator">></span> What style of indentation <span class="token keyword">do</span> you use?
+<span class="token operator">></span> What quotes <span class="token keyword">do</span> you use <span class="token keyword">for</span> strings?
+<span class="token operator">></span> What line endings <span class="token keyword">do</span> you use?
+<span class="token operator">></span> Do you require semicolons?</code></pre>
+<p>Podemos irlas respondiendo una por una y determinar cual será el estilo principal de nuestro código. A continuación, una tabla donde explicamos cada una de las preguntas que nos aparecen en el asistente de <strong>ESLint</strong>, con esta opción:</p>
+<table>
+<thead>
+<tr>
+<th>Opción</th>
+<th>ESLint rule</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>What style of indentation do you use?</strong></td>
+<td><code>indent</code></td>
+<td>Esta opción nos pregunta si queremos que el código esté <a href="../../../fundamentos/introduccion/indentacion-de-codigo/indentacion/index.htm">indentado</a> con tabuladores o con espacios. En el caso de los espacios, puedes indicar incluso cuantos espacios requieres.</td>
+</tr>
+<tr>
+<td><strong>What quotes do you use for strings?</strong></td>
+<td><code>quotes</code></td>
+<td>Debemos indicar en esta opción si utilizamos comillas dobles o comillas simples para los <badge-type class="string"></badge-type>.</td>
+</tr>
+<tr>
+<td><strong>What line endings do you use?</strong></td>
+<td><code>linebreak-style</code></td>
+<td>Esta opción nos permite indicar si escribimos código en Windows o en Unix (Linux).</td>
+</tr>
+<tr>
+<td><strong>Do you require semicolons?</strong></td>
+<td><code>semi</code></td>
+<td>Esta opción nos pregunta si queremos utilizar punto y coma al final de cada sentencia. Recuerda que en Javascript es opcional el uso de punto y coma.</td>
+</tr>
+</tbody>
+</table>
+<p>Obviamente, estas no son sino las preguntas principales y más importantes para tener un fichero de configuración de reglas mínimo para comenzar. Puedes encontrar todas las reglas que tiene ESLint (<em>son muchas</em>) en esta página: <a href="https://eslint.org/docs/rules/">reglas de ESLint</a>.</p>
+<h4 id="inspeccionar-ficheros-javascript" tabindex="-1"><a class="header-anchor" href="#inspeccionar-ficheros-javascript">Inspeccionar ficheros Javascript</a></h4>
+<p>Si por otro lado, hemos seleccionado la opción <strong>Inspect your JavaScript file(s)</strong>, ESLint se basará en una revisión de tus archivos Javascript para determinar cuál sería la guía de estilo que deberías utilizar, siguiendo las normas que se utilizan en los archivos Javascript actuales.</p>
+<h3 id="el-fichero-eslintrcjs" tabindex="-1"><a class="header-anchor" href="#el-fichero-eslintrcjs">El fichero .eslintrc.js</a></h3>
+<p>Independientemente de las opciones elegidas en el asistente, siempre se nos preguntará en que formato queremos guardar la configuración de ESLint. Ten en cuenta que el proceso del asistente, lo que hace realmente es generar un fichero de configuración con <a href="https://eslint.org/docs/rules/">reglas de ESLint</a> que luego podrás modificar y personalizar.</p>
+<p>En principio, puedes utilizar el formato que más te guste. Si existen varios archivos de configuración diferentes, tendrá preferencia en el orden de la siguiente lista:</p>
+<ul>
+<li><strong>Javascript</strong>: Un archivo de configuración llamado <code>.eslintrc.js</code></li>
+<li><strong>YAML</strong>: Un archivo de configuración llamado <code>.eslintrc.yaml</code> o <code>.eslintrc.yml</code></li>
+<li><strong>JSON</strong>: Un archivo de configuración llamado <code>.eslintrc.json</code>. Aunque en el formato <code>.json</code> no se permiten comentarios, ESLint sí soporta comentarios de tipo <code>/* */</code>.</li>
+</ul>
+<p>También es posible utilizar un objeto <code>eslintConfig</code> dentro del <code>package.json</code> de nuestro proyecto.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Antiguamente se utilizaba un fichero <code>.eslintrc</code> sin extensión (<em>que realmente era un YAML o JSON</em>). Sin embargo, ESLint marca esta posibilidad como obsoleta, por lo que se recomienda utilizar una de las tres opciones anteriores.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Por último, comentar que también es posible crear un fichero <code>.eslintignore</code> donde podemos indicar archivos o globs (<em>patrones de archivos, comodines, etc...</em>) que se ignorarán a la hora de realizar una comprobación de <strong>ESLint</strong>. También se pueden añadir comentarios, con líneas que comiencen por el caracter <code>#</code>.</p>
+<h3 id="configuración-de-ejemplo" tabindex="-1"><a class="header-anchor" href="#configuración-de-ejemplo">Configuración de ejemplo</a></h3>
+<p>A continuación, tenemos un <strong>fichero de configuración de ejemplo de ESLint</strong> denominado <code>.eslintrc.js</code>, con las opciones recomendadas y ciertas reglas personalizadas y comentadas:</p>
+<pre class="language-js "><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">env</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">browser</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>        <span class="token comment">/* El objetivo del código es ejecutar en navegadores */</span>
+      <span class="token literal-property property">es2021</span><span class="token operator">:</span> <span class="token boolean">true</span>          <span class="token comment">/* El código estará escrito en ECMAScript 2021 */</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token keyword">extends</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"eslint:recommended"</span><span class="token punctuation">,</span> <span class="token comment">/* Reglas marcadas con ✓ en eslint.org/docs/rules/ */</span>
+      <span class="token string">"standard"</span>            <span class="token comment">/* Reglas del paquete eslint-config-standard */</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">parserOptions</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">ecmaVersion</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>      <span class="token comment">/* Establece la versión de ECMAScript que se usará */</span>
+      <span class="token literal-property property">sourceType</span><span class="token operator">:</span> <span class="token string">"module"</span>  <span class="token comment">/* Indica si se usan módulos ESM o solo scripts */</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string-property property">"indent"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"error"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token string-property property">"linebreak-style"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"error"</span><span class="token punctuation">,</span> <span class="token string">"unix"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token string-property property">"quotes"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"error"</span><span class="token punctuation">,</span> <span class="token string">"double"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token string-property property">"semi"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"error"</span><span class="token punctuation">,</span> <span class="token string">"always"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>En el apartado <code>rules</code> es donde podremos modificar el comportamiento de las reglas y adaptarlo a nuestra guía de estilo particular. Aquí puedes encontrar todas las <a href="https://eslint.org/docs/rules/">reglas de eslint</a>, aunque concretamente estamos utilizando 4 reglas:</p>
+<ul>
+<li><a href="https://eslint.org/docs/rules/indent">Indentación a 2 espacios</a></li>
+<li><a href="https://eslint.org/docs/rules/linebreak-style">Finales de línea de UNIX</a></li>
+<li><a href="https://eslint.org/docs/rules/quotes">Uso de comillas dobles para strings</a></li>
+<li><a href="https://eslint.org/docs/rules/semi">Uso de punto y coma obligatorio</a></li>
+</ul>
+<p>Podemos guardar este fichero con nombre <code>.eslintrc.js</code> en la carpeta raíz de nuestro proyecto y escribir en una <strong>terminal</strong> el siguiente comando para que nos revise los errores de nuestro código (<em>asumiendo que queremos revisar un archivo llamado <code>index.js</code></em>):</p>
+<pre class="language-bash "><code class="language-bash">$ npx eslint src/js/index.js</code></pre>
+<p>También se pueden usar <strong>globs</strong> como <code>*.js</code> o similares.</p>
+<blockquote>
+<blockquote>
+<p>Observa que en la opción <strong>extends</strong> del archivo de configuración se están utilizando dos fuentes de datos. Por un lado, las recomendaciones básicas oficiales de ESLint, y por otro lado, la guía de estilo <code>eslint-config-standard</code>. En el caso de querer seguir añadiendo más guías sólo necesitaríamos añadir el nombre del paquete, omitiendo el fragmento <code>eslint-config-</code>.</p>
+</blockquote>
+</blockquote>
+<h3 id="autofix-con-eslint" tabindex="-1"><a class="header-anchor" href="#autofix-con-eslint">Autofix con ESLint</a></h3>
+<p>Una de las características más interesantes de ESLint, es utilizar la característica <strong>autofix</strong>, es decir, que ESLint se encargue de corregir los errores automáticamente, sin que tengamos que hacerlo nosotros manualmente, simplemente siguiento las reglas preconfiguradas.</p>
+<pre class="language-bash "><code class="language-bash">$ npx eslint <span class="token parameter variable">--fix</span> src/js/index.js</code></pre>
+<p>Esto hará que <strong>ESLint</strong> revise el archivo <code>src/js/index.js</code> y corrija todos los errores posibles del código de forma automática. Sin embargo, lo práctico sería que nos lo corrija en el VSCode al guardar, no tener que hacerlo desde una consola. Para conseguir esto, necesitamos seguir los siguientes pasos:</p>
+<ul>
+<li>Paso 1: Configurar ESLint con el asistente o el fichero de configuración (<em>visto anteriormente</em>)</li>
+<li>Paso 2: Instalar el plugin <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">ESLint</a> en VSCode</li>
+<li>Paso 3: Añadir las siguientes líneas de configuración en VSCode, pulsando <kbd>F1</kbd> y seleccionando <em>Settings (JSON)</em>:</li>
+</ul>
+<pre class="language-js "><code class="language-js"><span class="token comment">/* ... */</span>
+<span class="token string-property property">"editor.codeActionsOnSave"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token string-property property">"source.fixAll.eslint"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token comment">/* ... */</span></code></pre>
+<p>Esto es el equivalente a escribir el comando anterior <code>npx eslint --fix src/js/index.js</code> al guardar el fichero. Recuerda que no todos los errores son <strong>autocorregibles</strong>, por lo que puede que ciertos errores no se arreglen de forma automática.</p>
+<h3 id="plugins-de-eslint" tabindex="-1"><a class="header-anchor" href="#plugins-de-eslint">Plugins de ESLint</a></h3>
+<p>Ten en cuenta que en esta guía hemos visto como configurar <strong>ESLint</strong> como herramienta de terminal. Sin embargo, podría ser mucho más cómodo (<em>e incluso común</em>) configurarlo en el <strong>editor de código</strong> que utilicemos, para que nos muestre las recomendaciones y errores a medida que vamos escribiendo nuestro programa, sin necesidad de estar mirando la terminal, o ejecutando los comandos.</p>
+<p>También puede ser interesante tenerlo configurado con algún <a href="../../../automatizadores/index.htm">automatizador</a> como <strong>WebPack</strong>, <strong>Gulp</strong>, <strong>ViteJS</strong> (<em>o similares</em>) y que nos aparezca cuando estemos trabajando con él.</p>
+<p>A continuación tienes una lista de editores o automatizadores con algunas de las extensiones o plugins que puedes instalar para usar ESLint:</p>
+<table>
+<thead>
+<tr>
+<th>Editor o sistema</th>
+<th>Plugin o extensión</th>
+<th>GitHub</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Visual Studio Code</td>
+<td><a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">VSCode ESLint</a></td>
+<td><a href="https://github.com/Microsoft/vscode-eslint">vscode-eslint en GitHub</a></td>
+</tr>
+<tr>
+<td>IntelliJ IDEA</td>
+<td><a href="https://plugins.jetbrains.com/plugin/7494-eslint">ESLint Plugin</a></td>
+<td><a href="https://github.com/idok/eslint-plugin">eslint-plugin en GitHub</a></td>
+</tr>
+<tr>
+<td>Sublime Text 3</td>
+<td><a href="http://www.sublimelinter.com/en/stable/">SublimeLinter</a></td>
+<td><a href="https://github.com/roadhump/SublimeLinter-eslint">SublimeLinter-eslint en GitHub</a></td>
+</tr>
+<tr>
+<td>Gulp</td>
+<td><a href="https://www.npmjs.com/package/gulp-eslint">gulp-eslint</a></td>
+<td><a href="https://github.com/adametry/gulp-eslint">gulp-eslint en GitHub</a></td>
+</tr>
+<tr>
+<td>Webpack</td>
+<td><a href="https://www.npmjs.com/package/eslint-webpack-plugin">eslint-webpack-plugin</a></td>
+<td><a href="https://github.com/webpack-contrib/eslint-webpack-plugin">eslint-webpack-plugin en GitHub</a></td>
+</tr>
+<tr>
+<td>RollUp</td>
+<td><a href="https://www.npmjs.com/package/@rollup/plugin-eslint">@rollup/plugin-eslint</a></td>
+<td><a href="https://github.com/rollup/plugins/tree/master/packages/eslint">@rollup/plugin-eslint en GitHub</a></td>
+</tr>
+<tr>
+<td>Vim</td>
+<td></td>
+<td><a href="https://github.com/w0rp/ale">ALE</a> o <a href="https://github.com/vim-syntastic/syntastic/tree/master/syntax_checkers/javascript">Syntastic</a></td>
+</tr>
+</tbody>
+</table>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../../set-map/que-es-map-weakmap/index.htm" title="¿Qué es un Map?">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>¿Qué es un Map?</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../../modulos/que-es-esm/index.htm" title="¿Qué son los módulos (ESM)?">
+  <div>
+    <span>¿Qué son los módulos (ESM)?</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/UVauEId-jJ0" title="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+  <img loading="lazy" src="../../../vi/UVauEId-jJ0/mqdefault.jpg" alt="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+</a><a href="https://youtu.be/KE2xRDM4Amg" title="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+  <img loading="lazy" src="../../../vi/KE2xRDM4Amg/mqdefault.jpg" alt="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+</a><a href="https://youtu.be/sU4e6_i_ExU" title="Consejos y buenas prácticas (IV): Javascript + Imágenes">
+  <img loading="lazy" src="../../../vi/sU4e6_i_ExU/mqdefault.jpg" alt="Consejos y buenas prácticas (IV): Javascript + Imágenes">
+</a><a href="https://youtu.be/Xi07tHFzqR8" title="Cómo CLONAR objetos en Javascript correctamente (structuredClone)">
+  <img loading="lazy" src="../../../vi/Xi07tHFzqR8/mqdefault.jpg" alt="Cómo CLONAR objetos en Javascript correctamente (structuredClone)">
+</a><a href="https://youtu.be/S0YA8BadVbM" title="Cambiar clases CSS desde Javascript con classList">
+  <img loading="lazy" src="../../../vi/S0YA8BadVbM/mqdefault.jpg" alt="Cambiar clases CSS desde Javascript con classList">
+</a><a href="https://youtu.be/EiKYr5vjs48" title="Diferencias entre getElementById vs querySelector (y otros métodos del DOM)">
+  <img loading="lazy" src="../../../vi/EiKYr5vjs48/mqdefault.jpg" alt="Diferencias entre getElementById vs querySelector (y otros métodos del DOM)">
+</a></div>
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajehtml.com/svg/" title="SVG">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#svg"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/css/" title="CSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/postcss/" title="PostCSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="../../../fundamentos/index.htm" title="Fundamentos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="../../index.htm" title="Javascript">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="../../../npm/index.htm" title="NPM">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="../../../webcomponents/index.htm" title="WebComponents">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="../../../vuejs/index.htm" title="VueJS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="../../../automatizadores/index.htm" title="Automatizadores">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a><a class="topic" href="../../../retos/index.htm" title="Retos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#retos"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+    
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-6', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+
+  </div></body>
+
+</html>

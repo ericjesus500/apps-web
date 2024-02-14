@@ -1,0 +1,370 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e44f26">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>¿Qué son las validaciones? - HTML en español - Lenguaje HTML</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Cuando trabajamos con datos de formulario por parte del usuario, debemos conocer las validaciones y aprender como debemos hacerlas.">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="¿Qué son las validaciones? - HTML en español">
+  <meta property="og:image" content="https://lenguajehtml.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Cuando trabajamos con datos de formulario por parte del usuario, debemos conocer las validaciones y aprender como debemos hacerlas.">
+  <meta property="og:url" content="https://lenguajehtml.com/html/validaciones/que-son-validaciones/">
+  <meta property="twitter:url" content="https://lenguajehtml.com/html/validaciones/que-son-validaciones/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="¿Qué son las validaciones? - HTML en español">
+  <meta property="twitter:description" content="Cuando trabajamos con datos de formulario por parte del usuario, debemos conocer las validaciones y aprender como debemos hacerlas.">
+  <meta property="twitter:image" content="https://lenguajehtml.com/large-summary.jpg">
+
+  </head>
+
+<body class="html" style="--logo-color: #e44f26"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="/">
+  <svg><use href="../../../assets/logos.svg#html"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeHTML.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/html.jpg')">
+    <h1><a href="index.htm">¿Qué son las validaciones?</a></h1><h2 class="typewriter">La importancia de validar correctamente los datos</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../../formularios/etiqueta-html-input-submit/index.htm">La etiqueta HTML &lt;input&gt; submit</a>
+    <a class="current" href="index.htm">¿Qué son las validaciones?</a>
+    <a href="../validaciones-html5/index.htm">Validaciones básicas con HTML5</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Hasta ahora hemos ido aprendiendo las diferentes etiquetas HTML para crear elementos en un formulario, así como personalizarlas con contenido o atributos de dichas etiquetas. Sin embargo, al crear un formulario en HTML, debemos ser conscientes de un detalle ineludible: <strong>los usuarios se equivocan al rellenar un formulario</strong>.</p>
+<p>Ya sea por equivocación del usuario, ambigüedad del formulario, o error del programador del formulario, el caso es que debemos estar preparados y anticiparnos a estos errores, para intentar que los datos lleguen correctamente a su destino, con el formato adecuado y esperado, y evitar cualquier tipo de moderación o revisión posterior para no perder tiempo.</p>
+<h3 id="qué-es-una-validación" tabindex="-1"><a class="header-anchor" href="#qué-es-una-validación">¿Qué es una validación?</a></h3>
+<p>Para evitar estos casos que hemos mencionado, se suele recurrir a un tipo de proceso automático llamado <strong>validación</strong>. En dicho proceso, establecemos unas pautas para comprobar si el usuario ha introducido la información de forma correcta o en el formato esperado, y en caso contrario, tenga que corregir los datos si quiere enviar el formulario correctamente.</p>
+<p>Un esquema <strong>tradicional</strong> de validación de ejemplo podría ser el siguiente:</p>
+<ul>
+<li>Tenemos un formulario HTML5 que el usuario debe rellenar.</li>
+<li>Antes de enviar al backend, mediante <a href="https://lenguajejs.com/javascript">Javascript</a> validamos que no hay errores.</li>
+<li>Si no se supera esa validación, se devuelve al usuario al formulario para que corrija los errores.</li>
+<li>Una vez superada, el formulario se envía al back-end de la página para ser procesado.</li>
+</ul>
+<p><img src="formulario-frontend-backend-tradicional.png" alt="Escenario tradicional de validación" width="1124" height="492" loading="lazy"></p>
+<p>Este sería un sistema de validación clásico, sin embargo, <strong>tiene varios problemas</strong> que comentaremos a continuación que no lo hacen un sistema de validación adecuado. Vamos a revisar el esquema anterior paso a paso, creando escenarios derivados, para detectar los posibles problemas y llegar a un sistema de validación más apropiado.</p>
+<h4 id="escenario-1-sin-validación" tabindex="-1"><a class="header-anchor" href="#escenario-1-sin-validación">Escenario 1 (sin validación)</a></h4>
+<p>El peor caso que podríamos plantear sería el siguiente: <strong>el formulario no tiene validación de ningún tipo</strong>. Ni en el frontend, ni en el backend.</p>
+<ul>
+<li>El usuario escribe la información en el formulario y la envía.</li>
+<li>El navegador no tiene validación, por lo que la envía al backend sin comprobar.</li>
+<li>El backend no tiene validación, por lo que la envía por correo o guarda en base de datos sin comprobar.</li>
+</ul>
+<p>Es el peor escenario posible, puesto que el usuario podría enviar información incorrecta, o incluso hasta datos malintencionados que podrían comprometer la seguridad del servidor, guardando información incorrecta, corrompiendo la base de datos u otros problemas.</p>
+<h4 id="escenario-2-sólo-validación-frontend" tabindex="-1"><a class="header-anchor" href="#escenario-2-sólo-validación-frontend">Escenario 2 (sólo validación frontend)</a></h4>
+<p>Otro caso podría ser que <strong>el formulario tenga validación sólo en el front-end</strong>, es decir, en el navegador. Aunque es una mejora, sigue sin ser adecuado.</p>
+<ul>
+<li>El usuario escribe la información en el formulario y la intenta enviar.</li>
+<li>El navegador comprueba (valida) los datos antes de enviarlos. Si detecta errores, obliga a corregirlos.</li>
+<li>Si no hay errores, se envían los datos al backend.</li>
+<li>EL backend no tiene validación (confía en la validación del front), por lo que la envía por correo o guarda en base de datos.</li>
+</ul>
+<p>Este escenario plantea un problema grave. La validación del frontend se puede desactivar o modificar, por lo que un usuario malintencionado podría eliminar dicha capa de validación y estaríamos en el mismo escenario anterior. La validación de frontend tiene como objetivo aumentar la velocidad de respuesta y permitir validar los datos sin que tenga que viajar al backend y volver al front, por lo que la latencia es mucho menor. Sin embargo, nunca se debe confiar sólo en una validación de frontend.</p>
+<blockquote>
+<p>Como veremos más adelante, las validaciones en frontend se pueden hacer con Javascript (<em>más tradicionales</em>) o utilizando ciertos atributos de HTML (<em>más moderna</em>). Incluso puedes utilizar una mezcla de ambas.</p>
+</blockquote>
+<h4 id="escenario-3-sólo-validación-backend" tabindex="-1"><a class="header-anchor" href="#escenario-3-sólo-validación-backend">Escenario 3 (sólo validación backend)</a></h4>
+<p>Veamos un nuevo escenario. El tercer caso posible es uno donde <strong>el formulario tiene validación sólo en el back-end</strong>.</p>
+<ul>
+<li>El usuario escribe la información en el formulario y la envía.</li>
+<li>Como no hay validación en frontend, la información llega al backend y se comprueba.</li>
+<li>Si no hay errores, se envía por correo o se guarda en base de datos.</li>
+<li>Si hay errores, el feedback debe volver a viajar al front para que el usuario lo corrija.</li>
+</ul>
+<p>En este escenario, al tener validación en el backend, no dejaremos pasar casos malintencionados. Sin embargo, la desventaja de este método es que el usuario puede rellenar un formulario y se debe enviar al backend para que lo valide, lo que tiene dos problemas principales:</p>
+<ul>
+<li>Validar en el backend conlleva una comunicación frontend-backend y la vuelta backend-frontend, lo que conlleva latencia y puede tardar.</li>
+<li>Es muy probable que al volver desde el backend, no se pueda recuperar la información del usuario, por lo que tiene que volver a rellenar el formulario desde cero.</li>
+</ul>
+<h4 id="escenario-4-doble-validación" tabindex="-1"><a class="header-anchor" href="#escenario-4-doble-validación">Escenario 4 (doble validación)</a></h4>
+<p>Por último, tendríamos el <strong>caso ideal</strong>, donde el formulario <strong>tiene validación en el frontend y en el backend</strong>, también denominado <strong>doble validación</strong>.</p>
+<p><img src="formulario-frontend-backend-html5.png" alt="Doble validación de datos de un formulario" width="1124" height="492" loading="lazy"></p>
+<ul>
+<li>El usuario escribe la información en el formulario y la envía.</li>
+<li>El navegador valida los datos, y en el caso de existir error, obliga al usuario a corregirlo inmediatamente.</li>
+<li>Si no hay errores, la información se envía al backend y se valida allí que efectivamente no haya problemas.</li>
+<li>Si también pasa la validación del backend, se procede a enviar emails o guardar en bases de datos.</li>
+</ul>
+<p>Recuerda siempre realizar la <strong>validación en el servidor o back-end</strong>, ya que puede evitar problemas graves de seguridad.</p>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../../formularios/etiqueta-html-input-submit/index.htm" title="La etiqueta HTML &lt;input&gt; submit">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>La etiqueta HTML &lt;input&gt; submit</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../validaciones-html5/index.htm" title="Validaciones básicas con HTML5">
+  <div>
+    <span>Validaciones básicas con HTML5</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/SVomAFpMw30" title="Consejos y buenas prácticas (II): HTML + WebFonts">
+  <img loading="lazy" src="../../../vi/SVomAFpMw30/mqdefault.jpg" alt="Consejos y buenas prácticas (II): HTML + WebFonts">
+</a><a href="https://youtu.be/RW5erp81FMY" title="Consejos y buenas prácticas (I): HEAD">
+  <img loading="lazy" src="../../../vi/RW5erp81FMY/mqdefault.jpg" alt="Consejos y buenas prácticas (I): HEAD">
+</a><a href="https://youtu.be/lDPJQyXow_g" title="Consejos y buenas prácticas (VII): SEO">
+  <img loading="lazy" src="../../../vi/lDPJQyXow_g/mqdefault.jpg" alt="Consejos y buenas prácticas (VII): SEO">
+</a><a href="https://youtu.be/7oPdEM0VXOs" title="Consejos y buenas prácticas (VI): Performance">
+  <img loading="lazy" src="../../../vi/7oPdEM0VXOs/mqdefault.jpg" alt="Consejos y buenas prácticas (VI): Performance">
+</a><a href="https://youtu.be/LAHR5gl07ks" title="Consejos y buenas prácticas (V): Accesibilidad">
+  <img loading="lazy" src="../../../vi/LAHR5gl07ks/mqdefault.jpg" alt="Consejos y buenas prácticas (V): Accesibilidad">
+</a><a href="https://youtu.be/cQIlwKSAyAc" title="Crear packs de iconos con sprites SVG">
+  <img loading="lazy" src="../../../vi/cQIlwKSAyAc/mqdefault.jpg" alt="Crear packs de iconos con sprites SVG">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-5', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

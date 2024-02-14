@@ -1,0 +1,411 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Jorge Sánchez. Manual de HTML5 y CSS3. Animaciones mediante CSS</title>
+    <script src="../../cgm1lsq.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link rel="stylesheet" href="../../lib/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="../../css/manual.css?f=20181104">
+</head>
+<body>
+<div id="mail">
+    <div id="formularioMail">
+        <p><a href="#"><img src="../../img/cerrar.png" alt="Cerrar" id="cerrarMail"></a></p>
+        <h1>Enviar mensaje</h1>
+        <form action="#" id="formMail" method="POST">
+            <input type="nombre" name="nombre" id="nombre" placeholder="nombre y apellidos" required="">
+            <input type="email" name="email" id="email" placeholder="tu email" required="">
+            <input type="asunto" placeholder="asunto" name="asunto" id="asunto" required="">
+            <textarea name="contenido" id="contenido" cols="30" rows="5" placeholder="texto del mensaje" required=""></textarea>
+            <button>ENVIAR</button>
+        </form>
+    </div>
+</div>
+<div id="btMenu">
+    <div id="franja1" class="franja"></div>
+    <div id="franja2" class="franja"></div>
+    <div id="franja3" class="franja"></div>
+</div>
+
+<div id="barraSocial">
+    <a href="https://twitter.com/jorgesancheznet">
+        <img src="../../img/twitter.png" alt="twitter" class="btSocial" title="jorgesancheznet en twitter">
+    </a>
+    <a href="https://facebook.com/jorgesancheznet">
+        <img src="../../img/facebook.png" alt="FaceBook" class="btSocial" title="jorgesancheznet en facebook">
+    </a>
+    <a href="https://youtube.com/jorgesancheznet">
+        <img src="../../img/youtube.png" alt="You Tube" class="btSocial" title="jorgesancheznet en YouTube">
+    </a>
+    <a href="https://github.com/jorgesancheznet">
+        <img src="../../img/github.png" alt="Git Hub" class="btSocial" title="jorgesancheznet en GitHub">
+    </a>
+    <a href="#" id="btMail" class="enlaceMail">
+        <img src="../../img/mail.png" alt="Enviar email" class="btSocial" title="Enviar email">
+    </a>
+</div>
+
+
+<header>
+    <div id="logo">
+        <a href="/">
+        <img src="../../img/logo.png" alt="JorgeSanchez.net logo" id="iLogo1">
+        <img src="../../img/logoMini.png" alt="JorgeSanchez.net logo" id="iLogo2">
+        </a>
+    </div>
+</header>
+
+<section id="cuerpo">
+    <h1 class="superPrincipal">Manual de HTML5 y CSS3</h1>
+    <h1 class="titulo1"><span class="numero0">[19] </span><br>Animaciones mediante CSS</h1>    
+    
+<div id="_idContainer000" class="Marco-de-texto-b-sico">
+			<h2 class="titulo2"><span class="numero2">[19.1] </span><a id="_idTextAnchor000"></a>transiciones</h2>
+			<p class="Normal2">Sin duda es el efecto más espectacular a aplicar sobre un elemento mediante CSS3. Permite pasar de un estado del elemento a otro haciendo un paso gradual en el tiempo que se configure. Por ejemplo, podemos hacer que una capa pase a doblar su tamaño poco a poco.</p>
+			<p class="Normal">Este tipo de efectos se solían hacer con JavaScript, ahora es posible (aunque desde luego no con todas las posibilidades de JavaScript), desde CSS3.</p>
+			<p class="Normal">En este código HTML:</p>
+			<table id="table001" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;!doctype html&gt;<br>&lt;html</strong> <span class="atributo">lang</span>=<span class="texto">”es”</span><strong class="resaltado">&gt;<br>    &lt;head&gt;<br>        &lt;meta</strong> <span class="atributo">charset</span><span class="texto">=”UTF-8</span><strong class="resaltado">”&gt;<br>            &lt;title&gt;</strong>Documento<strong class="resaltado">&lt;/title&gt;<br>            &lt;style&gt;<br></strong>&#9;&#9;&#9;&#9;&#9;div{<br>&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">background-color</strong>:<span class="atributo">red</span>;<br>&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">width</strong>:<span class="atributo">50px</span>;<br>&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">height</strong>:<span class="atributo">50px</span>;<br>&#9;&#9;&#9;&#9;&#9;}<br><br>&#9;&#9;&#9;&#9;&#9;div:hover<strong class="resaltado">{</strong><br>&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">width</strong>:<span class="atributo">300px</span>;<br>&#9;&#9;&#9;&#9;&#9;}<br><strong class="resaltado">&#9;&#9;&#9;&#9;&lt;/style&gt;<br>    &lt;/head&gt;<br>    &lt;body&gt;<br>        &lt;div&gt;</strong><span class="gris" lang="en-US">&amp;nbsp;</span><strong class="resaltado" lang="en-US">&lt;/div&gt;</strong></pre>
+							<pre class="codigo"><strong class="resaltado" lang="en-US">    &lt;/body&gt;<br>&lt;/html&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal2">Muestra en pantalla un rectángulo de color rojo; al arrimar el ratón sobre él (comportamiento <strong class="Negritta" lang="en-US">:hover</strong>) el rectángulo crece hasta los trescientos píxeles.</p>
+			<p class="Normal">Mediante las transiciones podemos hacer que ese cambio se realice progresivamente (de otro modo, el cambio aparece de golpe). Las propiedades relacionadas con transiciones son:</p>
+			<ul>
+				<li class="punto"><strong class="Negritta">transition-property</strong>. Propiedad que vamos a cambiar. Las propiedades que se pueden indicar son <strong class="Negritta" lang="en-US">width</strong>, <strong class="Negritta" lang="en-US">height</strong>, <strong class="Negritta" lang="en-US">background-color</strong>,.. Es decir, en principio cualquier propiedad CSS. Pero como es lógico los navegadores sólo pueden realizar la transición sobre algunas. Al indicar sobre qué propiedad realizamos la transición sólo podemos indicar una. Pero podemos indicar <strong class="Negritta">all</strong> (valor por defecto) para que haga la transición sobre todas las propiedades a la vez.</li>
+				<li class="punto"><strong class="Negritta">transition</strong><strong class="Negritta" lang="en-US">-duration</strong>. Duración de la transición, se mide en tiempo. <p class="sinpunto">Ejemplo: </p><pre class="codigo2"><strong class="resaltado">transition-duration:</strong><span class="atributo">2s</span><strong class="resaltado">;</strong></pre></li>
+				<li class="punto"><strong class="Negritta" lang="en-US">transition-timing-function. </strong>Función de transición que se usará para mostrar la transición puede tomar uno de estos valores:<ul><li class="Punto2"><strong class="Negritta" lang="en-US">linear</strong>. Es la que se emplea por defecto, la transición tiene siempre la misma velocidad.</li><li class="Punto2"><strong class="Negritta" lang="en-US">ease</strong>. La transición frena la velocidad al final.</li><li class="Punto2"><strong class="Negritta" lang="en-US">ease-out</strong>. La velocidad de la transición va poco a poco disminuyendo.</li><li class="Punto2"><strong class="Negritta" lang="en-US">ease-in</strong>. La velocidad de la transición empieza lenta y luego va acelerando.</li><li class="Punto2"><strong class="Negritta" lang="en-US">ease-in-out</strong>. La velocidad empieza frenada, acelera y vuelve a frenar al final.</li><li class="Punto2"><strong class="Negritta">cubic-bezier</strong>. Permite indicar 4 valores para realizar una función de tiempo que siga la función cúbica de bezier. Con conocimientos sobre este tema, se pueden realizar efectos de transición y tiempo a medida.</li></ul></li>
+				<li class="punto"><strong class="Negritta" lang="en-US">transition-delay</strong>. Tiempo que tarda en empezar a realizarse la animación. Es un tiempo de espera inicial.</li>
+				<li class="punto"><strong class="Negritta">transition</strong>. Resume las funciones anteriores. Lo normal es utilizar esta propiedad en lugar de las anteriores. Su sintaxis es:</li>
+			</ul>
+			<table id="table002" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="sintaxis"><strong class="resaltado">transition:</strong> propiedad tiempo funciónDeTiempo retardo;</pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal2">No hay por qué rellenar todos los valores.  Es decir, podemos indicar sólo la <em class="cursiva">propiedad </em>y el <em class="cursiva">tiempo </em>(el resto tomarán los valores por defecto)</p>
+			<p class="Normal2">Hay que tener en cuenta que sólo lo navegadores recientes soportan esta propiedad, antes todos ellos requerían el uso de prefijos.</p>
+			<p class="Normal">Así por ejemplo cambiando el CSS del código del ejemplo anterior por:</p>
+			<table id="table003" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo">div{</pre>
+							<pre class="codigo">&#9;<strong class="resaltado">background-color</strong>:<span class="atributo">red</span>;</pre>
+							<pre class="codigo">&#9;<strong class="resaltado">width</strong>:<span class="atributo">50px</span>;</pre>
+							<pre class="codigo">&#9;<strong class="resaltado">height</strong>:<span class="atributo">50px</span>;</pre>
+							<pre class="codigo">}</pre>
+							<pre class="codigo">div:hover<strong class="resaltado">{</strong></pre>
+							<pre class="codigo">&#9;<strong class="resaltado">width</strong>:<span class="atributo">300px</span>;</pre>
+							<pre class="remarcado">&#9;<strong class="resaltado">transition</strong>: <span class="atributo">2s</span>;</pre>
+							<pre class="codigo">}</pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal2">Ya tendríamos un efecto de transición que dura dos segundos para pasar del tamaño anterior de la capa al nuevo simplemente arrimando el ratón. </p>
+			<p class="normalespacio">Otro ejemplo, podría ser:</p>
+			<table id="table004" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo">div{</pre>
+							<pre class="codigo">&#9;<strong class="resaltado">background-color</strong>:<span class="atributo">red</span>;</pre>
+							<pre class="codigo">&#9;<strong class="resaltado">width</strong>:<span class="atributo">50px</span>;</pre>
+							<pre class="codigo">&#9;<strong class="resaltado">height</strong>:<span class="atributo">50px</span>;</pre>
+							<pre class="codigo">}</pre>
+							<pre class="codigo">div:hover<strong class="resaltado">{</strong></pre>
+							<pre class="codigo">&#9;<strong class="resaltado">width</strong>:<span class="atributo">300px</span>;</pre>
+							<pre class="remarcado">&#9;<strong class="resaltado">transition</strong>: width 3s ease-in 1s;</pre>
+							<pre class="codigo">}</pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<pre class="codigo">Transición para modificar la anchura, que dura tres segundos, acelera al final y tarda un segundo en empezar </pre>
+			<p class="Normal">Es posible hacer múltiples transiciones a la vez en el objeto, ejemplo:</p>
+			<table id="table005" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">transition</strong>: <span class="atributo">background-color 4s</span>, </pre>
+							<pre class="codigo">&#9;&#9;&#9;&#9;<span class="atributo">width 500ms</span>, </pre>
+							<pre class="codigo">&#9;&#9;&#9;&#9;<span class="atributo">transform 4s</span>; </pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 class="titulo3"><span class="numero3">[19.1.1]</span><a id="_idTextAnchor001"></a>propiedades transicionables</h3>
+			<ul>
+				<li class="punto"><strong class="Negritta">background</strong></li>
+				<li class="punto"><strong class="Negritta">background-color</strong></li>
+				<li class="punto"><strong class="Negritta">background-image </strong><em class="cursiva">(sólo si se usa degradado)</em></li>
+				<li class="punto"><strong class="Negritta">background-position</strong></li>
+				<li class="punto"><strong class="Negritta">background-size</strong></li>
+				<li class="punto"><strong class="Negritta">border </strong><em class="cursiva">(y sus subpropiedades, border.color, border-width,...)</em></li>
+				<li class="punto"><strong class="Negritta">border-radius </strong><em class="cursiva">(y sus subpropiedades, border.color, border-width,...)</em></li>
+				<li class="punto"><strong class="Negritta">bottom</strong></li>
+				<li class="punto"><strong class="Negritta">box-shadow</strong></li>
+				<li class="punto"><strong class="Negritta">clip</strong></li>
+				<li class="punto"><strong class="Negritta">color</strong></li>
+				<li class="punto"><strong class="Negritta">flex</strong></li>
+				<li class="punto"><strong class="Negritta">font</strong></li>
+				<li class="punto"><strong class="Negritta">font-size</strong></li>
+				<li class="punto"><strong class="Negritta">font-size-adjust</strong></li>
+				<li class="punto"><strong class="Negritta">font-stretch</strong></li>
+				<li class="punto"><strong class="Negritta">font-weight</strong></li>
+				<li class="punto"><strong class="Negritta">height</strong></li>
+				<li class="punto"><strong class="Negritta">left</strong></li>
+				<li class="punto"><strong class="Negritta">letter-spacing</strong></li>
+				<li class="punto"><strong class="Negritta">line-height</strong></li>
+				<li class="punto"><strong class="Negritta">margin </strong><em class="cursiva">(y sus subpropiedades)</em></li>
+				<li class="punto"><strong class="Negritta">max-height</strong></li>
+				<li class="punto"><strong class="Negritta">max-width</strong></li>
+				<li class="punto"><strong class="Negritta">min-height</strong></li>
+				<li class="punto"><strong class="Negritta">min-width</strong></li>
+				<li class="punto"><strong class="Negritta">opacity</strong></li>
+				<li class="punto"><strong class="Negritta">outline </strong><em class="cursiva">(y sus subpropiedades)</em></li>
+				<li class="punto"><strong class="Negritta">padding </strong><em class="cursiva">(y sus subpropiedades)</em></li>
+				<li class="punto"><strong class="Negritta">right</strong></li>
+				<li class="punto"><strong class="Negritta">text-decoration-color</strong></li>
+				<li class="punto"><strong class="Negritta">text-indent</strong></li>
+				<li class="punto"><strong class="Negritta">text-shadow</strong></li>
+				<li class="punto"><strong class="Negritta">top</strong></li>
+				<li class="punto"><strong class="Negritta">vertical-align</strong></li>
+				<li class="punto"><strong class="Negritta">visibility</strong></li>
+				<li class="punto"><strong class="Negritta">width</strong></li>
+				<li class="punto"><strong class="Negritta">word-spacing</strong></li>
+				<li class="punto"><strong class="Negritta">z-index </strong><h2 class="titulo2"><span class="numero2">[19.2] </span><a id="_idTextAnchor002"></a>animaciones</h2></li>
+			</ul>
+			<p class="Normal2">Las animaciones son parecidas a las transiciones con la diferencia de que tienen la posibilidad de que se ejecuten directamente, sin hacer ningún tipo de evento. </p>
+			<p class="Normal2">Son más potentes (y más complejas de crear) que las transiciones, y tienen una gran conexión con el lenguaje JavaScript.</p>
+			<p class="Normal">Las animaciones requieren primero de un bloque <strong class="Negritta">@keyframes</strong> (para navegadores <strong class="Negritta">webkit</strong> hay que usar además la variante <strong class="Negritta">@-webkit-keyframes</strong>) que es el encargado de establecer las propiedades de la animación y de dar nombre a la misma. Dentro de ese bloque se establecen dos elementos: </p>
+			<ul>
+				<li class="punto"><strong class="Negritta" lang="en-US">from</strong>. Con las propiedades iniciales del elemento al que se aplicas la animación.</li>
+				<li class="punto"><strong class="Negritta" lang="en-US">to</strong>. Con las propiedades finales.</li>
+			</ul>
+			<p class="Normal2">Ejemplo:</p>
+			<table id="table006" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">@keyframes</strong> ani1{</pre>
+							<pre class="codigo">&#9;<strong class="resaltado">from</strong>{</pre>
+							<pre class="codigo">&#9;&#9;<strong class="resaltado">left</strong>:<span class="atributo">20px</span>;</pre>
+							<pre class="codigo">&#9;<strong class="resaltado">&#9;background-color</strong>: <span class="atributo">red</span>;</pre>
+							<pre class="codigo">&#9;}</pre>
+							<pre class="codigo">&#9;<strong class="resaltado">to</strong>{</pre>
+							<pre class="codigo">&#9;&#9;<strong class="resaltado">left</strong>:<span class="atributo">220px</span>;</pre>
+							<pre class="codigo">&#9;&#9;<strong class="resaltado">background-color</strong>:<span class="atributo">blue</span>;</pre>
+							<pre class="codigo"><strong class="resaltado">&#9;}</strong></pre>
+							<pre class="codigo"><strong class="resaltado">}</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal2">También podemos establecer indicar en lugar de origen y final, pasos en porcentaje, por ejemplo:</p>
+			<table id="table007" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">@keyframes </strong>ani1{</pre>
+							<pre class="codigo">&#9;<strong class="resaltado">from</strong>{</pre>
+							<pre class="codigo">&#9;&#9;<strong class="resaltado">left</strong>:<span class="atributo">20px</span>;</pre>
+							<pre class="codigo">&#9;&#9;<strong class="resaltado">background-color</strong>: <span class="atributo">red</span>;</pre>
+							<pre class="codigo">&#9;}</pre>
+							<pre class="codigo">    50%{</pre>
+							<pre class="codigo">&#9;&#9;<strong class="resaltado">background-color</strong>: <span class="atributo">green</span>;</pre>
+							<pre class="codigo">    }</pre>
+							<pre class="codigo">&#9;<strong class="resaltado">to</strong>{</pre>
+							<pre class="codigo">&#9;&#9;<strong class="resaltado">left</strong>:<span class="atributo">220px</span>;</pre>
+							<pre class="codigo">&#9;&#9;<strong class="resaltado">background-color</strong>:<span class="atributo">blue</span>;</pre>
+							<pre class="codigo">&#9;}</pre>
+							<pre class="codigo">}</pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal2">En esta animación, el color de fondo se va cambiando a verde antes de convertirse en azul.</p>
+			<p class="Normal">Las propiedades que pueden ser animadas son las mismas que las comentadas en el apartado dedicado a las transiciones. En realidad transiciones y animaciones operan de forma muy parecida.</p>
+			<p class="Normal">Las propiedades relacionadas con las animaciones son:</p>
+			<ul>
+				<li class="punto"><strong class="Negritta" lang="en-US">animation-name</strong>. Permite  utilizar la animación cuyo nombre se indicó en una sección <strong class="Negritta">@keyframes</strong>.</li>
+				<li class="punto"><strong class="Negritta" lang="en-US">animation-duration</strong>. Tiempo (<strong class="Negritta">2s</strong> por ejemplo) que durará la animación.</li>
+				<li class="punto"><strong class="Negritta" lang="en-US">animation-timing-function</strong>. Función de manejo de la animación. Es una de las vistas en el apartado anterior para la propiedad <strong class="Negritta">transition-timing-function</strong>.</li>
+				<li class="punto"><strong class="Negritta" lang="en-US">animation-delay</strong>. Tiempo que tardará en iniciarse la animación desde que se lance</li>
+				<li class="punto"><strong class="Negritta" lang="en-US">animation-iteration-count. </strong>Por defecto<strong class="Negritta" lang="en-US"> </strong>toma<strong class="Negritta" lang="en-US"> </strong>el valor<strong class="Negritta" lang="en-US"> infinite</strong> que significa que la animación se repite indefinidamente. Puede tomar un número que, entonces, indicará el número exacto de veces que se repetirá la animación.</li>
+				<li class="punto"><strong class="Negritta" lang="en-US">animation-direction</strong>. Puede valer <strong class="Negritta">normal </strong>o <strong class="Negritta" lang="en-US">alternate</strong>. En<strong class="Negritta"> </strong>el primer caso, cuando la animación termina vuelve a empezar desde el primer fotograma. En el segundo caso al terminar hace el movimiento contrario hasta alcanzar el primer fotograma (es como hacer un <em class="cursiva">play</em> y un <em class="cursiva">play reverse</em> en un vídeo).<p class="sinpunto">Es decir, el valor <strong class="Negritta">alternate </strong>en una animación que muestre una capa de moviéndose de izquierda a derecha, hará que al acabar la animación, ahora continúe de derecha a izquierda haciendo el movimiento contrario.</p></li>
+			</ul>
+			<p class="Normal2">Como suele ocurrir en CSS, existe una sola propiedad que permite resumir todas las anteriores. Para eso se usa la propiedad <strong class="Negritta" lang="en-US">animation</strong> (en navegadores Webkit es <strong class="Negritta">–webkit-animation</strong>), que tiene esta sintaxis:</p>
+			<table id="table008" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="sintaxis"><strong class="resaltado">animation</strong><strong class="Negritta">: </strong>nombre duración funciónDeTiempo </pre>
+							<pre class="sintaxis">&#9;&#9;&#9;retardo contador dirección;</pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal2">Ejemplo completo:</p>
+			<table id="table009" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<pre class="codigo"><strong class="resaltado">&lt;!doctype html&gt;<br>&lt;html</strong> <span class="atributo">lang</span>=<span class="texto">”es”</span><strong class="resaltado">&gt;<br>    &lt;head&gt;<br>        &lt;meta</strong> <span class="atributo">charset</span><span class="texto">=”UTF-8</span><strong class="resaltado">”&gt;<br>            &lt;title&gt;</strong>Cuadrado móvil<strong class="resaltado">&lt;/title&gt;<br>            &lt;style&gt;</strong><br></pre>
+							<table id="table010" class="tablaRemarcada">
+								<colgroup>
+									<col>
+								</colgroup>
+								<tbody>
+									<tr class="tablaRemarcada">
+										<td class="tablaRemarcada celda-remarcada">
+											<pre class="codigo">&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">@keyframes</strong> ani1{<br>&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">from</strong>{<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">left</strong>:<span class="atributo">20px</span>;<span class="atributo"><br></span>&#9;&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">background-color</strong>: <span class="atributo">red</span>;<br>&#9;&#9;&#9;&#9;&#9;&#9;}<br>&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">to</strong>{<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">left</strong>:<span class="atributo">220px</span>;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">background-color</strong>:<span class="atributo">blue</span>;<br>&#9;&#9;&#9;&#9;&#9;&#9;}<br>&#9;&#9;&#9;&#9;&#9;}</pre>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table id="table011" class="tabla-codigo">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="tabla-codigo">
+						<td class="tabla-codigo celda-codigo">
+							<table id="table012" class="tablaRemarcada">
+								<colgroup>
+									<col>
+								</colgroup>
+								<tbody>
+									<tr class="tablaRemarcada">
+										<td class="tablaRemarcada celda-remarcada">
+											<pre class="codigo">&#9;&#9;&#9;&#9;<span class="comentario">/* Versión para Chrome y Safari */</span><br>&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">@-webkit-keyframes</strong> ani1{<br>&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">from</strong>{<strong class="resaltado"><br></strong>&#9;&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">left</strong>:<span class="atributo">20px</span>;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">background-color</strong>: <span class="atributo">red</span>;<br>&#9;&#9;&#9;&#9;&#9;&#9;}<strong class="resaltado"><br></strong>&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">to</strong>{<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">left</strong>:<span class="atributo">220px</span>;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">background-color</strong>:<span class="atributo">blue</span>;<br>&#9;&#9;&#9;&#9;&#9;&#9;}<br>&#9;&#9;&#9;&#9;&#9;}</pre>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<pre class="codigo">&#9;&#9;&#9;<span class="comentario">/*capa que aplica la animación */</span><br>&#9;&#9;&#9;&#9;&#9;div{<br>&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">position</strong>:<span class="atributo">fixed</span>;<br>&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">background-color</strong>:<span class="atributo">red</span>;<br>&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">left</strong>:<span class="atributo">20px</span>;<br>&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">width</strong>:<span class="atributo">50px</span>;<br>&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">height</strong>:<span class="atributo">50px</span>;</pre>
+							<table id="table013" class="tablaRemarcada">
+								<colgroup>
+									<col>
+								</colgroup>
+								<tbody>
+									<tr class="tablaRemarcada">
+										<td class="tablaRemarcada celda-remarcada">
+											<pre class="remarcado">&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">-webkit-animation</strong>:</pre>
+											<pre class="remarcado">&#9;&#9;&#9;&#9;&#9;&#9;&#9;<span class="atributo">ani1 2s ease-in-out 1s</span>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;<strong class="resaltado">animation</strong>:</pre>
+											<pre class="remarcado">&#9;&#9;&#9;&#9;&#9;&#9;<span class="atributo">&#9;ani1 2s ease-in-out 1s </span></pre>
+											<pre class="remarcado"><span class="atributo">&#9;&#9;&#9;&#9;&#9;&#9;&#9;infinite alternate;</span></pre>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<pre class="codigo">&#9;&#9;&#9;&#9;&#9;}<br><strong class="resaltado">&#9;&lt;/style&gt;<br>    &lt;/head&gt;<br>    &lt;body&gt;<br>        &lt;div&gt;</strong><span class="gris" lang="en-US">&amp;nbsp;</span><strong class="resaltado" lang="en-US">&lt;/div&gt;<br>&lt;/html&gt;</strong></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="Normal2">Este código muestra un cuadrado rojo que se desplaza continuamente hacia la derecha y luego vuelve a la izquierda. Además cambia el color de rojo a azul a la vez que se mueve.</p>
+		</div>
+
+</section>
+
+<nav>
+    <ul>
+        <li><a href="/">&gt; Volver a JorgeSanchez.net</a></li>
+    </ul>
+    
+
+<ul>
+    <p>Manual de HTML5 y CSS3:</p>
+    <li><a href="introduccion-lenguajes-de-marcas.html">&gt; Introducción a los lenguajes de marcas</a></li>
+    <li><a href="introduccion-html.html">&gt; Introducción a HTML5</a></li>
+    <li><a href="edicion-basica-html.html">&gt; Edición básica de documentos HTML</a></li>
+    <li><a href="texto-y-parrafo-html.html">&gt; Elementos de texto y párrafo</a></li>
+    <li><a href="elementos-estructurales-html.html">&gt; Elementos estructurales</a></li>
+    <li><a href="enlaces-html.html">&gt; Enlaces</a></li>
+    <li><a href="imagenes-html.html">&gt; Imágenes</a></li>
+    <li><a href="multimedia-html.html">&gt; Elementos multimedia</a></li>
+    <li><a href="introduccion-a-css.html">&gt; Introducción a CSS</a></li>
+    <li><a href="selectores-css.html">&gt; Selectores CSS</a></li>
+    <li><a href="unidades-colores-css.html">&gt; Unidades y Colores en CSS</a></li>
+    <li><a href="formato-fuente-parrafo-css.html">&gt; Formato de fuente y párrafo</a></li>
+    <li><a href="formato-caja-lista-css.html">&gt; Formato de caja y lista</a></li>
+    <li><a href="tablas-html.html">&gt; Tablas</a></li>
+    <li><a href="formularios-html.html">&gt; Formularios</a></li>
+    <li><a href="visualizacion-css.html">&gt; Visualización de elementos</a></li>
+    <li><a href="posicionamiento-css.html">&gt; Posicionamiento mediante CSS</a></li>
+    <li><a href="transformaciones-css.html">&gt; Transformaciones mediante CSS</a></li>
+    <li><a href="animaciones-css.html">&gt; Animaciones mediante CSS</a></li>
+    <li><a href="generacion-de-contenido-css.html">&gt; Generación de contenido automático</a></li>
+    <li><a href="maquetacion-1-css.html">&gt; Maquetación (1). Columnas y Flexbox</a></li>
+</ul>
+
+
+
+</nav>
+
+<script src="../../lib/jquery.min.js"></script>
+<script src="../../lib/jquery.easing.min.js"></script>
+<script src="../../lib/jquery.scrollTo.min.js"></script>
+<script src="../../lib/perfect-scrollbar.jquery.min.js"></script>
+<script src="../../js/manual.js?f=20170221"></script>
+<!--Analytics-->
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35972106-1']);
+    _gaq.push(['_setLocalRemoteServerMode']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</body>
+</html>
+

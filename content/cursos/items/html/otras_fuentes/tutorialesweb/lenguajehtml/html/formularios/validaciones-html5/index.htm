@@ -1,0 +1,493 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e44f26">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Validaciones HTML5 - HTML en español - Lenguaje HTML</title>
+  <link rel="preload" href="../../../critical.css" as="style">
+  <link rel="preload" href="../../../assets/fonts/blinker-vf.woff2" as="font" crossorigin="">
+  <link rel="preload" href="../../../assets/fonts/scope-one-400.woff2" as="font" crossorigin="">
+  <meta name="description" content="En HTML5 es posible realizar validaciones de cliente para intentar que el usuario escriba correctamente la información en los campos de texto, sin Javascript.">
+  <link rel="stylesheet" href="../../../critical.css">
+  <link rel="stylesheet" href="../../../theme.css">
+  <script type="module" src="../../../main.js"></script>
+  <link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Validaciones HTML5 - HTML en español">
+  <meta property="og:image" content="https://lenguajehtml.com/html/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="En HTML5 es posible realizar validaciones de cliente para intentar que el usuario escriba correctamente la información en los campos de texto, sin Javascript.">
+  <meta property="og:url" content="https://lenguajehtml.com/html/formularios/validaciones-html5/">
+  <meta property="twitter:url" content="https://lenguajehtml.com/html/formularios/validaciones-html5/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Validaciones HTML5 - HTML en español">
+  <meta property="twitter:description" content="En HTML5 es posible realizar validaciones de cliente para intentar que el usuario escriba correctamente la información en los campos de texto, sin Javascript.">
+  <meta property="twitter:image:src" content="https://lenguajehtml.com/html/large-summary.jpg">
+</head>
+<body class="html post"><div class="page">
+    <div class="sidebar">
+      <div class="logo flex-center">
+  <a href="/">
+    <img width="42" height="42" src="../../../assets/logo.svg" alt="Logo">
+    Lenguaje HTML
+  </a>
+  <div class="icons" style="--icon-size: 32px; --icon-side-padding: 0.15em">
+    <a href="https://twitter.com/Manz" title="Twitter"><svg-icon type="social" name="twitter"></svg-icon></a>
+    <a href="https://twitch.tv/manzdev" title="Twitch"><svg-icon type="social" name="twitch"></svg-icon></a>
+    <a href="https://instagram.com/manz.dev" title="Instagram"><svg-icon type="social" name="instagram"></svg-icon></a>
+    <a href="https://youtube.com/ManzDev?sub_confirmation=1" title="YouTube"><svg-icon type="social" name="youtube"></svg-icon></a>
+    <a href="https://discord.manz.dev/" title="Servidor de Discord"><svg-icon type="social" name="discord"></svg-icon></a>
+  </div>
+  <span>Un sitio web de <a href="https://manz.dev/"><mark>Manz.dev</mark></a></span>
+</div>
+
+      <form class="search flex-center" action="https://www.google.com/search">
+  <label><span>Buscar:</span> <input type="search" name="q" placeholder="Buscar un tema (ej: flex, grid...)" autocomplete="off"></label>
+  <label><span>Sitio:</span> <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev"></label>
+  <div class="search-results"></div>
+</form>
+
+      
+
+<style>
+  sidebar-link {
+    --logo-image: url(../../logo.svg);
+  }
+</style>
+
+<div class="toc"><sidebar-link title="Volver al índice" href="../../index.htm" back="" direct=""></sidebar-link><sidebar-link href="../../cheatsheets/index.htm" title="HTML5 CheatSheet" direct=""></sidebar-link><sidebar-section title="Introducción a HTML5" href="../../introduccion/index.htm"><sidebar-link href="../../introduccion/que-es-html/index.htm" title="¿Qué es HTML?"></sidebar-link><sidebar-link href="../../introduccion/estructura-etiqueta-html/index.htm" title="Estructura de etiqueta HTML"></sidebar-link><sidebar-link href="../../introduccion/atributos-comunes-html/index.htm" title="Atributos comunes en HTML"></sidebar-link><sidebar-link href="../../introduccion/estructura-documento-html/index.htm" title="Estructura del documento HTML"></sidebar-link><sidebar-link href="../../introduccion/validacion-html/index.htm" title="Validación de errores HTML"></sidebar-link><sidebar-link href="../../introduccion/tabla-periodica-html5/index.htm" title="Tabla periódica de HTML5"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas semánticas" href="../../semantica/index.htm"><sidebar-link href="../../semantica/etiquetas-html-obsoletas/index.htm" title="Etiquetas HTML obsoletas"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-texto/index.htm" title="Etiquetas HTML de texto"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-agrupacion/index.htm" title="Etiquetas HTML de agrupación"></sidebar-link><sidebar-link href="../../semantica/enlaces-o-hipervinculos/index.htm" title="Enlaces o hipervínculos"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-seccion/index.htm" title="Etiquetas HTML de sección"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-tablas/index.htm" title="Etiquetas HTML de tablas"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas multimedia" href="../../multimedia/index.htm"><sidebar-link href="../../multimedia/etiquetas-html-de-imagenes/index.htm" title="Etiquetas HTML de imágenes"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-contenido-externo/index.htm" title="Etiquetas de contenido externo"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-video/index.htm" title="Etiquetas HTML de video"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-audio/index.htm" title="Etiquetas HTML de audio"></sidebar-link><sidebar-link href="../../multimedia/etiquetas-html-de-subtitulos/index.htm" title="Etiquetas HTML de subtitulos"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de cabecera" href="../../cabecera/index.htm"><sidebar-link href="../../cabecera/etiquetas-html-de-relacion/index.htm" title="Etiquetas HTML de relación"></sidebar-link><sidebar-link href="../../cabecera/etiquetas-html-de-metadatos/index.htm" title="Etiquetas HTML de metadatos"></sidebar-link><sidebar-link href="../../cabecera/etiquetas-html-para-redes-sociales/index.htm" title="Etiquetas HTML de redes sociales"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de formularios" href="../index.htm"><sidebar-link href="../crear-un-formulario/index.htm" title="Creación de un formulario"></sidebar-link><sidebar-link href="../controles-campos-de-texto/index.htm" title="Controles: Campos de texto"></sidebar-link><sidebar-link href="../controles-campos-numericos/index.htm" title="Controles: Campos numéricos"></sidebar-link><sidebar-link href="../controles-campos-fecha-hora/index.htm" title="Controles: Campos de fecha/hora"></sidebar-link><sidebar-link href="../controles-casillas-o-botones/index.htm" title="Controles: Casillas o botones"></sidebar-link><sidebar-link href="../controles-listas-de-seleccion/index.htm" title="Controles: Listas de selección"></sidebar-link><sidebar-link href="../controles-seleccion-color/index.htm" title="Controles: Selección de color"></sidebar-link><sidebar-link href="../controles-seleccion-archivos/index.htm" title="Controles: Selección de archivos"></sidebar-link><sidebar-link href="../organizacion-de-campos/index.htm" title="Organización de campos"></sidebar-link><sidebar-link href="../botones-de-envio-de-formulario/index.htm" title="Botones de envío de formularios"></sidebar-link><sidebar-link href="../medidores-y-barras-de-progreso/index.htm" title="Medidores y barras de progreso"></sidebar-link><sidebar-link href="index.htm" title="Validaciones HTML5"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de scripting" href="../../scripting/index.htm"><sidebar-link href="../../scripting/etiquetas-html-interactivas/index.htm" title="Etiquetas HTML interactivas"></sidebar-link><sidebar-link href="../../scripting/etiquetas-html-scripts/index.htm" title="Etiquetas HTML de scripts"></sidebar-link><sidebar-link href="../../scripting/eventos-html/index.htm" title="Eventos en HTML"></sidebar-link></sidebar-section></div>
+
+      
+    </div>
+    <div class="contents">
+      <header class="mega">
+  <h1>Validaciones HTML5</h1></header>
+
+      <div class="content ">
+  <div class="breadcrumbs">
+  <a href="/">ATRÁS</a> <span>ᐳ</span> <a href="../../index.htm">html</a> <span>ᐳ</span> <a href="index.htm">Validaciones HTML5</a>
+</div>
+<p>Al crear un formulario en HTML, debemos ser conscientes de un detalle ineludible: <strong>los usuarios se equivocan al rellenar un formulario</strong>. Ya sea por equivocación del usuario, ambigüedad del formulario, o error del creador del formulario, el caso es que debemos estar preparados y anticiparnos a estos errores, para intentar que los datos lleguen correctamente a su destino y evitar cualquier tipo de moderación o revisión posterior.</p>
+<blockquote>
+<p>Para evitar estos casos, se suele recurrir a un tipo de proceso automático llamado <strong>validación</strong>, en el cuál, establecemos unas pautas para que si el usuario introduce alguna información incorrecta, deba modificarla o en caso contrario no podrá continuar ni enviar el formulario correctamente.</p>
+</blockquote>
+<p>Un esquema tradicional de validación de ejemplo podría ser el siguiente, donde tenemos un formulario diseñado en HTML5 y mediante <a href="http://lenguajejs.com/">javascript</a> realizamos una validación para comprobar que los datos son correctos. Una vez superada, el formulario se envía al back-end de la página para ser procesado y enviarlo por email (<em>por ejemplo</em>).</p>
+<p><img src="formulario-frontend-backend-tradicional.png" alt="Escenario tradicional de validación" width="1480" height="523" loading="lazy"></p>
+<h3 id="tipos-de-validación" tabindex="-1">Tipos de validación</h3>
+<p>Cada vez que creamos un formulario, la <strong>validación</strong> de los datos introducidos estará situada en uno de los siguientes casos (<em>colocados de peor a mejor</em>):</p>
+<ol>
+<li>
+<p>En este primer caso, <strong>el formulario no tiene validación</strong> de ningún tipo. El usuario puede escribir la información y el sistema no comprobará los datos, ni realizará ningún tipo de validación. Es el peor escenario posible, puesto que el usuario podría enviar desde información incorrecta, hasta datos malintencionados que podrían comprometer la seguridad de la página.</p>
+</li>
+<li>
+<p>Otro caso podría ser que <strong>el formulario tiene validación sólo en el front-end</strong> (<em>cliente</em>). De esta forma, los datos son verificados en el navegador del usuario antes de enviarse, pero carecen de validación en el <strong>back-end</strong>, por lo que un usuario malintencionado podría eliminar la validación del front-end y saltársela, enviando datos malintencionados que comprometan la seguridad de la página.</p>
+</li>
+<li>
+<p>El tercer caso posible es uno donde <strong>el formulario tiene validación sólo en el back-end</strong>. De esta forma, garantizamos que un usuario malintencionado no podrá eliminar el proceso de validación, y los datos siempre se comprobarán. Sin embargo, la desventaja de este método es que el usuario puede rellenar un formulario y es necesario que lo envíe (<em>con la tardanza que eso puede acarrear</em>), se procese en el back-end y al devolver un error, el usuario tenga que retroceder al formulario y en algunos casos, incluso tener que volver a rellenar todos los campos de nuevo.</p>
+</li>
+<li>
+<p>Por último, tendríamos el <strong>caso ideal</strong>, donde el formulario <strong>tiene validación en el front-end y en el back-end</strong>, también denominado <strong>doble validación</strong>. En este caso, el formulario es sometido a un proceso de validación en la parte del front-end, y si lo supera, vuelve a pasar otro proceso de validación en el back-end. La desventaja de este método es que conlleva más trabajo de validación, pero es el sistema recomendado, puesto que es más estricto y sobre todo, más seguro.</p>
+</li>
+</ol>
+<p>Tradicionalmente, la validación de un formulario se ha hecho siempre en Javascript, sin embargo, HTML5 introduce unos nuevos atributos para formularios que permiten realizar la validación del formulario directamente en HTML5, sin necesidad de recurrir a Javascript (<em>aunque es posible hacerlo si se desea</em>):</p>
+<p><img src="formulario-frontend-backend-html5.png" alt="Doble validación de datos de un formulario" width="1463" height="505" loading="lazy"></p>
+<p>Recuerda siempre realizar la <strong>validación en el servidor o back-end</strong> (<em>en rojo</em>), ya que puede evitar problemas graves de seguridad.</p>
+<h3 id="atributos-básicos" tabindex="-1">Atributos básicos</h3>
+<p>En nuestros campos de entrada de datos, se pueden utilizar ciertos <strong>atributos</strong> para realizar validaciones sencillas. Algunos de estos atributos ya lo hemos visto en apartados anteriores, sin embargo, vamos a comentarlos uno por uno:</p>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Valor</th>
+<th>Puede actuar sobre...</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>minlength</code></td>
+<td><em>número</em></td>
+<td>Campos de texto</td>
+<td>Establece la longitud mínima del texto requerida.</td>
+</tr>
+<tr>
+<td><code>maxlength</code></td>
+<td><em>número</em></td>
+<td>Campos de texto</td>
+<td>No permite escribir textos superiores a <em>número</em> carácteres.</td>
+</tr>
+<tr>
+<td><code>min</code></td>
+<td><em>número</em></td>
+<td>Campos numéricos</td>
+<td>Establece el número mínimo permitido.</td>
+</tr>
+<tr>
+<td></td>
+<td><em>fecha</em></td>
+<td>Campos de fecha</td>
+<td>Establece la fecha mínima permitida.</td>
+</tr>
+<tr>
+<td></td>
+<td><em>hora</em></td>
+<td>Campos de hora</td>
+<td>Establece la hora mínima permitida.</td>
+</tr>
+<tr>
+<td><code>max</code></td>
+<td><em>número</em></td>
+<td>Campos numéricos</td>
+<td>Establece el número máximo permitido.</td>
+</tr>
+<tr>
+<td></td>
+<td><em>fecha</em></td>
+<td>Campos de fecha</td>
+<td>Establece la fecha máxima permitida.</td>
+</tr>
+<tr>
+<td></td>
+<td><em>hora</em></td>
+<td>Campos de hora</td>
+<td>Establece la hora máxima permitida.</td>
+</tr>
+<tr>
+<td><code>step</code></td>
+<td><em>número</em></td>
+<td>Campos numéricos</td>
+<td>Establece el salto de números permitido. Por defecto, 1.</td>
+</tr>
+<tr>
+<td></td>
+<td><em>fecha</em></td>
+<td>Campos de fecha</td>
+<td>Establece el salto de días permitido. Por defecto, 1.</td>
+</tr>
+<tr>
+<td></td>
+<td><em>hora</em></td>
+<td>Campos de hora</td>
+<td>Establece el salto de segundos permitido. Por defecto, 1.</td>
+</tr>
+<tr>
+<td><code>required</code></td>
+<td></td>
+<td>Campos en general</td>
+<td>Campo obligatorio. Se debe rellenar para enviar formulario.</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td></td>
+<td>Campos en general</td>
+<td>Campo desactivado. No se puede modificar. No se envía.</td>
+</tr>
+<tr>
+<td><code>readonly</code></td>
+<td></td>
+<td>Campos en general</td>
+<td>Campo de sólo lectura. No se puede modificar. Se envía.</td>
+</tr>
+</tbody>
+</table>
+<p>Con estos atributos, podemos crear validaciones básicas en nuestros campos de entrada de datos, obligando al usuario a rellenar un campo obligatorio, forzando a indicar valores entre un rango numérico o permitiendo sólo textos con un tamaño específico, entre otros.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>formulario<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send.php<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token comment">&lt;!-- Nombre de usuario. Obligatorio, entre 5-40 carácteres --></span><br>    Usuario:<br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nombre<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Por ejemplo, Juan<span class="token punctuation">"</span></span><br>           <span class="token attr-name">minlength</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>5<span class="token punctuation">"</span></span> <span class="token attr-name">maxlength</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>40<span class="token punctuation">"</span></span> <span class="token attr-name">required</span> <span class="token punctuation">/></span></span><br>    <span class="token comment">&lt;!-- Contraseña. Obligatorio, mínimo 11 carácteres --></span><br>    Password:<br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pass<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Contraseña<span class="token punctuation">"</span></span><br>           <span class="token attr-name">minlength</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>11<span class="token punctuation">"</span></span> <span class="token attr-name">required</span> <span class="token punctuation">/></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>Además, utilizando las <a href="https://lenguajecss.com/css/selectores/pseudoclases/#pseudoclases-de-validaci%C3%B3n">pseudoclases CSS de validación</a> <code>:valid</code> e <code>:invalid</code> podemos aplicar estilos a los campos <code>&lt;input&gt;</code> y <code>&lt;textarea&gt;</code> teniendo en cuenta su validación. Aplicando el siguiente código CSS se mostrará un fondo verde o rojo, dependiendo de si cumple o no la validación, respectivamente:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">input:valid,<br>textarea:valid</span> <span class="token punctuation">{</span><br>    <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">input:invalid,<br>textarea:invalid</span> <span class="token punctuation">{</span><br>    <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>En el caso particular de un campo <code>&lt;input type=&quot;email&quot;&gt;</code> se puede indicar el atributo <strong>multiple</strong> para permitir varios emails y que valide correctamente en el caso de estar realizando una validación HTML5.</p>
+<h3 id="patrones-de-validación-html5" tabindex="-1">Patrones de validación HTML5</h3>
+<p>No obstante, aunque los atributos de validación básicos son muy interesantes y pueden facilitarnos la tarea de validación, en muchos casos son insuficientes. Para ello tenemos los <strong>patrones de validación HTML5</strong>, mucho más potentes y flexibles, que nos permitirán ser mucho más específicos utilizando expresiones regulares para validar datos.</p>
+<p>Una <strong>expresión regular</strong> es una cadena de texto que representa un posible patrón de coincidencias, que aplicaremos mediante el atributo <strong>pattern</strong> en los campos que queramos validar.</p>
+<p>Para ello hay que conocer algunas características básicas de las expresiones regulares:</p>
+<table>
+<thead>
+<tr>
+<th>Expresión regular</th>
+<th>Carácter especial</th>
+<th>Significado</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.</code></td>
+<td>Punto</td>
+<td>Comodín</td>
+<td>Cualquier carácter (o texto de tamaño 1)</td>
+</tr>
+<tr>
+<td><code>A|B</code></td>
+<td><em>Pipe</em></td>
+<td>Opciones lógicas</td>
+<td>Opciones alternativas (o <code>A</code> o <code>B</code> )</td>
+</tr>
+<tr>
+<td><code>C(A|B)</code></td>
+<td>Paréntesis</td>
+<td>Agrupaciones</td>
+<td>Agrupaciones alternativas (o <code>CA</code> o <code>CB</code> )</td>
+</tr>
+<tr>
+<td><code>[0-9]</code></td>
+<td>Corchetes</td>
+<td>Rangos de carácteres</td>
+<td>Un dígito (del <code>0</code> al <code>9</code> )</td>
+</tr>
+<tr>
+<td><code>[A-Z]</code></td>
+<td></td>
+<td></td>
+<td>Una letra mayúscula de la <code>A</code> a la <code>Z</code></td>
+</tr>
+<tr>
+<td><code>[^A-Z]</code></td>
+<td><code>^</code> en corchetes</td>
+<td>Rango de exclusión</td>
+<td>Una letra que no sea mayúscula de la <code>A</code> a la <code>Z</code></td>
+</tr>
+<tr>
+<td><code>[0-9]*</code></td>
+<td>Asterisco</td>
+<td>Cierre o clausura</td>
+<td>Un dígito repetido 0 ó más veces (vacío incluido)</td>
+</tr>
+<tr>
+<td><code>[0-9]+</code></td>
+<td>Signo más</td>
+<td>Cierre positivo</td>
+<td>Un dígito repetido 1 ó más veces</td>
+</tr>
+<tr>
+<td><code>[0-9]{3}</code></td>
+<td>Llaves</td>
+<td>Coincidencia exacta</td>
+<td>Cifra de 3 dígitos (dígito repetido <code>3</code> veces)</td>
+</tr>
+<tr>
+<td><code>[0-9]{2,4}</code></td>
+<td></td>
+<td>Coincidencia (rango)</td>
+<td>Cifra de 2 a 4 dígitos (rep. de <code>2</code> a <code>4</code> veces)</td>
+</tr>
+<tr>
+<td><code>b?</code></td>
+<td>Interrogación</td>
+<td>Carácter opcional</td>
+<td>El carácter <code>b</code> puede aparecer o puede que no</td>
+</tr>
+<tr>
+<td><code>\.</code></td>
+<td>Barra invertida</td>
+<td>Escape</td>
+<td>El carácter <code>.</code> literalmente (no como comodín)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ejemplos-de-patrones-html5" tabindex="-1">Ejemplos de patrones HTML5</h4>
+<p>Para clarificar estos conceptos y entenderlos mejor, vamos a mostrar algunos ejemplos de campos con validaciones HTML5 en casos reales, y así afianzar conceptos sobre expresiones regulares y su aplicación en los atributos <strong>pattern</strong>:</p>
+<ul>
+<li>Tipo de campo: <strong>Nombre de usuario</strong></li>
+<li>Campo obligatorio: <strong>required</strong>.</li>
+<li>Entre 5-40 carácteres: <strong>minlength=&quot;5&quot; maxlength=&quot;40&quot;</strong></li>
+<li>Sólo se permiten letras (mayúsculas y minúsculas) y números: <strong>pattern=&quot;[A-Za-z0-9]+&quot;</strong></li>
+</ul>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>formulario<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send.php<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token comment">&lt;!-- Nombre de usuario. Obligatorio, entre 5-40 carácteres<br>       Sólo se permiten letras y números --></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nombre<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Su nombre de usuario<span class="token punctuation">"</span></span><br>           <span class="token attr-name">minlength</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>5<span class="token punctuation">"</span></span> <span class="token attr-name">maxlength</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>40<span class="token punctuation">"</span></span> <span class="token attr-name">required</span> <span class="token attr-name">pattern</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>[A-Za-z0-9]+<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>Nótese que de no incluir los atributos <strong>minlength</strong> y <strong>maxlength</strong> el usuario no tendría limitación en cuanto al tamaño. Esto también puede incorporarse en la propia expresión regular, y prescindir de dichos atributos:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>formulario<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send.php<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token comment">&lt;!-- Nombre de usuario. Obligatorio, entre 5-40 carácteres<br>       Sólo se permiten letras y números --></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nombre<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Su nombre de usuario<span class="token punctuation">"</span></span><br>           <span class="token attr-name">required</span> <span class="token attr-name">pattern</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>[A-Za-z0-9]{5,40}<span class="token punctuation">"</span></span><br>           <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Letras y números. Tamaño mínimo: 5. Tamaño máximo: 40<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>Sin embargo, en este caso, no se limitará al usuario a la hora de escribir, como hace <strong>maxlength</strong>, sino que permitirá al usuario escribir la información que desee y en caso de no pasar la validación, mostrará un mensaje de advertencia y no lo dejará continuar hasta que termine. Podemos ampliar el mensaje de advertencia incluyendo el texto en el atributo <strong>title</strong>.</p>
+<p><img src="validaciones-html5.png" alt="Validaciones HTML5" width="1021" height="202" loading="lazy"></p>
+<p>En el siguiente caso, se pide al usuario que indique el modelo de coche que posee, en un posible formulario de servicio técnico. Los modelos posibles son A1, A3, A4 y A15. En lugar de mostrar una <strong>lista de selección</strong>, podemos mostrar un campo de texto y colocar una validación como la siguiente:</p>
+<ul>
+<li>Tipo de campo: <strong>Modelo de coche</strong></li>
+<li>Campo obligatorio: <strong>required</strong>.</li>
+<li>Sólo se permiten las opciones: <strong>A1, A3, A4 y A15</strong></li>
+</ul>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>formulario<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/send.php<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token comment">&lt;!-- Modelo de coche. Obligatorio, opciones posibles: A1, A3, A4 y A15<br>       Sólo se permiten letras y números --></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>coche<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Su modelo de coche<span class="token punctuation">"</span></span><br>           <span class="token attr-name">required</span> <span class="token attr-name">pattern</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>A|a(1|3|4|15)<span class="token punctuation">"</span></span><br>           <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Modelos posibles: A1, A3, A4 y A15<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>Nótese que se permite tanto el formato <code>a1</code> como el formato <code>A1</code> .</p>
+<p><caniuse-support title="Pattern attribute for input fields" feature="input-pattern" edge="12/y" firefox="4/y" chrome="10/y" safari="10.1/y" opera="9.5-9.6/y" ios_saf="10.3/y" and_chr="103/y" and_ff="101/y">
+</caniuse-support></p>
+<h3 id="expresiones-regulares" tabindex="-1">Expresiones regulares</h3>
+<p>A continuación, algunas herramientas útiles para crear o probar <strong>expresiones regulares</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Herramienta</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://regexr.com/">RegExR</a></td>
+<td>Herramienta para construir y testear expresiones regulares.</td>
+</tr>
+<tr>
+<td><a href="https://www.debuggex.com/">Debuggex</a></td>
+<td>Herramienta de creación gráfica de expresiones regulares.</td>
+</tr>
+<tr>
+<td><a href="https://regex101.com/">RegEx101</a></td>
+<td>Herramienta para construir y testear expresiones regulares.</td>
+</tr>
+<tr>
+<td><a href="https://www.regexbuddy.com/create.html">RegExBuddy</a></td>
+<td>Herramienta profesional para el trabajo con expresiones regulares.</td>
+</tr>
+<tr>
+<td><a href="https://leaverou.github.io/regexplained/">RegExplained</a></td>
+<td>Herramienta visual para explicar el funcionamiento de una expresión regular.</td>
+</tr>
+<tr>
+<td><a href="https://regexper.com/">RegExper</a></td>
+<td>Herramienta para generar diagramas visuales de expresiones regulares.</td>
+</tr>
+<tr>
+<td><a href="https://rubular.com/">Rubular</a></td>
+<td>Editor de expresiones regulares.</td>
+</tr>
+</tbody>
+</table>
+
+    <nav class="prev-next"><a class="bt prev" href="../medidores-y-barras-de-progreso/index.htm" title="Medidores y barras de progreso">
+    <span class="data">
+      <span>Medidores y barras de progreso</span>
+      <small>Capítulo anterior</small>
+    </span>
+  </a><a class="bt next" href="../../scripting/etiquetas-html-interactivas/index.htm" title="Etiquetas HTML interactivas">
+    <span class="icon">
+      <svg-icon name="arrow-right"></svg-icon>
+    </span>
+    <span class="data">
+      <span>Etiquetas HTML interactivas</span>
+      <small>Capítulo siguiente</small>
+    </span>
+  </a></nav>
+
+    <script async="" src="../../../pagead/js/f.txt"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center; margin:auto; margin-top: 2em" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+      <div class="related">
+
+  <div class="author">
+    <div class="author-wrapper">
+      <img loading="lazy" class="circle" src="../../../assets/manz.webp" alt="Manz">
+      <div>
+        <p>Docente, divulgador informático y <a href="https://manz.dev/">streamer de código</a>. Amante de <strong>CSS</strong>, <strong>Javascript</strong>
+          y de la plataforma web. Ha trabajado como profesor en la Universidad de La Laguna y es director del curso de
+          Programación web FullStack y FrontEnd de EOI desde Tenerife. En sus ratos libres, busca GIF de gatos en Internet.</p>
+        <p class="twitch-badge">
+          <a href="https://twitch.tv/ManzDev">
+            <svg class="twitch" viewbox="0 0 1024 1024">
+              <path style="fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1;" d="m262.451 12.904-178.26 178.26v641.672h213.905v178.26l178.26-178.26h142.576L939.809 512V12.904H262.45zm35.645 71.287h570.383v392.164L725.904 618.932H583.287L458.514 743.705V618.932H298.096V84.192zM494.158 208.51v216.36h71.328V208.51h-71.328zm196 0v216.36h71.328V208.51h-71.328z"></path>
+            </svg>
+            Sígueme en Twitch
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="comentarios">
+    <script async="" src="../../../count.js" id="dsq-count-scr"></script>
+<script>
+var disqus_config = function () {
+  this.page.path = location.pathname.endsWith("/") ? location.pathname.substring(0, location.pathname.length - 1) : location.pathname;
+  this.page.url = 'https://lenguajehtml.com' + this.page.path;
+  this.page.identifier = this.page.url;
+};
+document.addEventListener('DOMContentLoaded', function() {
+  const coms = document.querySelector('#comentarios');
+  a = coms.querySelector('#disqus_button');
+  a.dataset.disqusIdentifier = 'https://lenguajehtml.com' + (location.pathname.endsWith("/") ? location.pathname.substring(0, location.pathname.length - 1) : location.pathname);
+  a.addEventListener('click', function() {
+    const div = document.createElement('div');
+    div.id = 'disqus_thread';
+    coms.appendChild(div);
+    const d = document, s = d.createElement('script');
+    s.src = '//lenguajehtml.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    this.remove();
+  });
+});
+</script>
+
+    <a class="disqus-comment-count" id="disqus_button" href="#disqus_thread" data-disqus-identifier="https://lenguajehtml.com/html/formularios/validaciones-html5/">Leer comentarios</a>
+    <a class="discord" href="https://discord.manz.dev/">¡Accede a Discord y cuéntanos!</a>
+  </div>
+
+</div>
+
+    </div>
+    <div class="aside">
+      <div class="aside">
+
+  <div class="aside-top">
+    <a href="https://manz.dev/digitalocean" title="Empieza en DigitalOcean con 100$">
+      <img width="240" height="120" src="../../../assets/digital-ocean.png" alt="DigitalOcean">
+    </a>
+  </div><script type="module">
+  const ANCHOR_ICON = /* svg */`
+    <svg class="anchor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 205 205" width="36" height="36">
+      <path d="m140 129 16 16s-20 30-42 30V71c14-5 25-18 25-34 0-20-17-36-37-36-21 0-38 16-38 36 0 15 11 29 25
+              34v104c-26-2-42-27-42-27l18-18-65-9 10 63 17-17c15 12 32 37 73 37 51-1 63-29 76-40l19 19 10-64-65
+              10zM83 36c0-10 8-18 19-18s19 8 19 18c0 11-9 19-19 19s-19-8-19-19z"/>
+    </svg>`;
+  // Add inner links to sidebar menu
+  export const addInnerLinks = () => {
+    const summary = document.querySelector(".aside .summary .links");
+    const headers = Array.from(document.querySelectorAll(".content h3, .content h4"));
+    const tocLinks = [];
+    headers.forEach((e) => {
+      const link = `${location.origin}${location.pathname}#${e.id}`;
+      e.innerHTML = `<a class="permalink" href="${link}">${e.textContent} ${ANCHOR_ICON}</a>`;
+      const headerType = e.nodeName.toLowerCase();
+      const textContent = headerType === "h4" ? e.textContent.replace("La propiedad ", "").replace("La función ", "") : e.textContent;
+      tocLinks.push(`<a class="${headerType}" href="#${e.id}">${textContent}</a>`);
+    });
+    summary.insertAdjacentHTML("beforeEnd", tocLinks.join("\n"));
+  };
+
+  addInnerLinks();
+</script>
+
+<div class="summary">
+  <div class="table">Tabla de contenidos</div>
+  <div class="links"></div>
+</div>
+</div>
+
+    </div>
+  </div><footer class="main">
+  <div class="square">
+    <a href="/"><h2>Lenguaje HTML</h2></a>
+    <div class="icons">
+      <a href="https://twitter.com/Manz" title="Twitter"><svg-icon type="social" name="twitter"></svg-icon></a>
+      <a href="https://twitch.tv/manzdev" title="Twitch"><svg-icon type="social" name="twitch"></svg-icon></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg-icon type="social" name="instagram"></svg-icon></a>
+      <a href="https://youtube.com/ManzDev?sub_confirmation=1" title="YouTube"><svg-icon type="social" name="youtube"></svg-icon></a>
+      <a href="https://discord.manz.dev/" title="Servidor de Discord"><svg-icon type="social" name="discord"></svg-icon></a>
+      <a href="https://github.com/ManzDev" title="GitHub"><svg-icon type="social" name="github"></svg-icon></a>
+      <a href="https://codepen.io/Manz" title="Codepen"><svg-icon type="social" name="codepen"></svg-icon></a>
+      <a href="https://www.linkedin.com/in/joseromanhdez/" title="Linkedin"><svg-icon type="social" name="linkedin"></svg-icon></a>
+    </div>
+    <p>Documentación sobre HTML5 y las mejores herramientas y recursos para aprender a utilizar el lenguaje de marcado HTML.</p>
+    <p id="footer">Creado y mantenido por <a href="https://twitter.com/Manz">@Manz</a> con <span title="<3">❤</span></p></div>
+</footer>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-5', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+</body>
+</html>

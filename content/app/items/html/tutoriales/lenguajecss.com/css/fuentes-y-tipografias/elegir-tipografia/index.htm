@@ -1,0 +1,379 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>¿Qué son las tipografías? - CSS en español - Lenguaje CSS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="A la hora de elegir una tipografía para una página web es bueno conocer ciertos conceptos clave: serifas, fuentes monoespaciadas, interlineados, etc...">
+  
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="¿Qué son las tipografías? - CSS en español">
+  <meta property="og:image" content="https://lenguajecss.com/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="A la hora de elegir una tipografía para una página web es bueno conocer ciertos conceptos clave: serifas, fuentes monoespaciadas, interlineados, etc...">
+  <meta property="og:url" content="https://lenguajecss.com/css/fuentes-y-tipografias/elegir-tipografia/">
+  <meta property="twitter:url" content="https://lenguajecss.com/css/fuentes-y-tipografias/elegir-tipografia/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="¿Qué son las tipografías? - CSS en español">
+  <meta property="twitter:description" content="A la hora de elegir una tipografía para una página web es bueno conocer ciertos conceptos clave: serifas, fuentes monoespaciadas, interlineados, etc...">
+  <meta property="twitter:image" content="https://lenguajecss.com/large-summary.jpg">
+
+  </head>
+
+<body class="css" style="--logo-color: #1e7bbf"><div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#css"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeCSS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/css.jpg')">
+    <h1><a href="index.htm">¿Qué son las tipografías?</a></h1><h2 class="typewriter">Conceptos básicos sobre tipografías</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../../calidad-de-codigo/metodologias-css/index.htm">Metodologías CSS</a>
+    <a class="current" href="index.htm">¿Qué son las tipografías?</a>
+    <a href="../tipografias/index.htm">Tipografías en CSS</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Las <strong>tipografías</strong> (<em>también denominadas fuentes</em>) son una parte muy importante del mundo de CSS. De hecho, son uno de los pilares del diseño web. La elección de una <strong>tipografía adecuada</strong>, su tamaño, color, espacio entre letras, interlineado y otras características pueden dotar de una parte fundamental, de forma consciente o inconsciente, en la percepción en la que una persona interpreta o accede a los contenidos de una página.</p>
+<h3 id="conceptos-de-tipografías" tabindex="-1"><a class="header-anchor" href="#conceptos-de-tipografías">Conceptos de tipografías</a></h3>
+<p>Existen multitud de características interesantes sobre tipografías que convendría conocer antes de continuar, ya que nos ayudarán a la hora de elegir una buena tipografía para nuestra web. Antes de aprender a cargar tipografías en nuestra página web, deberíamos tener claros los siguientes conceptos.</p>
+<h4 id="serifas-o-sin-serifas-decoraciones" tabindex="-1"><a class="header-anchor" href="#serifas-o-sin-serifas-decoraciones">Serifas o sin serifas (decoraciones)</a></h4>
+<p>Las fuentes o tipografías que utilizan <strong>serifa</strong> o <strong>gracia</strong>, son aquellas que incorporan unos pequeños adornos o remates en los extremos de los bordes de las letras. Muchas de estas tipografías suelen terminar su nombre en «Serif» (<em>con serifa</em>).</p>
+<p><img src="serif-sans-serif.png" alt="Tipografías con serifa y sin serifa" width="700" height="293" loading="lazy"></p>
+<p>Por otro lado, las fuentes o tipografías de <strong>paloseco</strong> son las opuestas a la anterior: unas tipografías lisas, sin adornos o remates en los extremos de los bordes de las letras. Muchas de estas tipografías suelen terminar su nombre en «Sans Serif» (<em>sin serifa</em>).</p>
+<blockquote>
+<p>Tradicionalmente, se han utilizado tipografías con <strong>serifa</strong> en <strong>medios impresos</strong> argumentando que dichos bordes ofrecen una mayor legibilidad que las tipografías de paloseco, ya que ayudan a reconocer más rápidamente las letras. En <strong>medios digitales</strong>, las tipografías de <strong>paloseco</strong> suelen ser más comunes puesto que dan un aspecto más limpio y ayudan a que se canse menos la vista del usuario. No obstante, todo esto puede ser muy subjetivo y está sujeto a diferentes interpretaciones.</p>
+</blockquote>
+<h4 id="tipografías-monoespaciadas" tabindex="-1"><a class="header-anchor" href="#tipografías-monoespaciadas">Tipografías monoespaciadas</a></h4>
+<p>Existe un estilo de tipografía denominada <strong>monoespaciada</strong> (<em>mismo tamaño de espacio</em>). Se basa en que cada una de sus letras tienen exactamente el mismo ancho. Se suelen utilizar para tareas de programación donde se muestra código o en emuladores de <a href="https://terminaldelinux.com/">terminal</a>, donde se lee mejor líneas con estas características, ya que queremos que ocupe el mismo espacio que la línea anterior, para que sea más fácil de leer y ubicar.</p>
+<p><img src="monospaced-font.png" alt="Fuente monoespaciada" width="700" height="262" loading="lazy"></p>
+<h4 id="elección-de-tipografías" tabindex="-1"><a class="header-anchor" href="#elección-de-tipografías">Elección de tipografías</a></h4>
+<p>Debemos saber que las tipografías se almacenan en unos ficheros con formatos especiales, como por ejemplo <code>.ttf</code> o <code>.woff2</code> (<em>hablaremos de ellos más adelante</em>). En una página web, salvo casos muy particulares, lo recomendable es que existan entre una y cuatro tipografías diferentes. Por ejemplo, una tipografía para encabezados o titulares, una para párrafos o textos extensos, una para código (<em>si existe</em>), y alguna que otra alternativa o similar.</p>
+<p>Para ver las tipografías correctamente en un navegador, dichas tipografías deben estar instaladas en el sistema. Si no lo están, la tipografía no se verá y el sistema elegirá otra tipografía «suplente». Más adelante veremos cómo se pueden «precargar tipografías externas» en el navegador mediante CSS sin necesidad de tenerlas instaladas.</p>
+<h4 id="peso-o-grosor-de-tipografía" tabindex="-1"><a class="header-anchor" href="#peso-o-grosor-de-tipografía">Peso o grosor de tipografía</a></h4>
+<p>En algunos casos, nos interesará mostrar tipografías con diferentes grosores, ya sea porque ciertos fragmentos de texto queremos que aparezcan en negrita o porque simplemente se ve visualmente mejor. En CSS, esto se conoce como <strong>peso de una tipografía</strong>, y hablamos de una cantidad numérica (<em>generalmente valores entre 100 y 900</em>) que determina el grosor de la tipografía:</p>
+<p><img src="../tipografias/font-weight.png" alt="Pesos de tipografía" width="700" height="175" loading="lazy"></p>
+<p>No todas las tipografías tienen todos los grosores de la imagen. Generalmente, se considera que el peso <code>400</code> es el normal, y luego algunas tipografías tienen versiones más delgadas y versiones más gruesas. En las <strong>tipografías estáticas</strong> que veremos al principio, cada peso equivale a un fichero tipográfico diferente, mientras que las <strong>tipografías variables</strong> que veremos más adelante incorporan ya los diferentes pesos en un sólo fichero.</p>
+<h4 id="interlineado-de-texto" tabindex="-1"><a class="header-anchor" href="#interlineado-de-texto">Interlineado de texto</a></h4>
+<p>Otro detalle importante a la hora de utilizar una tipografía, es buscar y comprobar el tamaño perfecto de <strong>interlineado</strong> (<em>espacio entre líneas del párrafo</em>). Una tipografía se lee mejor si no está lo suficientemente junta, ni lo suficientemente separada. De la misma forma ocurre con el <strong>interletraje</strong>, es decir, el espacio entre letras:</p>
+<p><img src="interlineado.png" alt="Interlineado" width="700" height="306" loading="lazy"></p>
+<p>En los siguientes artículos de este sitio, nos vamos a enfocarnos en las siguientes temáticas, relacionadas con las tipografías en una web mediante CSS:</p>
+<table>
+<thead>
+<tr>
+<th>Temáticas</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🅰 <a href="../tipografias/index.htm">Tipografías en CSS</a></td>
+<td>Propiedades básicas para establecer tipografías en CSS.</td>
+</tr>
+<tr>
+<td>⏩ <a href="../regla-font-face/index.htm">La regla @font-face</a></td>
+<td>Precarga tipografías de repositorios o sitios externos.</td>
+</tr>
+<tr>
+<td>🎀 <a href="../tipografias-google-fonts/index.htm">Tipografías de Google Fonts</a></td>
+<td>Precarga tipografías externas de Google Fonts.</td>
+</tr>
+<tr>
+<td>💪 <a href="../fuentes-variables/index.htm">Fuentes variables CSS</a></td>
+<td>Utilizar tipografías con múltiples pesos variables.</td>
+</tr>
+<tr>
+<td>📋 <a href="../textos-y-alineaciones/index.htm">Textos y alineaciones</a></td>
+<td>Propiedades para realizar tareas relacionadas con textos.</td>
+</tr>
+<tr>
+<td>🧶 <a href="../font-display/index.htm">Propiedades avanzadas</a></td>
+<td>Algunas propiedades avanzadas de tipografías.</td>
+</tr>
+<tr>
+<td>🎁 <a href="../caracteristicas-personalizadas/index.htm">Características personalizadas</a></td>
+<td>Características avanzadas de tipografías.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>En la página <a href="https://fontjoy.com/">FontJoy</a> puedes hacer <strong>font pairing</strong> e ir revisando diferentes parejas de tipografías y comprobar cuales quedan mejor juntas.</p>
+</blockquote>
+
+  </div>
+</div>
+
+<script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    <script async="" src="../../../pagead/js/f.txt?client=ca-pub-0412426997270095" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; margin: 1em var(--pad)" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../../calidad-de-codigo/metodologias-css/index.htm" title="Metodologías CSS">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Metodologías CSS</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    <a class="btn next" href="../tipografias/index.htm" title="Tipografías en CSS">
+  <div>
+    <span>Tipografías en CSS</span>
+    <small>Capítulo siguiente</small>
+  </div>
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-1.425-1.4l5.6-5.6H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8Z"></path>
+  </svg>
+</a>
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/W6fAzw3HoWg" title="Cómo crear GRADIENTES LINEALES en CSS">
+  <img loading="lazy" src="../../../vi/W6fAzw3HoWg/mqdefault.jpg" alt="Cómo crear GRADIENTES LINEALES en CSS">
+</a><a href="https://youtu.be/0sFtRnbe0fo" title="Novedades de CSS: Dr. CSStrange y el multiverso">
+  <img loading="lazy" src="../../../vi/0sFtRnbe0fo/mqdefault.jpg" alt="Novedades de CSS: Dr. CSStrange y el multiverso">
+</a><a href="https://youtu.be/8Jh2K3tq5n0" title="Tutorial para aprender Animaciones CSS">
+  <img loading="lazy" src="../../../vi/8Jh2K3tq5n0/mqdefault.jpg" alt="Tutorial para aprender Animaciones CSS">
+</a><a href="https://youtu.be/OQtAyXHeKnc" title="Grid CSS: Grids por área">
+  <img loading="lazy" src="../../../vi/OQtAyXHeKnc/mqdefault.jpg" alt="Grid CSS: Grids por área">
+</a><a href="https://youtu.be/9jea2qDdw7Y" title="Cómo crear SOMBRAS IDÉNTICAS (drop-shadow)">
+  <img loading="lazy" src="../../../vi/9jea2qDdw7Y/mqdefault.jpg" alt="Cómo crear SOMBRAS IDÉNTICAS (drop-shadow)">
+</a><a href="https://youtu.be/8tTMYgHBQPI" title="Analizando las preguntas del STATE OF CSS 2022">
+  <img loading="lazy" src="../../../vi/8tTMYgHBQPI/mqdefault.jpg" alt="Analizando las preguntas del STATE OF CSS 2022">
+</a></div>
+  </div>
+</section>
+
+  <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+  
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+</body>
+
+</html>

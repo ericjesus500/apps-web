@@ -1,0 +1,395 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e44f26">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Etiquetas HTML de imágenes - HTML en español - Lenguaje HTML</title>
+  <link rel="preload" href="../../../critical.css" as="style">
+  <link rel="preload" href="../../../assets/fonts/blinker-vf.woff2" as="font" crossorigin="">
+  <link rel="preload" href="../../../assets/fonts/scope-one-400.woff2" as="font" crossorigin="">
+  <meta name="description" content="¿Cómo colocar imágenes en una página HTML? ¿Qué formatos de imagen debo utilizar?">
+  <link rel="stylesheet" href="../../../critical.css">
+  <link rel="stylesheet" href="../../../theme.css">
+  <script type="module" src="../../../main.js"></script>
+  <link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Etiquetas HTML de imágenes - HTML en español">
+  <meta property="og:image" content="https://lenguajehtml.com/html/large-summary.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="¿Cómo colocar imágenes en una página HTML? ¿Qué formatos de imagen debo utilizar?">
+  <meta property="og:url" content="https://lenguajehtml.com/html/multimedia/etiquetas-html-de-imagenes/">
+  <meta property="twitter:url" content="https://lenguajehtml.com/html/multimedia/etiquetas-html-de-imagenes/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Etiquetas HTML de imágenes - HTML en español">
+  <meta property="twitter:description" content="¿Cómo colocar imágenes en una página HTML? ¿Qué formatos de imagen debo utilizar?">
+  <meta property="twitter:image:src" content="https://lenguajehtml.com/html/large-summary.jpg">
+</head>
+<body class="html post"><div class="page">
+    <div class="sidebar">
+      <div class="logo flex-center">
+  <a href="/">
+    <img width="42" height="42" src="../../../assets/logo.svg" alt="Logo">
+    Lenguaje HTML
+  </a>
+  <div class="icons" style="--icon-size: 32px; --icon-side-padding: 0.15em">
+    <a href="https://twitter.com/Manz" title="Twitter"><svg-icon type="social" name="twitter"></svg-icon></a>
+    <a href="https://twitch.tv/manzdev" title="Twitch"><svg-icon type="social" name="twitch"></svg-icon></a>
+    <a href="https://instagram.com/manz.dev" title="Instagram"><svg-icon type="social" name="instagram"></svg-icon></a>
+    <a href="https://youtube.com/ManzDev?sub_confirmation=1" title="YouTube"><svg-icon type="social" name="youtube"></svg-icon></a>
+    <a href="https://discord.manz.dev/" title="Servidor de Discord"><svg-icon type="social" name="discord"></svg-icon></a>
+  </div>
+  <span>Un sitio web de <a href="https://manz.dev/"><mark>Manz.dev</mark></a></span>
+</div>
+
+      <form class="search flex-center" action="https://www.google.com/search">
+  <label><span>Buscar:</span> <input type="search" name="q" placeholder="Buscar un tema (ej: flex, grid...)" autocomplete="off"></label>
+  <label><span>Sitio:</span> <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev"></label>
+  <div class="search-results"></div>
+</form>
+
+      
+
+<style>
+  sidebar-link {
+    --logo-image: url(../../logo.svg);
+  }
+</style>
+
+<div class="toc"><sidebar-link title="Volver al índice" href="../../index.htm" back="" direct=""></sidebar-link><sidebar-link href="../../cheatsheets/index.htm" title="HTML5 CheatSheet" direct=""></sidebar-link><sidebar-section title="Introducción a HTML5" href="../../introduccion/index.htm"><sidebar-link href="../../introduccion/que-es-html/index.htm" title="¿Qué es HTML?"></sidebar-link><sidebar-link href="../../introduccion/estructura-etiqueta-html/index.htm" title="Estructura de etiqueta HTML"></sidebar-link><sidebar-link href="../../introduccion/atributos-comunes-html/index.htm" title="Atributos comunes en HTML"></sidebar-link><sidebar-link href="../../introduccion/estructura-documento-html/index.htm" title="Estructura del documento HTML"></sidebar-link><sidebar-link href="../../introduccion/validacion-html/index.htm" title="Validación de errores HTML"></sidebar-link><sidebar-link href="../../introduccion/tabla-periodica-html5/index.htm" title="Tabla periódica de HTML5"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas semánticas" href="../../semantica/index.htm"><sidebar-link href="../../semantica/etiquetas-html-obsoletas/index.htm" title="Etiquetas HTML obsoletas"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-texto/index.htm" title="Etiquetas HTML de texto"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-agrupacion/index.htm" title="Etiquetas HTML de agrupación"></sidebar-link><sidebar-link href="../../semantica/enlaces-o-hipervinculos/index.htm" title="Enlaces o hipervínculos"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-seccion/index.htm" title="Etiquetas HTML de sección"></sidebar-link><sidebar-link href="../../semantica/etiquetas-html-de-tablas/index.htm" title="Etiquetas HTML de tablas"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas multimedia" href="../index.htm"><sidebar-link href="index.htm" title="Etiquetas HTML de imágenes"></sidebar-link><sidebar-link href="../etiquetas-html-de-contenido-externo/index.htm" title="Etiquetas de contenido externo"></sidebar-link><sidebar-link href="../etiquetas-html-de-video/index.htm" title="Etiquetas HTML de video"></sidebar-link><sidebar-link href="../etiquetas-html-de-audio/index.htm" title="Etiquetas HTML de audio"></sidebar-link><sidebar-link href="../etiquetas-html-de-subtitulos/index.htm" title="Etiquetas HTML de subtitulos"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de cabecera" href="../../cabecera/index.htm"><sidebar-link href="../../cabecera/etiquetas-html-de-relacion/index.htm" title="Etiquetas HTML de relación"></sidebar-link><sidebar-link href="../../cabecera/etiquetas-html-de-metadatos/index.htm" title="Etiquetas HTML de metadatos"></sidebar-link><sidebar-link href="../../cabecera/etiquetas-html-para-redes-sociales/index.htm" title="Etiquetas HTML de redes sociales"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de formularios" href="../../formularios/index.htm"><sidebar-link href="../../formularios/crear-un-formulario/index.htm" title="Creación de un formulario"></sidebar-link><sidebar-link href="../../formularios/controles-campos-de-texto/index.htm" title="Controles: Campos de texto"></sidebar-link><sidebar-link href="../../formularios/controles-campos-numericos/index.htm" title="Controles: Campos numéricos"></sidebar-link><sidebar-link href="../../formularios/controles-campos-fecha-hora/index.htm" title="Controles: Campos de fecha/hora"></sidebar-link><sidebar-link href="../../formularios/controles-casillas-o-botones/index.htm" title="Controles: Casillas o botones"></sidebar-link><sidebar-link href="../../formularios/controles-listas-de-seleccion/index.htm" title="Controles: Listas de selección"></sidebar-link><sidebar-link href="../../formularios/controles-seleccion-color/index.htm" title="Controles: Selección de color"></sidebar-link><sidebar-link href="../../formularios/controles-seleccion-archivos/index.htm" title="Controles: Selección de archivos"></sidebar-link><sidebar-link href="../../formularios/organizacion-de-campos/index.htm" title="Organización de campos"></sidebar-link><sidebar-link href="../../formularios/botones-de-envio-de-formulario/index.htm" title="Botones de envío de formularios"></sidebar-link><sidebar-link href="../../formularios/medidores-y-barras-de-progreso/index.htm" title="Medidores y barras de progreso"></sidebar-link><sidebar-link href="../../formularios/validaciones-html5/index.htm" title="Validaciones HTML5"></sidebar-link></sidebar-section><sidebar-section title="Etiquetas de scripting" href="../../scripting/index.htm"><sidebar-link href="../../scripting/etiquetas-html-interactivas/index.htm" title="Etiquetas HTML interactivas"></sidebar-link><sidebar-link href="../../scripting/etiquetas-html-scripts/index.htm" title="Etiquetas HTML de scripts"></sidebar-link><sidebar-link href="../../scripting/eventos-html/index.htm" title="Eventos en HTML"></sidebar-link></sidebar-section></div>
+
+      
+    </div>
+    <div class="contents">
+      <header class="mega">
+  <h1>Etiquetas HTML de imágenes</h1></header>
+
+      <div class="content ">
+  <div class="breadcrumbs">
+  <a href="/">ATRÁS</a> <span>ᐳ</span> <a href="../../index.htm">html</a> <span>ᐳ</span> <a href="index.htm">Etiquetas HTML de imágenes</a>
+</div>
+<p>Antes de colocar una imagen en una página web debemos tener claro en que clasificación se encuentra. Las imágenes utilizadas en una página web pueden ser de dos tipos: de <strong>contenido</strong> o de <strong>decoración</strong>. En el primer caso, si la imagen pertenece al contenido y tema tratado en esa página, debería incluirse mediante una etiqueta HTML <code>&lt;img&gt;</code>, pero si por el contrario pertenece a la decoración de la página, deberíamos incluirla como un <a href="http://lenguajecss.com/css/propiedades/fondos-css">fondo</a> mediante la propiedad CSS <code>background-image</code>.</p>
+<h3 id="etiquetas-para-imágenes" tabindex="-1">Etiquetas para imágenes</h3>
+<p>Para incluir imágenes en el contenido de una página utilizaremos la etiqueta <code>&lt;img&gt;</code>, que es una etiqueta muy sencilla, que dispone de varios atributos para modificar como se verá la imagen (<em>los atributos src y alt son siempre obligatorios</em>):</p>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src</code></td>
+<td>Indica el nombre o la URL de la imagen a mostrar. <strong>Atributo obligatorio</strong>.</td>
+</tr>
+<tr>
+<td><code>alt</code></td>
+<td>Establece un texto alternativo que describa la imagen a mostrar. <strong>Atributo obligatorio</strong>.</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td>Indica el ancho de la imagen en píxels (sin la unidad). Se puede hacer desde CSS.</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td>Indica el alto de la imagen en píxels (sin la unidad). Se puede hacer desde CSS.</td>
+</tr>
+</tbody>
+</table>
+<p>Un ejemplo básico para colocar una imagen sería el siguiente:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://lenguajehtml.com/img/logo.png<span class="token punctuation">"</span></span><br>     <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Logotipo de HTML5<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>400<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>453<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
+<p>Nota que con los atributos <strong>width</strong> y <strong>height</strong> se fuerza a reservar el espacio indicado en la página (<em>incluso antes de descargar y mostrar la imagen</em>). Ten en cuenta que la imagen tendrá unas dimensiones concretas y se descargará siempre a máxima resolución. Con estos atributos redimensionas la imagen al tamaño de ancho y alto indicado, pero la imagen realmente tiene su propio tamaño.</p>
+<blockquote>
+<p>Puedes omitir estos atributos siempre que quieras, ya que no son obligatorios, pero se consideran una buena práctica para evitar los molestos cambios repentinos de posición o tamaño en una página.</p>
+</blockquote>
+<h3 id="formatos-de-imágenes" tabindex="-1">Formatos de imágenes</h3>
+<p>En el ámbito informático existen múltiples formatos de imágenes (<em>¡muchísimos!</em>) pero no todos son aptos para utilizar en web. Vamos a dar un repaso a los formatos más utilizados y cuales son más apropiados:</p>
+<table>
+<thead>
+<tr>
+<th>Formato</th>
+<th>Características</th>
+<th>¿Recomendado?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://www.libpng.org/pub/png/">PNG</a></td>
+<td>Soporta transparencia. Compresión sin pérdidas. Imágenes «lisas».</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td><a href="https://jpeg.org/jpeg/">JPG</a></td>
+<td>Compresión con pérdidas. Ideal para imágenes con texturas.</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td><a href="https://www.w3.org/TR/SVG/">SVG</a></td>
+<td>Formato vectorial. Ideal para imágenes escalables.</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td><a href="../../../Graphics/GIF/spec-gif89a.txt">GIF</a></td>
+<td>Formato para imágenes pequeñas y animadas.</td>
+<td>Intentar evitar.</td>
+</tr>
+<tr>
+<td><a href="https://developers.google.com/speed/webp/">WEBP</a></td>
+<td>Alternativa libre de Google al JPEG. Soporta transparencias.</td>
+<td>Sí, <a href="https://caniuse.com/webp">con precaución</a></td>
+</tr>
+<tr>
+<td><a href="https://jpeg.org/jpeg2000/">JPEG2000</a></td>
+<td>Evolución del JPEG.</td>
+<td>No, <a href="https://caniuse.com/jpeg2000">solo Safari</a></td>
+</tr>
+<tr>
+<td><a href="https://jpeg.org/jpegxr/">JPEG-XR</a></td>
+<td>Alternativa libre de Microsoft al JPEG.</td>
+<td>No, <a href="https://caniuse.com/jpegxr">solo IE</a></td>
+</tr>
+<tr>
+<td><a href="https://wiki.mozilla.org/APNG_Specification">APNG</a></td>
+<td>Alternativa libre a GIF. Compatible con PNG. Soporta animaciones.</td>
+<td>Sí, <a href="https://caniuse.com/apng">con precaución</a></td>
+</tr>
+<tr>
+<td><a href="https://aomediacodec.github.io/av1-avif/">AVIF</a></td>
+<td>Formato de imagen basado en AV1. No confundir con videos AVI.</td>
+<td>Aún no, <a href="https://caniuse.com/avif">poco soporte</a></td>
+</tr>
+<tr>
+<td><a href="https://caniuse.com/jpegxl">JPEG-XL</a></td>
+<td>Alternativa competidora a AVIF.</td>
+<td>Aún no, <a href="https://caniuse.com/jpegxl">poco soporte</a></td>
+</tr>
+</tbody>
+</table>
+<p>Cualquier otro formato no mostrado en esta lista no está recomendado para utilizar en web. Formatos como <code>BMP</code>, <code>TIFF</code>, <code>RAW</code>, <code>NEF</code>, <code>PSD</code>, <code>CDR</code> son formatos no orientados para su uso en la web, además de ser propietarios y muy pesados.</p>
+<blockquote>
+<p>Muchos de los formatos no recomendados de la tabla superior pueden utilizarse hoy si se utiliza un enfoque <strong>progresivo con fallbacks</strong>, utilizando la etiqueta HTML <code>&lt;picture&gt;</code>.</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>Si quieres saber más sobre formatos de imágenes y como conseguir reducir su tamaño sin disminuir su calidad, te sugiero leer <a href="http://www.emezeta.com/articulos/formatos-de-imagen-guia-de-optimizacion">Formatos de imagen: Guía de optimización</a>.</p>
+</blockquote>
+</blockquote>
+<h3 id="nuevas-etiquetas-de-imágenes" tabindex="-1">Nuevas etiquetas de imágenes</h3>
+<p><strong>HTML 5.1</strong> incorporará un nuevo sistema para utilizar imágenes en nuestros documentos HTML de forma mucho más flexible que la antigua etiqueta <code>&lt;img&gt;</code> que nos permitirá mostrar imágenes dependiendo de nuestras necesidades. Para ello, utilizaremos las dos siguientes etiquetas:</p>
+<table>
+<thead>
+<tr>
+<th>Etiqueta</th>
+<th>Atributos</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;picture&gt;</code></td>
+<td></td>
+<td>Agrupa una serie de imágenes. Etiqueta contenedora.</td>
+</tr>
+<tr>
+<td><code>&lt;source&gt;</code></td>
+<td><code>srcset</code>, <code>sizes</code>, <code>media</code>, <code>type</code></td>
+<td>Mostrará la imagen que cumpla una serie de criterios opcionales.</td>
+</tr>
+</tbody>
+</table>
+<p>Como podemos ver, lo interesante está en la etiqueta <code>&lt;source&gt;</code>, que tiene una serie de atributos disponibles para utilizar. Vamos a ver para que sirve cada uno:</p>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>srcset</code></td>
+<td>Serie de imágenes (<em>separadas por coma</em>) que se utilizarán. <strong>Atributo obligatorio</strong>.</td>
+</tr>
+<tr>
+<td><code>sizes</code></td>
+<td>Tamaño específico de la imagen que finalmente se mostrará.</td>
+</tr>
+<tr>
+<td><code>media</code></td>
+<td>Condición que se debe cumplir para que muestre la imagen. Ver <a href="http://lenguajecss.com/css/propiedades/responsive-design#media-queries">media queries</a>.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>Tipo de formato de imagen. Opcional.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="imágenes-alternativas" tabindex="-1">Imágenes alternativas</h4>
+<p>Una de las primeras ventajas que nos ofrecen estas etiquetas es la de utilizar formatos diferentes, dependiendo del soporte del navegador. Así pues, podríamos hacer algo como esto:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>picture</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>imagen.webp<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>  <span class="token comment">&lt;!-- Formato WebP --></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>imagen.jxr<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>  <span class="token comment">&lt;!-- Formato JPEG XR --></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>imagen.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Descripción de la imagen<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>  <span class="token comment">&lt;!-- Fallback --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>picture</span><span class="token punctuation">></span></span></code></pre>
+<p>En este caso, indicamos que el navegador utilice la imagen con el formato <strong>WebP</strong>. En caso de no soportarlo, lo intentará con el formato <strong>JPEG XR</strong>. Si tampoco lo soporta, mostrará la imagen en formato <strong>JPEG</strong>, que es la que está soportada por todos los navegadores, y si utilizamos algún navegador de texto como Lynx u otro que no pueda mostrar imágenes, mostrará el texto alternativo.</p>
+<p><caniuse-support title="Picture element" feature="picture" edge="13/y" firefox="38/y" chrome="38/y" safari="9.1/y" opera="25/y" ios_saf="9.3/y" and_chr="103/y" and_ff="101/y">
+</caniuse-support></p>
+<h4 id="imágenes-responsive" tabindex="-1">Imágenes responsive</h4>
+<p>Otra ventaja interesante es que con <code>&lt;picture&gt;</code> podemos crear imágenes responsive que cambien dependiendo de características de las <strong>media queries</strong> (<em>CSS</em>). Por ejemplo, utilicemos <code>min-width</code> (<em>tamaño mínimo de ancho de la pantalla</em>) en el siguiente ejemplo:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>picture</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(min-width: 600px)<span class="token punctuation">"</span></span><br>          <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>html5-logo-xl.png<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(min-width: 300px) and (max-width: 600px)<span class="token punctuation">"</span></span><br>          <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>html5-logo-large.png<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(max-width: 50px)<span class="token punctuation">"</span></span><br>          <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>html5-logo-small.png<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>html5-logo-medium.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>HTML5 logo<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>picture</span><span class="token punctuation">></span></span></code></pre>
+<p>De esta forma, estamos indicando que se muestren diferentes imágenes dependiendo de la resolución de pantalla (<em>ancho</em>) del dispositivo:</p>
+<ul>
+<li><strong>Dispositivos muy grandes</strong> (más de 600px): Muestra la imagen <code>html5-logo-xl.png</code></li>
+<li><strong>Dispositivos grandes</strong> (entre 300-600px): Muestra la imagen <code>html5-logo-large.png</code></li>
+<li><strong>Dispositivos pequeños</strong> (menos de 50px): Muestra la imagen <code>html5-logo-small.png</code></li>
+<li><strong>Si no cumple las anteriores</strong> (o no soporta HTML5.1): Muestra la imagen <code>html5-logo-medium.png</code></li>
+</ul>
+<p>Nótese que esto sólo hará cambio de imagen efectivo justo en los límites indicados (50, 300, 600). Si se desea que la imagen se adapte proporcionalmente, lo mejor es recurrir a <a href="http://lenguajecss.com/css/propiedades/responsive-design#tamaos-mximos-y-mnimos">tamaños máximos y mínimos de CSS</a>.</p>
+<h4 id="diferentes-densidades" tabindex="-1">Diferentes densidades</h4>
+<p>Además, este sistema también permite especificar diferentes imágenes dependiendo de la densidad de pantalla del dispositivo (<em>alto que varía actualmente en las diferentes gamas de smartphones</em>). Para ello, tenemos que usar un descriptor después del nombre de la imagen utilizado en el atributo <strong>srcset</strong> (<em>si no se incluye, por omisión es igual a 1x</em>):</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>picture</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(min-width: 600px)<span class="token punctuation">"</span></span><br>    <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>html5-logo-xl.png, html5-logo-xl-hd.png 2x, html5-logo-xl-fhd.png 3x<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(min-width: 300px) and (max-width: 600px)<span class="token punctuation">"</span></span><br>    <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>html5-logo-large.png, html5-logo-large-hd.png 2x, html5-logo-large-fhd.png 3x<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(max-width: 50px)<span class="token punctuation">"</span></span><br>    <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>html5-logo-small.png, html5-logo-small-hd.png 2x, html5-logo-small-fhd.png 3x<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>html5-logo-medium.png, html5-logo-medium-hd.png 2x, html5-logo-medium-fhd.png 3x<span class="token punctuation">"</span></span><br>    <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>HTML5 logo<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>picture</span><span class="token punctuation">></span></span></code></pre>
+<p>Nótese que en cada etiqueta <code>&lt;source&gt;</code>, e incluso en la etiqueta <code>&lt;img&gt;</code>, se puede especificar el atributo <strong>srcset</strong> e indicar varias imágenes preparadas para pantallas de alta densidad.</p>
+<p>Por último, recuerda que la etiqueta <code>&lt;picture&gt;</code> y la etiqueta <code>&lt;source&gt;</code> dentro de la anterior son características de HTML5.1 y aún no están soportadas en todos los navegadores. Se recomienda ser cuidadoso con este detalle.</p>
+<p><caniuse-support title="Srcset and sizes attributes" feature="srcset" edge="16/y" firefox="38/y" chrome="38/y" safari="9/y" opera="25/y" ios_saf="9.0-9.2/y" and_chr="103/y" and_ff="101/y">
+</caniuse-support></p>
+
+    <nav class="prev-next"><a class="bt prev" href="../../semantica/etiquetas-html-de-tablas/index.htm" title="Etiquetas HTML de tablas">
+    <span class="data">
+      <span>Etiquetas HTML de tablas</span>
+      <small>Capítulo anterior</small>
+    </span>
+  </a><a class="bt next" href="../etiquetas-html-de-contenido-externo/index.htm" title="Etiquetas de contenido externo">
+    <span class="icon">
+      <svg-icon name="arrow-right"></svg-icon>
+    </span>
+    <span class="data">
+      <span>Etiquetas de contenido externo</span>
+      <small>Capítulo siguiente</small>
+    </span>
+  </a></nav>
+
+    <script async="" src="../../../pagead/js/f.txt"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center; margin:auto; margin-top: 2em" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0412426997270095" data-ad-slot="3027930890"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+      <div class="related">
+
+  <div class="author">
+    <div class="author-wrapper">
+      <img loading="lazy" class="circle" src="../../../assets/manz.webp" alt="Manz">
+      <div>
+        <p>Docente, divulgador informático y <a href="https://manz.dev/">streamer de código</a>. Amante de <strong>CSS</strong>, <strong>Javascript</strong>
+          y de la plataforma web. Ha trabajado como profesor en la Universidad de La Laguna y es director del curso de
+          Programación web FullStack y FrontEnd de EOI desde Tenerife. En sus ratos libres, busca GIF de gatos en Internet.</p>
+        <p class="twitch-badge">
+          <a href="https://twitch.tv/ManzDev">
+            <svg class="twitch" viewbox="0 0 1024 1024">
+              <path style="fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1;" d="m262.451 12.904-178.26 178.26v641.672h213.905v178.26l178.26-178.26h142.576L939.809 512V12.904H262.45zm35.645 71.287h570.383v392.164L725.904 618.932H583.287L458.514 743.705V618.932H298.096V84.192zM494.158 208.51v216.36h71.328V208.51h-71.328zm196 0v216.36h71.328V208.51h-71.328z"></path>
+            </svg>
+            Sígueme en Twitch
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="comentarios">
+    <script async="" src="../../../count.js" id="dsq-count-scr"></script>
+<script>
+var disqus_config = function () {
+  this.page.path = location.pathname.endsWith("/") ? location.pathname.substring(0, location.pathname.length - 1) : location.pathname;
+  this.page.url = 'https://lenguajehtml.com' + this.page.path;
+  this.page.identifier = this.page.url;
+};
+document.addEventListener('DOMContentLoaded', function() {
+  const coms = document.querySelector('#comentarios');
+  a = coms.querySelector('#disqus_button');
+  a.dataset.disqusIdentifier = 'https://lenguajehtml.com' + (location.pathname.endsWith("/") ? location.pathname.substring(0, location.pathname.length - 1) : location.pathname);
+  a.addEventListener('click', function() {
+    const div = document.createElement('div');
+    div.id = 'disqus_thread';
+    coms.appendChild(div);
+    const d = document, s = d.createElement('script');
+    s.src = '//lenguajehtml.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    this.remove();
+  });
+});
+</script>
+
+    <a class="disqus-comment-count" id="disqus_button" href="#disqus_thread" data-disqus-identifier="https://lenguajehtml.com/html/multimedia/etiquetas-html-de-imagenes/">Leer comentarios</a>
+    <a class="discord" href="https://discord.manz.dev/">¡Accede a Discord y cuéntanos!</a>
+  </div>
+
+</div>
+
+    </div>
+    <div class="aside">
+      <div class="aside">
+
+  <div class="aside-top">
+    <a href="https://manz.dev/digitalocean" title="Empieza en DigitalOcean con 100$">
+      <img width="240" height="120" src="../../../assets/digital-ocean.png" alt="DigitalOcean">
+    </a>
+  </div><script type="module">
+  const ANCHOR_ICON = /* svg */`
+    <svg class="anchor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 205 205" width="36" height="36">
+      <path d="m140 129 16 16s-20 30-42 30V71c14-5 25-18 25-34 0-20-17-36-37-36-21 0-38 16-38 36 0 15 11 29 25
+              34v104c-26-2-42-27-42-27l18-18-65-9 10 63 17-17c15 12 32 37 73 37 51-1 63-29 76-40l19 19 10-64-65
+              10zM83 36c0-10 8-18 19-18s19 8 19 18c0 11-9 19-19 19s-19-8-19-19z"/>
+    </svg>`;
+  // Add inner links to sidebar menu
+  export const addInnerLinks = () => {
+    const summary = document.querySelector(".aside .summary .links");
+    const headers = Array.from(document.querySelectorAll(".content h3, .content h4"));
+    const tocLinks = [];
+    headers.forEach((e) => {
+      const link = `${location.origin}${location.pathname}#${e.id}`;
+      e.innerHTML = `<a class="permalink" href="${link}">${e.textContent} ${ANCHOR_ICON}</a>`;
+      const headerType = e.nodeName.toLowerCase();
+      const textContent = headerType === "h4" ? e.textContent.replace("La propiedad ", "").replace("La función ", "") : e.textContent;
+      tocLinks.push(`<a class="${headerType}" href="#${e.id}">${textContent}</a>`);
+    });
+    summary.insertAdjacentHTML("beforeEnd", tocLinks.join("\n"));
+  };
+
+  addInnerLinks();
+</script>
+
+<div class="summary">
+  <div class="table">Tabla de contenidos</div>
+  <div class="links"></div>
+</div>
+</div>
+
+    </div>
+  </div><footer class="main">
+  <div class="square">
+    <a href="/"><h2>Lenguaje HTML</h2></a>
+    <div class="icons">
+      <a href="https://twitter.com/Manz" title="Twitter"><svg-icon type="social" name="twitter"></svg-icon></a>
+      <a href="https://twitch.tv/manzdev" title="Twitch"><svg-icon type="social" name="twitch"></svg-icon></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg-icon type="social" name="instagram"></svg-icon></a>
+      <a href="https://youtube.com/ManzDev?sub_confirmation=1" title="YouTube"><svg-icon type="social" name="youtube"></svg-icon></a>
+      <a href="https://discord.manz.dev/" title="Servidor de Discord"><svg-icon type="social" name="discord"></svg-icon></a>
+      <a href="https://github.com/ManzDev" title="GitHub"><svg-icon type="social" name="github"></svg-icon></a>
+      <a href="https://codepen.io/Manz" title="Codepen"><svg-icon type="social" name="codepen"></svg-icon></a>
+      <a href="https://www.linkedin.com/in/joseromanhdez/" title="Linkedin"><svg-icon type="social" name="linkedin"></svg-icon></a>
+    </div>
+    <p>Documentación sobre HTML5 y las mejores herramientas y recursos para aprender a utilizar el lenguaje de marcado HTML.</p>
+    <p id="footer">Creado y mantenido por <a href="https://twitter.com/Manz">@Manz</a> con <span title="<3">❤</span></p></div>
+</footer>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-5', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+</body>
+</html>

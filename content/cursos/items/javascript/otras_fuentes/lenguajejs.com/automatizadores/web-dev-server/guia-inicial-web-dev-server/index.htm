@@ -1,0 +1,846 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#b59374">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Guía inicial de Web Dev Server - Javascript en español - Lenguaje JS</title>
+  <link rel="preload" href="../../../assets/fonts/jost-vf.woff2" as="font" crossorigin="">
+  <meta name="description" content="Aprende a utilizar el servidor local de desarrollo web-dev-server, compatible con webcomponents y ESM para utilizar técnicas modernas de desarrollo.">
+  <meta name="view-transition" content="same-origin">
+  <link rel="stylesheet" href="../../../home.css">
+  <script type="module" src="../../../index.js"></script>
+<link rel="canonical" href="index.htm">
+  <meta property="og:title" content="Guía inicial de Web Dev Server - Javascript en español">
+  <meta property="og:image" content="https://lenguajejs.com/automatizadores/web-dev-server/guia-inicial-web-dev-server/web-dev-server.png">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Aprende a utilizar el servidor local de desarrollo web-dev-server, compatible con webcomponents y ESM para utilizar técnicas modernas de desarrollo.">
+  <meta property="og:url" content="https://lenguajejs.com/automatizadores/web-dev-server/guia-inicial-web-dev-server/">
+  <meta property="twitter:url" content="https://lenguajejs.com/automatizadores/web-dev-server/guia-inicial-web-dev-server/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:creator" content="@Manz">
+  <meta property="twitter:title" content="Guía inicial de Web Dev Server - Javascript en español">
+  <meta property="twitter:description" content="Aprende a utilizar el servidor local de desarrollo web-dev-server, compatible con webcomponents y ESM para utilizar técnicas modernas de desarrollo.">
+  <meta property="twitter:image" content="https://lenguajejs.com/automatizadores/web-dev-server/guia-inicial-web-dev-server/web-dev-server.png">
+
+  </head>
+
+<body class="js menu-open " style="--logo-color: #f0db4f"><script>
+    matchMedia("(width <= 1180px)").matches && document.body.classList.toggle("menu-open");
+  </script>
+  
+
+
+
+
+
+
+
+
+<section class="menubar">
+  <div class="menubar-content">
+    <h1>Lenguaje JS</h1>
+
+    <a class="cover" title="Lenguaje JS (automatizadores)" href="../../index.htm" style="--image: url('../../../assets/automatizadores.jpg')"></a>
+
+    <header>
+      <a href="../../parcel/guia-tutorial-inicial-de-parcel/index.htm" title="Guía tutorial inicial de Parcel">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m14 26l1.41-1.41L7.83 17H28v-2H7.83l7.58-7.59L14 6L4 16l10 10z"></path></svg>
+      </a>
+      <a href="../../index.htm" title="Volver al índice">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 256"><path fill="#888888" d="M240 210h-18v-94.45a14.06 14.06 0 0 0-4.53-10.32l-80-75.49l-.09-.08a13.94 13.94 0 0 0-18.83 0l-.09.08l-80 75.5A14 14 0 0 0 34 115.55V210H16a6 6 0 0 0 0 12h224a6 6 0 0 0 0-12ZM46 115.55a2 2 0 0 1 .65-1.48l.09-.08l79.94-75.48a2 2 0 0 1 2.63 0L209.26 114l.08.08a2 2 0 0 1 .66 1.48V210h-52v-50a14 14 0 0 0-14-14h-32a14 14 0 0 0-14 14v50H46ZM146 210h-36v-50a2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"></path></svg>
+      </a>
+      <a href="../../../retos/recursos/como-empezar/index.htm" title="Retos de código de Manz.dev">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path fill="#888888" d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></path></svg>
+      </a>
+    </header>
+
+    <div style="display:none">
+      <svg id="link-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 256 256"><g fill="#888888"><path d="M208 88h-56V32Z" opacity=".2"></path><path d="m213.66 82.34l-56-56A8 8 0 0 0 152 24H56a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V88a8 8 0 0 0-2.34-5.66ZM160 51.31L188.69 80H160ZM200 216H56V40h88v48a8 8 0 0 0 8 8h48v120Z"></path></g></svg>
+      <svg id="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="#888888" d="M2 12.5C2 9.46 4.46 7 7.5 7H18c2.21 0 4 1.79 4 4s-1.79 4-4 4H9.5a2.5 2.5 0 0 1 0-5H17v2H9.41c-.55 0-.55 1 0 1H18c1.1 0 2-.9 2-2s-.9-2-2-2H7.5C5.57 9 4 10.57 4 12.5S5.57 16 7.5 16H17v2H7.5C4.46 18 2 15.54 2 12.5z"></path></svg>
+    </div>
+
+    <div class="links">
+      <span class="folder">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 512 512"><path fill="#888888" d="M41 73v304.563L88.697 151H423v-30H185.514l-16-48H41zm62.303 96L43.092 455h381.605l60.211-286H103.303z"></path></svg>
+        Web Dev Server
+      </span>
+            <a class="link active" href="index.htm">
+              <svg viewbox="0 0 32 32"><use href="#link-icon"></use></svg>
+              Guía inicial de Web Dev Server
+            </a>
+    </div>
+  </div>
+
+  <div class="sidebox">
+    <svg class="close-menu" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19V5m10 1l-6 6l6 6m-6-6h14"></path></svg>
+    <div class="socials">
+      <a class="twitch" href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+      <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+      <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+      <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+      <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  const toggleMenu = () => (document.body.classList.toggle("menu-open"));
+  document.querySelector(".close-menu").addEventListener("click", toggleMenu);
+
+  matchMedia("(width <= 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+  matchMedia("(width > 1180px)").addEventListener("change", (ev) => ev.matches && toggleMenu());
+
+  const activeLink = document.querySelector(".links .active");
+  const icon = /* svg */`<svg viewBox="0 0 24 24"><use href="#anchor-icon" /></svg>`;
+  const headers = [...document.querySelectorAll(".contents h3")].map(link => ({ text: link.textContent, id: link.id }));
+  const links = [];
+  headers.reverse().forEach(({ text, id }) => {
+    const link = document.createElement("a");
+    link.classList.add("anchor");
+    link.href = "#" + id;
+    link.insertAdjacentHTML("beforeend", icon);
+    link.insertAdjacentText("beforeend", ` ${text}`);
+    activeLink.after(link);
+  });
+</script>
+
+  <div class="post page">
+    <header class="hero">
+
+  <div class="top-search">
+    <a class="sitelogo" href="../../../index.htm">
+  <svg><use href="../../../assets/logos.svg#js"></use></svg>
+  <img class="manzdev" src="../../../assets/logos/manzdev-logo.webp" alt="ManzDev">
+  <div class="sitelogo-text">
+    <div class="text">MANZ.DEV</div>
+    <div class="subtext">LenguajeJS.com</div>
+  </div>
+</a>
+
+    <search class="search-container">
+  <form class="search" action="https://www.google.com/search">
+    <label>
+      <input type="search" name="q" placeholder="flex, grid..." autocomplete="off" spellcheck="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewbox="0 0 256 256"><path fill="var(--color, #fff)" d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+    </label>
+    <input type="hidden" name="q" value="site:lenguajejs.com OR site:lenguajecss.com OR site:lenguajehtml.com OR site:terminaldelinux.com OR site:manz.dev">
+    <div class="results"></div>
+    <div class="sources">
+      <label><input type="radio" name="source" value="posts" checked=""> Posts</label>
+      <label><input type="radio" name="source" value="youtube"> Youtube</label>
+    </div>
+  </form>
+
+  <script type="module">
+    import { debounce } from "/modules.js";
+    import { searchText } from "/modules.js";
+
+    const searchInput = document.querySelector("form.search input[type=search]");
+    searchInput.addEventListener("input", debounce(searchText, 400));
+  </script>
+</search>
+
+  </div>
+
+  <div class="mega" style="--cover-image: url('../../../assets/automatizadores.jpg')">
+    <h1><a href="index.htm">Guía inicial de Web Dev Server</a></h1><h2 class="typewriter">Empaquetador Javascript enfocado en workflows sin compilación</h2>
+    <hr></div>
+
+  
+
+<nav class="navpages">
+  <div class="top">
+    
+    <a href="../../index.htm" title="Volver al índice"></a>
+  </div>
+  <div class="prev-next">
+    <a href="../../parcel/parcel-build-mode/index.htm">Modo de producción de Parcel</a>
+    <a class="current" href="index.htm">Guía inicial de Web Dev Server</a>
+    </div>
+</nav>
+<div class="mini-social">
+  ——
+  <a href="https://twitch.tv/ManzDev" title="Twitch"><svg><use href="../../../assets/icons/social.svg#twitch"></use></svg></a>
+  <a href="https://youtube.com/@ManzDev" title="YouTube"><svg><use href="../../../assets/icons/social.svg#youtube"></use></svg></a>
+  <a href="https://tiktok.com/@manz.dev" title="TikTok"><svg><use href="../../../assets/icons/social.svg#tiktok"></use></svg></a>
+  <a href="https://instagram.com/manz.dev" title="Instagram"><svg><use href="../../../assets/icons/social.svg#instagram"></use></svg></a>
+  <a href="https://twitter.com/manz" title="Twitter"><svg><use href="../../../assets/icons/social.svg#twitter"></use></svg></a>
+  ——
+</div>
+
+
+
+</header>
+
+<script type="module">
+  import { typewriter } from "/modules.js";
+
+  typewriter("header.hero h2.typewriter");
+</script>
+
+
+
+    <div class="post-container">
+  <div class="contents">
+    
+    <p>Cuando nos dedicamos al <strong>desarrollo web</strong>, es muy frecuente el uso de <strong>servidores locales</strong> (<em>development web servers</em>). Esto no son más que pequeñas herramientas que nos muestran nuestra web tal y como quedaría si la subieramos a un servidor final de producción, sólo que en nuestra máquina, de una forma más rápida y sencilla.</p>
+<p>Existen muchas herramientas de este tipo, como <a href="https://github.com/tapio/live-server">live-server</a>, <a href="https://github.com/http-party/http-server">http-server</a> o <a href="https://github.com/lukeed/sirv">sirv</a>. Con ellas podemos ir viendo en un navegador como va quedando la página a medida que vamos escribiendo código, puesto cada vez que guardamos <strong>recarga los cambios</strong>. En este artículo nos vamos a basar en <a href="https://modern-web.dev/docs/dev-server/overview/"><strong>web-dev-server</strong></a>, antiguamente conocido como <code>es-dev-server</code>.</p>
+<p><img src="web-dev-server.png" alt="Web-dev-server: Servidor local de desarrollo" width="1146" height="476" loading="lazy"></p>
+<p>Utilizaremos <strong>web-dev-server</strong> por varias razones:</p>
+<ul>
+<li><strong>Flexibilidad</strong>: Sirve para ejemplos sencillos, pero es personalizable para avanzados.</li>
+<li><strong>Caché eficiente</strong>: Usa <a href="../../../javascript/modulos/que-es-esm/index.htm">ESM</a> y el caché del navegador para acelerar actualizaciones.</li>
+<li><strong>Auto-recarga</strong> rápida a medida que vamos escribiendo código y guardando cambios.</li>
+<li><strong>Transforma</strong> código para ser compatible con navegadores antiguos.</li>
+<li><strong>Resuelve</strong> importaciones de node para funcionar en el navegador.</li>
+<li><strong>Enrutamiento</strong> de peticiones 404 (<em>history API fallback</em>), muy útil para SPA.</li>
+<li><strong>Fácil</strong> de integrar con herramientas como Typescript, Babel (<em>u otras</em>).</li>
+</ul>
+<p>Usuarios que comienzan en el mundo del desarrollo web suelen hacerlo con plataformas como <a href="https://codepen.io/">CodePen</a> o <a href="https://codesandbox.io/">CodeSandbox</a>, que te abstraen un poco de toda la infraestructura de ficheros, pero este artículo vamos a ver como ponernos a preparar un proyecto con nuestros propios ficheros utilizando <a href="https://modern-web.dev/docs/dev-server/overview/"><strong>web-dev-server</strong></a>, primero con un enfoque sencillo y luego con uno más complejo.</p>
+<h3 id="modalidad-simple-directa" tabindex="-1"><a class="header-anchor" href="#modalidad-simple-directa">Modalidad simple (directa)</a></h3>
+<p>En primer lugar, vamos a ver una modalidad en la que trabajamos directamente con el código, sin que sea preprocesado. La hemos llamado <strong>modalidad simple o directa</strong>. En esta modalidad, el contenido de la carpeta se subirá directamente a nuestro servidor final sin ningún cambio específico. Más adelante veremos otro enfoque donde utilizaremos herramientas que modifican el código final (<em>preprocesado o transpilado</em>).</p>
+<p>Lo primero que tenemos que hacer es <a href="https://terminaldelinux.com/terminal/introduccion/manipular-ficheros-carpetas/#crear-carpetas-o-ficheros-vac%C3%ADos">crear una carpeta</a> para nuestro proyecto, que en un alarde de originalidad hemos llamado «<strong>project</strong>» (<em>nos sirve como primer ejemplo, pero a partir de ahora debe ser un nombre representativo para nuestro proyecto</em>). Desde una terminal escribimos:</p>
+<pre class="language-bash "><code class="language-bash"><span class="token comment"># Creamos una carpeta "project"</span>
+$ <span class="token function">mkdir</span> project
+
+<span class="token comment"># Accedemos a ella</span>
+$ <span class="token builtin class-name">cd</span> project
+
+<span class="token comment"># Editamos nuestra página principal con VSCode</span>
+$ code index.html</code></pre>
+<p>El siguiente paso será crear una <strong>estructura de carpetas</strong> que nos resulte cómoda e interesante. Fijate que <strong>project</strong> es la carpeta raíz (<em>la principal</em>). Veamos un ejemplo de estructura de carpetas:</p>
+<pre class="language-bash "><code class="language-bash">+ project
+   + assets
+   + components
+   - index.html
+   - index.js
+   - index.css</code></pre>
+<p>Observa que en el interior de nuestra carpeta <code>project</code> tenemos dos carpetas: <code>assets</code> y <code>components</code>. La primera de ellas, <code>assets</code> se suele utilizar para guardar todos los ficheros considerados estáticos (<em>imágenes, videos, tipografías, sonidos, etc...</em>), mientras que <code>components</code> se utilizará para guardar todos los archivos <code>.js</code> que contengan un WebComponent.</p>
+<blockquote>
+<p><strong>Nota</strong>: A medida que el proyecto crece, es posible que el desarrollador prefiera crear <strong>subcarpetas</strong> para organizar mejor el código. Por ejemplo, en los componentes, se suelen crear carpetas para agrupar por temáticas o contextos si tenemos mucha cantidad de componentes.</p>
+</blockquote>
+<p>Por otro lado, tenemos los tres ficheros principales <code>index.html</code>, <code>index.js</code> y <code>index.css</code>. Recuerda que en el <code>index.html</code> debemos asociar correctamente los ficheros javascript y css, para que todo comience a funcionar de forma adecuada. Veamos un ejemplo del fichero <code>index.html</code>:</p>
+<pre class="language-html "><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>es<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Título del documento<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>index.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>index.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>First example<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<p>Observa las etiquetas <code>&lt;link&gt;</code> y <code>&lt;script&gt;</code> que hacen referencia a nuestros archivos <code>index.css</code> e <code>index.js</code>. Muchos usuarios prefieren incluso tener estos archivos en carpetas <code>css</code> o <code>js</code>, para tenerlo todo más organizado. Aquí se han colocado en el raíz para simplificar lo máximo posible.</p>
+<blockquote>
+<p><strong>Nota</strong>: No te olvides de colocar el atributo <code>type=&quot;module&quot;</code> si quieres utilizar <code>import</code> y <code>export</code> en tus archivos Javascript desde el navegador. En caso de que no lo vayas a hacer, no es necesario.</p>
+</blockquote>
+<p>Por último, y como estamos trabajando en la modalidad simple, vamos a instalar el servidor local <strong>web-dev-server</strong> de <a href="../../../npm/introduccion/instalaciones-globales/index.htm">forma global con npm</a>. Para ello, simplemente escribimos:</p>
+<pre class="language-bash "><code class="language-bash"><span class="token comment"># Instalamos web-dev-server en el proyecto</span>
+$ <span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> @web/dev-server</code></pre>
+<p>Esto instalará el servidor local <code>web-dev-server</code> en nuestro sistema, disponible para utilizar en cualquier proyecto. Recuerda que necesitas tener <a href="https://nodejs.org/es/">NodeJS</a> instalado (<em>mínimo, versión 10</em>).</p>
+<p>Situados en la <strong>carpeta raíz</strong> de nuestro proyecto (<em>es decir, en project</em>), escribimos lo siguiente:</p>
+<pre class="language-bash "><code class="language-bash">$ web-dev-server <span class="token parameter variable">--open</span> <span class="token parameter variable">--watch</span>
+Web Dev Server started<span class="token punctuation">..</span>.
+
+  Root dir: /home/manz/workspace/project
+  Local: http://localhost:8000/
+  Network: http://192.168.1.1:8000/</code></pre>
+<p>Aunque las opciones las veremos a continuación, vamos a comenzar indicando <code>--open</code> para abrir un navegador con la página principal (<em>index.html</em>) y <code>--watch</code> para vigilar los cambios del código, y si los hay, actualice el navegador «automágicamente».</p>
+<blockquote>
+<p>Observa que la ruta a acceder, en principio, sería <code>http://localhost:8000</code>. También puedes usar el formato abreviado de parámetros y escribir <code>wds -o -w</code>, que es más corto.</p>
+</blockquote>
+<p>En este punto, deberíamos poder ver nuestro primer ejemplo, y si cambiamos código en nuestros ficheros <code>index.html</code>, <code>index.js</code> o <code>index.css</code> se deberían ver reflejados en el navegador sobre la marcha.</p>
+<h3 id="parámetros-de-web-dev-server" tabindex="-1"><a class="header-anchor" href="#parámetros-de-web-dev-server">Parámetros de web-dev-server</a></h3>
+<p>Aunque de momento solo hemos utilizado los parámetros <code>--open</code> y <code>--watch</code>, existen muchos otros parámetros bastante interesantes:</p>
+<table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th></th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--port</code> <badge-type class="number"></badge-type> <em>port</em></td>
+<td><code>-p</code></td>
+<td>Indica el puerto a utilizar. Por defecto, <strong>8000</strong>.</td>
+</tr>
+<tr>
+<td><code>--hostname</code> <badge-type class="string"></badge-type> <em>host</em></td>
+<td><code>-h</code></td>
+<td>Indica el host a utilizar. Por defecto, <strong>localhost</strong>.</td>
+</tr>
+<tr>
+<td><code>--app-index</code> <badge-type class="string"></badge-type> <em>index.html</em></td>
+<td><code>-a</code></td>
+<td>Indica la página principal y/o SPA routing. Por defecto, <strong>index.html</strong>.</td>
+</tr>
+<tr>
+<td><code>--root-dir</code> <badge-type class="string"></badge-type> <em>rootdir</em></td>
+<td><code>-r</code></td>
+<td>Indica la carpeta con los ficheros a servir. Por defecto, la carpeta actual.</td>
+</tr>
+<tr>
+<td><code>--open</code> <badge-type class="string"></badge-type> <em>path</em></td>
+<td><code>-o</code></td>
+<td>Abre el navegador en la ruta indicada. Por defecto, <strong>app-index</strong> o <strong>root-dir</strong>.</td>
+</tr>
+<tr>
+<td><code>--watch</code></td>
+<td><code>-w</code></td>
+<td>Vigila los cambios en el código. Si los hay, actualiza el navegador.</td>
+</tr>
+</tbody>
+</table>
+<p>Probablemente, al principio, los parámetros más interesantes serán:</p>
+<ul>
+<li><code>--port</code> permite usar un puerto diferente para el servidor local (<em>por defecto usa 8000</em>).</li>
+<li><code>--app-index</code> permite cambiar el nombre del fichero principal (<em>emula routing, útil en SPA</em>).</li>
+<li><code>--root-dir</code> permite establecer lo que consideraremos nuestra carpeta raíz.</li>
+</ul>
+<p>A medida que crezca la cantidad de parámetros a usar, puede ser interesante crear un <strong>fichero de configuración</strong>. Lo veremos al final del artículo.</p>
+<h3 id="modalidad-de-transpilado" tabindex="-1"><a class="header-anchor" href="#modalidad-de-transpilado">Modalidad de transpilado</a></h3>
+<p>En muchas ocasiones, nos interesará utilizar un enfoque más complejo que la modalidad directa, donde utilizamos <strong>preprocesadores</strong>, <strong>transpiladores</strong> o <strong>herramientas</strong> que modifican nuestro código final, por lo que la modalidad anterior se nos queda corta. Vamos a echar un vistazo para ver que pasos seguir para crear un proyecto análogo al anterior, pero utilizando este enfoque.</p>
+<p>A diferencia de otros servidores, <strong>web-dev-server</strong> pretende fomentar arquitecturas inteligentes, reduciendo en desarrollo los procesos de <strong>build</strong> (<em>transformaciones de código cada vez que este cambia</em>) evitando cambiarlo continuamente, con la pérdida de tiempo que eso conlleva.</p>
+<p>En su lugar, da prioridad a sistemas rápidos de caché, lazy load y al enfoque moderno de <a href="../../../javascript/modulos/que-es-esm/index.htm">módulos ECMAScript</a>. Este enfoque choca frontalmente con los más utilizados hoy en día en el ecosistema Javascript, como los que usan frameworks como <code>React</code> o <code>Vue</code>, o herramientas como <code>Webpack</code>, <code>Parcel</code> y otros, donde hay una fuerte dependencia con <strong>Node</strong> y se utilizan sistemas de módulos legacy como <strong>CommonJS</strong>.</p>
+<p>En esta modalidad, los proyectos suelen gestionarse con <code>npm</code>, por lo que vamos a crear una carpeta para un proyecto, e inicializarlo:</p>
+<pre class="language-bash "><code class="language-bash"><span class="token comment"># Creamos carpeta del proyecto</span>
+$ <span class="token function">mkdir</span> project
+
+<span class="token comment"># Accedemos a ella</span>
+$ <span class="token builtin class-name">cd</span> project
+
+<span class="token comment"># Inicializamos el proyecto con NPM</span>
+$ <span class="token function">npm</span> init <span class="token parameter variable">-y</span></code></pre>
+<p>Al igual que en la modalidad anterior, crearemos una <strong>estructura de carpetas</strong>. Sin embargo, será ligeramente diferente a la aproximación anterior. Probablemente, en algunas estructuras de carpetas te habrás dado cuenta que existe una carpeta <code>src</code>, donde se suelen incluir todos los archivos de código fuente que manejamos, mientras que los ficheros de configuración o «tooling» se encontrarán fuera.</p>
+<blockquote>
+<p>Cuando tenemos una carpeta <code>src</code> en nuestro proyecto, se sobreentiende que trabajamos en una <strong>modalidad de transpilado</strong>. En dicha carpeta tenemos nuestro código fuente original en el que trabajamos: un código moderno, que utiliza características que muchas veces los navegadores no soportan.</p>
+</blockquote>
+<p>La filosofía a seguir en la modalidad de transpilado es <strong>traducir</strong> (<em>transpilar</em>) el código moderno de la carpeta <code>src</code> a otro código de destino, que generalmente se guarda en una carpeta <code>dist</code>, fuera de <code>src</code>. Este código de destino puede variar, siendo generalmente un código más antiguo (<em>y menos legible</em>) compatible con todo tipo de navegadores menos modernos, como <code>Internet Explorer</code> o <code>Safari</code>.</p>
+<p>La estructura de carpetas suele parecerse a la siguiente:</p>
+<pre class="language-bash "><code class="language-bash">+ project
+   + src
+      + assets
+      + components
+      - index.html
+      - index.js
+      - index.css
+   + node_modules
+   - package.json
+   - package-lock.json</code></pre>
+<p>Como se puede ver, el fichero <code>package.json</code> generado por <code>npm</code> (<em>configuración de nuestro proyecto</em>), el fichero <code>package-lock.json</code> (<em>versionado e histórico de las dependencias de nuestro proyecto</em>) y la carpeta <code>node_modules</code> (<em>paquetes instalados con <code>npm</code></em>) permanecen fuera de la carpeta <code>src</code>, mientras que otros archivos como <code>index.html</code>, <code>index.js</code> e <code>index.css</code> se encuentran dentro de <code>src</code>.</p>
+<blockquote>
+<p>Los archivos de tooling o configuración no existirán en nuestra web final de producción, sino que sólo son utilizados en desarrollo (<em>gestión del proyecto y/o generar nuevos archivos procesados</em>), que es lo que estamos analizando en este artículo. Con <code>web-dev-server</code> se propone favorecer la velocidad en entornos de desarrollo, y utilizar automatizadores como <code>rollup</code> para generar las versiones de producción.</p>
+</blockquote>
+<p>En muchos casos, en lugar de seguir el enfoque global de la modalidad que vimos anteriormente, es muy habitual instalar <code>web-dev-server</code> a nivel de proyecto. De esta forma, cualquier desarrollador que descargue el proyecto puede instalarlo con un simple <code>npm install</code>.</p>
+<p>Si prefieres hacerlo a nivel de proyecto, escribimos:</p>
+<pre class="language-bash "><code class="language-bash"><span class="token comment"># Instalamos web-dev-server en el proyecto</span>
+$ <span class="token function">npm</span> i --save-dev @web/dev-server</code></pre>
+<p>Una vez lo tengamos instalado, hay que ejecutarlo utilizando <code>npx</code>, una herramienta de <strong>NodeJS</strong> que buscará el paquete en el proyecto local, ya que si no lo tenemos instalado como global, puede que no lo encuentre escribiendo el comando sin <code>npx</code>. El comando sería el siguiente:</p>
+<pre class="language-bash "><code class="language-bash">$ npx web-dev-server <span class="token parameter variable">--watch</span></code></pre>
+<p>En primer lugar, hay que tener en cuenta varios detalles:</p>
+<ul>
+<li>
+<p>Con <code>--root-dir CARPETA</code> podríamos indicar una carpeta diferente como raíz, y nunca se serviría nada fuera de ahí. En nuestro caso, podríamos indicar la carpeta <code>src</code>.</p>
+</li>
+<li>
+<p>Con <code>--app-index index.html</code> podríamos indicar que <code>index.html</code> es nuestro punto de entrada para cualquier ruta. Ahora mismo no nos interesa, pero esto es muy interesante para emular facilmente una SPA y redireccionar rutas.</p>
+</li>
+</ul>
+<p>Hasta aquí todo bien, sin embargo, podemos tener problemas particulares desde que comencemos a utilizar <code>npm</code> para instalar dependencias que usemos en nuestra página. Vamos a detallarlos en los siguientes apartados.</p>
+<h3 id="bare-imports-paquetes-de-node" tabindex="-1"><a class="header-anchor" href="#bare-imports-paquetes-de-node">Bare imports (Paquetes de node)</a></h3>
+<p>Los <strong>bare imports</strong> (<em>imports «desnudos»</em>) son aquellos que hacemos desde Javascript y no indicamos una ruta al cargarlos, sino que solo indicamos el nombre del paquete. Estos <strong>bare imports</strong> no forman parte del estándar, sino que fue una mecánica de <code>node</code> para hacer más cómoda la importación de paquetes desde la carpeta <code>node_modules</code> (<em>donde las busca</em>):</p>
+<pre class="language-js "><code class="language-js"><span class="token comment">// Import por defecto (ruta relativa)</span>
+<span class="token keyword">import</span> AppElement <span class="token keyword">from</span> <span class="token string">"./components/AppElement.js"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Imports específicos (ruta relativa desde el raíz)</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> getData<span class="token punctuation">,</span> getObject <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"/js/library.js"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Imports específicos (desde una ruta absoluta)</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> html<span class="token punctuation">,</span> render <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"https://unpkg.com/<a href="../../../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="573b3e237a3f233a3b176679657966">[email&#160;protected]</a>"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Bare imports específicos (desde node_modules)</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> html<span class="token punctuation">,</span> render <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"lit-html"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Direct code import (ruta relativa)</span>
+<span class="token keyword">import</span> <span class="token string">"./components/AppElement.js"</span><span class="token punctuation">;</span></code></pre>
+<p>Por lo tanto, si intentamos realizar un <strong>bare import</strong> desde un navegador, probablemente nos aparezca algo parecido al siguiente mensaje, ya que detecta que no le estamos indicando una ruta:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Uncaught TypeError: Failed to resolve module specifier &quot;package&quot;. Relative references must start with either &quot;/&quot;, &quot;./&quot;, or &quot;../&quot;.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>La filosofía de <code>web-dev-server</code> es ir resolviendo estos problemas y «vicios» que se alejan del estándar, proporcionando una forma de transición para ir resolviéndolo mientras nos adaptamos a las nuevas formas de trabajar. Con el parámetro <code>--node-resolve</code> lo podemos resolver, ya que se encarga de reemplazar dichos <strong>bare imports</strong> por su equivalente en rutas:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> html<span class="token punctuation">,</span> render <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./node_modules/lit-html/lit-html.js"</span><span class="token punctuation">;</span></code></pre>
+<p>Ten en cuenta que si tuvieramos una carpeta <code>src</code> y hubieramos aplicado el parámetro <code>--root-dir src</code>, habríamos definido por seguridad que todos los ficheros que pida el navegador se encuentren dentro de la carpeta <code>src</code>, y nunca fuera de ella. Como ahora querríamos que los paquetes de <code>/node_modules/</code> también los cargue, nos daría un error.</p>
+<p>Sin embargo, en nuestro caso, el siguiente comando sería suficiente para hacerlo funcionar:</p>
+<pre class="language-bash "><code class="language-bash">$ npx wds <span class="token parameter variable">--open</span> <span class="token parameter variable">--watch</span> --node-resolve</code></pre>
+<p>De momento, dependemos de <code>node</code> para resolver este tema. En el futuro, el tema de los <code>bare imports</code> se pretende solucionar con una característica llamada <a href="https://www.chromestatus.com/feature/5315286962012160">import maps</a>, que aún no está demasiado extendida ni tiene soporte en navegadores, pero solucionará el tema de <code>node_modules</code> utilizando un fichero <code>JSON</code> como índice de dependencias:</p>
+<p><caniuse-support title="Import maps" feature="import-maps" edge="89/y" firefox="108/y" chrome="89/y" safari="16.4/y" opera="76/y" ios_saf="16.4/y" and_chr="120/y" and_ff="119/y">
+</caniuse-support></p>
+<blockquote>
+<p>Recuerda que es muy recomendable utilizar un sistema basado en <strong>Linux</strong> para trabajar desde la terminal. Si usas Windows, te recomiendo instalar <a href="https://terminaldelinux.com/terminal/introduccion/instalacion-configuracion-wsl/">WSL, el subsistema de Linux en Windows</a>.</p>
+</blockquote>
+<h3 id="commonjs-vs-esm" tabindex="-1"><a class="header-anchor" href="#commonjs-vs-esm">CommonJS vs ESM</a></h3>
+<p>Con lo que hemos hecho hasta ahora debería ser suficiente para poder utilizar librerías en nuestras páginas. Sin embargo, que funcione correctamente dependerá de cómo está hecha la librería en cuestión, y que sistemas de módulos utiliza. Actualmente, los más populares son los dos siguientes:</p>
+<ul>
+<li>
+<p><a href="../../../javascript/modulos/que-es-esm/index.htm"><strong>Módulos ESM</strong></a>: Se trata del estándar nativo de Javascript, comenzado a utilizar desde 2015. Actualmente, es soportado por los navegadores, pero aún no al 100% por NodeJS.</p>
+</li>
+<li>
+<p><strong>CommonJS</strong>: Se trata del sistema de módulos ideado por <strong>NodeJS</strong> cuando no existían los módulos ESM nativos. Actualmente, es soportado por NodeJS (<em>obviamente</em>) pero no será soportado nunca por los navegadores. Se trata de un sistema considerado <strong>legacy</strong> (<em>marcado para ser obsoleto, a favor de ESM</em>).</p>
+</li>
+</ul>
+<p>En el caso de que la librería implemente el primero (<em>ESM</em>), como por ejemplo <a href="https://lit-html.polymer-project.org/">lit-html</a>, no tendríamos problemas al utilizarlo en nuestra página. Sin embargo, si utilizamos otra librería que sólo implemente el segundo (<em>CommonJS</em>), obtendríamos un error similar al siguiente:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Uncaught SyntaxError: The requested module '../node_modules/dayjs/dayjs.min.js' does not provide an export named 'default'</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Este error nos aparece al intentar importar la librería <a href="https://github.com/iamkun/dayjs">dayjs</a> como una librería ESM. Esto ocurre porque <strong>dayjs</strong> usa CommonJS por defecto. Sin embargo, también soporta ESM, como se puede ver en el siguiente ejemplo:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">import</span> dayjs <span class="token keyword">from</span> <span class="token string">"dayjs"</span><span class="token punctuation">;</span>      <span class="token comment">// Error: no encuentra modulo con export default</span>
+<span class="token keyword">import</span> dayjs <span class="token keyword">from</span> <span class="token string">"dayjs/esm"</span><span class="token punctuation">;</span>  <span class="token comment">// OK</span></code></pre>
+<p>Existen repositorios como <a href="https://www.skypack.dev/">SkyPack</a> o <a href="https://unpkg.com/#query-params#:~:text=?module">unpkg</a> que favorecen o permiten utilizar librerías en formato de módulos ESM, pudiendo utilizarlo directamente desde una URL, al estilo <a href="https://deno.land/">Deno</a>. Presumiblemente, con el tiempo, las librerías irán implementando el estándar <strong>ESM</strong>.</p>
+<h3 id="opciones-de-transpilación" tabindex="-1"><a class="header-anchor" href="#opciones-de-transpilación">Opciones de transpilación</a></h3>
+<p>Aunque en el apartado anterior sólo usamos el parámetro <code>--node-resolve</code>, existen más configuraciones que podemos utilizar y que tienen relación con la modalidad de transpilación, donde incluso podemos utilizar transformaciones de código, como las que habitualmente se han venido haciendo en <a href="https://babeljs.io/">babel</a>.</p>
+<p>Los parámetros de <code>web-dev-server</code> en relación a esto son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th></th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--node-resolve</code></td>
+<td><code>-n</code></td>
+<td>Traduce los <strong>bare imports</strong> a rutas de <code>node_modules</code>.</td>
+</tr>
+<tr>
+<td><code>--esbuild-target TARGET</code></td>
+<td></td>
+<td>Traduce Javascript a versiones anteriores de ECMAScript (retrocompatibilidad).</td>
+</tr>
+<tr>
+<td><code>--debug</code></td>
+<td></td>
+<td>Activa el modo verbose y muestra información detallada.</td>
+</tr>
+<tr>
+<td><code>--config</code> <badge-type class="string"></badge-type> <em>file</em></td>
+<td><code>-c</code></td>
+<td>Usa un fichero de configuración en lugar de parámetros CLI.</td>
+</tr>
+</tbody>
+</table>
+<p>Si uno de nuestros objetivos es dar soporte a navegadores antiguos como <code>Safari</code>, versiones especificas de <code>ECMAScript</code> o incluso de <code>Node</code>, podemos utilizar el parámetro <code>--esbuild-target</code> de <code>web-dev-server</code>.</p>
+<p><a href="https://esbuild.github.io/">Esbuild</a> es un automatizador y bundler de Javascript <strong>extremadamente rápido</strong>, que permite hacer traducciones y transpilado de código a una velocidad asombrosa. Podremos utilizarlo desde <code>web-dev-server</code> para convertir nuestro código Javascript <badge-es class="es2021"></badge-es> en código Javascript <badge-es class="es2017"></badge-es> o similar, y conseguir un mejor soporte en navegadores más antiguos.</p>
+<p>Para ello, el primer paso será instalar el complemento <code>@web/dev-server-esbuild</code>:</p>
+<pre class="language-bash "><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-D</span> @web/dev-server-esbuild</code></pre>
+<p>Ahora, al ejecutar, indicamos el parámetro <code>--esbuild-target</code>, indicando a continuación una palabra clave de las que explicaremos a continuación:</p>
+<pre class="language-bash "><code class="language-bash">$ npx web-dev-server <span class="token parameter variable">--open</span> <span class="token parameter variable">--watch</span> --node-resolve --esbuild-target auto</code></pre>
+<p>Los parámetros posibles para <code>--esbuild-target</code> son:</p>
+<ul>
+<li>
+<p>El valor <code>auto</code> hace que <code>esbuild</code> mire el agente de usuario (<em>identificación del navegador</em>) para saber si debe transformar o no el código Javascript. Si utiliza las últimas versiones de Chrome, Firefox o Edge, omite el proceso de compilación porque no es necesario.</p>
+</li>
+<li>
+<p>El valor <code>auto-always</code> es igual al anterior, con la diferencia que realiza proceso de compilación aunque sea la última versión de un navegador moderno. Esto es útil cuando queremos dar soporte a una característica que ni los navegadores modernos tienen compatibilidad.</p>
+</li>
+<li>
+<p>Un valor por navegador. Con valores como <code>chrome80</code>, <code>safari11</code>, <code>firefox57</code>, <code>edge16</code>, <code>node9</code> o similares, puedes especificar explícitamente el navegador mínimo al que quieres dar soporte.</p>
+</li>
+<li>
+<p>Un valor por versión de ECMAScript. Con valores como <code>es2020</code>, <code>es2019</code>, <code>es2018</code>, <code>es2017</code> o <code>es2016</code> puedes indicar hasta que versión de ECMAScript quieres transformar.</p>
+</li>
+<li>
+<p>El valor <code>esnext</code> desactiva por completo la compilación de esbuild.</p>
+</li>
+</ul>
+<h3 id="fichero-de-configuración" tabindex="-1"><a class="header-anchor" href="#fichero-de-configuración">Fichero de configuración</a></h3>
+<p>Cuando estamos probando <code>web-dev-server</code> (<em>o tenemos pocas opciones</em>) es interesante usar los parámetros mediante la línea de comandos como hemos visto hasta ahora. Sin embargo, desde que estos parámetros crecen en número, es muy probable que nos resulte mucho más cómodo crear un <strong>fichero de configuración</strong> llamado <code>web-dev-server.config.mjs</code> en la carpeta raíz del proyecto e indicar todos los parámetros de configuración ahí, ejecutando posteriormente con un simple <code>npx web-dev-server</code>.</p>
+<p>Dicho archivo de configuración pueden indicarse tanto los parámetros de configuración que hemos visto anteriormente, como algunos nuevos que nos permiten personalizar el funcionamiento de <code>web-dev-server</code>:</p>
+<pre class="language-js "><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">port</span><span class="token operator">:</span> <span class="token number">4321</span><span class="token punctuation">,</span>             <span class="token comment">// Usamos el puerto 4321 en lugar de 8000</span>
+  <span class="token literal-property property">watch</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>            <span class="token comment">// Vigilamos cambios (actualiza automágicamente)</span>
+  <span class="token literal-property property">appIndex</span><span class="token operator">:</span> <span class="token string">"index.html"</span><span class="token punctuation">,</span> <span class="token comment">// Routing SPA (los 404 envían a esa ruta)</span>
+  <span class="token literal-property property">nodeResolve</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>      <span class="token comment">// Resolvemos paquetes a node_modules</span>
+  <span class="token literal-property property">preserveSymlinks</span><span class="token operator">:</span> <span class="token boolean">true</span>  <span class="token comment">// Sigue los enlaces simbólicos con nodeResolve</span>
+  <span class="token literal-property property">esbuildTarget</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"auto"</span><span class="token punctuation">,</span> <span class="token string">"safari11"</span><span class="token punctuation">,</span> <span class="token string">"chrome80"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token comment">// Compatibilidad JS</span>
+  <span class="token literal-property property">open</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>             <span class="token comment">// Abrimos la página principal en el navegador</span>
+  <span class="token literal-property property">debug</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>           <span class="token comment">// Se puede activar modo verbose</span>
+  <span class="token literal-property property">http2</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>            <span class="token comment">// Utilizamos HTTPS en lugar de HTTP</span>
+  <span class="token literal-property property">sslKey</span><span class="token operator">:</span> <span class="token string">"./ssl.key"</span><span class="token punctuation">,</span>    <span class="token comment">// Clave privada HTTPS</span>
+  <span class="token literal-property property">sslCert</span><span class="token operator">:</span> <span class="token string">"./ssl.cert"</span><span class="token punctuation">,</span>  <span class="token comment">// Clave pública HTTPS</span>
+  <span class="token literal-property property">rootDir</span><span class="token operator">:</span> <span class="token string">"."</span><span class="token punctuation">,</span>           <span class="token comment">// Utilizamos esta carpeta raíz</span>
+  <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>             <span class="token comment">// Plugins a utilizar</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Entre esos nuevos parámetros para realizar ciertas tareas de más bajo nivel, se encuentran algunos detalles interesantes como por ejemplo:</p>
+<ul>
+<li><strong>Middlewares</strong>: tareas que se realizan antes de procesar las peticiones.</li>
+<li><strong>Plugins</strong>: mecanismos concretos para ampliar funcionalidades.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>middlewares</code> <badge-type class="array"></badge-type></td>
+<td>Incluye tareas de middleware a realizar, como las redirecciones citadas anteriormente.</td>
+</tr>
+<tr>
+<td><code>plugins</code> <badge-type class="array"></badge-type></td>
+<td>Permite añadir plugins que extiendan la funcionalidad de <code>web-dev-server</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Una muestra de <strong>middlewares</strong> podría ser el siguiente ejemplo teórico, donde indicamos que cualquier ruta que termine en <code>.pcss</code> la reescriba como <code>.pcss.css</code>:</p>
+<pre class="language-js "><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* ... */</span>
+  <span class="token literal-property property">rootDir</span><span class="token operator">:</span> <span class="token string">"src"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">middlewares</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token keyword">function</span> <span class="token function">rewriteIndex</span><span class="token punctuation">(</span><span class="token parameter">context<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>context<span class="token punctuation">.</span>url<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">".pcss"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        context<span class="token punctuation">.</span>url <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>context<span class="token punctuation">.</span>url<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.css</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>Recuerda que todo lo que abarca este artículo es para <strong>el servidor local de desarrollo</strong>, y por lo tanto, son operaciones que se realizan en nuestro equipo local. El objetivo es acelerar lo máximo la carga de archivos en el navegador, fomentar el estándar y evitar en lo posible añadir código de herramientas no estándar y fomentar el uso del caché del navegador para evitar esperas y acelerar el desarrollo.</p>
+<p>En otro artículo abordaremos buenas prácticas para generar nuestros archivos de <strong>producción</strong>, que son los que finalmente se suben al servidor definitivo para ser accedido por el público. Por norma general, junto a <code>web-dev-server</code> se suele utilizar <a href="https://rollupjs.org/">RollUp</a>, ya que es uno de los automatizadores que mejor preparado está para <strong>ESM</strong>.</p>
+<blockquote>
+<p>En el caso de querer utilizar otro nombre para nuestro archivo de configuración (<em>por ejemplo, server.config.mjs</em>), podemos lanzar el servidor local con <code>npx web-dev-server -c server.config.mjs</code>.</p>
+</blockquote>
+
+  </div>
+</div>
+
+<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const keystrokes = [...document.querySelectorAll(".post .contents kbd")];
+  const hasKeys = keystrokes.length > 0;
+  let keySound;
+  keystrokes.forEach(key => key.addEventListener("click", () => {
+    if (hasKeys && !keySound) {
+      keySound = new Audio("/assets/sounds/kbd.ogg");
+    }
+    keySound.currentTime = 0;
+    keySound.play();
+  }));
+</script>
+
+    
+    <div id="comentarios" class="buttons">
+  <div class="wrapper">
+    <a class="btn" href="../../index.htm">
+      <svg viewbox="0 0 512 512">
+        <path d="M100 97a37 37 0 0 1 0-54c7-7 16-11 27-11h312V0H127C88 0 57 31 57 70v372c0 39 31 70 70 70h328V108H127c-11 0-20-5-27-11zm65 43h258v340H165V140z"></path>
+        <path d="M144 56a14 14 0 0 0 0 28h311V56H144z"></path>
+      </svg>
+      <div>
+        <span>Volver</span>
+        <small>Al índice</small>
+      </div>
+    </a>
+    <a class="btn prev" href="../../parcel/parcel-build-mode/index.htm" title="Modo de producción de Parcel">
+  <svg viewbox="0 0 24 24">
+    <path fill="currentColor" d="m12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825l5.6 5.6L12 20Z"></path>
+  </svg>
+  <div>
+    <span>Modo de producción de Parcel</span>
+    <small>Capítulo anterior</small>
+  </div>
+</a>
+    
+    <a class="btn" href="https://discord.manz.dev/">
+      <svg viewbox="0 0 24 24">
+        <path fill="currentColor" stroke-width="0" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+      </svg>
+      <div>
+        <span>Acceder a Discord</span>
+        <small>Comunidad de Manz.dev</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajehtml.com/svg/" title="SVG">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#svg"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/css/" title="CSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/postcss/" title="PostCSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="../../../fundamentos/index.htm" title="Fundamentos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="../../../javascript/index.htm" title="Javascript">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="../../../npm/index.htm" title="NPM">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="../../../webcomponents/index.htm" title="WebComponents">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="../../../vuejs/index.htm" title="VueJS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="../../index.htm" title="Automatizadores">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a><a class="topic" href="../../../retos/index.htm" title="Retos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#retos"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+
+<section class="bg dark related">
+  <div class="wrapper column">
+    <h2>Relacionados</h2>
+    <p>En mi canal de <a href="https://youtube.com/@ManzDev?sub_confirmation=1">Youtube</a>, tienes varios videos que podrían interesarte...</p>
+
+    <div class="list"><a href="https://youtu.be/UVauEId-jJ0" title="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+  <img loading="lazy" src="../../../vi/UVauEId-jJ0/mqdefault.jpg" alt="¡Crea código HTML REUTILIZABLE con la etiqueta TEMPLATE! ¡Sin librerías!">
+</a><a href="https://youtu.be/A11eG1o611M" title="Creador de historias con Javascript y ChatGPT">
+  <img loading="lazy" src="../../../vi/A11eG1o611M/mqdefault.jpg" alt="Creador de historias con Javascript y ChatGPT">
+</a><a href="https://youtu.be/KE2xRDM4Amg" title="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+  <img loading="lazy" src="../../../vi/KE2xRDM4Amg/mqdefault.jpg" alt="¡Crea tus PROPIAS ETIQUETAS HTML sin FRAMEWORKS!">
+</a><a href="https://youtu.be/EiKYr5vjs48" title="Diferencias entre getElementById vs querySelector (y otros métodos del DOM)">
+  <img loading="lazy" src="../../../vi/EiKYr5vjs48/mqdefault.jpg" alt="Diferencias entre getElementById vs querySelector (y otros métodos del DOM)">
+</a><a href="https://youtu.be/Xi07tHFzqR8" title="Cómo CLONAR objetos en Javascript correctamente (structuredClone)">
+  <img loading="lazy" src="../../../vi/Xi07tHFzqR8/mqdefault.jpg" alt="Cómo CLONAR objetos en Javascript correctamente (structuredClone)">
+</a><a href="https://youtu.be/S0YA8BadVbM" title="Cambiar clases CSS desde Javascript con classList">
+  <img loading="lazy" src="../../../vi/S0YA8BadVbM/mqdefault.jpg" alt="Cambiar clases CSS desde Javascript con classList">
+</a></div>
+  </div>
+</section>
+
+    
+
+<section class="featured">
+
+  <div class="wrapper column">
+    <h2>Aprender más</h2>
+    <p>Si lo prefieres, puedes aprender también sobre estas temáticas:</p>
+
+    <div class="list"><a class="topic" href="https://lenguajehtml.com/html/" title="HTML5">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#html"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajehtml.com/svg/" title="SVG">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#svg"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/css/" title="CSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#css"></use>
+  </svg>
+</a><a class="topic" href="https://lenguajecss.com/postcss/" title="PostCSS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#postcss"></use>
+  </svg>
+</a><a class="topic" href="../../../fundamentos/index.htm" title="Fundamentos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#blueprint"></use>
+  </svg>
+</a><a class="topic" href="../../../javascript/index.htm" title="Javascript">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#js"></use>
+  </svg>
+</a><a class="topic" href="../../../npm/index.htm" title="NPM">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#npm"></use>
+  </svg>
+</a><a class="topic" href="../../../webcomponents/index.htm" title="WebComponents">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#webcomponents"></use>
+  </svg>
+</a><a class="topic" href="https://terminaldelinux.com/terminal/" title="Terminal">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#terminal"></use>
+  </svg>
+</a><a class="topic" href="../../../vuejs/index.htm" title="VueJS">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#vuejs"></use>
+  </svg>
+</a><a class="topic" href="../../index.htm" title="Automatizadores">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#bundler"></use>
+  </svg>
+</a><a class="topic" href="../../../retos/index.htm" title="Retos">
+  <svg class="logo">
+    <use href="../../../assets/icons/logos.svg#retos"></use>
+  </svg>
+</a></div>
+  </div>
+
+</section>
+
+    <section class="about">
+  <div class="wrapper column">
+    <h2>¿Quién soy yo?</h2>
+
+    <div class="about-container">
+      <div class="avatar"></div>
+      <div>
+        <p>Soy Manz, vivo en Tenerife (España) y soy streamer partner en Twitch <svg width="20" height="20" viewbox="0 0 20 20">
+          <path fill="#a970ff" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+          </svg> y profesor. Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.
+          Aunque soy full-stack, mi pasión es el front-end, la terminal y crear cosas divertidas y locas.
+        </p>
+      </div>
+    </div>
+    <p>Puedes encontrar más sobre mi en <a href="https://manz.dev/">Manz.dev</a></p>
+  </div>
+</section>
+
+<script>
+  const avatar = document.querySelector(".about .avatar");
+  let honk;
+  avatar.addEventListener("mousedown", () => {
+    if (!honk)
+      honk = new Audio("/assets/sounds/toy.ogg");
+    honk.currentTime = 0;
+    honk.play();
+  });
+</script>
+
+    
+
+<footer class="main">
+
+  <div class="wrapper">
+    <div class="social">
+
+      <div class="group">
+        <a class="btn" href="https://twitch.tv/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitch"></use>
+  </svg>
+  <span>Twitch</span>
+</a>
+        <a class="btn" href="https://youtube.com/@ManzDev?sub_confirmation=1">
+  <svg>
+    <use href="../../../assets/icons/social.svg#youtube"></use>
+  </svg>
+  <span>Youtube</span>
+</a>
+        <a class="btn" href="https://twitter.com/Manz">
+  <svg>
+    <use href="../../../assets/icons/social.svg#twitter"></use>
+  </svg>
+  <span>Twitter</span>
+</a>
+        <a class="btn" href="https://instagram.com/manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#instagram"></use>
+  </svg>
+  <span>Instagram</span>
+</a>
+        <a class="btn" href="https://tiktok.com/@manz.dev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#tiktok"></use>
+  </svg>
+  <span>Tiktok</span>
+</a>
+        <a class="btn" href="https://linkedin.com/in/joseromanhdez">
+  <svg>
+    <use href="../../../assets/icons/social.svg#linkedin"></use>
+  </svg>
+  <span>Linkedin</span>
+</a>
+        <a class="btn" href="https://discord.manz.dev/">
+  <svg>
+    <use href="../../../assets/icons/social.svg#discord"></use>
+  </svg>
+  <span>Discord</span>
+</a>
+        <a class="btn" href="https://github.com/ManzDev">
+  <svg>
+    <use href="../../../assets/icons/social.svg#github"></use>
+  </svg>
+  <span>GitHub</span>
+</a>
+      </div>
+
+      <div class="group last column">
+        <p>Creado por Manz con <span title="<3">❤</span> · Alojado en <a href="https://manz.dev/digitalocean">DigitalOcean</a>.</p>
+        <p>&copy; Todos los derechos reservados. Los izquierdos también.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-136544-6', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src='../../../analytics.js'></script>
+
+
+<script>
+  const heart = document.querySelector("footer.main span[title='<3']");
+  let beat;
+  heart.addEventListener("mousedown", () => {
+    if (!beat)
+      beat = new Audio("/assets/sounds/beat.ogg");
+    beat.currentTime = 0;
+    beat.play();
+  });
+</script>
+
+  </div></body>
+
+</html>

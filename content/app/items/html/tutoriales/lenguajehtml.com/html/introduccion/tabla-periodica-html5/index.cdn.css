@@ -1,0 +1,29 @@
+#app {
+  width: 1280px;
+  margin: 1em auto 2em;
+}
+
+.page .contents {
+  max-width: none;
+}
+
+.post-container {
+  background:
+    linear-gradient(#111 5%, transparent, #111 95%),
+    url("488fd18.jpg");
+}
+
+@media (width <= 1024px) {
+  #app { display: none; }
+
+  #warning {
+    padding: 1.5rem;
+    background: #801a11;
+    color: #fff;
+    text-align: center;
+  }
+}
+
+@media (width >= 1024px) {
+  #warning { display: none; }
+}

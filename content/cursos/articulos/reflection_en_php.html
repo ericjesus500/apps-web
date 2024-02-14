@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://diego.com.es/reflection-en-php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        
+                        <link rel="stylesheet" type="text/css" href="./reflection_en_php_files/semantic.css">
+            <link rel="stylesheet" type="text/css" href="./reflection_en_php_files/sem2.css">
+        
+    <script type="text/javascript" async="" src="./reflection_en_php_files/js"></script><script async="" src="./reflection_en_php_files/analytics.js.descarga"></script><script src="./reflection_en_php_files/highlight.js.descarga"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="./reflection_en_php_files/agate.css">
+
+        <link rel="icon" type="image/x-icon" href="https://diego.com.es/favicon.ico">
+
+        <title>
+        Reflection en PHP        </title>
+
+        <meta name="description" content="
+        La reflexión permite a un objeto poder informar acerca de sus propias propiedades y métodos, para mostrarlos o modificarlos">
+                    <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-62157855-1', 'auto');
+                ga('send', 'pageview');
+            </script>
+            </head>
+
+    <body class="pushable">
+
+        <div class="ui large top fixed menu transition hidden">
+    <div class="ui container">
+
+        <a class="active item" href="https://diego.com.es/">Diego Lázaro</a>
+        <a class="active red item" href="https://angular.diego.com.es/">Angular</a>
+        <a class="item" href="https://leanpub.com/guiadephp">Libro de PHP</a>
+
+        <div class="right item">
+            <a href="https://diego.com.es/reflection-en-php#"><i class="arrow up icon"></i></a>
+        </div>
+    </div>
+</div>
+
+<div class="ui left vertical inverted sidebar labeled icon menu">
+    <a class="item" href="https://diego.com.es/">
+        <i class="home icon"></i>
+        Inicio
+    </a>
+    <a class="active red item" href="https://angular.diego.com.es/">
+        <i class="circle icon"></i>
+        Angular
+    </a>
+</div>
+        <div class="pusher">
+                <div class="ui inverted vertical masthead center aligned segment">
+        <div class="ui container">
+    <div class="ui large secondary inverted pointing menu">
+
+        <a class="toc item">
+            <i class="sidebar icon"></i>
+        </a>
+
+        <a class="active item" href="https://diego.com.es/">Diego Lázaro</a>
+        <a class="item" href="https://diego.com.es/contacto">Contacto</a>
+        <a class="active red item" href="https://angular.diego.com.es/">Angular</a>
+
+        <div class="right item">
+            <a class="ui inverted button" href="https://leanpub.com/guiadephp">Libro de PHP</a>
+        </div>
+
+    </div>
+</div>
+
+            
+                 <div class="ui text container">
+
+                        <div class="ui inverted segment">
+                                                    </div>
+
+                        <h1 class="ui inverted header">
+                            Reflection en PHP                        </h1>
+
+                        <div class="ui text container diego-subheader">
+                            <h2>La reflexión permite a un objeto poder informar acerca de sus propias propiedades y métodos, para mostrarlos o modificarlos</h2>
+                        </div>
+
+                 </div>
+
+                </div>
+
+        <div class="main ui container">
+        <div class="ui basic segment">
+
+            
+            
+    
+    <div class="ui yellow message">
+        <i class="close icon"></i>
+        <div class="header">
+            Contenido modificable
+        </div>
+
+        <p>Si ves errores o quieres modificar/añadir contenidos, puedes
+                    <a href="https://github.com/diegotham/certificacion-php/blob/master/8-Object-Oriented-Programming/7-reflection-en-php.md"><i class="github icon"></i>crear un pull request</a>. Gracias</p>
+            </div>
+
+    
+    <div class="ui basic segment">
+        <p><strong>Reflection</strong> (o <em>reflexión</em>) es cuando un <strong>objeto</strong> es capaz de <strong>examinarse a sí mismo de forma retrospectiva</strong> para <strong>informarte</strong> de sus métodos, propiedades o clases <strong>durante la ejecución del script</strong>. Es una funcionalidad importante y usada con frecuencia en el <strong>desarrollo de aplicaciones</strong>.</p>
+<p>Reflection es frecuentemente utilizado para <strong>hacer debugging</strong>. Si se utilizan funciones como _get<em>class()</em> o _get_class<em>methods()</em> cuando se trabaja con un objeto, se está utilizando la <strong>reflexión</strong>. También se emplea para <strong>crear documentación</strong>. Reflection puede generar documentación automáticamente, inspeccionando cada método, constructor o clase para determinar que es lo que entra y sale de cada uno.</p>
+<p>La <strong>reflexión</strong> es posible en objetos, clases, métodos, propiedades, funciones, parámetros, excepciones y extensiones. Cada uno tiene una clase particular de la forma: ReflectionObject, ReflectionClass, ReflectionMethod, ReflectionProperty, ReflecionFunction, ReflectionParameter, ReflectionException y ReflectionExtension.</p>
+<p><strong>Indice de contenido</strong></p>
+<ol>
+<li>Ejemplo de uso de Reflection</li>
+<li>Obtener información con Reflection</li>
+<li>Manipular información con Reflection</li>
+<li>Uso indirecto de Reflection</li>
+<li>Cuando usar Reflection</li>
+</ol>
+<h3>1. Ejemplo de uso de Reflection</h3>
+<p>Suponemos un simple blog, con las clases <strong>Post</strong> y <strong>Autor</strong>:</p>
+<pre><code class="hljs php"><span class="hljs-comment">// Post.php</span>
+<span class="hljs-keyword">require_once</span> <span class="hljs-string">'Autor.php'</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Post</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">publicarNuevoArticulo</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-variable">$autor</span> = <span class="hljs-keyword">new</span> Autor(<span class="hljs-string">'Diego'</span>);
+        <span class="hljs-variable">$autor</span>-&gt;nuevoArticulo(<span class="hljs-string">'2451'</span>);
+        <span class="hljs-variable">$autor</span>-&gt;publicar();
+    }
+}
+<span class="hljs-comment">// Autor.php</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Autor</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-variable">$nombre</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$articuloID</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(<span class="hljs-variable">$nombre</span>)</span></span>{
+        <span class="hljs-variable">$this</span>-&gt;nombre = <span class="hljs-variable">$nombre</span>;
+    }
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">nuevoArticulo</span><span class="hljs-params">(<span class="hljs-variable">$articuloID</span>)</span></span>{
+        <span class="hljs-variable">$this</span>-&gt;articuloID = <span class="hljs-variable">$articuloID</span>;
+    }
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">publicar</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-comment">// Código para publicar un artículo</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    }
+}</code></pre>
+<p>En la función <em>publicarNuevoArticulo()</em> la variable <em>$autor</em> es del tipo clase <strong>Autor</strong>. No sería necesario emplear <strong>reflection</strong>. Pero si introducimos una <strong>nueva clase Manager</strong>:</p>
+<pre><code class="hljs php"><span class="hljs-comment">// Manager.php</span>
+<span class="hljs-keyword">require_once</span> <span class="hljs-string">'Autor.php'</span>;
+<span class="hljs-keyword">require_once</span> <span class="hljs-string">'Post.php'</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Manager</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hacerTarea</span><span class="hljs-params">(DateTime <span class="hljs-variable">$date</span>)</span></span>{
+        <span class="hljs-keyword">if</span>((<span class="hljs-keyword">new</span> DateTime())-&gt;getTimestamp() &gt; <span class="hljs-variable">$date</span>-&gt;getTimestamp()){
+            <span class="hljs-variable">$autor</span> = <span class="hljs-keyword">new</span> Autor(<span class="hljs-string">'Diego'</span>);
+            <span class="hljs-variable">$post</span> = <span class="hljs-keyword">new</span> Post();
+            <span class="hljs-variable">$post</span>-&gt;publicarNuevoArticulo(<span class="hljs-variable">$autor</span>);
+        }
+    }
+}
+<span class="hljs-comment">// Modificaremos también Post con lo siguiente:</span>
+<span class="hljs-comment">// Post.php</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Post</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">publicarNuevoArticulo</span><span class="hljs-params">(<span class="hljs-variable">$autor</span>)</span></span>{
+        <span class="hljs-variable">$autor</span>-&gt;nuevoArticulo(<span class="hljs-string">'2451'</span>);
+        <span class="hljs-variable">$autor</span>-&gt;publicar();
+    }
+}</code></pre>
+<p>Ahora Post no tiene relación con la clase Autor. No incluye su archivo, no inicializa su clase y desconoce que exista. Se podría pasar un objeto de cualquier tipo a <em>publicarNuevoArticulo()</em> y el código funcionaría.</p>
+<p><img src="./reflection_en_php_files/diagramapostautor.png" alt="Diagrama explicación de Reflection en PHP"></p>
+<p><strong>Post</strong> sólo tiene una relación directa con <strong>Manager</strong>. <strong>Manager</strong> lo crea, y por tanto <strong>Post</strong> depende de <strong>Manager</strong>. <strong>Post</strong> ya no tiene ninguna relación con la clase <strong>Autor</strong>, y <strong>Autor</strong> sólo tiene relación con <strong>Manager</strong>.</p>
+<p>Durante la ejecución, <strong>Post</strong> utiliza un objeto <strong>Autor</strong>, de ahí que en el diagrama se vea un interrogante junto con "utiliza". Durante la ejecución, <strong>PHP</strong> simplemente inspecciona el objeto recibido y verifica que implementa los métodos <em>nuevoArticulo()</em> y <em>publicar()</em>.</p>
+<h3>2. Obtener información con Reflection</h3>
+<p>Con <strong>PHP</strong> y <strong>Reflection</strong> podemos mostrar información de un objeto. Pongamos un _<strong>var_dump</strong>_ en <em>publicarNuevoArticulo()</em> e iniciemos el proceso:</p>
+<pre><code class="hljs php"><span class="hljs-comment">// Modificamos Post en Post.php añadiendo el var_dump</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Post</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">publicarNuevoArticulo</span><span class="hljs-params">(<span class="hljs-variable">$autor</span>)</span></span>{
+        <span class="hljs-variable">$autor</span>-&gt;nuevoArticulo(<span class="hljs-string">'2451'</span>);
+        <span class="hljs-variable">$autor</span>-&gt;publicar();
+        var_dump(<span class="hljs-keyword">new</span> ReflectionClass(<span class="hljs-variable">$autor</span>));
+    }
+}
+<span class="hljs-comment">// Iniciamos el proceso</span>
+<span class="hljs-variable">$autor</span> = <span class="hljs-keyword">new</span> Autor(<span class="hljs-string">"Diego"</span>);
+<span class="hljs-variable">$post</span> = <span class="hljs-keyword">new</span> Post();
+<span class="hljs-variable">$post</span>-&gt;publicarNuevoArticulo(<span class="hljs-variable">$autor</span>);
+<span class="hljs-comment">/*
+Devuelve:
+object(ReflectionClass)[3]
+  public 'name' =&gt; string 'Autor' (length=5)
+*/</span></code></pre>
+<p>La clase ReflectionClass tiene una propiedad <em>name</em> con el tipo de <em>$autor</em>, Autor. Si queremos más información, podemos emplear diferentes métodos. Primero asignaremos la clase ReflectionClass a una variable y después emplearemos <em>getMethods()</em>:</p>
+<pre><code class="hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Post</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">publicarNuevoArticulo</span><span class="hljs-params">(<span class="hljs-variable">$autor</span>)</span></span>{
+        <span class="hljs-variable">$autor</span>-&gt;nuevoArticulo(<span class="hljs-string">'2451'</span>);
+        <span class="hljs-variable">$autor</span>-&gt;publicar();
+        <span class="hljs-variable">$reflector</span> = <span class="hljs-keyword">new</span> ReflectionClass(<span class="hljs-variable">$autor</span>);
+        var_dump(<span class="hljs-variable">$reflector</span>-&gt;getMethods());
+    }
+}
+<span class="hljs-comment">/*
+Devuelve:
+array (size=3)
+  0 =&gt; &amp;
+    object(ReflectionMethod)[4]
+      public 'name' =&gt; string '__construct' (length=11)
+      public 'class' =&gt; string 'Autor' (length=5)
+  1 =&gt; &amp;
+    object(ReflectionMethod)[5]
+      public 'name' =&gt; string 'nuevoArticulo' (length=13)
+      public 'class' =&gt; string 'Autor' (length=5)
+  2 =&gt; &amp;
+    object(ReflectionMethod)[6]
+      public 'name' =&gt; string 'publicar' (length=8)
+      public 'class' =&gt; string 'Autor' (length=5)
+*/</span></code></pre>
+<p>Otro método que se puede utilizar es <em>getProperties()</em>:</p>
+<pre><code class="hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Post</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">publicarNuevoArticulo</span><span class="hljs-params">(<span class="hljs-variable">$autor</span>)</span></span>{
+        <span class="hljs-variable">$autor</span>-&gt;nuevoArticulo(<span class="hljs-string">'2451'</span>);
+        <span class="hljs-variable">$autor</span>-&gt;publicar();
+        <span class="hljs-variable">$reflector</span> = <span class="hljs-keyword">new</span> ReflectionClass(<span class="hljs-variable">$autor</span>);
+        var_dump(<span class="hljs-variable">$reflector</span>-&gt;getProperties());
+    }
+}
+<span class="hljs-comment">/*
+Devuelve:
+array (size=2)
+  0 =&gt; &amp;
+    object(ReflectionProperty)[4]
+      public 'name' =&gt; string 'nombre' (length=6)
+      public 'class' =&gt; string 'Autor' (length=5)
+  1 =&gt; &amp;
+    object(ReflectionProperty)[5]
+      public 'name' =&gt; string 'articuloID' (length=10)
+      public 'class' =&gt; string 'Autor' (length=5)
+*/</span></code></pre>
+<p>Desde un objeto <strong>ReflectionClass</strong> podemos obtener un objeto <strong>ReflectionMethod</strong> con <em>getMethod()</em> y un objeto <strong>ReflectionProperty</strong> con <em>getProperty()</em>. Estos objetos extienden las posibilidades reflexivas:</p>
+<pre><code class="hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Post</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">publicarNuevoArticulo</span><span class="hljs-params">(<span class="hljs-variable">$autor</span>)</span></span>{
+        <span class="hljs-variable">$autor</span>-&gt;nuevoArticulo(<span class="hljs-string">'2451'</span>);
+        <span class="hljs-variable">$autor</span>-&gt;publicar(); <span class="hljs-comment">// Primera llamada a publicar()</span>
+        <span class="hljs-variable">$reflector</span> = <span class="hljs-keyword">new</span> ReflectionClass(<span class="hljs-variable">$autor</span>);
+        <span class="hljs-variable">$metodoPublicar</span> = <span class="hljs-variable">$reflector</span>-&gt;getMethod(<span class="hljs-string">'publicar'</span>);
+        <span class="hljs-variable">$metodoPublicar</span>-&gt;invoke(<span class="hljs-variable">$autor</span>); <span class="hljs-comment">// Segunda llamada a publicar()</span>
+    }
+}</code></pre>
+<p>Hemos utilizado <em>getMethod()</em> para extraer sólo un método con el nombre "publicar". El resultado es un objeto <strong>ReflectionMethod</strong>. Desde este objeto hemos llamado al método <em>invoke()</em>, pasándole el objeto <em>$autor</em>, para ejecutar por segunda vez la función <em>publicar()</em>.</p>
+<p>Este proceso ha resultado simple en este caso, porque ya teníamos un objeto <strong>Autor</strong> al que pasarle <em>invoke()</em>. Podríamos tener varios objetos <strong>Autor</strong> permitiéndonos elegir qué objeto usar. En otras circunstancias, podría no haber un objeto con el que trabajar, en ese caso necesitaríamos obtener uno con <strong>ReflectionClass</strong>.</p>
+<p>Para ver que se ha llamado dos veces a <em>publicar()</em>, puedes modificar la función así:</p>
+<pre><code class="hljs php"><span class="hljs-comment">// Autor.php</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Autor</span> </span>{
+...
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">publicar</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">echo</span> (<span class="hljs-string">"Hola&lt;br&gt;"</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    }
+}</code></pre>
+<h3>3. Manipular información con Reflection</h3>
+<p>También es posible <strong>modificar el código en ejecución</strong>. Por ejemplo vamos a modificar una propiedad private que no tiene un <em>setter</em>.</p>
+<p>Primero añadimos un método <em>getter</em> en Autor que devuelve el <em>$nombre</em>:</p>
+<pre><code class="hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Autor</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-variable">$nombre</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$articuloID</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(<span class="hljs-variable">$nombre</span>)</span></span>{
+        <span class="hljs-variable">$this</span>-&gt;nombre = <span class="hljs-variable">$nombre</span>;
+    }
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">nuevoArticulo</span><span class="hljs-params">(<span class="hljs-variable">$articuloID</span>)</span></span>{
+        <span class="hljs-variable">$this</span>-&gt;articuloID = <span class="hljs-variable">$articuloID</span>;
+    }
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">publicar</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    }
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">obtenerNombre</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;nombre;
+    }
+}</code></pre>
+<p>La propiedad <em>$nombre</em> se establece en el momento en que se instancia la clase, y no tenemos ningún método público que nos permita cambiarlo, pero podemos modificarlo con Reflection.</p>
+<p>Primero intentamos obtener el valor de $nombre:</p>
+<pre><code class="hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Post</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">publicarNuevoArticulo</span><span class="hljs-params">(<span class="hljs-variable">$autor</span>)</span></span>{
+        var_dump(<span class="hljs-variable">$autor</span>-&gt;obtenerNombre());
+        <span class="hljs-variable">$reflector</span> = <span class="hljs-keyword">new</span> ReflectionClass(<span class="hljs-variable">$autor</span>);
+        <span class="hljs-variable">$nombreAutor</span> = <span class="hljs-variable">$reflector</span>-&gt;getProperty(<span class="hljs-string">'nombre'</span>);
+        <span class="hljs-variable">$nombreAutor</span>-&gt;getValue(<span class="hljs-variable">$autor</span>);
+    }
+}
+<span class="hljs-comment">/*
+Devuelve:
+Fatal error: Uncaught exception 'ReflectionException' with message
+'Cannot access non-public member Autor::nombre'
+*/</span></code></pre>
+<p>Pero como vemos nos devuelve un <strong>error fatal</strong>, ya que no podemos acceder a la propiedad privada. Para arreglar esto, tenemos que decirle al objeto <strong>ReflectionProperty</strong> que nos de <strong>acceso a propiedades y métodos privados</strong>:</p>
+<pre><code class="hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Post</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">publicarNuevoArticulo</span><span class="hljs-params">(<span class="hljs-variable">$autor</span>)</span></span>{
+        var_dump(<span class="hljs-variable">$autor</span>-&gt;obtenerNombre());
+        <span class="hljs-variable">$reflector</span> = <span class="hljs-keyword">new</span> ReflectionClass(<span class="hljs-variable">$autor</span>);
+        <span class="hljs-variable">$nombreAutor</span> = <span class="hljs-variable">$reflector</span>-&gt;getProperty(<span class="hljs-string">'nombre'</span>);
+        <span class="hljs-variable">$nombreAutor</span>-&gt;setAccessible(<span class="hljs-keyword">true</span>);
+        var_dump(<span class="hljs-variable">$nombreAutor</span>-&gt;getValue(<span class="hljs-variable">$autor</span>));
+    }
+}
+<span class="hljs-comment">/*
+Devuelve:
+string 'Diego' (length=5)
+string 'Diego' (length=5)
+*/</span></code></pre>
+<p>Con el método <em>setAccessible(true)</em> hemos podido <strong>acceder a una propiedad privada</strong>. Lo devuelve dos veces porque primero hemos hecho <strong>var_dump</strong> con <em>obtenerNombre()</em> y luego con <em>getValue()</em>. Ahora que ya podemos acceder, también podemos modificarla con <em>setValue()</em>:</p>
+<pre><code class="hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Post</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">publicarNuevoArticulo</span><span class="hljs-params">(<span class="hljs-variable">$autor</span>)</span></span>{
+        var_dump(<span class="hljs-variable">$autor</span>-&gt;obtenerNombre());
+        <span class="hljs-variable">$reflector</span> = <span class="hljs-keyword">new</span> ReflectionClass(<span class="hljs-variable">$autor</span>);
+        <span class="hljs-variable">$nombreAutor</span> = <span class="hljs-variable">$reflector</span>-&gt;getProperty(<span class="hljs-string">'nombre'</span>);
+        <span class="hljs-variable">$nombreAutor</span>-&gt;setAccessible(<span class="hljs-keyword">true</span>);
+        <span class="hljs-variable">$nombreAutor</span>-&gt;setValue(<span class="hljs-variable">$autor</span>, <span class="hljs-string">'Helena'</span>);
+        var_dump(<span class="hljs-variable">$nombreAutor</span>-&gt;getValue(<span class="hljs-variable">$autor</span>));
+    }
+}
+<span class="hljs-comment">/*
+Devuelve:
+string 'Diego' (length=5)
+string 'Helena' (length=6)
+*/</span></code></pre>
+<h3>4. Uso indirecto de reflection</h3>
+<p>Algunas funciones incorporadas de PHP usan indirectamente <strong>reflection</strong>, por ejemplo en la función _call_user<em>func()</em>.</p>
+<p>La función _call_user<em>func()</em> acepta un <em>array</em>: el primer elemento apunta a un <strong>objeto</strong>, y el segundo al nombre de un <strong>método</strong>. Se puede proporcionar un parámetro opcional, el cual se pasa al método llamado. Por ejemplo:</p>
+<pre><code class="hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Post</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">publicarNuevoArticulo</span><span class="hljs-params">(<span class="hljs-variable">$autor</span>)</span></span>{
+        var_dump(<span class="hljs-variable">$autor</span>-&gt;obtenerNombre());
+        <span class="hljs-variable">$reflector</span> = <span class="hljs-keyword">new</span> ReflectionClass(<span class="hljs-variable">$autor</span>);
+        <span class="hljs-variable">$nombreAutor</span> = <span class="hljs-variable">$reflector</span>-&gt;getProperty(<span class="hljs-string">'nombre'</span>);
+        <span class="hljs-variable">$nombreAutor</span>-&gt;setAccessible(<span class="hljs-keyword">true</span>);
+        <span class="hljs-variable">$nombreAutor</span>-&gt;setValue(<span class="hljs-variable">$autor</span>, <span class="hljs-string">'Helena'</span>);
+
+        var_dump(<span class="hljs-variable">$nombreAutor</span>-&gt;getValue(<span class="hljs-variable">$autor</span>));
+
+        var_dump(call_user_func(<span class="hljs-keyword">array</span>(<span class="hljs-variable">$autor</span>, <span class="hljs-string">'obtenerNombre'</span>)));
+    }
+}
+<span class="hljs-comment">/*
+Devuelve:
+string 'Diego' (length=5)
+string 'Helena' (length=6)
+string 'Helena' (length=6)
+*/</span></code></pre>
+<p>El código devuelve el valor correcto: Helena.</p>
+<p>Otro ejemplo de <strong>reflexión indirecta</strong> es cuando se llama a un método de forma dinámica:</p>
+<pre><code class="hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Post</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">publicarNuevoArticulo</span><span class="hljs-params">(<span class="hljs-variable">$autor</span>)</span></span>{
+        var_dump(<span class="hljs-variable">$autor</span>-&gt;obtenerNombre());
+        <span class="hljs-variable">$reflector</span> = <span class="hljs-keyword">new</span> ReflectionClass(<span class="hljs-variable">$autor</span>);
+        <span class="hljs-variable">$nombreAutor</span> = <span class="hljs-variable">$reflector</span>-&gt;getProperty(<span class="hljs-string">'nombre'</span>);
+        <span class="hljs-variable">$nombreAutor</span>-&gt;setAccessible(<span class="hljs-keyword">true</span>);
+        <span class="hljs-variable">$nombreAutor</span>-&gt;setValue(<span class="hljs-variable">$autor</span>, <span class="hljs-string">'Helena'</span>);
+        var_dump(<span class="hljs-variable">$nombreAutor</span>-&gt;getValue(<span class="hljs-variable">$autor</span>));
+        <span class="hljs-variable">$nombreMetodo</span> = <span class="hljs-string">'obtenerNombre'</span>;
+        var_dump(<span class="hljs-variable">$autor</span>-&gt;<span class="hljs-variable">$nombreMetodo</span>());
+    }
+}
+<span class="hljs-comment">/*
+Devuelve:
+string 'Diego' (length=5)
+string 'Helena' (length=6)
+string 'Helena' (length=6)
+*/</span></code></pre>
+<p>Como vemos devuelve lo mismo que el ejemplo anterior. <strong>PHP</strong> simplemente reemplaza la variable con el <em>string</em> que representa y llama al método. También funciona cuando se quiere crear un objeto usando variables como nombres de clases.</p>
+<h3>5. Cuando usar Reflection</h3>
+<p>Lista de <strong>situaciones donde puede ser necesario usar Reflection</strong>:</p>
+<ul>
+<li><strong>Dynamic typing</strong> (determinación de tipos dinámica).</li>
+<li><strong>Aspect Oriented Programming</strong> recibe llamadas a métodos y emplaza código alrededor de métodos.</li>
+<li><strong>PHPUnit</strong> utiliza bastante Reflection, al igual que otros mocking frameworks.</li>
+<li><strong>Web frameworks</strong> usan en general Reflection para diferentes aspectos: para inicar modelos, construir objetos para views, etc. <strong>Laravel</strong> por ejemplo usa mucho Reflecion para inyectar dependencias.</li>
+<li><strong>Metaprogramming</strong>, como los últimos ejemplos de reflexión indirecta.</li>
+<li><strong>Code analysis frameworks</strong>, para entender el código.</li>
+</ul>
+<p>No conviene abusar de Reflection ya que puede resultar caro en recursos.</p>
+    </div>
+
+        </div>
+    </div>
+
+            <div class="ui vertical footer segment">
+    <div class="ui grid container">
+        <div class="row">
+            <div class="ui one column centered grid">
+                <div class="ui secondary segment">
+                    <div class="ui mini images">
+                        <a href="http://twitter.com/diegotham" target="_blank"><img class="ui image" alt="Twitter Diego Lázaro" src="./reflection_en_php_files/twitter.jpg"></a>
+                        <a href="http://github.com/diegotham" target="_blank"><img class="ui image" alt="Github Diego Lázaro" src="./reflection_en_php_files/github.jpg"></a>
+                    </div>
+                <p>Copyright © Diego Lázaro 2018</p>
+                    <p>Sitio construido con
+                        <a href="http://symfony.com/" rel="nofollow" target="_blank">Symfony</a> &amp;
+                        <a href="http://semantic-ui.com/" rel="nofollow" target="_blank">Semantic-UI</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
+        </div>
+
+                    <script src="./reflection_en_php_files/jquery.min.js.descarga"></script>
+            <script src="./reflection_en_php_files/semantic.min.js.descarga"></script>
+            <script src="./reflection_en_php_files/sem.js.descarga"></script>
+        
+    
+
+
+</body></html>

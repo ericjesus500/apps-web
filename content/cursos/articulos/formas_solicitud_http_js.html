@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)https://www.freecodecamp.org/espanol/news/solicitud-http-en-javascript/ -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        
+            <title>Aquí están las formas más populares de hacer una solicitud HTTP en JavaScript</title>
+        
+        <meta name="HandheldFriendly" content="True">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+        
+            <link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="./formas_solicitud_http_js_files/css2">
+        
+
+        
+        
+    <link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="./formas_solicitud_http_js_files/prism.min.css">
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://cdn.freecodecamp.org/news-assets/prism/1.29.0/themes/prism.min.css"
+  />
+</noscript>
+<link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="./formas_solicitud_http_js_files/prism-unescaped-markup.min.css">
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://cdn.freecodecamp.org/news-assets/prism/1.29.0/plugins/unescaped-markup/prism-unescaped-markup.min.css"
+  />
+</noscript>
+
+<script type="text/javascript" async="" src="./formas_solicitud_http_js_files/js"></script><script type="text/javascript" async="" src="./formas_solicitud_http_js_files/analytics.js.descarga"></script><script type="text/javascript" async="" src="./formas_solicitud_http_js_files/js(1)"></script><script async="" src="./formas_solicitud_http_js_files/gtm.js.descarga"></script><script defer="" src="./formas_solicitud_http_js_files/prism-core.min.js.descarga"></script>
+<script defer="" src="./formas_solicitud_http_js_files/prism-autoloader.min.js.descarga"></script>
+
+
+
+        
+        <link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="./formas_solicitud_http_js_files/global-2c6f2910a9.css">
+        <link rel="stylesheet" type="text/css" href="./formas_solicitud_http_js_files/screen-e9fc5800e5.css">
+        <link rel="stylesheet" type="text/css" href="./formas_solicitud_http_js_files/search-bar-971612c5db.css">
+
+        
+        <script defer="" src="./formas_solicitud_http_js_files/algoliasearch.min.js.descarga"></script>
+        <script defer="" src="./formas_solicitud_http_js_files/autocomplete.min.js.descarga"></script>
+
+        
+        <script defer="" src="./formas_solicitud_http_js_files/dayjs.min.js.descarga"></script>
+        <script defer="" src="./formas_solicitud_http_js_files/localizedFormat.min.js.descarga"></script>
+        <script defer="" src="./formas_solicitud_http_js_files/relativeTime.min.js.descarga"></script>
+
+        
+        
+            <script defer="" src="./formas_solicitud_http_js_files/es.min.js.descarga"></script>
+        
+
+        
+        <script>let client,index;document.addEventListener("DOMContentLoaded",(()=>{client=algoliasearch("QMJYL5WYTI","89770b24481654192d7a5c402c6ad9a0"),index=client.initIndex("news-es")})),document.addEventListener("DOMContentLoaded",(()=>{const e=window.screen.width,t=window.screen.height,n=e>=767&&t>=768?8:5,o=document.getElementById("search-form"),s=document.getElementById("search-input"),a=document.getElementById("dropdown-container");let i,d,c;s.addEventListener("input",(e=>{i=e.target.value})),o.addEventListener("submit",(e=>{e.preventDefault(),function(){if(d=document.getElementsByClassName("aa-cursor")[0],d&&i){const e=d.querySelector("a").href;window.location.assign(e)}else!d&&i&&c&&window.location.assign(`https://www.freecodecamp.org/espanol/news/search?query=${i}`)}()}));const l=autocomplete("#search-input",{hint:!1,keyboardShortcuts:["s",191],openOnFocus:!0,appendTo:a,debug:!0},[{source:autocomplete.sources.hits(index,{hitsPerPage:n}),debounce:250,templates:{suggestion:e=>(c=!0,`\n            <a href="${e.url}">\n              <div class="algolia-result">\n                <span>${e._highlightResult.title.value}</span>\n              </div>\n            </a>\n          `),empty:()=>(c=!1,'\n            <div class="aa-suggestion footer-suggestion no-hits-footer">\n              <div class="algolia-result">\n                <span>\n                  No se encontraron tutoriales\n                </span>\n              </div>\n            </div>\n          '),footer:e=>{if(!e.isEmpty)return`\n              <div class="aa-suggestion footer-suggestion">\n                <a id="algolia-footer-selector" href="https://www.freecodecamp.org/espanol/news/search?query=${i}">\n                  <div class="algolia-result algolia-footer">\n                    Ver todos los resultados de ${i}\n                  </div>\n                </a>\n              </div>\n            `}}}]).on("autocomplete:selected",((e,t,n,o)=>{d=t?t.url:`https://www.freecodecamp.org/espanol/news/search?query=${i}`,"click"!==o.selectionMethod&&"tabKey"!==o.selectionMethod&&c&&window.location.assign(d)}));document.addEventListener("click",(e=>{e.target!==s&&l.autocomplete.close()}))})),document.addEventListener("DOMContentLoaded",(()=>{dayjs.extend(dayjs_plugin_localizedFormat),dayjs.extend(dayjs_plugin_relativeTime),dayjs.locale("es")}));const isAuthenticated=document.cookie.split(";").some((e=>e.trim().startsWith("jwt_access_token="))),isDonor=document.cookie.split(";").some((e=>e.trim().startsWith("isDonor=true")));</script>
+
+        
+        
+    
+        <script data-ad-client="ca-pub-9482786369113753" src="./formas_solicitud_http_js_files/f.txt" crossorigin="anonymous" async=""></script>
+    
+
+
+        
+        
+        
+
+        
+        
+
+        <link rel="icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico" type="image/png">
+        
+        
+            <link rel="canonical" href="https://www.freecodecamp.org/espanol/news/solicitud-http-en-javascript/">
+        
+        <meta name="referrer" content="no-referrer-when-downgrade">
+
+        
+
+        
+    <meta name="description" content="JavaScript tiene excelentes módulos y métodos para hacer solicitudes HTTP que pueden ser usados para enviar o recibir datos desde un recurso del lado del servidor. En este artículo, vamos a ver algunas formas populares de hacer solicitudes HTTP en JavaScript. Ajax Ajax es la forma tradicional de hacer una">
+
+    
+    <meta property="og:site_name" content="freeCodeCamp.org">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Aquí están las formas más populares de hacer una solicitud HTTP en JavaScript">
+    
+        <meta property="og:description" content="JavaScript tiene excelentes módulos y métodos para hacer solicitudes HTTP que pueden ser usados para enviar o recibir datos desde un recurso del lado del servidor. En este artículo, vamos a ver algunas formas populares de hacer solicitudes HTTP en JavaScript. Ajax Ajax es la forma tradicional de hacer una">
+    
+    <meta property="og:url" content="https://www.freecodecamp.org/espanol/news/solicitud-http-en-javascript/">
+    <meta property="og:image" content="https://www.freecodecamp.org/espanol/news/content/images/2020/11/1_gqHgCNubMncv7EwWNdArGQ.png">
+    <meta property="article:published_time" content="2020-11-30T13:00:00.000Z">
+    <meta property="article:modified_time" content="2021-06-11T06:09:36.000Z">
+    
+        <meta property="article:tag" content="JavaScript">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/freecodecamp">
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aquí están las formas más populares de hacer una solicitud HTTP en JavaScript">
+    
+        <meta name="twitter:description" content="JavaScript tiene excelentes módulos y métodos para hacer solicitudes HTTP que pueden ser usados para enviar o recibir datos desde un recurso del lado del servidor. En este artículo, vamos a ver algunas formas populares de hacer solicitudes HTTP en JavaScript. Ajax Ajax es la forma tradicional de hacer una">
+    
+    <meta name="twitter:url" content="https://www.freecodecamp.org/espanol/news/solicitud-http-en-javascript/">
+    <meta name="twitter:image" content="https://www.freecodecamp.org/espanol/news/content/images/2020/11/1_gqHgCNubMncv7EwWNdArGQ.png">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Arturo Maltos">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="JavaScript">
+    <meta name="twitter:site" content="@freecodecampes">
+    
+        <meta name="twitter:creator" content="@arturomaltos">
+    
+
+    <meta property="og:image:width" content="749">
+    <meta property="og:image:height" content="450">
+
+
+        
+    <script type="application/ld+json">{
+	"@context": "https://schema.org",
+	"@type": "Article",
+	"publisher": {
+		"@type": "Organization",
+		"name": "freeCodeCamp.org",
+		"url": "https://www.freecodecamp.org/espanol/news/",
+		"logo": {
+			"@type": "ImageObject",
+			"url": "https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg",
+			"width": 2100,
+			"height": 240
+		}
+	},
+	"image": {
+		"@type": "ImageObject",
+		"url": "https://www.freecodecamp.org/espanol/news/content/images/2020/11/1_gqHgCNubMncv7EwWNdArGQ.png",
+		"width": 749,
+		"height": 450
+	},
+	"url": "https://www.freecodecamp.org/espanol/news/solicitud-http-en-javascript/",
+	"mainEntityOfPage": {
+		"@type": "WebPage",
+		"@id": "https://www.freecodecamp.org/espanol/news/"
+	},
+	"datePublished": "2020-11-30T13:00:00.000Z",
+	"dateModified": "2021-06-11T06:09:36.000Z",
+	"keywords": "JavaScript",
+	"description": "JavaScript tiene excelentes módulos y métodos para hacer solicitudes HTTP que\npueden ser usados para enviar o recibir datos desde un recurso del lado del\nservidor. En este artículo, vamos a ver algunas formas populares de hacer\nsolicitudes HTTP en JavaScript.\n\nAjax\nAjax es la forma tradicional de hacer una solicitud HTTP asincrónica. Los datos\npueden ser enviados usando el método HTTP POST y recibidos usando el método HTTP\nGET. Echemos un vistazo y hagamos una solicitud GET. Utilizaré JSONPlaceh",
+	"headline": "Aquí están las formas más populares de hacer una solicitud HTTP en JavaScript",
+	"author": {
+		"@type": "Person",
+		"name": "Arturo Maltos",
+		"url": "https://www.freecodecamp.org/espanol/news/author/arturo-maltos/",
+		"sameAs": [
+			"https://www.arumals.com",
+			"https://twitter.com/arturomaltos"
+		],
+		"image": {
+			"@type": "ImageObject",
+			"url": "https://www.freecodecamp.org/espanol/news/content/images/2021/05/arturo-maltos-gravatar.jpeg",
+			"width": 250,
+			"height": 250
+		}
+	}
+}</script>
+
+
+        <meta name="generator" content="Eleventy">
+        <link rel="alternate" type="application/rss+xml" title="freeCodeCamp.org" href="https://www.freecodecamp.org/espanol/news/rss/">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+
+<!-- Web Monetization (https://webmonetization.org/) -->
+<meta name="monetization" content="$ilp.uphold.com/LJmbPn7WD4JB">
+<!-- end Web Monetization -->
+
+<!-- dataLayer setup -->
+<script>
+window.dataLayer = window.dataLayer || [];
+</script>
+<!-- End dataLayer setup -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5D6RKKP');</script>
+<!-- End Google Tag Manager -->
+        
+    </head>
+    
+    
+        <body class="home-template">
+    
+        <div class="site-wrapper">
+            <nav class="site-nav nav-padding">
+    <div class="site-nav-left">
+        
+<form id="search-form" data-test-label="search-bar">
+    <div role="search" class="searchbox__wrapper">
+        <label class="fcc_sr_only" for="search-input">
+            Buscar
+        </label>
+        <input type="search" placeholder="
+    Search 700+ tutorials
+" id="search-input" class="aa-input" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style=""><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre>
+        <button type="submit" class="ais-SearchBox-submit">
+            <svg class="ais-SearchBox-submitIcon" xmlns="https://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 40 40">
+    <path d="M26.804 29.01c-2.832 2.34-6.465 3.746-10.426 3.746C7.333 32.756 0 25.424 0 16.378 0 7.333 7.333 0 16.378 0c9.046 0 16.378 7.333 16.378 16.378 0 3.96-1.406 7.594-3.746 10.426l10.534 10.534c.607.607.61 1.59-.004 2.202-.61.61-1.597.61-2.202.004L26.804 29.01zm-10.426.627c7.323 0 13.26-5.936 13.26-13.26 0-7.32-5.937-13.257-13.26-13.257C9.056 3.12 3.12 9.056 3.12 16.378c0 7.323 5.936 13.26 13.258 13.26z"></path>
+</svg>
+
+            <span class="fcc_sr_only">Enviar tu consulta de búsqueda</span>
+        </button>
+        <div id="dropdown-container"><span class="algolia-autocomplete" style="position: absolute; z-index: 100; display: none; direction: ltr;"><span class="aa-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0" style="display: block; left: 0px; right: auto;"><div class="aa-dataset-1"></div></span></span></div>
+    </div>
+</form>
+
+    </div>
+    <div class="site-nav-middle">
+        <a class="site-nav-logo" href="https://www.freecodecamp.org/espanol/news" data-test-label="site-nav-logo"><img src="./formas_solicitud_http_js_files/fcc_primary.svg" alt="freeCodeCamp.org"></a>
+    </div>
+    <div class="site-nav-right">
+        <div class="nav-group">
+            <a class="nav-forum" id="nav-forum" rel="noopener noreferrer" href="https://forum.freecodecamp.org/c/espanol/522" target="_blank" data-test-label="forum-button">Foro</a>
+            <a class="toggle-button-nav" id="nav-donate" rel="noopener noreferrer" href="https://www.freecodecamp.org/espanol/donate/" target="_blank" data-test-label="donate-button">Donar</a>
+        </div>
+    </div>
+</nav>
+
+
+            
+            <a class="banner" id="banner" data-test-label="banner" rel="noopener noreferrer" target="_blank" href="https://www.freecodecamp.org/espanol/donate" text-variation="authenticated">
+    <p id="banner-text">Support our charity and our mission. <span>Donate to freeCodeCamp.org</span>.</p>
+</a>
+
+
+    
+    <script>document.addEventListener("DOMContentLoaded",(()=>{const e=document.getElementById("banner"),t=document.getElementById("banner-text");isAuthenticated?(t.innerHTML="Support our charity and our mission. <span>Donate to freeCodeCamp.org</span>.",e.href="https://www.freecodecamp.org/espanol/donate",e.setAttribute("text-variation","authenticated")):isDonor?(t.innerHTML="Gracias por apoyar a freeCodeCamp a través de <span>tus donaciones</span>.",e.href="https://www.freecodecamp.org/espanol/news/how-to-donate-to-free-code-camp/",e.setAttribute("text-variation","donor")):(t.innerHTML="Aprender a codificar — <span>gratis 3,000-horas currículo</span>",e.href="https://www.freecodecamp.org/espanol",e.setAttribute("text-variation","default"))}));</script>
+
+
+            <div id="error-message"></div>
+
+            
+    <main id="site-main" class="post-template site-main outer">
+        <div class="inner ad-layout">
+            <article class="post-full post ">
+                <header class="post-full-header">
+                    <section class="post-full-meta">
+                        <time class="post-full-meta-date" datetime="Mon Nov 30 2020 13:00:00 GMT+0000 (Coordinated Universal Time)">
+                            30 de noviembre de 2020
+                        </time>
+                        
+                            <span class="date-divider">/</span>
+                            <a dir="ltr" href="https://www.freecodecamp.org/espanol/news/tag/javascript/">
+                                #JavaScript
+                            </a>
+                        
+                    </section>
+                    <h1 class="post-full-title">Aquí están las formas más populares de hacer una solicitud HTTP en JavaScript</h1>
+                </header>
+                <div class="post-full-author-header" data-test-label="author-header-no-bio">
+                    
+                        
+                            
+    
+    
+    
+
+    <section class="author-card" data-test-label="author-card">
+        
+            
+    <img srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w60/2021/05/arturo-maltos-gravatar.jpeg 60w" sizes="60px" src="./formas_solicitud_http_js_files/arturo-maltos-gravatar.jpeg" class="author-profile-image" alt="Arturo Maltos" width="250" height="250" onerror="this.style.display=&#39;none&#39;" data-test-label="profile-image">
+  
+        
+
+        <section class="author-card-content author-card-content-no-bio">
+            <span class="author-card-name">
+                <a href="https://www.freecodecamp.org/espanol/news/author/arturo-maltos/" data-test-label="profile-link">
+                    
+                        Arturo Maltos
+                    
+                </a>
+            </span>
+            
+        </section>
+    </section>
+
+                        
+                    
+                </div>
+                
+                    <figure class="post-full-image">
+                        
+    <picture>
+      <source media="(max-width: 700px)" sizes="1px" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7 1w">
+      <source media="(min-width: 701px)" sizes="(max-width: 800px) 400px, (max-width: 1170px) 700px, 1400px" srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w300/2020/11/1_gqHgCNubMncv7EwWNdArGQ.png 300w,https://www.freecodecamp.org/espanol/news/content/images/size/w600/2020/11/1_gqHgCNubMncv7EwWNdArGQ.png 600w,https://www.freecodecamp.org/espanol/news/content/images/size/w1000/2020/11/1_gqHgCNubMncv7EwWNdArGQ.png 1000w,https://www.freecodecamp.org/espanol/news/content/images/size/w2000/2020/11/1_gqHgCNubMncv7EwWNdArGQ.png 2000w">
+      <img onerror="this.style.display=&#39;none&#39;" src="./formas_solicitud_http_js_files/1_gqHgCNubMncv7EwWNdArGQ.png" alt="Aquí están las formas más populares de hacer una solicitud HTTP en JavaScript" ,="" width="749" height="450">
+    </picture>
+  
+                    </figure>
+                
+                <section class="post-full-content">
+                    <div class="post-and-sidebar">
+                        <section class="post-content " data-test-label="post-content">
+                            
+<p>JavaScript tiene excelentes módulos y métodos para hacer solicitudes HTTP que pueden ser usados para enviar o recibir datos desde un recurso del lado del servidor. En este artículo, vamos a ver algunas formas populares de hacer solicitudes HTTP en JavaScript.</p><h2 id="ajax">Ajax</h2><p>Ajax es la forma tradicional de hacer una solicitud HTTP asincrónica. Los datos pueden ser enviados usando el método HTTP POST y recibidos usando el método HTTP GET. Echemos un vistazo y hagamos una solicitud GET. Utilizaré JSONPlaceholder, una API REST online gratuita para desarrolladores que devuelve datos aleatorios en formato JSON.</p><p>Para hacer una llamada HTTP en Ajax, es necesario inicializar un nuevo método <code>XMLHttpRequest()</code>, especificar el endpoint URL y el método HTTP (en este caso GET). Finalmente, usamos el método <code>open()</code> para unir el método HTTP y el punto final de la URL y llamar al método <code>send()</code> para lanzar la solicitud.</p><p>Registraremos la respuesta HTTP en la consola utilizando la propiedad <code>XMLHTTPRequest.onreadystatechange</code> que contiene el manejador de eventos que se llamará cuando se dispare el evento <code>readystatechanged</code>.</p><figure class="kg-card kg-image-card"><img src="./formas_solicitud_http_js_files/image.png" class="kg-image" alt="image" srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w600/2020/11/image.png 600w, https://www.freecodecamp.org/espanol/news/content/images/2020/11/image.png 800w" sizes="(min-width: 720px) 720px" width="800" height="349" loading="lazy"></figure><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> Http <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> url<span class="token operator">=</span><span class="token string">'https://jsonplaceholder.typicode.com/posts'</span><span class="token punctuation">;</span>
+Http<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"GET"</span><span class="token punctuation">,</span> url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Http<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Http<span class="token punctuation">.</span><span class="token function-variable function">onreadystatechange</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Http<span class="token punctuation">.</span>responseText<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre><p><br>Si ves la consola de tu navegador, te devolverá una matriz de datos en formato JSON. ¿Pero cómo sabremos si la solicitud se ha hecho? En otras palabras, ¿cómo podemos manejar las respuestas con Ajax?</p><p>La propiedad de <code>onreadystatechange</code> tiene dos métodos, <code>readyState</code> y <code>status</code> que nos permiten comprobar el estado de nuestra solicitud.</p><figure class="kg-card kg-image-card"><img src="./formas_solicitud_http_js_files/image-1.png" class="kg-image" alt="image-1" srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w600/2020/11/image-1.png 600w, https://www.freecodecamp.org/espanol/news/content/images/2020/11/image-1.png 800w" sizes="(min-width: 720px) 720px" width="800" height="376" loading="lazy"></figure><p>Si <code>readyState</code> es igual a 4, significa que la solicitud está completada. La propiedad <code>readyState</code> tiene 5 respuestas. Aprenda más sobre esto <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState">aquí</a>.</p><p>Aparte de hacer directamente una llamada Ajax con JavaScript, hay otros métodos más poderosos de hacer una llamada HTTP como <code>$.Ajax</code> que es un método de jQuery. Ahora hablaré de eso.</p><h3 id="m-todos-de-jquery">Métodos de jQuery</h3><p>jQuery tiene muchos métodos para manejar fácilmente las solicitudes HTTP. Para poder usar estos métodos, necesitarás incluir la biblioteca jQuery en tu proyecto.</p><pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre><h3 id="-ajax">$.ajax</h3><p>jQuery Ajax es uno de los métodos más simples para hacer una llamada HTTP.</p><figure class="kg-card kg-image-card"><img src="./formas_solicitud_http_js_files/image-2.png" class="kg-image" alt="image-2" srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w600/2020/11/image-2.png 600w, https://www.freecodecamp.org/espanol/news/content/images/2020/11/image-2.png 800w" sizes="(min-width: 720px) 720px" width="800" height="429" loading="lazy"></figure><p>El método <code>$.ajax</code> toma muchos parámetros, algunos de los cuales son obligatorios y otros opcionales. Contiene dos opciones de callback <code>success</code> y <code>error</code> para manejar la respuesta recibida.</p><h3 id="-get">$.get </h3><p>El método <code>$.get</code> se utiliza para ejecutar solicitudes GET. Se necesitan dos parámetros: el endpoint y una función de callback.</p><figure class="kg-card kg-image-card"><img src="./formas_solicitud_http_js_files/image-3.png" class="kg-image" alt="image-3" srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w600/2020/11/image-3.png 600w, https://www.freecodecamp.org/espanol/news/content/images/2020/11/image-3.png 797w" sizes="(min-width: 720px) 720px" width="797" height="287" loading="lazy"></figure><h3 id="-post">$.post</h3><p>El método <code>$.post</code> es otra forma de enviar datos al servidor. Toma tres parámetros: la <code>url</code>, los datos que quieres publicar y una función callback.</p><figure class="kg-card kg-image-card"><img src="./formas_solicitud_http_js_files/image-4.png" class="kg-image" alt="image-4" srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w600/2020/11/image-4.png 600w, https://www.freecodecamp.org/espanol/news/content/images/2020/11/image-4.png 695w" width="695" height="355" loading="lazy"></figure><h3 id="-getjson">$.getJSON</h3><p>El método <code>$.getJSON</code> sólo recupera datos que están en formato JSON. Toma dos parámetros: la <code>url</code> y una función callback.</p><figure class="kg-card kg-image-card"><img src="./formas_solicitud_http_js_files/image-5.png" class="kg-image" alt="image-5" srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w600/2020/11/image-5.png 600w, https://www.freecodecamp.org/espanol/news/content/images/2020/11/image-5.png 755w" sizes="(min-width: 720px) 720px" width="755" height="291" loading="lazy"></figure><p>jQuery tiene todos estos métodos para solicitar o enviar datos a un servidor remoto. Pero en realidad puedes usar todos estos métodos en uno solo: el método <code>$.ajax</code>, como se ve en el siguiente ejemplo:</p><figure class="kg-card kg-image-card"><img src="./formas_solicitud_http_js_files/image-6.png" class="kg-image" alt="image-6" srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w600/2020/11/image-6.png 600w, https://www.freecodecamp.org/espanol/news/content/images/2020/11/image-6.png 800w" sizes="(min-width: 720px) 720px" width="800" height="420" loading="lazy"></figure><h2 id="fetch">fetch</h2><p><code>fetch</code> es una nueva y potente web API que permite hacer solicitudes asincrónicas. De hecho, <code>fetch</code> es una de las mejores y mi forma favorita de hacer una solicitud HTTP. Devuelve una "Promesa (Promise)", que es una de las grandes características de ES6. Si no estás familiarizado con el ES6, puedes leer sobre él en <a href="https://medium.freecodecamp.org/write-less-do-more-with-javascript-es6-5fd4a8e50ee2">este artículo</a>. Promesas nos permite manejar la solicitud asíncrona de una manera más inteligente. Echemos un vistazo a cómo funciona técnicamente el <code>fetch</code>.</p><figure class="kg-card kg-image-card"><img src="./formas_solicitud_http_js_files/image-7.png" class="kg-image" alt="image-7" srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w600/2020/11/image-7.png 600w, https://www.freecodecamp.org/espanol/news/content/images/2020/11/image-7.png 800w" sizes="(min-width: 720px) 720px" width="800" height="270" loading="lazy"></figure><p>La función <code>fetch</code> toma un parámetro requerido: el <code>endpoint</code> URL. También tiene otros parámetros opcionales como en el ejemplo siguiente:</p><figure class="kg-card kg-image-card"><img src="./formas_solicitud_http_js_files/image-8.png" class="kg-image" alt="image-8" srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w600/2020/11/image-8.png 600w, https://www.freecodecamp.org/espanol/news/content/images/2020/11/image-8.png 800w" sizes="(min-width: 720px) 720px" width="800" height="497" loading="lazy"></figure><p>Como puedes ver, <code>fetch</code> tiene muchas ventajas para hacer solicitudes HTTP. Puedes aprender más sobre ello <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">aquí</a>. Además, dentro de fetch hay otros módulos y plugins que nos permiten enviar y recibir una solicitud desde y hacia el lado del servidor, como <a href="https://github.com/axios/axios">axios</a>.</p><h3 id="axios">Axios</h3><p>Axios es una biblioteca de código abierto para hacer solicitudes HTTP y proporciona muchas características muy buenas. Veamos cómo funciona.</p><h3 id="uso-">Uso:</h3><p>Primero, necesitarías incluir Axios. Hay dos maneras de incluir Axios en tu proyecto.</p><p>Primero, puedes usar npm:</p><pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> axios <span class="token parameter variable">--save</span></code></pre><p>Entonces necesitarías importarlo</p><pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span></code></pre><p>Segundo, puedes incluir axios usando un CDN.</p><pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/axios/dist/axios.min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre><h3 id="haciendo-una-solicitud-con-axios-">Haciendo una Solicitud con axios:</h3><p>Con Axios puedes usar <code>GET</code> y <code>POST</code> para obtener y enviar datos al servidor.</p><h3 id="get-">GET:</h3><figure class="kg-card kg-image-card"><img src="./formas_solicitud_http_js_files/image-9.png" class="kg-image" alt="image-9" srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w600/2020/11/image-9.png 600w, https://www.freecodecamp.org/espanol/news/content/images/2020/11/image-9.png 755w" sizes="(min-width: 720px) 720px" width="755" height="412" loading="lazy"></figure><p><code>axios</code> toma un parámetro requerido, y puede tomar un segundo parámetro opcional también. Esto toma ciertos datos como una simple consulta.</p><h3 id="post-">POST:</h3><figure class="kg-card kg-image-card"><img src="./formas_solicitud_http_js_files/image-10.png" class="kg-image" alt="image-10" srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w600/2020/11/image-10.png 600w, https://www.freecodecamp.org/espanol/news/content/images/2020/11/image-10.png 755w" sizes="(min-width: 720px) 720px" width="755" height="412" loading="lazy"></figure><p><a href="https://github.com/axios/axios">Axios</a> devuelve una "Promesa". Si estás familiarizado con las promesas, probablemente sabes que una promesa puede ejecutar múltiples solicitudes. Puedes hacer lo mismo con Axios y ejecutar múltiples solicitudes al mismo tiempo.</p><figure class="kg-card kg-image-card"><img src="./formas_solicitud_http_js_files/image-11.png" class="kg-image" alt="image-11" srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w600/2020/11/image-11.png 600w, https://www.freecodecamp.org/espanol/news/content/images/2020/11/image-11.png 800w" sizes="(min-width: 720px) 720px" width="800" height="396" loading="lazy"></figure><p><br>Axios soporta muchos otros métodos y opciones. Puedes explorarlos <a href="https://github.com/axios/axios">aquí</a>.</p><h3 id="httpclient-de-angular">HttpClient de Angular</h3><p>Angular tiene su propio módulo HTTP que funciona con las aplicaciones de Angular. Utiliza la biblioteca <a href="http://reactivex.io/rxjs/">RxJS</a> para manejar las solicitudes asincrónicas y proporciona muchas opciones para realizar las solicitudes HTTP.</p><h3 id="haciendo-una-llamada-al-servidor-usando-el-httpclient-de-angular">Haciendo una llamada al servidor usando el HttpClient de Angular</h3><p>Para hacer una solicitud usando el Angular HttpClient, tenemos que ejecutar nuestro código dentro de una aplicación Angular. Así que he creado una. Si no estás familiarizado con Angular, mira mi artículo, aprende a <a href="https://medium.freecodecamp.org/learn-how-to-create-your-first-angular-app-in-20-min-146201d9b5a7">crear tu primera aplicación Angular en 20 minutos</a>.</p><p>Lo primero que tenemos que hacer es importar <code>HttpClientModule</code> en <code>app.module.ts</code></p><figure class="kg-card kg-image-card"><img src="./formas_solicitud_http_js_files/image-12.png" class="kg-image" alt="image-12" srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w600/2020/11/image-12.png 600w, https://www.freecodecamp.org/espanol/news/content/images/2020/11/image-12.png 758w" sizes="(min-width: 720px) 720px" width="758" height="632" loading="lazy"></figure><p>Entonces, tenemos que crear un servicio para manejar las solicitudes. Puedes generar fácilmente un servicio usando el <a href="https://cli.angular.io/">CLI Angular</a>.</p><pre class="language-bash" tabindex="0"><code class="language-bash">ng g <span class="token function">service</span>  FetchdataService</code></pre><p>A continuación, tenemos que importar el HttpClient en el servicio <code>fetchdataService.ts</code> e inyectarlo dentro del constructor.</p><figure class="kg-card kg-image-card"><img src="./formas_solicitud_http_js_files/image-13.png" class="kg-image" alt="image-13" srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w600/2020/11/image-13.png 600w, https://www.freecodecamp.org/espanol/news/content/images/2020/11/image-13.png 685w" width="685" height="461" loading="lazy"></figure><p>Y dentro de <code>app.component.ts</code> importar <code>fetchdataService</code></p><pre class="language-ts" tabindex="0"><code class="language-ts"><span class="token comment">//import</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> FetchdataService <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./fetchdata.service'</span><span class="token punctuation">;</span></code></pre><p>Finalmente, llama al servicio y ejecutalo.</p><p><code>app.component.ts:</code></p><figure class="kg-card kg-image-card"><img src="./formas_solicitud_http_js_files/image-14.png" class="kg-image" alt="image-14" srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w600/2020/11/image-14.png 600w, https://www.freecodecamp.org/espanol/news/content/images/2020/11/image-14.png 788w" sizes="(min-width: 720px) 720px" width="788" height="620" loading="lazy"></figure><p><br>Puedes ver la demo de ejemplo en <a href="https://stackblitz.com/edit/angular-httpclinent">Stackblitz</a>.</p><h3 id="terminando">Terminando</h3><p>Acabamos de cubrir las formas más populares de hacer una solicitud de llamada HTTP en JavaScript.</p><p>Gracias por tu tiempo. Si te gusta, aplaude hasta 50, haz clic en seguir y comunícate conmigo en <a href="https://twitter.com/SaidHYN">Twitter</a>.</p><p><em>Por cierto, recientemente he trabajado con un grupo de ingenieros de software para una de mis aplicaciones móviles. La organización fue genial, y el producto se entregó muy rápidamente, mucho más rápido que otras empresas y autónomos con los que he trabajado, y creo que puedo recomendarlos honestamente para otros proyectos que existen. Envíame un correo electrónico si quieres ponerte en contacto - <a>said@devsdata.com</a>.</em></p><p>Traducido del artículo de <a href="https://www.freecodecamp.org/news/author/saidhayani/">Said Hayani's</a> - <strong><strong><a href="https://www.freecodecamp.org/news/here-is-the-most-popular-ways-to-make-an-http-request-in-javascript-954ce8c95aaa/">Here are the most popular ways to make an HTTP request in JavaScript</a></strong>.</strong></p>
+
+                        </section>
+                        
+                            <div class="sidebar">
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                            </div>
+                        
+                    </div>
+                    <hr>
+                    
+                        <div class="post-full-author-header" data-test-label="author-header-with-bio">
+                            
+                                
+    
+    
+    
+
+    <section class="author-card" data-test-label="author-card">
+        
+            
+    <img srcset="https://www.freecodecamp.org/espanol/news/content/images/size/w60/2021/05/arturo-maltos-gravatar.jpeg 60w" sizes="60px" src="./formas_solicitud_http_js_files/arturo-maltos-gravatar.jpeg" class="author-profile-image" alt="Arturo Maltos" width="250" height="250" onerror="this.style.display=&#39;none&#39;" loading="lazy" data-test-label="profile-image">
+  
+        
+
+        <section class="author-card-content ">
+            <span class="author-card-name">
+                <a href="https://www.freecodecamp.org/espanol/news/author/arturo-maltos/" data-test-label="profile-link">
+                    
+                        Arturo Maltos
+                    
+                </a>
+            </span>
+            
+                
+                    <p data-test-label="default-bio">
+                        Leer <a href="https://www.freecodecamp.org/espanol/news/author/arturo-maltos/">más publicaciones</a>.
+                    </p>
+                
+            
+        </section>
+    </section>
+
+                            
+                        </div>
+                        <hr>
+                    
+
+                    
+                    
+                        
+    
+
+
+<p data-test-label="social-row-cta" class="social-row">
+    If you read this far, thank the author to show them you care. <button id="tweet-btn" class="cta-button" data-test-label="tweet-button" onclick="window.open(
+    &#39;https://twitter.com/intent/tweet?text=Gracias%20%40arturomaltos%20por%20escribir%20este%20%C3%BAtil%20art%C3%ADculo.%0A%0AAqu%C3%AD%20est%C3%A1n%20las%20formas%20m%C3%A1s%20populares%20de%20hacer%20una%20solicitud%20HTTP%20en%20JavaScript%0A%0Ahttps://www.freecodecamp.org/espanol/news/solicitud-http-en-javascript/&#39;,
+    &#39;share-twitter&#39;,
+    &#39;width=550, height=235&#39;
+  ); return false;">Say Thanks</button>
+</p>
+
+
+    
+    <script>document.addEventListener("DOMContentLoaded",(()=>{const t=document.getElementById("tweet-btn"),e=window.location,o="Aqu%C3%AD%20est%C3%A1n%20las%20formas%20m%C3%A1s%20populares%20de%20hacer%20una%20solicitud%20HTTP%20en%20JavaScript".replace(/&#39;/g,"%27"),r="",n="@arturomaltos",i=Boolean("");let s;if(i&&(r||n)){const t={originalPostAuthor:"",currentPostAuthor:"Arturo Maltos"};s=encodeURIComponent(`Gracias ${r||t.originalPostAuthor} por escribir este útil artículo y ${n||t.currentPostAuthor} por traducirlo.`)}else!i&&n&&(s=encodeURIComponent(`Gracias ${n} por escribir este útil artículo.`));const a=`window.open(\n    '${s?`https://twitter.com/intent/tweet?text=${s}%0A%0A${o}%0A%0A${e}`:`https://twitter.com/intent/tweet?text=${o}%0A%0A${e}`}',\n    'share-twitter',\n    'width=550, height=235'\n  ); return false;`;t.setAttribute("onclick",a)}));</script>
+
+
+                        
+
+<div class="learn-cta-row" data-test-label="learn-cta-row">
+    <p>
+        Aprende a codificar de forma gratuita. El plan de estudios de código abierto de freeCodeCamp ha ayudado a más de 40,000 personas a obtener trabajos como desarrolladores. <a href="https://www.freecodecamp.org/espanol/learn/" class="cta-button" id="learn-to-code-cta" rel="noopener noreferrer" target="_blank">Empezar</a>
+    </p>
+</div>
+
+                    
+                </section>
+                
+                    <div class="banner-ad bottom">
+                        <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ANUNCIO</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                    </div>
+                
+            </article>
+        </div>
+    </main>
+
+
+            
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-top">
+            <div class="footer-desc-col">
+                <p data-test-label="tax-exempt-status">freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charity organization (United States Federal Tax Identification Number: 82-0779546)</p>
+                <p data-test-label="mission-statement">Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public.</p>
+                <p data-test-label="donation-initiatives">Las donaciones a freeCodeCamp van dirigidas a nuestras iniciativas educativas y ayudan a pagar servidores, servicios y personal.</p>
+                <p class="footer-donation" data-test-label="donate-text">
+                    Puedes hacer <a href="https://www.freecodecamp.org/espanol/donate/" class="inline" rel="noopener noreferrer" target="_blank">una donación deducible de impuestos aquí</a>.
+                </p>
+            </div>
+            <div class="trending-guides" data-test-label="trending-guides">
+                <div class="col-header">Guías de tendencias</div>
+                <div class="trending-guides-row">
+                    <div class="footer-col footer-col-1">
+                        <a href="https://www.freecodecamp.org/espanol/news/como-clonar-una-branch-en-git/" rel="noopener noreferrer" target="_blank">Git Clone
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/metodologia-agile/" rel="noopener noreferrer" target="_blank">Métodos Agile
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/python-if-name-main/" rel="noopener noreferrer" target="_blank">Python Main
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/javascript-callback-functions-what-are-callbacks-in-js-and-how-to-use-them/" rel="noopener noreferrer" target="_blank">Callback
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/curso-debounce-javascript-como-hacer-que-tu-js-espere/" rel="noopener noreferrer" target="_blank">Debounce
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/url-codificacion-como-utilizar-encodeuricomponent-javascript/" rel="noopener noreferrer" target="_blank">URL Encode
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/make-it-blink-html-tutorial-how-to-use-the-blink-tag-with-code-examples/" rel="noopener noreferrer" target="_blank">Blink HTML
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/tuplas-listas-python/" rel="noopener noreferrer" target="_blank">Python Tupla
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/como-agregar-elementos-a-un-arreglo/" rel="noopener noreferrer" target="_blank">JavaScript Push
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/java-list-tutorial-util-list-api-example/" rel="noopener noreferrer" target="_blank">Java List
+                        </a>
+                    </div>
+                    <div class="footer-col footer-col-2">
+                        <a href="https://www.freecodecamp.org/espanol/news/diseno-ux-convertirse-en-un-disenador-de-experiencia-de-usuario/" rel="noopener noreferrer" target="_blank">UX
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/pensamiento-de-diseno-emprendedores-desarrolladores/" rel="noopener noreferrer" target="_blank">Proceso de Diseño
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/lista-de-numeros-primos-una-grafica-con-todos-los/" rel="noopener noreferrer" target="_blank">Números Primos
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/product-design-explicado-en-un-espanol-sencillo/" rel="noopener noreferrer" target="_blank">Diseño de Producto
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/what-is-digital-design-and-why-does-it-matter/" rel="noopener noreferrer" target="_blank">Digital Design
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/los-mejores-juegos-online-para-aprender-programar/" rel="noopener noreferrer" target="_blank">Juegos de Código
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/svm-machine-learning-tutorial-what-is-the-support-vector-machine-algorithm-explained-with-code-examples/" rel="noopener noreferrer" target="_blank">SVM
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/javascript-foreach-how-to-loop-through-an-array-in-js/" rel="noopener noreferrer" target="_blank">JavaScript forEach
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/google-bert-nlp-machine-learning-tutorial/" rel="noopener noreferrer" target="_blank">Google BERT
+                        </a>
+                        <a href="https://www.freecodecamp.org/espanol/news/create-table-sql-server-con-ejemplo/" rel="noopener noreferrer" target="_blank">Create Table SQL
+                        </a>
+                    </div>
+                    <div class="footer-col footer-col-3">
+                        <div class="footer-left">
+                            <a href="https://www.freecodecamp.org/espanol/news/diseno-web-responsive-como-hacer-que-un-sitio-web-se-vea-bien-en-telefonos-y-tabletas/" rel="noopener noreferrer" target="_blank">Diseño Web Responsive
+                            </a>
+                            <a href="https://www.freecodecamp.org/espanol/news/que-es-svg-explicacion-de-etiquetas-imagenes/" rel="noopener noreferrer" target="_blank">¿Qué es un archivo SVG?
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/pdf-password-remover-guide-how-to-remove-password-protection-from-a-pdf/" rel="noopener noreferrer" target="_blank">PDF Password Remover
+                            </a>
+                            <a href="https://www.freecodecamp.org/espanol/news/que-es-un-archivo-pdf-como-lo-abres/" rel="noopener noreferrer" target="_blank">¿Qué es un Archivo PDF?
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/what-is-python-used-for-10-coding-uses-for-the-python-programming-language/" rel="noopener noreferrer" target="_blank">What Is Python?
+                            </a>
+                        </div>
+
+                        <div class="footer-right">
+                            <a href="https://www.freecodecamp.org/espanol/news/que-is-tls-explicado-en-espanol-simple/" rel="noopener noreferrer" target="_blank">¿Qué es TLS?
+                            </a>
+                            <a href="https://www.freecodecamp.org/espanol/news/que-es-una-red-lan-explicada-en-espanol/" rel="noopener noreferrer" target="_blank">¿Qué es una red LAN?
+                            </a>
+                            <a href="https://www.freecodecamp.org/espanol/news/node-js-npm-tutorial/" rel="noopener noreferrer" target="_blank">¿Qué es npm?
+                            </a>
+                            <a href="https://www.freecodecamp.org/espanol/news/rsync-ejemplos-opciones-y-copiar-archivos-atraves-ssh/" rel="noopener noreferrer" target="_blank">Ejemplos de RSync
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/how-to-use-the-tree-based-algorithm-for-machine-learning/" rel="noopener noreferrer" target="_blank">Random Forest
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="col-header" data-test-label="our-nonprofit">Our Charity</div>
+            <div class="footer-divider"></div>
+            <div class="our-nonprofit">
+                <a href="https://www.freecodecamp.org/espanol/news/acerca-de-freecodecamp-preguntas-frecuentes/" rel="noopener noreferrer" target="_blank" data-test-label="about">
+                    Acerca de
+                </a>
+                <a href="https://www.linkedin.com/school/free-code-camp/people/" rel="noopener noreferrer" target="_blank" data-test-label="alumni">
+                    Red de ex-Alumnos
+                </a>
+                <a href="https://github.com/freeCodeCamp/" rel="noopener noreferrer" target="_blank" data-test-label="open-source">
+                    Código abierto
+                </a>
+                <a href="https://www.freecodecamp.org/news/shop/" rel="noopener noreferrer" target="_blank" data-test-label="shop">
+                    Tienda
+                </a>
+                <a href="https://www.freecodecamp.org/espanol/news/preguntas-comunes-de-soporte-tecnico/" rel="noopener noreferrer" target="_blank" data-test-label="support">
+                    Soporte
+                </a>
+                <a href="https://www.freecodecamp.org/news/sponsors/" rel="noopener noreferrer" target="_blank" data-test-label="sponsors">
+                    Patrocinadores
+                </a>
+                <a href="https://www.freecodecamp.org/espanol/news/politica-de-honestidad-academica/" rel="noopener noreferrer" target="_blank" data-test-label="honesty">
+                    Honestidad Académica
+                </a>
+                <a href="https://www.freecodecamp.org/espanol/news/codigo-de-conducta/" rel="noopener noreferrer" target="_blank" data-test-label="coc">
+                    Código de Conducta
+                </a>
+                <a href="https://www.freecodecamp.org/news/privacy-policy/" rel="noopener noreferrer" target="_blank" data-test-label="privacy">
+                    Política de privacidad
+                </a>
+                <a href="https://www.freecodecamp.org/news/terms-of-service/" rel="noopener noreferrer" target="_blank" data-test-label="tos">
+                    Términos de servicio
+                </a>
+                <a href="https://www.freecodecamp.org/news/copyright-policy/" rel="noopener noreferrer" target="_blank" data-test-label="copyright">
+                    Política de derechos de autor
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+        </div>
+
+        
+        
+        
+
+        <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5D6RKKP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+        
+    <script defer="" src="./formas_solicitud_http_js_files/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon="{&quot;rayId&quot;:&quot;831370376891952e&quot;,&quot;version&quot;:&quot;2023.10.0&quot;,&quot;token&quot;:&quot;bdb993c6dde44e178aabd9555e75e4f4&quot;}" crossorigin="anonymous"></script>
+
+
+</body></html>
