@@ -59,7 +59,7 @@
                   <p class="card-text">
                     Colección de apps.
                   </p>
-                  <!-- <a href="#" class="card-link">Another link</a> -->
+                  <a href="/content/app/items/php/aplicaciones/index.php" class="card-link">Listado de apps</a>
                 </div>
               </div>
             </div>

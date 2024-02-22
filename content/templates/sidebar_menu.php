@@ -1,8 +1,8 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
-  <a href="index.php" class="brand-link">
-    <img src="/src/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+  <a href="/index.php" class="brand-link">
+    <img src="/assets/AdminLTE-3.2.0/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
     <span class="brand-text font-weight-light">APPs</span>
   </a>
   <!-- Sidebar -->
@@ -24,13 +24,13 @@
             <li class="nav-item item">
               <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>HTML</p>
+                <p>Html</p>
               </a>
             </li>
             <li class="nav-item item">
               <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>CSS</p>
+                <p>Css</p>
               </a>
             </li>
             <li class="nav-item item">
@@ -40,7 +40,7 @@
               </a>
             </li>
             <li class="nav-item item">
-              <a href="#" class="nav-link">
+              <a href="/content/app/items/php/index.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>PHP</p>
               </a>
@@ -48,72 +48,74 @@
             <li class="nav-item item">
               <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>LARAVEL</p>
+                <p>Laravel</p>
               </a>
             </li>
             <li class="nav-item item">
               <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>REACT</p>
+                <p>React JS</p>
               </a>
             </li>
             <li class="nav-item item">
               <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>NEXT</p>
+                <p>Next JS</p>
               </a>
             </li>
             <li class="nav-item item">
               <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>PYTHON</p>
+                <p>Astro</p>
               </a>
             </li>
             <li class="nav-item item">
               <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>CCHARP</p>
-              </a>
-            </li>
-
-            <li class="nav-item item">
-              <a href="#" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>NODE</p>
+                <p>Python</p>
               </a>
             </li>
             <li class="nav-item item">
               <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>EXPRESS</p>
+                <p>Ccharp</p>
               </a>
             </li>
 
             <li class="nav-item item">
               <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>JAVA</p>
+                <p>Node JS</p>
+              </a>
+            </li>
+            <li class="nav-item item">
+              <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Express JS</p>
+              </a>
+            </li>
+
+            <li class="nav-item item">
+              <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Java</p>
+              </a>
+            </li>
+
+            <li class="nav-item item">
+              <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Mysql</p>
+              </a>
+            </li>
+
+            <li class="nav-item item">
+              <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Tailwind</p>
               </a>
             </li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a href="./assets/AdminLTE-3.2.0/index.html" class="nav-link" target="_blank">
-            <i class="nav-icon fas fa-th"></i>
-            <p>
-              Templates
-              <span class="right badge badge-danger">Nuevo</span>
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="./admin/admin.php" class="nav-link" target="_blank">
-            <i class="nav-icon fas fa-th"></i>
-            <p>
-              Admin
-              <span class="right badge badge-danger">Nuevo</span>
-            </p>
-          </a>
         </li>
       </ul>
     </nav>

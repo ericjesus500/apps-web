@@ -5,7 +5,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0 text-primary">PHP & LARAVEL</h1>
+              <h1 class="m-0 text-primary">LARAVEL</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
@@ -44,10 +44,9 @@
                 <div class="card-body">
                   <h5 class="card-title">Card title</h5>
                   <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the card's
-                    content.
+                    Colección de apps.
                   </p>
-                  <a href="#" class="card-link">Another link</a>
+                  <a href="/content/app/items/laravel/aplicaciones/index.php" class="card-link">Listado de apps</a>
                 </div>
               </div><!-- /.card -->
             </div>

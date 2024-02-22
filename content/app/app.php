@@ -26,6 +26,7 @@
               <option value="mysql">MySql</option>
               <option value="tailwind">Tailwind</option>
               <option value="ajax">Ajax</option>
+              <option value="vue">Vue JS</option>
             </select>
           </div>
         </div>

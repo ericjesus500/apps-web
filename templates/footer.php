@@ -1,7 +1,7 @@
 <!-- Popper -->
 <script src="/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
 <!-- jQuery -->
-<script src="/assets//AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
+<script src="/assets/AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="/assets/AdminLTE-3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->

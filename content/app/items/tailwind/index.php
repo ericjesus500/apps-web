@@ -54,7 +54,7 @@
                   <p class="card-text">
                     Colección de apps.
                   </p>
-                  <a href="/content/app/items/tailwind/apps/index.php" class="card-link">Listado de apps</a>
+                  <a href="/content/app/items/tailwind/aplicaciones/apps/index.php" class="card-link">Listado de apps</a>
                 </div>
               </div>
             </div>

@@ -106,7 +106,7 @@
               </a>
             </li>
             <li class="nav-item item">
-              <a href="/content/cursos/items/tailwind/index.php" target="_blank" class="nav-link">
+              <a href="/content/cursos/items/tailwind/tutorial/index.html" target="_blank" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Tailwind</p>
               </a>

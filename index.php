@@ -438,6 +438,22 @@
                   }
                 };
               }
+
+              // Vue
+              if (item === "vue") {
+                let resultado = document.getElementById("resultado_apps");
+                XHR.open("GET", "/content/app/items/vue/index.php", true);
+                XHR.send();
+
+                XHR.onreadystatechange = function() {
+                  if (XHR.readyState == 4 && XHR.status == 200) {
+                    let data = XHR.responseText;
+                    //console.log(data);
+                    resultado.innerHTML = "";
+                    resultado.innerHTML = data;
+                  }
+                };
+              }
             }
           }
         };
