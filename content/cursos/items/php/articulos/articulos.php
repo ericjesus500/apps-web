@@ -1,5 +1,4 @@
-<?php include "../../../templates/head_cursos.php";?>
-
+<?php include "../../../../../templates/header.php";?>
 <title>PHP | Artículos</title>
 </head>
 
@@ -21,7 +20,7 @@
             <div class="row">
               <div class="col-5 col-sm-3">
                 <div class="nav flex-column nav-tabs h-100" id="vert-tabs-tab" role="tablist" aria-orientation="vertical">
-                  <a class="nav-link active" id="vert-tabs-concepto-tab" data-toggle="pill" href="#vert-tabs-concepto" role="tab" aria-controls="vert-tabs-concepto" aria-selected="true">Titulo 1</a>
+                  <a class="nav-link active" id="vert-tabs-concepto-tab" data-toggle="pill" href="#vert-tabs-concepto" role="tab" aria-controls="vert-tabs-concepto" aria-selected="true"><i class="bi bi-journals"></i>Titulo 1</a>
                   <a class="nav-link" id="vert-tabs-compilador-tab" data-toggle="pill" href="#vert-tabs-compilador" role="tab" aria-controls="vert-tabs-compilador" aria-selected="false">Titulo 2</a>
                   <a class="nav-link" id="vert-tabs-transpilador-tab" data-toggle="pill" href="#vert-tabs-transpilador" role="tab" aria-controls="vert-tabs-transpilador" aria-selected="false">Titulo 3 </a>
                   <a class="nav-link" id="vert-tabs-linter-tab" data-toggle="pill" href="#vert-tabs-linter" role="tab" aria-controls="vert-tabs-linter" aria-selected="false">Titulo 4</a>
@@ -68,6 +67,6 @@
   </div>
   <!-- ./wrapper -->
 
-  <?php include "../../../templates/footer_cursos.php";
+  <?php include "../../../../../templates/footer.php";
 
 ?>

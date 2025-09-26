@@ -30,30 +30,16 @@
               <div class="col-7 col-sm-9">
                 <div class="tab-content" id="vert-tabs-tabContent">
                   <div class="tab-pane text-left fade show active" id="vert-tabs-concepto" role="tabpanel" aria-labelledby="vert-tabs-concepto-tab">
-                    <article class="px-4">
-                      <h2><span class="bg-warning px-3 rounded">Titulo 1</span></h2>
-                      <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate possimus harum dicta aperiam tenetur unde voluptatum laboriosam pariatur, quasi vero nemo quod hic mollitia, voluptatibus nisi omnis provident fugiat incidunt cumque autem, fuga architecto qui. Veritatis sit aperiam similique eos ad blanditiis delectus tempora, quam illum ullam quia odio rerum..
-                      </p>
-                    </article>
+                    <?php include_once("./articulo1.php")?>
                   </div>
                   <div class="tab-pane fade" id="vert-tabs-compilador" role="tabpanel" aria-labelledby="vert-tabs-compilador-tab">
-                    <article class="px-4">
-                      <h2><span class="bg-warning px-3 rounded">Titulo 2</span></h2>
-                      <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe beatae tempora amet, commodi ex, debitis nam veritatis nisi neque deserunt nulla nemo, repudiandae et vero consequatur. Porro sapiente inventore pariatur laborum incidunt placeat magnam reprehenderit aut aperiam veritatis non minus, perspiciatis vero esse, dolores velit! Velit fuga animi aliquam debitis.
-                      </p>
-                    </article>
+                    <?php include_once("./articulo2.php")?>
                   </div>
                   <div class="tab-pane fade" id="vert-tabs-transpilador" role="tabpanel" aria-labelledby="vert-tabs-transpilador-tab">
-                    <article class="px-4">
-                      <h2><span class="bg-warning px-3 rounded">Titulo 3</span></h2>
-                      <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nesciunt officiis perspiciatis aliquam natus ad. Sequi enim voluptatum odit fugiat pariatur architecto optio, nam ab quibusdam. Atque hic dolorem eos blanditiis esse quis dignissimos iure aspernatur commodi suscipit ut quod quidem reiciendis delectus harum, a eligendi omnis mollitia corporis consectetur.</p>
-                    </article>
+                    <?php include_once("./articulo3.php")?>
                   </div>
                   <div class="tab-pane fade" id="vert-tabs-linter" role="tabpanel" aria-labelledby="vert-tabs-linter-tab">
-                    <article class="px-4">
-                      <h2><span class="bg-warning px-3 rounded">Titulo 4</span></h2>
-                      <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum porro, magnam quidem sint facere nostrum doloremque eveniet, sequi temporibus unde nulla provident, esse perferendis similique velit rem possimus distinctio doloribus harum illum optio aliquid deleniti? Placeat libero incidunt dolorem tenetur quia aliquam mollitia ducimus repellat eveniet temporibus, asperiores rerum? Consequuntur!</p>
-                    </article>
+                    <?php include_once("./articulo4.php")?>
                   </div>
                 </div>
               </div>

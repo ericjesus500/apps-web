@@ -35,8 +35,7 @@
 
   <div class="row justify-content-end">
     <div class="col-auto">
-      <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nuevoModal"><i
-          class="bi bi-plus-circle-fill me-2"></i>Registro Nuevo</a>
+      <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nuevoModal"><i class="bi bi-plus-circle-fill me-2"></i>Registro Nuevo</a>
     </div>
   </div>
 
@@ -61,12 +60,10 @@
         <td colspan="2"><?= $row_pelicula['genero']?></td>
         <td><img src="<?= $dir.$row_pelicula['id_pelicula'].'.jpg?n='.time()?>" width="100" class="img-fluid"></td>
         <td>
-          <a href="#" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editaModal"
-            data-bs-id="<?= $row_pelicula['id_pelicula'] ?>"><i class="bi bi-pencil-square me-1"></i></a>
+          <a href="#" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editaModal" data-bs-id="<?= $row_pelicula['id_pelicula'] ?>"><i class="bi bi-pencil-square me-1"></i></a>
         </td>
         <td>
-          <a href="#" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#eliminaModal"
-            data-bs-id="<?= $row_pelicula['id_pelicula'] ?>"><i class="bi bi-trash me-1"></i></a>
+          <a href="#" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#eliminaModal" data-bs-id="<?= $row_pelicula['id_pelicula'] ?>"><i class="bi bi-trash me-1"></i></a>
         </td>
       </tr>
       <?php } ?>

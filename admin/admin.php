@@ -1,10 +1,5 @@
-<?php include "../templates/header.php"?>
-<title>Admin</title>
-</head>
 
-<body class="hold-transition sidebar-mini">
-  <div class="wrapper">
-    <!-- Content Wrapper. Contains page content -->
+  <div class="wrapper">    
     <div class="container-fluid">
       <!-- Content Header (Page header) -->
       <div class="content-header">
@@ -12,12 +7,11 @@
           <div class="row mb-2">
             <div class="col-sm-12">
               <h1 class="m-0">Admin</h1>
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
+            </div>
+          </div>
+        </div>
       </div>
       <!-- /.content-header -->
-
       <!-- Main content -->
       <div class="content">
         <div class="container-fluid">
@@ -72,22 +66,6 @@
           <!-- /.row -->
         </div><!-- /.container-fluid -->
       </div>
-      <!-- /.content -->
+      <!-- /.main content -->
     </div>
-    <!-- /.content-wrapper -->
-
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-      <div class="p-3">
-        <h5>Title</h5>
-        <p>Sidebar content</p>
-      </div>
-    </aside>
-    <!-- /.control-sidebar -->
   </div>
-  <!-- ./wrapper -->
-
-  <!-- REQUIRED SCRIPTS -->
-
-  <?php include "../templates/footer.php"?>

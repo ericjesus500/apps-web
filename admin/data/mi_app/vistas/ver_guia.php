@@ -1,7 +1,7 @@
 <div class="table-responsive">
   <table id="add_tecnos" class="table">
-    <thead>
-      <tr class="bg-info">
+    <thead class="table-info">
+      <tr>
         <th class="border" scope="col">Id</th>
         <th class="border" scope="col">Título</th>
         <th class="border" scope="col">Autor</th>
@@ -11,7 +11,7 @@
         <th class="border" scope="col">Acciones</th>
       </tr>
     </thead>
-    <tbody id="tabla_guia" class="bg-table"></tbody>
+    <tbody id="tabla_guia" class="table-dark "></tbody>
   </table>
 </div>
 

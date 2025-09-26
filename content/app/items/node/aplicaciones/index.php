@@ -1,6 +1,6 @@
 <?php include "../../../../../templates/header.php"; ?>
 
-<title>PHP | Aplicaciones</title>
+<title>NODE | Aplicaciones</title>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -9,7 +9,7 @@
       <!-- Left navbar links -->
       <ul class="navbar-nav">
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="/content/cursos/index.php" class="nav-link">Home</a>
+          <a href="/index.php" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
           <a href="#" class="nav-link">Contact</a>
@@ -20,18 +20,19 @@
       <div class="container mt-5">
         <div class="card-group mb-5 m-auto">
           <div class="row m-auto g-3">
-            <!-- DEVELOTECA Cómo hacer un Sitio Web con PHP -->
+            <!-- Programa Ya: CRUD con Node JS + Express y MySQL -->
             <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-3 card shadow-sm" style="max-width: 22rem;">
-              <img src="./assets/img/sitio_web.jpg" alt="php" width="100%" height="225" role="img">
+              <img src="./assets/img/programaya.jpg" alt="php" width="100%" height="225" role="img">
               <div class="card-body">
-                <h3 class="card-text">Develoteca: Sitio web de libros</h3>
-                <p class="card-text">Proyecto de Libreria con base de datos Mysql y conexión Mysqli</p>
+                <h3 class="card-text">Programa Ya: CRUD con Node JS + Express y MySQL</h3>
+                <p class="card-text">Paso a paso como crear un CRUD (Create, Read, Update, Delete) básico con Node JS utilizando el framework Express, y conexión con MySQL para poder almacenar los datos.</p>
+                <p class="card-text">Aprenderemos conceptos básicos de express como la configuración básica del servidor, crear rutas y usar middlewares. También usaremos un motor de plantillas para generar nuestras interfaces gráficas y usaremos boostrap para poder estilizar nuestros componentes.</p>
               </div>
               <div class="card-footer d-flex justify-content-around align-items-center">
-                <a type="button" class="btn btn-sm btn-primary" href="apps/develoteca-sitio-web/index.php">Ir a
+                <a type="button" class="btn btn-sm btn-primary" href="apps/programaya/index.html">Ir a
                   la app</a>
                 <a type="button" class="btn btn-sm p-0"
-                  href="https://www.youtube.com/watch?v=IZHBMwGIAoI&list=PLSuKjujFoGJ0lUCPh_0cI2bMgzHZjt6Ks&index=1"
+                  href="https://www.youtube.com/watch?v=eOGlouhsIjY&ab_channel=ProgramaYa"
                   target="_blank" style="font-size: 40px;"><i class="bi bi-youtube text-danger"></i></a>
               </div>
             </div><!-- FIN DEVELOTECA Cómo hacer un Sitio Web con PHP -->

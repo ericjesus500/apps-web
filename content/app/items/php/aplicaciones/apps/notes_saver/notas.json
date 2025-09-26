@@ -1,0 +1,23 @@
+[
+    {
+        "titulo": "file_put_contents()",
+        "descripcion": "La función file_put_contents() en PHP se utiliza para escribir datos en un archivo. Si el archivo no existe, lo crea. Si ya existe, su contenido se sobrescribe con los nuevos datos. Es una forma sencilla de guardar información en un archivo, manejando la apertura, escritura y cierre del archivo internamente. ",
+        "codigo": "\/\/Escribir una cadena en un archivo:\r\n\/\/Este código creará el archivo mi_archivo.txt (si no existe) y escribirá \"Hola, mundo!\" en él\r\n<?php\r\n$archivo = 'mi_archivo.txt';\r\n$contenido = \"Hola, mundo!\";\r\nfile_put_contents($archivo, $contenido);\r\n?>\r\n\r\n\r\n\/\/Añadir datos a un archivo existente\r\n\/\/Este código añadirá \"\\nSegunda línea.\" al final del archivo mi_archivo.txt.\r\n<?php\r\n$archivo = 'mi_archivo.txt';\r\n$contenido = \"\\nSegunda línea.\";\r\nfile_put_contents($archivo, $contenido, FILE_APPEND);\r\n?>\r\n\r\n\/\/Escribir un array en un archivo\r\n\/\/Este código convertirá el array en una cadena separada por saltos de línea y luego lo escribirá en el archivo.\r\n<?php\r\n$archivo = 'mi_archivo.txt';\r\n$datos = array(\"Manzana\", \"Banana\", \"Cereza\");\r\n$contenido = implode(\"\\n\", $datos);\r\nfile_put_contents($archivo, $contenido);\r\n?>\r\n\r\n\r\n\/\/Escribir con un bloqueo exclusivo\r\n\/\/Este código escribirá \"Datos importantes.\" en el archivo, asegurándose de que ningún otro proceso pueda acceder al archivo mientras se escribe.  \r\n<?php\r\n$archivo = 'mi_archivo.txt';\r\n$contenido = \"Datos importantes.\";\r\nfile_put_contents($archivo, $contenido, LOCK_EX);\r\n?>\r\n\r\n",
+        "etiquetas": "",
+        "fecha": "2025-07-28 03:47:13"
+    },
+    {
+        "titulo": "file_put_contents()",
+        "descripcion": "$filename (obligatorio):\r\nEl nombre del archivo en el que se escribirán los datos. Puede ser una ruta absoluta o relativa. \r\n\r\n$data (obligatorio):\r\nLos datos que se escribirán en el archivo. Puede ser una cadena, un array o un recurso de flujo.\r\n",
+        "codigo": "",
+        "etiquetas": "",
+        "fecha": "2025-07-28 04:09:30"
+    },
+    {
+        "titulo": "file_put_contents()",
+        "descripcion": "La función file_put_contents() en PHP se utiliza para escribir datos en un archivo. Si el archivo no existe, lo crea. Si ya existe, su contenido se sobrescribe con los nuevos datos. Es una forma sencilla de guardar información en un archivo, manejando la apertura, escritura y cierre del archivo internamente. ",
+        "codigo": "$filename (obligatorio):\r\nEl nombre del archivo en el que se escribirán los datos. Puede ser una ruta absoluta o relativa. \r\n\r\n$data (obligatorio):\r\nLos datos que se escribirán en el archivo. Puede ser una cadena, un array o un recurso de flujo.\r\n",
+        "etiquetas": "",
+        "fecha": "2025-07-28 04:12:05"
+    }
+]

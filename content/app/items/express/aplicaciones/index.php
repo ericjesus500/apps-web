@@ -1,6 +1,6 @@
 <?php include "../../../../../templates/header.php"; ?>
 
-<title>PHP | Aplicaciones</title>
+<title>EXPRESS | Aplicaciones</title>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -9,7 +9,7 @@
       <!-- Left navbar links -->
       <ul class="navbar-nav">
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="/content/cursos/index.php" class="nav-link">Home</a>
+          <a href="/index.php" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
           <a href="#" class="nav-link">Contact</a>
@@ -20,21 +20,21 @@
       <div class="container mt-5">
         <div class="card-group mb-5 m-auto">
           <div class="row m-auto g-3">
-            <!-- DEVELOTECA Cómo hacer un Sitio Web con PHP -->
+            <!-- FaztCode - Express Curso para principiantes -->
             <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-3 card shadow-sm" style="max-width: 22rem;">
-              <img src="./assets/img/sitio_web.jpg" alt="php" width="100%" height="225" role="img">
+              <img src="./assets/img/faztcode_express.jpg" alt="php" width="100%" height="225" role="img">
               <div class="card-body">
-                <h3 class="card-text">Develoteca: Sitio web de libros</h3>
-                <p class="card-text">Proyecto de Libreria con base de datos Mysql y conexión Mysqli</p>
+                <h3 class="card-text">FaztCode: Express Curso para principiantes</h3>
+                <p class="card-text"></p>
               </div>
               <div class="card-footer d-flex justify-content-around align-items-center">
-                <a type="button" class="btn btn-sm btn-primary" href="apps/develoteca-sitio-web/index.php">Ir a
+                <a type="button" class="btn btn-sm btn-primary" href="./apps/faztcode/express-basico/static/index.html">Ir a
                   la app</a>
                 <a type="button" class="btn btn-sm p-0"
-                  href="https://www.youtube.com/watch?v=IZHBMwGIAoI&list=PLSuKjujFoGJ0lUCPh_0cI2bMgzHZjt6Ks&index=1"
+                  href="https://www.youtube.com/watch?v=JmJ1WUoUIK4&t=10s&ab_channel=Fazt"
                   target="_blank" style="font-size: 40px;"><i class="bi bi-youtube text-danger"></i></a>
               </div>
-            </div><!-- FIN DEVELOTECA Cómo hacer un Sitio Web con PHP -->
+            </div><!-- FIN FaztCode - Express Curso para principiantes -->
     
             <!--DEVELOTECA App alumnos -->
             <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-3 card shadow-sm" style="max-width: 22rem;">

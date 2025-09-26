@@ -1,0 +1,151 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;  
+}
+
+html{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  background-color: white;  
+}
+
+body{
+  display: flex;
+  gap: 10px;
+  min-width: 290px;
+}
+
+h2{
+  font-size: 1.25rem;
+  margin: 30px 0;
+  margin-left: 20px;
+}
+
+#navbar{
+  width: 30%;
+  height: 100%;
+  margin: 0;
+  padding: 0px 0px;
+  background-color: rgb(139, 205, 245);
+  text-align: center;
+  border-right: 1px solid black;
+}
+
+#navbar header{
+  margin-top: 0;
+  padding: 30px 10px;
+  font-size:1.35rem;
+  font-weight: bold;  
+}
+
+#navbar ul{
+  width: 100%;
+  height: auto;
+}
+
+#navbar li{  
+  width: 100%;
+  padding: 20px 20px;  
+  text-align: left;  
+  border-bottom: 1px solid black;
+  list-style: none;
+}
+
+#navbar li:first-child{
+  border-top: 1px solid black;
+}
+
+#navbar li a{
+  text-decoration: none;
+  color: #5b5a5a;
+}
+
+#navbar li a:active {
+  color: #5b5a5a;
+}
+
+#navbar li a:hover {
+  color: #fff;
+}
+
+#main-doc{
+  width: 65%;
+  margin: 0;
+  background-color: #F8F9FA;
+}
+
+#main-doc{
+  width: 100%;
+  padding: 20px 20px;
+}
+
+#main-doc .main-section{
+  width: 100%;
+  padding: 15px 15px;  
+ }
+
+ #main-doc .main-section header {
+  margin-left: -10px;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+ }
+
+ #main-doc .main-section p{
+  line-height: 2;
+  margin-left: 20px;
+  margin-bottom: 20px;
+ }
+
+ #main-doc .main-section ul{
+  width: 90%;
+  margin-left: 35px;
+  margin-bottom: 20px;  
+ }
+
+ #main-doc .main-section li{
+  margin-left: 20px;
+  margin: 10px 0;
+  line-height: 2;  
+ }
+
+ .sintaxis{
+    width: 75%;
+    margin: 40px 20px;
+    background-color: black;    
+    color: white;
+    border: 2px solid rgb(229, 228, 228);
+    padding-left: 20px;
+    border-radius: 5px;
+    line-height: 1.5;
+    white-space: pre-line;
+ }
+
+ span.comentario{
+  opacity: 0.5;
+ }
+
+ @media (max-width: 1200px) and (min-width: 769px) {
+  #navbar{
+    min-width:250px;
+  }
+  #main-doc{
+    min-width: 510px
+  }
+ }
+
+ @media (max-width: 650px) and (min-width: 320px) {
+
+  body{
+    display: flex;
+    flex-direction: column;
+  }
+
+    #navbar {
+      width: 100%;
+      max-height: 250px;
+      overflow-y: auto;
+    }
+ }

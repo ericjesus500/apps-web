@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TEEMPLATE STRINGS ES6</title>
+</head>
+<body>
+	
+	<script>
+		
+    const producto1 = 'Pizza',
+    precio1 = 30,
+    producto2 = 'Hamburguesa',
+    precio2 = 40;
+
+    let html = `
+    <ul>
+             <li>Orden: ${producto1}</li>
+             <li>Precio: ${precio1}</li>
+             <li>Orden: ${producto2}</li>
+             <li>Precio: ${precio2}</li>
+             <p>Total: ${ total(precio1,precio2) }</p>
+    </ul> `;
+
+    function total( precio1, precio2 ){
+            return precio1 + precio2;
+    }
+
+    document.write(html);
+              
+	</script>
+</body>
+</html>

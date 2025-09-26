@@ -1,7 +1,4 @@
-<?php  include "../../templates/head_cursos.php" ?>
-<title>CURSO Node</title>
 
-<body>
   <!-- Content Wrapper. Contains page content -->
   <div class="wrapper">
     <!-- Content-fluid -->
@@ -10,45 +7,10 @@
       <div class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
-            <div class="col-sm-6">
-              <nav class="navbar navbar-expand navbar-white navbar-light">
-                <!-- Left navbar links -->
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link text-primary">
-                      <h3>NODE</h3>
-                    </a>
-                  </li>
-                  <li class="nav-item d-none d-sm-inline-block">
-                    <a href="/content/cursos/index.php" class="nav-link">Home</a>
-                  </li>
-                  <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div class="col-sm-6 d-flex flex-row-reverse">
-              <div class="margin">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-warning">Tutoriales completos</button>
-                  <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown">
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <div class="dropdown-menu" role="menu">
-                    <a class="dropdown-item" href="https://www.aprendejavascript.dev/" target="_blank">Aprende Javascript</a>
-                    <a class="dropdown-item" href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank">Javascript en MDN Mozilla</a>
-                    <a class="dropdown-item" href="" target="_blank">Item</a>
-                    <a class="dropdown-item" href="" target="_blank">Item</a>
-                    <a class="dropdown-item" href="" target="_blank">Item</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <?php include_once "templates/navbar-node.php"; ?>
           </div>
-        </div><!-- /.container-fluid -->
+        </div>
       </div>
-      <!-- /.content-header -->
 
       <!-- Main content -->
       <div class="content">
@@ -60,22 +22,16 @@
                 <div class="card-body">
                   <h5 class="card-title"><strong>Qué es Node</strong></h5>
                   <p class="card-text">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa officia placeat, nesciunt unde eaque eius itaque minima aperiam! Adipisci, labore, voluptatem illum corporis, illo fuga tenetur non sed minus nostrum quas natus est quisquam ipsam vitae quo incidunt voluptas cupiditate inventore laudantium voluptatibus consequatur ipsa veniam! Eligendi earum itaque nisi.
+                    Node.js, es un entorno en tiempo de ejecución multiplataforma para la capa del servidor (en el lado del servidor) basado en JavaScript.
+                    <br />
+                    Node.js es un entorno controlado por eventos diseñado para crear aplicaciones escalables, permitiéndote establecer y gestionar múltiples conexiones al mismo tiempo. Gracias a esta característica, no tienes que preocuparte con el bloqueo de procesos, pues no hay bloqueos.
                   </p>
-                  <a href="#" class="card-link" target="_blank">Node Oficial</a>
-                  <a href="http://codigos/items/node/index.php" class="card-link" target="_blank">Mi
-                    Tutorial</a>
-                  <a href="/content/app/items/node/apps/index.php" class="card-link" target="_blank">Ir a Apps</a>
-                </div>
-              </div>
-              <div class="card card-primary card-outline">
-                <div class="card-body">
-                  <h5 class="card-title"><strong>Sección Informatica acerca de Node</strong></h5>
+                  <h5 class="card-title"><strong>¿Cómo funciona Node JS?</strong></h5>
                   <p class="card-text">
-                    Resumen de Guías diversas acerca de Node.
+                    El diseño de Node.js está inspirado en sistemas como el Event Machine de Ruby o el Twisted de Python. Sin embargo, Node.js presenta un bucle de eventos como una construcción en tiempo de ejecución en lugar de una biblioteca. Este bucle de eventos es invisible para el usuario.
+                    <br />
+                    Otra característica especial de Node.js es que está diseñado para simplificar la comunicación. No tiene subprocesos, pero te permite aprovechar múltiples núcleos en su entorno y compartir sockets entre procesos.
                   </p>
-                  <a href="/content/cursos/items/node/guias/guias.php" class="card-link">Ir a resumen </a>
-                  <a href="#" class="card-link">Another link</a>
                 </div>
               </div>
             </div>
@@ -83,40 +39,66 @@
               <!-- caracteristicas -->
               <div class="card card-warning card-outline">
                 <div class="card-header">
-                  <h5 class="m-0">Características</h5>
+                  <h5 class="m-0">Características principales de Node.js</h5>
                 </div>
                 <div class="card-body">
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur dolores est perferendis commodi cum iure tempore debitis totam nostrum ipsum autem eveniet quas tempora minima excepturi sed explicabo, perspiciatis dolorum corporis numquam obcaecati hic! Iusto magni in accusantium hic labore eaque, omnis id. Nulla voluptatibus at, molestias ea, numquam ab molestiae nobis odio odit facilis aperiam quam eius est ut eveniet eum voluptatum repudiandae doloribus. Recusandae inventore tempora placeat quos dolores at alias quas rem, iusto id quam aut assumenda, quidem explicabo, nemo officia culpa sed enim deleniti obcaecati totam a fugiat fugit omnis. Aspernatur nam magni enim adipisci nulla.</p>
+                  <p class="card-text">Resumiendo, Node.js se ha hecho popular en los últimos años gracias a las siguientes características:</p>
+                  <ul>
+                    <li class="mt-3"><i class="bi bi-check2-square"></i><strong>Velocidad: </strong>Node.js está construido sobre el motor de JavaScript V8 de Google Chrome, por eso su biblioteca es muy rápida en la ejecución de código.</li>
+                    <li class="mt-3"><i class="bi bi-check2-square"></i><strong>Sin búfer: </strong>Las aplicaciones de Node.js generan los datos en trozos (chunks), nunca los almacenan en búfer.</li>
+                    <li class="mt-3"><i class="bi bi-check2-square"></i><strong>Asíncrono y controlado por eventos: </strong>Como hemos dicho anteriormente, las APIs de la biblioteca de Node.js son asíncronas, sin bloqueo. Un servidor basado en Node.js no espera que una API devuelva datos. El servidor pasa a la siguiente API después de llamarla, y un mecanismo de notificación de eventos ayuda al servidor a obtener una respuesta de la llamada a la API anterior.</li>
+                    <li class="mt-3"><i class="bi bi-check2-square"></i><strong>Un subproceso escalable: </strong>Node.js utiliza un modelo de un solo subproceso con bucle de eventos. Gracias al mecanismo de eventos, el servidor responde sin bloqueos, como hemos dicho. Esto hace que el servidor sea altamente escalable comparando con los servidores tradicionales como el Servidor HTTP de Apache.</li>
+                  </ul>
                 </div>
               </div>
               <!-- articulos -->
               <div class="col-md-12">
                 <!-- más sobre node -->
                 <div class="card card-warning collapsed-card" style="transition: all 0.15s ease 0s; height: inherit; width: inherit;">
+                  <!-- ¿Para qué sirve Node.js? -->
                   <div class="card-header">
-                    <h3 class="card-title">Más sobre Node</h3>
+                    <h3 class="card-title">¿Para qué sirve Node.js?</h3>
                     <div class="card-tools">
                       <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
                       </button>
                     </div>
                   </div>
                   <div class="card-body">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias optio labore animi impedit. Odit, necessitatibus nostrum dolor non cupiditate mollitia officia earum temporibus deserunt magni repellat illum perspiciatis reiciendis aliquid ea hic corporis qui debitis harum numquam voluptatem minus, fugit optio. Ea tenetur, maiores sed quia error explicabo itaque? Ipsa inventore deserunt ullam ea, blanditiis perspiciatis voluptates, magni repudiandae voluptate nulla odio et explicabo nostrum facilis suscipit obcaecati. Sit, possimus totam repellat delectus corporis mollitia odit voluptatum at fuga consequatur nesciunt nihil ipsam ducimus laborum, reiciendis deleniti natus ea quos facilis placeat quis cum vitae molestiae! Officia quisquam ipsa tempora?.</p>
+                    <p class="card-text">Puedes utilizar Node.js para diferentes tipos de aplicaciones. Los siguientes son algunos de los ejemplos:</p>
+                    <ul>
+                      <li class="mt-3"><i class="bi bi-check2-square"></i>Aplicaciones de transmisión de datos (streaming)</li>
+                      <li class="mt-3"><i class="bi bi-check2-square"></i>Aplicaciones intensivas de datos en tiempo real</li>
+                      <li class="mt-3"><i class="bi bi-check2-square"></i>Aplicaciones vinculadas a E/S</li>
+                      <li class="mt-3"><i class="bi bi-check2-square"></i>Aplicaciones basadas en JSON:API</li>
+                      <li class="mt-3"><i class="bi bi-check2-square"></i>Aplicaciones de página única</li>
+                    </ul>
                   </div>
                 </div>
-                <!-- Más artículos -->
+                <!-- Instalación de Node con NVM -->
                 <div class="card card-warning collapsed-card" style="transition: all 0.15s ease 0s; height: inherit; width: inherit;">
                   <div class="card-header">
-                    <h3 class="card-title">Más artículos</h3>
+                    <h3 class="card-title">Instalación de Node con NVM</h3>
                     <div class="card-tools">
                       <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
                       </button>
                     </div>
                   </div>
                   <div class="card-body">
-                    <p>Ver más <a class="btn-link" href="./articulos/articulos.php" target="_blank">artículos</a> sobre Node</p>
+                    <pre class="sintaxis">
+                      <code>
+                        <span class="comentario">//Instala una nueva versión de Node.js</span>
+                        nvm install lts
+
+                        <span class="comentario">//Cambia de version</span>
+                        nvm use version-de-node
+
+                        <span class="comentario">//Verifica que versiones de node tienes instalada o disponible</span>
+                        nvm ls
+                      </code>
+                    </pre>
                   </div>
                 </div>
+
               </div>
               <!-- El Ecosistema de Node en 2023 -->
               <div class="card card-warning card-outline">
@@ -128,25 +110,11 @@
                   <a href="/content/cursos/items/node/articulos/arquitectura_node.php" class="btn btn-warning" target="_blank">Ver el artículo completo</a>
                 </div>
               </div>
-              <div class="card">
-                <div class="card-header">
-                  <h5 class="m-0">Lista de videos relacionados</h5>
-                </div>
-                <div class="card-body">
-                  <h6 class="card-title">Videos seleccionados de Youtube</h6>
-                  <p class="card-text">Esta es una lista de videos relacionados a NodeJs de Youtube.</p>
-                  <a href="#" class="btn btn-warning">Ver la lista</a>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- /.main content -->
+    </div>    
+    <!-- /.content-fluid -->
   </div>
-  <!-- /.content-fluid -->
-  </div>
-  <!-- /.content-wrapper -->
-
-  <?php  include "../../templates/footer_cursos.php" ?>
+  <!-- /.content-wrapper -->  

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ejercicio closures</title>
+
+	<style>
+		body {
+		  font-family: Helvetica, Arial, sans-serif;
+		  font-size: 12px;
+		}
+
+		h1 {
+		  font-size: 1.5em;
+		}
+
+		h2 {
+		  font-size: 1.2em;
+		}
+		div{
+			width: 70%;
+			height: auto;
+			margin: 20px auto;
+			padding: 20px 20px;
+			line-height: 4;
+		}
+
+		a{
+			font-size: 20px;
+			text-decoration: none;
+			color: blue;
+			margin-right: 20px;
+			border: 1px solid blue;
+			border-radius: 5px;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<h1>CLOSURES</h1>
+
+		<h2>Definición</h2>
+
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique omnis architecto cupiditate, assumenda voluptatem distinctio.</p>
+
+	  <a href="#" id="size-12">aplicar tamaño 12</a>
+	  <a href="#" id="size-14">aplicar tamaño 14</a>
+	  <a href="#" id="size-16">aplicar tamaño 16</a>		
+	</div>
+
+  <script>
+  	function makeSizer(size) {
+       return function(){
+          document.body.style.fontSize = `${size}px`;
+       }
+  	}
+
+	  const size12 = makeSizer(12);
+	  const size14 = makeSizer(14);
+	  const size16 = makeSizer(16);
+
+	  document.getElementById("size-12").onclick = size12;
+	  document.getElementById("size-14").onclick = size14;
+	  document.getElementById("size-16").onclick = size16;
+  </script>
+</body>
+</html>

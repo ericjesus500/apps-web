@@ -1,20 +1,73 @@
-{
+/* <uniquifier>: Use a unique and descriptive class name */
+/* <weight>: Use a value from 100 to 900 */
+* {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;  
+}
+
+.pathway-extreme-h1 {
+  font-family: "Pathway Extreme", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.pathway-extreme-p {
+  font-family: "Pathway Extreme", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 .comentario {
   opacity: 0.5;
 }
 
-.text-lila {
-  color: rgb(238, 109, 238);
+.text-primary_2{
+    color: #82AAFF
 }
 
-.text-yellow {
+.text-tomato {
+  color: tomato;
+}
+
+.text-lila {
+  color: #ee6dee;
+}
+
+.text-lila_2 {
+  color: #f606b2;
+}
+
+.text-amarillo {
   color: yellow;
 }
 
-.text-green {
+.text-indigo {
+  color: rgba(170, 114, 230, 0.908);
+}
+
+.text-indigo_2{
+  color: #b405f9;
+}
+
+.text-verde {
+  color: #9ed72f;
+}
+
+.text-verde_2 {
   color: #9ed72f;
 }
 
@@ -34,48 +87,124 @@
   color: #121f3d;
 }
 
-.bg-yellow {
-  background-color: yellow;
+.text-golden{
+  color: #a19852;
+}
+
+.bg-primary_2{
+  background-color: #82AAFF
+}
+
+.bg-tomato{
+  background-color: tomato;
 }
 
 .bg-lila {
   background-color: #ee6dee;
 }
 
+.bg-lila_2 {
+  background-color: #efd9fd;
+}
+
+.bg-amarillo {
+  background-color: yellow;
+}
+
+.bg-indigo {
+  background-color: rgba(170, 114, 230, 0.908);
+}
+
+.bg-indigo_2{
+  background-color: #b405f9;
+}
+
+.bg-verde {
+  background-color: #9ed72f;
+}
+
+.bg-skyblue_1 {
+  background-color: #1e80d5
+}
+
 .bg-skyblue_2 {
   background-color: #00fff5;
 }
 
-.bg-green {
-  background-color: #9ed72f;
+.bg-orange {
+  background-color: orange;
+}
+
+.bg-orange_1 {
+  background-color: #EABD36;
+}
+
+.bg-blue_2 {
+  background-color: #121f3d;
 }
 
 .bg-red {
   background-color: red;
 }
 
-.bg-blue {
-  background-color: #121f3d;
-}
-
 .bg-black {
   background-color: #1f1f1f;
+}
+
+.btn-primary_2{
+  background-color: #82AAFF
 }
 
 .btn-blue {
   background-color: #121f3d;
 }
 
-.btn-yellow {
-  background-color: yellow;
+.btn-tomato{
+  background-color: tomato;
 }
 
 .btn-lila {
   background-color: #ee6dee;
 }
 
+.btn-lila_2 {
+  background-color: #efd9fd;
+}
+
+.btn-amarillo {
+  background-color: yellow;
+}
+
+.btn-indigo {
+  background-color: rgba(170, 114, 230, 0.908);
+}
+
+.btn-indigo_2{
+  background-color: #b405f9;
+}
+
+.btn-verde {
+  background-color: #9ed72f;
+}
+
+.btn-yellow {
+  background-color: yellow;
+}
+
+.btn-skyblue_1 {
+  background-color: #1e80d5
+}
+
 .btn-skyblue_2 {
   background-color: #00fff5;
+}
+
+.bg-orange {
+  background-color: orange;
+}
+
+.btn-orange_1 {
+  background-color: #EABD36;
 }
 
 .btn-black {
@@ -90,6 +219,54 @@
   background-color: red;
 }
 
+
+/* ESTILOS DE CURSOS, AYUDAS Y ARTICULOS */
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:wght@300;600&family=Poppins:wght@300;500&family=Roboto:wght@300;500&display=swap");
+
+.menu-cursos .item-cursos a{
+  cursor: pointer;
+}
+
+ul.list li{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+ul.ejercicios li a {
+  text-decoration: none;
+  color: #1e80d5;
+}
+
+ul.ejercicios li a:visited{
+  text-decoration: none;
+  color: #1e80d5;
+}
+
+.b-refer{
+  background-color: #1f1f1f;
+}
+
+.section {
+  position: relative;  
+  height: auto;
+  top: -88px;
+  color: white;
+}
+
+.arrow-arriba {
+  padding: 3px;
+  display: inline;
+  font-size: 3rem;
+  cursor: pointer;
+  position: sticky;
+  top: 93%;
+  left: 100%;
+  z-index: 999;
+}
+
+.arrow-arriba a {
+  margin: 0 auto;
+}
+
 .nota {
   border-radius: 5px;
   background-color: #192732;
@@ -101,11 +278,143 @@
   border-bottom-width: 1px;
   border-bottom-color: #696969;
   border-left-width: 4px;
-  border-left-color: #5e9eff;
+  border-left-color: tomato;
   font-style: italic;
-  font-size: 1.2em;
-  padding: 20px;
-  /*color: #b8bcb9;*/
-  /*color: #337eec;*/
+  font-size: 1em;
+  padding-top: 20px;
+  padding-left: 20px;
   color: #5e9eff;
 }
+
+.callout{
+  background-color: #c2ffff;
+}
+
+ul {
+  list-style: none;
+}
+
+dt {
+  display: inline;
+  color: #b405f9;
+  background-color: #faf8e1;
+  border-radius: 5px;
+  padding: 8px;
+  margin-left: 1.2em;
+}
+
+dl,
+dt,
+dd {
+  font-size: 1.3rem;
+  margin: 20px 0;
+}
+
+dl dd {
+  padding: 10px;
+  margin-left: 1.2em;
+}
+
+p {
+  font-family: "Lato", sans-serif;
+  font-size: 1.3em;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+p.h5 {
+  margin-top: 50px;
+  color: orange;
+}
+
+p.destacado {
+  padding: 1em 0.5em;
+  font-size: 1.3em;
+  font-family: "Lato", sans-serif;
+  border-radius: 5px;
+  background-color: #cff4fc;
+  border-right: 10px solid #09c5f5;
+  border-left: 10px solid #09c5f5;
+  color: #197194;
+}
+
+h3 {
+  color: greenyellow;
+  font-size: 1.4rem;
+}
+
+h4.resaltado {
+  background-color: #fd0;
+  color: #121f3d;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 100%;
+  font-size: 1.2em;
+  font-family: "Lato", sans-serif;
+  padding: 0.5em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-left-style: solid;
+  border-left-width: 10px;
+  border-left-color: blue;
+  text-align: justify;
+}
+
+i {
+  margin-right: 5px;
+}
+
+.img-25 {
+  width: 25%;
+}
+
+.img-50 {
+  width: 50%;
+  max-width: 50%;
+}
+
+.img-75 {
+  width: 75%;
+  max-width: 75%;
+}
+
+.img-100 {
+  width: 100%;
+  max-width: 100%;
+}
+
+.sintaxis {
+  border-radius: 3px;
+  padding: 0.25rem;
+  background-color: #f8f9fa;
+  color: rgb(33, 37, 41);
+  font-size: 0.85rem;
+  white-space: pre-line;
+  padding-left: 20px;
+  border: 0.2px solid rgb(198, 198, 198);
+}
+
+.pre-content-list {
+  color: white;
+  border: 2px solid rgb(229, 228, 228);
+  padding-left: 20px;
+  border-radius: 5px;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+ul li pre, ul.list-group li pre {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9rem;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visor de Iconos Bootstrap</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 1rem;
+      background-color: #f9fafb;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .search {
+      max-width: 400px;
+      margin: 0 auto 1.5rem;
+      display: flex;
+    }
+
+    .search input {
+      flex: 1;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: 1rem;
+    }
+
+    .icon-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 0.5rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .icon-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .icon-card svg {
+      width: 32px;
+      height: 32px;
+      fill: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .icon-name {
+      font-size: 0.75rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Visor de Iconos Bootstrap</h1>
+
+  <div class="search">
+    <input type="text" id="searchInput" placeholder="Buscar icono...">
+  </div>
+
+  <div class="grid" id="iconGrid">
+    <!-- Los iconos se insertan aquí con JS -->
+  </div>
+
+  <script>
+    const iconFolder = './icons'; // Asegúrate de tener los SVG aquí
+    const iconList = [
+      'alarm', 'bell', 'check', 'cloud', 'download', 'eye', 'gear', 'heart', 'house', 'star'
+    ]; // Agrega todos los nombres de archivo SVG sin ".svg"
+
+    const grid = document.getElementById('iconGrid');
+    const searchInput = document.getElementById('searchInput');
+
+    function renderIcons(filter = '') {
+      grid.innerHTML = '';
+      iconList.filter(name => name.includes(filter.toLowerCase())).forEach(name => {
+        fetch(`${iconFolder}/${name}.svg`)
+          .then(res => res.text())
+          .then(svg => {
+            const card = document.createElement('div');
+            card.className = 'icon-card';
+            card.innerHTML = svg + `<div class="icon-name">${name}</div>`;
+            card.onclick = () => {
+              navigator.clipboard.writeText(svg).then(() => {
+                alert(`SVG copiado al portapapeles: ${name}`);
+              });
+            };
+            grid.appendChild(card);
+          });
+      });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+      renderIcons(e.target.value);
+    });
+
+    renderIcons();
+  </script>
+</body>
+</html>

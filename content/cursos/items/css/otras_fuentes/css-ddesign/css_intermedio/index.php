@@ -1,17 +1,3 @@
-<?php include "../../../../templates_nivel_0/head.php"?>
-    
-    <link rel="stylesheet" href="../../css/estilos-css.css">
-
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans|Poppins|Roboto|Roboto+Condensed|Source+Code+Pro|Source+Sans+Pro|Titillium+Web|Ubuntu&display=swap"
-        rel="stylesheet">
-    <title>CSS Intermedio</title>
-</head>
-
-<body>
-    <?php require "../../../../templates_nivel_0/nav-ini.php";?>
-	<?php include "../../nav-css.php";?>
     
     <div class="container">
         <div class="content-indice">
@@ -2619,67 +2605,4 @@
         </div>
     </div>
     
-    <?php include "../../../../templates_nivel_0/footer.php"?>
-<!--Plantilla-->
-<!--
-<section class="section">
-    <article id="#" class="article">
-        <h2></h2>
-        <p class="destacado">
-    
-        </p>
-        <div class="content">
-            <h3></h3>
-            <ul class="dl-list list">
-                <li class="dd-list-item"> </li>
-                <li class="dd-list-item"> </li>
-                <li class="dd-list-item"> </li>
-            </ul>
-        </div>
-        <div class="content">
-            <h3></h3>
-            <dl class="dl-list">
-                <dd><span></span></dd>
-                <dt class="dd-list-item"></dt>
-            </dl>
-            <dl class="dl-list">
-                <dd><span></span></dd>
-                <dt class="dd-list-item"></dt>
-            </dl>
-            <dl class="dl-list">
-                <dd><span></span></dd>
-                <dt class="dd-list-item"></dt>
-            </dl>
-        </div>
-    </article>
-    <article id="#" class="article">
-        <h2></h2>
-        <p class="destacado">
-    
-        </p>
-        <div class="content">
-            <h3></h3>
-            <ul class="dl-list list">
-                <li class="dd-list-item"> </li>
-                <li class="dd-list-item"> </li>
-                <li class="dd-list-item"> </li>
-            </ul>
-        </div>
-        <div class="content">
-            <h3></h3>
-            <dl class="dl-list">
-                <dd><span></span></dd>
-                <dt class="dd-list-item"></dt>
-            </dl>
-            <dl class="dl-list">
-                <dd><span></span></dd>
-                <dt class="dd-list-item"></dt>
-            </dl>
-            <dl class="dl-list">
-                <dd><span></span></dd>
-                <dt class="dd-list-item"></dt>
-            </dl>
-        </div>
-    </article>
-</section>
--->
+

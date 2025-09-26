@@ -1,6 +1,6 @@
 <div class="table-responsive">
-  <table id="add_tecnos" class="table table-bordered bg-table">
-    <thead class="table table-info">
+  <table id="add_tecnos" class="table table-bordered">
+    <thead class="table-info">
       <tr>
         <th>Id Tecnologia</th>
         <th>Tecnologia</th>
@@ -8,6 +8,6 @@
         <th>Acciones</th>
       </tr>
     </thead>
-    <tbody id="tabla_tecnologia" class="border border-info text-white"></tbody>
+    <tbody id="tabla_tecnologia" class="border border-info text-white table-dark"></tbody>
   </table>
 </div>

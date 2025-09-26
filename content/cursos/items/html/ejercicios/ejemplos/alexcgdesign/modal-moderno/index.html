@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal desde cero</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+
+<body>
+
+    <section class="hero">
+        <h1 class="hero__title">Loft en Ciudad del Carmen, México</h1>
+
+        <p class="hero__subtitle">Moderno Loft con WiFi y A/C •Ideal para descanso</p>
+
+        <button class="btn" id="btn-open">
+            Ver más información
+        </button>
+
+        <img src="./img/home.avif" alt="Imagen de la propiedad"
+            class="hero__img" />
+    </section>
+
+    <section class="explicacion">
+        <h2 class="explicacion__title">¿Cómo funciona?</h2>
+
+        <p class="explicacion__text">
+            Este es un ejemplo sencillo de cómo crear un modal moderno utilizando la etiqueta <code>&lt;dialog&gt;</code> de HTML5.
+            Al hacer clic en el botón "Ver más información", se abre el modal que contiene detalles adicionales sobre la propiedad.
+            El modal se puede cerrar haciendo clic en el botón de cierre (✕).
+        </p>
+        <h3 class="bibliografia">Bibliografía:
+            <ul>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/dialog" target="_blank" rel="noopener noreferrer">MDN - &lt;dialog&gt;</a></li>
+            </ul>
+        </h3>
+        <h3 class="bibliografia">Videos relacionados:
+            <ul>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=bRgCPSl0Kxw" target="_blank" rel="noopener noreferrer">TUTORIAL CREAR un MODAL ANIMADO (HTML & CSS)</a>
+                    <p>Ideal para entender cómo animar modales sin JavaScript, usando solo HTML y CSS3. Incluye pasos detallados desde la estructura hasta la animación.</p>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=wSeQDOW4qUU" target="_blank" rel="noopener noreferrer">ANIMACIONES CON HTML & CSS MODERNO! | Etiqueta ...</a>
+                    <p>Refuerza el uso de la etiqueta <dialog> con técnicas modernas de animación en CSS. Perfecto si quieres que tus modales se vean más profesionales.</p>
+                </li>
+                <li>
+                    The Ultimate Guide<a href="https://www.youtube.com/watch?v=__2l2a4BGbE" target="_blank" rel="noopener noreferrer">Create Animated Native Modals with ...</a>
+                    <p>Una guía completa que cubre desde la funcionalidad básica hasta cómo animar modales con CSS moderno. También incluye cómo cerrar el modal correctamente.</p>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=VtyRgN1BP30" target="_blank" rel="noopener noreferrer">CÓMO CREAR UNA VENTANA MODAL CON HTML Y CSS</a>
+                    <p>Un tutorial rápido y directo para crear modales funcionales en menos de 15 minutos. Ideal para principiantes.</p>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=ZMhEVSvSwwk" target="_blank" rel="noopener noreferrer">Crea una Ventana Modal (PopUp) con HTML</a>
+                    <p>Explica cómo hacer un modal estilo pop-up responsivo, con tips adicionales sobre buenas prácticas.</p>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=jvrieYYJxy8" target="_blank" rel="noopener noreferrer">HACK AVANZADO etiqueta DIALOG HTML</a>
+                    <p>Si ya dominas lo básico, este video te lleva al siguiente nivel con trucos avanzados para sacarle el máximo provecho a &lt;dialog&gt;&lt;/dialog&gt;</p>
+                </li>
+                
+            </ul>
+        </h3>
+        <h3>Cómo usar correctamente la etiqueta <code>&lt;dialog&gt;</code></h3>
+        <p>Esta etiqueta de HTML5 permite crear modales nativos sin necesidad de JavaScript complejo. Es semántica, accesible y muy poderosa si se combina con CSS moderno.</p>
+        <img src="./img/codigo-1.PNG" alt="Código de ejemplo" class="img-fluid" />
+        <ul>
+            <li>Para abrir el modal: <br />document.getElementById("miModal").showModal();</li>
+            <li>Para cerrarlo: <br />document.getElementById("miModal").close();</li>
+            <li>También puedes usar .show() si no quieres que se bloquee el fondo.</li>
+        </ul>
+        <h3>Estilos CSS que lo hacen lucir profesional</h3>
+        <pre class="pre-content-list bg-blue my-5 p-3 ">
+            <code>
+                dialog {
+                width: 90%;
+                max-width: 400px;
+                padding: 2rem;
+                border: none;
+                border-radius: 10px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                background: white;
+                animation: fadeIn 0.3s ease-out;
+                position: relative;
+                }
+                
+                dialog::backdrop {
+                background: rgba(0, 0, 0, 0.6);
+                backdrop-filter: blur(2px);
+                }
+                
+                button#cerrar {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                background: transparent;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+                }
+                
+                @keyframes fadeIn {
+                from {
+                opacity: 0;
+                transform: translateY(-20px);
+                }
+                to {
+                opacity: 1;
+                transform: translateY(0);
+                }
+                }
+            </code>
+        </pre>
+        <h3>Buenas prácticas</h3>
+        <ul>
+            <li>Usa ::backdrop para estilizar el fondo cuando el modal está activo.</li>
+            <li>Añade aria-labelledby y aria-describedby para accesibilidad.</li>
+            <li>Evita usar position: fixed dentro del <code>&lt;dialog&gt;</code>, ya que puede interferir con su comportamiento nativo.</li>
+        </ul>
+        <h2>Pseudo elementos y pseudo clases que se complementen con <code>&lt;dialog&gt;</code></h2>
+        <p>Aunque <code>&lt;dialog&gt;</code> tiene un comportamiento bastante único en HTML, hay varias pseudo-clases y pseudo-elementos que pueden complementar su uso para mejorar la experiencia visual y de interacción. Aquí los más útiles:</p>
+        <h3>Pseudo-elemento exclusivo de <code>&lt;dialog&gt;</code></h3>
+        
+        <h4>::backdrop</h4>
+        <p>Este es el más específico para <code>&lt;dialog&gt;</code>. Permite estilizar el fondo que aparece detrás del modal cuando está abierto. Ejemplo:</p>
+        <img src="./img/codigo-2.PNG" alt="codigo 2" class="img-fluid" />
+        <p>Esto es útil para crear un efecto de desenfoque o atenuación del fondo, mejorando la legibilidad del contenido del modal.</p>
+        <h3>Pseudo-clases generales útiles</h3>
+        
+        <h4>:focus</h4>
+        <p>Cuando el modal está abierto, puedes usar <code>:focus</code> para aplicar estilos al diálogo cuando recibe el foco. Ejemplo:</p>
+        <img src="" alt="codigo 3" class="img-fluid" />
+        <p>Esto puede ser útil para mejorar la accesibilidad visual, indicando claramente que el modal está activo.</p>
+        
+        <h4>:open</h4>
+        <p>Detecta si el <code>&lt;dialog&gt;</code> está abierto. Muy útil para aplicar estilos condicionales.</p>
+        <img src="./img/codigo-4.PNG" alt="codigo 4" class="img-fluid" />
+        
+        <h4>:focus-within</h4>
+        <p>Se activa cuando cualquier elemento dentro del <code>&lt;dialog&gt;</code> tiene el foco. Ideal para mostrar bordes o sombras cuando el usuario interactúa.</p>
+        <img src="./img/codigo-5.PNG" alt="codigo 5" class="img-fluid" />
+
+        <h4>:has() (experimental)</h4>
+        <p>Si el navegador lo soporta, puedes usarlo para aplicar estilos al <code>&lt;dialog&gt;</code> que contenga ciertos elementos.</p>
+        <img src="./img/codigo-6.PNG" alt="codigo 6" class="img-fluid" />
+
+        <h3>Pseudo-elementos generales que funcionan bien</h3>
+        <h4>::before y ::after</h4>
+        <p>Aunque no son específicos de <code>&lt;dialog&gt;</code>, puedes usarlos para añadir decoraciones o iconos dentro del modal.</p>
+        <img src="./img/codigo-7.PNG" alt="codigo 7" class="img-fluid" />
+
+        <h2>Tip adicional: animaciones con @keyframes</h2>
+        <p>Usar animaciones suaves al abrir y cerrar el modal mejora la experiencia del usuario.</p>
+        
+        <p>Puedes combinar pseudo-clases como <code>:open</code> con animaciones para lograr efectos suaves al mostrar el modal.</p>
+        <img src="./img/codigo-8.PNG" alt="codigo 8" class="img-fluid" />
+        
+    </section>
+
+    <dialog class="modal">
+
+        <header class="modal__header">
+            <button class="modal__close" id="btn-close">
+                ✕
+            </button>
+            <h2 class="modal__title" id="modalTitle">Acerca del espacio</h2>
+        </header>
+
+        <section class="modal__content">
+            <div class="property-info">
+                <p class="modal__description">
+                    Tu refugio ideal en la isla, perfecto para desconectar o disfrutar de unas vacaciones con quienes
+                    más quieres.
+
+                </p>
+
+                <p class="modal__description">
+                    Esta acogedora estancia combina comodidad, ubicación estratégica y privacidad, todo en una zona
+                    tranquila cerca del aeropuerto, playas y plazas comerciales.
+
+                </p>
+
+                <p class="modal__description">
+                    Ubicada a solo 8 minutos del aeropuerto y 10 minutos de la playa, Casa Horus ofrece un entorno
+                    cómodo para hasta 4 personas.
+
+                </p>
+            </div>
+        </section>
+
+    </dialog>
+
+    <script>
+
+        const modal = document.querySelector('.modal');
+        const btnOpen = document.querySelector("#btn-open");
+        const btnClose = document.querySelector("#btn-close");
+
+        function openModal() {
+            modal.showModal();
+        }
+
+        function closeModal() {
+            modal.close();
+        }
+
+
+        btnOpen.addEventListener('click', openModal);
+        btnClose.addEventListener('click', closeModal);
+
+    </script>
+
+</body>
+
+</html>

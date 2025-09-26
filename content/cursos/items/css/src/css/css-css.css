@@ -1,77 +1,56 @@
- *{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;  
- }
-
- .text-white{
-  color: white;
- }
-
- h2{  
+ h1{  
   text-align: end;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
   color:tomato;
-  padding-left: 2rem;
+  padding-right: 2rem;
  }
 
- h3{
+ h2{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: whitesmoke;
-  margin: 100px 0;
+  color: whitesmoke;  
  }
 
- h3 span{
-  background-color: tomato;
-  padding: 10px;
+ h2 span{
+  background-color: tomato;  
   border-radius: 5px;
  }
 
- h4{
-  color: blue
+ h3{
+  color: blue;
+  font-size: 1.5rem;  
  }
 
- .article{
-  margin: 30px auto;
+ li{
+  list-style: none;
+  font-size: 1rem;
+  color: black;
  }
+ 
+ section{   
+   width: 100%;   
+ } 
 
-.contenedor{  
-  position: relative; 
-  width: 90%;
-  padding:2rem;
-}
-
-.content{
-  position: fixed;
-  top: 20px;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 20% 75%;
-  grid-template-rows: 1fr;
-}
+ article{
+  width: 95%;
+  /* border: 1px solid black;   */
+ }
 
 .indice{  
   background-color: tomato;
   height: 90vh;
   position: sticky;
-  overflow-y: auto;
+  overflow: auto;  
 }
 
-.nav-indice{  
-  height: 100%;  
-  width: 100%;
-}
-
-.contenido{  
-  border: 1px solid orange;
+.contenido{
+  width: 100%;  
   height: 90vh;
   position: sticky;
   overflow-y: auto;
 } 
 
 .indice-item{  
-  list-style: none;
-  margin-left: 10px;
+  list-style: none;  
 }
 
 .indice-item > a{
@@ -121,81 +100,9 @@
   transition: all 0.5s linear;
 }
 
-.section{
-  position: relative;
-}
-
 /* CONTENIDO */
 .text-tomato{
   color: tomato;
-}
-
-.me-2{
-  margin-right: 10px;
-}
-
-.ms-2{
-  margin-left: 10px;
-}
-
-.ms-5{
-  margin-left: 50px;
-}
-
-.p-2{
-  padding: 20px;
-}
-
-.p-3{
-  padding: 30px;
-}
-
-.p-5{
-  padding: 50px;
-}
-
-.my-2{
-  margin-top: 1.2rem;
-  margin-bottom: 1.2rem;
-}
-
-.my-3{
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-.my-5{
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
-.div-content{
-  width: 90%;
-  margin: 0 auto;
-  /* border: 1px solid red;   */
-}
-
-.section{
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 1.5rem;
-  line-height: 2;
-}
-
-.list{
-  list-style: none;
-  margin-left: 30px;
-}
-
-.pre-list{
-  background-color: rgba(27, 28, 27, 0.841);
-  width: 80%;
-  margin: 3rem auto;
-  border: 4px solid rgb(169, 165, 161);
-  border-radius: 5px;
-  color:white;
-  white-space: pre-line;
-  font-size: 0.6em;
-  padding: 0 60px;
 }
 
 p.destacado{  
@@ -204,7 +111,6 @@ p.destacado{
   border-left-width : 10px;
   padding: 20px 30px;
   border-radius: 5px;
-  box-shadow: 5px 2px 5px rgb(210, 208, 208);
 }
 
 .img_100{
@@ -220,30 +126,6 @@ p.destacado{
 .img_75{
   width: 75%;
   max-width: 75%;
-}
-
-dl{
-  margin: 20px 0;
-}
-
-dl span{
-  color: rgb(51, 169, 215);
-}
-
-dl span::after{
-  content:"";
-  border: 3px solid yellow;
-  display: block;
-  width: 100px;
-}
-
-dt{
-  margin-left: 2rem;
-}
-
-.m-auto{
-  margin: 3rem auto;
-  text-align: center;
 }
 
 .tabla-outline{
@@ -414,7 +296,7 @@ dt{
 
 .menu{
   position: sticky;
-  top: 50px;
+  top: 0px;
 }
 
 .titulo{

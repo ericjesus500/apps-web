@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+    <channel>
+        <title>
+            <![CDATA[ freeCodeCamp.org ]]>
+        </title>
+        <description>
+            <![CDATA[ Descubre miles de cursos de programación escritos por expertos. Aprende Desarrollo Web, Ciencia de Datos, DevOps, Seguridad y obtén asesoramiento profesional para desarrolladores. ]]>
+        </description>
+        <link>https://www.freecodecamp.org/espanol/news/</link>
+        <image>
+            <url>https://cdn.freecodecamp.org/universal/favicons/favicon.png</url>
+            
+            <title>Cursos de programación freeCodeCamp en Español: Python, JavaScript, Git y más</title>
+            <link>https://www.freecodecamp.org/espanol/news/</link>
+        </image>
+        <generator>Eleventy</generator>
+        <lastBuildDate>Fri, 16 Sep 2022 18:24:34 +0000</lastBuildDate>
+        <atom:link href="https://www.freecodecamp.org/espanol/news/" rel="self" type="application/rss+xml" />
+        <ttl>60</ttl>
+        
+            <item>
+                <title>
+                    <![CDATA[ Como construir tu propio portafolio web de desarrollador con HTML, CSS y JavaScript ]]>
+                </title>
+                <description>
+                    <![CDATA[ En estos días todos necesitan tener un sitio web y aplicaciones web. Así que si trabajas como desarrollador web hay muchas oportunidades para ti . Pero si quieres conseguir trabajo como desarrollador web, necesitarás un buen sitio web como portafolio para poder mostrar tus habilidades y experiencia. En este tutorial, ]]>
+                </description>
+                <link>https://www.freecodecamp.org/espanol/news/como-construir-tu-propio-portafolio-web-desarrollador/</link>
+                <guid isPermaLink="false"></guid>
+                <category>
+                    
+                    <![CDATA[ Portafolio ]]>
+                </category>
+                <dc:creator>
+                    <![CDATA[ Jorge Torres Torres ]]>
+                </dc:creator>
+                <pubDate>Wed, 14 Sep 2022 02:37:32 +0000</pubDate>
+                <media:content url="https://www.freecodecamp.org/espanol/news/content/images/2022/01/responsive-web-design.png" medium="image" />
+                <content:encoded>
+                    <![CDATA[ En estos días todos necesitan tener un sitio web y aplicaciones web. Así que si trabajas como desarrollador web hay muchas oportunidades para ti . Pero si quieres conseguir trabajo como desarrollador web, necesitarás un buen sitio web como portafolio para poder mostrar tus habilidades y experiencia. En este tutorial, ]]>
+                </content:encoded>
+            </item>
+        
+            <item>
+                <title>
+                    <![CDATA[ Cómo implementar la renderización del lado del servidor en tu aplicación React en tres simples pasos ]]>
+                </title>
+                <description>
+                    <![CDATA[ Escrito por Rohit Kumar Esto es lo que construiremos en este tutorial: una buena tarjeta React como esta. En este tutorial, utilizaremos la renderización del lado del servidor para ofrecer una respuesta HTML cuando un usuario o rastreador accede a la URL de una página. Manejaremos las últimas solicitudes en ]]>
+                </description>
+                <link>https://www.freecodecamp.org/espanol/news/renderizacion-leteral-en-tu-aplicacion-react-en-tres-sencillos-pasos/</link>
+                <guid isPermaLink="false"></guid>
+                <category>
+                    
+                    <![CDATA[ React ]]>
+                </category>
+                <dc:creator>
+                    <![CDATA[ Jorge Sierra ]]>
+                </dc:creator>
+                <pubDate>Sat, 10 Sep 2022 15:45:35 +0000</pubDate>
+                <media:content url="https://www.freecodecamp.org/espanol/news/content/images/2022/08/5f9c9c5d740569d1a4ca31bc.jpg" medium="image" />
+                <content:encoded>
+                    <![CDATA[ Escrito por Rohit Kumar Esto es lo que construiremos en este tutorial: una buena tarjeta React como esta. En este tutorial, utilizaremos la renderización del lado del servidor para ofrecer una respuesta HTML cuando un usuario o rastreador accede a la URL de una página. Manejaremos las últimas solicitudes en ]]>
+                </content:encoded>
+            </item>
+        
+            <item>
+                <title>
+                    <![CDATA[ JavaScript de número a cadena: Cómo usar toString para convertir un entero en una cadena de texto ]]>
+                </title>
+                <description>
+                    <![CDATA[ El método toString() es un método integrado del objeto Number de JavaScript que le permite convertir cualquier valor de tipo numérico en su representación de tipo cadena. Cómo usar el método toString en JavaScript Para usar el método toString(), simplemente necesitas llamar al método en un valor numérico. El siguiente ]]>
+                </description>
+                <link>https://www.freecodecamp.org/espanol/news/javascript-de-numero-a-cadena-como-usar-tostring-para-convertir-un-entero-en-una-cadena-de-texto/</link>
+                <guid isPermaLink="false"></guid>
+                <category>
+                    
+                    <![CDATA[ JavaScript ]]>
+                </category>
+                <dc:creator>
+                    <![CDATA[ Miguel Rendón ]]>
+                </dc:creator>
+                <pubDate>Sat, 10 Sep 2022 15:20:11 +0000</pubDate>
+                <media:content url="https://www.freecodecamp.org/espanol/news/content/images/2022/07/js-number-tostring.png" medium="image" />
+                <content:encoded>
+                    <![CDATA[ El método toString() es un método integrado del objeto Number de JavaScript que le permite convertir cualquier valor de tipo numérico en su representación de tipo cadena. Cómo usar el método toString en JavaScript Para usar el método toString(), simplemente necesitas llamar al método en un valor numérico. El siguiente ]]>
+                </content:encoded>
+            </item>
+        
+            <item>
+                <title>
+                    <![CDATA[ Ejemplos de subcadenas de JavaScript: Métodos Slice, Substr y Substring en JS ]]>
+                </title>
+                <description>
+                    <![CDATA[ En la programación diaria, a menudo necesitamos trabajar con cadenas. Afortunadamente, hay muchos métodos incorporados en JavaScript que nos ayudan mientras trabajaban con matrices, cadenas y otros tipos de datos. Podemos usar estos métodos para varias operaciones como buscar, reemplazar, concatenar cadenas, etc. Obtener una subcadena de una cadena es ]]>
+                </description>
+                <link>https://www.freecodecamp.org/espanol/news/ejemplos-de-subcadenas-de-javascript-metodos-slice-substr-substring-en-js/</link>
+                <guid isPermaLink="false"></guid>
+                <category>
+                    
+                    <![CDATA[ JavaScript ]]>
+                </category>
+                <dc:creator>
+                    <![CDATA[ Jorge Sierra ]]>
+                </dc:creator>
+                <pubDate>Sat, 10 Sep 2022 15:11:13 +0000</pubDate>
+                <media:content url="https://www.freecodecamp.org/espanol/news/content/images/2022/08/5f9c9c0d740569d1a4ca2fa6.jpg" medium="image" />
+                <content:encoded>
+                    <![CDATA[ En la programación diaria, a menudo necesitamos trabajar con cadenas. Afortunadamente, hay muchos métodos incorporados en JavaScript que nos ayudan mientras trabajaban con matrices, cadenas y otros tipos de datos. Podemos usar estos métodos para varias operaciones como buscar, reemplazar, concatenar cadenas, etc. Obtener una subcadena de una cadena es ]]>
+                </content:encoded>
+            </item>
+        
+            <item>
+                <title>
+                    <![CDATA[ ¿Cuáles son los mejores editores de código para el desarrollo web? ]]>
+                </title>
+                <description>
+                    <![CDATA[ Como desarrolladores de software tenemos muchas herramientas, programas y tecnologías a nuestra disposición para poder ejercer nuestro trabajo, una de las principales son los editores de código, en este artículo descubrirás cuáles son los mejores editores de código para el desarrollo web. Si eres nuevo en este rubro, probablemente no ]]>
+                </description>
+                <link>https://www.freecodecamp.org/espanol/news/mejores-editores-de-codigo/</link>
+                <guid isPermaLink="false"></guid>
+                <category>
+                    
+                    <![CDATA[ Tecnología ]]>
+                </category>
+                <dc:creator>
+                    <![CDATA[ Josué ]]>
+                </dc:creator>
+                <pubDate>Fri, 09 Sep 2022 19:17:27 +0000</pubDate>
+                <media:content url="https://www.freecodecamp.org/espanol/news/content/images/2022/09/Banners-Art-culos-freeCodeCamp.png" medium="image" />
+                <content:encoded>
+                    <![CDATA[ Como desarrolladores de software tenemos muchas herramientas, programas y tecnologías a nuestra disposición para poder ejercer nuestro trabajo, una de las principales son los editores de código, en este artículo descubrirás cuáles son los mejores editores de código para el desarrollo web. Si eres nuevo en este rubro, probablemente no ]]>
+                </content:encoded>
+            </item>
+        
+            <item>
+                <title>
+                    <![CDATA[ Vuelve el Mes Mundial de la Traducción: Cómo ayudar a traducir freeCodeCamp a tu lengua materna ]]>
+                </title>
+                <description>
+                    <![CDATA[ Ya ha pasado un año desde que freeCodeCamp celebró nuestro primer Mes Mundial de la Traducción en septiembre de 2021. Pues bien, ya estamos en septiembre, y aquí tenemos la segunda entrega de este evento de un mes de duración. freeCodeCamp celebra por segundo año consecutivo nuestro Mes Mundial de ]]>
+                </description>
+                <link>https://www.freecodecamp.org/espanol/news/vuelve-el-mes-mundial-de-la-traduccion-como-ayudar-a-traducir-freecodecamp-a-tu-lengua-materna/</link>
+                <guid isPermaLink="false"></guid>
+                <category>
+                    
+                    <![CDATA[ freeCodeCamp ]]>
+                </category>
+                <dc:creator>
+                    <![CDATA[ Rafael D. Hernandez ]]>
+                </dc:creator>
+                <pubDate>Tue, 06 Sep 2022 14:16:02 +0000</pubDate>
+                <media:content url="https://www.freecodecamp.org/espanol/news/content/images/2022/09/World-Translation-Month-Article-Image-1.png" medium="image" />
+                <content:encoded>
+                    <![CDATA[ Ya ha pasado un año desde que freeCodeCamp celebró nuestro primer Mes Mundial de la Traducción en septiembre de 2021. Pues bien, ya estamos en septiembre, y aquí tenemos la segunda entrega de este evento de un mes de duración. freeCodeCamp celebra por segundo año consecutivo nuestro Mes Mundial de ]]>
+                </content:encoded>
+            </item>
+        
+            <item>
+                <title>
+                    <![CDATA[ Cómo escribir letras con tildes en Mac ]]>
+                </title>
+                <description>
+                    <![CDATA[ Si estás escribiendo en un idioma distinto del inglés, seguramente necesites saber cómo incluir tildes. Como voilà, olé, o über. Afortunadamente, hay varias maneras simples de hacer esto en una Mac. En este artículo, vamos a ver los métodos principales para que puedas añadir tildes a tus textos con facilidad. ]]>
+                </description>
+                <link>https://www.freecodecamp.org/espanol/news/como-escribir-letras-con-tildes-en-mac/</link>
+                <guid isPermaLink="false"></guid>
+                <category>
+                    
+                    <![CDATA[ escritura ]]>
+                </category>
+                <dc:creator>
+                    <![CDATA[ Anna Aimeri ]]>
+                </dc:creator>
+                <pubDate>Sat, 20 Aug 2022 01:21:06 +0000</pubDate>
+                <media:content url="https://www.freecodecamp.org/espanol/news/content/images/2022/08/5fac64b849c47664ed81e086.jpeg" medium="image" />
+                <content:encoded>
+                    <![CDATA[ Si estás escribiendo en un idioma distinto del inglés, seguramente necesites saber cómo incluir tildes. Como voilà, olé, o über. Afortunadamente, hay varias maneras simples de hacer esto en una Mac. En este artículo, vamos a ver los métodos principales para que puedas añadir tildes a tus textos con facilidad. ]]>
+                </content:encoded>
+            </item>
+        
+            <item>
+                <title>
+                    <![CDATA[ Cómo usar la desestructuración de arreglos y objetos en JavaScript ]]>
+                </title>
+                <description>
+                    <![CDATA[ La asignación de desestructuración es una poderosa característica que vino con ES6 (ECMAScript6). La desestructuración es una expresión de JavaScript que hace posible extraer valores de los arreglos, o propiedades de objetos, en otras variables. Es decir, podemos obtener datos de arreglos y objetos, y asignarlos a variables. ¿Por qué ]]>
+                </description>
+                <link>https://www.freecodecamp.org/espanol/news/como-usar-la-desestructuracion-de-arreglos-y-objetos-en-javascript/</link>
+                <guid isPermaLink="false"></guid>
+                <category>
+                    
+                    <![CDATA[ JavaScript ]]>
+                </category>
+                <dc:creator>
+                    <![CDATA[ Dikson Aranda ]]>
+                </dc:creator>
+                <pubDate>Tue, 16 Aug 2022 02:04:10 +0000</pubDate>
+                <media:content url="https://www.freecodecamp.org/espanol/news/content/images/2022/08/bg.jpg" medium="image" />
+                <content:encoded>
+                    <![CDATA[ La asignación de desestructuración es una poderosa característica que vino con ES6 (ECMAScript6). La desestructuración es una expresión de JavaScript que hace posible extraer valores de los arreglos, o propiedades de objetos, en otras variables. Es decir, podemos obtener datos de arreglos y objetos, y asignarlos a variables. ¿Por qué ]]>
+                </content:encoded>
+            </item>
+        
+            <item>
+                <title>
+                    <![CDATA[ Aprende Node.js y Express - Curso desde cero ]]>
+                </title>
+                <description>
+                    <![CDATA[ ¡Hola! Si quieres aprender Node.js y Express, estás en el lugar correcto. En este artículo encontrarás una breve introducción al desarrollo web back-end, Node.js y Express. Aprenderás por qué son herramientas muy poderosas para desarrollar servidores y por qué deberías aprenderlos si tu meta es adentrarte en el mundo del ]]>
+                </description>
+                <link>https://www.freecodecamp.org/espanol/news/aprende-node-js-y-express-curso-desde-cero/</link>
+                <guid isPermaLink="false"></guid>
+                <category>
+                    
+                    <![CDATA[ Node.js ]]>
+                </category>
+                <dc:creator>
+                    <![CDATA[ Estefania Cassingena Navone ]]>
+                </dc:creator>
+                <pubDate>Sun, 07 Aug 2022 21:00:00 +0000</pubDate>
+                <media:content url="https://www.freecodecamp.org/espanol/news/content/images/2022/07/thumbnail.png" medium="image" />
+                <content:encoded>
+                    <![CDATA[ ¡Hola! Si quieres aprender Node.js y Express, estás en el lugar correcto. En este artículo encontrarás una breve introducción al desarrollo web back-end, Node.js y Express. Aprenderás por qué son herramientas muy poderosas para desarrollar servidores y por qué deberías aprenderlos si tu meta es adentrarte en el mundo del ]]>
+                </content:encoded>
+            </item>
+        
+            <item>
+                <title>
+                    <![CDATA[ Cómo deshacer cambios en Git ]]>
+                </title>
+                <description>
+                    <![CDATA[ Puede que ya sepas que Git es un sistema de control de versiones. Lo que generalmente aprendes con Git es a guardar los cambios y confirmarlos a un repositorio remoto. Pero, ¿Cómo deshaces un cambio y vuelves a un estado anterior? Eso es lo que vamos a cubrir en este ]]>
+                </description>
+                <link>https://www.freecodecamp.org/espanol/news/como-deshacer-cambios-en-git/</link>
+                <guid isPermaLink="false"></guid>
+                <category>
+                    
+                    <![CDATA[  ]]>
+                </category>
+                <dc:creator>
+                    <![CDATA[ Anna Aimeri ]]>
+                </dc:creator>
+                <pubDate>Sun, 07 Aug 2022 02:11:04 +0000</pubDate>
+                <media:content url="https://www.freecodecamp.org/espanol/news/content/images/2022/08/0_6JjR02sGP4FgM6zj.png" medium="image" />
+                <content:encoded>
+                    <![CDATA[ Puede que ya sepas que Git es un sistema de control de versiones. Lo que generalmente aprendes con Git es a guardar los cambios y confirmarlos a un repositorio remoto. Pero, ¿Cómo deshaces un cambio y vuelves a un estado anterior? Eso es lo que vamos a cubrir en este ]]>
+                </content:encoded>
+            </item>
+        
+    </channel>
+</rss>

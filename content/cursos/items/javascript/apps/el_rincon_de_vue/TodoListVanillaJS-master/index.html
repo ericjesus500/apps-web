@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Todo List App</title>
+  </head>
+  <body>
+    <section class="wrapper">
+      <form class="form" id="js_form-task">
+        <div>
+          <input
+            type="text"
+            class="input-task"
+            id="input-task"
+            required
+            name="text_Task"
+            placeholder="Put your task..."
+          />
+        </div>
+        <div>
+          <button type="submit" id="js_btn-send" class="btn-send">
+            <i class="fas fa-plus"></i> Add
+          </button>
+        </div>
+      </form>
+      <section class="wrapper-task">
+        <h3>Todo List</h3>
+        <div class="print-task">
+          <ul class="print-task-list" id="js_container-task">
+            <!-- <li class="print-task-item">
+              <span>
+                <input type="checkbox" />
+                <span class="task">Test task of this application</span>
+                <input type="text" class="input-edit" />
+              </span>
+              <section class="buttons-actions">
+                <div class="js_delete"></div>
+                <div class="js_edit_update"></div>
+              </section>
+            </li> -->
+            <div class="message-task active" id="js_message-empty-task">
+              <div class="message-task-icon">
+                <i class="fas fa-broom"></i>
+              </div>
+              <p class="message-task-text">
+                Actualmente la lista de tareas esta limpia
+              </p>
+            </div>
+          </ul>
+        </div>
+      </section>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/b7301c403c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

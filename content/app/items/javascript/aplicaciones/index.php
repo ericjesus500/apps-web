@@ -3,13 +3,13 @@
 <title>PHP | Aplicaciones</title>
 </head>
 
-<body class="hold-transition sidebar-mini">
-  <div class="container border">
-    <nav class="navbar navbar-expand navbar-white navbar-light">
+<body class="hold-transition sidebar-mini bg-dark">
+  <div class="container">
+    <nav class="navbar navbar-expand navbar-dark">
       <!-- Left navbar links -->
       <ul class="navbar-nav">
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="/content/cursos/index.php" class="nav-link">Home</a>
+          <a href="/index.php" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
           <a href="#" class="nav-link">Contact</a>
@@ -17,44 +17,43 @@
       </ul>
     </nav>
     <main>
-      <div class="container mt-5">
+      <div class="container mt-3 p-0">
         <div class="card-group mb-5 m-auto">
-          <div class="row m-auto g-3">
-            <!-- DEVELOTECA Cómo hacer un Sitio Web con PHP -->
-            <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-3 card shadow-sm" style="max-width: 22rem;">
-              <img src="./assets/img/sitio_web.jpg" alt="php" width="100%" height="225" role="img">
+          <div class="row m-auto">
+            <!-- BOOTSTRAP ICONS -->
+            <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-3 card shadow-sm bg-dark border" style=" max-width: 22rem;">
+              <img class="img-fluid" src="./assets/img/bootstrap-icons-new.png" alt="bootstrap-icons" width="100%" height="225" role="img">
               <div class="card-body">
-                <h3 class="card-text">Develoteca: Sitio web de libros</h3>
-                <p class="card-text">Proyecto de Libreria con base de datos Mysql y conexión Mysqli</p>
+                <h3 class="card-text">Bootstrap Icons</h3>
+                <p class="card-text">App que muestra todos los íconos de bootstrap y permite seleccionar y copiar el código HTML correspondiente a un icono <span class="text-skyblue_2"><em>&lt;i&gt;</em></span>.</p>
               </div>
               <div class="card-footer d-flex justify-content-around align-items-center">
-                <a type="button" class="btn btn-sm btn-primary" href="apps/develoteca-sitio-web/index.php">Ir a
+                <a type="button" class="btn btn-sm btn-primary" href="./apps/icon-viewer/index.html">Ir a
                   la app</a>
                 <a type="button" class="btn btn-sm p-0"
-                  href="https://www.youtube.com/watch?v=IZHBMwGIAoI&list=PLSuKjujFoGJ0lUCPh_0cI2bMgzHZjt6Ks&index=1"
+                  href=""
                   target="_blank" style="font-size: 40px;"><i class="bi bi-youtube text-danger"></i></a>
               </div>
             </div><!-- FIN DEVELOTECA Cómo hacer un Sitio Web con PHP -->
     
-            <!--DEVELOTECA App alumnos -->
-            <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-3 card shadow-sm" style="max-width: 22rem;">
-              <img src="./assets/img/app_alumnos.jpg" alt="php" width="100%" height="225" role="img">
+            <!-- Select Color Qwen-->
+            <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-3 card shadow-sm bg-dark border" style="max-width: 22rem;">
+              <img src="./assets/img/paleta-color.avif" alt="Select color" width="100%" height="225" role="img">
               <div class="card-body">
-                <h3 class="card-text">Develoteca: App alumnos</h3>
-                <p>Proyecto de inscripción de alumnos con sus cursos. Base de datos Mysql.</p>
+                <h3 class="card-text">Select Color Qwen</h3>
+                <p>App que ayuda a mostrar un color y en base a él genera una paleta de colores. Esta app muestra el nombre del color en formatos RGB, HSL y HEXADECIMAL.</p>
               </div>
               <div class="card-footer d-flex justify-content-around align-items-center">
-                <a type="button" class="btn btn-sm btn-primary" href="apps/develoteca-app-alumnos/index.php"
-                  target="_blank">Ir a la App</a>
-                <a type="button" class="btn btn-sm p-0"
-                  href="https://www.youtube.com/watch?v=H7tuBwZyBOg&list=PLSuKjujFoGJ0lUCPh_0cI2bMgzHZjt6Ks&index=22"
-                  target="_blank" style="font-size: 40px;"><i class="bi bi-youtube text-danger"></i></a>
+                <a type="button" class="btn btn-sm btn-primary" href="./apps/select-color-qwen/index.php" target="_blank">Ir a
+                  la App</a>
+                <a type="button" class="btn btn-sm p-0" href="" target="_blank" style="font-size: 40px;"><i
+                    class="bi bi-youtube text-danger"></i></a>
               </div>
             </div>
-            <!--FIN DEVELOTECA App alumnos -->
+            <!-- FIN Select Color Qwen-->
     
             <!-- COD DE PROGRAMACION CRUD con Modal -->
-            <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-3 card shadow-sm" style="max-width: 22rem;">
+            <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-3 card shadow-sm bg-dark border" style="max-width: 22rem;">
               <img src="./assets/img/cod_de_programacion.jpg" alt="php" width="100%" height="225" role="img">
               <div class="card-body">
                 <h3 class="card-text">Codigos de Programación: CRUD modal con bootstrap</h3>
@@ -71,7 +70,7 @@
             <!--FIN COD DE PROGRAMACION CRUD con Modal -->
     
             <!-- MEJAALEX CRUD en PHP sin recargar página -->
-            <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-3 card shadow-sm" style="max-width: 22rem;">
+            <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-3 card shadow-sm bg-dark border" style="max-width: 22rem;">
               <img src="./assets/img/mejaalex.jpg" alt="crup php sin recargar" width="100%" height="225" role="img">
               <div class="card-body">
                 <h3 class="card-text">Mejaalex: CRUD en PHP sin recargar página</h3>
@@ -86,11 +85,12 @@
               </div>
             </div>
             <!-- FIN MEJAALEX CRUD en PHP sin recargar página  -->
-    
-            <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-3 card shadow-sm" style="max-width: 22rem;">
-              <img src="" alt="consumo de api con php" width="100%" height="225" role="img">
+            
+            <!-- Nueva App -->
+            <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-3 card shadow-sm bg-dark border" style="max-width: 22rem;">
+              <img src="" alt="" width="100%" height="225" role="img">
               <div class="card-body">
-                <h3 class="card-text">Como consumir una API</h3>
+                <h3 class="card-text">Nueva App</h3>
               </div>
               <div class="card-footer d-flex justify-content-around align-items-center">
                 <a type="button" class="btn btn-sm btn-primary" href="" target="_blank">Ir a
@@ -99,6 +99,19 @@
                     class="bi bi-youtube text-danger"></i></a>
               </div>
             </div>
+            <!-- NUEVA APP -->
+            <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-3 card shadow-sm bg-dark border" style="max-width: 22rem;">
+              <img src="" alt="" width="100%" height="225" role="img">
+              <div class="card-body">
+                <h3 class="card-text">New</h3>
+              </div>
+              <div class="card-footer d-flex justify-content-around align-items-center">
+                <a type="button" class="btn btn-sm btn-primary" href="" target="_blank">Ir a
+                  la App</a>
+                <a type="button" class="btn btn-sm p-0" href="" target="_blank" style="font-size: 40px;"><i
+                    class="bi bi-youtube text-danger"></i></a>
+              </div>
+            </div>  
           </div>
         </div>
       </div>

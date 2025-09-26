@@ -1,2 +1,8 @@
-assets
-node_modules
+node_modules/
+assets/
+content/cursos/articulos/
+content/cursos/otras_fuentes/
+content/cursos/videos-list/
+.env
+*.log
+.DS_Store

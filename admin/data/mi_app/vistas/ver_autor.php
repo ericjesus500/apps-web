@@ -1,6 +1,6 @@
 <div class="table-responsive">
   <table id="add_autor" class="table">
-    <thead class="table table-skyblue_2">
+    <thead class="table-info">
       <tr>
         <th class="border">Id Autor</th>
         <th class="border">Autor</th>
@@ -15,6 +15,6 @@
         <th class="border">Acciones</th>
       </tr>
     </thead>
-    <tbody id="tabla_autor" class="border-skyblue_2 text-white bg-table"></tbody>
+    <tbody id="tabla_autor" class="border-skyblue_2 text-white table-dark"></tbody>
   </table>
 </div>

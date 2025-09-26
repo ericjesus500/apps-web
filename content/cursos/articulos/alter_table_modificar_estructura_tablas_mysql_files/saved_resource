@@ -1,43 +1,0 @@
-
-var ftGUID_7922746="57485B494182FF";
-var ftConfID_7922746="0";
-var ftParams_7922746="ftOBA=1&ft_agentEnv=0&ft_referrer=https://www.anerbarrena.com/alter-table-mysql-5050/&us_privacy=${US_PRIVACY}&site_url=https://www.anerbarrena.com/alter-table-mysql-5050/&pub_id=1&sup_platform=1&cachebuster=433841.9633739412";
-var ftKeyword_7922746="";
-var ftCustom_7922746="";
-var ftSection_7922746="";
-var ftSegment_7922746="w2c";
-var ftSegmentList_7922746=[{s:'w2c'}];
-var ftRuleMatch_7922746="0";
-var ftTimestamp_7922746="1704098396";
-var ftGeoC2_7922746="pe";
-var ftGeoState_7922746="piu";
-var ftGeoCity_7922746="el nuro";
-var ftISP_7922746="telefonica del peru s.a.a.";
-var ftSpeed_7922746="mobile";
-var ftConnType_7922746="mobile";
-var ftDMA_7922746="-1";
-var ftLong_7922746="-81.17";
-var ftLat_7922746="-4.22";
-var ftPostal_7922746="20840";
-var ftTimeZone_7922746="-500";
-var ftMobileCarrier_7922746="movistar";
-var ftImp7922746 = {};
-ftImp7922746.privacy = "x";
-ftImp7922746.guidAge = "96";
-ftImp7922746.impID = "806571DF-9FA8-C9A6-D501-BA585197F197";
-ftImp7922746.duid = "FT:57485B494182FF";
-
-ftImp7922746.ft_tpplid = "";
-ftImp7922746.ft_c = {};
-ftImp7922746.gdpr = "";
-ftImp7922746.gdpr_consent = "";
-ftImp7922746.gdpr_pd = "";
-ftImp7922746.oob_consent = "";
-ftImp7922746.gdprStoredConsent = "";
-ftImp7922746.us_privacy = "!!US_PRIVACY!";
-ftImp7922746.gpc = "";
-
-ftImp7922746.jsAppend = "1";
-var ftCreativeId_7922746 = "4449561";
-(function(){var tag=document.getElementById("ft_servedby_7922746")||function(s){return s[s.length-1]}(document.getElementsByTagName("script")),js=document.createElement("script");js.src="https://ajs-assets.ftstatic.com/ftUtils.js";js.id="ftscript_m7922746";js.setAttribute("name","ftscript_m7922746");tag.parentNode.insertBefore(js,tag)})();window.fTChecker=window.fTChecker||function(id){if(!id)return false;id=""+id;if(window.hasOwnProperty("ftUtils")){window["ft"+id]=Object.assign({},window.ftUtils.common);window["ft"+id].getBannerConfig(id)}else(function(id){window.setTimeout(function(){window.fTChecker(id)},50)})(id)};window.fTChecker("7922746");
-

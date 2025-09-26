@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Arrays</title>
+	<link rel="stylesheet" href="../../../../css/estilos_ejercicios.css">
+	<link rel="icon" href="../../../../img/logo-ejercicios.ico">	
+</head>
+<body>
+	<h1>ARRAYS</h1>
+
+	<div class="grid">
+		<div class="w-100">
+			<pre class="pre-content-list bg-blue">
+			    <code>
+			    	<span class="comentario">//CSS</span>
+			    	.w-100{
+							&nbsp;&nbsp;&nbsp;width: 100%;
+						}
+
+						.grid{			
+							&nbsp;&nbsp;&nbsp;padding: 30px;
+							&nbsp;&nbsp;&nbsp;height: 500px;
+							&nbsp;&nbsp;&nbsp;display: grid;
+							&nbsp;&nbsp;&nbsp;grid-template-columns: 1fr 1fr;
+							&nbsp;&nbsp;&nbsp;grid-template-rows: 1fr;
+							&nbsp;&nbsp;&nbsp;gap: 20px;
+						}
+
+						.resultado{
+							&nbsp;&nbsp;&nbsp;display: flex;
+							&nbsp;&nbsp;&nbsp;flex-direction: column;
+							&nbsp;&nbsp;&nbsp;justify-content: space-evenly;
+						}
+
+						.border{
+							&nbsp;&nbsp;&nbsp;display: flex;
+							&nbsp;&nbsp;&nbsp;flex-direction: row;
+							&nbsp;&nbsp;&nbsp;justify-content: center;
+							&nbsp;&nbsp;&nbsp;align-items: center;
+							&nbsp;&nbsp;&nbsp;border: 1px solid #CCC;
+							&nbsp;&nbsp;&nbsp;width: 300px;
+							&nbsp;&nbsp;&nbsp;height: 50px;
+						}	
+
+			    	<span class="comentario">//HTML</span>
+			    	&lt;div class="w-100 text-center resultado"&gt;
+
+							&nbsp;&nbsp;&nbsp;&lt;div class="w-75"&gt;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="button" id="btn-seleccionar"&gt;Cambiar "bread" por "papas"&lt;/button&gt;			
+							&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+
+							&nbsp;&nbsp;&nbsp;&lt;div class="w-75 border"&gt;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;output id="salida"&gt;&lt;/output&gt;			
+							&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+
+						&lt;/div&gt;
+
+			    	<span class="comentario">//JS</span>
+			      let shopping = ["bread", "milk", "cheese", "hummus", "noodles"];
+
+			      const boton = document.getElementById('btn-seleccionar')
+						const salida = document.getElementById('salida')
+
+						boton.addEventListener('click', ()=>{
+							&nbsp;&nbsp;&nbsp;shopping[0] ="papas"
+							&nbsp;&nbsp;&nbsp;salida.value = `[ ${shopping} ]`
+						})
+			    </code>
+			</pre>
+		</div>
+		
+		<div class="resultado">
+			<div class="w-90 d-flex">
+				<pre class="pre-content-list bg-blue w-100">
+					<code>
+						let shopping = ["bread", "milk", "cheese", "hummus", "noodles"];
+					</code>
+				</pre>
+			</div>
+			<div class="w-90 d-flex">
+				<button class="my-4" type="button" id="btn-seleccionar">Cambiar "bread" por "papas"</button>
+			</div>
+			<div class="w-90 d-flex">
+				<output id="salida" ></output>
+			</div>
+		</div>
+		
+	</div>
+
+
+	<script>
+
+		const boton = document.getElementById('btn-seleccionar')
+		const salida = document.getElementById('salida')
+
+		let shopping = ["bread", "milk", "cheese", "hummus", "noodles"];		
+
+		boton.addEventListener('click', ()=>{
+			shopping[0] ="papas"
+			salida.value = `[ ${shopping} ]`
+		})
+
+	</script>
+</body>
+</html>

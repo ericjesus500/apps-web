@@ -1,0 +1,590 @@
+h1{
+  text-align: center;
+  color: #333;
+}
+
+.content{
+  width: 90%;
+  height: 80vh;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+
+.content-select{
+  width: 32%;
+  min-width: 300px;
+  margin: 10px auto;
+  height: 300px;
+  border: 1px solid tomato;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.content-select .select{
+  width: 50%; 
+  margin-top: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;  
+}
+
+.content-select h2 {
+  text-align: center;
+  color: #333;
+  font-family: monospace;
+  font-size: large;
+  color: tomato;
+}
+
+.s-four .select{
+  width:60%;
+  font-family: monospace;
+  font-size: 12px;
+  color:blue;
+}
+
+select,
+::picker(select) {
+  appearance: base-select;
+}
+
+option{
+  padding: 5px;
+  font-size: 16px;
+}
+
+.s-two .select{
+  font-family: monospace;
+  font-size: 16px;
+  color:red;
+}
+
+.banderas{
+  width: 15%;
+  height: 15%;
+}
+
+.container-s-five{
+  display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 80px 80px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;  
+}
+
+.container-s-five>div {
+  background-color: lightgray;
+}
+
+.s-six .select{
+  /* transition hover bg change and keyboard focus */
+  transition: 
+    background-color .3s ease,
+    outline-offset .3s ease;
+
+  /* reacts to key press */
+  &:not(:active):focus-visible {
+    outline-offset: 5px;
+  }
+
+  /* enable transitions for the picker() overlay */
+  &::picker(select) {
+    --_dur-in: .5s;
+    --_dur-out: .1s;
+
+    transition: 
+      display var(--_dur-in) allow-discrete,
+      overlay var(--_dur-in) allow-discrete, 
+      opacity var(--_dur-in) ease,
+      transform var(--_dur-in) ease-in-out
+    ;
+  }
+
+  /* off stage */
+  &:not(:open)::picker(select) {
+    opacity: 0;
+    transform: scale(.95);
+    transition-duration: var(--_dur-out);
+  }
+
+  /* on stage */
+  &:open::picker(select) {
+    opacity: 1;
+  }
+
+  /* ICON */
+  &::picker-icon {
+    opacity: .75;
+    transition: 
+      opacity .3s ease,
+      transform .3s ease;
+  }
+
+  &:is(:hover, :focus-visible)::picker-icon {
+    opacity: 1;
+  }
+
+  &:open::picker-icon {
+    opacity: 1;
+    transform: rotateX(.5turn);
+  }
+
+  /* OPTIONS */
+  option {
+    /* enable hover and focus transitions */
+    transition: 
+      background-color .3s ease,
+      outline-offset .3s ease;
+
+    /* inner focus outline */
+    &:focus-visible {
+      outline-offset: -2px;
+    }
+
+    /* tie into system colors */
+    &:checked {
+      background-color: Highlight;
+
+      &::checkmark {
+        color: CanvasText;
+      }
+    }
+  }
+}
+
+.s-seven .select{
+  font: -webkit-small-control;
+  text-align: left;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    width: 300px;
+    background: #eee;
+    border-width: 0;
+    transition-duration: 0.25s;
+    background-color: white;  
+   
+    &:hover {
+      background-color: #ddd;
+    }
+
+  &::picker(select){
+    padding: 1rem;
+    border-radius: 2rem;
+    border-width: 0;
+    margin-top: 0.5rem;
+    box-shadow: 0px 12.8px 28.8px rgba(0, 0, 0, 0.13), 0px 0px 9.2px rgba(0, 0, 0, 0.11);
+  }
+
+  & .option-container {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+
+  & button selectedcontent {
+    & img {
+      display: none;
+    }
+  }
+
+  & .option-container option {
+    display: grid;
+    
+    &::checkmark {
+      display: none;
+    }
+
+    &:hover {
+      background: none;
+
+      & img {
+        border-color: dimgray;
+        cursor: pointer;
+      }
+    }
+
+    &[hidden] {
+      display: none;
+    }
+
+    & img {
+      width: 100%;
+      max-width: 120px;
+      border-radius: 1rem;
+      border: 1px solid lightgray;
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  &:open {
+    box-shadow: 0 0 20px lightgray;
+  }
+
+    &.label {
+      font-weight: 700;
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 0.25rem;
+    }
+  
+    & span {
+      font-size: 0.9rem;
+    }
+  
+    & button {
+      display: grid;
+    }
+  
+    &::picker-icon {
+      display: none;
+    }
+
+    
+
+}
+
+@media (width <=550px) {
+  .s-seven .option-container {
+    width: 90vw;
+    grid-template-rows: 1fr;
+    grid-auto-flow: column;
+    
+    & option {
+      width: 120px;
+    }
+  }
+}
+
+.s-eight .select, ::picker(select){
+  font: -webkit-small-control;
+}
+
+/* hide checkmark */
+.s-eight .select {
+
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 0.75rem;
+  transition-duration: 0.25s;
+  align-items: center;
+  
+  & option::checkmark {
+      display: none;
+    }
+
+  & option {
+    font-size: 1rem;
+    display: grid;
+    grid-template-columns: 2rem auto;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    transition-duration: 0.25s;
+    /*  reset UA styles, can remove these two lines with patch landing soon  */
+    place-items: initial;
+    align-items: center;
+  }
+
+  & option:hover,
+  & option:focus-visible {
+    background: #eaeaea;
+  }
+
+  & .material-symbols-outlined svg {
+    opacity: 0.75;
+    width: 1.2rem;
+    height: 1.5rem;
+  }
+
+  &::picker-icon{
+    display:none
+  }
+
+  & selectedcontent .text {
+    display: none;
+  }
+
+  & .arrow {
+    border-left: 0.3rem solid transparent;
+    border-right: 0.3rem solid transparent;
+    border-top: 0.3rem solid;
+  }
+
+  &::picker(select) {
+    border: none;
+    padding: 0.5rem 0;
+    overflow-x: hidden;
+    border-radius: 5px;
+    width: 3.5rem;
+    transition: width 0.5s;
+    /*  resets from UA  */
+    min-inline-size: 0;
+    box-shadow: 0px 12.8px 28.8px rgba(0, 0, 0, 0.13), 0px 0px 9.2px rgba(0, 0, 0, 0.11);
+  }
+
+  &:has(:popover-open) button {
+    background: lightgray;
+  }
+
+  /* animate the text in on hover */
+  &::picker(select):hover,
+  &:has(option:focus-visible)::picker(select) {
+    /*  auto width!  */
+    width: calc-size(auto, size + 0.5rem);
+  }
+}
+
+.s-nine .select, ::picker(select){    
+  font: -webkit-small-control;
+}
+
+.s-nine .select{
+  /* Enter into custom mode */
+  border: none;
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  padding: 0 1rem 0 0.5rem;
+  /* width: 8.25rem; */
+  width: 50%;
+
+  & option::checkmark,
+  &::picker-icon {
+      display: none;
+    }
+
+  /* Styling the options list */
+
+  &::picker(select) {
+      border-radius: 0.5rem;
+      padding: 0;
+      box-shadow: 0px 12.8px 28.8px rgba(0, 0, 0, 0.13), 0px 0px 9.2px rgba(0, 0, 0, 0.11);
+      border: 1px solid #ececec;
+  }
+
+  & option {
+    grid-template-columns: 1.5rem 1fr auto;
+    padding: 0.5rem 1rem;
+    /*  remove when patch is in  */
+    place-items: start;
+
+    &:nth-child(even):not(:hover) {
+      background: #ececec;
+    }
+
+    &:hover {
+      background: #cbe7ff;
+    }
+
+    & .symbol {
+      margin-left: 1rem;
+      justify-self: end;
+    }
+
+    & .currency .currency-long {
+      font-size: 80%;
+      color: #595959;
+    } 
+    
+  }
+  
+   /* Styles for both the options and selectedcontent */
+
+  & option,
+  & button selectedcontent {
+    display: grid;
+    gap: 2rem;
+    font-size: 1rem;
+    align-items: center;
+  }
+
+  /* Style what you see before you open the select dropdown */
+  & button selectedcontent {
+    padding: 0.5rem;
+    grid-template-columns: 1.5rem auto;
+
+    & .symbol,
+    & .currency .currency-long {
+      display: none
+    }
+
+    & .currency .currency-short{
+      font-size: 100%;
+      color: #595959;
+      text-align: right;
+    }
+  }
+
+  & button .arrow {
+    align-self: center;
+    transition: rotate 0.25s;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 66.49 42.37'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23221f20; stroke-width: 0px; %7D %3C/style%3E%3C/defs%3E%3Cpath class='cls-1' d='M3.96,0h58.57c3.37,0,5.2,3.95,3.01,6.52l-29.28,34.46c-1.58,1.86-4.45,1.86-6.03,0L.95,6.52C-1.23,3.95.59,0,3.96,0Z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(4);
+    width: 0.5rem;
+    height: 0.5rem;
+
+    .currency-select:open & {
+      rotate: x 180deg;
+    }
+  }
+
+  [hidden] {
+    display: none;
+  }
+  
+  & option img{
+    width: 100%;
+  }
+}
+
+.s-ten .select, ::picker(select){
+  font: -webkit-small-control;
+}
+
+.s-ten .select{
+  /* Enter into custom mode */
+  min-width: 250px;
+  text-align: left;
+  background: none;
+  border: 1px solid lightgray;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  width: 50%;
+
+  & option::checkmark,
+  &::picker-icon {
+      display: none;
+    }
+
+  /* Styling the options list */
+  &::picker(select) {
+      border-radius: 0.5rem;
+      border: 1px solid lightgray;
+      border-top: 1px solid lightgray;
+      margin-top: -1px;
+      padding: 0;
+      box-shadow: none;
+      background: white;
+  }
+
+  & option {
+    color: gray;
+    padding: 0.75rem 1.5rem 0.75rem 2.5rem;
+  }
+
+  & button span selectedcontent {
+    font-weight: 800;
+  }
+
+  & button .arrow img {
+    width: 1em;
+    opacity: 0.4;
+    vertical-align: middle;
+  }
+
+  & option, & button span selectedcontent {
+    letter-spacing: 0.3px;
+  }
+
+  &::picker-icon {
+    display: none;
+  }
+
+  /* checked style */
+  & option:checked {
+    background: #d0edd0;
+    color: black;
+  }
+
+  & option::checkmark {
+    content: '';
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjAuMjg1IDJsLTExLjI4NSAxMS41NjctNS4yODYtNS4wMTEtMy43MTQgMy43MTYgOSA4LjcyOCAxNS0xNS4yODV6Ii8+PC9zdmc+);
+    background-size: cover;
+    position: absolute;
+    left: 0.75rem;
+  }
+}
+
+.s-eleven .select, ::picker(select){
+  font: -webkit-small-control;
+  font-family: system-ui;
+}
+
+.s-eleven .select{
+  background: aliceblue;
+  border: 1px solid gray;
+  align-items: center;
+
+  /* hide checkmark */
+  & option::checkmark {
+    display: none;
+  }
+
+  &::picker(select) {
+    max-height: 80dvh;
+    padding: 0;
+  }
+
+  &:has(:popover-open) {
+    border-radius: 0;
+  }
+
+  & option,
+  & button selectedcontent {
+    display: grid;
+    grid-template-columns: 1.5rem 1fr;
+    gap: 1rem;
+    font-size: 1rem;
+    /*  remove these two lines when patch is in   */
+    align-items: center;
+    place-items: initial;
+    padding: 1rem;
+
+    & img,
+    & figure {
+      width: 100%;
+    }
+  }
+
+  [hidden] {
+    display: none;
+  }
+
+  & button selectedcontent {
+    font-style: italic;
+
+    /*  Default flag "icon", before you pick one  */
+    & figure {
+      background-image: linear-gradient(
+        0deg,
+        #fff 0%,
+        #000 0% 20%,
+        #fff 0% 40%,
+        #000 0% 60%,
+        #fff 0% 80%,
+        #000 0% 100%
+      );
+      height: 1rem;
+      margin: 0;
+    }
+  }
+
+}

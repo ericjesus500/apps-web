@@ -1,43 +1,0 @@
-
-var ftGUID_7906767="57485B494182FF";
-var ftConfID_7906767="0";
-var ftParams_7906767="ftOBA=1&ft_domain=www.freecodecamp.org&ft_ifb=1&ft_agentEnv=0&ft_referrer=https://www.freecodecamp.org/espanol/news/comprueba-si-un-elemento-esta-en-un-arreglo-en-javascript-js-cuenta-con-arreglo-includes/&us_privacy=${US_PRIVACY}&site_url=https://www.freecodecamp.org/espanol/news/comprueba-si-un-elemento-esta-en-un-arreglo-en-javascript-js-cuenta-con-arreglo-includes/&pub_id=1&sup_platform=1&cachebuster=407647.1202449745";
-var ftKeyword_7906767="";
-var ftCustom_7906767="";
-var ftSection_7906767="";
-var ftSegment_7906767="w2c";
-var ftSegmentList_7906767=[{s:'w2c'}];
-var ftRuleMatch_7906767="0";
-var ftTimestamp_7906767="1704102267";
-var ftGeoC2_7906767="pe";
-var ftGeoState_7906767="piu";
-var ftGeoCity_7906767="el nuro";
-var ftISP_7906767="telefonica del peru s.a.a.";
-var ftSpeed_7906767="mobile";
-var ftConnType_7906767="mobile";
-var ftDMA_7906767="-1";
-var ftLong_7906767="-81.17";
-var ftLat_7906767="-4.22";
-var ftPostal_7906767="20840";
-var ftTimeZone_7906767="-500";
-var ftMobileCarrier_7906767="movistar";
-var ftImp7906767 = {};
-ftImp7906767.privacy = "x";
-ftImp7906767.guidAge = "96";
-ftImp7906767.impID = "F19D085E-0ECA-44BD-72CC-F2F93E248F82";
-ftImp7906767.duid = "FT:57485B494182FF";
-
-ftImp7906767.ft_tpplid = "";
-ftImp7906767.ft_c = {};
-ftImp7906767.gdpr = "";
-ftImp7906767.gdpr_consent = "";
-ftImp7906767.gdpr_pd = "";
-ftImp7906767.oob_consent = "";
-ftImp7906767.gdprStoredConsent = "";
-ftImp7906767.us_privacy = "!!US_PRIVACY!";
-ftImp7906767.gpc = "";
-
-ftImp7906767.jsAppend = "1";
-var ftCreativeId_7906767 = "4198814";
-(function(){var tag=document.getElementById("ft_servedby_7906767")||function(s){return s[s.length-1]}(document.getElementsByTagName("script")),js=document.createElement("script");js.src="https://ajs-assets.ftstatic.com/ftUtils.js";js.id="ftscript_m7906767";js.setAttribute("name","ftscript_m7906767");tag.parentNode.insertBefore(js,tag)})();window.fTChecker=window.fTChecker||function(id){if(!id)return false;id=""+id;if(window.hasOwnProperty("ftUtils")){window["ft"+id]=Object.assign({},window.ftUtils.common);window["ft"+id].getBannerConfig(id)}else(function(id){window.setTimeout(function(){window.fTChecker(id)},50)})(id)};window.fTChecker("7906767");
-

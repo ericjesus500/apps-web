@@ -1,0 +1,252 @@
+﻿
+
+
+
+<!DOCTYPE html>
+<html ⚡="">
+<head>
+    <meta charset="utf-8">
+    <title>¿Qué es Inmutabilidad en JavaScript?</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <link rel="icon" href="../../../../universal/favicons/favicon.ico" type="image/png">
+
+    <link rel="canonical" href="../index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    
+    <meta property="og:site_name" content="freeCodeCamp.org">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="¿Qué es Inmutabilidad en JavaScript?">
+    
+        <meta property="og:description" content="Photo by Fernando Reyes [https://unsplash.com/@nundo?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText]  on Unsplash [https://unsplash.com/s/photos/rocks?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText]  Hoy revisaremos: ¿Qué es inmutabilidad? JavaScript es un lenguaje muy (quizá demasiado) flexible y ofrece varias opciones para manipular todo tipo de estructura de datos, algunas de estas opciones son Mutables y otros Inmutables. Pero ¿Qué es inmutabilidad? ">
+    
+    <meta property="og:url" content="https://www.freecodecamp.org/espanol/news/que-es-inmutabilidad-en-javascript/">
+    <meta property="og:image" content="https://www.freecodecamp.org/espanol/news/content/images/2021/04/-Que-es-Inumtabilidad-en-Javascript-.png">
+    <meta property="article:published_time" content="2021-04-23T05:00:00.000Z">
+    <meta property="article:modified_time" content="2021-04-23T05:00:00.000Z">
+    
+        <meta property="article:tag" content="JavaScript">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/freecodecamp">
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="¿Qué es Inmutabilidad en JavaScript?">
+    
+        <meta name="twitter:description" content="Photo by Fernando Reyes [https://unsplash.com/@nundo?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText]  on Unsplash [https://unsplash.com/s/photos/rocks?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText]  Hoy revisaremos: ¿Qué es inmutabilidad? JavaScript es un lenguaje muy (quizá demasiado) flexible y ofrece varias opciones para manipular todo tipo de estructura de datos, algunas de estas opciones son Mutables y otros Inmutables. Pero ¿Qué es inmutabilidad? ">
+    
+    <meta name="twitter:url" content="https://www.freecodecamp.org/espanol/news/que-es-inmutabilidad-en-javascript/">
+    <meta name="twitter:image" content="https://www.freecodecamp.org/espanol/news/content/images/2021/04/-Que-es-Inumtabilidad-en-Javascript-.png">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Matias Hernandez">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="JavaScript">
+    <meta name="twitter:site" content="@freecodecampes">
+    
+        <meta name="twitter:creator" content="@matiasfha">
+    
+
+    <meta property="og:image:width" content="1400">
+    <meta property="og:image:height" content="438">
+
+    <script type="application/ld+json">{
+	"@context": "https://schema.org",
+	"@type": "Article",
+	"publisher": {
+		"@type": "Organization",
+		"name": "freeCodeCamp.org",
+		"url": "https://www.freecodecamp.org/espanol/news/",
+		"logo": {
+			"@type": "ImageObject",
+			"url": "https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg",
+			"width": 2100,
+			"height": 240
+		}
+	},
+	"image": {
+		"@type": "ImageObject",
+		"url": "https://www.freecodecamp.org/espanol/news/content/images/2021/04/-Que-es-Inumtabilidad-en-Javascript-.png",
+		"width": 1400,
+		"height": 438
+	},
+	"url": "https://www.freecodecamp.org/espanol/news/que-es-inmutabilidad-en-javascript/",
+	"mainEntityOfPage": {
+		"@type": "WebPage",
+		"@id": "https://www.freecodecamp.org/espanol/news/"
+	},
+	"datePublished": "2021-04-23T05:00:00.000Z",
+	"dateModified": "2021-04-23T05:00:00.000Z",
+	"keywords": "JavaScript",
+	"description": "Photo by Fernando Reyes\n[https://unsplash.com/@nundo?utm_source&#x3D;unsplash&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;creditCopyText] \non Unsplash\n[https://unsplash.com/s/photos/rocks?utm_source&#x3D;unsplash&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;creditCopyText]\n Hoy revisaremos: ¿Qué es inmutabilidad?\n\nJavaScript es un lenguaje muy (quizá demasiado) flexible y ofrece varias\nopciones para manipular todo tipo de estructura de datos, algunas de estas\nopciones son Mutables y otros Inmutables.\n\nPero ¿Qué es inmutabilidad?\n",
+	"headline": "¿Qué es Inmutabilidad en JavaScript?",
+	"author": {
+		"@type": "Person",
+		"name": "Matias Hernandez",
+		"url": "https://www.freecodecamp.org/espanol/news/author/matias-hernandez/",
+		"sameAs": [
+			"https://matiashernandez.dev",
+			"https://twitter.com/matiasfha"
+		],
+		"image": {
+			"@type": "ImageObject",
+			"url": "https://www.freecodecamp.org/espanol/news/content/images/2021/05/matias-hernandez-gravatar.jpeg",
+			"width": 250,
+			"height": 250
+		}
+	}
+}</script>
+
+    <meta name="generator" content="Eleventy">
+    <link rel="alternate" type="application/rss+xml" title="freeCodeCamp.org" href="../../rss/rss.xml">
+
+    
+    <link href="../../../../css?family=Lato:300,300i,400,700,700i&display=swap" rel="stylesheet" type="text/css">
+    <style amp-custom="">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{margin:0.67em 0;font-size:2em}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{position:relative;vertical-align:baseline;font-size:75%;line-height:0}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}amp-img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{margin:0;color:inherit;font:inherit}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{margin:0 2px;padding:0.35em 0.625em 0.75em;border:1px solid #c0c0c0}legend{padding:0;border:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-spacing:0;border-collapse:collapse}td,th{padding:0}html{max-height:100%;height:100%;font-size:62.5%;-webkit-tap-highlight-color:rgba(0, 0, 0, 0)}body{max-height:100%;height:100%;color:#2a2a40;background:#eeeef0;letter-spacing:0.01rem;font-family:"Lato", serif;font-size:1.8rem;line-height:1.75em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"kern" 1;-moz-font-feature-settings:"kern" 1;-o-font-feature-settings:"kern" 1}::-moz-selection{background:#d6edff}::selection{background:#d6edff}h1,h2,h3,h4,h5,h6{margin:0 0 0.3em 0;color:#0a0a23;font-family:"Lato", sans-serif;line-height:1.15em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-moz-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-o-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1}h1{text-indent:-2px;letter-spacing:-1px;font-size:2.6rem}h2{letter-spacing:0;font-size:2.4rem}h3{letter-spacing:-0.6px;font-size:2.1rem}h4{font-size:1.9rem}h5{font-size:1.8rem}h6{font-size:1.8rem}a{color:#002ead}a:hover{color:#111}p,ul,ol,dl{margin:0 0 2.5rem 0;text-rendering:geometricPrecision;-webkit-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-moz-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-o-font-feature-settings:"liga" 1, "onum" 1, "kern" 1}ol,ul{padding-left:2em}ol ol,ul ul,ul ol,ol ul{margin:0 0 0.4em 0;padding-left:2em}dl dt{float:left;clear:left;overflow:hidden;margin-bottom:1em;width:180px;text-align:right;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-bottom:1em;margin-left:200px}li{margin:0.4em 0}li li{margin:0}hr{display:block;margin:1.75em 0;padding:0;height:1px;border:0;border-top:#efefef 1px solid}blockquote{box-sizing:border-box;margin:1.75em 0 1.75em 0;padding:0 0 0 1.75em;border-left:#002ead 0.4em solid;-moz-box-sizing:border-box}blockquote p{margin:0.8em 0;font-style:italic}blockquote small{display:inline-block;margin:0.8em 0 0.8em 1.5em;color:#ccc;font-size:0.9em}blockquote small:before{content:"\2014 \00A0"}blockquote cite{font-weight:700}blockquote cite a{font-weight:normal}mark{background-color:#fdffb6}code,tt{padding:1px 3px;background:#eeeef0;white-space:pre-wrap;font-family:Inconsolata, monospace, sans-serif;font-size:0.85em;font-feature-settings:"liga" 0;-webkit-font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" 0}pre{overflow:auto;box-sizing:border-box;margin:0 0 1.75em 0;padding:10px;width:100%;border:#eeeef0 1px solid;background:#eeeef0;white-space:pre;font-family:Inconsolata, monospace, sans-serif;font-size:0.9em;-moz-box-sizing:border-box}pre code,pre tt{padding:0;border:none;background:transparent;white-space:pre-wrap;font-size:inherit}kbd{display:inline-block;margin-bottom:0.4em;padding:1px 8px;border:#ccc 1px solid;background:#f4f4f4;box-shadow:0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;color:#666;text-shadow:#fff 0 1px 0;font-size:0.9em;font-weight:700}table{box-sizing:border-box;margin:1.75em 0;max-width:100%;width:100%;background-color:transparent;-moz-box-sizing:border-box}table th,table td{padding:8px;border-top:#efefef 1px solid;vertical-align:top;text-align:left;line-height:20px}table th{color:#000}table caption + thead tr:first-child th,table caption + thead tr:first-child td,table colgroup + thead tr:first-child th,table colgroup + thead tr:first-child td,table thead:first-child tr:first-child th,table thead:first-child tr:first-child td{border-top:0}table tbody + tbody{border-top:#efefef 2px solid}table table table{background-color:#fff}table tbody > tr:nth-child(odd) > td,table tbody > tr:nth-child(odd) > th{background-color:#f6f6f6}table.plain tbody > tr:nth-child(odd) > td,table.plain tbody > tr:nth-child(odd) > th{background:transparent}iframe,amp-iframe,.fluid-width-video-wrapper{display:block;margin:1.75em 0}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper amp-iframe{margin:0}textarea,select,input{margin:0 0 5px 0;padding:6px 9px;width:260px;outline:0;border:#e7eef2 1px solid;background:#fff;box-shadow:none;font-family:"Lato", sans-serif;font-size:1.6rem;line-height:1.4em;font-weight:100;-webkit-appearance:none}textarea{min-width:250px;min-height:80px;max-width:340px;width:100%;height:auto}input[type="text"]:focus,input[type="email"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="number"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,textarea:focus{outline:none;outline-width:0;border:#bbc7cc 1px solid;background:#fff}select{width:270px;height:30px;line-height:30px}.clearfix:before,.clearfix:after{content:" ";display:table}.clearfix:after{clear:both}.clearfix{zoom:1}.main-header{position:relative;display:table;overflow:hidden;box-sizing:border-box;width:100%;height:50px;background:#0a0a23 no-repeat center center;background-size:cover;text-align:left;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;height:38px}.content{background:#fff;padding-top:15px}.blog-title,.content{margin:auto;max-width:600px}.blog-title{height:38px}.blog-title amp-img{height:24px;margin-top:7px; margin-bottom:7px;}.blog-title a{display:block;padding-right:16px;padding-left:16px;height:50px;color:#fff;text-decoration:none;font-family:"Lato", sans-serif;font-size:16px;line-height:50px;font-weight:600}.post{position:relative;margin-top:0;margin-right:16px;margin-left:16px;padding-bottom:0;max-width:100%;border-bottom:#ebf2f6 1px solid;word-wrap:break-word;font-size:0.95em;line-height:1.65em}.post-header{margin-bottom:1rem}.post-title{margin-bottom:0}.post-title a{text-decoration:none}.post-meta{display:block;margin:3px 0 0 0;color:#0a0a23;font-family:"Lato", sans-serif;font-size:1.3rem;line-height:2.2rem}.post-meta a{color:#0a0a23;text-decoration:none}.post-meta a:hover{text-decoration:underline}.post-meta .author,.translator{margin:0;font-size:1.3rem;line-height:1.3em}.post-date{display:inline-block;text-transform:uppercase;white-space:nowrap;font-size:line-height:1.2em}.post-image{margin:0;padding-top:3rem;padding-bottom:30px;border-top:1px #E8E8E8 solid}.post-content amp-img,.post-content amp-anim{position:relative;left:50%;display:block;padding:0;min-width:0;max-width:112%;width:calc(100% + 32px);height:auto;transform:translateX(-50%);-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%)}.footnotes{font-size:1.3rem;line-height:1.6em;font-style:italic}.footnotes li{margin:0.6rem 0}.footnotes p{margin:0}.footnotes p a:last-child{text-decoration:none}.site-footer{position:relative;margin:0 auto 20px auto;padding:1rem 15px;max-width:600px;color:rgba(0,0,0,0.5);font-family:"Lato", sans-serif;font-size:1.1rem;line-height:1.75em}.site-footer a{color:rgba(0,0,0,0.5);text-decoration:none;font-weight:bold}.site-footer a:hover{border-bottom:#bbc7cc 1px solid}.poweredby{display:block;float:right;width:45%;text-align:right}.copyright{display:block;float:left;width:45%}.medium-migrated-article > p:first-child {text-align: center;}.medium-migrated-article > figure:first-of-type {display: none;}.medium-migrated-article > h1 {display: none;} .hidden {display: none;}.donation_btn {display: flex;flex-direction: row;justify-content: center;align-content: center;border-radius: 5px;background-color: #ffc300;border-color: #ffc300;color: black;text-decoration: none;padding: 10px;font-size: 20px;font-weight: bold;} .donation_btn:hover {background-color: #ffbf00;border-color: #ffbf00;} .ad-container {text-align: center; background-color: #eeeef0; padding: 10px;} .ad-container {margin: 0 0 1.5em;} .ad-container .ad-text {font-size: 16px; margin-bottom: 10px;}</style>
+
+    
+    <style amp-boilerplate="">body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate="">body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async="" src="../../../../v0.js"></script>
+    <script async="" custom-element="amp-lightbox-gallery" src="../../../../v0/amp-lightbox-gallery-0.1.js"></script>
+
+    
+    
+    
+    
+    
+    
+    
+        <script async="" custom-element="amp-ad" src="../../../../v0/amp-ad-0.1.js"></script>
+    
+</head>
+
+<body class="amp-template">
+    <header class="main-header">
+        <nav class="blog-title">
+            <a href="https://www.freecodecamp.org/espanol/news" class="logo" data-test-label="site-nav-logo">
+                <amp-img src="../../../../platform/universal/fcc_primary.svg" layout="fixed" height="24px" width="210px" alt="freeCodeCamp.org">
+                </amp-img>
+            </a>
+        </nav>
+    </header>
+    <main class="content" role="main">
+        <article class="post">
+            <header class="post-header">
+                <h1 class="post-title">¿Qué es Inmutabilidad en JavaScript?</h1>
+                <section class="post-meta">
+                <div class="post-full-author-header">
+                    
+                        <div data-test-label="amp-author-header">
+                            
+                                <p class="author" data-test-label="amp-author">Matias Hernandez</p>
+                            
+                        </div>
+                    
+                    <time class="post-full-meta-date" datetime="Fri Apr 23 2021 05:00:00 GMT+0000 (Coordinated Universal Time)">
+                        23 de abril de 2021
+                    </time>
+                </div></section>
+            </header>
+            <section class="post-content ">
+                
+<small>Photo by <a href="https://unsplash.com/@nundo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Fernando Reyes</a> on <a href="https://unsplash.com/s/photos/rocks?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></small>
+  <p><strong>Hoy revisaremos: ¿Qué es inmutabilidad?</strong></p><p>JavaScript es un lenguaje muy (quizá demasiado) flexible y ofrece varias opciones para manipular todo tipo de estructura de datos, algunas de estas opciones son <strong>Mutables</strong> y otros <strong>Inmutables.</strong></p><h2 id="pero-qu-es-inmutabilidad">Pero ¿Qué es inmutabilidad?</h2><p>Este concepto comenzó  a tener un auge importante en el desarrollo frontend gracias a que la programación funcional comenzó poco a poco a hacerse presente, siendo quizá el culpable la dupla React + Redux.</p><p>Una de las características más importantes de los lenguajes funcionales es que sus estructuras de datos son inmutables lo que ayuda a reducir la complejidad del software. Y si algo sabemos por la experiencia es que la complejidad es un “code smell”.</p><p>Es común que nuestras aplicaciones JavaScript incrementen de forma exponencial su complejidad dado el número de requerimientos de esta, el problema con esto es que llegado a un punto, es casi imposible mantener un modelo mental de todo lo que ocurre en la aplicación, y por sobre todo, poder seguir fielmente el flujo de datos o información y sus transformaciones.</p><p>El concepto de <strong>Inmutabilidad</strong> es sencillo y poderoso. Un valor inmutable es algo que no puede ser cambiado.</p><blockquote>La verdad es el constante cambio, la mutación oculta los cambios, los cambios se manifiestan en caos, por lo tanto, el sabio abraza la historia. — The Dao of Immutability</blockquote><blockquote><a href="https://medium.com/javascript-scene/the-dao-of-immutability-9f91a70c88cd#.b1cayh7g7">https://medium.com/javascript-scene/the-dao-of-immutability-9f91a70c88cd#.b1cayh7g7</a></blockquote><p>¿Entonces que hacer cuando necesitas un objeto o valor idéntico al original pero solo con algunos atributos diferentes?. Hasta ahora lo que hacíamos es mutar la variable original y continuar con nuestras vidas. Pero si consideramos esa variable inmutable entonces tendremos que hacer una copia y manipular la copia en vez del original.</p><p>Pero esta técnica siempre genera alarmas: ¿crear un objeto nuevo por cada cambio es costoso? y a la respuesta es: <strong>si, ya que se debe instanciar nuevamente en memoria.</strong></p><p>Dada esta situación, numerosas investigaciones se han realizado generando grandes avances en manejo de memoria y técnicas que optimizan las estructuras de datos para evitar el gigantesco consumo de memoria que significa recrear un objeto una y otra vez por un tiempo prolongado.</p><p><a href="https://www.youtube.com/watch?v=mS264h8KGwk">En esta charla de David Nolen</a> se explica como estas estructuras se implementan y funcionan.</p><blockquote>Inmutabilidad es trabajar con los hechos, dado que una variable inmutable no puede cambiar podemos decir entonces que estamos hablando de los hechos, la fuente de la verdad.</blockquote><p>En los lenguajes funcionales la inmutabilidad es algo que se da por sentado, pero en JavaScript es algo que debemos "forzar" mediante buenas prácticas, linting o el uso de librerías tipo “helper” que refuercen estas prácticas.</p><blockquote>Por cierto, si no sabes que es linting, escribí <a>un artículo sobre ello en freecodecamp</a></blockquote><div class="ad-container " data-test-label="ad-container">
+    <div class="ad-text" data-test-label="ad-text">ADVERTISEMENT</div>
+    <amp-ad data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-full-width-responsive="false" width="100vw" height="320" type="adsense" data-auto-format="rspv" data-full-width="false"></amp-ad>
+    
+  </div><h2 id="-por-qu-la-inmutabilidad-es-importante">¿Por qué la inmutabilidad es importante?</h2><p>Básicamente porque te permite representar estados de forma correcta y eliminar los "side effects".  Es mucho más fácil seguir la lógica de un software que no modifica sus variables que uno que permite que sus variables cambien a diestra y siniestra.</p><p>Un ejemplo de la importancia de la inmutabilidad es el propio React. Un componente React es básicamente una función que a base de un estado (sus props y estado interno) retorna una interfaz.</p><p>Para manejar estado interno React ofrece una función (hook) llamado u<code>seState.</code> Esta función retorna una tupla [<code>estado, funcion actualizadora]</code> es decir, React nos indica que para modificar el estado debemos utilizar la función actualizadora, no podemos ir directamente y m<strong>utar</strong> el estado, debemos solicitar su cambio.</p><p>Cuando hacemos uso de la función actualizadora React crea una copia del estado y modifica solo lo que es necesario e<strong>n la copia.</strong></p><h2 id="trabajando-con-objetos-inmutables-">Trabajando con objetos inmutables.</h2><p>Entonces, queremos asegurarnos de que nuestros objetos no sean mutados. SI vamos a hacer uso de un método para actualizar el objeto este método debe retornar un nuevo objeto. En esencia lo que necesitamos es una <strong>función pura.</strong></p><p>Una función pura tiene dos propiedades esenciales:</p><ul><li>El valor que retorna depende <strong>sólo</strong> de los argumentos de entrada. O lo que es lo mismo, el valor de retorno no cambiará si los valores de entrada no cambian.</li><li>No puede modificar nada que este fuera de su ámbito.</li></ul><h2 id="-qu-herramientas-nos-ofrece-javascript">¿Qué herramientas nos ofrece JavaScript?</h2><p>En el caso de los objetos JavaScript nos ofrece a lo menos dos formas para mantener el principio de inmutabilidad.</p><div class="ad-container " data-test-label="ad-container">
+    <div class="ad-text" data-test-label="ad-text">ADVERTISEMENT</div>
+    <amp-ad data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-full-width-responsive="false" width="100vw" height="320" type="adsense" data-auto-format="rspv" data-full-width="false"></amp-ad>
+    
+  </div><h3 id="object-assign">Object.assign</h3><p><code>Object.assign</code> es un método del objeto <code>Object</code> que permite crear un nuevo objeto copiando los valores que le son pasados como parámetros.</p><pre><code class="language-javascript">Object.assign({}, data, { attribute: 'something' }
+</code></pre><p>En este ejemplo lo que estamos haciendo es copiar todo el contenido del objeto <code>data</code> dentro del objeto vació que pasamos como primer argumento, además copiamos y en efecto sobreescribimos el valor del atributo <code>attribute</code> dentro del nuevo objeto. <code>Object.assign</code> retorna el valor del nuevo objeto.</p><h3 id="operador-spread">Operador spread</h3><p>Ya revisamos lo que podemos hacer con el operador spread en una lección anterior. En este caso utilizaremos el operador para efectuar lo mismo que con <code>Object.assign</code></p><p><code>{...data, attribute: 'something' }</code></p><h3 id="arreglos">Arreglos</h3><p>El objeto <code>Array</code> define algunas operaciones mutables, es decir, modifican el arreglo original al operar sobre el: <code>push</code>, <code>pop</code>, <code>splice</code>, <code>shift</code>,<code>unshift</code>, <code>reverse</code> y <code>sort</code>. Usar estos métodos implica la existencia de <em>side effects</em> y posibles bugs difíciles de rastrear.</p><p>Transformemos estos métodos para funcionar de forma inmutables, usaremos el siguiente arreglo como base en cada operación.</p><pre><code class="language-javascript">const usuarios = [
+	{ 
+		id: 1,
+		name: "brad gibson",
+		email: "brad.gibson@example.com"
+	},
+	{
+		id: 2,
+		name: "Kuzey Karaduman",
+		email: "kuzey.karaduman@example.com"
+	},
+	{
+		id: 3,
+		name: "Heinz-Werner Konrad",
+		email: "heinz-werner.konrad@example.com"
+	}
+]
+</code></pre><div class="ad-container " data-test-label="ad-container">
+    <div class="ad-text" data-test-label="ad-text">ADVERTISEMENT</div>
+    <amp-ad data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-full-width-responsive="false" width="100vw" height="320" type="adsense" data-auto-format="rspv" data-full-width="false"></amp-ad>
+    
+  </div><h3 id="push-function push() { [native code] }1">Push</h3><p>La forma usual es utilizar</p><pre><code class="language-javascript">const newUser = {
+	id:4,
+	name: "Stephen Watkins",
+	email: "stephen.watkings@example.com"
+}
+usuarios.push(newUser) // [{ id: 1}, {id:2}, {id: 3}, { id: 4} ]
+</code></pre><p>Pero esto modifica el arreglo inicial, la forma inmutable de esta operación se obtiene al utilizar el operador spread.</p><pre><code class="language-javascript">const newUsuarios = [...usuarios, newUser ]
+</code></pre><p>JavaScript</p><h3 id="unshift-function unshift() { [native code] }1">Unshift</h3><p>Este operador es similar a <code>push</code>, salvo que en vez de agregar un elemento al final del arreglo lo hace al principio (<code>prepend</code>).</p><pre><code class="language-javascript">čonst newUser = {
+	id:4,
+	name: "Stephen Watkins",
+	email: "stephen.watkings@example.com"
+}
+usuarios.unshift(newUser) // // [{ id: 4}, {id:1}, {id: 2}, { id: 3} ]
+</code></pre><p>Nuevamente podemos hacer uso del operador <code>spread</code> para conseguir la versión inmutable</p><pre><code class="language-javascript">const newUsuarios = [newUser, ...usuarios]
+</code></pre><h3 id="pop-function pop() { [native code] }1">Pop</h3><p>Este operador remueve el último item del arreglo y lo retorna</p><pre><code class="language-javascript">const user = usuarios.pop(); // user = { id: 3 } y usuarios ahora tiene sólo dos elementos
+</code></pre><p>Para lograr lo mismo de forma inmutable tenemos que hacer uso de otro método de arreglo a modo de "helper" y ejecutar algunos otros pasos:</p><pre><code class="language-javascript">const user = usuarios[usuarios.length - 1]; //Obtenemos una copia del ultimo usuario para replicar el comportamiento de `pop` de retornar el elemento
+const newUsuarios = usuarios.slice(0, usuarios.length - 1)// el arreglo original sigue sin modificarse
+</code></pre><p>Aquí utilizamos <code>slice</code> que revisaremos más adelante.</p><div class="ad-container " data-test-label="ad-container">
+    <div class="ad-text" data-test-label="ad-text">ADVERTISEMENT</div>
+    <amp-ad data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-full-width-responsive="false" width="100vw" height="320" type="adsense" data-auto-format="rspv" data-full-width="false"></amp-ad>
+    
+  </div><h3 id="shift-function shift() { [native code] }1">Shift</h3><p>Este operador actúa de forma similar a pop y es en efecto el acto contrario a <code>unshift</code>. Remueve un elemento del principio del arreglo y lo retorna.</p><pre><code class="language-javascript">const user = usuarios.shift(); // user = {id: 1} y usuarios ahora tiene solo 1 element
+</code></pre><p>Nuestra solución inmutable nuevamente debe hacer uso de <code>slice</code> para replicar el comportamiento</p><pre><code class="language-javascript">const user = usuarios[0]; //Obtenemos una copia del primer usuario para replicar el comportamiento de `shift` de retornar el elemento
+const newUsuarios = usuarios.slice(1) // el arreglo original sigue sin modificarse
+</code></pre><h3 id="splice-function splice() { [native code] }1">Splice</h3><p>Este método es utilizado tanto para remover como para agregar elementos en cualquier posición de un arreglo</p><pre><code class="language-javascript">usuarios.splice(1,2, newUser);
+</code></pre><p>Esta operación modifica el arreglo original, removiendo dos elementos desde la posición 1 y agregando en su lugar el <code>newUser</code></p><p>el resultado es</p><pre><code class="language-javascript">{
+    id: 1,
+    name: "brad gibson",
+    email: "brad.gibson@example.com"
+  },
+	{
+		id: 4,
+	  name: "Stephen Watkins",
+	  email: "stephen.watkings@example.com",
+	}
+</code></pre><p>Para transformar esta operación en inmutable nuevamente hacemos uso de <code>splice</code> y  el operador  <code>spread</code></p><pre><code class="language-javascript">const newUsuarios = [...usuarios.slice(0,1), newUser, ...usuarios.slice(3)]
+</code></pre><p><code>slice</code> obtiene un trozo del arreglo original y luego con <code>spread</code> este trozo se expando para copiarse dentro del nuevo arreglo.</p><h3 id="sort-y-reverse">Sort y reverse</h3><p>Finalmente tenemos los métodos <code>sort</code> y <code>reverse</code> uno ordena el arreglo y otro lo invierte</p><p>Cabe destacar que <code>sort</code> puede recibir un parámetro que define como se deben comparar los elementos del arreglo para definir cuál va primero.</p><p>En nuestro caso estamos utilizando un arreglo de objetos, y para su ordenamiento lo haremos comparando los atributos <code>id</code></p><pre><code class="language-javascript">function compare(a, b) {
+  if(a.id &gt; b.id) {
+    return -1
+  }
+	if(a.id &lt; b.id) {
+		return 1
+	}
+  return 0
+}
+</code></pre><p>Esta función indica que si el elemento <code>a</code> tiene un <code>id</code> mayor que el del elemento <code>b</code> entonces retorna un valor menor que 0 que significa que <code>a</code> debe posicionarse primero. En caso contrario se retorna un valor mayor que 0, entonces <code>b</code> debe posicionarse primero. Si retorna 0, entonces los elementos se dejan en la misma posición.</p><p>Ahora con esto en su lugar podemos ordenar e invertir nuestro arreglo</p><pre><code class="language-javascript">usuarios.sort(compare); // [{ id: 3}, {id: 2}, {id: 1}]
+usuarios.revserse(); // [{ id: 1}, {id: 2}, {id: 3}]
+</code></pre><p>Estos operadores son mutables por defecto y no tienen una contrapartida en el mundo de la inmutabilidad, por lo que para replicar su comportamiento lo que hacemos es la solución más sencilla (<a href="https://es.wikipedia.org/wiki/Navaja_de_Ockham">La navaja de Ockham</a>), es decir, obtenemos una copia del arreglo y operamos sobre esta copia.</p><pre><code class="language-javascript">const sorted = [...usuarios].sort(compare)
+const inverted = [...usuarios].reverse()
+const sortedAndInverted = [...sorted].reverse()
+</code></pre><p>Como siempre te dejo el demo de <a href="https://jsitor.com/nl0cMEizV">todo este código aquí</a></p><div class="ad-container " data-test-label="ad-container">
+    <div class="ad-text" data-test-label="ad-text">ADVERTISEMENT</div>
+    <amp-ad data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-full-width-responsive="false" width="100vw" height="320" type="adsense" data-auto-format="rspv" data-full-width="false"></amp-ad>
+    
+  </div><h4 id="librer-as">Librerías</h4><p>Existe también la opción de utilizar alguna librería que te permita aplicar los principios de inmutabilidad de una forma más directa. Este tipo de librerías garantizan que el principio está siendo aplicado.</p><p>Una de estas librerías y quizá la más mencionada es <a href="https://immutable-js.github.io/immutable-js/">Immutable.js</a> que tuvo gran auge al ser usada junto con Redux.</p><h2 id="conclusi-n">Conclusión</h2><p>La inmutabilidad no es un tópico específico de JavaScript, puede ser aplicado a cualquier lenguaje y es muy recomendado que así sea. Lo importante aquí es entender por qué requieres utilizar inmutabilidad y como estás manejando tus datos para mantener un flujo de datos legible y un patrón de código mantenible.</p><small>Este contenido es también parte de lo que puedes encontrar en <a href="https://microbytes.matiashernandez.dev">MicroBytes, un newsletter de microcursos.</a></small><figure class="kg-card kg-image-card"><amp-img src="../../content/images/2021/03/Footer-Social-Card.jpg" alt="Footer-Social-Card" width="2000" height="533" layout="responsive"></amp-img></figure><div>
+<span>
+    💌 <a href="https://microbytes.matiashernandez.dev">Únete a MicroBytes! <br>newsletter de micro cursos</a>
+    </span>
+<span> 🐦 <a href="https://twitter.com/matiasfha">Sígueme en Twitter</a></span>
+    <span> ☕️ <a href="https://buymeacoffee.com/matiasfha">Invitame un Café</a></span></div>
+
+            </section>
+        </article>
+    </main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="https://www.freecodecamp.org/espanol/news">freeCodeCamp.org</a> &copy; 2022</section>
+    </footer>
+</body>
+</html>

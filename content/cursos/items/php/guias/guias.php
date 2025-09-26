@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 include "../../../../../admin/config/conexion.php";
 
 $query = "SELECT guia.guia_id, guia.guia_titulo, guia.guia_href, guia.guia_href_local, autor.autor_nombre as autor 
@@ -10,48 +9,43 @@ WHERE guia_categoria ='4'";
 
 $result = mysqli_query($mysqli, $query);
 if (!$result) {
-    throw new Exception("Error en la consulta: " . mysqli_error($mysqli));
+  throw new Exception("Error en la consulta: " . mysqli_error($mysqli));
 }
 
 
 $json = array();
 
 while ($row = mysqli_fetch_array($result)) {
-    $json[] = array(
-        'id' => $row['guia_id'],
-        'titulo' => $row['guia_titulo'],
-        'autor' => $row['autor'],
-        'web' => $row['guia_href'],
-        'local' => $row['guia_href_local'],
-    );
-  }
+  $json[] = array(
+    'id' => $row['guia_id'],
+    'titulo' => $row['guia_titulo'],
+    'autor' => $row['autor'],
+    'web' => $row['guia_href'],
+    'local' => $row['guia_href_local'],
+  );
+}
 
-  $countJson = count($json);
-  $url = "/content/cursos/articulos/";  
+$countJson = count($json);
+$url = "/content/cursos/articulos/";
 ?>
-
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/assets/bootstrap530/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/assets/node_modules/bootstrap-icons/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/admin/practicas/mi_app/css/data.css">
-  <title>Guías</title>
+<?php
+include_once "../../../../../templates/header.php";
+?>
+<link rel="stylesheet" href="/admin/practicas/mi_app/css/data.css">
+<title>PHP Guías</title>
 </head>
 
 <body>
-  <div class="container-fluid mt-3">
-    <div class="row">
+  <div class="container-fluid">
+    <div class="row bg-primary">
+      <?php include_once "../templates/navbar-php.php" ?>
       <h1 class="text-center">GUIAS DE PHP</h1>
     </div>
     <!-- BUSCADOR -->
-    <div class="row">
-      <div class="col-md-12 my-3 d-flex">
+    <div class="row my-3">
+      <div class="col-md-12 my-2 d-flex">
         <div class="w-50">
-          <input class="w-75 p-3 buscador" type="text" name="buscador" id="buscador" placeholder="Ingrese un dato a buscar">
+          <input class="w-75 p-2 buscador" type="text" name="buscador" id="buscador" placeholder="Ingrese un dato a buscar">
         </div>
         <div class="w-50 d-flex flex-row-reverse">
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -60,33 +54,33 @@ while ($row = mysqli_fetch_array($result)) {
       </div>
     </div>
     <!-- rpta -->
-    <div class="row w-100 m-auto border my-3" id="rpta"></div>
+    <div class="row w-100 m-auto my-3" id="rpta"></div>
     <!-- TABLA -->
     <div class="row">
       <div class="col-md-12">
         <div class="table-responsive">
-          <table id="add_tecnos" class="table">
-            <thead>
+          <table id="add_tecnos" class="table table-dark">
+            <thead class="table-info">
               <tr class="bg-info">
-                <th class="border" scope="col">Id</th>
-                <th class="border" scope="col">Título</th>
-                <th class="border" scope="col">Autor</th>
-                <th class="border" scope="col">Web del artículo</th>
-                <th class="border" scope="col">URL local</th>
+                <th class="" scope="col">Id</th>
+                <th class="" scope="col">Título</th>
+                <th class="" scope="col">Autor</th>
+                <th class="" scope="col">Web del artículo</th>
+                <th class="" scope="col">URL local</th>
               </tr>
             </thead>
-            <tbody id="tabla_guia" class="bg-table">
-              <?php for ($i=0; $i <= $countJson - 1 ; $i++) { ?>
+            <tbody id="tabla_guia" class="bg-dark">
+              <?php for ($i = 0; $i <= $countJson - 1; $i++) { ?>
 
-              <tr class="text-white fila">
-                <td><?= $json[$i]['id']?></td>
-                <td><?= $json[$i]['titulo']?></td>
-                <td><?= $json[$i]['autor']?></td>
-                <td><a class="text-amarillo" href="<?=$json[$i]['web']?>" target="_blank"><?= $json[$i]['web']?></a></td>
-                <td><a class="text-amarillo" href="<?=$url . $json[$i]['local']?>" target="_blank"><?= $json[$i]['local']?></a></td>
-              </tr>
+                <tr class="text-white fila">
+                  <td><?= $json[$i]['id'] ?></td>
+                  <td><?= $json[$i]['titulo'] ?></td>
+                  <td><?= $json[$i]['autor'] ?></td>
+                  <td><a class="text-amarillo" href="<?= $json[$i]['web'] ?>" target="_blank"><?= $json[$i]['web'] ?></a></td>
+                  <td><a class="text-amarillo" href="<?= $url . $json[$i]['local'] ?>" target="_blank"><?= $json[$i]['local'] ?></a></td>
+                </tr>
 
-              <?php }?>
+              <?php } ?>
             </tbody>
           </table>
         </div>
@@ -167,8 +161,7 @@ while ($row = mysqli_fetch_array($result)) {
       </div>
     </div>
   </div>
-  <script src="/assets/bootstrap530/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/bootstrap533/js/bootstrap.bundle.min.js"></script>
   <script src="./guias.js"></script>
 </body>
-
 </html>

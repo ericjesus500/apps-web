@@ -1,55 +1,16 @@
-<?php  include "../../templates/head_cursos.php" ?>
-<title>CURSO Python</title>
 
-<body>
   <!-- Content Wrapper. Contains page content -->
   <div class="wrapper">
     <!-- Content-fluid -->
     <div class="content-fluid">
-      <!-- Content Header (Page header) -->
+      <!-- Content Header -->
       <div class="content-header">
         <div class="container-fluid">
-          <div class="row mb-2">
-            <div class="col-sm-6">
-              <nav class="navbar navbar-expand navbar-white navbar-light">
-                <!-- Left navbar links -->
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link text-primary">
-                      <h3>PYTHON</h3>
-                    </a>
-                  </li>
-                  <li class="nav-item d-none d-sm-inline-block">
-                    <a href="/content/cursos/index.php" class="nav-link">Home</a>
-                  </li>
-                  <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div class="col-sm-6 d-flex flex-row-reverse">
-              <div class="margin">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-warning">Tutoriales completos</button>
-                  <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown">
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <div class="dropdown-menu" role="menu">
-                    <a class="dropdown-item" href="https://www.aprendejavascript.dev/" target="_blank">Aprende Javascript</a>
-                    <a class="dropdown-item" href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank">Javascript en MDN Mozilla</a>
-                    <a class="dropdown-item" href="" target="_blank">Item</a>
-                    <a class="dropdown-item" href="" target="_blank">Item</a>
-                    <a class="dropdown-item" href="" target="_blank">Item</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="row">
+            <?php include_once "templates/navbar-python.php"; ?>
           </div>
-        </div><!-- /.container-fluid -->
+        </div>
       </div>
-      <!-- /.content-header -->
-
       <!-- Main content -->
       <div class="content">
         <div class="container-fluid">
@@ -66,16 +27,6 @@
                   <a href="http://codigos/items/python/index.php" class="card-link" target="_blank">Mi
                     Tutorial</a>
                   <a href="/content/app/items/python/apps/index.php" class="card-link" target="_blank">Ir a Apps</a>
-                </div>
-              </div>
-              <div class="card card-primary card-outline">
-                <div class="card-body">
-                  <h5 class="card-title"><strong>Sección Informatica acerca de Python</strong></h5>
-                  <p class="card-text">
-                    Resumen de Guías diversas acerca de Python.
-                  </p>
-                  <a href="/content/cursos/items/python/guias/guias.php" class="card-link">Ir a resumen </a>
-                  <a href="#" class="card-link">Another link</a>
                 </div>
               </div>
             </div>
@@ -118,38 +69,10 @@
                   </div>
                 </div>
               </div>
-              <!-- El Ecosistema de Python en 2023 -->
-              <div class="card card-warning card-outline">
-                <div class="card-header">
-                  <h5 class="m-0">TITULO</h5>
-                </div>
-                <div class="card-body">
-                  <h6 class="card-title">Según <a href="#" target="_blank">AUTOR<span class="text-danger"><i class="bi bi-youtube"></i></span></a>
-                  </h6>
-
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas velit quam esse, aspernatur corrupti consequatur optio! Voluptatibus commodi consequatur quaerat laboriosam eum, recusandae autem. Debitis quo voluptates rerum sint optio repellat recusandae dolorum eligendi, fugiat exercitationem consectetur possimus quae minus ullam aperiam deserunt dolorem modi iure dicta officia harum eaque. Dolor provident at eos exercitationem ducimus, itaque quam fuga ut!</p>
-                  <a href="/content/cursos/items/python/articulos/articulo_autor.php" class="btn btn-warning" target="_blank">Ver el artículo completo</a>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <h5 class="m-0">Lista de videos relacionados</h5>
-                </div>
-                <div class="card-body">
-                  <h6 class="card-title">Videos seleccionados de Youtube</h6>
-                  <p class="card-text">Esta es una lista de videos relacionados a NodeJs de Youtube.</p>
-                  <a href="#" class="btn btn-warning">Ver la lista</a>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- /.main content -->
-  </div>
-  <!-- /.content-fluid -->
-  </div>
+  </div>  
   <!-- /.content-wrapper -->
-
-  <?php  include "../../templates/footer_cursos.php" ?>

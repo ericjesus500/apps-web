@@ -1,0 +1,137 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, serif;
+}
+
+h1{
+  text-align: center;
+  font-size: 36px;
+  color: rgb(126,4,39);
+}
+
+p{
+  text-align: center;
+  font-size: 24px;
+  color: rgb(108,103,105)
+}
+
+.content{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.formulario{
+  border: 1px solid green;
+  box-shadow: 8px 8px 5px;
+}
+
+hr{
+  margin: 50px 0;
+  height: 5px;
+  background-color: #6c6769;
+  border: none;
+}
+
+#survey-form{
+  text-align: center;
+}
+
+#survey-form .one{  
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+#survey-form .one .datos_principales{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 10px;
+}
+
+#survey-form .one .datos_principales label{  
+  text-align: left;
+  margin-top: 10px;
+}
+
+#survey-form .one .datos_principales input{
+  padding: 8px;
+  width: auto;
+}
+
+#survey-form .one .datos_complementarios{  
+  display: flex;
+  flex-direction: column;  
+  gap: 20px;
+  width: 50%;
+}
+
+#survey-form .one .datos_complementarios fieldset:first-child{
+  display: flex;
+  flex-direction: column;
+}
+
+#survey-form .one .datos_complementarios .sexo, #survey-form .one .datos_complementarios .estado_civil{  
+  width: auto;
+}
+
+.formulario{
+  padding: 20px;
+  background-color: #e2dee0;
+}
+
+.estado_civil label{
+  display: block;
+  margin: 10px 0;
+}
+
+.estado_civil #dropdown{  
+  width: 100%;
+  padding: 8px 8px;
+}
+
+.sexo{
+  padding: 8px 8px;
+  margin: 10px 0;
+}
+
+
+.sexo label{
+  margin: 0 20px;
+}
+
+.opinion{
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.two{  
+  padding: 20px;
+}
+
+.two .comentarios{  
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.two .comentarios label{
+  margin: 10px 0;
+  text-align: left;
+}
+
+#submit{
+  margin-top: 20px;
+  background-color: green;
+  font-size: 24px;
+  padding: 10px;
+  color:white;
+  font-family: Georgia, 'Times New Roman', Times, serif;  
+}
+
+.two .comentarios #comentario{
+  resize: none;
+}
