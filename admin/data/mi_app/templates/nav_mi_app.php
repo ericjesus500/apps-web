@@ -41,8 +41,7 @@
               <a class="dropdown-item" href="/admin/data/mi_app/modulos/videos.php">Add videos</a>
             </li>
           </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link text-white" aria-current="page" href="/admin/data/pruebas/index.php">Prácticas</a></li>
+        </li>       
       </ul>
     </div>
   </div>

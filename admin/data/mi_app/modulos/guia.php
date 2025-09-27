@@ -17,7 +17,7 @@ include "../templates/head_mi_app.php";
           <!-- Imagen -->
           <div class="col-md-4 mb-4">
             <div class="row w-100">
-              <img class="img_fluid" src="../../img/guias.jpeg" alt="guias">
+              <img class="img_fluid" src="../../../../src/img/admin/guias.jpeg" alt="guias">
               <div id="data" class="w-100 m-auto text-center mt-4 border border-warning rounded"></div>
             </div>
           </div>

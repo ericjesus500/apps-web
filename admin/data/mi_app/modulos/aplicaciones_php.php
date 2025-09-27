@@ -83,7 +83,7 @@
             <!-- imagen -->
             <div class="col-md-4">
               <div class="shadow p-3 bg-body-tertiary rounded d-flex justify-content-center align-items-center m-auto card" style="width: 18rem; height: 18rem;">
-                <img class="img-75" src="../../img/apps.png" alt="portada" id="portada">
+                <img class="img-75" src="../../../../src/img/admin/apps.png" alt="portada" id="portada">
               </div>
             </div>
           </div>
